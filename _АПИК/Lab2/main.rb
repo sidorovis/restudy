@@ -8,12 +8,14 @@ class Cell
 		@datas = datas
 	end
 	def to_s
-		"\t#{@slovo}\t| #{colizies}\t| #{free}\t| #{datas_link}\n"
+		conn = false
+		conn = true if @datas_link
+		"#{@slovo}\t| #{colizies}\t| #{conn}\t| #{free}\t| #{datas_link}\t\t| #{datas}\n"
 	end
 
 	def Titles
-		"-------\t-------\t\t------\t-------\t-----------\n"+
-		"HashKey\t| ID   \t\t| Cols\t| Free?\t| Link2Data\n"
+		"-------\t|------\t|-----\t|------\t|------\t|----------\t|------\n"+
+		"HashKey\t| ID   \t| Cols\t| Conn?\t| Free?\t| Link2Data\t| Datas\n"
 	end
 end
 
@@ -73,21 +75,32 @@ class Table
 		end
 
 		hash_key = hash_string( key_str , @hash_len )
-		
 		if @cells[ hash_key ]
-			if @cells.slovo == key_str
-				if @cells[ hash_key ].datas_link 
-				    replace = @cells[ hash_key ].datas_link 
-					puts " #{hash_key} value (#{@cells[ hash_key].slovo}) have colizion that we shall change"
+			key = hash_key
+			while @cells[ key ] && @cells[ key ].slovo != key_str do
+				old_key = key
+				key = @cells[ key].datas_link
+			end
+			if @cells[ key ].slovo == key_str
+				if @cells[ key ].datas_link 
+				    replace = @cells[ key ].datas_link 
+					puts " #{key} value (#{@cells[ key ].slovo}) have colizion that we shall change"
 					cell = @cells[ replace ]
-					@cells[hash_key] = cell
-					@cells.delete( replace )
-
+					@cells[ key ] = cell
+					@cells.delete_at( replace )
+					@cells.insert( replace , nil )
 				else
-					@cells.delete hash_key
-					puts " #{hash_key} value (#{@cells[ hash_key].slovo}) deleted"
+					if @cells[ old_key ] && @cells[ old_key ].datas_link == key
+						@cells[ old_key ].colizies = false
+						@cells[ old_key ].datas_link = nil
+					end
+					cell = @cells[ key ]
+					@cells.delete_at key
+					@cells.insert( key , nil )
+					puts " #{key} value (#{cell.slovo}) deleted"
 				end
 			else
+				puts " -> #{key_str} not exist"
 			end
 		else		
 			puts " -> #{key_str} not exist"
@@ -122,23 +135,31 @@ table = Table.new
 
 command = ""
 
-while command != "quit"
-	print "\n\nCommand list: quit, insert, show, delete: \n command # "
+table.insert_datas("asd","dsa1")
+table.insert_datas("asde","dsa2")
+table.insert_datas("asdh","dsa3")
+table.insert_datas("asdf","dsa4")
+table.insert_datas("asdfg","ds5a")
+print table
+
+while command != "quit" && command != "q"
+	print "\n\nCommand list: quit, add, set, show, del: \n command # "
 	command = gets
 	command.strip!
-	if command == "insert"
+	if command == "add" || command == "set" then
 		print " fio # "
 		fio = gets
 		print " datas # "
 		datas = gets
 		table.insert_datas( fio.strip, datas.strip )
 	end
-	if command == "show"
+	if "show" == command then
 		print table
 	end
-	if command == "delete"
+	if "del" == command then
 		print " fio # "
 		fio = gets
 		table.delete_datas( fio.strip )
 	end
 end
+
