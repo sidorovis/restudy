@@ -10,12 +10,14 @@ class Cell
 	def to_s
 		conn = false
 		conn = true if @datas_link
-		"#{@slovo}\t| #{colizies}\t| #{conn}\t| #{free}\t| #{datas_link}\t\t| #{datas}\n"
+		sl = @slovo
+		sl += "     " if sl.length < 6
+		"#{sl}\t| #{@colizies}\t| #{conn}\t| #{@free}\t| #{@datas_link}\t| #{@datas}\n"
 	end
 
 	def Titles
-		"-------\t|------\t|-----\t|------\t|------\t|----------\t|------\n"+
-		"HashKey\t| ID   \t| Cols\t| Conn?\t| Free?\t| Link2Data\t| Datas\n"
+		"-------\t|------\t-----\t|-----\t|------\t|------\t|----\t|------\n"+
+		"HashKey\t| ID   \t\t| Cols\t| Conn?\t| Free?\t| L2D\t| Datas\n"
 	end
 end
 
@@ -77,7 +79,7 @@ class Table
 		hash_key = hash_string( key_str , @hash_len )
 		if @cells[ hash_key ]
 			key = hash_key
-			while @cells[ key ] && @cells[ key ].slovo != key_str do
+			while key && @cells[ key ] && @cells[ key ].slovo != key_str do
 				old_key = key
 				key = @cells[ key].datas_link
 			end
@@ -111,7 +113,24 @@ class Table
 		(0..@cells.length).each { |i| answer += i.to_s+"\t| " +@cells[i].to_s if @cells[i] }
 		answer
 	end
+	def find ( key_str )
+		hash_key = hash_string( key_str , @hash_len )
+		if @cells[ hash_key ]
+			key = hash_key
+			while key && @cells[ key ] && @cells[ key ].slovo != key_str do
+				old_key = key
+				key = @cells[ key ].datas_link
+			end
+			if key && @cells[ key ].slovo == key_str
+				puts " we find: #{@cells[ key ].datas}"
+			else
+				puts " No such string"
+			end
+		else
+			puts " No such string"
+		end
 
+	end
 private
 	def hash_string(str,k)
 		answer = 0
@@ -135,15 +154,19 @@ table = Table.new
 
 command = ""
 
-table.insert_datas("asd","dsa1")
-table.insert_datas("asde","dsa2")
 table.insert_datas("asdh","dsa3")
 table.insert_datas("asdf","dsa4")
 table.insert_datas("asdfg","ds5a")
+table.insert_datas("hello","another constr key");
+table.insert_datas("hilary","klinton");
+table.insert_datas("asd","dsa1")
+table.insert_datas("another","key");
+table.insert_datas("asde","dsa2")
+table.insert_datas("comprasion","key_value");
 print table
 
 while command != "quit" && command != "q"
-	print "\n\nCommand list: quit, add, set, show, del: \n command # "
+	print "\n\nCommand list: find, quit, add, set, show, del: \n command # "
 	command = gets
 	command.strip!
 	if command == "add" || command == "set" then
@@ -161,5 +184,9 @@ while command != "quit" && command != "q"
 		fio = gets
 		table.delete_datas( fio.strip )
 	end
+	if "find" == command then
+		print " fio # "
+		fio = gets
+		table.find( fio.strip )
+	end
 end
-
