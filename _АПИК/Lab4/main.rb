@@ -32,14 +32,13 @@ class Lab1
     end
     
     def to_s
-	s = "-----------------------------------------------------------\n"
-	s += "AM  "
-	(1..@col_size).each { |i| s+="#{i} " }
-	s += " | t | r\n"
+	s =  "---------------------------------------------\t------------------------------------------\n"
+	s += "AM                                           \tAMD\n"
 	(1..@string_size).each do |i|
 	    s += "    "
 	    (1..@col_size).each { |u| s+="#{@a[i,u]} " }
-	    s+= " | #{@t[i]} | #{@r[i]}\n"
+	    s+= " | #{@t[i]} | #{@r[i]}\t"
+	    (1..@col_size).each { |u| s+="#{@a[i,u]} " }
 	end
 	return s
     end
@@ -364,8 +363,8 @@ public
 	end
 end
 
-						@string_size = 	9
-						@col_size = 	5
+						@string_size = 	16
+						@col_size = 	16
 
 l = Lab1.new(@string_size,@col_size)
 c = Commands.new(l)
