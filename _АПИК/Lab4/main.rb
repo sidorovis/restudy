@@ -38,6 +38,7 @@ class Lab1
 	    s += "    "
 	    (1..@col_size).each { |u| s+="#{@a[i,u]} " }
 	    s+= " | #{@t[i]} | #{@r[i]}\t"
+	    (1..@col_size).each { |u| }
 	    (1..@col_size).each { |u| s+="#{@a[i,u]} " }
 	end
 	return s
