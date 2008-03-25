@@ -1,0 +1,121 @@
+
+import java.io.*;
+import java.util.*;
+import java.sql.*;
+
+public class aipos4 {
+	
+	private Connection c;
+	private Statement s;
+	private PrintWriter out;
+	private int row_counter=0;
+	
+	public aipos4() throws Exception {
+		try 
+		{
+			out = new PrintWriter("aipos4.log");
+			Class.forName("com.mckoi.JDBCDriver").newInstance();
+			out.println("JDBC load");
+			String url = "jdbc:mckoi://localhost/:db.conf";
+			String username = "aipos4";
+			String password = "aipos4";
+			c = DriverManager.getConnection(url, username, password);
+			s = c.createStatement();
+			out.println("getConnection - ok");
+			row_counter = getRowCount().intValue();
+		}
+		finally 
+		{
+			out.close();
+		}
+	}
+	public Integer addUser(String userName, String password) throws Exception 
+	{
+		try 
+		{
+			s.executeQuery("INSERT INTO users VALUES " +
+			  "( '" + userName + "', '" + password + "', 0 ) ");
+		} 
+		catch(SQLException e) 
+		{
+		    return new Integer(0);
+		}
+		return new Integer(1);
+	}
+	
+	public Integer checkUser(String userName, String password) 
+	{
+	    try 
+	    {
+	    	ResultSet r = s.executeQuery("SELECT * FROM users WHERE name = '" + userName + "'");
+		if(!r.first())
+    		    return new Integer(-1);
+		if(r.getString("password").equals(password)) 
+		{
+		    if (r.getInt("type") == 1)
+			return new Integer(3);
+		    else 
+			return new Integer(2);
+		}
+		return new Integer(1);
+	    }
+	    catch(SQLException e)
+	    {
+		return new Integer(-1);
+	    }
+	}
+	public Integer getRowCount() 
+	{
+		try 
+		{
+			ResultSet r = s.executeQuery("SELECT * FROM datas");
+			int i = 0;
+			while(r.next()) 
+			    i++;
+			return new Integer(i);
+		}
+		catch(SQLException e) 
+		{
+		    return new Integer(0);
+		}
+	}
+	public String[] getRow(Integer i) 
+	{
+		String[] fs = new String[4];
+		try 
+		{
+			int I = i.intValue() + 1;
+			ResultSet r = s.executeQuery("SELECT * FROM datas WHERE id = " + I);
+			
+			if(!r.first())
+				return null;
+			
+			fs[0] = r.getString(2);
+			fs[1] = r.getString(3);
+			fs[2] = r.getString(4);
+			return fs;
+		}
+		catch(SQLException e) 
+		{
+			return null;
+		}
+	}
+	public int addRow(String[] fr) 
+	{
+		try
+		{
+			row_counter = getRowCount().intValue();
+			if (row_counter < 1)
+				row_counter = 1;
+			else
+				row_counter++;
+			s.executeQuery(" INSERT INTO datas VALUES " +
+			  " ( "+ row_counter+", '"+fr[0] + "', '" + fr[1] + "', '" + fr[2] + "') ");
+		}
+		catch( SQLException e )
+		{
+			return 0;
+		}
+		return 1;
+	}
+}
