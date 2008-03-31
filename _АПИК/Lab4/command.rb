@@ -5,187 +5,237 @@ class Commands
 	@l = a
 	@params = Array.new
 	@command_list = { 	"0)"=> ["выход          ",	0	], 
-#						"1)"=> ["ноль           ",	0	],
-#						"2)"=> ["коньюнкция     ", 	2	],
-#						"3)"=> ["дизьюнкция     ", 	2	],
-#						"4)"=> ["эквивалентность",	2	],
-#						"5)"=> ["импикация y->x ",	2	],
-#						"6)"=> ["импикация x->y ",	2	],
-#						"7)"=> ["ф-ция Вебба    ",	2	],
-#						"8)"=> ["штрих Шеффера  ",	2	],
-#						"9)"=> ["инв.импликации5",	2	],
-#						"10)"=>["инв.импликации6",	2	],
-#						"11)"=>["не x           ",	2	],
-#						"12)"=>["не y           ",	2	],
-#						"13)"=>["x              ",	2	],
-#						"14)"=>["y              ",	2	],
-#						"15)"=>["1              ",	2	],
-#						"16)"=>["СуммаПоМодулю2 ",	2	],
-#						"17)"=>["Load R(T)      ",	1	],
-#						"18)"=>["Load T(T)      ",	1	],
-#						"19)"=>["Save R(T)      ",	1	],
-#						"20)"=>["Save T(T)      ",	1	],
-						"21)"=>["Enter R	",	0	],
-						"22)"=>["Find Max	",	0	],
-						"23)"=>["Find Min	",	0	],
-						"24)"=>["Find More R	",	0	],
-						"25)"=>["Find Small R	",	0	]
+						"1)"=> ["ноль           ",	[1,2] ],
+						"2)"=> ["коньюнкция     ", 	[1,2,1,2,1,2]	],
+						"3)"=> ["дизьюнкция     ", 	[1,2,1,2,1,2]	],
+						"4)"=> ["эквивалентность",	[1,2,1,2,1,2]	],
+						"5)"=> ["импикация y->x ",	[1,2,1,2,1,2]	],
+						"6)"=> ["импикация x->y ",	[1,2,1,2,1,2]	],
+						"7)"=> ["ф-ция Вебба    ",	[1,2,1,2,1,2]	],
+						"8)"=> ["штрих Шеффера  ",	[1,2,1,2,1,2]	],
+						"9)"=> ["инв.импликации5",	[1,2,1,2,1,2]	],
+						"10)"=>["инв.импликации6",	[1,2,1,2,1,2]	],
+						"11)"=>["не x           ",	[1,2,1,2]	],
+						"12)"=>["не y           ",	[1,2,1,2]	],
+						"13)"=>["x              ",	[1,2,1,2]	],
+						"14)"=>["y              ",	[1,2,1,2]	],
+						"15)"=>["1              ",	[1,2]	],
+						"16)"=>["СуммаПоМодулю2 ",	[1,2,1,2,1,2]	],
+						"22)"=>["Find Max	",		[1]	],
+						"23)"=>["Find Min	",		[1]	],
+#						"24)"=>["Find More R	",	[1,2]	],
+#						"25)"=>["Find Small R	",	[1,2]	]
 			}
     end
+    def get_array(type,number)
+    	if type == "string"
+    		ans = @l.a.get_string(number)
+    	else
+    		ans = @l.a.get_column(number)
+    	end
+    end
+    def set_array(type,number , a)
+    	if type == "string"
+    		ans = @l.a.set_string(number , a)
+    	else
+    		ans = @l.a.set_column(number , a)
+    	end
+    end
+    def start1
+    	@req1 = "string" if @params[0] == 1
+		@a1 = get_array(@req1, @params[1])
+    end
+    def end1
+   		set_array(@req1, @params[1] , @a1)
+    end
     def a1
-    	(1..@l.string_size).each { |i| @l.r[i] = 0 }
+    	(1..@l.string_size).each { |i| @a1[i] = 0 }
    	end
 # 2 arg
+	def start2
+    	@req1 = "string" if  @params[0] == 1
+		@a1 = get_array(@req1,@params[1])
+    	@req2 = "string" if  @params[2] == 1
+		@a2 = get_array(@req2,@params[3])
+    	@req3 = "string" if  @params[4] == 1
+    	@a3 = get_array(@req3,@params[5])
+	end
+	def end2
+   		set_array(@req3, @params[5] , @a3 )
+	end
     def a2
+    	start2
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] + @l.a[i,@params[2]] == 2 )
+    		@a3[i] = 0
+    		@a3[i] = 1 if ( @a1[i] + @a2[i] == 2 )
     	end
+    	end2
     end
     def a3
+	    start2
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] + @l.a[i,@params[2]] > 0 )
+    		@a3[i] = 0
+    		@a3[i] = 1 if ( @a1[i] + @a2[i] > 0 )
     	end
+    	end2
     end
     def a4
+    	start2
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] == @l.a[i,@params[2]])
+    		@a3[i] = 0
+    		@a3[i] = 1 if ( @a1[i] == @a1[i])
     	end
+    	end2
     end
     def a5
+    	start2
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] == 0 && @l.a[i,@params[2]] == 1)
+    		@a3[i] = 0
+    		@a3[i] = 1 if ( @a1[i] == 0 && @a2[i] == 1)
     	end
+    	end2
     end
     def a6
+    	start2
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] == 1 && @l.a[i,@params[2]] == 0)
+    		@a3[i] = 0
+    		@a3[i] = 1 if ( @a1[i] == 1 && @a2[i] == 0)
     	end
+    	end2
     end
     def a7
+    	start2
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] == 0 && @l.a[i,@params[2]] == 0)
+    		@a3[i] = 0
+    		@a3[i] = 1 if ( @a1[i] == 0 && @a2[i] == 0)
     	end
+    	end2
     end
     def a8 #sheffer
+    	start2
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] == 0 || @l.a[i,@params[2]] == 0)
+    		@a3[i] = 0
+    		@a3[i] = 1 if ( @a1[i] == 0 || @a2[i] == 0)
     	end
+    	end2
     end
     def a9
+    	start2
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] == 1 && @l.a[i,@params[2]] == 0)
+    		@a3[i] = 0
+    		@a3[i] = 1 if ( @a1[i] == 1 && @a2[i] == 0)
     	end
+    	end2
     end
     def a10
+    	start2
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] == 0 && @l.a[i,@params[2]] == 1)
+    		@a3[i] = 0
+    		@a3[i] = 1 if ( @a1[i] == 0 && @a2[i] == 1)
     	end
+    	end2
     end
  # arg 1
+	def start15
+    	@req1 = "string" if  @params[0] == 1
+		@a1 = get_array(@req1,@params[1])
+    	@req2 = "string" if  @params[2] == 1
+		@a2 = get_array(@req2,@params[3])
+	end
+	def end15
+   		set_array(@req2, @params[3] , @a2 )
+	end
+ 	
     def a11
+    	start15
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] == 0 )
+    		@a2[i] = 0
+    		@a2[i] = 1 if ( @a1[i] == 0 )
     	end
+		end15
     end
     def a12
+    	start15
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[2]] == 0 )
+    		@a2[i] = 0
+    		@a2[i] = 1 if ( @a1[i] == 0 )
     	end
+    	end15
     end
     def a13
+    	start15
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] == 1 )
+    		@a2[i] = 0
+    		@a2[i] = 1 if ( @a1[i] == 1 )
     	end
+    	end15
     end
     def a14
+    	start15
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[2]] == 1 )
+    		@a2[i] = 0
+    		@a2[i] = 1 if ( @a1[i] == 1 )
     	end
+    	end15
     end
     def a15
+    	start1
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 1
+    		@a1[i] = 1
     	end
+    	end1
     end
     def a16
+    	start2
     	(1..@l.string_size).each do |i|
-    		@l.r[i] = 0
-    		@l.r[i] = 1 if ( @l.a[i,@params[1]] != @l.a[i,@params[2]])
+    		@a3[i] = 0
+    		@a3[i] = 1 if ( @a1[i] != @a2[i])
     	end
+    	end2
     end
 # other funcs
-    def a17 #load r(t)
-       	(1..@l.string_size).each do |i|	
-    		@l.r[i] = 0 if (@l.t[i] == 1)
-    		@l.r[i] = 1 if (@l.t[i] == 1 && @l.a[i,@params[1]] == 1)
-    	end
-
-    end
-    def a18 #load t(t)
-       	(1..@l.string_size).each do |i|	
-    		@l.t[i] = 0 if (@l.t[i] == 1 && @l.a[i,@params[1]] == 0)
-    		@l.t[i] = 1 if (@l.t[i] == 1 && @l.a[i,@params[1]] == 1)
-    	end
-
-    end
-
-    def a19 #save r(t)
-       	(1..@l.string_size).each do |i|	
-    		@l.a[i,@params[1]] = 0 if (@l.t[i] == 1 && @l.r[i] == 0)
-    		@l.a[i,@params[1]] = 1 if (@l.t[i] == 1 && @l.r[i] == 1)
-    	end
-
-    end
-    def a20 #save t(t)
-       	(1..@l.string_size).each do |i|	
-    		@l.a[i,@params[1]] = 1 if (@l.t[i] == 1)
-    	end
-    end
-    def a21 #read R
-		(1..@l.string_size).each do |i|
-			temp = gets
-			temp.strip!
-			num = temp.to_i
-			break if num > 2
-			@l.r[i] = num
-		end
-    end
 private
 	def find_biggest( users, string_i )
 		return if string_i > @l.string_size
-		@l.t[string_i] = 0
-		(1..@l.col_size).each { |i| @l.t[string_i] = 1 if users[i] && @l.a[string_i,i] == 1 }
-		(1..@l.col_size).each { |i| users[i] = nil if users[i] && @l.a[string_i,i] < @l.t[string_i] }
-
+		if @req1 != "string"
+			@l.t[string_i] = 0
+			(1..@l.col_size).each { |i| @l.t[string_i] = 1 if users[i] && @l.a[string_i,i] == 1 }
+			(1..@l.col_size).each { |i| users[i] = nil if users[i] && @l.a[string_i,i] < @l.t[string_i] }
+		else
+			@l.t[string_i] = 0
+			(1..@l.col_size).each { |i| @l.t[string_i] = 1 if users[i] && @l.a[i,string_i] == 1 }
+			(1..@l.col_size).each { |i| users[i] = nil if users[i] && @l.a[i,string_i] < @l.t[string_i] }
+		end
 		find_biggest( users , string_i + 1)
 	end
 	def find_smallest( users, string_i )
 		return if string_i > @l.string_size
-		@l.t[string_i] = 1
-		(1..@l.col_size).each { |i| @l.t[string_i] = 0 if users[i] && @l.a[string_i,i] == 0 }
-		(1..@l.col_size).each { |i| users[i] = nil if users[i] && @l.a[string_i,i] > @l.t[string_i] }
 
+		if @req1 != "string"
+			@l.t[string_i] = 1
+			(1..@l.col_size).each { |i| @l.t[string_i] = 0 if users[i] && @l.a[string_i,i] == 0 }
+			(1..@l.col_size).each { |i| users[i] = nil if users[i] && @l.a[string_i,i] > @l.t[string_i] }
+		else
+			@l.t[string_i] = 1
+			(1..@l.col_size).each { |i| @l.t[string_i] = 0 if users[i] && @l.a[i,string_i] == 0 }
+			(1..@l.col_size).each { |i| users[i] = nil if users[i] && @l.a[i,string_i] > @l.t[string_i] }
+		end
 		find_smallest( users , string_i + 1)
 	end
-	def find_bigger( users , string_i,noque )
+=begin	def find_bigger( users , string_i,noque )
 		return if string_i > @l.string_size
+
+		if @req1 != "string"
 		(1..@l.col_size).each do |i|
 			noque[i] = i if users[i] && @l.a[string_i,i] > @l.r[string_i]
 			users[i] = nil if users[i] && @l.a[string_i,i] < @l.r[string_i]
 		end
+		else
+		(1..@l.col_size).each do |i|
+			noque[i] = i if users[i] && @l.a[string_i,i] > @l.r[string_i]
+			users[i] = nil if users[i] && @l.a[string_i,i] < @l.r[string_i]
+		end
+
 		find_bigger( users , string_i + 1,noque)
 	end
 	def find_smaller( users , string_i , noque )
@@ -196,24 +246,30 @@ private
 		end
 		find_smaller( users , string_i + 1, noque)
 	end
+=end
 public
 
     def a22 #FIND maximum
+    	@req1 = "string" if @params[0] == 1
+    	@req1 = "column" if @params[0] != 1
 		users=Array.new
 		(1..@l.col_size).each { |i| users[i] = 1 }
 		find_biggest(users,1)
-		print " maximals is -> "
+		print " maximals in #{@req1} is -> "
 		(1..@l.col_size).each { |i| print "  #{i}" if users[i] }
 		puts
 	end
     def a23 #FIND minimum
+    	@req1 = "string" if @params[0] == 1
+    	@req1 = "column" if @params[0] != 1
 		users=Array.new
 		(1..@l.col_size).each { |i| users[i] = 1 }
 		find_smallest(users,1)
-		print " minimals is -> "
+		print " minimals in #{@req1} is -> "
 		(1..@l.col_size).each { |i| print "  #{i}" if users[i] }
 		puts
     end
+=begin
     def a24 #FIND FIRST MORE THAN R
 		users=Array.new
 		big=Array.new
@@ -236,7 +292,7 @@ public
 		(1..@l.col_size).each { |i| print "  #{i}" if small[i] }
 		puts
     end
-
+=end
     def to_s
     	s = "Command list: \n"
     	@command_list.sort.each { |f,t| s+="#{f} #{t[0]}\n" }
@@ -247,15 +303,16 @@ public
     end
 	def run(a)
 	    a+=")"
-	    param_col = @command_list[a][1]
-	    puts "Enter params to command '#{@command_list[a][0].strip}'" if 
-	    (param_col > 0)
-	    (1..param_col).each do |i| 
-	    	print "p.#{i} = "
+	    paramss = @command_list[a][1]
+	    param_col = paramss.size
+	    puts "Enter params to command '#{@command_list[a][0].strip}'" if (param_col > 0)
+	    (0...param_col).each do |i| 
+	    	print " type: column-0, string-1: " if paramss[i] == 1
+	    	print " column(string) number: " if paramss[i] == 2
 	    	foo = gets
 	    	foo.strip!
 	    	if (foo.to_i > @l.col_size)
-	    		puts " No such column "
+	    		puts " No such column"
 	    		return
 	 		end
 			@params[i] = foo.to_i
@@ -294,24 +351,14 @@ public
 				a15;
 			when "16)"
 				a16;
-			when "17)"
-				a17;
-			when "18)"
-				a18;
-			when "19)"
-				a19;
-			when "20)"
-				a20;
-			when "21)"
-				a21;
 			when "22)"
 				a22;
 			when "23)"
 				a23;
-			when "24)"
-				a24;
-			when "25)"
-				a25;
+#			when "24)"
+#				a24;
+#			when "25)"
+#				a25;
 		end
 	end
 end

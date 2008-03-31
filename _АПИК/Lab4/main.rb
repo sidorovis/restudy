@@ -1,21 +1,5 @@
-
-class Array2
-    def initialize
-	    @store = [[]]
-    end
-    def [](a,b)
-	if @store[a] == nil ||
-	    @store[a][b] == nil
-		return nil
-	else
-	    return @store[a][b]
-	end
-    end
-    def []=(a,b,x)
-		@store[a] = [] if @store[a] == nil
-		@store[a][b] = x
-    end
-end
+require "Array2"
+require "Command"
 
 class Lab1
 
@@ -23,7 +7,8 @@ class Lab1
     attr_accessor :a,:ad,:t,:r
     def initialize(col_size,string_size)
 		@col_size, @string_size = col_size, string_size
-        @a,@ad,@t,@r = Array2.new,Array2.new, Array.new, Array.new
+        @a= Array2.new(col_size,string_size)
+        @ad,@t,@r = Array2.new(0,0), Array.new, Array.new
 		(1..@string_size).each do |i|
 	    	(1..@col_size).each do |u|
 				@a[i,u] = rand 2 
@@ -32,7 +17,7 @@ class Lab1
 		end
     end
 	def create_ad
-		a_copy = Array2.new
+		a_copy = Array2.new(0,0)
 		(1..@string_size).each { |i| (1..@col_size).each { |u| a_copy[i,u],a_copy[i,u+@col_size] = a[i,u],a[i,u] } }
 		smesh = @string_size
 		(1..@string_size).each do |i|
@@ -58,13 +43,11 @@ class Lab1
 
 end
 
-						@string_size = 	16
-						@col_size = 	16
+						@string_size = 	8
+						@col_size = 	8
 
 l = Lab1.new(@string_size,@col_size)
-print l
 
-=begin
 c = Commands.new(l)
 command = ""
 while true do
@@ -79,4 +62,3 @@ while true do
 end
 
 puts "GoodBye"
-=end
