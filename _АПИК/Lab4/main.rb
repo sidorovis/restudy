@@ -33,18 +33,25 @@ class Lab1
 		create_ad
 		(1..@string_size).each do |i|
 			s+= " "
-			(1..@col_size).each { |u| s = s+ a[i,u].to_s+" " }
+			(1..@col_size).each do |u|
+				s = s+ a[i,u].to_s+" "
+				s = s+" " if (u%4==0 )
+			end
 			s += "   \t"
-			(1..@col_size).each { |u| s = s+ ad[i,u].to_s+" " }
+			(1..@col_size).each do |u| 
+				s = s+ ad[i,u].to_s+" "
+				s = s+" " if (u%4==0)
+			end
 			s += "\n"
+			s += "\n" if (i%4 == 0)
 		end
 		return s
     end
 
 end
 
-						@string_size = 	8
-						@col_size = 	8
+						@string_size = 	16
+						@col_size = 	@string_size
 
 l = Lab1.new(@string_size,@col_size)
 

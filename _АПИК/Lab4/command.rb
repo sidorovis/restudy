@@ -25,6 +25,7 @@ class Commands
 						"23)"=>["Find Min	",		[1]	],
 #						"24)"=>["Find More R	",	[1,2]	],
 #						"25)"=>["Find Small R	",	[1,2]	]
+						"26)"=>["RS A+B ifV inS " , [1,2,1] ]
 			}
     end
     def get_array(type,number)
@@ -42,6 +43,7 @@ class Commands
     	end
     end
     def start1
+	    @req1 = column
     	@req1 = "string" if @params[0] == 1
 		@a1 = get_array(@req1, @params[1])
     end
@@ -49,10 +51,13 @@ class Commands
    		set_array(@req1, @params[1] , @a1)
     end
     def a1
+    	start1
     	(1..@l.string_size).each { |i| @a1[i] = 0 }
+    	end1
    	end
 # 2 arg
 	def start2
+		@req1 = @req3 = @req2 = "column"
     	@req1 = "string" if  @params[0] == 1
 		@a1 = get_array(@req1,@params[1])
     	@req2 = "string" if  @params[2] == 1
@@ -138,7 +143,9 @@ class Commands
  # arg 1
 	def start15
     	@req1 = "string" if  @params[0] == 1
+    	@req1 = "column" if  @params[0] != 1
 		@a1 = get_array(@req1,@params[1])
+    	@req2 = "column" if  @params[2] != 1
     	@req2 = "string" if  @params[2] == 1
 		@a2 = get_array(@req2,@params[3])
 	end
@@ -293,9 +300,37 @@ public
 		puts
     end
 =end
+	def a26
+		puts "Cannot do this on array != 16" if @l.col_size != 16
+		return "" if @l.col_size != 16 
+		req2 = req1 = "column"
+		req1 = "string" if @params[0] == 1
+		a1 = get_array(req1,@params[1])
+		req2 = "string" if @params[2] == 1
+		(1..@l.col_size).each do |i|
+			a2 = get_array( req2 , i )
+			if (a2[1]==a1[1] && a2[2] == a1[2] && a2[3] == a1[3] && a2[4] == a1[4])
+				puts "    changed: #{i}"
+				a2[16] = a2[8] + a2[12]
+				a2[15] = a2[7] + a2[11]
+				a2[14] = a2[6] + a2[10]
+				a2[13] = a2[5] + a2[9]
+				a2[16],a2[15] = a2[16]-2,a2[15]+1 if a2[16] > 1
+				a2[15],a2[14] = a2[15]-2,a2[14]+1 if a2[15] > 1
+				a2[14],a2[13] = a2[14]-2,a2[13]+1 if a2[14] > 1
+				a2[13] = a2[13]-2 if a2[13] > 1
+				set_array( req2 , i , a2 )
+			end
+		end
+	end
     def to_s
     	s = "Command list: \n"
-    	@command_list.sort.each { |f,t| s+="#{f} #{t[0]}\n" }
+    	a = 1
+    	@command_list.sort.each do |f,t| 
+    		s+="#{f} #{t[0]}\t\t"
+    		a+=1
+    		s+="\n" if (a % 3 == 0)
+    	end
     	s+= "\n"
     end
     def find(a)
@@ -359,6 +394,8 @@ public
 #				a24;
 #			when "25)"
 #				a25;
+			when "26)"
+				a26;
 		end
 	end
 end
