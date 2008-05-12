@@ -12,9 +12,9 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class Laba4Servlet extends HttpServlet {
+public class SkiServlet extends HttpServlet {
     
-	private String endpoint = "http://localhost:8080/axis/aipos4.jws";
+	private String endpoint = "http://localhost:8080/axis/ski.jws";
 	private PrintWriter log = null;
 	
 	public void init(ServletConfig config) throws ServletException {
@@ -47,11 +47,21 @@ public class Laba4Servlet extends HttpServlet {
         throws IOException, ServletException 
 	{
 		PrintWriter out = response.getWriter();
-		HttpSession session = request.getSession(true);
-		String adm = (String)session.getAttribute("in_system");
-		if (adm == null) 
-			redirect("/login.jsp", request, response);
-		doPost(request, response);
+		try{
+			Call call = makeCall();
+	
+			HttpSession session = request.getSession(true);
+
+			String[][] skills = ((String[][])call.invoke("get_datas", new Object[] {}));
+			session.setAttribute("skills", skills);
+			response.sendRedirect("/skills.jsp");
+
+		} catch(ServiceException e) 
+		{
+			e.printStackTrace(out);
+		}
+ 
+//		doPost(request, response);
 	}
 
         public void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -63,9 +73,8 @@ public class Laba4Servlet extends HttpServlet {
 		{
 			Call call = makeCall();
 			HttpSession session = request.getSession(false);
-			String adm = (String)session.getAttribute("in_system");
 
-			if(request.getParameter("action") != null && !request.getParameter("action").equals("addFunction"))
+/*			if(request.getParameter("action") != null && !request.getParameter("action").equals("addFunction"))
 			{
 //				if (request.getParameter("action").equals("showFunc"))
 //				{
@@ -120,19 +129,7 @@ public class Laba4Servlet extends HttpServlet {
 				}
 				response.sendRedirect("/functions.jsp");
 			}
-			
-
-			if( request != null && request.getParameter("action") != null && 
-			request.getParameter("action").equals("addFunction") && adm=="1" ) 
-			{
-				Object[][] param = new Object[1][3];
-				param[0][0] = (Object)request.getParameter("func");
-				param[0][1] = (Object)request.getParameter("args");
-				param[0][2] = (Object)request.getParameter("descr");
-				int ret = (Integer)call.invoke("addRow", param);
-				redirect("/index.jsp", request, response);
-			}
-			
+*/			
 		} catch(ServiceException e) {
 			e.printStackTrace(out);
 		}

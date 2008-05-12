@@ -1,0 +1,108 @@
+
+import java.io.*;
+import java.util.*;
+import java.sql.*;
+
+public class dep {
+	
+	private Connection c;
+	private Statement s;
+	private PrintWriter out;
+//	private int row_counter=0;
+	
+	public dep() throws Exception {
+		try 
+		{
+			out = new PrintWriter("dep.log");
+			Class.forName("com.mckoi.JDBCDriver").newInstance();
+			out.println("JDBC load");
+			String url = "jdbc:mckoi://localhost/:db.conf";
+			String username = "proff_login";
+			String password = "proff_passw";
+			c = DriverManager.getConnection(url, username, password);
+			s = c.createStatement();
+			out.println("getConnection - ok");
+//			row_counter = getRowCount().intValue();
+		}
+		finally 
+		{
+			out.close();
+		}
+	}
+	public Integer dep_size(Integer a)
+	{
+	    try
+	    {
+		ResultSet r = s.executeQuery("select * from departments");
+		int i = 0;
+		while ( r.next() )
+		    i++;
+		return new Integer(i);
+	    }
+	    catch(SQLException e)
+	    {
+		return new Integer(-1);
+	    }
+	}
+	public String[][] get_datas(Integer a)
+	{
+	    try
+	    {
+		int si = dep_size((Integer)1).intValue();
+    	        String[][] result = new String[si][2];
+		ResultSet r = s.executeQuery("select * from departments");
+		int i = 0;
+		while ( r.next() )
+		{
+		    String title = r.getString(1);
+		    String about = r.getString(2);
+		    result[i][0]=title;
+		    result[i][1]=about;
+		    i++;
+		}
+		return result;
+	    }
+	    catch(SQLException e)
+	    {
+		return new String[0][0];
+	    }
+	    
+	}
+	public Integer add_dep(String title, String about)
+	{
+		try
+		{
+		    s.executeQuery("insert into departments values( '"+ title + "', '" + about + "') ");
+			return new Integer(1);
+		}
+		catch( SQLException e )
+		{
+			return new Integer(-1);
+		}
+	}
+	public Integer del_dep(String title, String about)
+	{
+		try
+		{
+		    s.executeQuery("delete from departments where title LIKE '"+ title + "'");
+			return new Integer(1);
+		}
+		catch( SQLException e )
+		{
+			return new Integer(-1);
+		}
+	}
+	public Integer upd_dep(String old_title, String title, String about)
+	{
+		try
+		{
+		    s.executeQuery("update departments set title='"+title+"', about='"+about+"' where title='"+ old_title + "'");
+			return new Integer(1);
+		}
+		catch( SQLException e )
+		{
+			return new Integer(-1);
+		}
+	}
+
+}
