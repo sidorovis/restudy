@@ -182,7 +182,7 @@
      </rect>
     </property>
     <property name="text" >
-     <string>BuildGraphics</string>
+     <string>showResult</string>
     </property>
    </widget>
   </widget>

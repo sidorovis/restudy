@@ -1,7 +1,7 @@
 =begin
 ** Form generated from reading ui file 'main_window.ui'
 **
-** Created: Пт 12. сен 16:02:22 2008
+** Created: Вт 16. сен 14:17:10 2008
 **      by: Qt User Interface Compiler version 4.3.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -99,7 +99,7 @@ class Ui_MainWindow
     @speed.setText(Qt::Application.translate("MainWindow", "1000", nil, Qt::Application::UnicodeUTF8))
     @label_2.setText(Qt::Application.translate("MainWindow", "speed", nil, Qt::Application::UnicodeUTF8))
     @reset.setText(Qt::Application.translate("MainWindow", "Reset", nil, Qt::Application::UnicodeUTF8))
-    @buildGraph.setText(Qt::Application.translate("MainWindow", "BuildGraphics", nil, Qt::Application::UnicodeUTF8))
+    @buildGraph.setText(Qt::Application.translate("MainWindow", "showResult", nil, Qt::Application::UnicodeUTF8))
     end # retranslateUi
 
     def retranslate_ui(mainWindow)

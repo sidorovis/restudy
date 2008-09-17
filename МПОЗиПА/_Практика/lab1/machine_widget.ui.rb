@@ -1,7 +1,7 @@
 =begin
 ** Form generated from reading ui file 'machine_widget.ui'
 **
-** Created: Пт 12. сен 16:02:23 2008
+** Created: Вт 16. сен 14:17:11 2008
 **      by: Qt User Interface Compiler version 4.3.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
