@@ -6,6 +6,7 @@
 #include "lab3Dlg.h"
 #include ".\lab3dlg.h"
 #include "mmsystem.h"
+#include "windows.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -120,7 +121,13 @@ void Clab3Dlg::OnSysCommand(UINT nID, LPARAM lParam)
 // If you add a minimize button to your dialog, you will need the code below
 //  to draw the icon.  For MFC applications using the document/view model,
 //  this is automatically done for you by the framework.
-
+UINT MyThreadProc( LPVOID a)
+{
+	Clab3Dlg* n = (Clab3Dlg*)a;
+	n->openFile();
+	n->WavePlay();
+	return 0;
+}
 void Clab3Dlg::OnPaint() 
 {
 	if (IsIconic())
@@ -153,13 +160,18 @@ HCURSOR Clab3Dlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
 void Clab3Dlg::OnBnClickedButton1()
 {
 	log(" ");
 	log(" --- --- --- --- --- --- ---");
 	log(" ");
-	openFile();
-	WavePlay();
+
+	AfxBeginThread(MyThreadProc,this);
+
+//	openFile();
+//	WavePlay();
 }
 
 void Clab3Dlg::OnLbnSelchangeList1()
@@ -183,6 +195,7 @@ void Clab3Dlg::openFile()
 		
 		char fooBar[1024];
 		sprintf(fooBar,"%s",file_path);
+			// открытие файла только для чтения
 		HMMIO hmmio = mmioOpen(fooBar, NULL, MMIO_READ );
 		log("Opening file "+file_path);
 		if (!hmmio)
@@ -192,23 +205,34 @@ void Clab3Dlg::openFile()
 		}
 		MMCKINFO mckinfo;
 		MMCKINFO mckinfo_parent;
+			// конвертация в 4-ёх байтный код
 		mckinfo_parent.fccType = mmioFOURCC('W','A','V','E'); 
 
-		if (mmioDescend(hmmio, &mckinfo_parent, NULL, MMIO_FINDRIFF))
+		if (mmioDescend(hmmio, 
+				&mckinfo_parent,	// буффер для получения структуры заголовка
+				NULL, 
+				MMIO_FINDRIFF))		// искать заголовок типа RIFF 
 		{
 			log(" error while looking RIFF ");
-			mmioClose(hmmio, 0);
+			mmioClose(hmmio, 0);	// закрыть файл
 			return;
 		}
+			// конвертация в 4-ёх байтный код
 		mckinfo.ckid = mmioFOURCC('f','m','t',' ');
-		if (mmioDescend(hmmio, &mckinfo, &mckinfo_parent, MMIO_FINDCHUNK))
+		if (mmioDescend(hmmio,				
+						&mckinfo,			// буффер для получения структуры заголовка
+						&mckinfo_parent,	// место откуда начинать поиск
+						MMIO_FINDCHUNK))	// поиск идентификации блока (fmt)
 		{
 			log(" error while looking format WAV ");
 			mmioClose(hmmio, 0);
 			return;
 		}
 		
-		DWORD bytesRead = mmioRead(hmmio,(HPSTR)&PCMWaveFmtRecord,mckinfo.cksize);
+		DWORD bytesRead = mmioRead(hmmio,
+				(HPSTR)&PCMWaveFmtRecord,	// буффер для чтения данных
+				mckinfo.cksize				// количество байт которые требуется прочитать
+				);
 		
 		if (bytesRead <= 0)
 		{
@@ -218,21 +242,30 @@ void Clab3Dlg::openFile()
 		}
 
 		HWAVEOUT hWaveOut;
-		if (waveOutOpen(&hWaveOut, WAVE_MAPPER, 
-		(LPWAVEFORMATEX)&PCMWaveFmtRecord, NULL, NULL, WAVE_FORMAT_QUERY))
+		if (waveOutOpen(&hWaveOut,				// буффер для чтения данных
+						WAVE_MAPPER,			// открытие WAV формы аудио устройства
+						(LPWAVEFORMATEX)&PCMWaveFmtRecord, 
+												// WAV данные
+						NULL,					// call back функция
+						NULL,					// call back instance
+						WAVE_FORMAT_QUERY))		// запрос проверки может ли данный 
+														// девайс проиграть данный формат
 		{
 			log(" this file can't be played ");
 			mmioClose(hmmio, 0);
 			return ;
 		}
 		if (mmioAscend(hmmio, &mckinfo, 0))
+					// проблема работы с файлом (формат файла не соблюдён)
 		{
 			log("failed on return to RIFF");
 			mmioClose(hmmio, 0);
 			return ;
 		}
 		mckinfo.ckid = mmioFOURCC('d','a','t','a'); 
+					// поиск данных файла
 		if (mmioDescend (hmmio, &mckinfo, &mckinfo_parent, MMIO_FINDCHUNK))
+					// непосредственно вызов функции поиска
 		{
 			log("Не могу прочитать блок данных"); 
 			mmioClose(hmmio, 0); 
@@ -240,7 +273,9 @@ void Clab3Dlg::openFile()
 		}
 		
 		long lDataSize = mckinfo.cksize;
+					// поличество данных которые будем читать
 		HANDLE waveDataBlock = ::GlobalAlloc(GMEM_MOVEABLE, lDataSize);
+					// выделение памяти для данных медиа файла
 		if (waveDataBlock == NULL)
 		{
 			log("Ошибка выделения памяти");
@@ -249,11 +284,16 @@ void Clab3Dlg::openFile()
 		}
 
 		char* pWave = (char*)::GlobalLock(waveDataBlock); 
-		if (mmioRead(hmmio, (LPSTR)pWave, lDataSize) != lDataSize)
+					// занимание памяти для чтения музыкального содержимого файла
+		if (mmioRead(hmmio, 
+						(LPSTR)pWave,		// область куда читать данные
+						lDataSize			// максимально возможное количество читаемых данных
+						) 
+						!= lDataSize)		// если прочитали меньше чем было заявлено в заголовке
 		{
 			log("Ошибка чтения данных");
 			mmioClose(hmmio, 0);
-			::GlobalFree(waveDataBlock); 
+			::GlobalFree(waveDataBlock);	// очистка (освобождение) памяти
 			return ;
 		}
 
@@ -280,7 +320,12 @@ void Clab3Dlg::WavePlay()
 	log(_T("Открываем WAVE-устройство"));
 	
 	// открыть WAVE-устройство
-	MMRESULT ReturnCode = waveOutOpen (&hWaveOut, WAVE_MAPPER, (LPWAVEFORMATEX) &PCMWaveFmtRecord, NULL, NULL, CALLBACK_NULL);
+	MMRESULT ReturnCode = waveOutOpen (		&hWaveOut, 	// открытие устройства для проигрывания
+										  WAVE_MAPPER, 	// девайс должен быть для проигрывания WAV
+				   (LPWAVEFORMATEX) &PCMWaveFmtRecord, 	// тип структуры который будет передаваться
+												 NULL, 	// callback функция
+								   				 NULL, 	// callback instance 
+										CALLBACK_NULL);	// не требуется механизм callback
 	if (ReturnCode)
 	{
 		log("Ошибка при открытии WAVE-устройства");
@@ -289,8 +334,11 @@ void Clab3Dlg::WavePlay()
 
 	log(_T("Подготавливаем заголовок"));
 	
-	// Подготавливаем заголовок
-	ReturnCode = waveOutPrepareHeader(hWaveOut, &WaveHeader, sizeof(WaveHeader));
+	// Подготавливаем аудио заголовок
+	ReturnCode = waveOutPrepareHeader(hWaveOut,			// устройство
+									&WaveHeader,		// указатель на структуру которую требуется подготовить к 
+															// проигрыванию
+							  sizeof(WaveHeader));		// размер структуры
 	if (ReturnCode)
 	{
 		log("Ошибка при подготовке заголовка");
@@ -302,7 +350,9 @@ void Clab3Dlg::WavePlay()
 	log(_T("Выводим данные в WAVE-устройство"));
 
 	// Выводим данные в WAVE-устройство
-	ReturnCode = waveOutWrite(hWaveOut, &WaveHeader, sizeof(WaveHeader));
+	ReturnCode = waveOutWrite(hWaveOut, 	// девайс на котором играть
+							&WaveHeader, 	// заголовок указывающий на занные
+					sizeof(WaveHeader));	// размер заголовка
 	if (ReturnCode)
 	{
 		log("Ошибка записи в WAVE-устройство");
@@ -312,12 +362,14 @@ void Clab3Dlg::WavePlay()
 
 	// цикл до окончания воспроизведения
 	do {}
-	while (!(WaveHeader.dwFlags & WHDR_DONE));
+	while (!(WaveHeader.dwFlags & WHDR_DONE)); // пока есть данные читаем их (до конца файла)
 
 	log(_T("Возвращаем заголовок в исходное состояние"));
 
 	// Вернуть заголовок в исходное состояние
-	ReturnCode = waveOutUnprepareHeader(hWaveOut, &WaveHeader, sizeof(WaveHeader));
+	ReturnCode = waveOutUnprepareHeader(hWaveOut,	 // девайс на котором играть
+									&WaveHeader,	 // тип структуры  
+							sizeof(WaveHeader));	 // размер структуры
 	if (ReturnCode)
 	{
 		log("Ошибка при восстановлении заголовка");
@@ -337,6 +389,8 @@ void Clab3Dlg::WavePlay()
 		waveOutClose(hWaveOut);
 		return ;
 	}
-	return ;
 
+	::GlobalFree(WAVEFILE);	// очистка (освобождение) памяти
+
+	return ;
 }

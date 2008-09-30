@@ -1,0 +1,71 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" />
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuLines" >
+    <property name="title" >
+     <string>&amp;Lines</string>
+    </property>
+    <addaction name="actionADC" />
+    <addaction name="actionBrezenhem" />
+   </widget>
+   <widget class="QMenu" name="menuMain_Commands" >
+    <property name="title" >
+     <string>&amp;Main Commands</string>
+    </property>
+    <addaction name="actionClear_Field" />
+    <addaction name="actionDelete_last_draw_action" />
+   </widget>
+   <addaction name="menuMain_Commands" />
+   <addaction name="menuLines" />
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+  <action name="actionADC" >
+   <property name="text" >
+    <string>&amp;ADC</string>
+   </property>
+  </action>
+  <action name="actionBrezenhem" >
+   <property name="text" >
+    <string>&amp;Brezenhem</string>
+   </property>
+  </action>
+  <action name="action" >
+   <property name="text" >
+    <string>Delete Last Action</string>
+   </property>
+  </action>
+  <action name="actionClear_Field" >
+   <property name="text" >
+    <string>&amp;Clear Field</string>
+   </property>
+  </action>
+  <action name="actionDelete_last_draw_action" >
+   <property name="text" >
+    <string>&amp;Delete last draw action</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

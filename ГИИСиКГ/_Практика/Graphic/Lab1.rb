@@ -1,68 +1,139 @@
 require 'GraphWindow'
 
 class GraphWindow
-	def DrawAlgorythm()
-		x1,y1,x2,y2 = 3 , 5 , 8 , 10
-
-#		DrawADCLine( x1 , y1 , x2 , y2 )
-		DrawBrezenhemLine( x1 , y1 , x2 , y2 )
-	end
+	slots 'DrawADCLine()', 'justDrawADCLine()', 'DrawBrezenhemLine()', 'justDrawBrezenhemLine()'
+=begin
+	функция DrawLineGeneral реализует алгоритм генерации отразка в особых случаях (вертикальный, горизонтальный, под углом 45%)
+	входные параметры координаты начала x1, y1 и координаты конца отрезка x2, y2
+	выходные параметры логическая переменная: истинна - линия является особым случаем 
+=end
 	def DrawLineGeneral(x1,y1,x2,y2)
 		dx, dy, dop = x2 - x1, y2 - y1, 1
-		if dx == 0
+		if dx == 0							# случай отрисовки горизонтальной линии
 			x1, y1, x2, y2 = x2, y2, x1, y1 if y1 > y2		
 			(y1..y2).each { |i| DrawDot(x1,i) }
 			return true
 		end
-		if dy == 0
+		if dy == 0							# случай отрисовки вертикальной линии
 			x1, y1, x2, y2 = x2, y2, x1, y1 if x1 > x2		
 			(x1..x2).each { |i| DrawDot(i,y1) }
 			return true
 		end
-		if dx.abs == dy.abs
-			x1, y1, x2, y2 = x2, y2, x1, y1 if x1 > x2
-			dop = -1 if ( y1 > y2)
+		if dx.abs == dy.abs					# случай отрисовки линии под углом 45%
+			x1, y1, x2, y2 = x2, y2, x1, y1 if x1 > x2		# поворот координат для прохода от меньшего к большему
+			dop = -1 if ( y1 > y2 )
 			(x1..x2).each { |i| DrawDot(i, y1 + (i - x1)*dop ) }
 			return true
 		end
 		false
 	end
-	def DrawADCLine(x1,y1,x2,y2)
-		return if DrawLineGeneral(x1,y1,x2,y2)
+=begin
+	функция justDrawADCLine реализует алгоритм генерации отрезка алгоритмом ЦДА
+	входные параметры массив точек содержащих начало и конец отрезка
+	выходные параметры: нет
+=end
+	def justDrawADCLine(m)
+		x1, y1, x2, y2 = m[0][0], m[0][1], m[1][0], m[1][1]
+		puts "\t\t\tdrawADCLine  (#{x1}, #{y1})->(#{x2}, #{y2})"
+		puts "----------------------------------------"
+		return if DrawLineGeneral(x1,y1,x2,y2)			# проверка является ли линия особым случаем
 		dx, dy = x2 - x1, y2 - y1
-		if dx.abs > dy.abs
-			x1, y1, x2, y2 = x2, y2, x1, y1 if x1 > x2		
+		if dx.abs > dy.abs						# случай когда шаг идёт по оси X
+			x1, y1, x2, y2 = x2, y2, x1, y1 if x1 > x2		# поворот координат для прохода от меньшего к большему
+			dx, dy = x2 - x1, y2 - y1
 			dy /= dx.to_f
-			(x1..x2).each { |i| DrawDot( i , (y1 + dy*i + 0.5 ).to_i ) }
-		else
-			x1, y1, x2, y2 = x2, y2, x1, y1 if y1 > y2		
+			for i in ((x1..x2))
+				if y1 + dy*(i-x1) >= 0			# для точек с координатами y большими нуля
+					DrawDot( i , (y1 + dy*(i-x1) + 0.5 ).to_i )
+					puts " i = #{i}    x= #{i}     y= #{(y1 + dy*(i-x1))}   (x= #{i},     y= #{(y1 + dy*(i-x1) + 0.5 ).to_i})"
+				else							# иначе
+					DrawDot( i , (y1 + dy*(i-x1) - 0.5 ).to_i )
+					puts " i = #{i}    x= #{i}     y= #{(y1 + dy*(i-x1))}   (x= #{i},     y= #{(y1 + dy*(i-x1) - 0.5 ).to_i})"
+				end
+			end
+		else									# случай когда шаг идёт по оси Y
+			x1, y1, x2, y2 = x2, y2, x1, y1 if y1 > y2		# поворот координат для прохода от меньшего к большему
+			dx, dy = x2 - x1, y2 - y1
 			dx /= dy.to_f
-			(y1..y2).each { |i| DrawDot((x1 + dx*i + 0.5 ).to_i , i ) }
+			for i in (y1..y2)
+				if x1 + dx*(i-y1) >=0			# для точек с координатами x большими нуля
+					DrawDot((x1 + dx*(i-y1) + 0.5 ).to_i , i )
+					puts " i = #{i}    x= #{(x1 + dx*(i-y1))}     y= #{i}   (x= #{(x1 + dx*(i-y1) + 0.5 ).to_i}     y= #{i}) "
+				else							# иначе
+					DrawDot((x1 + dx*(i-y1) - 0.5 ).to_i , i )
+					puts " i = #{i}    x= #{(x1 + dx*(i-y1))}     y= #{i}   (x= #{(x1 + dx*(i-y1) - 0.5 ).to_i}     y= #{i}) "
+				end
+			end
 		end
+		puts "----------------------------------------"
 	end
-	def DrawBrezenhemLine(x1,y1,x2,y2)
-		return if DrawLineGeneral(x1,y1,x2,y2)
+=begin
+	функция justDrawBrezenhemLine реализует алгоритм генерации отрезка алгоритмом Брезенхема
+	входные параметры массив точек содержащих начало и конец отрезка
+	выходные параметры: нет
+=end
+	def justDrawBrezenhemLine(m)
+		x1, y1, x2, y2 = m[0][0], m[0][1], m[1][0], m[1][1]
+		puts "\t\t\tdrawBrezenhemLine  (#{x1}, #{y1})->(#{x2}, #{y2})"
+		puts "----------------------------------------"
+		return if DrawLineGeneral(x1,y1,x2,y2)			# проверка является ли линия особым случаем
 		dop, dx, dy = 1, x2 - x1, y2 - y1
-		if dx.abs > dy.abs
-			x1, y1, x2, y2 = x2, y2, x1, y1 if x1 > x2
-			dop *= -1 if y2 - y1 < 0
+		if dx.abs > dy.abs						# случай когда шаг идёт по оси X
+			x1, y1, x2, y2 = x2, y2, x1, y1 if x1 > x2		# поворот координат для прохода от меньшего к большему
+			dop *= -1 if y2 - y1 < 0			# вычисление суммируемого компонента для Y
 			e, de, y = 0, dy.abs, y1
 			for x in (x1..x2)
 				DrawDot(x,y)
+				puts " x= #{x}    y= #{y}       e= #{e}"
 				e += de
 				y, e = y + dop, e - dx.abs if 2 * e > dx.abs
-				print "x= #{x}, y= #{y} \n"
 			end
-		else
-			x1, y1, x2, y2 = x2, y2, x1, y1 if y1 > y2
-			dop *= -1 if x2 - x1 < 0
+		else									# случай когда шаг идёт по оси Y
+			x1, y1, x2, y2 = x2, y2, x1, y1 if y1 > y2		# поворот координат для прохода от меньшего к большему
+			dop *= -1 if x2 - x1 < 0			# вычисление суммируемого компонента для X
 			e, de, x = 0, dx.abs, x1
 			for y in (y1..y2)
 				DrawDot(x,y)
+				puts " x= #{x}    y= #{y}       e= #{e}"
 				e += de
 				x, e = x + dop, e - dy.abs if 2 * e > dy.abs
-				print "x= #{x}, y= #{y}, e= #{e} \n"
 			end
 		end
+		puts "----------------------------------------"
+	end
+	alias :old_connectActions :connectActions
+# функция обрабатывающая нажатие кнопки в меню
+	def StartWorkAction(mode)
+		@mode, @current_command = mode, 0
+		@mouse_clicked_to.clear
+		disconnect(self, SIGNAL('getMousePress()'));
+		connect( self, SIGNAL('getMousePress()'), self, SLOT( @commands[@mode][@current_command].id2name+'()' ) )
+	end
+	def DrawADCLine()
+		StartWorkAction :DrawADCLine
+	end
+# функция обрабатывающая нажатие кнопки в меню
+	def DrawBrezenhemLine()
+		StartWorkAction :DrawBrezenhemLine
+	end
+# функция подключения отрисовки алгоритмов
+	def connectActions
+		old_connectActions
+											# алгоритм действий пользователя\пк для отрисовки линии алгоритмом ЦДА
+		@commands[:DrawADCLine] = [
+			:saveMouse,
+			:saveMouse,
+			:justDrawADCLine
+									];
+
+											# алгоритм действий пользователя\пк для отрисовки линии алгоритмом Брезенхема
+		@commands[:DrawBrezenhemLine] = [
+			:saveMouse,
+			:saveMouse,
+			:justDrawBrezenhemLine
+									];
+
+		connect( @f.actionADC , SIGNAL('triggered()') , self , SLOT('DrawADCLine()') )
+		connect( @f.actionBrezenhem , SIGNAL('triggered()') , self , SLOT('DrawBrezenhemLine()') )
 	end
 end

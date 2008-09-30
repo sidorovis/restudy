@@ -31,6 +31,7 @@ protected:
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
+	friend UINT MyThreadProc( LPVOID pParam );
 	afx_msg void OnBnClickedButton1();
 	afx_msg void OnLbnSelchangeList1();
 	void openFile();
