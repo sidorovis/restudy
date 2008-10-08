@@ -36,8 +36,15 @@
     <addaction name="actionClear_Field" />
     <addaction name="actionDelete_last_draw_action" />
    </widget>
+   <widget class="QMenu" name="menu2_dimension_lines" >
+    <property name="title" >
+     <string>2 &amp;Dimension lines</string>
+    </property>
+    <addaction name="actionEllipse" />
+   </widget>
    <addaction name="menuMain_Commands" />
    <addaction name="menuLines" />
+   <addaction name="menu2_dimension_lines" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />
   <action name="actionADC" >
@@ -63,6 +70,11 @@
   <action name="actionDelete_last_draw_action" >
    <property name="text" >
     <string>&amp;Delete last draw action</string>
+   </property>
+  </action>
+  <action name="actionEllipse" >
+   <property name="text" >
+    <string>&amp;Ellipse</string>
    </property>
   </action>
  </widget>

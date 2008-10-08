@@ -55,7 +55,7 @@ protected
 	def DrawDot(x,y)
 		cx, cy = @X + @dx, @Y - @dy
 		@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0) )
-		@pa.drawRect(cx + (x)*@cell_size*@z ,cy - (y+1)*@cell_size*@z, @cell_size*@z , @cell_size*@z)
+		@pa.drawRect(cx + (x.round)*@cell_size*@z ,cy - (y.round+1)*@cell_size*@z, @cell_size*@z , @cell_size*@z)
 	end
 	def clearScreen()
 		@mouse_clicked_to.clear
@@ -96,16 +96,19 @@ public
 	about: draw algorythm template
 =end
 	def DrawAlgorythm()
-		puts "\n\n\n\n\n\n\n\t\t\t\t\t  Start Drawing"
-		puts "-----------------------------"
+#		dot_array = [ [0,0], [10,0], [0,15] ]
+#		justDrawEllipse(dot_array)
+
+		puts "\n\n\n\n\n\n\n\t\t\t\t\t  Start Drawing" if $log
+		puts "-----------------------------" if $log
 		for i in @mouse_clicked_to
 			DrawDot(i[0],i[1]);
 		end
 		for i in @drawCommands
 			self.send(i[0],i[1])
 		end
-		puts "\t\t\t\t\t  Stop Drawing"
-		puts "-----------------------------\n\n\n\n\n\n\n"
+		puts "\t\t\t\t\t  Stop Drawing" if $log
+		puts "-----------------------------\n\n\n\n\n\n\n" if $log
 	end
 	def connectActions()
 	end
@@ -118,13 +121,14 @@ public
 	end
 # сохраняет координаты мыши	в массив кликов
 	def saveMouse()
+		return unless @mode 
 		@mouse_clicked_to.push( [@mouse_x, @mouse_y] )
 		@current_command += 1
         clearCommandList() if ( !@mode || !@current_command || !@commands[@mode] || !@commands[@mode][@current_command] )
 		if ( @commands[@mode][@current_command] && @commands[@mode][@current_command] != :saveMouse )
-			disconnect(self, SIGNAL('getMousePress()'),self,SLOT(@commands[@mode][@current_command - 1]))
+			disconnect(self, SIGNAL('getMousePress()'),self, SLOT(:saveMouse) );
 			@drawCommands.push( [ @commands[@mode][@current_command], @mouse_clicked_to.clone ] )
-			@mouse_clicked_to.clear
+			clearCommandList()
 		end
 		repaint()
 	end

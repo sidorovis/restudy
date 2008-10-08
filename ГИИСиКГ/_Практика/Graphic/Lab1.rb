@@ -34,8 +34,8 @@ class GraphWindow
 =end
 	def justDrawADCLine(m)
 		x1, y1, x2, y2 = m[0][0], m[0][1], m[1][0], m[1][1]
-		puts "\t\t\tdrawADCLine  (#{x1}, #{y1})->(#{x2}, #{y2})"
-		puts "----------------------------------------"
+		puts "\t\t\tdrawADCLine  (#{x1}, #{y1})->(#{x2}, #{y2})" if $log
+		puts "----------------------------------------" if $log
 		return if DrawLineGeneral(x1,y1,x2,y2)			# проверка является ли линия особым случаем
 		dx, dy = x2 - x1, y2 - y1
 		if dx.abs > dy.abs						# случай когда шаг идёт по оси X
@@ -45,10 +45,10 @@ class GraphWindow
 			for i in ((x1..x2))
 				if y1 + dy*(i-x1) >= 0			# для точек с координатами y большими нуля
 					DrawDot( i , (y1 + dy*(i-x1) + 0.5 ).to_i )
-					puts " i = #{i}    x= #{i}     y= #{(y1 + dy*(i-x1))}   (x= #{i},     y= #{(y1 + dy*(i-x1) + 0.5 ).to_i})"
+					puts " i = #{i}    x= #{i}     y= #{(y1 + dy*(i-x1))}   (x= #{i},     y= #{(y1 + dy*(i-x1) + 0.5 ).to_i})" if $log
 				else							# иначе
 					DrawDot( i , (y1 + dy*(i-x1) - 0.5 ).to_i )
-					puts " i = #{i}    x= #{i}     y= #{(y1 + dy*(i-x1))}   (x= #{i},     y= #{(y1 + dy*(i-x1) - 0.5 ).to_i})"
+					puts " i = #{i}    x= #{i}     y= #{(y1 + dy*(i-x1))}   (x= #{i},     y= #{(y1 + dy*(i-x1) - 0.5 ).to_i})" if $log
 				end
 			end
 		else									# случай когда шаг идёт по оси Y
@@ -58,14 +58,14 @@ class GraphWindow
 			for i in (y1..y2)
 				if x1 + dx*(i-y1) >=0			# для точек с координатами x большими нуля
 					DrawDot((x1 + dx*(i-y1) + 0.5 ).to_i , i )
-					puts " i = #{i}    x= #{(x1 + dx*(i-y1))}     y= #{i}   (x= #{(x1 + dx*(i-y1) + 0.5 ).to_i}     y= #{i}) "
+					puts " i = #{i}    x= #{(x1 + dx*(i-y1))}     y= #{i}   (x= #{(x1 + dx*(i-y1) + 0.5 ).to_i}     y= #{i}) " if $log
 				else							# иначе
 					DrawDot((x1 + dx*(i-y1) - 0.5 ).to_i , i )
-					puts " i = #{i}    x= #{(x1 + dx*(i-y1))}     y= #{i}   (x= #{(x1 + dx*(i-y1) - 0.5 ).to_i}     y= #{i}) "
+					puts " i = #{i}    x= #{(x1 + dx*(i-y1))}     y= #{i}   (x= #{(x1 + dx*(i-y1) - 0.5 ).to_i}     y= #{i}) " if $log
 				end
 			end
 		end
-		puts "----------------------------------------"
+		puts "----------------------------------------" if $log
 	end
 =begin
 	функция justDrawBrezenhemLine реализует алгоритм генерации отрезка алгоритмом Брезенхема
@@ -74,8 +74,8 @@ class GraphWindow
 =end
 	def justDrawBrezenhemLine(m)
 		x1, y1, x2, y2 = m[0][0], m[0][1], m[1][0], m[1][1]
-		puts "\t\t\tdrawBrezenhemLine  (#{x1}, #{y1})->(#{x2}, #{y2})"
-		puts "----------------------------------------"
+		puts "\t\t\tdrawBrezenhemLine  (#{x1}, #{y1})->(#{x2}, #{y2})" if $log
+		puts "----------------------------------------" if $log
 		return if DrawLineGeneral(x1,y1,x2,y2)			# проверка является ли линия особым случаем
 		dop, dx, dy = 1, x2 - x1, y2 - y1
 		if dx.abs > dy.abs						# случай когда шаг идёт по оси X
@@ -84,7 +84,7 @@ class GraphWindow
 			e, de, y = 0, dy.abs, y1
 			for x in (x1..x2)
 				DrawDot(x,y)
-				puts " x= #{x}    y= #{y}       e= #{e}"
+				puts " x= #{x}    y= #{y}       e= #{e}" if $log
 				e += de
 				y, e = y + dop, e - dx.abs if 2 * e > dx.abs
 			end
@@ -94,14 +94,13 @@ class GraphWindow
 			e, de, x = 0, dx.abs, x1
 			for y in (y1..y2)
 				DrawDot(x,y)
-				puts " x= #{x}    y= #{y}       e= #{e}"
+				puts " x= #{x}    y= #{y}       e= #{e}" if $log
 				e += de
 				x, e = x + dop, e - dy.abs if 2 * e > dy.abs
 			end
 		end
-		puts "----------------------------------------"
+		puts "----------------------------------------" if $log
 	end
-	alias :old_connectActions :connectActions
 # функция обрабатывающая нажатие кнопки в меню
 	def StartWorkAction(mode)
 		@mode, @current_command = mode, 0
@@ -117,6 +116,7 @@ class GraphWindow
 		StartWorkAction :DrawBrezenhemLine
 	end
 # функция подключения отрисовки алгоритмов
+	alias :old_connectActions :connectActions
 	def connectActions
 		old_connectActions
 											# алгоритм действий пользователя\пк для отрисовки линии алгоритмом ЦДА
