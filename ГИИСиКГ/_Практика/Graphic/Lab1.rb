@@ -101,13 +101,6 @@ class GraphWindow
 		end
 		puts "----------------------------------------" if $log
 	end
-# функция обрабатывающая нажатие кнопки в меню
-	def StartWorkAction(mode)
-		@mode, @current_command = mode, 0
-		@mouse_clicked_to.clear
-		disconnect(self, SIGNAL('getMousePress()'));
-		connect( self, SIGNAL('getMousePress()'), self, SLOT( @commands[@mode][@current_command].id2name+'()' ) )
-	end
 	def DrawADCLine()
 		StartWorkAction :DrawADCLine
 	end

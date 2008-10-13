@@ -12,6 +12,7 @@ class GraphWindow
 		(( (((tx-x0)*1.0) **2)/(r1**2)+(((ty-y0)*1.0)**2)/(r2**2) ) - 1).abs
 	end
 	def DrawMirroredDot(x,y,x0,y0)
+		print " x= #{x}     y= #{y}  \n";
 		DrawDot(x,y)
 		DrawDot(x  ,y0 - ( y - y0))
 		DrawDot(x0 - (x - x0) ,y )
@@ -24,11 +25,9 @@ class GraphWindow
 		m1,m2,m3 = Array.new, Array.new, Array.new
 		r1 = len(x0,y0,x1,y1)
 		r2 = len(x0,y0,x2,y2)
-		alpha = Math::atan2(y1-y0,x1-x0)
-		puts alpha
-		print " a = ",r1,"   b = ",r2,"\n"  if $log
+		print " a = ",r1,"   b = ",r2,"\n" # if $log
 		x = x0
-		y = y0 + r2
+		y = (y0 + r2).to_i
 		DrawMirroredDot(x,y,x0,y0)
 		while (y > y0)
 			d1 = f(x+1, x0, y, y0, r1, r2)
@@ -50,9 +49,9 @@ class GraphWindow
 	end
 
 	def DrawEllipse()
-		def self.f(tx,x0,ty,y0,r1,r2)
-			(( (((tx-x0)*1.0) **2)/(r1**2)+(((ty-y0)*1.0)**2)/(r2**2) ) - 1).abs
-		end
+#		def self.f(tx,x0,ty,y0,r1,r2)
+#			(( (((tx-x0)*1.0) **2)/(r1**2)+(((ty-y0)*1.0)**2)/(r2**2) ) - 1).abs
+#		end
 		StartWorkAction :DrawEllipse
 	end
 

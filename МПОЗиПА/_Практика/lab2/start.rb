@@ -13,9 +13,9 @@ $t_equ = 1
 $m = 10
 $q = 10
 
-$with_p = 6
-$with_n = 6
-$with_r = 6
+$with_p, $with_n, $with_r = 6, 6, 6 
+$with_p, $with_n, $with_r = 30, 30, 30
+
 
 $n_min, $n_max = 1 , 100
 $r_min, $r_max = $p_min, $p_max
@@ -26,7 +26,7 @@ mw.setMinimumSize 600, 600
 mw.setMaximumSize 600, 600
 #																			Ky(r), E(r)
 
-$p_min, $p_max = 1 , 30
+$p_min, $p_max = 1 , 50
 $n = $with_n
 
 $dot_a_ky_r_fix_n = Hash.new
@@ -36,7 +36,8 @@ for p in $p_min..$p_max
 	$p = p
 	a , b = ArrayGenerator()
 	c1, time1, timeN, rang, lsredn, lsum = a.my_op(b)
-	$r = rang / 800
+	rf = rang if !rf
+	$r = rang / rf
 	$dot_a_ky_r_fix_n[$r] = time1*1.0 / timeN
 	$dot_a_e_r_fix_n[$r] = time1*1.0 / timeN / $n
 	$dot_a_d_r_fix_n[$r] = rang*1.0 * (lsum / lsredn)
@@ -45,8 +46,8 @@ for p in $p_min..$p_max
 end
 
 def mw.paintEvent(e)
-	x = 20
-	y = 40
+	x = 10
+	y = 10
 	p = Qt::Painter.new( self )
 										# X, Y, lines drawing
 	x_c, y_c = 10, 590

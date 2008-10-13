@@ -117,28 +117,39 @@ public
 		@mouse_clicked_to.clear()
 		@current_command = 0
 		@mode = nil
-		disconnect(self, SIGNAL('getMousePress()'));
+		self.disconnect(SIGNAL('getMousePress()'));
+#		puts 'ccl '+@mouse_clicked_to.size.to_s
 	end
 # сохраняет координаты мыши	в массив кликов
 	def saveMouse()
-		return unless @mode 
+		return unless @mode
 		@mouse_clicked_to.push( [@mouse_x, @mouse_y] )
 		@current_command += 1
         clearCommandList() if ( !@mode || !@current_command || !@commands[@mode] || !@commands[@mode][@current_command] )
 		if ( @commands[@mode][@current_command] && @commands[@mode][@current_command] != :saveMouse )
-			disconnect(self, SIGNAL('getMousePress()'),self, SLOT(:saveMouse) );
 			@drawCommands.push( [ @commands[@mode][@current_command], @mouse_clicked_to.clone ] )
 			clearCommandList()
 		end
 		repaint()
+#		puts 'sm '+@mouse_clicked_to.size.to_s
 	end
 	def mouseReleaseEvent(e)
 		@mouse_x, @mouse_y = e.x, e.y
 		translateMousePress()
+#		puts "mouse pressed"
 		emit getMousePress()
 	end
 	def translateMousePress()
 		x, y = ( (@mouse_x - @X - @dx +0.5)*1.0/(@z*@cell_size) ), ( (@Y - @dy  - @mouse_y -0.5)*1.0/(@z*@cell_size) )
 		@mouse_x, @mouse_y = x.floor, y.floor
 	end
+# функция обрабатывающая нажатие кнопки в меню
+	def StartWorkAction(mode)
+		@mode, @current_command = mode, 0
+		@mouse_clicked_to.clear
+		self.disconnect(SIGNAL('getMousePress()'));
+		connect( self, SIGNAL('getMousePress()'), self, SLOT( @commands[@mode][@current_command].id2name+'()' ) )
+#		puts 'swa '+@mouse_clicked_to.size.to_s
+	end
+
 end
