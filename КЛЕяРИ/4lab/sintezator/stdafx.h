@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 #include <windows.h>
 #include <mmsystem.h>
 #include <tchar.h>
