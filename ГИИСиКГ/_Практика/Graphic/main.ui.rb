@@ -1,7 +1,7 @@
 =begin
 ** Form generated from reading ui file 'main.ui'
 **
-** Created: Ср 1. окт 16:00:59 2008
+** Created: Вт 14. окт 12:40:22 2008
 **      by: Qt User Interface Compiler version 4.3.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -16,6 +16,7 @@ class Ui_MainWindow
     attr_reader :actionClear_Field
     attr_reader :actionDelete_last_draw_action
     attr_reader :actionEllipse
+    attr_reader :actionDraw2Pow
     attr_reader :centralwidget
     attr_reader :menubar
     attr_reader :menuLines
@@ -37,6 +38,8 @@ class Ui_MainWindow
     @actionDelete_last_draw_action.setObjectName("actionDelete_last_draw_action")
     @actionEllipse = Qt::Action.new(mainWindow)
     @actionEllipse.setObjectName("actionEllipse")
+    @actionDraw2Pow = Qt::Action.new(mainWindow)
+    @actionDraw2Pow.setObjectName("actionDraw2Pow")
     @centralwidget = Qt::Widget.new(mainWindow)
     @centralwidget.setObjectName("centralwidget")
     mainWindow.setCentralWidget(@centralwidget)
@@ -62,6 +65,7 @@ class Ui_MainWindow
     @menuMain_Commands.addAction(@actionClear_Field)
     @menuMain_Commands.addAction(@actionDelete_last_draw_action)
     @menu2_dimension_lines.addAction(@actionEllipse)
+    @menu2_dimension_lines.addAction(@actionDraw2Pow)
 
     retranslateUi(mainWindow)
 
@@ -85,6 +89,7 @@ class Ui_MainWindow
     @actionClear_Field.setText(Qt::Application.translate("MainWindow", "&Clear Field", nil, Qt::Application::UnicodeUTF8))
     @actionDelete_last_draw_action.setText(Qt::Application.translate("MainWindow", "&Delete last draw action", nil, Qt::Application::UnicodeUTF8))
     @actionEllipse.setText(Qt::Application.translate("MainWindow", "&Ellipse", nil, Qt::Application::UnicodeUTF8))
+    @actionDraw2Pow.setText(Qt::Application.translate("MainWindow", "Draw2Pow", nil, Qt::Application::UnicodeUTF8))
     @menuLines.setTitle(Qt::Application.translate("MainWindow", "&Lines", nil, Qt::Application::UnicodeUTF8))
     @menuMain_Commands.setTitle(Qt::Application.translate("MainWindow", "&Main Commands", nil, Qt::Application::UnicodeUTF8))
     @menu2_dimension_lines.setTitle(Qt::Application.translate("MainWindow", "2 &Dimension lines", nil, Qt::Application::UnicodeUTF8))

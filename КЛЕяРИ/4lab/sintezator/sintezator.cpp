@@ -3,9 +3,9 @@
 
 #include <stdlib.h>
 #include "stdafx.h"
-#using <mscorlib.dll>
+//#using <mscorlib.dll>
 
-using namespace System;
+//using namespace System;
 using namespace std;
 
 	HANDLE WAVEFILE;
@@ -97,21 +97,21 @@ public:
 	void playSound(int i)
 	{
 		string file_path;
-		if (i < size() - 1 && data[i+1] == '_')
+		if (i < data.size() - 1 && data[i+1] == '_')
             file_path = string("base\\")+data[i]+"_.wav";
 		else
 			file_path = string("base\\")+data[i]+".wav";
 		cout << file_path << endl;
 		double proc = 0.8;
 		if ( does_bv(i) )
-			proc = 0.7;
+			proc = 0.4;
 		if (::openFile(file_path,proc))
 			::WavePlay();
 	}
 };
 
 
-int _tmain()
+int main()
 {
 	int i;
     ifstream inp("input.txt");
@@ -134,7 +134,7 @@ int _tmain()
 			text[0].run_y_gl();
 
 
-	for (int i = 0 ; i < (int)text.size() - 1 ; i++)
+	for (i = 0 ; i < (int)text.size() - 1 ; i++)
 	{
 		if (text[i].does_oa(0) && text[i + 1].does_eya(0))
 		{
@@ -143,10 +143,10 @@ int _tmain()
 		if (text[i].does_bv(0) && text[i + 1].does_eya(0))
 		{
 			text[i].make_();
-			text[i+1].run_eya2oa();
+//			text[i+1].run_eya2oa();
 		}
 	}
-	for (int i = 0 ; i < (int)text.size() ; i++)
+	for (i = 0 ; i < (int)text.size() ; i++)
 	{
 		text[i].play();
 	}
