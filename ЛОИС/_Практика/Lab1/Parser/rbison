@@ -515,4 +515,4 @@ EOF
 end
 
 tabc.close
-File.delete("rbison.#{$$}_tab.c") unless $debug
+# File.delete("rbison.#{$$}_tab.c") unless $debug
