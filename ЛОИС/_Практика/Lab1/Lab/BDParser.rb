@@ -60,9 +60,6 @@ class BDParser
             		@to_predicate = PredicateTerm.new( to_predicate[0], to_predicate[1] )
     	end
     end
-    #ifndef YYLTYPE
-    #define YYLTYPE yyltype
-    #endif
     ## Parser declarations end
 
     YYFINAL = 49

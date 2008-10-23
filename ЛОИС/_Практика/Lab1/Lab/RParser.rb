@@ -25,6 +25,7 @@ class RParser
     	@targets = Array.new
     end
     class Target
+    	attr_reader :name, :params
     	def to_s
     		"Target: '"+@name+"' with '"+@params.join("', '")+"'"
     	end
@@ -32,7 +33,6 @@ class RParser
     		@name, @params = name, params
     	end
     end
-    #ifndef YYLTYPE
     ## Parser declarations end
 
     YYFINAL = 23
@@ -78,8 +78,8 @@ class RParser
      4,     0,     4,     0,     3,     0
     ]
     YYRLINE = [ 0,
-    31,    32,    35,    39,    41,    46,    54,    56,    61,    62,
-    66,    67,    71,    75,    79
+    32,    33,    36,    40,    42,    47,    56,    58,    63,    64,
+    68,    69,    73,    77,    81
     ]
     YYTNAME = [ "$","error","$undefined.","SMALL_STR",
 "BIG_STR","ENTER_S","END_S","ZAP","RULE_NEXT","DOT_ZAP","DOT","QUESTION","input",

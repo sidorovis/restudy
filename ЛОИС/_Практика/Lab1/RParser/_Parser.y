@@ -4,8 +4,9 @@ def init_data
 	@targets = Array.new
 end
 class Target
+	attr_reader :name, :params
 	def to_s
-		puts "Target: '"+@name+"' with '"+@params.join("', '")+"'"
+		"Target: '"+@name+"' with '"+@params.join("', '")+"'"
 	end
 	def initialize( name, params )
 		@name, @params = name, params

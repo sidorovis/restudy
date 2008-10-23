@@ -4,4 +4,5 @@ s(P,Q).
 s(R,T).
 Q(a,b).
 P(f,g).
+P(c,v).
 T(X,Y) <- P(Y,X).
