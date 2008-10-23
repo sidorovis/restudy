@@ -31,9 +31,9 @@ puts "}"
 request_parser = RParser.new
 request_parser.init_data
 
-print " ?- "
-input_str = gets.chomp
-l.yyin = input_str
+#print " ?- "
+#input_str = gets.chomp
+l.yyin = File.open("question.txt", "r") # input_str
 begin
 	request_parser.yyparse(l)
 rescue RParser::ParseError
