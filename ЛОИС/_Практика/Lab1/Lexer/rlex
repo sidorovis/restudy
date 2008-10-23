@@ -235,7 +235,8 @@ def mk_lex2()
                      state = :START
                      next
                   when YY_END_OF_BUFFER + INITIAL + 1
-                     return 0
+ # sidorovis changes: returning -1 on EOF
+                     return [-1, nil]
 EOT
    $smark.each { |m|
    $fp.print <<EOT
@@ -324,9 +325,10 @@ EOT
             when "File"
                input = @yyin.read(num_to_read)
             when "String"
-               input = @yyin
+ # sidorovis: correcly working with a strings
+               input, @yyin = @yyin, ""
             when "Array"
-               input = @yyin.to_s
+               input, @yyin = @yyin.to_s, ""
          end
          if input == nil
             @yy_n_chars = 0
@@ -569,7 +571,7 @@ inp.close
 # exchange @ by {RA}
 rl.gsub!(/\@/, "{RA}")
 
-# write the code to temporay file for lex
+# write the code to temporary file for lex
 tmpfile = "temp.#{$$}.l"
 tmp = File.open(tmpfile, "w")
 tmp.write(rl)
@@ -577,6 +579,7 @@ tmp.close
 
 # let lex compile this code to tmpfile.c
 %x{lex #{$insensitive ? "-i" : nil} -o#{tmpfile}.c #{tmpfile}}
+#%x{wine lex #{$insensitive ? "-i" : nil} -o#{tmpfile}.c #{tmpfile}}
 #File.delete(tmpfile)
 
 # generiere output ruby code
@@ -795,5 +798,5 @@ tmp.each_line { |line|
 }
 
 # remove lex output file
-File.delete(tmpfile + ".c")
+#File.delete(tmpfile + ".c")
 $fp.close

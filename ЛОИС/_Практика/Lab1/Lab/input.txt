@@ -1,1 +1,7 @@
-R(R,T)
+s(a,f).
+s(b,g).
+s(P,Q).
+s(R,T).
+Q(a,b).
+P(f,g).
+T(X,Y) <- P(Y,X).
