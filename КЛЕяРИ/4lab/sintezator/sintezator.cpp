@@ -28,7 +28,7 @@ public:
 	{
 		if (a >= 'À' && a <= 'ß')
 			a = a - 'À' + 'à';
-		if (a == ' ')
+		if (a == ' ' || a == '\n')
 			data = string("") + "_";
 		else
 			data = string("")+ a;
@@ -50,7 +50,7 @@ public:
 	}
 	bool does_bv(int i)
 	{
-		if (!does_oa(i) && !does_eya(i) && data[i] != 'ü' && data[i] != 'ú' && data[i] != 'é')
+		if (!does_oa(i) && !does_eya(i) && data[i] != 'ü' && data[i] != 'ú' && data[i] != 'é' && data[i] != '_')
 			return true;
 		return false;
 	}
@@ -104,19 +104,25 @@ public:
 		cout << file_path << endl;
 		double proc = 0.8;
 		if ( does_bv(i) )
-			proc = 0.4;
+			proc = 0.8;
 		if (::openFile(file_path,proc))
 			::WavePlay();
 	}
+	string make_str()
+	{
+		return data;
+	}
 };
 
+vector<MChar> text;
+map<string,string> sound_base;
+vector<string> sounds;
+int i;
 
-int main()
+void read_text()
 {
-	int i;
-    ifstream inp("input.txt");
+	ifstream inp("input.txt");
 	char buffer[1024];
-	vector<MChar> text;
 	while ( !inp.eof() )
 	{	
 		inp.getline(buffer,1024);
@@ -129,27 +135,101 @@ int main()
 		}
 	}
 	cout << "Text size: "<< text.size() << endl;
-	if (text.size() > 0)
-		if (text[0].does_eya(0))
-			text[0].run_y_gl();
+	inp.close();
+}
 
+bool read_file_base()
+{
+	ifstream inp("sound_base.txt");
+	char buffer[1024];
+	while ( !inp.eof() )
+	{	
+		inp.getline(buffer,1024);
+		string foobar = buffer;
+		if (foobar.length() < 2)
+			continue;
+		int place = foobar.find("|");
+		if (place == -1)
+			return false;
+		string word = foobar.substr(0,place);
+		string sound = foobar.substr(place+1,foobar.length() - place-1);
+		sound_base[word]=sound;
+	}
+	cout << "Word->sound base register:" << sound_base.size() << " pairs." << endl;
+	return true;
+}
+bool read_base()
+{
+	WIN32_FIND_DATA winFileData;
+	HANDLE hFile;
+	char szPath[MAX_PATH];
+	i = 0;
+	if(GetCurrentDirectory(sizeof(szPath),szPath))
+	{
+		lstrcat(szPath,"\\base\\*.wav");
+		hFile = FindFirstFile(szPath,&winFileData);
+		if (hFile!=INVALID_HANDLE_VALUE)
+		{
+			do 
+			{
+				i++;
+				sounds.push_back( winFileData.cFileName );
+			}
+			while
+			( FindNextFile( hFile , &winFileData ) != 0 );
+			FindClose(hFile);
+		}
+	}
+	if (i < 52)
+		return false;
+	cout << "We read " << i << " sound records." << endl;
+	return true;
+}
+
+void do_algo()
+{
+	if (text.size() > 0)
+	if (text[0].does_eya(0))
+		text[0].run_y_gl();
 
 	for (i = 0 ; i < (int)text.size() - 1 ; i++)
 	{
-		if (text[i].does_oa(0) && text[i + 1].does_eya(0))
+		if (text[i].does_eya(0) && (text[i + 1].does_eya(0) || text[i + 1].does_oa(0) ))
 		{
 			text[i+1].run_y_gl();
 		}
-		if (text[i].does_bv(0) && text[i + 1].does_eya(0))
+		if (text[i].does_bv(0) && (text[i + 1].does_eya(0) || text[i+1].data[0] == 'è'  || text[i+1].data[0] == 'ü' ))
 		{
 			text[i].make_();
-//			text[i+1].run_eya2oa();
+			if (text[i + 1].does_eya(0))
+				text[i+1].run_eya2oa();
 		}
 	}
+	string full_string = "";
 	for (i = 0 ; i < (int)text.size() ; i++)
 	{
-		text[i].play();
+		full_string+=text[i].make_str();
 	}
+	MessageBox(NULL,full_string.c_str(),"",NULL);
+	cout << (LPCSTR)full_string.c_str() << endl;
+//	for (i = 0 ; i < (int)text.size() ; i++)
+//	{
+//		text[i].play();
+//	}
+
+}
+int main()
+{
+	if (!read_file_base())
+	{
+		cout << "Database incorrect" << endl;
+		return 1;
+	}
+	
+	read_base();	
+	read_text();
+	do_algo();
+
 	return 0;
 }
 bool openFile(string file_path, double proc)

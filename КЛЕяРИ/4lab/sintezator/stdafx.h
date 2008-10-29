@@ -7,6 +7,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <map>
 #include <windows.h>
 #include <mmsystem.h>
 #include <tchar.h>

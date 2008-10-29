@@ -83,7 +83,15 @@ LINK32=link.exe
 # Name "sintezator - Win32 Debug"
 # Begin Source File
 
+SOURCE=.\input.txt
+# End Source File
+# Begin Source File
+
 SOURCE=.\sintezator.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\sound_base.txt
 # End Source File
 # End Target
 # End Project

@@ -27,6 +27,7 @@ class BDParser
     	@rules = Array.new
     end
     class Equal
+    	attr_reader :name, :left, :right
     	def to_s
     		"Equalitation: '"+@name+"' of ('"+@left+"' <=> '"+@right+"')"
     	end
