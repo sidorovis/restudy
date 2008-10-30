@@ -1,3 +1,4 @@
 s(P,Q).
 p(P,V).
-V(c,v).
+V(X,Y) <- R(Y,X).
+R(a,b).

@@ -36,6 +36,7 @@ class BDParser
     	end
     end
     class Fact
+    	attr_reader :name, :params
     	def to_s
     		"Fact: '"+@name+"' of ('"+@params.join("', '")+"')"
     	end
@@ -44,6 +45,7 @@ class BDParser
     	end
     end
     class PredicateTerm
+    	attr_reader :name, :params
     	def to_s
     		"'"+@name+"' ( '"+@params.join("', '") +"' )"
     	end
@@ -52,13 +54,14 @@ class BDParser
     	end
     end
     class Rule
-        	def to_s
-        		"Rule: get \""+@to_predicate.to_s+"\" from "+"\""+@from_predicates.join("\", \"")+"\""
-        	end
-        	def initialize(to_predicate, from_predicates_datas)
-            		@from_predicates = Array.new
-            		from_predicates_datas.each { |i| @from_predicates.push( PredicateTerm.new( i[0], i[1] ) ) }
-            		@to_predicate = PredicateTerm.new( to_predicate[0], to_predicate[1] )
+    	attr_reader :to_predicate, :from_predicates
+        def to_s
+        	"Rule: get \""+@to_predicate.to_s+"\" from "+"\""+@from_predicates.join("\", \"")+"\""
+        end
+        def initialize(to_predicate, from_predicates_datas)
+        	@from_predicates = Array.new
+        	from_predicates_datas.each { |i| @from_predicates.push( PredicateTerm.new( i[0], i[1] ) ) }
+        	@to_predicate = PredicateTerm.new( to_predicate[0], to_predicate[1] )
     	end
     end
     ## Parser declarations end
