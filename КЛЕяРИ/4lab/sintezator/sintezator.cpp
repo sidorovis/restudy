@@ -12,6 +12,30 @@ using namespace std;
 	PCMWAVEFORMAT PCMWaveFmtRecord;
 	WAVEHDR WaveHeader;
 
+string change_all_with_brackets(string& a, const string b)
+{
+	int place = 0;
+	place = a.find(b, place);
+	while (place > -1)
+	{
+		if ( place > 0 && a[ place - 1 ]=='|')
+		{
+			place++;
+		}
+		else
+		{
+//			char asd[128];
+//			sprintf(asd,"%d",place);
+//			MessageBox(NULL,(string("'")+a.c_str()+"'").c_str(),asd,NULL);
+			a.insert(place,"|");
+			a.insert(place+1+b.size(),"|");
+			place = 0;
+		}
+		place = a.find(b, place);
+	}
+	return a;
+}
+
 void log(string a)
 {
 //	cout << a << endl;
@@ -24,17 +48,26 @@ class MChar
 
 public:
 	string data;
+	bool charli;
 	MChar(char a)
 	{
+		charli = false;
 		if (a >= 'À' && a <= 'ß')
 			a = a - 'À' + 'à';
 		if (a == ' ' || a == '\n')
-			data = string("") + "_";
+			data = string("") + " ";
 		else
 			data = string("")+ a;
 	}
+	MChar(bool t,string a)
+	{
+		charli = true;
+		data = a;
+	}
 	bool does_oa(int i)
 	{
+		if (charli)
+			return false;
 		if ( data[i] == 'à' || data[i] == 'î' || data[i] == 'ó' ||
 			 data[i] == 'û' || data[i] == 'è' || data[i] == 'ý')
 			return true;
@@ -43,6 +76,8 @@ public:
 
 	bool does_eya(int i)
 	{
+		if (charli)
+			return false;
 		if ( data[i] == 'å' || data[i] == '¸' || 
 			 data[i] == 'þ' || data[i] == 'ÿ' )
 			return true;
@@ -50,12 +85,16 @@ public:
 	}
 	bool does_bv(int i)
 	{
+		if (charli)
+			return false;
 		if (!does_oa(i) && !does_eya(i) && data[i] != 'ü' && data[i] != 'ú' && data[i] != 'é' && data[i] != '_')
 			return true;
 		return false;
 	}
 	void run_eya2oa()
 	{
+		if (charli)
+			return ;
 		if (data[0] == 'å')
 			data[0] = 'ý';
 		if (data[0] == '¸')
@@ -67,6 +106,8 @@ public:
 	}
 	void run_y_gl()
 	{
+		if (charli)
+			return ;
 		if (data[0] == 'å')
 			data += 'ý';
 		if (data[0] == '¸')
@@ -79,43 +120,39 @@ public:
 	}
 	void make_()
 	{
+		if (charli)
+			return ;
+		if (data[0] == ' ')
+			return;
 		data += "_";
 	}
 	int size()
 	{
+		if (charli)
+			return data.size();
 		if (data.size() > 1 && data[1] != '_')
 			return 2;
 		return 1;
 	}
-	void play()
+	string make_str_4output()
 	{
-		for (int i = 0 ; i < size() ; i++)
-		{
-			playSound(i);
-		}
-	}
-	void playSound(int i)
-	{
-		string file_path;
-		if (i < data.size() - 1 && data[i+1] == '_')
-            file_path = string("base\\")+data[i]+"_.wav";
-		else
-			file_path = string("base\\")+data[i]+".wav";
-		cout << file_path << endl;
-		double proc = 0.8;
-		if ( does_bv(i) )
-			proc = 0.8;
-		if (::openFile(file_path,proc))
-			::WavePlay();
+		if (data[0] == '_')
+			return " ";
+		if (data == "ü")
+			return "";
+		return data;
 	}
 	string make_str()
 	{
+		if (data == "ü" || data == "ú")
+			return "";
 		return data;
 	}
 };
 
 vector<MChar> text;
 map<string,string> sound_base;
+map<string,string>::iterator si;
 vector<string> sounds;
 int i;
 
@@ -127,8 +164,22 @@ void read_text()
 	{	
 		inp.getline(buffer,1024);
 		string foobar = buffer;
-		for ( i = 0 ; i < (int)foobar.size(); i ++)
+
+		for ( si = sound_base.begin(); si != sound_base.end(); si++)
 		{
+			change_all_with_brackets(foobar,si->first);
+		}
+
+		for ( i = 0 ; i < (int)foobar.size(); i++)
+		{
+			if (foobar[i] == '|')
+			{
+				int place = i+1;
+				int place2 = foobar.find("|",place);
+				i = place2+1;
+
+				text.push_back(MChar(true, sound_base[ foobar.substr(place,place2-place) ] ));
+			}
 			if (foobar[i] == '\n')
 				foobar[i] = ' ';
 			text.push_back(MChar(foobar[i]));
@@ -173,49 +224,114 @@ bool read_base()
 			do 
 			{
 				i++;
-				sounds.push_back( winFileData.cFileName );
+				string filename = winFileData.cFileName;
+				filename = filename.substr(0,filename.find("."));
+				sounds.push_back( filename );
 			}
 			while
 			( FindNextFile( hFile , &winFileData ) != 0 );
 			FindClose(hFile);
 		}
 	}
+	for (i = 0 ; i < sounds.size() ; i++)
+		for (int u = i; u < sounds.size(); u++)
+			if (sounds[i].length() < sounds[u].length() )
+			{
+				string temp = sounds[i];
+				sounds[i] = sounds[u];
+				sounds[u] = temp;
+			}
 	if (i < 52)
 		return false;
 	cout << "We read " << i << " sound records." << endl;
 	return true;
 }
 
+void transfer(string& a, string b,int* c,int number);
+void playSound(int sound_number)
+{
+	string file_path;
+	file_path = string("base\\")+sounds[ sound_number ]+".wav";
+	double proc = 1;
+	if ( sounds[ sound_number ].length() ==1 )
+		proc = 0.8;
+	if ( sounds[ sound_number ].length() ==2 )
+		proc = 0.9;
+	if (::openFile(file_path,proc))
+		::WavePlay();
+}
 void do_algo()
 {
 	if (text.size() > 0)
 	if (text[0].does_eya(0))
 		text[0].run_y_gl();
 
-	for (i = 0 ; i < (int)text.size() - 1 ; i++)
-	{
-		if (text[i].does_eya(0) && (text[i + 1].does_eya(0) || text[i + 1].does_oa(0) ))
-		{
-			text[i+1].run_y_gl();
-		}
-		if (text[i].does_bv(0) && (text[i + 1].does_eya(0) || text[i+1].data[0] == 'è'  || text[i+1].data[0] == 'ü' ))
-		{
-			text[i].make_();
-			if (text[i + 1].does_eya(0))
-				text[i+1].run_eya2oa();
-		}
-	}
-	string full_string = "";
 	for (i = 0 ; i < (int)text.size() ; i++)
 	{
-		full_string+=text[i].make_str();
+		if ( i > 0 && text[i].does_eya(0) && (text[i - 1].does_eya(0) || text[i - 1].does_oa(0) || text[i-1].data=="_" ) )
+			text[i].run_y_gl();
+
+		if ( i > 0 && (text[i].does_eya(0) || text[i].data[0] == 'è'  || text[i].data[0] == 'ü' ) && text[i-1].does_bv(0))
+		{
+			text[i - 1].make_();
+			if (text[i].does_eya(0))
+				text[i].run_eya2oa();
+		}
 	}
-	MessageBox(NULL,full_string.c_str(),"",NULL);
-	cout << (LPCSTR)full_string.c_str() << endl;
-//	for (i = 0 ; i < (int)text.size() ; i++)
-//	{
-//		text[i].play();
-//	}
+	string output = "";
+	string full_sound = "";
+	for (i = 0 ; i < (int)text.size() ; i++)
+	{
+		output+=text[i].make_str_4output();
+		full_sound+=text[i].make_str();
+	}
+MessageBox(NULL,full_sound.c_str(),"",NULL);
+	int* c = new int[full_sound.size()+1];
+	int* sounds_stack = new int[full_sound.size()+1];
+	int st_size = 0;
+	for (i = 0; i < full_sound.size(); i++)
+		c[i]=-1;
+
+	for (i = 0 ; i < (int)sounds.size(); i++)
+	{
+		transfer(full_sound,sounds[i],c,i);
+	}
+
+	st_size = 1;
+	sounds_stack[0] = c[0];
+	for (i = 1 ; i < full_sound.size(); i++)
+	{
+		if (c[i] != sounds_stack[ st_size - 1])
+		{
+			sounds_stack[st_size]=c[i];
+			st_size++;
+		}
+	}
+	full_sound = "";
+	for (i = 0 ; i < st_size ; i ++)
+	{
+		playSound(sounds_stack[i]);
+	}
+
+	delete []c;
+	delete []sounds_stack;
+}
+
+void transfer(string& a, string b,int* c,int number)
+{
+
+	int place = a.find( b );
+	while ( place != -1 )
+	{
+		if ( c[ place ] == -1 )
+		{
+			for (int u = place ; u < place + b.size() ; u++)
+			{
+				c[ u ] = number;
+			}
+		}
+		place = a.find(b,place+1);
+	}
 
 }
 int main()
@@ -225,7 +341,6 @@ int main()
 		cout << "Database incorrect" << endl;
 		return 1;
 	}
-	
 	read_base();	
 	read_text();
 	do_algo();

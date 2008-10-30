@@ -2,6 +2,7 @@
 // or project specific include files that are used frequently, but
 // are changed infrequently
 //
+#pragma warning( disable : 4786 )
 
 #include <iostream>
 #include <fstream>
