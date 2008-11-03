@@ -1,24 +1,34 @@
-// This is the main project file for VC++ application project 
-// generated using an Application Wizard.
+/****************************************************************************************************
+*                                                                                                   *
+* 	приложение синтезатор речи.                                                                     *
+* 	возможности:                                                                                    *
+* 		: использует базу звуков состоящую минимум из 54 звуковых единиц (которую можно дополнять)  *
+* 		: использует базу преобразования текста в звуковые формы                                    *
+* 		: генерирует графическую форму звучания текстовой информации с помощью базы или             *
+*          используя некоторые правила русского языка                                               *
+* 		: вопроизводит получившийся звуковой отрезок                                                *
+*                                                                                                   * 
+****************************************************************************************************/
 
-	// 	приложение синтезатор речи.
-	// 	возможности:
-	// 		использует базу звуков состоящую минимум из 54 звуковых единиц (которую можно дополнять)
-	// 		использует базу преобразования текста в звуковые формы
-	// 		генерирует графическую форму звучания текстовой информации с помощью базы или используя некоторые правила русского языка
-	// 		вопроизводит получившийся звуковой отрезок
+
 
 #include <stdlib.h>
 #include "stdafx.h"
-//#using <mscorlib.dll>
-
-//using namespace System;
 using namespace std;
 
+// данные для проигрывания звуковых файлов формата wav
 	HANDLE WAVEFILE;
 	PCMWAVEFORMAT PCMWaveFmtRecord;
 	WAVEHDR WaveHeader;
-// функция позволяющая находить те участки текста для которых мы знаем звучание (в базе)
+/* 
+    функция change_all_with_brackets
+    позволяет находить участок текста для которого мы знаем звучание (по элементам базе)
+    входные параметры:
+        строка содержащая входной текст
+        строка содержащее элемент базы преобразование символы->звук
+    выходные параметры:
+        строковое представление отделяющее найденный звуковой отрезок   
+*/
 string change_all_with_brackets(string& a, const string b)
 {
 	int place = 0;
@@ -38,22 +48,44 @@ string change_all_with_brackets(string& a, const string b)
 	return a;
 }
 
+/* 
+    функция log
+    отладочная функция
+    входные параметры:
+        строка для отображения на экране
+*/
 void log(string a)
 {
 //	cout << a << endl;
 }
+/* 
+    функции openFile, WavePlay
+    проигрывание звукового файла wav
+    входные параметры:
+        строка содержащая путь к файлу
+        дробное число характеризующее процент от звукового сигнала который требуется проиграть 
+               (считая сначала).
+*/
+
 bool openFile(string file_path, double proc);
 void WavePlay();
 
-// класс конечной единицы звука
+/* 
+    класс MChar
+    содержит звуковые единицы
+*/
 class MChar
 {
 
 public:
-	// данные
+	// данные хранящие звуковое представление
 	string data;
-	// единственный ли символ
+	// метка, является ли это отдельным символом
 	bool charli;
+/* 
+    конструктор класса
+*/
+
 	MChar(char a)
 	{
 		charli = false;
@@ -64,12 +96,18 @@ public:
 		else
 			data = string("")+ a;
 	}
+/* 
+    конструктор класса
+*/
 	MChar(bool t,string a)
 	{
 		charli = true;
 		data = a;
 	}
-	// проверка на о а у ы и э гласные
+/* 
+    функция does_oa
+    проверка на о а у ы и э гласные
+*/
 	bool does_oa(int i)
 	{
 		if (charli)
@@ -79,8 +117,10 @@ public:
 			return true;
 		return false;
 	}
-
-	// проверка на е ё ю я гласные
+/* 
+    функция does_eya
+    проверка на е ё ю я гласные
+*/
 	bool does_eya(int i)
 	{
 		if (charli)
@@ -90,7 +130,10 @@ public:
 			return true;
 		return false;
 	}
-	// 	проверка на согласные
+/* 
+    функция does_bv
+    проверка на согласные
+*/
 	bool does_bv(int i)
 	{
 		if (charli)
@@ -99,7 +142,10 @@ public:
 			return true;
 		return false;
 	}
-	// 	изменить мягкую гласную на соответствующую ей твёрдую
+/* 
+    функция run_eya2oa
+    изменить мягкую гласную на соответствующую ей твёрдую
+*/
 	void run_eya2oa()
 	{
 		if (charli)
@@ -113,7 +159,10 @@ public:
 		if (data[0] == 'я')
 			data[0] = 'а';
 	}
-	// 	перевод мягкой согласной в два звука й и твёрдую соответствующую гласную
+/* 
+    функция run_y_gl
+    перевод мягкой согласной в два звука й и твёрдую соответствующую гласную
+*/
 	void run_y_gl()
 	{
 		if (charli)
@@ -128,7 +177,10 @@ public:
 			data += 'а';
 		data[0] = 'й';
 	}
-	// 	сделать звук мягким (!применять только для согласных)
+/* 
+    функция make_
+    сделать звук мягким (!применять только для согласных)
+*/
 	void make_()
 	{
 		if (charli)
@@ -137,7 +189,10 @@ public:
 			return;
 		data += "_";
 	}
-	// 	количество символов использованныхдля обозначения звука
+/* 
+    функция make_
+    количество символов использованныхдля обозначения звука
+*/
 	int size()
 	{
 		if (charli)
@@ -146,7 +201,10 @@ public:
 			return 2;
 		return 1;
 	}
-	// 	перевести в строку отображающую звук
+/* 
+    функция make_
+    перевести в строку отображающую звук
+*/
 	string make_str_4output()
 	{
 		if (data[0] == '_')
@@ -155,7 +213,10 @@ public:
 			return "";
 		return data;
 	}
-	// 	перевести в строку отображающую звучание звук (старый вариант)
+/* 
+    функция make_
+    перевести в строку отображающую звучание звук (старый вариант)
+*/
 	string make_str()
 	{
 		if (data == "ь" || data == "ъ")
@@ -163,7 +224,7 @@ public:
 		return data;
 	}
 };
-	// 	введённый текст как набор звуковых единиц
+// 	введённый текст как набор звуковых единиц
 vector<MChar> text;
 	// 	база данных известных звучаний (написание -> звучание)
 map<string,string> sound_base;
@@ -171,7 +232,12 @@ map<string,string>::iterator si;
 	// 	массив существующих звуковых единиц
 vector<string> sounds;
 int i;
-	// 	функция читает текст из входного файла и составляет его звучание как по базе так и по правилам русскаого языка
+
+/* 	
+    функция читает текст из входного файла и 
+        составляет его звучание как по базе так и 
+        по правилам русскаого языка
+*/
 void read_text()
 {
 	ifstream inp("input.txt");
@@ -200,11 +266,15 @@ void read_text()
 				foobar[i] = ' ';
 			text.push_back(MChar(foobar[i]));
 		}
+        text.push_back(MChar('\n'));
 	}
 	cout << "Text size: "<< text.size() << endl;
 	inp.close();
 }
-	// 	читаем базу сопоставления кусков текста и соответствующим им кусков звуков
+/*
+    читаем базу сопоставления кусков текста и 
+          соответствующим им кусков звуков
+*/
 bool read_file_base()
 {
 	ifstream inp("sound_base.txt");
@@ -225,7 +295,9 @@ bool read_file_base()
 	cout << "Word->sound base register:" << sound_base.size() << " pairs." << endl;
 	return true;
 }
-	// 	читаем базу существующих звуков
+/* 	
+    читаем базу существующих звуков
+*/
 bool read_base()
 {
 	WIN32_FIND_DATA winFileData;
@@ -264,9 +336,12 @@ bool read_base()
 	return true;
 }
 
-void transfer(string& a, string b,int* c,int number);
+void transfer(string& a, string b,int* c,int* c_block,int number);
 
-	// 	функция проиграывает звук по существующей базе звуковых отрезков (передаётся номер звукового отрезка)
+/*
+    функция проиграывает звук по существующей базе звуковых отрезков 
+        (передаётся номер звукового отрезка)
+*/
 void playSound(int sound_number)
 {
 	if (sound_number == -1)
@@ -275,18 +350,22 @@ void playSound(int sound_number)
 	file_path = string("base\\")+sounds[ sound_number ]+".wav";
 	double proc = 1;
 	if ( sounds[ sound_number ].length() ==1 )
-		proc = 0.9;
+		proc = 1;
 	if ( sounds[ sound_number ].length() ==2 )
-		proc = 0.9;
+		proc = 1;
 	if ( sounds[ sound_number ] == " " )
 		proc = 0.5;
 	if ( sounds[ sound_number ] == "," )
 		proc = 0.005;
+    cout << file_path << endl;
 	if (::openFile(file_path,proc))
 		::WavePlay();
 }
-	// 	алгоритм преобразования текста в звуковое отображение (выдаётся на экран сообщением)
-	// 	также проигрывает получившуюся строку
+/*
+    алгоритм преобразования текста в звуковое отображение 
+          (выдаётся на экран сообщением)
+	также проигрывает получившуюся строку
+*/
 void do_algo()
 {
 	// 	если первый звук мягкий гласный делаем из него й+твёрдый
@@ -298,12 +377,14 @@ void do_algo()
 	for (i = 0 ; i < (int)text.size() ; i++)
 	{
 	// 	если мягкая гласная идёт после другой гласной делаем из неё й+твёрдую
-		if ( i > 0 && text[i].does_eya(0) && (text[i - 1].does_eya(0) || text[i - 1].does_oa(0) || text[i-1].data==" " ) )
+//        string temp1 = text[i].data;
+//        string temp2;
+		if ( i > 0 && text[i].does_eya(0) && (text[i - 1].does_eya(0) || text[i - 1].does_oa(0) || text[i-1].data==" " || text[i-1].data=="ь" || text[i-1].data[ text[i-1].data.length()-1 ] == '_'  ) )
 			text[i].run_y_gl();
 
 	// 	если после согласной идёт смягчающий звук то смягчаем звук
 	// 	если требуется то мягкую гласную преобразовываем в твёрдую
-		if ( i > 0 && (text[i].does_eya(0) || text[i].data[0] == 'и'  || text[i].data[0] == 'ь' ) && text[i-1].does_bv(0))
+        if ( i > 0 && (text[i].does_eya(0) || text[i].data[0] == 'и'  || text[i].data[0] == 'ь' ) && text[i-1].does_bv(0))
 		{
 			text[i - 1].make_();
 			if (text[i].does_eya(0))
@@ -319,9 +400,11 @@ void do_algo()
 		full_sound+=text[i].make_str();
 	}
 	// 	выдадим сообщение со строкой отображающей звуки
-	MessageBox(NULL,full_sound.c_str(),"",NULL);
+//	MessageBox(NULL,full_sound.c_str(),"",NULL);
 	// 	массив для присваивания каждому символу звука номер звуковой единицы его озвучивающий
 	int* c = new int[full_sound.size()+1];
+	// 	массив для присваивания каждому символу звука номер звуковой единицы его озвучивающий
+	int* c_block = new int[full_sound.size()+1];
 	// 	массив содержащий звуковые единицы в том порядке в котором требуется их произносить по тексту
 	int* sounds_stack = new int[full_sound.size()+1];
 	int st_size = 0;
@@ -331,14 +414,14 @@ void do_algo()
 
 	for (i = 0 ; i < (int)sounds.size(); i++)
 	{
-		transfer(full_sound,sounds[i],c,i);
+		transfer(full_sound,sounds[i],c,c_block,i);
 	}
 
 	st_size = 1;
 	sounds_stack[0] = c[0];
 	for (i = 1 ; i < full_sound.size(); i++)
 	{
-		if (c[i] != sounds_stack[ st_size - 1])
+		if (c[i] != sounds_stack[ st_size - 1] || c_block[i] != c_block[i - 1])
 		{
 			sounds_stack[st_size]=c[i];
 			st_size++;
@@ -353,27 +436,35 @@ void do_algo()
 
 	// 	очистка памяти
 	delete []c;
+	delete []c_block;
 	delete []sounds_stack;
 }
-	// 	функция подставляющая звуковые единицы на слова
-void transfer(string& a, string b,int* c,int number)
+/* 	
+    функция подставляющая звуковые единицы на слова
+*/
+void transfer(string& a, string b,int* c,int* c_block,int number)
 {
 
 	int place = a.find( b );
+    int i=0;
 	while ( place != -1 )
 	{
 		if ( c[ place ] == -1 )
-		{
+        {
 			for (int u = place ; u < place + b.size() ; u++)
 			{
 				c[ u ] = number;
+                c_block[u] = i;
 			}
-		}
+            i++;
+        }
 		place = a.find(b,place+1);
 	}
 
 }
-	// 	вход в программу
+/*
+    вход в программу
+*/
 int main()
 {
 	if (!read_file_base())
@@ -384,10 +475,11 @@ int main()
 	read_base();	
 	read_text();
 	do_algo();
-
 	return 0;
 }
-	// 	функция открывающая звуковой файл
+/*
+    функция открывающая звуковой файл
+*/
 bool openFile(string file_path, double proc)
 {
 		char fooBar[1024];
@@ -504,7 +596,9 @@ bool openFile(string file_path, double proc)
 		WAVEFILE = waveDataBlock;
 	return true;
 }
-	// 	функция проигрывающая звуковой файл
+/*
+    функция проигрывающая звуковой файл
+*/
 void WavePlay()
 {
 	// ссылка на WAVE-устройство

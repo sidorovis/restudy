@@ -1,19 +1,21 @@
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005 Tools for Applications
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sintezator", "sintezator.vcproj", "{F95E462D-14F5-4D9A-8A11-F6B6B1252B0F}"
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sintezator", "sintezator.vcproj", "{D0619977-CBCF-4495-A0AA-007298984F68}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
 EndProject
 Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Default = Debug|Default
-		Release|Default = Release|Default
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F95E462D-14F5-4D9A-8A11-F6B6B1252B0F}.Debug|Default.ActiveCfg = Debug|Win32
-		{F95E462D-14F5-4D9A-8A11-F6B6B1252B0F}.Debug|Default.Build.0 = Debug|Win32
-		{F95E462D-14F5-4D9A-8A11-F6B6B1252B0F}.Release|Default.ActiveCfg = Release|Win32
-		{F95E462D-14F5-4D9A-8A11-F6B6B1252B0F}.Release|Default.Build.0 = Release|Win32
+	GlobalSection(ProjectConfiguration) = postSolution
+		{D0619977-CBCF-4495-A0AA-007298984F68}.Debug.ActiveCfg = Debug|Win32
+		{D0619977-CBCF-4495-A0AA-007298984F68}.Debug.Build.0 = Debug|Win32
+		{D0619977-CBCF-4495-A0AA-007298984F68}.Release.ActiveCfg = Release|Win32
+		{D0619977-CBCF-4495-A0AA-007298984F68}.Release.Build.0 = Release|Win32
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
 	EndGlobalSection
 EndGlobal
