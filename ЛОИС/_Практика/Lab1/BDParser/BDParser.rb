@@ -26,6 +26,7 @@ class BDParser
     	@rules = Array.new
     end
     class Equal
+    	attr_reader :name, :left, :right
     	def to_s
     		"Equalitation: '"+@name+"' of ('"+@left+"' <=> '"+@right+"')"
     	end
@@ -34,6 +35,7 @@ class BDParser
     	end
     end
     class Fact
+    	attr_reader :name, :params
     	def to_s
     		"Fact: '"+@name+"' of ('"+@params.join("', '")+"')"
     	end
@@ -42,6 +44,7 @@ class BDParser
     	end
     end
     class PredicateTerm
+    	attr_reader :name, :params
     	def to_s
     		"'"+@name+"' ( '"+@params.join("', '") +"' )"
     	end
@@ -50,6 +53,7 @@ class BDParser
     	end
     end
     class Rule
+    	attr_reader :to_predicate, :from_predicates
         	def to_s
         		"Rule: get \""+@to_predicate.to_s+"\" from "+"\""+@from_predicates.join("\", \"")+"\""
         	end
@@ -109,9 +113,9 @@ class BDParser
      3,     0,     3,     0
     ]
     YYRLINE = [ 0,
-    59,    60,    63,    64,    67,    68,    72,    79,    87,    89,
-    94,    99,   103,   111,   113,   118,   120,   125,   132,   134,
-   139,   140,   144,   148,   152,   156
+    63,    64,    67,    68,    71,    72,    76,    83,    91,    93,
+    98,   103,   107,   115,   117,   122,   124,   129,   136,   138,
+   143,   144,   148,   152,   156,   160
     ]
     YYTNAME = [ "$","error","$undefined.","SMALL_STR",
 "BIG_STR","ENTER_S","END_S","ZAP","RULE_NEXT","DOT_ZAP","DOT","QUESTION","input",
