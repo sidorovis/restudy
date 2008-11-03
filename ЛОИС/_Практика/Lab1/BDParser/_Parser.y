@@ -6,6 +6,7 @@ def init_data
 	@rules = Array.new
 end
 class Equal
+	attr_reader :name, :left, :right
 	def to_s
 		"Equalitation: '"+@name+"' of ('"+@left+"' <=> '"+@right+"')"
 	end
@@ -14,6 +15,7 @@ class Equal
 	end
 end
 class Fact
+	attr_reader :name, :params
 	def to_s
 		"Fact: '"+@name+"' of ('"+@params.join("', '")+"')"
 	end
@@ -22,6 +24,7 @@ class Fact
 	end
 end
 class PredicateTerm
+	attr_reader :name, :params
 	def to_s
 		"'"+@name+"' ( '"+@params.join("', '") +"' )"
 	end
@@ -30,6 +33,7 @@ class PredicateTerm
 	end
 end
 class Rule
+	attr_reader :to_predicate, :from_predicates
     	def to_s
     		"Rule: get \""+@to_predicate.to_s+"\" from "+"\""+@from_predicates.join("\", \"")+"\""
     	end

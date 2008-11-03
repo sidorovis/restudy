@@ -40,7 +40,7 @@ if ARGV.length != 1
    print USAGE
    exit 1
 end
-inpname = ARGV[0] + ".rl"
+inpname = ARGV[0] + ""
 
 def mk_lex1()
    $fp.print <<EOT
@@ -580,7 +580,7 @@ tmp.close
 # let lex compile this code to tmpfile.c
 %x{lex #{$insensitive ? "-i" : nil} -o#{tmpfile}.c #{tmpfile}}
 #%x{wine lex #{$insensitive ? "-i" : nil} -o#{tmpfile}.c #{tmpfile}}
-#File.delete(tmpfile)
+File.delete(tmpfile)
 
 # generiere output ruby code
 # generate ruby code from tmpfile.c
@@ -798,5 +798,6 @@ tmp.each_line { |line|
 }
 
 # remove lex output file
-#File.delete(tmpfile + ".c")
 $fp.close
+tmp.close
+File.delete(tmpfile + ".c")
