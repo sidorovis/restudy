@@ -18,8 +18,7 @@ class BDParser
     DOT_ZAP = 264
     DOT = 265
     QUESTION = 266
-	
-    ## Parser declarations begin
+    ## Parser declarations begin	
     attr_reader :equals, :facts, :rules
     def init_data
     	@equals = Array.new
@@ -60,20 +59,6 @@ class BDParser
             		@to_predicate = PredicateTerm.new( to_predicate[0], to_predicate[1] )
     	end
     end
-    #ifndef YYLTYPE
-    typedef
-      struct yyltype
-        {
-          int timestamp;
-          int first_line;
-          int first_column;
-          int last_line;
-          int last_column;
-          char *text;
-       }
-      yyltype;
-    #define YYLTYPE yyltype
-    #endif
     ## Parser declarations end
 
     YYFINAL = 49
@@ -224,8 +209,6 @@ class BDParser
 		    end
 		    begin
 			yychar, yylval = lexer.yylex
-# sidorovis debug info
-#			puts yylval
 		    rescue LexError
 			raise ParseError, "lex error"
 		    end

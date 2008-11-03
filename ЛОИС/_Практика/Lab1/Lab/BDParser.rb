@@ -18,8 +18,7 @@ class BDParser
     DOT_ZAP = 264
     DOT = 265
     QUESTION = 266
-	
-    ## Parser declarations begin
+    ## Parser declarations begin	
     attr_reader :equals, :facts, :rules
     def init_data
     	@equals = Array.new
@@ -27,7 +26,6 @@ class BDParser
     	@rules = Array.new
     end
     class Equal
-    	attr_reader :name, :left, :right
     	def to_s
     		"Equalitation: '"+@name+"' of ('"+@left+"' <=> '"+@right+"')"
     	end
@@ -36,7 +34,6 @@ class BDParser
     	end
     end
     class Fact
-    	attr_reader :name, :params
     	def to_s
     		"Fact: '"+@name+"' of ('"+@params.join("', '")+"')"
     	end
@@ -45,7 +42,6 @@ class BDParser
     	end
     end
     class PredicateTerm
-    	attr_reader :name, :params
     	def to_s
     		"'"+@name+"' ( '"+@params.join("', '") +"' )"
     	end
@@ -54,14 +50,13 @@ class BDParser
     	end
     end
     class Rule
-    	attr_reader :to_predicate, :from_predicates
-        def to_s
-        	"Rule: get \""+@to_predicate.to_s+"\" from "+"\""+@from_predicates.join("\", \"")+"\""
-        end
-        def initialize(to_predicate, from_predicates_datas)
-        	@from_predicates = Array.new
-        	from_predicates_datas.each { |i| @from_predicates.push( PredicateTerm.new( i[0], i[1] ) ) }
-        	@to_predicate = PredicateTerm.new( to_predicate[0], to_predicate[1] )
+        	def to_s
+        		"Rule: get \""+@to_predicate.to_s+"\" from "+"\""+@from_predicates.join("\", \"")+"\""
+        	end
+        	def initialize(to_predicate, from_predicates_datas)
+            		@from_predicates = Array.new
+            		from_predicates_datas.each { |i| @from_predicates.push( PredicateTerm.new( i[0], i[1] ) ) }
+            		@to_predicate = PredicateTerm.new( to_predicate[0], to_predicate[1] )
     	end
     end
     ## Parser declarations end
@@ -214,8 +209,6 @@ class BDParser
 		    end
 		    begin
 			yychar, yylval = lexer.yylex
-# sidorovis debug info
-#			puts yylval
 		    rescue LexError
 			raise ParseError, "lex error"
 		    end

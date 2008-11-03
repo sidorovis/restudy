@@ -18,8 +18,7 @@ class RParser
     DOT_ZAP = 264
     DOT = 265
     QUESTION = 266
-	
-    ## Parser declarations begin
+    ## Parser declarations begin	
     attr_reader :targets
     def init_data
     	@targets = Array.new
@@ -33,20 +32,6 @@ class RParser
     		@name, @params = name, params
     	end
     end
-    #ifndef YYLTYPE
-    typedef
-      struct yyltype
-        {
-          int timestamp;
-          int first_line;
-          int first_column;
-          int last_line;
-          int last_column;
-          char *text;
-       }
-      yyltype;
-    #define YYLTYPE yyltype
-    #endif
     ## Parser declarations end
 
     YYFINAL = 23
@@ -177,8 +162,6 @@ class RParser
 		    end
 		    begin
 			yychar, yylval = lexer.yylex
-# sidorovis debug info
-#			puts yylval
 		    rescue LexError
 			raise ParseError, "lex error"
 		    end

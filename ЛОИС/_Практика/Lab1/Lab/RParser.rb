@@ -18,8 +18,7 @@ class RParser
     DOT_ZAP = 264
     DOT = 265
     QUESTION = 266
-	
-    ## Parser declarations begin
+    ## Parser declarations begin	
     attr_reader :targets
     def init_data
     	@targets = Array.new
@@ -163,8 +162,6 @@ class RParser
 		    end
 		    begin
 			yychar, yylval = lexer.yylex
-# sidorovis debug info
-#			puts yylval
 		    rescue LexError
 			raise ParseError, "lex error"
 		    end
