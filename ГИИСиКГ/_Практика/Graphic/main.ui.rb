@@ -1,7 +1,7 @@
 =begin
 ** Form generated from reading ui file 'main.ui'
 **
-** Created: Вт 14. окт 12:40:22 2008
+** Created: Вт 4. ноя 19:32:55 2008
 **      by: Qt User Interface Compiler version 4.3.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -17,11 +17,20 @@ class Ui_MainWindow
     attr_reader :actionDelete_last_draw_action
     attr_reader :actionEllipse
     attr_reader :actionDraw2Pow
+    attr_reader :actionPaint_spline
+    attr_reader :actionErmit
+    attr_reader :actionBspline
+    attr_reader :actionCreateConvex
+    attr_reader :actionSimpleFill
+    attr_reader :actionStackFill
+    attr_reader :actionMixFill
     attr_reader :centralwidget
     attr_reader :menubar
     attr_reader :menuLines
     attr_reader :menuMain_Commands
     attr_reader :menu2_dimension_lines
+    attr_reader :menuSplines
+    attr_reader :menuFill
     attr_reader :statusbar
 
     def setupUi(mainWindow)
@@ -40,6 +49,20 @@ class Ui_MainWindow
     @actionEllipse.setObjectName("actionEllipse")
     @actionDraw2Pow = Qt::Action.new(mainWindow)
     @actionDraw2Pow.setObjectName("actionDraw2Pow")
+    @actionPaint_spline = Qt::Action.new(mainWindow)
+    @actionPaint_spline.setObjectName("actionPaint_spline")
+    @actionErmit = Qt::Action.new(mainWindow)
+    @actionErmit.setObjectName("actionErmit")
+    @actionBspline = Qt::Action.new(mainWindow)
+    @actionBspline.setObjectName("actionBspline")
+    @actionCreateConvex = Qt::Action.new(mainWindow)
+    @actionCreateConvex.setObjectName("actionCreateConvex")
+    @actionSimpleFill = Qt::Action.new(mainWindow)
+    @actionSimpleFill.setObjectName("actionSimpleFill")
+    @actionStackFill = Qt::Action.new(mainWindow)
+    @actionStackFill.setObjectName("actionStackFill")
+    @actionMixFill = Qt::Action.new(mainWindow)
+    @actionMixFill.setObjectName("actionMixFill")
     @centralwidget = Qt::Widget.new(mainWindow)
     @centralwidget.setObjectName("centralwidget")
     mainWindow.setCentralWidget(@centralwidget)
@@ -52,6 +75,10 @@ class Ui_MainWindow
     @menuMain_Commands.setObjectName("menuMain_Commands")
     @menu2_dimension_lines = Qt::Menu.new(@menubar)
     @menu2_dimension_lines.setObjectName("menu2_dimension_lines")
+    @menuSplines = Qt::Menu.new(@menubar)
+    @menuSplines.setObjectName("menuSplines")
+    @menuFill = Qt::Menu.new(@menubar)
+    @menuFill.setObjectName("menuFill")
     mainWindow.setMenuBar(@menubar)
     @statusbar = Qt::StatusBar.new(mainWindow)
     @statusbar.setObjectName("statusbar")
@@ -60,12 +87,20 @@ class Ui_MainWindow
     @menubar.addAction(@menuMain_Commands.menuAction())
     @menubar.addAction(@menuLines.menuAction())
     @menubar.addAction(@menu2_dimension_lines.menuAction())
+    @menubar.addAction(@menuSplines.menuAction())
+    @menubar.addAction(@menuFill.menuAction())
     @menuLines.addAction(@actionADC)
     @menuLines.addAction(@actionBrezenhem)
     @menuMain_Commands.addAction(@actionClear_Field)
-    @menuMain_Commands.addAction(@actionDelete_last_draw_action)
     @menu2_dimension_lines.addAction(@actionEllipse)
     @menu2_dimension_lines.addAction(@actionDraw2Pow)
+    @menuSplines.addAction(@actionErmit)
+    @menuSplines.addAction(@actionPaint_spline)
+    @menuSplines.addAction(@actionBspline)
+    @menuFill.addAction(@actionCreateConvex)
+    @menuFill.addAction(@actionSimpleFill)
+    @menuFill.addAction(@actionStackFill)
+    @menuFill.addAction(@actionMixFill)
 
     retranslateUi(mainWindow)
 
@@ -90,9 +125,18 @@ class Ui_MainWindow
     @actionDelete_last_draw_action.setText(Qt::Application.translate("MainWindow", "&Delete last draw action", nil, Qt::Application::UnicodeUTF8))
     @actionEllipse.setText(Qt::Application.translate("MainWindow", "&Ellipse", nil, Qt::Application::UnicodeUTF8))
     @actionDraw2Pow.setText(Qt::Application.translate("MainWindow", "Draw2Pow", nil, Qt::Application::UnicodeUTF8))
+    @actionPaint_spline.setText(Qt::Application.translate("MainWindow", "B&ezie", nil, Qt::Application::UnicodeUTF8))
+    @actionErmit.setText(Qt::Application.translate("MainWindow", "&Ermit", nil, Qt::Application::UnicodeUTF8))
+    @actionBspline.setText(Qt::Application.translate("MainWindow", "&Bspline", nil, Qt::Application::UnicodeUTF8))
+    @actionCreateConvex.setText(Qt::Application.translate("MainWindow", "CreateConvex", nil, Qt::Application::UnicodeUTF8))
+    @actionSimpleFill.setText(Qt::Application.translate("MainWindow", "SimpleFill", nil, Qt::Application::UnicodeUTF8))
+    @actionStackFill.setText(Qt::Application.translate("MainWindow", "StackFill", nil, Qt::Application::UnicodeUTF8))
+    @actionMixFill.setText(Qt::Application.translate("MainWindow", "MixFill", nil, Qt::Application::UnicodeUTF8))
     @menuLines.setTitle(Qt::Application.translate("MainWindow", "&Lines", nil, Qt::Application::UnicodeUTF8))
     @menuMain_Commands.setTitle(Qt::Application.translate("MainWindow", "&Main Commands", nil, Qt::Application::UnicodeUTF8))
     @menu2_dimension_lines.setTitle(Qt::Application.translate("MainWindow", "2 &Dimension lines", nil, Qt::Application::UnicodeUTF8))
+    @menuSplines.setTitle(Qt::Application.translate("MainWindow", "&Splines", nil, Qt::Application::UnicodeUTF8))
+    @menuFill.setTitle(Qt::Application.translate("MainWindow", "Fill", nil, Qt::Application::UnicodeUTF8))
     end # retranslateUi
 
     def retranslate_ui(mainWindow)

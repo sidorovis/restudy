@@ -34,7 +34,6 @@
      <string>&amp;Main Commands</string>
     </property>
     <addaction name="actionClear_Field" />
-    <addaction name="actionDelete_last_draw_action" />
    </widget>
    <widget class="QMenu" name="menu2_dimension_lines" >
     <property name="title" >
@@ -43,9 +42,28 @@
     <addaction name="actionEllipse" />
     <addaction name="actionDraw2Pow" />
    </widget>
+   <widget class="QMenu" name="menuSplines" >
+    <property name="title" >
+     <string>&amp;Splines</string>
+    </property>
+    <addaction name="actionErmit" />
+    <addaction name="actionPaint_spline" />
+    <addaction name="actionBspline" />
+   </widget>
+   <widget class="QMenu" name="menuFill" >
+    <property name="title" >
+     <string>Fill</string>
+    </property>
+    <addaction name="actionCreateConvex" />
+    <addaction name="actionSimpleFill" />
+    <addaction name="actionStackFill" />
+    <addaction name="actionMixFill" />
+   </widget>
    <addaction name="menuMain_Commands" />
    <addaction name="menuLines" />
    <addaction name="menu2_dimension_lines" />
+   <addaction name="menuSplines" />
+   <addaction name="menuFill" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />
   <action name="actionADC" >
@@ -81,6 +99,41 @@
   <action name="actionDraw2Pow" >
    <property name="text" >
     <string>Draw2Pow</string>
+   </property>
+  </action>
+  <action name="actionPaint_spline" >
+   <property name="text" >
+    <string>B&amp;ezie</string>
+   </property>
+  </action>
+  <action name="actionErmit" >
+   <property name="text" >
+    <string>&amp;Ermit</string>
+   </property>
+  </action>
+  <action name="actionBspline" >
+   <property name="text" >
+    <string>&amp;Bspline</string>
+   </property>
+  </action>
+  <action name="actionCreateConvex" >
+   <property name="text" >
+    <string>CreateConvex</string>
+   </property>
+  </action>
+  <action name="actionSimpleFill" >
+   <property name="text" >
+    <string>SimpleFill</string>
+   </property>
+  </action>
+  <action name="actionStackFill" >
+   <property name="text" >
+    <string>StackFill</string>
+   </property>
+  </action>
+  <action name="actionMixFill" >
+   <property name="text" >
+    <string>MixFill</string>
    </property>
   </action>
  </widget>

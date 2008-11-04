@@ -1,4 +1,4 @@
-require 'Lab2'
+require 'Lab4'
 
 X = 400
 Y = 300

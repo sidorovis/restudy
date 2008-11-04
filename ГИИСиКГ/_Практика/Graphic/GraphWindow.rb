@@ -4,8 +4,8 @@ require 'main.ui'
 	about: This class create field to draw dots on monitor emulation field
 =end
 class GraphWindow < Qt::MainWindow
-	signals 'getMousePress()'
-	slots 'translateMousePress()', 'saveMouse()', 'clearScreen()', 'deleteLastAction()'
+	signals 'getMousePress()', 'endMouseClicking()'
+	slots 'translateMousePress()', 'saveWhileMouse()', 'saveMouse()', 'clearScreen()', 'deleteLastAction()', 'stopWhileMouse()'
 protected
 =begin
 	method paintEvent
@@ -53,6 +53,13 @@ protected
 	about: draw dot on field
 =end
 	def DrawDot(x,y)
+		@field[[x.round,y.round]] = true
+#		justDrawDot(x,y)
+#		cx, cy = @X + @dx, @Y - @dy
+#		@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0) )
+#		@pa.drawRect(cx + (x.round)*@cell_size*@z ,cy - (y.round+1)*@cell_size*@z, @cell_size*@z , @cell_size*@z)
+	end
+	def justDrawDot(x,y)
 		cx, cy = @X + @dx, @Y - @dy
 		@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0) )
 		@pa.drawRect(cx + (x.round)*@cell_size*@z ,cy - (y.round+1)*@cell_size*@z, @cell_size*@z , @cell_size*@z)
@@ -60,6 +67,7 @@ protected
 	def clearScreen()
 		@mouse_clicked_to.clear
 		@drawCommands.clear
+		@field.clear
 		repaint
 	end
 	def deleteLastAction()
@@ -75,6 +83,8 @@ public
 =end
 	def initialize( half_size_x = 400, half_size_y = 300 )
 		super()
+		@field = Hash.new
+		@f_y = Array.new
 		@f = Ui::MainWindow.new()
 		@f.setupUi( self );
 		@mouse_clicked_to = Array.new
@@ -83,7 +93,7 @@ public
 		@current_command = nil
 		@mode = nil
 		connect( @f.actionClear_Field, SIGNAL('triggered()'), self, SLOT('clearScreen()') )
-		connect( @f.actionDelete_last_draw_action, SIGNAL('triggered()'), self, SLOT('deleteLastAction()') )
+		connect( self, SIGNAL('endMouseClicking()'), self, SLOT('stopWhileMouse()') )
 		connectActions()
 		@X, @Y, @dx, @dy, @z, @cell_size, @pa = half_size_x, half_size_y, 0, 0, 1, 15, nil
 		setWindowTitle("Graphics")
@@ -102,11 +112,13 @@ public
 		puts "\n\n\n\n\n\n\n\t\t\t\t\t  Start Drawing" if $log
 		puts "-----------------------------" if $log
 		for i in @mouse_clicked_to
-			DrawDot(i[0],i[1]);
+			justDrawDot(i[0],i[1]);
 		end
 		for i in @drawCommands
 			self.send(i[0],i[1])
 		end
+		@drawCommands.clear();
+		@field.each { |x,y| justDrawDot(x[0],x[1]) }
 		puts "\t\t\t\t\t  Stop Drawing" if $log
 		puts "-----------------------------\n\n\n\n\n\n\n" if $log
 	end
@@ -133,11 +145,27 @@ public
 		repaint()
 #		puts 'sm '+@mouse_clicked_to.size.to_s
 	end
+	def saveWhileMouse()
+		return unless @mode
+		@mouse_clicked_to.push( [@mouse_x, @mouse_y] )
+		repaint()
+	end
+	def stopWhileMouse()
+		return unless @mode
+		@current_command += 1
+		@drawCommands.push( [ @commands[@mode][@current_command], @mouse_clicked_to.clone ] )
+		clearCommandList()
+		repaint()
+	end
 	def mouseReleaseEvent(e)
-		@mouse_x, @mouse_y = e.x, e.y
-		translateMousePress()
-#		puts "mouse pressed"
-		emit getMousePress()
+		if (e.button == 1)
+			@mouse_x, @mouse_y = e.x, e.y
+			translateMousePress()
+			emit getMousePress()
+		end
+		if (e.button == 2)
+			emit endMouseClicking()
+		end
 	end
 	def translateMousePress()
 		x, y = ( (@mouse_x - @X - @dx +0.5)*1.0/(@z*@cell_size) ), ( (@Y - @dy  - @mouse_y -0.5)*1.0/(@z*@cell_size) )
@@ -151,5 +179,4 @@ public
 		connect( self, SIGNAL('getMousePress()'), self, SLOT( @commands[@mode][@current_command].id2name+'()' ) )
 #		puts 'swa '+@mouse_clicked_to.size.to_s
 	end
-
 end
