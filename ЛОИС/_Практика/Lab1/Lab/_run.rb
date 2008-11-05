@@ -20,6 +20,9 @@ end
 
 $equals = bd_parser.equals
 $facts = bd_parser.facts
+	temp = Array.new
+	$facts.each { |i| temp.push( BDParser::PredicateTerm.new(i.name.clone,i.params.clone) ) }
+	$facts = temp.clone
 $rules = bd_parser.rules
 
 puts "BD\n{"
