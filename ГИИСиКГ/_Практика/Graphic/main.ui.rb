@@ -1,7 +1,7 @@
 =begin
 ** Form generated from reading ui file 'main.ui'
 **
-** Created: Вт 4. ноя 19:32:55 2008
+** Created: Ср 5. ноя 12:21:33 2008
 **      by: Qt User Interface Compiler version 4.3.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -23,7 +23,7 @@ class Ui_MainWindow
     attr_reader :actionCreateConvex
     attr_reader :actionSimpleFill
     attr_reader :actionStackFill
-    attr_reader :actionMixFill
+    attr_reader :actionFill
     attr_reader :centralwidget
     attr_reader :menubar
     attr_reader :menuLines
@@ -61,8 +61,8 @@ class Ui_MainWindow
     @actionSimpleFill.setObjectName("actionSimpleFill")
     @actionStackFill = Qt::Action.new(mainWindow)
     @actionStackFill.setObjectName("actionStackFill")
-    @actionMixFill = Qt::Action.new(mainWindow)
-    @actionMixFill.setObjectName("actionMixFill")
+    @actionFill = Qt::Action.new(mainWindow)
+    @actionFill.setObjectName("actionFill")
     @centralwidget = Qt::Widget.new(mainWindow)
     @centralwidget.setObjectName("centralwidget")
     mainWindow.setCentralWidget(@centralwidget)
@@ -98,9 +98,7 @@ class Ui_MainWindow
     @menuSplines.addAction(@actionPaint_spline)
     @menuSplines.addAction(@actionBspline)
     @menuFill.addAction(@actionCreateConvex)
-    @menuFill.addAction(@actionSimpleFill)
-    @menuFill.addAction(@actionStackFill)
-    @menuFill.addAction(@actionMixFill)
+    @menuFill.addAction(@actionFill)
 
     retranslateUi(mainWindow)
 
@@ -131,7 +129,7 @@ class Ui_MainWindow
     @actionCreateConvex.setText(Qt::Application.translate("MainWindow", "CreateConvex", nil, Qt::Application::UnicodeUTF8))
     @actionSimpleFill.setText(Qt::Application.translate("MainWindow", "SimpleFill", nil, Qt::Application::UnicodeUTF8))
     @actionStackFill.setText(Qt::Application.translate("MainWindow", "StackFill", nil, Qt::Application::UnicodeUTF8))
-    @actionMixFill.setText(Qt::Application.translate("MainWindow", "MixFill", nil, Qt::Application::UnicodeUTF8))
+    @actionFill.setText(Qt::Application.translate("MainWindow", "Fill", nil, Qt::Application::UnicodeUTF8))
     @menuLines.setTitle(Qt::Application.translate("MainWindow", "&Lines", nil, Qt::Application::UnicodeUTF8))
     @menuMain_Commands.setTitle(Qt::Application.translate("MainWindow", "&Main Commands", nil, Qt::Application::UnicodeUTF8))
     @menu2_dimension_lines.setTitle(Qt::Application.translate("MainWindow", "2 &Dimension lines", nil, Qt::Application::UnicodeUTF8))

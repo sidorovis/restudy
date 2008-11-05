@@ -1,5 +1,4 @@
 require 'Lab4'
-
 X = 400
 Y = 300
 $log = false

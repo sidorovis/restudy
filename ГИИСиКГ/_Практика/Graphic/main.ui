@@ -55,9 +55,7 @@
      <string>Fill</string>
     </property>
     <addaction name="actionCreateConvex" />
-    <addaction name="actionSimpleFill" />
-    <addaction name="actionStackFill" />
-    <addaction name="actionMixFill" />
+    <addaction name="actionFill" />
    </widget>
    <addaction name="menuMain_Commands" />
    <addaction name="menuLines" />
@@ -131,9 +129,9 @@
     <string>StackFill</string>
    </property>
   </action>
-  <action name="actionMixFill" >
+  <action name="actionFill" >
    <property name="text" >
-    <string>MixFill</string>
+    <string>Fill</string>
    </property>
   </action>
  </widget>

@@ -32,6 +32,13 @@ class Array2
     end
     def *(b)
     	return nil unless b
+    	if (b.class == Float)
+    		a = self.clone
+    		for i in (1..a.x)
+    			(1..a.y).each { |u| a[i,u] = a[i,u]*1.0*b }
+    		end
+    		return a
+		end
     	a = self
     	c = Array2.new
     	return nil if a.y != b.x
