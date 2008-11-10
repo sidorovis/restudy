@@ -44,4 +44,4 @@ rescue RParser::ParseError
 end
 puts request_parser.targets.join("\n")
 puts
-request_parser.targets.each { |i| look_for( i ) }
+look_for( request_parser.targets )
