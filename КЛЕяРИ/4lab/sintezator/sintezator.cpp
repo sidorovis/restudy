@@ -348,6 +348,7 @@ void playSound(int sound_number)
 		return;
 	string file_path;
 	file_path = string("base\\")+sounds[ sound_number ]+".wav";
+//	MessageBox(NULL,file_path.c_str(),"",NULL);
 	double proc = 1;
 	if ( sounds[ sound_number ].length() ==1 )
 		proc = 1;
@@ -451,12 +452,21 @@ void transfer(string& a, string b,int* c,int* c_block,int number)
 	{
 		if ( c[ place ] == -1 )
         {
+			bool label = true;
 			for (int u = place ; u < place + b.size() ; u++)
 			{
-				c[ u ] = number;
-                c_block[u] = i;
+				if (c[u] != -1)
+					label = false;
 			}
-            i++;
+			if (label)
+			{
+				for (int u = place ; u < place + b.size() ; u++)
+				{
+					c[ u ] = number;
+					c_block[u] = i;
+				}
+				i++;
+			}
         }
 		place = a.find(b,place+1);
 	}

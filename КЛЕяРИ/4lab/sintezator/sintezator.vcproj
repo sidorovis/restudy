@@ -157,9 +157,6 @@
 		<File
 			RelativePath="sound_base.txt">
 		</File>
-		<File
-			RelativePath=".\temp.txt">
-		</File>
 	</Files>
 	<Globals>
 	</Globals>

@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 8.00
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sintezator", "sintezator.vcproj", "{D0619977-CBCF-4495-A0AA-007298984F68}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sintezator", "sintezator.vcproj", "{189234D9-F36D-493E-9EB7-9372C2935E9D}"
 	ProjectSection(ProjectDependencies) = postProject
 	EndProjectSection
 EndProject
@@ -9,10 +9,10 @@ Global
 		Release = Release
 	EndGlobalSection
 	GlobalSection(ProjectConfiguration) = postSolution
-		{D0619977-CBCF-4495-A0AA-007298984F68}.Debug.ActiveCfg = Debug|Win32
-		{D0619977-CBCF-4495-A0AA-007298984F68}.Debug.Build.0 = Debug|Win32
-		{D0619977-CBCF-4495-A0AA-007298984F68}.Release.ActiveCfg = Release|Win32
-		{D0619977-CBCF-4495-A0AA-007298984F68}.Release.Build.0 = Release|Win32
+		{189234D9-F36D-493E-9EB7-9372C2935E9D}.Debug.ActiveCfg = Debug|Win32
+		{189234D9-F36D-493E-9EB7-9372C2935E9D}.Debug.Build.0 = Debug|Win32
+		{189234D9-F36D-493E-9EB7-9372C2935E9D}.Release.ActiveCfg = Release|Win32
+		{189234D9-F36D-493E-9EB7-9372C2935E9D}.Release.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection
