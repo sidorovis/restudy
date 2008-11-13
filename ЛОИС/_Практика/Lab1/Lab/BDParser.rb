@@ -28,7 +28,7 @@ class BDParser
     class Equal
     	attr_reader :name, :left, :right
     	def to_s
-    		"Equalitation: '"+@name+"' of ('"+@left+"' <=> '"+@right+"')"
+    		"E: '"+@name+"' of ('"+@left+"' <=> '"+@right+"')"
     	end
     	def initialize(name, left, right)
     		@name, @left, @right = name, left, right
@@ -37,7 +37,7 @@ class BDParser
     class Fact
     	attr_reader :name, :params
     	def to_s
-    		"Fact: '"+@name+"' of ('"+@params.join("', '")+"')"
+    		"F: '"+@name+"' of ('"+@params.join("', '")+"')"
     	end
     	def initialize(name, params)
     		@name, @params = name, params
@@ -46,7 +46,7 @@ class BDParser
     class PredicateTerm
     	attr_reader :name, :params
     	def to_s
-    		"'"+@name+"' ( '"+@params.join("', '") +"' )"
+    		"P: '"+@name+"' ( '"+@params.join("', '") +"' )"
     	end
     	def initialize(name,params)
     		@name, @params = name, params
@@ -55,7 +55,7 @@ class BDParser
     class Rule
     	attr_reader :to_predicate, :from_predicates
         	def to_s
-        		"Rule: get \""+@to_predicate.to_s+"\" from "+"\""+@from_predicates.join("\", \"")+"\""
+        		"R: get \""+@to_predicate.to_s+"\" from "+"\""+@from_predicates.join("\", \"")+"\""
         	end
         	def initialize(to_predicate, from_predicates_datas)
             		@from_predicates = Array.new

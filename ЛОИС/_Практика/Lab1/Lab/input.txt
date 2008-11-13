@@ -1,3 +1,8 @@
+s(a,f).
+s(b,g).
+s(P,Q).
+s(R,T).
 Q(a,b).
-Q(c,v).
-Q(A,V) <- R(A).
+P(f,g).
+P(f,gg).
+T(X,Y) <- P(Y,X).
