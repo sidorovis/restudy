@@ -57,11 +57,19 @@
     <addaction name="actionCreateConvex" />
     <addaction name="actionFill" />
    </widget>
+   <widget class="QMenu" name="menuProecirovanie" >
+    <property name="title" >
+     <string>Proecirovanie</string>
+    </property>
+    <addaction name="actionProecirovanie_mode" />
+    <addaction name="actionNormal_mode" />
+   </widget>
    <addaction name="menuMain_Commands" />
    <addaction name="menuLines" />
    <addaction name="menu2_dimension_lines" />
    <addaction name="menuSplines" />
    <addaction name="menuFill" />
+   <addaction name="menuProecirovanie" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />
   <action name="actionADC" >
@@ -132,6 +140,16 @@
   <action name="actionFill" >
    <property name="text" >
     <string>Fill</string>
+   </property>
+  </action>
+  <action name="actionProecirovanie_mode" >
+   <property name="text" >
+    <string>Proecirovanie mode</string>
+   </property>
+  </action>
+  <action name="actionNormal_mode" >
+   <property name="text" >
+    <string>Normal mode</string>
    </property>
   </action>
  </widget>

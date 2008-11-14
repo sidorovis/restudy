@@ -1,3 +1,10 @@
+class Numeric
+	def round_to( decimals=0 )
+		factor = 10.0**decimals
+		(self*factor).round / factor
+	end
+end
+
 class Array2
 	attr_reader :x, :y
     def initialize( x = 0, y = 0)
@@ -17,12 +24,12 @@ class Array2
    	@x = a if a > @x
    	@y = b if b > @y
 	@store[a] = [] if @store[a] == nil
-	@store[a][b] = x
+	@store[a][b] = 1.0*x
     end
     def to_s
     	var = "";
     	for i in (1..@x)
-    		(1..@y).each { |u| var += "'"+@store[i][u].to_s+"'\t" }
+    		(1..@y).each { |u| var += "'"+(@store[i][u].round_to(4)).to_s+"'\t" }
     		var += "\n"
     	end
     	var
@@ -46,7 +53,7 @@ class Array2
     		for j in (1..b.y)
    				c[i,j] = 0 unless c[i,j]
     			for k in (1..a.y)
-    				c[i,j] += a[i,k]*b[k,j];
+    				c[i,j] += 1.0*a[i,k]*b[k,j];
     			end
     		end
     	end

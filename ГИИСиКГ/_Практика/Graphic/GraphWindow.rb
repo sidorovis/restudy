@@ -44,7 +44,10 @@ protected
 		@dy -= 10*@z if (e.key == 16777237)	#	down button released
 		@z *= 1.2 if (e.key == 42)	#	"/" button released
 		@z /= 1.2 if (e.key == 47)	#	"*"	button released
+		addedKeyReleaseEvent(e)
 		repaint()
+	end
+	def addedKeyReleaseEvent(e)
 	end
 =begin
 	method DrawDot
@@ -60,7 +63,9 @@ protected
 #		@pa.drawRect(cx + (x.round)*@cell_size*@z ,cy - (y.round+1)*@cell_size*@z, @cell_size*@z , @cell_size*@z)
 	end
 	def justDrawDot(x,y)
-		cx, cy = @X + @dx, @Y - @dy
+		return if (x.abs > 10000 || y.abs > 10000)
+#		puts x,y
+		cx, cy = (@X + @dx).round, (@Y - @dy).round
 		@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0) )
 		@pa.drawRect(cx + (x.round)*@cell_size*@z ,cy - (y.round+1)*@cell_size*@z, @cell_size*@z , @cell_size*@z)
 	end
@@ -95,7 +100,7 @@ public
 		connect( @f.actionClear_Field, SIGNAL('triggered()'), self, SLOT('clearScreen()') )
 		connect( self, SIGNAL('endMouseClicking()'), self, SLOT('stopWhileMouse()') )
 		connectActions()
-		@X, @Y, @dx, @dy, @z, @cell_size, @pa = half_size_x, half_size_y, 0, 0, 1, 15, nil
+		@X, @Y, @dx, @dy, @z, @cell_size, @pa = half_size_x, half_size_y, 0, 0, 1, 5, nil
 		setWindowTitle("Graphics")
 		show
 	end
