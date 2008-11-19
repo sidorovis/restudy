@@ -1,5 +1,4 @@
-function [a,from] = min_path(Ifilename, base_dot)
-I = imread(Ifilename);
+function [a,from] = min_path(I,base_dot)
 Id = double(I);
 [na,m,k] = size(I);
 c = round(na*m / 100);
@@ -28,6 +27,7 @@ k=2;
     x = o(n,1);
     y = o(n,2);
     vt = v(x,y);
+    vt = 0;
     at = a(x,y);
     if ( x > 1 & y > 1 & (sqrt(2)*abs(v( x-1, y-1 )-vt) + at < a( x-1,y-1 ))  )
        a( x-1,y-1 ) = sqrt(2)*abs(v( x-1, y-1 )-vt) + at;
@@ -79,3 +79,4 @@ k=2;
     end
     n = n + 1;  
 end
+a;
