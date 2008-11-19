@@ -64,12 +64,20 @@
     <addaction name="actionProecirovanie_mode" />
     <addaction name="actionNormal_mode" />
    </widget>
+   <widget class="QMenu" name="menuFrame" >
+    <property name="title" >
+     <string>Frame</string>
+    </property>
+    <addaction name="actionFrameMode" />
+    <addaction name="actionNoFrameMode" />
+   </widget>
    <addaction name="menuMain_Commands" />
    <addaction name="menuLines" />
    <addaction name="menu2_dimension_lines" />
    <addaction name="menuSplines" />
    <addaction name="menuFill" />
    <addaction name="menuProecirovanie" />
+   <addaction name="menuFrame" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />
   <action name="actionADC" >
@@ -150,6 +158,16 @@
   <action name="actionNormal_mode" >
    <property name="text" >
     <string>Normal mode</string>
+   </property>
+  </action>
+  <action name="actionFrameMode" >
+   <property name="text" >
+    <string>FrameMode</string>
+   </property>
+  </action>
+  <action name="actionNoFrameMode" >
+   <property name="text" >
+    <string>NoFrameMode</string>
    </property>
   </action>
  </widget>

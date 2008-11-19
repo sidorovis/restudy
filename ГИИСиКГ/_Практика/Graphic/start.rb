@@ -1,8 +1,8 @@
-require 'Lab5'
+require 'Lab6'
 X = 400
 Y = 300
 $log = false
-
+=begin
 e = Array2.new
 e[1,1],e[1,2],e[1,3],e[1,4]=  1.0 ,  0.0 ,  0.0 ,  0.0
 e[2,1],e[2,2],e[2,3],e[2,4]=  0.0 ,  1.0 ,  0.0 ,  0.0
@@ -16,7 +16,7 @@ e[3,1],e[3,2],e[3,3],e[3,4]=  0.0 ,  -0.26 ,  0.97 ,  0.0
 e[4,1],e[4,2],e[4,3],e[4,4]=  0.0 ,  0.0 ,  0.0 ,  1.0
 c2 = e
 #puts c1*c2
-
+=end
 app = Qt::Application.new( ARGV )
 graph_window = GraphWindow.new(X, Y)
 app.exec

@@ -1,7 +1,7 @@
 =begin
 ** Form generated from reading ui file 'main.ui'
 **
-** Created: Пт 14. ноя 16:18:31 2008
+** Created: Ср 19. ноя 11:29:29 2008
 **      by: Qt User Interface Compiler version 4.3.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -26,6 +26,8 @@ class Ui_MainWindow
     attr_reader :actionFill
     attr_reader :actionProecirovanie_mode
     attr_reader :actionNormal_mode
+    attr_reader :actionFrameMode
+    attr_reader :actionNoFrameMode
     attr_reader :centralwidget
     attr_reader :menubar
     attr_reader :menuLines
@@ -34,6 +36,7 @@ class Ui_MainWindow
     attr_reader :menuSplines
     attr_reader :menuFill
     attr_reader :menuProecirovanie
+    attr_reader :menuFrame
     attr_reader :statusbar
 
     def setupUi(mainWindow)
@@ -70,6 +73,10 @@ class Ui_MainWindow
     @actionProecirovanie_mode.setObjectName("actionProecirovanie_mode")
     @actionNormal_mode = Qt::Action.new(mainWindow)
     @actionNormal_mode.setObjectName("actionNormal_mode")
+    @actionFrameMode = Qt::Action.new(mainWindow)
+    @actionFrameMode.setObjectName("actionFrameMode")
+    @actionNoFrameMode = Qt::Action.new(mainWindow)
+    @actionNoFrameMode.setObjectName("actionNoFrameMode")
     @centralwidget = Qt::Widget.new(mainWindow)
     @centralwidget.setObjectName("centralwidget")
     mainWindow.setCentralWidget(@centralwidget)
@@ -88,6 +95,8 @@ class Ui_MainWindow
     @menuFill.setObjectName("menuFill")
     @menuProecirovanie = Qt::Menu.new(@menubar)
     @menuProecirovanie.setObjectName("menuProecirovanie")
+    @menuFrame = Qt::Menu.new(@menubar)
+    @menuFrame.setObjectName("menuFrame")
     mainWindow.setMenuBar(@menubar)
     @statusbar = Qt::StatusBar.new(mainWindow)
     @statusbar.setObjectName("statusbar")
@@ -99,6 +108,7 @@ class Ui_MainWindow
     @menubar.addAction(@menuSplines.menuAction())
     @menubar.addAction(@menuFill.menuAction())
     @menubar.addAction(@menuProecirovanie.menuAction())
+    @menubar.addAction(@menuFrame.menuAction())
     @menuLines.addAction(@actionADC)
     @menuLines.addAction(@actionBrezenhem)
     @menuMain_Commands.addAction(@actionClear_Field)
@@ -111,6 +121,8 @@ class Ui_MainWindow
     @menuFill.addAction(@actionFill)
     @menuProecirovanie.addAction(@actionProecirovanie_mode)
     @menuProecirovanie.addAction(@actionNormal_mode)
+    @menuFrame.addAction(@actionFrameMode)
+    @menuFrame.addAction(@actionNoFrameMode)
 
     retranslateUi(mainWindow)
 
@@ -144,12 +156,15 @@ class Ui_MainWindow
     @actionFill.setText(Qt::Application.translate("MainWindow", "Fill", nil, Qt::Application::UnicodeUTF8))
     @actionProecirovanie_mode.setText(Qt::Application.translate("MainWindow", "Proecirovanie mode", nil, Qt::Application::UnicodeUTF8))
     @actionNormal_mode.setText(Qt::Application.translate("MainWindow", "Normal mode", nil, Qt::Application::UnicodeUTF8))
+    @actionFrameMode.setText(Qt::Application.translate("MainWindow", "FrameMode", nil, Qt::Application::UnicodeUTF8))
+    @actionNoFrameMode.setText(Qt::Application.translate("MainWindow", "NoFrameMode", nil, Qt::Application::UnicodeUTF8))
     @menuLines.setTitle(Qt::Application.translate("MainWindow", "&Lines", nil, Qt::Application::UnicodeUTF8))
     @menuMain_Commands.setTitle(Qt::Application.translate("MainWindow", "&Main Commands", nil, Qt::Application::UnicodeUTF8))
     @menu2_dimension_lines.setTitle(Qt::Application.translate("MainWindow", "2 &Dimension lines", nil, Qt::Application::UnicodeUTF8))
     @menuSplines.setTitle(Qt::Application.translate("MainWindow", "&Splines", nil, Qt::Application::UnicodeUTF8))
     @menuFill.setTitle(Qt::Application.translate("MainWindow", "Fill", nil, Qt::Application::UnicodeUTF8))
     @menuProecirovanie.setTitle(Qt::Application.translate("MainWindow", "Proecirovanie", nil, Qt::Application::UnicodeUTF8))
+    @menuFrame.setTitle(Qt::Application.translate("MainWindow", "Frame", nil, Qt::Application::UnicodeUTF8))
     end # retranslateUi
 
     def retranslate_ui(mainWindow)

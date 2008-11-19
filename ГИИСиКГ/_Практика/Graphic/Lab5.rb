@@ -2,7 +2,7 @@ require 'Lab4'
 
 class GraphWindow
 
-	slots 'ProectionMode()', 'NormalMode()'
+	slots 'ProectionMode()', 'NoProectionMode()'
 
 	def CreateObjectCoordinates()
 		@@o = []
@@ -30,8 +30,8 @@ class GraphWindow
 		@@e = e_make()
 		@@t = e_make()
 		@@t[4,4] = 0.0
-#		@@t[3,4] = 0.02
-		@@t[4,3] = -10
+		@@t[3,4] = 0.02
+#		@@t[4,3] = -10
 	end
 
 	alias :old5_connectActions :connectActions
@@ -40,11 +40,8 @@ class GraphWindow
 	alias :old_DrawDot :DrawDot
 	
 	def ObjectDrawAlgorythm
-#puts @@e
-#puts
 		for i in @@o
 			m = make2d_dot_array( i[0] , i[1] )
-#			puts i[1].join(" | ")
 			justDrawADCLine( m )
 		end
 	end
@@ -56,7 +53,7 @@ class GraphWindow
 #puts p1
 #puts
 		p12 = p1*@@t
-	dz =  p12[1,4]
+		dz =  p12[1,4]
 		(1..4).each { |i| p12[1,i] = p12[1,i] / dz } if dz != 0
 		p2 = Array2.new
 		p2[1,1],p2[1,2],p2[1,3],p2[1,4] = 1.0*y[0], 1.0*y[1], 1.0*y[2], 1.0*y[3]
@@ -71,27 +68,31 @@ class GraphWindow
 		m[1] = [ p22[1,1].round , p22[1,2].round ]
 		m
 	end
-	
-	def ProectionMode()
-		@pn_mode = :Proection
-		def DrawDot(x,y,z=0)
-			justDrawDot(x,y)
-		end
-		def DrawAlgorythm
+
+	def DrawAlgorythm
+#		puts @pn_mode
+		if @pn_mode == :Normal
+			old_DrawAlgorythm
+		else
+			@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0,255) )
 			ObjectDrawAlgorythm()
 			@drawCommands.clear();
 			@field.each { |x,y| justDrawDot(x[0],x[1]) }
 		end
+	end
+	def DrawDot(x,y,z = 0)
+		if @pn_mode == :Normal
+			old_DrawDot(x,y)
+		else
+			justDrawDot(x,y)
+		end
+	end	
+	def ProectionMode()
+		@pn_mode = :Proection
 		repaint
 	end
-	def NormalMode()
+	def NoProectionMode()
 		@pn_mode = :Normal
-		def DrawAlgorythm
-			old_DrawAlgorythm
-		end
-		def DrawDot(x,y,z=0)
-			old_DrawDot(x,y)
-		end
 		repaint
 	end
 	
@@ -314,7 +315,7 @@ class GraphWindow
 		@pn_mode = :Normal
 		old5_connectActions
 		connect( @f.actionProecirovanie_mode, SIGNAL('triggered()') , self , SLOT('ProectionMode()') )
-		connect( @f.actionNormal_mode , SIGNAL('triggered()') , self , SLOT('NormalMode()') )
+		connect( @f.actionNormal_mode , SIGNAL('triggered()') , self , SLOT('NoProectionMode()') )
 
 	end
 

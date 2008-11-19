@@ -57,16 +57,10 @@ protected
 =end
 	def DrawDot(x,y)
 		@field[[x.round,y.round]] = true
-#		justDrawDot(x,y)
-#		cx, cy = @X + @dx, @Y - @dy
-#		@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0) )
-#		@pa.drawRect(cx + (x.round)*@cell_size*@z ,cy - (y.round+1)*@cell_size*@z, @cell_size*@z , @cell_size*@z)
 	end
 	def justDrawDot(x,y)
 		return if (x.abs > 10000 || y.abs > 10000)
-#		puts x,y
 		cx, cy = (@X + @dx).round, (@Y - @dy).round
-		@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0) )
 		@pa.drawRect(cx + (x.round)*@cell_size*@z ,cy - (y.round+1)*@cell_size*@z, @cell_size*@z , @cell_size*@z)
 	end
 	def clearScreen()
@@ -116,6 +110,7 @@ public
 
 		puts "\n\n\n\n\n\n\n\t\t\t\t\t  Start Drawing" if $log
 		puts "-----------------------------" if $log
+		@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0,255) )
 		for i in @mouse_clicked_to
 			justDrawDot(i[0],i[1]);
 		end
