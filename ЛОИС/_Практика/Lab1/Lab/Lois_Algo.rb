@@ -95,7 +95,7 @@ class Graph
 					for i in 0..rule.to_predicate.params.size-1
 						uni.push( Unification.new( goal.predicate_info.params[i] , rule.to_predicate.params[i] ) )
 					end
-	#				puts uni.put()
+#					puts uni.put()
 					v.unification = uni 
 					translate.push ( v )
 					goal.translates.push( translate )
@@ -103,7 +103,7 @@ class Graph
 					for what_to_prove in rule.from_predicates
 						new_vertex = Vertex.new( what_to_prove, goal, [] )
 						new_vertex.unification = u
-#puts "!!!!!!!!!!!!!!!!",new_vertex
+puts "!!!!!!!!!!!!!!!!",new_vertex
 						add2front( new_vertex )
 						goals.push( new_vertex )
 					end	
