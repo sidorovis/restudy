@@ -6,10 +6,26 @@ def param_e(a)
 	return true if ( tparam[ 0 ] >= "A"[ 0 ] && tparam[ 0 ] <= "Z"[ 0 ] )
 	return true if tparam[ 0 ] == "?"
 	return true if tparam == pparam
-	# puts tparam,pparam
 	false
 end
 
+class Array
+	def get(class_name, array)
+		for i in self
+			i.get(class_name,array) if i.class == Array
+			array.push( i ) if i.class != Array
+		end
+	end
+	def put()
+		res = "("
+		for i in self
+			res += ""+i.put()+"" if i.class == Array
+			res += i.to_s()+" " if i.class != Array
+		end
+		res += ")"
+		res
+	end
+end
 class BDParser::PredicateTerm
 	def ==( goal )
 		return false if goal.class != BDParser::PredicateTerm
@@ -67,22 +83,43 @@ class Graph
 	def lookRules( goal )
 		for rule in $rules
 			if ( rule == goal )
+#			puts goal,rule.to_predicate
+#			puts
 				u = unification( goal.predicate_info , rule.to_predicate )
 				if u
 					goals = Array.new
+					translate = []
+					e = BDParser::Equal.new("fiction",[],[])
+					v = Vertex.new( e , goal, [] )
+					uni = []
+					for i in 0..rule.to_predicate.params.size-1
+						uni.push( Unification.new( goal.predicate_info.params[i] , rule.to_predicate.params[i] ) )
+					end
+	#				puts uni.put()
+					v.unification = uni 
+					translate.push ( v )
+					goal.translates.push( translate )
+#pus rule.to_predicate,goal.predicate_info
 					for what_to_prove in rule.from_predicates
 						new_vertex = Vertex.new( what_to_prove, goal, [] )
 						new_vertex.unification = u
+#puts "!!!!!!!!!!!!!!!!",new_vertex
 						add2front( new_vertex )
 						goals.push( new_vertex )
 					end	
 				goal.goals.push( goals )
+	#	puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	#	puts goal
+	#	puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 				end
 			end
 		end
 	end
 	def add2front( vertex )
+#	puts @front.size
+#	puts vertex,@front.include?( vertex ),@back.include?( vertex ),@back.put(),"!!!!!!!!!!!!!!!!!!!!!!"
 		@front.push vertex if (!@front.include?( vertex ) && !@back.include?( vertex ))
+#	puts @front.size
 	end
 	
 	def lookEquals( goal )
@@ -143,7 +180,7 @@ class Graph
 							(0..equal_targets.size-1).each { |ii| indexes[ii] = 0;label = false if equal_targets[ii].size == 0 }
 							while label
 								equals,names = do_transparent(equal_targets, indexes, equal_names)
-								rule_goals = make_goals(goals,names,goal)
+								rule_goals = make_goals(goals,names,goal, eq_vertex)
 								label = false if do_next(equal_targets, indexes)
 							end
 						end
@@ -152,7 +189,7 @@ class Graph
 			end
 		end
 	end
-	def make_goals( goals, equals_names, main_vertex )
+	def make_goals( goals, equals_names, main_vertex , eq_vertex )
 		main_goals = []
 		for i in (0..goals.size-1)
 			new_params = []
@@ -176,6 +213,8 @@ class Graph
 			add2front(goals[i])
 		end
 		main_vertex.goals.push main_goals
+		main_vertex.translates = [] unless main_vertex.translates
+		main_vertex.translates[ main_vertex.goals.size-1 ] = [eq_vertex]
 	end
 	def do_transparent( equal_targets, indexes, equal_names )
 		goals = []
@@ -213,7 +252,6 @@ class Graph
 				end
 			end
 		end
-#		puts uni
 		uni
 	end
 	def buildTree( goal )
@@ -225,11 +263,9 @@ class Graph
 		while (!@front.empty?)
 			vertex = @front[0]
 			@front.delete_at( 0 )
-			buildTree( vertex ) if vertex.type == :PredicateTerm
-#			findEqual( vertex ) if vertex.type == :Equal
+			buildTree( vertex ) if vertex.type == :PredicateTerm || vertex.type == :Rule
 			@back.push( vertex )
 		end
-#		puts @back
 	end
 	def exist?(vertex)
 		puts "Code Warning 'Graph::exist?' reserved, but not realized."
@@ -249,31 +285,47 @@ class Vertex
 	attr_reader :predicate_info, :father
 	attr_accessor :goals, :type, :unification
 	attr_accessor :equal, :or_goal_index, :and_goal_index, :answers
+	attr_accessor :translates
 	def initialize( predicate_info , father , goals, equal = Array.new )
 		@or_goal_index = 0
 		@and_goal_index = []
 		@type = :PredicateTerm if predicate_info.class == BDParser::PredicateTerm
 		@type = :Equal if predicate_info.class == BDParser::Equal
 		@predicate_info, @father, @goals, @equal = predicate_info, father, goals, equal
+		@translates = [[]]
 	end
 	def ==(other)
-		return true if @predicate_info == other.predicate_info
+		return false if self.type == :Equal
+		return false if other.type == :Equal
+		self_params = self.predicate_info.params
+		other_params = other.predicate_info.params
+		return false if self.predicate_info.name != other.predicate_info.name
+		(0..self_params.size-1).each { |i| return false if self_params[i] != other_params[i] }
 	end
 	def to_s
 		res = "V: "+@predicate_info.to_s+
 		"\n father: "+((@father)?(@father.to_str):(" -no- "))+
 		"\n type: "+@type.to_s+
-		"\n Unification: "
-		((@unification)?(@unification.each { |uni| res +=uni[0].to_s+" -> "+uni[1].to_s+" . " }):(res+=" -no- "))
+		"\n Unification: ";
+		((@unification)?(@unification.each { |uni| res +=uni.left.to_s+" -> "+uni.right.to_s+" . " }):(res+=" -no- "))
 		res +="\n Equal stack: "+((!@equal.empty?)?(@equal.join(". ")):(" -no- "))+
-		"\n Goals:"+print_goals()
-		res+"\n\n"
+		"\n Goals:"+print_goals()+"\n Translates:"+print_trans()
+		res+"\n"
 	end
 	def print_goals()
 		res = ""
 		for goal_array in @goals
 			res += "\n\t"
 			goal_array.each { |goal| res +=goal.to_str+". " }
+		end
+		res
+	end
+	def print_trans()
+		res = ""
+		for goal_array in @translates
+			res += "\n\t"
+			#puts goal_array.put()
+			goal_array.each { |goal| res +=goal.unification.put()+". " }
 		end
 		res
 	end
@@ -297,79 +349,189 @@ class Vertex
 		end
 		true
 	end
-	def get_and_answers( or_index )
-		answers = []
-		equals = []
-		for i in 0..@goals[ or_index ].size-1
-			equals.push @goals[ or_index ][i].predicate_info if @goals[ or_index ][i].type == :Equals
-			if @goals[ or_index ][i].type != :Equals
-				answers.push(@goals[ or_index ][i].get_or_answers())
-			end
+	def init_search()
+		@or_i = 0
+		@or_i = -1 if @type == :Fact
+		for i in @goals
+			i.each { |u| u.init_search() }
 		end
-		indexes = Array.new( answers.size , 0 )
-#		puts answers.put()
-		i = 0
-		label = true
-		full_ans = []
-		while label
-			ans = make_ans(answers, indexes)
-			res = test_unification( ans, equals )
-			full_ans += ( ans ) if res
-			indexes[0] += 1
-			u = 0;
-			while label && indexes[u] == answers[u].size
-				if u+1 == answers.size
-					label=false;
-					break 
-				end
-				indexes[u] = 0
-				indexes[u+1] += 1
-				u += 1
-			end
-		end
-#		res = test_unification( answers, equals )
-		puts "!",full_ans.put()
-			puts
-		return full_ans
 	end
-	def get_or_answers()
-		if @type == :Fact
-			return [@unification]
+	def next_ans_for_one()
+		l = false
+		while !l 
+			ans = @goals[ @or_i ][0].next_answer()
+			break unless ans
+			l = true if test_uni_array( ans , [] )
 		end
-		puts to_str,"->"
-		answers = []
-		for i in 0..@goals.size-1
-			answers.push self.get_and_answers( i )
+#		puts "one "+ans.put() if ans
+		return ans
+	end
+	def next_ans_for_more()
+			unless @t
+				@pt= []
+				@ind = []
+				@t = []
+				@e = []
+				for i in @goals[ @or_i ]
+					if i.type != :Equal
+						ans = i.next_answer()
+#puts ans
+						unless ans
+							return false
+						end
+						@pt.push( ans )
+						@ind.push( @goals[ @or_i ].index(i) )
+						@t.push( true )
+					else
+						@e.push( i )
+					end
+				end
+				@t.push( true )
+			else
+				return false unless @t[ @t.size-1 ]
+			end # unless @t
+#puts @goals[ @or_i ][ @ind[1] ].next_answer()
+#puts @pt.size
+#getc
+#puts "! "+@pt.put()
+#puts "! "+@ind.put()
+#puts "! "+@t.put()
+			l = false
+			while (!l)
+				ans = @pt.clone
+#puts self
+#puts "more "+ans.put()
+				@pt[ 0 ] = @goals[ @or_i ][ @ind[0] ].next_answer()
+#puts "!! "+@pt[0].put() if @pt[0]
+#puts "!! false!" unless @pt[0]
+				i = 1
+				while (!@pt[i-1] && i <= @pt.size)
+#puts "__ "+@pt.put()
+					if (i == @pt.size)
+						i += 1
+						break
+					end
+#puts "before "+@pt[i].put()
+					@pt[i] = @goals[ @or_i ][ @ind[i] ].next_answer()
+#puts "after "+@pt[i].put() if @pt[i]
+#puts "after false!" unless @pt[i]
+					@pt[i-1] = @goals[ @or_i ][ @ind[i-1] ].init_search()
+					@pt[i-1] = @goals[ @or_i ][ @ind[i-1] ].next_answer()
+					i += 1
+				end
+#puts @goals[ @or_i ][ @ind[i-1] ]
+#				puts i,@ind.size,ans.put()
+				if i > @ind.size
+					@t[ @t.size-1 ] = false
+#puts ans.put()
+#puts ans.put()
+					ans = make_u(ans)
+#puts self
+					l= test_uni_array(ans,@e)
+#puts ans.put()
+#puts l
+					return ans if l
+					return false
+				else
+#puts ans.put()
+#puts ans.put()
+					ans = make_u(ans)
+					l= test_uni_array(ans,@e)
+				end
+			end
+			return ans
+	end
+	def next_answer()
+		return false if @or_i >= @goals.size
+		if type == :Fact
+			@or_i += 1
+			return @unification
 		end
-		
-		return answers
+		return false if @type != :PredicateTerm
+#puts self
+		while @or_i < @goals.size
+			if @goals[ @or_i ].size == 1
+				ans = next_ans_for_one()
+			end
+			if (@goals[ @or_i ].size > 1)
+				ans = next_ans_for_more()
+			end
+#			puts self if ans
+#			puts ans.put() if ans
+			return ans if ans
+			@or_i +=1 unless ans
+		end
+		false
+	end
+	def make_u(ans)
+		u = []
+		ans.each { |i| i.each { |y| u.push( y ) } }
+		u
+	end
+	def test_uni_array(array,uni)
+#	puts array.put(),array.size
+		for i in 0..array.size-1
+			for u in i+1..array.size-1
+				return false if array[i].left == array[u].left && array[i].right != array[u].right
+			end
+		end
+		i = 0 
+		while (i < array.size-1)
+			array.delete_if { |u| (array.index(u) > i && u.left == array[i].left) }
+			i += 1
+		end
+		for u in uni	
+			for i in 0..array.size-1
+				for y in 0..array.size-1
+					if ( i!=y && u.predicate_info.left == array[i].left && u.predicate_info.right == array[y].left)
+						return false unless find_equal(array[i].right,array[y].right)
+					end
+				end
+			end
+		end
+#puts "!!!!!!",self,self.translates.put(),self.translates.size, @or_i,self.translates[@or_i].size
+		return true if self.translates.size <= @or_i || self.translates[@or_i].size == 0
+#puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",self,array.put(),"or_i "+@or_i.to_s
+		uni = []
+		for i in 0..self.predicate_info.params.size-1
+			from = self.translates[@or_i][0].unification[i].right
+			to = self.predicate_info.params[i]
+#		puts from,to
+			for u in array
+				u.left = to if u.left == from
+			end
+		end
+#puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",self,array.put()
+
+		array.delete_if { |e| !self.predicate_info.params.include?( e.left ) }
+		true
 	end
 end
-class Array
-	def get(class_name, array)
-		for i in self
-			i.get(class_name,array) if i.class == Array
-			array.push( i ) if i.class != Array
-		end
+def find_equal(first, second)
+	for equal in $equals
+		return true if equal.left == first && equal.right == second
+		return true if equal.left == second && equal.right == first
 	end
-	def put()
-		res = "("
-		for i in self
-			res += ""+i.put()+"" if i.class == Array
-			res += i.to_s()+" " if i.class != Array
-		end
-		res += ")"
-		res
-	end
+	false
 end
 def look_for( goals )
 	puts "= BEGIN ==============================================================="
 
-	graph = Graph.new
-	vertex_goals = graph.pushGoals goals
-	answers = graph.buildGraph
-	puts "\n\n\n\n"
-	vertex_goals.each { |i| i.get_or_answers() }
-	
+	$graph = Graph.new
+	vertex_goals = $graph.pushGoals goals
+	answers = $graph.buildGraph
+#	puts "\n\n\n\n\n\n\n\n\n"
+#	puts $graph.back
+#puts $graph.back[8].next_answer();
+#puts $graph.back[8].next_answer();
+#puts goals.put()
+	for vertex_goal in vertex_goals
+		vertex_goal.init_search()
+		ans = vertex_goal.next_answer()
+		while ans
+			puts ans.put()
+			ans = vertex_goal.next_answer()
+		end
+	end
 	puts "= END ================================================================="
 end
