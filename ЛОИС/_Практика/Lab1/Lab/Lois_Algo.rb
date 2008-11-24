@@ -103,8 +103,8 @@ class Graph
 					for what_to_prove in rule.from_predicates
 						new_vertex = Vertex.new( what_to_prove, goal, [] )
 						new_vertex.unification = u
-puts "!!!!!!!!!!!!!!!!",new_vertex
-						add2front( new_vertex )
+#puts "!!!!!!!!!!!!!!!!",new_vertex
+						new_vertex = add2front( new_vertex )
 						goals.push( new_vertex )
 					end	
 				goal.goals.push( goals )
@@ -118,7 +118,14 @@ puts "!!!!!!!!!!!!!!!!",new_vertex
 	def add2front( vertex )
 #	puts @front.size
 #	puts vertex,@front.include?( vertex ),@back.include?( vertex ),@back.put(),"!!!!!!!!!!!!!!!!!!!!!!"
+	if ( @front.include?( vertex ) )
+		return @front[ @front.index( vertex ) ]
+	end
+	if ( @back.include?( vertex ) )
+		return @back[ @back.index( vertex ) ]
+	end
 		@front.push vertex if (!@front.include?( vertex ) && !@back.include?( vertex ))
+	return vertex		
 #	puts @front.size
 	end
 	
@@ -350,6 +357,7 @@ class Vertex
 		true
 	end
 	def init_search()
+		return if @or_i == 0
 		@or_i = 0
 		@or_i = -1 if @type == :Fact
 		for i in @goals
@@ -375,8 +383,10 @@ class Vertex
 				for i in @goals[ @or_i ]
 					if i.type != :Equal
 						ans = i.next_answer()
-#puts ans
+#puts "be "+ans.put() if ans
+#puts i
 						unless ans
+							puts "pumpumpum"
 							return false
 						end
 						@pt.push( ans )
@@ -520,8 +530,12 @@ def look_for( goals )
 	$graph = Graph.new
 	vertex_goals = $graph.pushGoals goals
 	answers = $graph.buildGraph
+#	(0..$graph.back.size-1).each { |i| puts i,$graph.back[i]}
+#	puts $graph.back[10].goals.put()
+#	$graph.back[10].init_search()
+#	puts $graph.back[10].next_answer()
+#	puts $graph.back[10].next_answer()
 #	puts "\n\n\n\n\n\n\n\n\n"
-#	puts $graph.back
 #puts $graph.back[8].next_answer();
 #puts $graph.back[8].next_answer();
 #puts goals.put()
