@@ -50,7 +50,7 @@ class GraphWindow
 		end
 	end	
 	def justDrawDot(x,y,z=0)
-		puts x,y
+#		puts x,y
 		@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0) )
 		if @fn_mode == :Frame
 			@pa.brush = Qt::Brush.new( Qt::Color.new(120,120,120) )	if x > 0 
@@ -82,6 +82,7 @@ class GraphWindow
 		@@frame.lc -=1 if e.key == 59	# ;
 		@@frame.a +=14 if e.key == 46	# .
 		@@frame.a -=14 if e.key == 44	# ,
+		puts e.key
 	end
 
 
