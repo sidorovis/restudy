@@ -1,6 +1,8 @@
-R(a,b).
+
+E(a,b).
+E(t,y).
 T(b,c).
-R(X,Y) <- R(X,Z);T(Z,Y).
+R(X,Y) <- E(X,Z);T(Z,Y).
 
 Q(a,v).
 Q(c,c).

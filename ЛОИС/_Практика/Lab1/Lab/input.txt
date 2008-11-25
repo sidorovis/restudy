@@ -1,15 +1,23 @@
-E(a,b).
-E(t,y).
-T(b,c).
-R(X,Y) <- E(X,Z);T(Z,Y).
+MALE(sergey).
+MALE(denis).
+FEMALE(svetlana).
+MALE(ivan).
+CHILD(denis,svetlana).
+CHILD(ivan,svetlana).
+CHILD(denis,sergey).
+CHILD(ivan,sergey).
+MOTHER(M,C) <- CHILD(C,M);FEMALE(M).
+father(MOTHER,FATHER).
+father(CHILD,CHILD).
+father(FEMALE,MALE).
+father(svetlana,sergey).
+father(ivan,ivan).
+father(denis,denis).
+PARENTS(F,M,C) <- FATHER(F,C);MOTHER(M,C).
 
-Q(a,v).
-Q(c,c).
-
-s(Z,X).
-X(R,T) <- C(T,R).
-s(C,V).
-V(xx,yy).
-C(yyy,xxx).
-s(xx,yyy).
-s(yy,xxx).
+ENEMY(ivan,michail).
+ENEMY(michail,sergey).
+FRIENDS(A,C) <- ENEMY(B,A);ENEMY(B,C).
+FRIENDS(A,C) <- ENEMY(A,B);ENEMY(B,C).
+FRIENDS(A,C) <- ENEMY(B,A);ENEMY(C,B).
+FRIENDS(A,C) <- ENEMY(A,B);ENEMY(C,B).
