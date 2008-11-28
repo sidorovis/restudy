@@ -14,6 +14,7 @@ protected
 	about: draw field on window form
 =end
 	def paintEvent(e)
+		puts size.width
 		@pa = Qt::Painter.new( self )
 		x, y = @X + @dx, @Y - @dy		#	x, y sending
 		@pa.fillRect( -1 , -1 , @X * 10 + 1 , @Y * 10 + 1, Qt::Brush::new( Qt::Color::new(255,255,255) ))	#	fill white board background
