@@ -277,6 +277,10 @@ class Unification
 	def to_s()
 		@left.to_s+"->"+@right.to_s
 	end
+	def ==(other)
+		return true if @left == other.left && @right == other.right
+		false
+	end
 end
 class Vertex
 	attr_reader :predicate_info, :father
@@ -285,8 +289,8 @@ class Vertex
 	attr_accessor :translates
 	def initialize( predicate_info , father , goals, equal = Array.new )
 		@current_answer = 0
-		@ans_array = [] unless @ans_array
-		@ori_array = [] unless @ori_array
+		@ans_array = []
+		@answers = false
 		@or_goal_index = 0
 		@and_goal_index = []
 		@type = :PredicateTerm if predicate_info.class == BDParser::PredicateTerm
@@ -354,13 +358,6 @@ class Vertex
 		end
 		true
 	end
-	def init_search()
-		@or_i = 0
-		@or_i = -1 if @type == :Fact
-		for i in @goals
-			i.each { |u| u.init_search() }
-		end
-	end
 	def next_ans_for_one(or_i)
 		l = false
 		while !l 
@@ -400,7 +397,7 @@ class Vertex
 				return false unless @t[ @t.size-1 ]
 			end # unless @t
 			l = false
-			while (!l)
+			while (!l && !ans)
 				ans = @pt.clone				
 #		puts "more "+ans.put()
 				@pt[ 0 ] = @goals[ or_i ][ @ind[0] ].next_answer()
@@ -417,58 +414,112 @@ class Vertex
 				end				
 				if i > @ind.size
 					@t[ @t.size-1 ] = false
-					ans = make_u(ans)
-					l,ans= test_uni_array(ans,@e)
-#		puts "!"
-					return ans if l
+					if ans
+						ans = make_u(ans)
+						l,ans= test_uni_array(ans,@e)
+						return ans if l
+					end
 					@t = nil
 					return false
 				else
-					ans = make_u(ans)
-					l,ans= test_uni_array(ans,@e)
-#		puts "!"
+					if ans
+						ans = make_u(ans)
+						l,ans= test_uni_array(ans,@e)
+					end
 				end
 			end
-#			puts "!"+ans.put()
 			@t = nil unless ans
 			return ans
 	end
+	def init_search()
+		@or_i = 0
+		@or_i = -1 if @type == :Fact
+		@current_answer = 0
+		for i in @goals
+			i.each { |u| u.init_search() }
+		end
+	end
 	def next_answer()
-		return false if @or_i >= @goals.size
+		return false if type==:Fact && @or_i >= @goals.size
 		if type == :Fact
 			@or_i += 1
 			return @unification
 		end
 		return false if @type != :PredicateTerm
-		while @or_i < @goals.size
-			if ( @ans_array.size > @current_answer )
-				@current_answer += 1
-				@or_i = @goals.size if @current_answer == @ans_array.size
-				return @ans_array[ @current_answer - 1 ]
+#puts @answers
+		unless @answers	
+			threads = []
+			while (@or_i < @goals.size)
+				Thread.critical = true
+				if $n < $n_max
+					$n += 1
+					Thread.critical = false
+   					thread = Thread.new do
+						if @goals[ @or_i ].size == 1
+							ans = next_ans_for_one( @or_i )
+						end
+						if (@goals[ @or_i ].size > 1)
+							ans = next_ans_for_more( @or_i )
+						end
+						Thread.critical = true
+ 						save_ans( ans )
+						Thread.critical = false
+ 					end #thread end
+					threads.push thread
+ 					Thread.critical = true
+ 					$n -= 1
+ 					Thread.critical = false
+				else
+					Thread.critical = false
+					if @goals[ @or_i ].size == 1
+						ans = next_ans_for_one( @or_i )
+					end
+					if (@goals[ @or_i ].size > 1)
+						ans = next_ans_for_more( @or_i )
+					end
+ 					save_ans( ans )
+				end
 			end
-
-			if @goals[ @or_i ].size == 1
-				ans = next_ans_for_one( @or_i )
+			threads.each { |thread| thread.join }
+			@answers = true
+		end
+#		puts self
+#		puts @ans_array.put()+" "+@ans_array.size.to_s + "   "+ @current_answer.to_s
+		if ( @current_answer < @ans_array.size )
+			@current_answer += 1
+			return @ans_array[ @current_answer - 1 ]
+		end
+		false
+	end
+	def save_ans( ans )
+		if (ans) && !(ans_exist( ans ))
+			puts "asd "+ans.put if self == $graph.back[1]
+			@ans_array.push( ans.clone )
+		end
+		unless ans
+			@or_i +=1 
+			t = @or_i
+			@t = nil
+			self.init_search()
+			@or_i = t
+	   end
+	end
+	def ans_exist( ans )
+		for a in @ans_array
+			label = true
+			for i in ans
+				unless a.index( i )
+					label = false
+				end
 			end
-			if (@goals[ @or_i ].size > 1)
-				ans = next_ans_for_more( @or_i )
-			end
-			unless ans
-				@or_i +=1 
-				t = @or_i
-				@t = nil
-				self.init_search()
-				@or_i = t
-			else
-				@ans_array.push( ans.clone )
-				@current_answer += 1
-				return ans
+			if label
+				return true
 			end
 		end
 		false
 	end
-	def make_u(ans)
-		u = []	
+	def make_u( ans )
+		u = [];
 		ans.each { |i| i.each { |y| u.push( y ) } }
 		u
 	end
@@ -476,17 +527,23 @@ class Vertex
 		array = array1.clone
 #puts array.put
 #puts uni
-		(0..array1.size-1).each { |i| array[i] = array1[i].clone }
 		for i in 0..array.size-1
 			for u in i+1..array.size-1
 				return false if array[i].left == array[u].left && array[i].right != array[u].right
 			end
 		end
 		i = 0 
+#puts "!! !!"+array.put
 		while (i < array.size-1)
-			array.delete_if { |u| (array.index(u) > i && u.left == array[i].left) }
+			u = i + 1
+			while ( u < array.size - 1)
+				(array.delete_at(u); u -= 1) if array[i].left == array[u].left
+				u += 1
+			end
+#			array.delete_if { |u| ( array.rindex(u) > i && u.left == array[i].left ) }
 			i += 1
 		end
+#puts "!!!!!"+array.put
 #puts array.put
 		for u in uni	
 			for i in 0..array.size-1
@@ -538,7 +595,7 @@ def look_for( goals )
 	vertex_goals = $graph.pushGoals goals
 	answers = $graph.buildGraph
 	$graph.back.each { |vertex| $r += vertex.goals.size }
-#	puts $graph.back[2]
+#	puts $graph.back[1]
 	for vertex_goal in vertex_goals
 		vertex_goal.init_search()
 		ans = vertex_goal.next_answer()

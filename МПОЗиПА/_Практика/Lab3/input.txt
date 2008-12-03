@@ -1,3 +1,14 @@
+Q(a,b).
+Q(b,b).
+Q(e,r).
+W(b,c).
+W(b,e).
+W(r,t).
+T(X,Y) <- Q(X,Y);W(Y,Z).
+R(X,Y) <- T(X,Y).
+R(X,Y) <- W(Y,Z).
+R(t,y).
+
 MALE(sergey).
 MALE(denis).
 FEMALE(svetlana).
@@ -18,7 +29,6 @@ father(ivan,ivan).
 father(kolya,kolya).
 father(denis,denis).
 PARENTS(F,M,C) <- FATHER(F,C);MOTHER(M,C).
-
 
 ENEMY(ivan,michail).
 ENEMY(michail,sergey).
