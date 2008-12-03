@@ -2,10 +2,10 @@ require 'Qt'
 
 class GUIBall < Qt::Widget
 	slots 'timeout()'
-	@@size_x, @@size_y = 8, 8
+	@@size_x, @@size_y = $ball_size, $ball_size
 	@@ball = nil
 	attr_accessor :mode
-	attr_reader :x, :y
+	attr_reader :x, :y, :player
 	def initialize( parent, player )
 		super( parent )
 		@player = player
@@ -22,12 +22,12 @@ class GUIBall < Qt::Widget
 	def fly2()
 		if @mode == :Fly
 			dx, dy = @x2 - @x, @y2 - @y
-			len = ((1.0*dx)**2+(1.0*dy)**2)**(0.5)
-			s = 16
+			len = lengthOfVector( dx , dy )
+			s = $ball_speed
 			dx = dx * 1.0*s / len
 			dy = dy * 1.0*s / len
-			l1 = ((dx)**2+(dy)**2)**(0.5)
-			l2 = ((@x2-@x)**2+(@y2-@y)**2)**(0.5)
+			l1 = lengthOfVector(dx , dy)
+			l2 = lengthOfVector(@x2-@x, @y2-@y)
 			if l1 < l2
 				putBall( @x + dx, @y + dy )
 			else

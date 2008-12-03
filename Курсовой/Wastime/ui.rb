@@ -1,25 +1,27 @@
-$field_size_k = 8
 
 require 'GUIField'
 require 'GUIPlayer'
 require 'GUIBall'
 
+
 class UI < Qt::MainWindow
 	signals 'pause()', 'play()'
 	slots 'onPause()', 'onPlay()'
 	attr_reader :speed
+	attr_reader :err
 	def initialize()
 		super()
-		setMinimumSize( 110 * $field_size_k + 5  , 49 * $field_size_k +5 )
-		setMaximumSize( 110 * $field_size_k + 5, 49 * $field_size_k +5 )
-		windowTitle = "Wastime"
+		setMinimumSize( $x_field_size * $field_size_k + $additional_xy_size , $y_field_size * $field_size_k +$additional_xy_size )
+		setMaximumSize( $x_field_size * $field_size_k + $additional_xy_size , $y_field_size * $field_size_k +$additional_xy_size )
+		setWindowTitle( "Wastime" )
 		setStatusBar( Qt::StatusBar.new )
 		@label = Qt::Label.new
-		$field = GUIField.new(self)
+		GUIField.new(self)
+		@err = $field.err
 		setCentralWidget($field)
 		statusBar.addWidget( @label )
 		statusBar.setSizeGripEnabled( false )
-		@speed = 10
+		@speed = $start_speed
 		onPause
 		connect( self, SIGNAL('pause()'), self, SLOT('onPause()') )
 		connect( self, SIGNAL('play()'), self, SLOT('onPlay()') )
@@ -36,7 +38,7 @@ class UI < Qt::MainWindow
 	end
 	def onPlay()
 		@mode = :Play
-		$field.timer.start( 1000.0 / @speed )
+		$field.timer.start( $max_time_period / @speed )
 		setStatus( "Game going with speed #{@speed}." )
 	end
 	def spacePressed()
@@ -48,12 +50,12 @@ class UI < Qt::MainWindow
 	end
 	def retimer()
 		$field.timer.stop()
-		$field.timer.start( 1000.0 / @speed )
+		$field.timer.start( $max_time_period / @speed )
 		setStatus( "Game going with speed #{@speed}." )
 	end
 	def keyReleaseEvent( ke )
 		spacePressed if ke.key == Qt::Key_Space
-		(@speed+=1;retimer) if @speed < 20 && ke.key == Qt::Key_Plus
-		(@speed-=1;retimer) if @speed > 0 && ke.key == Qt::Key_Minus
+		(@speed-=1;retimer) if @speed > $min_speed && ke.key == Qt::Key_Minus
+		(@speed+=1;retimer) if @speed < $max_speed && ke.key == Qt::Key_Plus
 	end
 end

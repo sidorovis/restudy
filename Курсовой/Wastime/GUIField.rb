@@ -3,16 +3,40 @@ class GUIField < Qt::Widget
 	attr_reader :speed, :timer
 	slots 'onTimer()'
 	@@inst = nil
-	attr_reader :players
+	attr_reader :players, :err
 	def initialize( parent = nil )
 		super(parent)
+		$field = self
 		@players = []
 		@timer = Qt::Timer.new( self )
-		addCommand($a)
-		addCommand($b)
+		@err = false
+		unless place_commands( $a , $settings.place )
+			puts " !!! Ошибка при попытке расстановки комманд (неверные параметры)".to_left()
+			@err = true
+		end
 		addBall()
-		@players.last.init_ball()
 	end
+	def place_commands( command, yards )
+		return false unless command.class == Command
+		return false if yards < -40 || yards > 40 || yards % 10 != 0
+		field = $field
+		if command == $a 
+			c1, c2 = $a, $b
+		else
+			c1, c2 = $b, $a
+		end
+		if c1.mode == :Attacker
+			c1.mode = :Attacker
+			c2.mode = :Protector
+		else
+			c2.mode = :Attacker
+			c1.mode = :Protector
+		end
+		place_command( c1, yards )
+		place_command( c2, yards )
+		true
+	end
+
 	def dot_inside?( x , y )
 		return false if x < 4
 		return false if y < 4
@@ -20,15 +44,12 @@ class GUIField < Qt::Widget
 		return false if y > size.height - 4
 		true
 	end
-	def find_player( info )
+	def findByInfo( info )
 		@players.each { |i| return i if i.info == info }
 		nil
 	end
-	def addCommand( c )
-		c.players.each { |player| addPlayer( player ) }
-	end
-	def addPlayer(info)
-		@players.push(GUIPlayer.new( self, info ))
+	def addPlayer(info, x, y, type)
+		@players.push(GUIPlayer.new( self, info, x, y, type ))
 		connect( @timer, SIGNAL('timeout()'), @players.last, SLOT('timeout()') )
 	end
 	def addBall()

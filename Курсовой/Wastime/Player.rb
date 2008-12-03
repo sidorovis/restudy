@@ -12,8 +12,9 @@
 class Player
 	attr_reader :name, :speed
 	attr_reader :command
-	attr_accessor :go4, :go4name, :attack_strategy, :protect_strategy 
+	attr_accessor :go4, :go4name, :attack_strategy, :protect_strategy, :type
 	def initialize( name, setting_array, command )
+		@type = :Null
 		@name = name
 		@speed = setting_array[ :Speed ]
 		@command = command
@@ -42,10 +43,11 @@ class Player
 	end
 end
 class Command
-	attr_accessor :enemy
+	attr_accessor :enemy, :mode
 	attr_accessor :color
 	attr_reader :players
 	def initialize( command_name, command_hash )
+		@mode = command_hash[:Type]
 		@name = command_name
 		@players = []
 		command_hash[:Players].each { |k,v| @players.push(Player.new(k,v, self)) }
@@ -55,15 +57,21 @@ class Command
 		puts ("Команда: -= "+@name+" =-").to_right()
 		@players.each {|player| player.put }
 	end
-	def find_player( player_name )
-		@players.each { |i| return i if i == player_name }
+	def findByName( player_name )
+		@players.each { |i| return i if i.name == player_name }
 		nil
+	end
+	def findByType( type )
+		ans = []
+		@players.each { |i| ans.push(i) if i.type == type }
+		ans
 	end
 	def makego4
 		for player in @players
 			if player.protect_strategy == :Go4
-				player.go4 = @enemy.find_player( player.go4name )
-				(player.protect_strategy = :Blic ;puts "!! Игроку #{player.name} тактика защиты сменена на :Blic ".to_left()) unless player.go4
+				player.go4 = @enemy.findByName( player.go4name )
+#				(player.protect_strategy = :Blic ;puts "!! Игроку #{player.name} тактика защиты сменена на :Blic ".to_left()) unless player.go4
+				player.protect_strategy = :Blic unless player.go4
 				player.go4name = nil
 			end
 		end
