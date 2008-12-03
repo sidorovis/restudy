@@ -1,0 +1,16 @@
+
+E(a,b).
+E(t,y).
+T(b,c).
+R(X,Y) <- E(X,Z);T(Z,Y).
+
+Q(a,v).
+Q(c,c).
+
+s(Z,X).
+X(R,T) <- C(T,R).
+s(C,V).
+V(xx,yy).
+C(yyy,xxx).
+s(xx,yyy).
+s(yy,xxx).
