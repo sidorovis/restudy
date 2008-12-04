@@ -109,12 +109,6 @@ class Graph
 		end
 	end
 	def add2front( vertex )
-#		if ( @front.include?( vertex ) )
-#			return @front[ @front.index( vertex ) ]
-#		end
-#		if ( @back.include?( vertex ) )
-#			return @back[ @back.index( vertex ) ]
-#		end
 		@front.push vertex
 		return vertex		
 	end
@@ -363,81 +357,143 @@ class Vertex
 		while !l 
 			ans = @goals[ or_i ][0].next_answer()
 			break unless ans
-			l, ans = test_uni_array( ans , [] )
+			l, ans = test_uni_array( ans , [], or_i )
 		end
 		return ans
 	end
-	def next_ans_for_more(or_i)
-#		print "@T.size",@t
-#		puts
-			unless @t
-				@pt= []
-				@ind = []
-				@t = []
-				@e = []
-				for i in @goals[ or_i ]
-					if i.type != :Equal
-#	puts "_____________________LOG",$graph.back[2],i
-						i.init_search()
-						ans = i.next_answer()
-						unless ans
-#				puts "_______GO OUT________"
-#				puts i
-							return false
-						end
-						@pt.push( ans )
-						@ind.push( @goals[ or_i ].index(i) )
-						@t.push( true )
-					else
-						@e.push( i )
+	def make_pt_ind_t_e( or_i )
+		t= nil
+		unless t
+			pt= []
+			ind = []
+			t = []
+			e = []
+			for i in @goals[ or_i ]
+				if i.type != :Equal
+					i.init_search()
+					i.reload()
+					ans = i.next_answer()
+					unless ans
+						return [false]*4
 					end
+					pt.push( ans )
+					ind.push( @goals[ or_i ].index(i) )
+					t.push( true )
+				else
+					e.push( i )
 				end
-				@t.push( true )
-			else
-				return false unless @t[ @t.size-1 ]
-			end # unless @t
+			end
+			t.push( true )
+		else
+			return false*4 unless t[ t.size-1 ]
+		end # unless @t
+		return pt, ind, t, e
+	end
+	def next_ans_for_more(pt,ind,t,e , or_i)
+			return false unless t[t.size-1]
 			l = false
+			ans = false
 			while (!l && !ans)
-				ans = @pt.clone				
-#		puts "more "+ans.put()
-				@pt[ 0 ] = @goals[ or_i ][ @ind[0] ].next_answer()
+				ans = pt.clone
+				pt[ 0 ] = @goals[ or_i ][ ind[0] ].next_answer()
 				i = 1
-				while (!@pt[i-1] && i <= @pt.size)
-					if (i == @pt.size)
+				while ( !pt[i-1] && i <= pt.size )
+					if (i >= pt.size)
 						i += 1
 						break
 					end
-					@pt[i] = @goals[ or_i ][ @ind[i] ].next_answer()
-					@goals[ or_i ][ @ind[i-1] ].init_search()
-					@pt[i-1] = @goals[ or_i ][ @ind[i-1] ].next_answer()
+					pt[i] = @goals[ or_i ][ ind[i] ].next_answer()
+					@goals[ or_i ][ ind[i-1] ].init_search()
+					@goals[ or_i ][ ind[i-1] ].reload()
+					pt[i-1] = @goals[ or_i ][ ind[i-1] ].next_answer()
 					i += 1
 				end				
-				if i > @ind.size
-					@t[ @t.size-1 ] = false
+#				puts "! "+ans.put+"   "+i.to_s+"  "+ind.size.to_s+"    "+pt.put
+				if i > ind.size
+#				puts ans.put
+					t[ t.size-1 ] = false
 					if ans
 						ans = make_u(ans)
-						l,ans= test_uni_array(ans,@e)
-						return ans if l
+						l,ans= test_uni_array( ans , e , or_i )
+						return ans if l && ans
 					end
-					@t = nil
+					t = nil
 					return false
 				else
+#				puts ans.put
 					if ans
 						ans = make_u(ans)
-						l,ans= test_uni_array(ans,@e)
+						l,ans= test_uni_array( ans , e , or_i )
+						return ans if ans
 					end
 				end
 			end
-			@t = nil unless ans
+			t = nil unless ans
 			return ans
 	end
 	def init_search()
 		@or_i = 0
 		@or_i = -1 if @type == :Fact
-		@current_answer = 0
+#		@current_answer = 0
 		for i in @goals
 			i.each { |u| u.init_search() }
 		end
+	end
+	def reload()
+		Thread.critical = true
+		@current_answer = 0
+		Thread.critical = false
+		for i in @goals
+			i.each { |u| u.reload() }
+		end
+	end
+	def find_answers( i, threads )
+		result = false
+		Thread.critical = true
+		if $n < $n_max
+			$n += 1
+			$t += 1
+			Thread.critical = false
+			thread = Thread.new do	
+				ans = true
+				if (@goals[ i ].size == 1)
+					while ans
+						ans = next_ans_for_one( i )
+						result = true if save_ans( ans )
+					end
+				end
+				if (@goals[ i ].size > 1)
+					pt, ind, t, e = make_pt_ind_t_e( i )
+					ans = true
+					while ans
+						ans = next_ans_for_more( pt, ind, t, e , i )
+						result = true if save_ans( ans )
+					end
+				end
+			end
+			Thread.critical = true
+			threads.push thread
+			$n -= 1
+			Thread.critical = false
+		else
+			Thread.critical = false
+			ans = true
+			if (@goals[ i ].size == 1)
+				while ans
+					ans = next_ans_for_one( i )
+					result = true if save_ans( ans )
+				end
+			end
+			if (@goals[ i ].size > 1)
+				pt, ind, t, e = make_pt_ind_t_e( i )
+				ans = true
+				while (ans)
+					ans = next_ans_for_more( pt, ind, t, e , i )
+					result = true if save_ans( ans )
+				end
+			end
+		end
+		return result
 	end
 	def next_answer()
 		return false if type==:Fact && @or_i >= @goals.size
@@ -446,55 +502,44 @@ class Vertex
 			return @unification
 		end
 		return false if @type != :PredicateTerm
-#puts @answers
-		unless @answers	
-			threads = []
-			while (@or_i < @goals.size)
-				Thread.critical = true
-				if $n < $n_max
-					$n += 1
-					Thread.critical = false
-   					thread = Thread.new do
-						if @goals[ @or_i ].size == 1
-							ans = next_ans_for_one( @or_i )
-						end
-						if (@goals[ @or_i ].size > 1)
-							ans = next_ans_for_more( @or_i )
-						end
-						Thread.critical = true
- 						save_ans( ans )
-						Thread.critical = false
- 					end #thread end
-					threads.push thread
- 					Thread.critical = true
- 					$n -= 1
- 					Thread.critical = false
-				else
-					Thread.critical = false
-					if @goals[ @or_i ].size == 1
-						ans = next_ans_for_one( @or_i )
-					end
-					if (@goals[ @or_i ].size > 1)
-						ans = next_ans_for_more( @or_i )
-					end
- 					save_ans( ans )
-				end
+		@threads = [] unless @threads
+		unless @answer
+			@answer = true
+			for i in 0..@goals.size-1
+				@threads.push( [] )
+				find_answers( i, @threads.last )
 			end
-			threads.each { |thread| thread.join }
-			@answers = true
+#			@threads.each { |thread_array| thread_array.each { |thread| thread.join } }
+#			puts @threads.size
 		end
-#		puts self
-#		puts @ans_array.put()+" "+@ans_array.size.to_s + "   "+ @current_answer.to_s
-		if ( @current_answer < @ans_array.size )
-			@current_answer += 1
-			return @ans_array[ @current_answer - 1 ]
+#		puts " #{@threads.size} , #{@goals.size} " if @threads.size > 0
+		label = true
+		while label 
+#			puts " #{@threads.size} , #{@goals.size} " if @threads.size > 1
+			label = false
+			Thread.critical = true
+#			@threads.each { |thread_array| thread_array.each { |thread| print thread.status.to_s+" " } }
+#			puts "" 
+			@threads.each { |thread_array| thread_array.each { |thread| label=true if thread.status == "run" } }
+			if ( @current_answer < @ans_array.size )
+				@current_answer += 1
+				return @ans_array[ @current_answer - 1 ]
+			end
+			Thread.critical = false
 		end
 		false
 	end
-	def save_ans( ans )
+	def save_ans(ans)
+		Thread.critical = true
+#		puts ans.put if ans
+		save_ans1(ans)
+		Thread.critical = false
+	end
+	def save_ans1( ans )
 		if (ans) && !(ans_exist( ans ))
-			puts "asd "+ans.put if self == $graph.back[1]
+			sleep( $sleep_size )
 			@ans_array.push( ans.clone )
+			return true
 		end
 		unless ans
 			@or_i +=1 
@@ -502,7 +547,8 @@ class Vertex
 			@t = nil
 			self.init_search()
 			@or_i = t
-	   end
+		end
+		return false
 	end
 	def ans_exist( ans )
 		for a in @ans_array
@@ -523,28 +569,19 @@ class Vertex
 		ans.each { |i| i.each { |y| u.push( y ) } }
 		u
 	end
-	def test_uni_array(array1,uni)
-		array = array1.clone
-#puts array.put
-#puts uni
+	def test_uni_array(array112,uni, or_i)
+		array = array112.clone
+		(0..array112.size-1).each { |i| array[i] = array112[i].clone }
 		for i in 0..array.size-1
 			for u in i+1..array.size-1
 				return false if array[i].left == array[u].left && array[i].right != array[u].right
 			end
 		end
-		i = 0 
-#puts "!! !!"+array.put
-		while (i < array.size-1)
-			u = i + 1
-			while ( u < array.size - 1)
-				(array.delete_at(u); u -= 1) if array[i].left == array[u].left
-				u += 1
-			end
-#			array.delete_if { |u| ( array.rindex(u) > i && u.left == array[i].left ) }
-			i += 1
+		array2 = []
+		for i in array
+			array2.push( i ) unless array2.include?( i )
 		end
-#puts "!!!!!"+array.put
-#puts array.put
+		array = array2
 		for u in uni	
 			for i in 0..array.size-1
 				for y in 0..array.size-1
@@ -554,14 +591,14 @@ class Vertex
 				end
 			end
 		end
-		if self.translates.size <= @or_i || self.translates[@or_i].size == 0
+		if self.translates.size <= or_i || self.translates[or_i].size == 0
 			array.delete_if { |e| !self.predicate_info.params.include?( e.left ) }
 			return true,array
 		else
 			i = 0
 			while i < array.size
 				label = false
-				self.translates[@or_i][0].unification.each { |u| label = true if u.right == array[i].left }
+				self.translates[or_i][0].unification.each { |u| label = true if u.right == array[i].left }
 				unless label
 					array.delete_at(i)
 					i-=1
@@ -571,7 +608,7 @@ class Vertex
 		end
 		uni = []
 		for i in 0..self.predicate_info.params.size-1
-			from = self.translates[@or_i][0].unification[i].right
+			from = self.translates[or_i][0].unification[i].right
 			to = self.predicate_info.params[i]
 			for u in array
 				u.left = to if u.left == from
@@ -589,20 +626,24 @@ def find_equal(first, second)
 	false
 end
 def look_for( goals )
-	puts "= BEGIN ==============================================================="
+	puts "= BEGIN ===============================================================" if $show_result
 
+	goalsc = goals.clone
 	$graph = Graph.new
-	vertex_goals = $graph.pushGoals goals
+	vertex_goals = $graph.pushGoals( goalsc )
 	answers = $graph.buildGraph
 	$graph.back.each { |vertex| $r += vertex.goals.size }
 #	puts $graph.back[1]
+#	puts $graph.back[2]# .index(vertex_goals[2])
+#	puts vertex_goals[2]
 	for vertex_goal in vertex_goals
 		vertex_goal.init_search()
 		ans = vertex_goal.next_answer()
 		while ans
-			puts "Ans: "+ans.put()
+			puts "Ans: "+ans.put() if $show_result
 			ans = vertex_goal.next_answer()
 		end
 	end
-	puts "= END ================================================================="
+#	puts $n
+	puts "= END =================================================================" if $show_result
 end

@@ -5,12 +5,17 @@ require "BDParser"
 require "RParser"
 require "Lois_Algo"
 
-	# максимальное количество дополнительных потоков
-$n_max = 4
-	# текущее количество дополнительных потоков
-$n = 0
-	# количество обрабатываемых данных (ранг задачи)
+	# ™ЃЂ®з•бвҐЃ Ѓ°а†°†влҐ†•ђле §†≠≠ле (а†≠£ І†§†з®)
 $r = 0
+	# ЃвЃ°аЃ¶†вм Ђ® бз®в†≠≠л• §†≠≠л•
+$show_bd = false
+	# ЃвЃ°аЃ¶†вм Ђ® а•ІгЂмв†вл Ґлз®бЂ•≠®п
+$show_result = false
+
+$sleep_size = 0.01
+
+$n_min_min = 0
+$n_max_max = 19
 
 l = Lexer.new
 l.yyin = File.open("input.txt", "r")
@@ -32,12 +37,13 @@ $facts = bd_parser.facts
 	$facts = temp.clone
 $rules = bd_parser.rules
 
-puts "BD\n{"
-puts " "+bd_parser.equals.join("\n ")
-puts " "+bd_parser.facts.join("\n ")
-puts " "+bd_parser.rules.join("\n ")
-puts "}"
-
+if $show_bd
+	puts "BD\n{"
+	puts " "+bd_parser.equals.join("\n ")
+	puts " "+bd_parser.facts.join("\n ")
+	puts " "+bd_parser.rules.join("\n ")
+	puts "}"
+end 
 request_parser = RParser.new
 request_parser.init_data
 
@@ -49,12 +55,22 @@ begin
 rescue RParser::ParseError
 	error = "Wrong targets format"
 end
+
+if $show_bd
 puts request_parser.targets.join("\n")
-puts
-puts 
-st = Time.new.to_f
-look_for( request_parser.targets )
-en = Time.new.to_f
-puts en-st
-puts
-puts " Current rang: "+$r.to_s
+	puts
+	puts 
+end         
+for n in $n_min_min..$n_max_max
+	$r = 0
+	$n = 0
+	$n_max = n
+	$t = 0
+	st = Time.new.to_f
+	look_for( request_parser.targets )
+	en = Time.new.to_f
+	print "\tРa≠£: \t"+$r.to_s
+	print "\tПЃвЃ™ЃҐ: \t"+($n_max+1).to_s
+	print "\tВа•ђп а•и•≠®п: \t"+(en-st).to_s
+	puts "\t #{$t}"
+end
