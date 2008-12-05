@@ -12,7 +12,7 @@ $show_bd = false
 	# отоброжать ли результаты вычисления
 $show_result = false
 
-$sleep_size = 0.01
+$sleep_size = 0
 
 $n_min_min = 0
 $n_max_max = 19
