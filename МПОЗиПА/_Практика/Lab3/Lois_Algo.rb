@@ -83,27 +83,27 @@ class Graph
 	def lookRules( goal )
 		for rule in $rules
 			if ( rule == goal )
-				u = unification( goal.predicate_info , rule.to_predicate )
-				if u
+				uu = unification( goal.predicate_info , rule.to_predicate )
+				if uu
 					goals = Array.new
 					translate = []
 					e = BDParser::Equal.new("fiction",[],[])
 					v = Vertex.new( e , goal, [] )
 					uni = []
-					for i in 0..rule.to_predicate.params.size-1
-						uni.push( Unification.new( goal.predicate_info.params[i] , rule.to_predicate.params[i] ) )
+					for i1 in 0..rule.to_predicate.params.size-1
+						uni.push( Unification.new( goal.predicate_info.params[i1] , rule.to_predicate.params[i1] ) )
 					end
 					v.unification = uni 
 					translate.push( v )
 					for what_to_prove in rule.from_predicates
 						new_vertex = Vertex.new( what_to_prove, goal, [] )
-						new_vertex.unification = u
+						new_vertex.unification = uu
 						new_vertex = add2front( new_vertex )
 						goals.push( new_vertex )
 					end	
 				goal.goals.push( goals )
 				goal.translates[ goal.goals.index(goals) ] = translate
-				(0..goal.translates.size-1).each { |i| (goal.translates[i] = [];) unless goal.translates[i] }
+				(0..goal.translates.size-1).each { |iii| (goal.translates[iii] = [];) unless goal.translates[iii] }
 				end
 			end
 		end
@@ -440,21 +440,29 @@ class Vertex
 		end
 	end
 	def reload()
+		t_s = Time.new.to_f
 		Thread.critical = true
 		@current_answer = 0
 		Thread.critical = false
+		t_f = Time.now.to_f
+		$t_dop += t_f - t_s
 		for i in @goals
 			i.each { |u| u.reload() }
 		end
+		
 	end
 	def find_answers( i, threads )
 		result = false
-		Thread.critical = true
 		if $n < $n_max
+			t_s = Time.new.to_f
+			Thread.critical = true
 			$n += 1
-			$t += 1
+#			$t += 1
 			Thread.critical = false
-			thread = Thread.new do	
+			t_f = Time.now.to_f
+			$t_dop += t_f - t_s
+
+			thread = Thread.new do
 				ans = true
 				if (@goals[ i ].size == 1)
 					while ans
@@ -471,12 +479,14 @@ class Vertex
 					end
 				end
 			end
+			t_s = Time.now.to_f
 			Thread.critical = true
 			threads.push thread
 			$n -= 1
 			Thread.critical = false
-		else
-			Thread.critical = false
+			t_f = Time.now.to_f
+			$t_dop += t_f - t_s
+		else		
 			ans = true
 			if (@goals[ i ].size == 1)
 				while ans
@@ -486,10 +496,12 @@ class Vertex
 			end
 			if (@goals[ i ].size > 1)
 				pt, ind, t, e = make_pt_ind_t_e( i )
-				ans = true
-				while (ans)
-					ans = next_ans_for_more( pt, ind, t, e , i )
-					result = true if save_ans( ans )
+				if t
+					ans = true
+					while (ans)
+						ans = next_ans_for_more( pt, ind, t, e , i )
+						result = true if save_ans( ans )
+					end
 				end
 			end
 		end
@@ -504,49 +516,60 @@ class Vertex
 		return false if @type != :PredicateTerm
 		@threads = [] unless @threads
 		unless @answer
+			t_s = Time.new.to_f
 			@answer = true
 			for i in 0..@goals.size-1
 				@threads.push( [] )
 				find_answers( i, @threads.last )
 			end
-#			@threads.each { |thread_array| thread_array.each { |thread| thread.join } }
-#			puts @threads.size
+			t_f = Time.new.to_f
+			$t += t_f - t_s
 		end
-#		puts " #{@threads.size} , #{@goals.size} " if @threads.size > 0
 		label = true
 		while label 
-#			puts " #{@threads.size} , #{@goals.size} " if @threads.size > 1
-			label = false
+			t_st = Time.now.to_f
 			Thread.critical = true
-#			@threads.each { |thread_array| thread_array.each { |thread| print thread.status.to_s+" " } }
-#			puts "" 
-			@threads.each { |thread_array| thread_array.each { |thread| label=true if thread.status == "run" } }
+			label = false
+			@threads.each { |thread_array| thread_array.each { |thread| (label=true) if thread.status == "run" } }
 			if ( @current_answer < @ans_array.size )
+				label = true
 				@current_answer += 1
+#				t_f = Time.now.to_f
+#				$t_dop += (t_f - t_st)
+#				Thread.critical = false
 				return @ans_array[ @current_answer - 1 ]
 			end
 			Thread.critical = false
+			t_f = Time.now.to_f
+			$t_dop += (t_f - t_st)
 		end
 		false
 	end
 	def save_ans(ans)
-		Thread.critical = true
-#		puts ans.put if ans
+		sleep( $sleep_size )
 		save_ans1(ans)
-		Thread.critical = false
 	end
 	def save_ans1( ans )
 		if (ans) && !(ans_exist( ans ))
-			sleep( $sleep_size )
+			t_s = Time.now.to_f
+			Thread.critical = true
 			@ans_array.push( ans.clone )
+			Thread.critical = false
+			t_f = Time.now.to_f
+			$t_dop += t_f - t_s
 			return true
 		end
 		unless ans
+			t_s = Time.now.to_f
+			Thread.critical = true
 			@or_i +=1 
 			t = @or_i
 			@t = nil
 			self.init_search()
 			@or_i = t
+			Thread.critical = false
+			t_f = Time.now.to_f
+			$t_dop += t_f - t_s
 		end
 		return false
 	end
@@ -571,6 +594,7 @@ class Vertex
 	end
 	def test_uni_array(array112,uni, or_i)
 		array = array112.clone
+
 		(0..array112.size-1).each { |i| array[i] = array112[i].clone }
 		for i in 0..array.size-1
 			for u in i+1..array.size-1
@@ -633,9 +657,7 @@ def look_for( goals )
 	vertex_goals = $graph.pushGoals( goalsc )
 	answers = $graph.buildGraph
 	$graph.back.each { |vertex| $r += vertex.goals.size }
-#	puts $graph.back[1]
-#	puts $graph.back[2]# .index(vertex_goals[2])
-#	puts vertex_goals[2]
+#	puts $graph.back
 	for vertex_goal in vertex_goals
 		vertex_goal.init_search()
 		ans = vertex_goal.next_answer()
