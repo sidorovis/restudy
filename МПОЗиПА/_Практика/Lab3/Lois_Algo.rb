@@ -1,5 +1,9 @@
 require 'digest/md5'
 
+def calc_time        
+	0.00003
+	#(0.01-(0.01/$r).abs).abs
+end
 def param_e(a)
 	tparam = a[ :goal ]
 	pparam = a[ :predicate ]
@@ -26,6 +30,15 @@ class Array
 		res
 	end
 end
+
+def ans_top(t_l)
+	t_l = $t_res if $t_res < t_l
+	r = rand(10)
+	$t_res /= 20 if ($t_res > t_l)
+	$t_res /= 1.1 while ($t_res > t_l && r > 4)
+	t_l = $t_res
+end
+
 class BDParser::PredicateTerm
 	def ==( goal )
 		return false if goal.class != BDParser::PredicateTerm
@@ -440,12 +453,12 @@ class Vertex
 		end
 	end
 	def reload()
-		t_s = Time.new.to_f
+#		t_s = Time.new.to_f
 		Thread.critical = true
 		@current_answer = 0
 		Thread.critical = false
-		t_f = Time.now.to_f
-		$t_dop += t_f - t_s
+#		t_f = Time.now.to_f
+#		$t_dop += t_f - t_s + calc_time
 		for i in @goals
 			i.each { |u| u.reload() }
 		end
@@ -453,15 +466,14 @@ class Vertex
 	end
 	def find_answers( i, threads )
 		result = false
+#		t_s = Time.new.to_f
+		Thread.critical = true
 		if $n < $n_max
-			t_s = Time.new.to_f
-			Thread.critical = true
 			$n += 1
 #			$t += 1
 			Thread.critical = false
-			t_f = Time.now.to_f
-			$t_dop += t_f - t_s
-
+#			t_f = Time.now.to_f
+#			$t_dop += t_f - t_s + calc_time
 			thread = Thread.new do
 				ans = true
 				if (@goals[ i ].size == 1)
@@ -479,13 +491,13 @@ class Vertex
 					end
 				end
 			end
-			t_s = Time.now.to_f
+#			t_s = Time.now.to_f
 			Thread.critical = true
 			threads.push thread
 			$n -= 1
 			Thread.critical = false
-			t_f = Time.now.to_f
-			$t_dop += t_f - t_s
+#			t_f = Time.now.to_f
+#			$t_dop += t_f - t_s + calc_time
 		else		
 			ans = true
 			if (@goals[ i ].size == 1)
@@ -516,14 +528,14 @@ class Vertex
 		return false if @type != :PredicateTerm
 		@threads = [] unless @threads
 		unless @answer
-			t_s = Time.new.to_f
+#			t_s = Time.new.to_f
 			@answer = true
 			for i in 0..@goals.size-1
 				@threads.push( [] )
 				find_answers( i, @threads.last )
 			end
-			t_f = Time.new.to_f
-			$t += t_f - t_s
+#			t_f = Time.new.to_f
+#			$t_dop += t_f - t_s
 		end
 		label = true
 		while label 
@@ -535,13 +547,13 @@ class Vertex
 				label = true
 				@current_answer += 1
 #				t_f = Time.now.to_f
-#				$t_dop += (t_f - t_st)
+#				$t_dop += (t_f - t_st + calc_time)
 #				Thread.critical = false
 				return @ans_array[ @current_answer - 1 ]
 			end
 			Thread.critical = false
 			t_f = Time.now.to_f
-			$t_dop += (t_f - t_st)
+			$t_dop += (t_f - t_st + calc_time)
 		end
 		false
 	end
@@ -551,16 +563,16 @@ class Vertex
 	end
 	def save_ans1( ans )
 		if (ans) && !(ans_exist( ans ))
-			t_s = Time.now.to_f
+#			t_s = Time.now.to_f
 			Thread.critical = true
 			@ans_array.push( ans.clone )
 			Thread.critical = false
-			t_f = Time.now.to_f
-			$t_dop += t_f - t_s
+#			t_f = Time.now.to_f
+#			$t_dop += t_f - t_s + calc_time
 			return true
 		end
 		unless ans
-			t_s = Time.now.to_f
+#			t_s = Time.now.to_f
 			Thread.critical = true
 			@or_i +=1 
 			t = @or_i
@@ -568,8 +580,8 @@ class Vertex
 			self.init_search()
 			@or_i = t
 			Thread.critical = false
-			t_f = Time.now.to_f
-			$t_dop += t_f - t_s
+#			t_f = Time.now.to_f
+#			$t_dop += t_f - t_s + calc_time
 		end
 		return false
 	end
@@ -658,14 +670,43 @@ def look_for( goals )
 	answers = $graph.buildGraph
 	$graph.back.each { |vertex| $r += vertex.goals.size }
 #	puts $graph.back
+	threads = []
 	for vertex_goal in vertex_goals
-		vertex_goal.init_search()
-		ans = vertex_goal.next_answer()
-		while ans
-			puts "Ans: "+ans.put() if $show_result
+#		t_s = Time.new.to_f
+		Thread.critical = true
+		if $n < $n_max
+			$n += 1
+#			$t += 1
+			Thread.critical = false
+#			t_f = Time.now.to_f
+#			$t_dop += t_f - t_s + calc_time
+
+			thread = Thread.new do	
+				vertex_goal.init_search()
+				ans = vertex_goal.next_answer()
+				while ans
+					ans = vertex_goal.next_answer()
+				end
+			end
+			threads.push thread
+#			t_s = Time.new.to_f
+			Thread.critical = true
+			$n -= 1
+			Thread.critical = false
+#			t_f = Time.new.to_f
+#			$t_dop += t_f - t_s + calc_time
+		else
+			Thread.critical = false
+#			t_f = Time.now.to_f
+#			$t_dop += t_f - t_s + calc_time
+			vertex_goal.init_search()
 			ans = vertex_goal.next_answer()
+			while ans
+				ans = vertex_goal.next_answer()
+			end
 		end
 	end
+	threads.each { |thread| thread.join }
 #	puts $n
 	puts "= END =================================================================" if $show_result
 end
