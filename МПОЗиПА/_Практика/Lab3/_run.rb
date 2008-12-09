@@ -62,7 +62,7 @@ puts request_parser.targets.join("\n")
 	puts 
 end         
 
-for n in $n_min_min..$n_max_max
+for n in [0,5,10,15,20]
 	$r = 0
 	$n = 0
 	$n_max = n
@@ -73,11 +73,14 @@ for n in $n_min_min..$n_max_max
 	$en = Time.new.to_f
 	$t_dop = 0 if n == 0
 	$t_res = ($en-$st-$t_dop).abs
+	$r_nul = $t_res unless $r_nul
+puts "ASD"
 	t_l = ans_top(t_l)
-	puts ($t_res).abs.to_s # +"\t\t"+t_l.to_s
-#	print "\tРaнг: \t"+$r.to_s
-#	print "\tПотоков: \t"+($n_max+1).to_s
-#	print "\tВремя решения: \t"+($t_res).to_s
-#	puts "\t #{$t_dop} \t #{$t}"
+puts "asd"
+#	puts ($t_res).abs.to_s # +"\t\t"+t_l.to_s
+	print "\tРaнг: \t"+$r.to_s
+	print "\tПотоков: \t"+($n_max+1).to_s
+	print "\tВремя решения: \t"+($t_res).to_s
+	puts "\t #{$t_dop} \t #{$t}"
 end
 puts $r

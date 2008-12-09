@@ -32,11 +32,19 @@ class Array
 end
 
 def ans_top(t_l)
-	t_l = $t_res if $t_res < t_l
-	r = rand(10)
-	$t_res /= 20 if ($t_res > t_l)
-	$t_res /= 1.1 while ($t_res > t_l && r > 4)
-	t_l = $t_res
+	if $t_res < t_l
+		t_l = $t_res 
+	else
+		r = rand(10)
+puts "0"
+		$t_res /= 1.4 if ($t_res > t_l)
+puts "1 res #{$t_res}     t_last #{t_l} r #{r} "
+		$t_res /= 1.01 while ($t_res > t_l && r > 1)
+puts "2"
+		$t_res *= 1.3 while ( $r_nul/$t_res > ($n_max+1) )
+puts "3"
+		t_l = $t_res
+	end
 end
 
 class BDParser::PredicateTerm
