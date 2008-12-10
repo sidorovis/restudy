@@ -1,21 +1,28 @@
 #!/usr/bin/ruby
+
+# main script file
+# start point to the program
+# Created by Ivan Sidarau
+# 9.12.2008
+
 require 'Qt'
 require 'settings_interface.rb'
 require 'Player'
 require 'ui'
-require 'Algorythms'
 
+$llog = true
 
-puts "+"+"-"*$center_value+"+"
-
+ # chack existing of test files
 if ARGV.size == 0
 	puts " Используйте с параметром имени файла настроек".to_center()
 else
 	begin
 		File.new(ARGV[0]+".rb")
+		File.new(ARGV[1]+".rb")
 		require ARGV[0]
+		require ARGV[1]
 	rescue Errno::ENOENT
-		puts "Файла настроек не существует".to_center()
+		puts "Одного из файлов настроек не существует".to_center()
 	end
 end
 if testSettings
@@ -36,4 +43,3 @@ if testSettings
 	end
 else
 end
-puts "+"+"-"*$center_value+"+"

@@ -1,1 +1,0 @@
-ruby _run.rb _settings
