@@ -102,10 +102,12 @@ class GraphWindow
 		puts "----------------------------------------" if $log
 	end
 	def DrawADCLine()
+		return unless @paint_mode == :Paint
 		StartWorkAction :DrawADCLine
 	end
 # функция обрабатывающая нажатие кнопки в меню
 	def DrawBrezenhemLine()
+		return unless @paint_mode == :Paint
 		StartWorkAction :DrawBrezenhemLine
 	end
 # функция подключения отрисовки алгоритмов

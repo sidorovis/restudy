@@ -14,7 +14,6 @@ protected
 	about: draw field on window form
 =end
 	def paintEvent(e)
-		puts size.width
 		@pa = Qt::Painter.new( self )
 		x, y = @X + @dx, @Y - @dy		#	x, y sending
 		@pa.fillRect( -1 , -1 , @X * 10 + 1 , @Y * 10 + 1, Qt::Brush::new( Qt::Color::new(255,255,255) ))	#	fill white board background
@@ -83,6 +82,7 @@ public
 =end
 	def initialize( half_size_x = 400, half_size_y = 300 )
 		super()
+		@paint_mode = :Paint
 		@field = Hash.new
 		@f_y = Array.new
 		@f = Ui::MainWindow.new()
@@ -131,7 +131,6 @@ public
 		@current_command = 0
 		@mode = nil
 		self.disconnect(SIGNAL('getMousePress()'));
-#		puts 'ccl '+@mouse_clicked_to.size.to_s
 	end
 # сохраняет координаты мыши	в массив кликов
 	def saveMouse()
@@ -144,7 +143,6 @@ public
 			clearCommandList()
 		end
 		repaint()
-#		puts 'sm '+@mouse_clicked_to.size.to_s
 	end
 	def saveWhileMouse()
 		return unless @mode
@@ -178,6 +176,5 @@ public
 		@mouse_clicked_to.clear
 		self.disconnect(SIGNAL('getMousePress()'));
 		connect( self, SIGNAL('getMousePress()'), self, SLOT( @commands[@mode][@current_command].id2name+'()' ) )
-#		puts 'swa '+@mouse_clicked_to.size.to_s
 	end
 end

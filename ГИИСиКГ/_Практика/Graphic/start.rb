@@ -1,4 +1,4 @@
-require 'Lab6'
+require 'Lab7'
 X = 400
 Y = 300
 $log = false

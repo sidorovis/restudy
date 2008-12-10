@@ -27,6 +27,20 @@ class GraphWindow
 		@@o[10] = [[ left_x , left_y , left_z , 1 ] , [ left_x , left_y , right_z , 1 ]]
 		@@o[11] = [[  right_x  , left_y , left_z , 1 ] , [ right_x  , left_y , right_z , 1 ]]
 
+		@@o_g = []
+		@@o_g.push []
+		@@o_g.last << 0 << 1 << 2 << 3
+		@@o_g.push []
+		@@o_g.last << 4 << 5 << 6 << 7
+		@@o_g.push []
+		@@o_g.last << 0 << 4 << 8 << 9
+		@@o_g.push []
+		@@o_g.last << 2 << 6 << 10 << 11
+		@@o_g.push []
+		@@o_g.last << 3 << 8 << 7 << 11
+		@@o_g.push []
+		@@o_g.last << 10 << 1 << 9 << 5
+
 		@@e = e_make()
 		@@t = e_make()
 		@@t[4,4] = 0.0
@@ -42,9 +56,11 @@ class GraphWindow
 	def ObjectDrawAlgorythm
 		for i in @@o
 			m = make2d_dot_array( i[0] , i[1] )
+			m = delete_unvisible(m) if @deleting_mode
 			justDrawADCLine( m )
 		end
 	end
+	
 	def make2d_dot_array(x,y)
 		p1 = Array2.new
 		p1[1,1],p1[1,2],p1[1,3],p1[1,4] = 1.0*x[0], 1.0*x[1], 1.0*x[2], 1.0*x[3]
@@ -71,7 +87,7 @@ class GraphWindow
 
 	def DrawAlgorythm
 #		puts @pn_mode
-		if @pn_mode == :Normal
+		if @paint_mode == :Proection
 			old_DrawAlgorythm
 		else
 			@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0,255) )
@@ -81,21 +97,13 @@ class GraphWindow
 		end
 	end
 	def DrawDot(x,y,z = 0)
-		if @pn_mode == :Normal
+		unless @paint_mode == :Proection
 			old_DrawDot(x,y)
 		else
 			justDrawDot(x,y)
 		end
 	end	
-	def ProectionMode()
-		@pn_mode = :Proection
-		repaint
-	end
-	def NoProectionMode()
-		@pn_mode = :Normal
-		repaint
-	end
-	
+
 	def e_make()
 		e = Array2.new
 		e[1,1],e[1,2],e[1,3],e[1,4]=  1.0 ,  0.0 ,  0.0 ,  0.0
@@ -194,7 +202,6 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
-	
 	
 	def replace2(dx,dy,dz)
 		e = e_make()
@@ -305,6 +312,19 @@ class GraphWindow
 		turnYRight() if (e.key == 53)     		# 5
 		turnZLeft() if (e.key == 49)			# 1
 		turnZRight() if (e.key == 50)     		# 2
+	end
+	def ProectionMode()
+		return if @paint_mode == :Proection
+		@paint_mode = :Proection
+		@pn_mode = :Proection
+		repaint
+	end
+	def NoProectionMode()
+		puts @paint_mode
+		return if @paint_mode == :Paint
+		@paint_mode = :Paint
+		@pn_mode = :Normal
+		repaint
 	end
 
 	def connectActions

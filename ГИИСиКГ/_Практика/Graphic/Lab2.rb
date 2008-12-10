@@ -109,10 +109,12 @@ class GraphWindow
 	end
 
 	def DrawEllipse()
+		return unless @paint_mode == :Paint
 		StartWorkAction :DrawEllipse
 	end
 
 	def Draw2Pow()
+		return unless @paint_mode == :Paint
 =begin
 	функция f_ellipse возвращает расстояние от заданной точки, до графика заданной линии второго порядка
 	входные параметры:

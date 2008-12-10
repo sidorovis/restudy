@@ -131,13 +131,16 @@ public
 	end
 
 	def DrawBezieSpline()
+		return unless @paint_mode == :Paint
 		@spline_type = :bezie
 		StartWorkAction :DrawSpline
 	end
 	def DrawBSpline()
+		return unless @paint_mode == :Paint
 		StartWorkAction :DrawBSpline
 	end
 	def DrawErmitSpline()
+		return unless @paint_mode == :Paint
 		@spline_type = :ermit
 		StartWorkAction :DrawSpline
 	end

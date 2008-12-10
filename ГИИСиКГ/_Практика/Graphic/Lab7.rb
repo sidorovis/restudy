@@ -1,10 +1,10 @@
-require 'Lab5'
+require 'Lab6'
 
 class GraphWindow
 
-	slots 'FrameMode()', 'NoFrameMode()'
+	slots 'Deleting()', 'NotDeleting()'
 
-	alias :old6_connectActions :connectActions
+	alias :old7_connectActions :connectActions
 =begin
 	alias :old2_addedKeyReleaseEvent :addedKeyReleaseEvent
 	alias :old_justDrawDot :justDrawDot
@@ -30,26 +30,28 @@ class GraphWindow
 	end
 
 =end
+	def delete_unvisible( m )
+		m
+	end	
 
-	def FrameMode()
-		return unless @paint_mode == :Paint
-		@paint_mode = :Frame
-
+	def Deleting
+		return unless @paint_mode == :Proection
+		@deleting_mode = true
+		
 	end
-	def NoFrameMode()
-		return if @paint_mode == :Paint
-		@paint_mode = :Paint
+	def NotDeleting
+		return unless @paint_mode == :Proection
+		@deleting_mode = false
 
 	end
 
 	def connectActions()
-		old6_connectActions
+		old7_connectActions
+		@deleting_mode = true
 		
-
-
-		connect( @f.actionFrameMode, SIGNAL('triggered()') , self , SLOT('FrameMode()') )
-		connect( @f.actionNoFrameMode , SIGNAL('triggered()') , self , SLOT('NoFrameMode()') )
-		
+		connect( @f.actionDeleting, SIGNAL('triggered()') , self , SLOT('Deleting()') )
+		connect( @f.actionNotDeleting , SIGNAL('triggered()') , self , SLOT('NotDeleting()') )
+				
 	end
 
 end

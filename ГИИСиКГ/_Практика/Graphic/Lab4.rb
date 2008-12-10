@@ -108,10 +108,12 @@ public
 	end
 
 	def CreateConvex
+		return unless @paint_mode == :Paint
 		StartWorkAction :DrawConvex
 	end
 	
 	def Fill
+		return unless @paint_mode == :Paint
 		StartWorkAction :Fill
 	end
 

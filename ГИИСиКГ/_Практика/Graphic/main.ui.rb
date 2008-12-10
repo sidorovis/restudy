@@ -1,7 +1,7 @@
 =begin
 ** Form generated from reading ui file 'main.ui'
 **
-** Created: Ср 19. ноя 11:29:29 2008
+** Created: Ср 10. дек 19:53:18 2008
 **      by: Qt User Interface Compiler version 4.3.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -28,6 +28,8 @@ class Ui_MainWindow
     attr_reader :actionNormal_mode
     attr_reader :actionFrameMode
     attr_reader :actionNoFrameMode
+    attr_reader :actionDeleting
+    attr_reader :actionNotDeleting
     attr_reader :centralwidget
     attr_reader :menubar
     attr_reader :menuLines
@@ -37,6 +39,7 @@ class Ui_MainWindow
     attr_reader :menuFill
     attr_reader :menuProecirovanie
     attr_reader :menuFrame
+    attr_reader :menuInvisibleLineDeleting
     attr_reader :statusbar
 
     def setupUi(mainWindow)
@@ -77,6 +80,10 @@ class Ui_MainWindow
     @actionFrameMode.setObjectName("actionFrameMode")
     @actionNoFrameMode = Qt::Action.new(mainWindow)
     @actionNoFrameMode.setObjectName("actionNoFrameMode")
+    @actionDeleting = Qt::Action.new(mainWindow)
+    @actionDeleting.setObjectName("actionDeleting")
+    @actionNotDeleting = Qt::Action.new(mainWindow)
+    @actionNotDeleting.setObjectName("actionNotDeleting")
     @centralwidget = Qt::Widget.new(mainWindow)
     @centralwidget.setObjectName("centralwidget")
     mainWindow.setCentralWidget(@centralwidget)
@@ -97,6 +104,8 @@ class Ui_MainWindow
     @menuProecirovanie.setObjectName("menuProecirovanie")
     @menuFrame = Qt::Menu.new(@menubar)
     @menuFrame.setObjectName("menuFrame")
+    @menuInvisibleLineDeleting = Qt::Menu.new(@menubar)
+    @menuInvisibleLineDeleting.setObjectName("menuInvisibleLineDeleting")
     mainWindow.setMenuBar(@menubar)
     @statusbar = Qt::StatusBar.new(mainWindow)
     @statusbar.setObjectName("statusbar")
@@ -109,6 +118,7 @@ class Ui_MainWindow
     @menubar.addAction(@menuFill.menuAction())
     @menubar.addAction(@menuProecirovanie.menuAction())
     @menubar.addAction(@menuFrame.menuAction())
+    @menubar.addAction(@menuInvisibleLineDeleting.menuAction())
     @menuLines.addAction(@actionADC)
     @menuLines.addAction(@actionBrezenhem)
     @menuMain_Commands.addAction(@actionClear_Field)
@@ -123,6 +133,8 @@ class Ui_MainWindow
     @menuProecirovanie.addAction(@actionNormal_mode)
     @menuFrame.addAction(@actionFrameMode)
     @menuFrame.addAction(@actionNoFrameMode)
+    @menuInvisibleLineDeleting.addAction(@actionDeleting)
+    @menuInvisibleLineDeleting.addAction(@actionNotDeleting)
 
     retranslateUi(mainWindow)
 
@@ -158,6 +170,8 @@ class Ui_MainWindow
     @actionNormal_mode.setText(Qt::Application.translate("MainWindow", "Normal mode", nil, Qt::Application::UnicodeUTF8))
     @actionFrameMode.setText(Qt::Application.translate("MainWindow", "FrameMode", nil, Qt::Application::UnicodeUTF8))
     @actionNoFrameMode.setText(Qt::Application.translate("MainWindow", "NoFrameMode", nil, Qt::Application::UnicodeUTF8))
+    @actionDeleting.setText(Qt::Application.translate("MainWindow", "Deleting", nil, Qt::Application::UnicodeUTF8))
+    @actionNotDeleting.setText(Qt::Application.translate("MainWindow", "NotDeleting", nil, Qt::Application::UnicodeUTF8))
     @menuLines.setTitle(Qt::Application.translate("MainWindow", "&Lines", nil, Qt::Application::UnicodeUTF8))
     @menuMain_Commands.setTitle(Qt::Application.translate("MainWindow", "&Main Commands", nil, Qt::Application::UnicodeUTF8))
     @menu2_dimension_lines.setTitle(Qt::Application.translate("MainWindow", "2 &Dimension lines", nil, Qt::Application::UnicodeUTF8))
@@ -165,6 +179,7 @@ class Ui_MainWindow
     @menuFill.setTitle(Qt::Application.translate("MainWindow", "Fill", nil, Qt::Application::UnicodeUTF8))
     @menuProecirovanie.setTitle(Qt::Application.translate("MainWindow", "Proecirovanie", nil, Qt::Application::UnicodeUTF8))
     @menuFrame.setTitle(Qt::Application.translate("MainWindow", "Frame", nil, Qt::Application::UnicodeUTF8))
+    @menuInvisibleLineDeleting.setTitle(Qt::Application.translate("MainWindow", "InvisibleLineDeleting", nil, Qt::Application::UnicodeUTF8))
     end # retranslateUi
 
     def retranslate_ui(mainWindow)

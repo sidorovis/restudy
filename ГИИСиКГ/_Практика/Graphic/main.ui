@@ -71,6 +71,13 @@
     <addaction name="actionFrameMode" />
     <addaction name="actionNoFrameMode" />
    </widget>
+   <widget class="QMenu" name="menuInvisibleLineDeleting" >
+    <property name="title" >
+     <string>InvisibleLineDeleting</string>
+    </property>
+    <addaction name="actionDeleting" />
+    <addaction name="actionNotDeleting" />
+   </widget>
    <addaction name="menuMain_Commands" />
    <addaction name="menuLines" />
    <addaction name="menu2_dimension_lines" />
@@ -78,6 +85,7 @@
    <addaction name="menuFill" />
    <addaction name="menuProecirovanie" />
    <addaction name="menuFrame" />
+   <addaction name="menuInvisibleLineDeleting" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />
   <action name="actionADC" >
@@ -168,6 +176,16 @@
   <action name="actionNoFrameMode" >
    <property name="text" >
     <string>NoFrameMode</string>
+   </property>
+  </action>
+  <action name="actionDeleting" >
+   <property name="text" >
+    <string>Deleting</string>
+   </property>
+  </action>
+  <action name="actionNotDeleting" >
+   <property name="text" >
+    <string>NotDeleting</string>
    </property>
   </action>
  </widget>
