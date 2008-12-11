@@ -33,9 +33,9 @@ class GraphWindow
 		@@o_g.push []
 		@@o_g.last << 4 << 5 << 6 << 7
 		@@o_g.push []
-		@@o_g.last << 0 << 4 << 8 << 9
+		@@o_g.last << 0 << 8 << 4 << 9
 		@@o_g.push []
-		@@o_g.last << 2 << 6 << 10 << 11
+		@@o_g.last << 2 << 11 << 10 << 6
 		@@o_g.push []
 		@@o_g.last << 3 << 8 << 7 << 11
 		@@o_g.push []
@@ -69,20 +69,14 @@ class GraphWindow
 	def make2d_dot_array(x,y)
 		p1 = Array2.new
 		p1[1,1],p1[1,2],p1[1,3],p1[1,4] = 1.0*x[0], 1.0*x[1], 1.0*x[2], 1.0*x[3]
-		p1 = p1*@@e
-#		(1..4).each { |i| p1[1,i] = (p1[1,i]*100).round*1.0/100 }
-#puts p1
-#puts
-		p12 = p1*@@t
+		p12 = p1*@@e*@@t
 		dz =  p12[1,4]
 		(1..4).each { |i| p12[1,i] = p12[1,i] / dz } if dz != 0
+
 		p2 = Array2.new
 		p2[1,1],p2[1,2],p2[1,3],p2[1,4] = 1.0*y[0], 1.0*y[1], 1.0*y[2], 1.0*y[3]
-		p2 = p2*@@e
-#puts p2
-#puts "==========================================================="
-		p22 = p2*@@t
-	dz = p22[1,4]
+		p22 = p2*@@e*@@t
+		dz = p22[1,4]
 		(1..4).each { |i| p22[1,i] = p22[1,i] / dz } if dz != 0
 		m = []
 		m[0] = [ p12[1,1].round , p12[1,2].round ]
