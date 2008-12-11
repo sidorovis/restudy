@@ -41,6 +41,10 @@ class GraphWindow
 		@@o_g.push []
 		@@o_g.last << 10 << 1 << 9 << 5
 
+		@@o_d = []
+		@@o_d << @@o[0][0] << @@o[0][1] << @@o[1][1] << @@o[2][0]
+		@@o_d << @@o[4][0] << @@o[4][1] << @@o[5][1] << @@o[6][0]
+
 		@@e = e_make()
 		@@t = e_make()
 		@@t[4,4] = 0.0
@@ -54,9 +58,10 @@ class GraphWindow
 	alias :old_DrawDot :DrawDot
 	
 	def ObjectDrawAlgorythm
-		for i in @@o
+		oo = delete_unvisible(@@o) if @deleting_mode
+		oo = @@o unless @deleting_mode
+		for i in oo
 			m = make2d_dot_array( i[0] , i[1] )
-			m = delete_unvisible(m) if @deleting_mode
 			justDrawADCLine( m )
 		end
 	end
@@ -86,8 +91,7 @@ class GraphWindow
 	end
 
 	def DrawAlgorythm
-#		puts @pn_mode
-		if @paint_mode == :Proection
+		if @paint_mode != :Proection
 			old_DrawAlgorythm
 		else
 			@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0,255) )
@@ -314,16 +318,13 @@ class GraphWindow
 		turnZRight() if (e.key == 50)     		# 2
 	end
 	def ProectionMode()
-		return if @paint_mode == :Proection
+		return if @paint_mode != :Paint
 		@paint_mode = :Proection
-		@pn_mode = :Proection
 		repaint
 	end
 	def NoProectionMode()
-		puts @paint_mode
-		return if @paint_mode == :Paint
+		return unless @paint_mode == :Proection
 		@paint_mode = :Paint
-		@pn_mode = :Normal
 		repaint
 	end
 
@@ -332,7 +333,6 @@ class GraphWindow
 		@@delta = 3
 		@@k = 1.5
 		CreateObjectCoordinates()
-		@pn_mode = :Normal
 		old5_connectActions
 		connect( @f.actionProecirovanie_mode, SIGNAL('triggered()') , self , SLOT('ProectionMode()') )
 		connect( @f.actionNormal_mode , SIGNAL('triggered()') , self , SLOT('NoProectionMode()') )

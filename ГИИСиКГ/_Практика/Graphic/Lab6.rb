@@ -32,14 +32,14 @@ class GraphWindow
 =end
 
 	def FrameMode()
-		return unless @paint_mode == :Paint
+		return if @paint_mode != :Paint
 		@paint_mode = :Frame
-
+		repaint
 	end
 	def NoFrameMode()
-		return if @paint_mode == :Paint
+		return if @paint_mode != :Frame
 		@paint_mode = :Paint
-
+		repaint
 	end
 
 	def connectActions()

@@ -5,49 +5,49 @@ class GraphWindow
 	slots 'Deleting()', 'NotDeleting()'
 
 	alias :old7_connectActions :connectActions
-=begin
-	alias :old2_addedKeyReleaseEvent :addedKeyReleaseEvent
-	alias :old_justDrawDot :justDrawDot
-	alias :old2_DrawDot :DrawDot
-	alias :old2_DrawAlgorythm :DrawAlgorythm
 
-	alias :old2_addedKeyReleaseEvent :addedKeyReleaseEvent
-	
-	def addedKeyReleaseEvent(e)
-		old2_addedKeyReleaseEvent(e)
-		
-		@@frame.cx -=1 if e.key == 74	# j
-		@@frame.cy +=1 if e.key == 73	# i
-		@@frame.cy -=1 if e.key == 75	# k
-		@@frame.cx +=1 if e.key == 76	# l
-		@@frame.r +=1 if e.key == 93	# ]
-		@@frame.r -=1 if e.key == 91	# [
-		@@frame.lc +=1 if e.key == 39	# '
-		@@frame.lc -=1 if e.key == 59	# ;
-		@@frame.a +=14 if e.key == 46	# .
-		@@frame.a -=14 if e.key == 44	# ,
-		puts e.key
+	def makeABCDv( r )
+		a,b,c = r[0][0] - r[1][0], r[0][1]-r[1][1], r[0][2]-r[1][2]
+		d = -a*r[0][0]-b*r[0][1]-c*r[0][2]
+		return a,b,c,d
 	end
+	def makeABCD( r )
+		a1,b1,c1,d1 = makeABCDv( @@o[ r[ 0 ] ] )
+		a2,b2,c2,d2 = makeABCDv( @@o[ r[ 1 ] ] )
+#		v1[1]
+		a , b , c = b1*c2-c1*b2 , c1*a2-a1*c2 , a1*b2-b1*a2
+		d = -a*@@o[ r[ 0 ] ][0][0]-b*@@o[ r[ 0 ] ][0][1]-c*@@o[ r[ 0 ] ][0][2]
+		return [a,b,c,d]
+	end
+	def getCenter()
 
-=end
+	end
+	
 	def delete_unvisible( m )
-		m
+		o = m.clone
+		abcd = []
+		@@o_g.each { |i| abcd << makeABCD( i ) }
+		puts "______________________"
+		puts abcd.size
+		abcd.each { |i| puts i.join(" | ") }
+		xc,yc,zc = getCenter()
+		o
 	end	
 
 	def Deleting
-		return unless @paint_mode == :Proection
+		return if @paint_mode != :Proection
 		@deleting_mode = true
-		
+		repaint
 	end
 	def NotDeleting
 		return unless @paint_mode == :Proection
 		@deleting_mode = false
-
-	end
+		repaint
+		end
 
 	def connectActions()
 		old7_connectActions
-		@deleting_mode = true
+		@deleting_mode = false
 		
 		connect( @f.actionDeleting, SIGNAL('triggered()') , self , SLOT('Deleting()') )
 		connect( @f.actionNotDeleting , SIGNAL('triggered()') , self , SLOT('NotDeleting()') )
