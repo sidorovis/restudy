@@ -6,40 +6,40 @@ class GraphWindow
 
 	def CreateObjectCoordinates()
 		@@o = []
-		left_x = -5
-		right_x = 5
-		left_y = -5
-		right_y = 5
-		left_z = 5
-		right_z = 15
-		@@o[0] = [[ left_x , right_y  , left_z , 1 ] , [  right_x  ,  right_y , left_z , 1 ]]
-		@@o[1] = [[  right_x  , right_y  , left_z , 1 ] , [  right_x  , left_y , left_z , 1 ]]
-		@@o[2] = [[ left_x , left_y , left_z , 1 ] , [  right_x  , left_y , left_z , 1 ]]
-		@@o[3] = [[ left_x , left_y , left_z , 1 ] , [ left_x ,  right_y , left_z , 1 ]]
+		left_x =  -50
+		right_x =  50
+		left_y =  -50
+		right_y =  50
+		left_z =  250
+		right_z = 350
+		@@o.push [[ left_x , right_y  , left_z , 1 ] , [  right_x  ,  right_y , left_z , 1 ]]
+		@@o.push [[  right_x  , right_y  , left_z , 1 ] , [  right_x  , left_y , left_z , 1 ]]
+		@@o.push [[ left_x , left_y , left_z , 1 ] , [  right_x  , left_y , left_z , 1 ]]
+		@@o.push [[ left_x , left_y , left_z , 1 ] , [ left_x ,  right_y , left_z , 1 ]]
 
-		@@o[4] = [[ left_x ,  right_y , right_z , 1 ] , [  right_x  ,  right_y , right_z , 1 ]]
-		@@o[5] = [[  right_x  ,  right_y , right_z , 1 ] , [  right_x  , left_y , right_z , 1 ]]
-		@@o[6] = [[ left_x , left_y , right_z , 1 ] , [  right_x  , left_y , right_z , 1 ]]
-		@@o[7] = [[ left_x , left_y , right_z , 1 ] , [ left_x ,  right_y , right_z , 1 ]]
+		@@o.push [[ left_x ,  right_y , right_z , 1 ] , [  right_x  ,  right_y , right_z , 1 ]]
+		@@o.push [[  right_x  ,  right_y , right_z , 1 ] , [  right_x  , left_y , right_z , 1 ]]
+		@@o.push [[ left_x , left_y , right_z , 1 ] , [  right_x  , left_y , right_z , 1 ]]
+		@@o.push [[ left_x , left_y , right_z , 1 ] , [ left_x ,  right_y , right_z , 1 ]]
 
-		@@o[8 ] = [[ left_x ,  right_y , left_z , 1 ] , [ left_x ,  right_y , right_z , 1 ]]
-		@@o[9 ] = [[  right_x  ,  right_y , left_z , 1 ] , [ right_x  ,  right_y , right_z , 1 ]]
-		@@o[10] = [[ left_x , left_y , left_z , 1 ] , [ left_x , left_y , right_z , 1 ]]
-		@@o[11] = [[  right_x  , left_y , left_z , 1 ] , [ right_x  , left_y , right_z , 1 ]]
+		@@o.push [[ left_x ,  right_y , left_z , 1 ] , [ left_x ,  right_y , right_z , 1 ]]
+		@@o.push [[  right_x  ,  right_y , left_z , 1 ] , [ right_x  ,  right_y , right_z , 1 ]]
+		@@o.push [[ left_x , left_y , left_z , 1 ] , [ left_x , left_y , right_z , 1 ]]
+		@@o.push [[  right_x  , left_y , left_z , 1 ] , [ right_x  , left_y , right_z , 1 ]]
 
 		@@o_g = []
 		@@o_g.push []
-		@@o_g.last << 0 << 1 << 2 << 3
+		@@o_g.last << 3 << 8 << 7 << 10
 		@@o_g.push []
-		@@o_g.last << 4 << 5 << 6 << 7
+		@@o_g.last << 11 << 1 << 9 << 5
 		@@o_g.push []
 		@@o_g.last << 0 << 8 << 4 << 9
 		@@o_g.push []
 		@@o_g.last << 2 << 11 << 10 << 6
 		@@o_g.push []
-		@@o_g.last << 3 << 8 << 7 << 11
+		@@o_g.last << 0 << 1 << 2 << 3
 		@@o_g.push []
-		@@o_g.last << 10 << 1 << 9 << 5
+		@@o_g.last << 4 << 5 << 6 << 7
 
 		@@o_d = []
 		@@o_d << @@o[0][0] << @@o[0][1] << @@o[1][1] << @@o[2][0]
@@ -48,8 +48,8 @@ class GraphWindow
 		@@e = e_make()
 		@@t = e_make()
 		@@t[4,4] = 0.0
-		@@t[3,4] = 0.02
-#		@@t[4,3] = -10
+		@@t[3,4] = -0.02
+#		@@t[4,3] = -50
 	end
 
 	alias :old5_connectActions :connectActions
@@ -58,6 +58,7 @@ class GraphWindow
 	alias :old_DrawDot :DrawDot
 	
 	def ObjectDrawAlgorythm
+#		@@e.each { |i| i = (1.0*((i*10000).round))/10000 }
 		oo = delete_unvisible(@@o) if @deleting_mode
 		oo = @@o unless @deleting_mode
 		for i in oo

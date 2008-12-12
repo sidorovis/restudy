@@ -24,7 +24,7 @@ class Array2
    	@x = a if a > @x
    	@y = b if b > @y
 	@store[a] = [] if @store[a] == nil
-	@store[a][b] = 1.0*x
+	@store[a][b] = 1.0 * x
     end
     def to_s
     	var = "";
@@ -59,4 +59,18 @@ class Array2
     	end
     	return c
     end
+    def each(&block)
+    	s = @store
+    	for i in (1..@x)
+    		(1..@y).each { |u| s[i][u] = block.call( s[i][u] ) }
+    	end
+    end
+end
+
+class Array
+	def put()
+		res = "( "
+		res += self.join(" , ")
+		res += " )"
+	end
 end
