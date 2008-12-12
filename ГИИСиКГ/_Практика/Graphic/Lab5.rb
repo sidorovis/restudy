@@ -48,8 +48,8 @@ class GraphWindow
 		@@e = e_make()
 		@@t = e_make()
 		@@t[4,4] = 0.0
-		@@t[3,4] = -0.02
-#		@@t[4,3] = -50
+#		@@t[3,4] = -0.02
+		@@t[4,3] = -50
 	end
 
 	alias :old5_connectActions :connectActions
