@@ -48,8 +48,8 @@ class GraphWindow
 		@@e = e_make()
 		@@t = e_make()
 		@@t[4,4] = 0.0
-#		@@t[3,4] = -0.02
-		@@t[4,3] = -50
+		@@t[3,4] = -0.002
+#		@@t[4,3] = -50
 	end
 
 	alias :old5_connectActions :connectActions
@@ -92,6 +92,9 @@ class GraphWindow
 			@pa.brush = Qt::Brush.new( Qt::Color.new(0,0,0,255) )
 			ObjectDrawAlgorythm()
 			@drawCommands.clear();
+			for i in @drawLines
+				self.send(i[0],i[1])
+			end
 			@field.each { |x,y| justDrawDot(x[0],x[1]) }
 		end
 	end

@@ -3,23 +3,15 @@ X = 400
 Y = 300
 
 $log = false
-
 =begin
-e = Array2.new
-e[1,1],e[1,2],e[1,3],e[1,4]=  1.0 ,  0.0 ,  0.0 ,  0.0
-e[2,1],e[2,2],e[2,3],e[2,4]=  0.0 ,  1.0 ,  0.0 ,  0.0
-e[3,1],e[3,2],e[3,3],e[3,4]=  0.0 ,  0.0 ,  1.0 ,  0.0
-e[4,1],e[4,2],e[4,3],e[4,4]=  0.0 ,  0.0 ,  15.0 ,  1.0
-
-=begin
-c1 = e
-e = Array2.new
-e[1,1],e[1,2],e[1,3],e[1,4]=  1.0 ,  0.0 ,  0.0 ,  0.0
-e[2,1],e[2,2],e[2,3],e[2,4]=  0.0 ,  0.97 ,  0.26 ,  0.0
-e[3,1],e[3,2],e[3,3],e[3,4]=  0.0 ,  -0.26 ,  0.97 ,  0.0
-e[4,1],e[4,2],e[4,3],e[4,4]=  0.0 ,  0.0 ,  0.0 ,  1.0
-c2 = e
-#puts c1*c2
+	app = Qt::Application.new( ARGV )
+	a = GraphWindow.new(15,15)
+	a1,b1,c1 = a.makeLineParams(0,0,15,0)
+	a2,b2,c2 = a.makeLineParams(0,14,15,0)
+	puts a.makeLineParams(0,0,0,15).join(", ")
+	puts a.makeLineParams(0,14,0,0).join(", ")
+	puts a.crossDotByParams(a1,b1,c1,a2,b2,c2).join(" | ")
+	return
 =end
 app = Qt::Application.new( ARGV )
 graph_window = GraphWindow.new(X, Y)

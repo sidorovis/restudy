@@ -55,7 +55,7 @@ public
 		mc = m.clone
 		return nil if m.size == 0
 		if m.size == 1
-			DrawDot(m[0][0],m[0][1])
+			justDrawADCLine([[m[0][0],m[0][1]],[m[0][0],m[0][1]]])
 			return
 		end
 		dots = Array.new
@@ -76,7 +76,7 @@ public
 			justDrawADCLine(m)
 		end
 		for i in mc
-			DrawDot(i[0],i[1])
+			justDrawDot(i[0],i[1])
 		end
 	end
 

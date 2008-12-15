@@ -11,18 +11,18 @@ class GraphWindow
 		dx, dy, dop = x2 - x1, y2 - y1, 1
 		if dx == 0							# случай отрисовки горизонтальной линии
 			x1, y1, x2, y2 = x2, y2, x1, y1 if y1 > y2		
-			(y1..y2).each { |i| DrawDot(x1,i) }
+			(y1..y2).each { |i| justDrawDot(x1,i) }
 			return true
 		end
 		if dy == 0							# случай отрисовки вертикальной линии
 			x1, y1, x2, y2 = x2, y2, x1, y1 if x1 > x2		
-			(x1..x2).each { |i| DrawDot(i,y1) }
+			(x1..x2).each { |i| justDrawDot(i,y1) }
 			return true
 		end
 		if dx.abs == dy.abs					# случай отрисовки линии под углом 45%
 			x1, y1, x2, y2 = x2, y2, x1, y1 if x1 > x2		# поворот координат для прохода от меньшего к большему
 			dop = -1 if ( y1 > y2 )
-			(x1..x2).each { |i| DrawDot(i, y1 + (i - x1)*dop ) }
+			(x1..x2).each { |i| justDrawDot(i, y1 + (i - x1)*dop ) }
 			return true
 		end
 		false
@@ -44,10 +44,10 @@ class GraphWindow
 			dy /= dx.to_f
 			for i in ((x1..x2))
 				if y1 + dy*(i-x1) >= 0			# для точек с координатами y большими нуля
-					DrawDot( i , (y1 + dy*(i-x1) + 0.5 ).to_i )
+					justDrawDot( i , (y1 + dy*(i-x1) + 0.5 ).to_i )
 					puts " i = #{i}    x= #{i}     y= #{(y1 + dy*(i-x1))}   (x= #{i},     y= #{(y1 + dy*(i-x1) + 0.5 ).to_i})" if $log
 				else							# иначе
-					DrawDot( i , (y1 + dy*(i-x1) - 0.5 ).to_i )
+					justDrawDot( i , (y1 + dy*(i-x1) - 0.5 ).to_i )
 					puts " i = #{i}    x= #{i}     y= #{(y1 + dy*(i-x1))}   (x= #{i},     y= #{(y1 + dy*(i-x1) - 0.5 ).to_i})" if $log
 				end
 			end
@@ -57,10 +57,10 @@ class GraphWindow
 			dx /= dy.to_f
 			for i in (y1..y2)
 				if x1 + dx*(i-y1) >=0			# для точек с координатами x большими нуля
-					DrawDot((x1 + dx*(i-y1) + 0.5 ).to_i , i )
+					justDrawDot((x1 + dx*(i-y1) + 0.5 ).to_i , i )
 					puts " i = #{i}    x= #{(x1 + dx*(i-y1))}     y= #{i}   (x= #{(x1 + dx*(i-y1) + 0.5 ).to_i}     y= #{i}) " if $log
 				else							# иначе
-					DrawDot((x1 + dx*(i-y1) - 0.5 ).to_i , i )
+					justDrawDot((x1 + dx*(i-y1) - 0.5 ).to_i , i )
 					puts " i = #{i}    x= #{(x1 + dx*(i-y1))}     y= #{i}   (x= #{(x1 + dx*(i-y1) - 0.5 ).to_i}     y= #{i}) " if $log
 				end
 			end
@@ -83,7 +83,7 @@ class GraphWindow
 			dop *= -1 if y2 - y1 < 0			# вычисление суммируемого компонента для Y
 			e, de, y = 0, dy.abs, y1
 			for x in (x1..x2)
-				DrawDot(x,y)
+				justDrawDot(x,y)
 				puts " x= #{x}    y= #{y}       e= #{e}" if $log
 				e += de
 				y, e = y + dop, e - dx.abs if 2 * e > dx.abs
@@ -93,7 +93,7 @@ class GraphWindow
 			dop *= -1 if x2 - x1 < 0			# вычисление суммируемого компонента для X
 			e, de, x = 0, dx.abs, x1
 			for y in (y1..y2)
-				DrawDot(x,y)
+				justDrawDot(x,y)
 				puts " x= #{x}    y= #{y}       e= #{e}" if $log
 				e += de
 				x, e = x + dop, e - dy.abs if 2 * e > dy.abs

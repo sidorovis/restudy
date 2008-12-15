@@ -66,6 +66,7 @@ protected
 	def clearScreen()
 		@mouse_clicked_to.clear
 		@drawCommands.clear
+		@drawLines.clear
 		@field.clear
 		repaint
 	end
@@ -90,6 +91,7 @@ public
 		@mouse_clicked_to = Array.new
 		@commands = Hash.new
 		@drawCommands = Array.new
+		@drawLines = []
 		@current_command = nil
 		@mode = nil
 		connect( @f.actionClear_Field, SIGNAL('triggered()'), self, SLOT('clearScreen()') )
@@ -116,9 +118,16 @@ public
 			justDrawDot(i[0],i[1]);
 		end
 		for i in @drawCommands
-			self.send(i[0],i[1])
+			if ( [:justDrawADCLine,:justDrawBrezenhemLine,:justDrawConvex].include?(i[0]) )
+				@drawLines << i.clone
+			else
+				self.send(i[0],i[1])
+			end
 		end
 		@drawCommands.clear();
+		for i in @drawLines
+			self.send(i[0],i[1])
+		end
 		@field.each { |x,y| justDrawDot(x[0],x[1]) }
 		puts "\t\t\t\t\t  Stop Drawing" if $log
 		puts "-----------------------------\n\n\n\n\n\n\n" if $log
