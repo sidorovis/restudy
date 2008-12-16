@@ -4,6 +4,9 @@ class GraphWindow
 
 	slots 'ProectionMode()', 'NoProectionMode()'
 
+=begin
+	функция CreateObjectCoordinates генерирует начальные значения куба
+=end
 	def CreateObjectCoordinates()
 		@@o = []
 		left_x =  -50
@@ -57,6 +60,9 @@ class GraphWindow
 	alias :old_DrawAlgorythm :DrawAlgorythm
 	alias :old_DrawDot :DrawDot
 	
+=begin
+	функция ObjectDrawAlgorythm отрисовывает куб
+=end
 	def ObjectDrawAlgorythm
 #		@@e.each { |i| i = (1.0*((i*10000).round))/10000 }
 		oo = delete_unvisible(@@o) if @deleting_mode
@@ -67,7 +73,14 @@ class GraphWindow
 		end
 	end
 	
-	def make2d_dot_array(x,y)
+=begin
+	функция make2d_dot_array применяет эффекты и проецирует куб на плоскость, по двум точкам заданным x, y
+	входные параметры 
+				точки куба x, y задающие одну из граней куба
+	выходные параметры 
+				массив точек подготовленных для функции генерации отрезков
+=end	
+def make2d_dot_array(x,y)
 		p1 = Array2.new
 		p1[1,1],p1[1,2],p1[1,3],p1[1,4] = 1.0*x[0], 1.0*x[1], 1.0*x[2], 1.0*x[3]
 		p12 = p1*@@e*@@t
@@ -84,6 +97,7 @@ class GraphWindow
 		m[1] = [ p22[1,1].round , p22[1,2].round ]
 		m
 	end
+
 
 	def DrawAlgorythm
 		if @paint_mode != :Proection
@@ -106,6 +120,11 @@ class GraphWindow
 		end
 	end	
 
+=begin
+	функция e_make создаёт единичную матрицу
+	выходные параметры 
+		единичная матрица 4х4
+=end
 	def e_make()
 		e = Array2.new
 		e[1,1],e[1,2],e[1,3],e[1,4]=  1.0 ,  0.0 ,  0.0 ,  0.0
@@ -114,42 +133,63 @@ class GraphWindow
 		e[4,1],e[4,2],e[4,3],e[4,4]=  0.0 ,  0.0 ,  0.0 ,  1.0
 		e
 	end
+=begin
+	функция moveRight применяет эффект движения объекта вправо
+=end
 	def moveRight()
 		e = e_make()
 		e[4,1] = @@delta
 		@@e = @@e*e
 		repaint
 	end
+=begin
+	функция moveLeft применяет эффект движения объекта влево
+=end
 	def moveLeft()
 		e = e_make()
 		e[4,1] = -@@delta
 		@@e = @@e*e
 		repaint
 	end
+=begin
+	функция moveUp применяет эффект движения объекта вверх
+=end
 	def moveUp()
 		e = e_make()
 		e[4,2] = @@delta
 		@@e = @@e*e
 		repaint
 	end	
+=begin
+	функция moveDown применяет эффект движения объекта вниз
+=end
 	def moveDown()
 		e = e_make()
 		e[4,2] = -@@delta
 		@@e = @@e*e
 		repaint
 	end	
+=begin
+	функция moveToUs применяет эффект движения объекта на нас
+=end
 	def moveToUs()
 		e = e_make()
 		e[4,3] = @@delta
 		@@e = @@e*e
 		repaint
 	end	
+=begin
+	функция moveFromUs применяет эффект движения объекта от нас
+=end
 	def moveFromUs()
 		e = e_make()
 		e[4,3] = -@@delta
 		@@e = @@e*e
 		repaint
 	end	
+=begin
+	функция makeYBigger применяет эффект положительного масштабирования объекта по оси У
+=end
 	def makeYBigger()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)
@@ -159,6 +199,9 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
+=begin
+	функция makeYSmaller применяет эффект отрицательного масштабирования объекта по оси У
+=end
 	def makeYSmaller()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)
@@ -168,6 +211,9 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
+=begin
+	функция makeXBigger применяет эффект положительного масштабирования объекта по оси Х
+=end
 	def makeXBigger()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)
@@ -177,6 +223,9 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
+=begin
+	функция makeXSmaller применяет эффект отрицательного масштабирования объекта по оси Х
+=end
 	def makeXSmaller()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)
@@ -186,6 +235,9 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
+=begin
+	функция makeZSmaller применяет эффект положительного масштабирования объекта по оси Z
+=end
 	def makeZBigger()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)
@@ -195,6 +247,9 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
+=begin
+	функция makeZSmaller применяет эффект отрицательного масштабирования объекта по оси Z
+=end
 	def makeZSmaller()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)
@@ -204,7 +259,11 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
-	
+=begin
+	функция replace2 применяет эффект переноса на вектор dx, dy, dz
+		входные параметры:
+			dx, dy, dz - параметры вектора переноса
+=end
 	def replace2(dx,dy,dz)
 		e = e_make()
 		e[4,1],e[4,2],e[4,3] = dx, dy, dz
@@ -227,6 +286,9 @@ class GraphWindow
 #puts "....."
 		return dx,dy,dz
 	end
+=begin
+	функция turnXLeft применяет эффект поворота объекта по оси Z
+=end
 	def turnXLeft()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)
@@ -237,6 +299,9 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
+=begin
+	функция turnXRight применяет эффект поворота объекта по оси Z
+=end
 	def turnXRight()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)
@@ -248,6 +313,9 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
+=begin
+	функция turnYLeft применяет эффект поворота объекта по оси X
+=end
 	def turnYLeft()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)
@@ -259,6 +327,9 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
+=begin
+	функция turnYRight применяет эффект поворота объекта по оси X
+=end
 	def turnYRight()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)
@@ -270,6 +341,9 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
+=begin
+	функция turnZLeft применяет эффект поворота объекта по оси Y
+=end
 	def turnZLeft()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)
@@ -281,6 +355,9 @@ class GraphWindow
 		replace2(dx,dy,dz)
 		repaint
 	end
+=begin
+	функция turnZRight применяет эффект поворота объекта по оси Y
+=end
 	def turnZRight()
 	    dx,dy,dz = turnGeneralStart()
 		replace2(-dx,-dy,-dz)

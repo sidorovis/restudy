@@ -51,10 +51,16 @@ private
 		return m.index( n[0] )
 	end
 public	
+
+=begin
+	функция justDrawConvex отрисовывает выпуклую оболочку по заданным точкам
+	входные параметры 
+				массив точек m на которых требуется построить выпуклую оболочку
+=end
 	def justDrawConvex(m)
 		mc = m.clone
 		return nil if m.size == 0
-		if m.size == 1
+		if m.size == 1		# если задана одна точка
 			justDrawADCLine([[m[0][0],m[0][1]],[m[0][0],m[0][1]]])
 			return
 		end
@@ -69,17 +75,22 @@ public
 		end
 		st = dots.size
 		dots[st] = [dots[0][0],dots[0][1]]
-		for i in 0..dots.size-2
+		for i in 0..dots.size-2	# отрисовка выпуклой оболочки
 			m = Array.new
 			m[0] = [ dots[i][0]   , dots[i][1]   ]
 			m[1] = [ dots[i+1][0] , dots[i+1][1] ]
 			justDrawADCLine(m)
 		end
-		for i in mc
+		for i in mc # отрисовка всех точек учавствующих в выпуклой оболочке
 			justDrawDot(i[0],i[1])
 		end
 	end
 
+=begin
+	функция justFill закрашивает выделенную область
+	входные параметры 
+				точка m задающая выделенную плоскость
+=end
 	def justFill(m)
 		x0, y0 = m[0][0],m[0][1]
 		return if @field.key?( [x0,y0] )
