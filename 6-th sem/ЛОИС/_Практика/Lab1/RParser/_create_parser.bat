@@ -1,1 +1,0 @@
-ruby rbison _Parser.y RParser > RParser.rb
