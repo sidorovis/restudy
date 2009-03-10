@@ -1,0 +1,29 @@
+<h1>New regular verb word</h1>
+
+<%= javascript_include_tag 'prototype', 'effects', 'dragdrop' %>
+
+<% form_for(@word, :url => { :action => 'create_word' }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </p>
+  <p>
+		<%= observe_field( 'word_content', :frequency => 0.5, :update => "times",
+				:url=> { :action => "change_forms", :word_group => 'Regular Verb Group (with \'e\' on end)' }, 
+				:with => 'text') %>
+
+
+	<div id='times'>
+		<%= render :partial => 'word_forms' %>
+	</div>
+  </p>
+  <div id='regular_verb_time'>
+	
+  </div>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+<%= link_to 'Words', words_path %>

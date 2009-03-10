@@ -1,0 +1,24 @@
+<h1>Editing word_group</h1>
+
+<% form_for(@word_group) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :template %><br />
+    <%= f.text_field :template %>
+  </p>
+  <p>
+    <%= f.label :word_type_id %><br />
+    <%= f.select :word_type_id, @word_types_map %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @word_group %> |
+<%= link_to 'Word Groups List', word_groups_path %>

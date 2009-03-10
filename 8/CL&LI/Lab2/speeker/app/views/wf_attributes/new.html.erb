@@ -1,0 +1,15 @@
+<h1>New wf_attribute</h1>
+
+<% form_for(@wf_attribute) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', wf_attributes_path %>

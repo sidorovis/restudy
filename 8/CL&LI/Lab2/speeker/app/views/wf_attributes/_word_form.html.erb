@@ -1,0 +1,8 @@
+<tr>
+  <td>
+	 <%= link_to h(word_form.word_group.words[0].content), word_form.word_group.words[0] if word_form.word_group.words.size > 0 %>
+  </td>
+  <td>
+    <%= link_to h(word_form.content), word_form_path( word_form ) %>
+  </td>
+</tr>

@@ -1,0 +1,23 @@
+<h1>Speeker</h1>
+
+<%= link_to 'Words', words_path %> | <%= Word.find(:all).size %>
+|
+<%= "Example <b>"+Word.find(:all)[0].content+"</b>" if Word.find(:all).size > 0 %>
+<br/>
+<%= link_to 'Word Types', word_types_path %> | <%= WordType.find(:all).size %>
+|
+<%= "Example <b>"+WordType.find(:all)[0].title+"</b>" if WordType.find(:all).size > 0 %>
+<br/>
+<%= link_to 'Word Groups', word_groups_path %> | <%= WordGroup.find(:all).size %>
+|
+<%= "Example <b>"+WordGroup.find(:all)[0].template+"</b>" if WordGroup.find(:all).size > 0 %>
+<br/>
+<%= link_to 'Word Forms', word_forms_path %> | <%= WordForm.find(:all).size %>
+|
+<%= "Example <b>"+WordForm.find(:all)[0].content+"</b>" if WordForm.find(:all).size > 0 %>
+<br/>
+<%= link_to 'Word Form Attributes', wf_attributes_path %> | <%= WfAttribute.find(:all).size %>
+|
+<%= "Example <b>"+WfAttribute.find(:all)[0].content+"</b>" if WfAttribute.find(:all).size > 0 %>
+<br/>
+<br/>

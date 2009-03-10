@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Speeker | <%= controller_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+</head>
+<body>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield  %>
+
+<hr size=1/>
+<%= link_to "General", :controller => "generals", :action => "show" %>
+<p>
+	<%= link_to 'Add Countable Noun (apple)', :controller=> 'generals', :action => 'new_countable_noun' %><br/>
+	<%= link_to 'Add Abstract Noun (hate)', :controller=> 'generals', :action => 'new_abstract_noun' %><br/>
+	<%= link_to 'Regular Verb Group (with "e" on end)', :controller=> 'generals', :action => 'new_regular_verb_e' %><br/>
+</p>
+</body>
+</html>

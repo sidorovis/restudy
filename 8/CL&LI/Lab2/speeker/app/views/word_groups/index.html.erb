@@ -1,0 +1,23 @@
+<h1>Listing word_groups</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Template</th>
+    <th>Word type</th>
+  </tr>
+
+<% for word_group in @word_groups %>
+  <tr>
+    <td><%= link_to h(word_group.title), word_group %></td>
+    <td><%= link_to h(word_group.template), word_group %></td>
+    <td><%= link_to h(word_group.word_type.title), word_group.word_type %></td>
+    <td><%= link_to 'Edit', edit_word_group_path(word_group) %></td>
+    <td><%= link_to 'Destroy', word_group, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New word_group', new_word_group_path %>
