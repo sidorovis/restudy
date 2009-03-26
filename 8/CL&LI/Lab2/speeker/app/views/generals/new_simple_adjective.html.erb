@@ -1,0 +1,23 @@
+<h1>New abstract noun word</h1>
+
+<%= javascript_include_tag 'prototype', 'effects', 'dragdrop' %>
+
+<% form_for(@word, :url => { :action => 'create_word' }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </p>
+	<%= observe_field( 'word_content', :frequency => 0.5, :update => "times",
+					:url=> { :action => "change_forms", :word_group => 'Simple Equalitation Adjective'  }, :with => 'text') %>
+					
+  <div id='times'>
+	<%= render :partial => 'word_forms' %>
+  </div>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Words', words_path %>

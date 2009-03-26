@@ -1,0 +1,2 @@
+page.replace_html :content, :partial => 'irregular_verb_content', 
+  :locals => { :content => @content, :group_name => @group_name }

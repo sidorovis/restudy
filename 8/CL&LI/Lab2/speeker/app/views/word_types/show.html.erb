@@ -20,7 +20,7 @@
           Words
         </th>
       </tr>  
-      <%= render :partial => "word", :collection => @word_type.words %>
+      <%= render :partial => "word", :collection => @word_type.words.find(:all, :order => :content) %>
       </table>
       <% end %>
 </p>

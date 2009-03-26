@@ -17,8 +17,12 @@
 <%= link_to "General", :controller => "generals", :action => "show" %>
 <p>
 	<%= link_to 'Add Countable Noun (apple)', :controller=> 'generals', :action => 'new_countable_noun' %><br/>
-	<%= link_to 'Add Abstract Noun (hate)', :controller=> 'generals', :action => 'new_abstract_noun' %><br/>
-	<%= link_to 'Regular Verb Group (with "e" on end)', :controller=> 'generals', :action => 'new_regular_verb_e' %><br/>
+	<%= link_to 'Add Abstract Noun (hate)', :controller=> 'generals', :action => 'new_abstract_noun' %><br/><br/>
+	<%= link_to 'Regular Verb Group', :controller=> 'generals', :action => 'new_regular_verb_e' %><br/>
+	<%= link_to 'Irregular Verb Group', :controller=> 'generals', :action => 'new_irregular_verb' %><br/><br/>
+	<%= link_to 'Simple Adjective', :controller=> 'generals', :action => 'new_simple_adjective' %><br/>
+	<%= link_to 'Multiplex Adjective', :controller=> 'generals', :action => 'new_2word_adjective' %><br/><br/>
+	<%= link_to 'Default Preposition', :controller=> 'generals', :action => 'new_preposition' %><br/>
 </p>
 </body>
 </html>
