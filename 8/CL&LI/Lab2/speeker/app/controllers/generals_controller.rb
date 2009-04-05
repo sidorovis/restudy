@@ -28,10 +28,14 @@ class GeneralsController < ApplicationController
       if word_group.title.include?('Abstract Noun')
       end
       if word_group.title.include?('Simple Equalitation Adjective')
-        if (text.length >= 4)
-          word_group = WordGroup.find_by_title('Simple Equalitation Adjective')
-        else
-          word_group = WordGroup.find_by_title('Small Simple Equalitation Adjective')
+        if (text[ text.length - 1 ].chr == 'e')
+          word_group = WordGroup.find_by_title('Simple Equalitation Adjective with e on end')
+        else        
+          if (text.length >= 4) 
+            word_group = WordGroup.find_by_title('Simple Equalitation Adjective')
+          else
+            word_group = WordGroup.find_by_title('Small Simple Equalitation Adjective')
+          end
         end
       end
       if word_group.title.include?('Two Word Adjective')
