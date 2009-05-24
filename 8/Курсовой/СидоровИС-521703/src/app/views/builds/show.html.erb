@@ -1,0 +1,16 @@
+  <b><%=h @build.title %></b><br/>
+  <%=h(@build.description).split("\n").join("<br/>") %><br/>
+  Статус:<b><%=h @build.build_status.title %></b><br/>
+  По проекту: <b><%= @build.project.title %></b><br/><br/>
+<% if @build.bugs.count > 0 %>
+  <ul>
+  <% for bug in @build.bugs.all %>
+	<li><%= link_to bug.title, [@project,@build,bug] %></li>
+  <% end %>
+  </ul>
+<% end %>
+<hr/>
+<%= link_to 'Ввести ошибку', new_project_build_bug_path(@project,@build) %> |
+<%= link_to 'Редактировать', edit_project_build_path(@project,@build) %> |
+<%= link_to 'К списку', project_builds_path(@project) %><hr/>
+<%= link_to 'Страница проекта', @project %>

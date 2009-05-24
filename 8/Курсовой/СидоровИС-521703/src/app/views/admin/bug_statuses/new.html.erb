@@ -1,0 +1,19 @@
+<h1>Новый статус ошибки</h1>
+
+<% form_for(@bug_status,:url=>{:action=>"create"}) do |f| %>
+  <%= solve_errors( f ) %>
+
+  <p>
+    <%= f.label :Название %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :Описание %><br />
+    <%= f.text_area :description, :rows => 5 %>
+  </p>
+  <p>
+    <%= f.submit 'Создать' %>
+  </p>
+<% end %>
+
+<%= link_to 'К списку', admin_bug_statuses_path %>

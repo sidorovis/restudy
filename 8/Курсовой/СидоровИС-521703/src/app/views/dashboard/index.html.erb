@@ -1,0 +1,11 @@
+<h1>Домашний каталог</h1>
+<b>Привет <%= current_user.login %>.</b>
+<% if @projects.count > 0 %>
+<table width=100%><tr><td width=1%> Проекты: </td><td><hr size/></td></tr></table>
+	<% for project in @projects %>
+		<%= link_to project.title, project %> в качестве 
+		<%= (Role.find_all_by_user_id_and_project_id(current_user.id, project.id).map { |i| i.title  }).join(", ") %>
+	<% end %>
+<% else %>
+	<br/>Вы не работает ни над одним из проектов...
+<% end %>

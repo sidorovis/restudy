@@ -1,0 +1,16 @@
+<h1>Список проектов</h1>
+
+<% @all_projects.each do |project| %>
+	Название проекта: <b><%=h project.title %></b><br/>
+	<%=h(project.description).split("\n").join("<br/>") %><br/>
+	Cтатус проекта: <b><%=h project.project_status.title %></b><br/>
+	Количетсво участников: <%= project.roles.count %><br/>
+	<%= link_to 'Подробнее', admin_project_path(project) %> |
+	<%= link_to 'Редактировать', edit_admin_project_path(project) %> |
+	<%= link_to 'Удалить', admin_project_path(project), 
+					:confirm => 'Are you sure?', 
+					:method => :delete %>
+<hr/>
+<% end %>
+
+<%= link_to 'Создать новый проект', new_admin_project_path %>

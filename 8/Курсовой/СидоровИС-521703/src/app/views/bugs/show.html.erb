@@ -1,0 +1,15 @@
+<p>
+  <b>Название:</b>
+  <%=h @bug.title %><br/>
+  <%=h(@bug.description).split("\n").join("<br/>") %><br/>
+  <b>Шаги для повторения:</b><br/>
+  <%=h(@bug.steps_to_reproduce).split("\n").join("<br/>") %><br/>
+  <br/>
+  Cтатус: <b><%=h(@bug.bug_status.title) %></b><br/>
+  По версии: <b><%= link_to h(@build.title), [@project,@build] %></b><br/>
+  По проекту: <b><%= link_to h(@project.title), @project %></b>
+</p>
+
+<%= link_to 'Редактировать', edit_project_build_bug_path(@project,@build,@bug) %> |
+<%= link_to 'К списку', project_build_bugs_path(@project,@build) %><br/>
+<%= link_to 'Страница версии', [@project,@build] %>

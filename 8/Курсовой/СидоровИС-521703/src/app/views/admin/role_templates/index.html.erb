@@ -1,0 +1,17 @@
+<h1>Список шаблонов ролей</h1>
+
+<% @role_templates.each do |role_template| %>
+	Название: <b><%=h role_template.title %></b><br/>
+    <%= h(role_template.description).split("\n").join("<br/>") %><br/>
+	Количество прав: <%= role_template.right_templates.count %><br/>
+    <%= link_to 'Подробнее', admin_role_template_path(role_template) %> | 
+    <%= link_to 'Редактировать', edit_admin_role_template_path(role_template) %>
+	<% if !RoleTemplate.undeleted_ids.include?(role_template.id) %>
+    | <%= link_to 'Удалить', 
+						admin_role_template_path(role_template), 
+						:confirm => 'Are you sure?', 
+						:method => :delete %>
+	<% end %>
+<hr/>
+<% end %>
+<%= link_to 'Новый шаблон роли', new_admin_role_template_path %>

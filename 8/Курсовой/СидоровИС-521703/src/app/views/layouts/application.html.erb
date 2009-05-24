@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= controller_name.capitalize %>: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= javascript_include_tag :defaults %>
+
+</head>
+<body>
+
+<% if logged_in? %>
+	<table width=800 align=center border=1>
+		<tr>
+			<%= render :partial => 'layouts/menu' %>
+			<td valign=top>
+				<table width=100%><tr><td>
+				<p style="color: green"><%= flash[:notice] %></p>
+				<p style="color: red"><%= flash[:error] %></p>
+				<%= yield %>
+				</td></tr></table>
+			</td>
+		</tr>
+	</table>
+<% else %>
+	<%= yield %>
+<% end %>
+</body>
+</html>

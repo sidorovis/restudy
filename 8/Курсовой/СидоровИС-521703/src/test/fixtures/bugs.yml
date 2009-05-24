@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  steps_to_reproduce: MyText
+  bug_status: two
+  build: one
+
+two:
+  title: MyString
+  description: MyText
+  steps_to_reproduce: MyText
+  bug_status: one
+  build: two
+

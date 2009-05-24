@@ -1,0 +1,8 @@
+<p>
+  <b><%=h @issue_status.title %></b><br/>
+  <%=h(@issue_status.description).split("\n").join("<br/>") %>
+</p>
+
+
+<%= link_to 'Редактировать', edit_admin_issue_status_path(@issue_status) %> |
+<%= link_to 'К списку', admin_issue_statuses_path %>

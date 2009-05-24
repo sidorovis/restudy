@@ -1,0 +1,14 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  task_status: one
+  project_id: 1
+
+two:
+  title: MyString
+  description: MyText
+  task_status: two
+  project_id: 1
+  

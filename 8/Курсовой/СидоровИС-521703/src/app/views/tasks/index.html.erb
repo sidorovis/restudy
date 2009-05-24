@@ -1,0 +1,15 @@
+<h1>Список задач по проекту '<%= @project.title %>' </h1>
+
+<% @tasks.each do |task| %>
+	<b><%=h task.title %></b><br/>
+	<%=h(task.description).split("\n").join("<br/>") %><br/>
+	Статус: <b><%=h task.task_status.title %></b><br/>
+	<%= link_to 'Подробнее', [@project,task] %> |
+	<%= link_to 'Редактировать', edit_project_task_path(@project,task) %> |
+	<%= link_to 'Удалить', [@project,task], 
+						:confirm => 'Are you sure?', 
+						:method => :delete %>
+<hr/>
+<% end %>
+<%= link_to 'Новая задача', new_project_task_path(@project) %><br/>
+<%= link_to 'На страницу проекта', @project %>

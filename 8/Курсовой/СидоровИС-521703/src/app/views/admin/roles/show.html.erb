@@ -1,0 +1,23 @@
+<p>
+  <b>Название:</b>
+  <%=h @role.title %>
+</p>
+<p>
+  <%=h(@role.description).split("\n").join("<br/>") %>
+</p>
+<p>
+  <b>Проект:</b>
+  <%=h @role.project.title %>
+</p>
+
+<p>
+  <b>Пользователь:</b>
+  <%=h @role.user.login %>
+</p>
+<p>
+  <b>Шаблон роли:</b>
+  <%=h @role.role_template.title %>
+</p>
+
+<%= link_to 'Редактировать', edit_admin_role_path(@role) %> |
+<%= link_to 'К списку', admin_roles_path %>

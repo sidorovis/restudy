@@ -1,0 +1,13 @@
+<h1>Список статусов задач</h1>
+
+<% @task_statuses.each do |task_status| %>
+	<b><%=h task_status.title %></b><br/>
+	<%=h(task_status.description).split("\n").join("<br/>") %><br/>
+	<%= link_to 'Подробнее', admin_task_status_path(task_status) %> |
+	<%= link_to 'Редактировать', edit_admin_task_status_path(task_status) %> |
+	<%= link_to 'Удалить', admin_task_status_path(task_status), 
+					:confirm => 'Are you sure?', 
+					:method => :delete %>
+<hr/>
+<% end %>
+<%= link_to 'Новый статус', new_admin_task_status_path %>

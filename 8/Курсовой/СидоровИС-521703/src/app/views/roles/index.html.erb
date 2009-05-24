@@ -1,0 +1,17 @@
+<h1>Участники проекта '<%= @project.title %>'</h1>
+
+<% @roles.each do |role| %>
+	<b><%=h role.title %></b><br/>
+	<%=h(role.description).split("\n").join("<br/>") %><br/>
+	Права: <b><%=h role.role_template.title %></b><br/>
+	<%= link_to 'Подробнее', [@project,role] %> |
+	<%= link_to 'Редактировать', edit_project_role_path(@project,role) %>
+	<% if role.role_template_id != 1 %>
+		| <%= link_to 'Удалить', [@project,role], 
+							:confirm => 'Are you sure?', 
+							:method => :delete %>
+	<% end %>
+<hr/>							
+<% end %>
+<%= link_to 'Новый участник', new_project_role_path(@project) %><br/>
+<%= link_to 'Страница проекта', @project %>

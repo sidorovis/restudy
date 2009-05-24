@@ -1,0 +1,13 @@
+<p>
+  <b>Название:</b>
+  <%=h @project_status.title %>
+</p>
+
+<p>
+  <b>Описание:</b>
+  <%=h @project_status.description %>
+</p>
+
+
+<%= link_to 'Редактировать', edit_admin_project_status_path(@project_status) %> |
+<%= link_to 'Вернуться', admin_project_statuses_path %>

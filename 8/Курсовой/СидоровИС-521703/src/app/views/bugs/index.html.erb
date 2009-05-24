@@ -1,0 +1,17 @@
+<h1>Список ошибок по проекту '<%= @project.title %>' по версии '<%= @build.title %>'</h1>
+
+<% @bugs.each do |bug| %>
+	<b><%=h bug.title %></b><br/>
+	<%=h(bug.description).split("\n").join("<br/>") %><br/>
+	Статус: <b><%=h bug.bug_status.title %></b><br/>
+	По проекту: <b><%= link_to bug.build.project.title, bug.build.project %></b><br/>
+	<%= link_to 'Подробнее', [@project,@build,bug] %> |
+	<%= link_to 'Редактировать', edit_project_build_bug_path(@project,@build,bug) %> |
+	<%= link_to 'Удалить', [@project,@build,bug], 
+						:confirm => 'Are you sure?', 
+						:method => :delete %>
+<hr/>
+<% end %>
+<%= link_to 'Новая ошибка', new_project_build_bug_path(@project,@build) %><br/>
+<%= link_to 'Страница версии', [@project,@build] %><br/>
+<%= link_to 'Страница проекта', @project %>

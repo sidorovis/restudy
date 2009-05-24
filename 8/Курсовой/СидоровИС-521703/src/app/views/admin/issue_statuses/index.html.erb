@@ -1,0 +1,13 @@
+<h1>Список статусов новых возможностей</h1>
+
+<% @issue_statuses.each do |issue_status| %>
+	Статус: <b><%=h issue_status.title %></b><br/>
+	<%=h(issue_status.description).split("\n").join("<br/>") %><br/>
+	<%= link_to 'Показать', admin_issue_status_path(issue_status) %> |
+	<%= link_to 'Редактировать', edit_admin_issue_status_path(issue_status) %> |
+	<%= link_to 'Удалить', admin_issue_status_path(issue_status), 
+						:confirm => 'Are you sure?', 
+						:method => :delete %>
+<hr/>
+<% end %>
+<%= link_to 'Добавить статус', new_admin_issue_status_path %>

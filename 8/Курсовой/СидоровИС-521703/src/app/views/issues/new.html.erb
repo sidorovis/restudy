@@ -1,0 +1,21 @@
+<h1>Новое требование по проекту '<%= @project.title %>'</h1>
+
+<% form_for([@project,@issue]) do |f| %>
+  <%= solve_errors(f) %>
+
+  <p>
+    <%= f.label :Название %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :Описание %><br />
+    <%= f.text_area :description, :rows => 5 %>
+  </p>
+    <%= f.hidden_field :issue_status_id, :value => 1 %>
+  <p>
+    <%= f.submit 'Создать' %>
+  </p>
+<% end %>
+
+<%= link_to 'К списку', project_issues_url(@project) %> | 
+<%= link_to 'Страница проекта', @project %>

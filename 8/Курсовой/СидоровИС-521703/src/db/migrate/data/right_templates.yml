@@ -1,0 +1,88 @@
+##############################
+# manager rights
+####
+
+manager_project_edit:
+  id : 1
+  title : "Редактирование своих проектов"
+  description : "Позволяет полностью редактировать свои проекты."
+  controller : "projects"
+  actions : "__ALL__"
+  write_ids : "__ALL__"
+  read_ids : "__ALL__"
+  role_template_id : 1
+
+manager_task_edit:
+  id : 2
+  title : "Редактирование задач своих проектов"
+  description : "Позволяет полностью редактировать задачи которые относятся к созданным проектам, или проектам на которые пользователь был назначен в качестве руководителя"
+  controller : "tasks"
+  actions : "__ALL__"
+  write_ids : "__ALL__"
+  read_ids : "__ALL__"
+  role_template_id : 1
+
+manager_bug_edit:
+  id : 3
+  title : "Редактирование заметок об ошибках своих проектов"
+  description : "Позволяет полностью редактировать заметки об ошибках которые относятся к созданным проектам, или проектам на которые пользователь был назвачен в качестве руководитя"
+  controller : "bugs"
+  actions : "__ALL__"
+  write_ids : "__ALL__"
+  read_ids : "__ALL__"
+  role_template_id : 1
+
+manager_issue_edit:
+  id : 4
+  title : "Редактирование заметок о пожеланиях заказчика своих проектов"
+  description : "Позволяет полностью редактировать заметки пожеланиях заказчика которые относятся к созданным проектам, или проектам на которые пользователь был назвачен в качестве руководитя"
+  controller : "issues"
+  actions : "__ALL__"
+  write_ids : "__ALL__"
+  read_ids : "__ALL__"
+  role_template_id : 1
+
+##############################
+# developer rights
+####
+
+developer_project_show:
+  id : 5
+  title : "Просмотр информации о проектах"
+  description : "Позволяет просматривать сокращенную и полную информацию о своиз проектах"
+  controller : "projects"
+  actions : "index,show"
+  write_ids : ""
+  read_ids : "__ALL__"
+  role_template_id : 2
+
+developer_task_part_edit:
+  id : 6
+  title : "Частичное редактирование задач проектов"
+  description : "Позволяет разработчику менять статус и описание задач"
+  controller : "tasks"
+  actions : "__ALL__"
+  write_ids : "task_status_id,description"
+  read_ids : "__ALL__"
+  role_template_id : 2
+
+developer_bug_part_edit:
+  id : 7
+  title : "Частичное редактирование заметок об ошибках проектов"
+  description : "Позволяет разработчику менять статус заметок об ошибках."
+  controller : "tasks"
+  actions : "__ALL__"
+  write_ids : "bug_status_id"
+  read_ids : "__ALL__"
+  role_template_id : 2
+
+developer_issue_part_edit:
+  id : 8
+  title : "Частичное редактирование новых возможностей проектов"
+  description : "Позволяет разработчику менять статус новых возможностей на проектах."
+  controller : "issues"
+  actions : "__ALL__"
+  write_ids : "issue_status_id"
+  read_ids : "__ALL__"
+  role_template_id : 2
+
