@@ -29,7 +29,7 @@ module Additions
 	end
 	def key_words( type = nil )
 		if type == :what_q_type
-			@words.find_all{ |i| true if (!i.word_ref.nil? && i.word_ref.word_group.title != "do group" ) }
+			@words.find_all{ |i| true if (!i.word_ref.nil?  ) } # && i.word_ref.word_group.title != "do group"
 		else
 			@words.find_all{ |i| true unless i.word_ref.nil? }
 		end
@@ -37,6 +37,16 @@ module Additions
 	def antikey_words( type = nil )
 		if type == :what_q_type
 			@words.find_all{ |i| true if (i.word_ref.nil? && i.content.downcase != "what" ) }
+		elsif type == :where_q_type
+			@words.find_all{ |i| true if (i.word_ref.nil? && i.content.downcase != "where" ) }
+		elsif type == :when_q_type
+			@words.find_all{ |i| true if (i.word_ref.nil? && i.content.downcase != "when" ) }
+		elsif type == :why_q_type
+			@words.find_all{ |i| true if (i.word_ref.nil? && i.content.downcase != "why" ) }
+		elsif type == :who_q_type
+			@words.find_all{ |i| true if (i.word_ref.nil? && i.content.downcase != "who" ) }
+		elsif type == :which_q_type
+			@words.find_all{ |i| true if (i.word_ref.nil? && i.content.downcase != "which" ) }
 		else
 			@words.find_all{ |i| true if i.word_ref.nil? }
 		end
@@ -137,12 +147,15 @@ module Additions
 					end
 				end
 			end
-#			puts "-"*70+"\n"+
-#				label.to_s+
-#				"\n"+(@q_sentence.key_words( type ).map { |i| i.content }).join(", ")+
-#				"\n"+(key_words.map{ |i| i.content }).join(", ")+"\n"
-#				"-"*70+"\n"
-			if ( label > 0 && label > @q_sentence.key_words( type ).size / 2 - 1 )
+=begin
+			puts "-"*70+"\n"+
+				sent.content+"\n"+
+				label.to_s+
+				"\n'"+(@q_sentence.key_words( type ).map { |i| i.content }).join("', '")+
+				"'\n'"+(key_words.map{ |i| i.content }).join("', '")+"'\n"+
+				"-"*70+"\n"
+=end
+			if ( label > @q_sentence.key_words( type ).size / 2 - 1 )
 				counter = label
 				label = 0
 				for word_in_question in @q_sentence.antikey_words( type ).map { |iu| iu.content }
@@ -153,15 +166,14 @@ module Additions
 						end
 					end
 				end
-#				puts "-"*70
-#				puts label.to_s+"  '"+(@q_sentence.antikey_words( type ).map { |i| i.content }).join("', '") + "'__\n__'" +
-#					(antikey_words.map{ |i| i.content }).join("', '")+"'  "+@q_sentence.antikey_words( type ).size.to_s
-#				puts "-"*70
-				if ( label > antikey_words.size / 2 - 1 )
-					[ sent, counter+label ]
-				else
-					[ sent, counter ]
-				end
+=begin
+				puts "-"*70+"\n! "+
+					label.to_s+
+					"\n'"+(@q_sentence.antikey_words( type ).map { |i| i.content }).join("', '")+
+					"'\n'"+(antikey_words.map{ |i| i.content }).join("', '")+"'\n"+
+					"-"*70
+=end
+				[ sent, counter+label ]
 			else
 				[ sent, label ]
 			end
