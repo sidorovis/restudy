@@ -1,0 +1,2 @@
+module StringVariablesHelper
+end

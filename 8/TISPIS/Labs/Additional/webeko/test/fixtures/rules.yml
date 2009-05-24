@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  text: 
+  is_integer: false
+  is_string: false
+  string_variable_id: 1
+  integer_variable_id: 1
+
+two:
+  title: MyString
+  text: 
+  is_integer: false
+  is_string: false
+  string_variable_id: 1
+  integer_variable_id: 1

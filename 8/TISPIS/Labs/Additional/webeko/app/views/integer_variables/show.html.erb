@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @integer_variable.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @integer_variable.description %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%=h @integer_variable.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_integer_variable_path(@integer_variable) %> |
+<%= link_to 'Back', integer_variables_path %>

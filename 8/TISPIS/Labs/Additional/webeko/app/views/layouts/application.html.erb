@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= controller_name %>: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+</head>
+<body>
+
+<table width=80% align=center border=1>
+<tr>
+<td width=150 align=center valign=top>
+<b>Menu</b><br/><br/>
+<%= link_to :Scenarios, scenarios_url %><br/>
+<%= link_to :String_variables, string_variables_url %><br/>
+<%= link_to :Integer_variables, integer_variables_url %><br/>
+<%= link_to :Rules, rules_url %><br/>
+</td>
+<td>
+<p style="color: green"><%= flash[:notice] %></p>
+<%= yield %>
+</td>
+</tr>
+</table>
+
+</body>
+</html>

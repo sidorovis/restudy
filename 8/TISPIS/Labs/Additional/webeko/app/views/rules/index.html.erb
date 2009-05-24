@@ -1,0 +1,28 @@
+<h1>Listing rules</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Variable</th>
+  </tr>
+
+<% @rules.each do |rule| %>
+  <tr>
+    <td><%=h rule.title %></td>
+    <td><%=h rule.description %></td>
+    <% if rule.is_string %>
+		<td>Integer: <%= link_to rule.string_variable, rule.integer_variable %></td>
+	<% else %>
+		<td>String: <%= link_to rule.integer_variable, rule.string_variable %></td>
+	<% end %>
+    <td><%= link_to 'Show', rule %></td>
+    <td><%= link_to 'Edit', edit_rule_path(rule) %></td>
+    <td><%= link_to 'Destroy', rule, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New rule', new_rule_path %>

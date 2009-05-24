@@ -1,0 +1,24 @@
+<h1>Listing integer_variables</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Value</th>
+  </tr>
+
+<% @integer_variables.each do |integer_variable| %>
+  <tr>
+    <td><%=h integer_variable.title %></td>
+    <td><%=h integer_variable.description %></td>
+    <td><%=h integer_variable.value %></td>
+    <td><%= link_to 'Show', integer_variable %></td>
+    <td><%= link_to 'Edit', edit_integer_variable_path(integer_variable) %></td>
+    <td><%= link_to 'Destroy', integer_variable, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New integer_variable', new_integer_variable_path %>

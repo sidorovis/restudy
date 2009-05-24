@@ -1,0 +1,42 @@
+<h1>New rule</h1>
+
+<% form_for(@rule) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :Choose %><br />
+	<% if params.keys.include?("string_integer") %>
+		<% if params["string_integer"] == "1" %>
+			<%= select_tag :string_integer,
+				"<option value=1 selected>integer</option><option value=2>string</option>" %>
+		<% else %>
+			<%= select_tag :string_integer,
+				"<option value=1>integer</option><option value=2 selected>string</option>" %>
+		<% end %>
+	<% else %>
+		<%= select_tag :string_integer,
+				"<option value=1>integer</option><option value=2>string</option>" %>
+	<% end %>
+  </p>
+  <p>
+    <%= f.label :string_variable_id %><br />
+    <%= f.select :string_variable_id, StringVariable.all.map { |i| [i,i.id] } %>
+  </p>
+  <p>
+    <%= f.label :integer_variable_id %><br />
+    <%= f.select :integer_variable_id, IntegerVariable.all.map { |i| [i,i.id] } %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', rules_path %>

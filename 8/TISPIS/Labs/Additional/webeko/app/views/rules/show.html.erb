@@ -1,0 +1,24 @@
+<p>
+  <b>Title:</b>
+  <%=h @rule.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @rule.description %>
+</p>
+
+<p>
+  <b>Is integer:</b>
+  <%=h @rule.is_integer %>
+  <%=h @rule.integer_variable %>
+</p>
+
+<p>
+  <b>Is string:</b>
+  <%=h @rule.is_string %>
+  <%=h @rule.string_variable %>
+</p>
+
+<%= link_to 'Edit', edit_rule_path(@rule) %> |
+<%= link_to 'Back', rules_path %>
