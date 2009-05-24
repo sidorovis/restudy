@@ -1,0 +1,8 @@
+<ul id='other_thumb'>
+	<% for id in @ids %>
+		<li id='oattr_<%= id %>' class='owf_attributes'>
+			<%= WfAttribute.find_by_id( id ).content %>
+			<%= draggable_element "oattr_#{id}", :revert => true %>
+		</li>
+	<% end %>
+</ul>

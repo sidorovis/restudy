@@ -1,0 +1,30 @@
+<p>
+  <b>Title:</b>
+  <%=h @word_type.title %>
+  <% if @word_type.word_groups.size > 0 %>
+    <table>
+    <tr>
+      <th>
+        Templates (Word Groups)
+      </th>
+    </tr>  
+    <%= render :partial => "word_group", :collection => @word_type.word_groups %>
+    </table>
+    <% end %>
+</p>
+<p>
+    <% if @word_type.words.size > 0 %>
+      <table>
+      <tr>
+        <th>
+          Words
+        </th>
+      </tr>  
+      <%= render :partial => "word", :collection => @word_type.words.find(:all, :order => :content) %>
+      </table>
+      <% end %>
+</p>
+<br/><br/>
+
+<%= link_to 'Edit', edit_word_type_path(@word_type) %> |
+<%= link_to 'Word Types List', word_types_path %>

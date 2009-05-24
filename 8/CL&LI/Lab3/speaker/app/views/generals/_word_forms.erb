@@ -1,0 +1,18 @@
+<table>
+	<% for attrs, form in @forms %>
+		<tr>
+			<td width=100>
+				<%= form %>
+			</td>
+			<td>
+				<%= attrs.join("</td><td>") %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+<p style="color:red;width"><%= @exist_error_message %></p>
+<p>
+  <%= label_tag :word_group_id %><br />
+  <%= select 'word', 'word_group_id', @word_groups_map, {:selected => @select_id } %><br/>
+ change it on your own risk
+</p>

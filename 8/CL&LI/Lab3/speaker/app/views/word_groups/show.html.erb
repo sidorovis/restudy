@@ -1,0 +1,40 @@
+<p>
+  <b>Title:</b>
+  <%=h @word_group.title %>
+</p>
+
+<p>
+  <b>Template:</b>
+  <%=h @word_group.template %>
+</p>
+
+<p>
+  <b>Word type:</b>
+  <%= link_to h(@word_group.word_type.title), @word_group.word_type %>
+</p>
+
+<% if @word_group.words.size > 0 %>
+  <table>
+  <tr>
+    <th>
+      Words
+    </th>
+  </tr>  
+  <%= render :partial => "word", :collection => @word_group.words %>
+  </table>
+  <% end %>
+  <% if @word_group.word_forms.size > 0 %>
+    <table>
+    <tr>
+      <th>
+        Word forms
+      </th>
+    </tr>  
+    <%= render :partial => "word_form", :collection => @word_group.word_forms %>
+    </table>
+    <% end %>
+<br/><br/>
+
+<%= link_to "Add Word Form", :controller => "word_forms", :action => "new", "word_group_id" => @word_group.id %><br/>
+<%= link_to 'Edit', edit_word_group_path(@word_group) %> |
+<%= link_to 'Word Groups List', word_groups_path %>

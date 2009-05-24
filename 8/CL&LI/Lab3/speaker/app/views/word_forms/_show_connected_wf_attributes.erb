@@ -1,0 +1,8 @@
+<ul id='connected_thumb'>
+	<% for wf_attr in @word_form.wf_attributes %>
+		<li id='cattr_<%= wf_attr.id %>' class='cwf_attributes'>
+			<%= wf_attr.content %>
+			<%= draggable_element "cattr_#{wf_attr.id}", :revert => true %>
+		</li>
+	<% end %>
+</ul>

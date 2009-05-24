@@ -1,0 +1,34 @@
+<p>
+  <b>Content:</b>
+  <%=h @word.content %>
+</p>
+
+<p>
+  <b>Word group:</b>
+  <%= link_to h(@word.word_group.title), @word.word_group %>
+  <%=h @word.word_group.template %>
+  <br/>
+  <b>Word type:</b>
+  <%= link_to h(@word.word_type.title), @word.word_type %>
+  <br/>
+</p>
+
+<p>
+	<b>Word Forms</b><br/>
+	<table >
+	<% for attributes, form in @word.word_forms %>
+		<tr>
+			<td>
+				<%= form %>
+			</td>
+			<td>
+				<%= attributes.join("</td><td>") %>
+			</td>
+		</tr>
+	<% end %>
+	</table>
+</p>
+
+<%= link_to 'Add Once More', new_word_path() %> |
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Words', words_path %>

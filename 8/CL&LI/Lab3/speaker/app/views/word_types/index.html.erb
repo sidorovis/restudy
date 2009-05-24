@@ -1,0 +1,24 @@
+<h1>Listing word_types</h1>
+
+<table width = 50% border=0>
+  <tr>
+    <th width=100% >Title</th>
+    <th>Word Groups Count</th>
+    <th>Words Count</th>
+    <th colspan=2>Actions</th>
+  </tr>
+
+<% for word_type in @word_types %>
+  <tr>
+    <td><%= link_to h(word_type.title), word_type %></td>
+    <td><%= word_type.word_groups.size %></td>
+    <td><%= word_type.words.size %></td>
+    <td><%= link_to 'Edit', edit_word_type_path(word_type) %></td>
+    <td><%= link_to 'Destroy', word_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New word_type', new_word_type_path %>

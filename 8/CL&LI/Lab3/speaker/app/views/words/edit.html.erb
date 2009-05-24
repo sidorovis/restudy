@@ -1,0 +1,20 @@
+<h1>Editing word</h1>
+
+<% form_for(@word) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </p>
+  <p>
+    <%= f.label :word_group_id %><br />
+    <%= f.select :word_group_id, @word_groups_map %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @word %> |
+<%= link_to 'Words', words_path %>

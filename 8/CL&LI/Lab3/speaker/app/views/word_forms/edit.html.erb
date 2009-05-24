@@ -1,0 +1,56 @@
+<h1>Editing word_form</h1>
+
+<%= javascript_include_tag 'prototype', 'effects', 'dragdrop' %>
+
+<% form_for(@word_form) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :content %><br />
+    <%= f.text_field :content %>
+  </p>
+  <p>
+    <%= f.label :word_group_id %><br />
+    <%= f.select :word_group_id, @word_groups_map %>
+  </p>
+  <p>
+	<div id='connected_attributes_content' style='background-color:yellow'>
+		Connected Attributes:
+		<div id='connected_attrs'>
+			<%= render :partial => 'show_connected_wf_attributes' %>
+		</div>
+	</div>
+	<div id='other_attributes_content' style='background-color:yellow'>
+		Other Attributes
+		<div id='other_attrs'>
+			<%= render :partial => 'show_other_wf_attributes' %>
+		</div>
+	</div>
+	
+	<%= drop_receiving_element( "connected_attributes_content",
+	 			:update=> "connected_attrs",
+				:url => { :action => "add_attr" },
+				:accept => "owf_attributes",
+				:droponempty => "true",
+				:loading => visual_effect(:fade),
+				:complete => visual_effect(:highlight, 'connected_attrs')
+	 			) 
+	%>
+
+	<%= drop_receiving_element( "other_attributes_content",
+	 			:update=> "other_attrs",
+				:url => { :action => "del_attr" },
+				:accept => "cwf_attributes",
+				:droponempty => "true",
+				:loading => visual_effect(:fade),
+				:complete => visual_effect(:highlight, 'other_attrs')
+	 			) 
+	%>
+
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+<%= link_to 'Show', @word_form %> |
+<%= link_to 'Word Forms List', word_forms_path %>

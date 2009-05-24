@@ -1,0 +1,8 @@
+<tr>
+	<td>
+		<%= link_to h(word_form.content), word_form_path( word_form ) %>
+	</td>
+	<td>
+		<%= word_form.wf_attributes.map{ |i| i.content }.join(", ") %>
+	</td>
+</tr>
