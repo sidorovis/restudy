@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  title: Group
   template: MyString
   word_type_id: 1
 
 two:
+  title: MyGroup
   template: MyString
   word_type_id: 1
