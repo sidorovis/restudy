@@ -1,7 +1,0 @@
-<p>
-  <b><%=h @bug_status.title %></b><br/>
-  <%=h(@bug_status.description).split("\n").join("<br/>") %><br/>
-</p>
-
-<%= link_to 'Редактировать', edit_admin_bug_status_path(@bug_status) %> |
-<%= link_to 'К списку', admin_bug_statuses_path %>

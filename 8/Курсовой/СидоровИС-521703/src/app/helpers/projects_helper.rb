@@ -1,5 +1,0 @@
-module ProjectsHelper
-
-	
-
-end

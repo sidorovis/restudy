@@ -1,8 +1,0 @@
-  <b><%=h @task.title %></b><br/>
-  <%=h(@task.description).split("\n").join("<br/>") %><br/>
-  Статус задачи: <b><%=h(@task.task_status.title) %></b><br/>
-  По проекту: <b><%= link_to @task.project.title, @task.project %></b><br/>
-
-<%= link_to 'Редактирование', edit_project_task_path(@project,@task) %> |
-<%= link_to 'Список задач', project_tasks_path(@project) %> |
-<%= link_to 'Страница проекта', @project %>
