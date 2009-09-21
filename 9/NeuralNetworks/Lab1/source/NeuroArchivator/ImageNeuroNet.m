@@ -55,14 +55,14 @@
 	height = height_;
 	teachK = teachK_;
 	enoughK = enoughK_;
-	layCount = 2;
-	lays = malloc( sizeof(ImageNeuronLay*) * 2);
+	layCount = layers_count;
+	lays = malloc( sizeof(ImageNeuronLay*) * layers_count);
 	lays[0] = [[ImageNeuronLay alloc] initWithCount:(width*height) nextLayCount:neuronCountOn1_];
 	lays[1] = [[ImageNeuronLay alloc] initWithCount:neuronCountOn1_ nextLayCount:(width*height)];
 	saveDiff = 9999999999;
 	saveLays = NULL;
-	colorSelectorCount = 3;
-	colorSelectors = malloc( sizeof(SEL) * 3 );
+	colorSelectorCount = colorSize;
+	colorSelectors = malloc( sizeof(SEL) * colorSize );
 	colorSelectors[0] = @selector( getRed );
 	colorSelectors[1] = @selector( getGreen );
 	colorSelectors[2] = @selector( getBlue );
@@ -139,8 +139,9 @@
 		for (int i = 0 ; i < layCount ; i++)
 			[(ImageNeuronLay*)saveLays[i] release];
 		free( saveLays );
+		saveLays = NULL;
 	}
-	saveLays = malloc( sizeof(ImageNeuronLay*) * 2 );
+	saveLays = malloc( sizeof(ImageNeuronLay*) * layers_count );
 	for (int i = 0 ; i < layCount ; i++)
 		saveLays[i] = [(ImageNeuronLay*)lays[i] copy];
 }
@@ -165,7 +166,7 @@
 
 	do
 	{
-		float** resultColorsVector = malloc( sizeof(float*) * 3 );
+		float** resultColorsVector = malloc( sizeof(float*) * colorSize );
 		for (int i = 0 ; i < colorSelectorCount ; i++)
 		{
 			float* vectorX0 = [iterator getX0Vector:colorSelectors[i]];

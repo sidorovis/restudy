@@ -1,6 +1,8 @@
 #import <Cocoa/Cocoa.h>
 #import "ImageNeuroNet.h"
 
+#define MAX_LOOP_COUNTER 8
+
 @interface ImageController : NSObject {
     IBOutlet NSImageView *resultImage;
 	NSImage* resultImageInstance;

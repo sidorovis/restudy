@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+#define alpha_level 1
 
 @interface ImageBlockIterator : NSObject 
 {

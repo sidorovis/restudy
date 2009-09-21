@@ -19,7 +19,6 @@
 -(float*) getVectorW;
 -(float) getWByIndex:(int)index_;
 -(float) getReactionOnIndex:(int)index_ value:(float)value;
--(void) normalizeW;
 
 @property(assign) int length;
 @property(assign) float* vectorW;

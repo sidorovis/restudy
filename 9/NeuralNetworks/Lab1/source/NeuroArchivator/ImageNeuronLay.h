@@ -15,7 +15,6 @@
 }
 -(NeuronLay*) initWithCount:(int)count_ nextLayCount:(int)nextLayCount_;
 -(ImageNeuron*) neuronByIndex:(int)index;
--(void) teachWithInSignal:(float*)inSignal OutSignal:(float*)outSignal ResultSignal:(float*)resultVector teachK:(float)teachK;
 -(void) teachWithInSignal:(float*)inSignal OutSignal:(float*)outSignal InitSignal:(float*)initSignal teachK:(float)teachK;
 -(ImageNeuronLay*) copy;
 @end

@@ -12,6 +12,9 @@
 #import "ImageAlgorythms.h"
 #import "ImageBlockIterator.h"
 
+#define layers_count 2
+
+
 @interface ImageNeuroNet : NeuroNet 
 {
 	int		width, 

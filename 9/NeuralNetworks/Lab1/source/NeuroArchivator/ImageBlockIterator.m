@@ -65,6 +65,9 @@
 	return answer;
 }
 -(void) setColorsToImageRep:(NSBitmapImageRep*)result data:(float**)resultColorsVector
+// resultColorsVector[0] -> for red
+// resultColorsVector[1] -> for green
+// resultColorsVector[2] -> for blue
 {
 	for (int u = startY ; u < startY + height ; u++)
 		for (int i = startX ; i < startX + width ; i++)
@@ -76,7 +79,7 @@
 			NSColor* new = [NSColor colorWithDeviceRed:r
 												 green:g
 												  blue:b
-												 alpha:1	];
+												 alpha:alpha_level	];
 			[result setColor:new atX:i y:u];
 		}
 }

@@ -62,31 +62,21 @@
 								 aStr:[a stringValue]
 								 dStr:[D stringValue]];
 	
-//	int temp = 0;
-
-	if ([neuroNet goodEnough] == NO)
+	int loopCounter = 0;
+	while ([neuroNet goodEnough] == NO)
 	{
+		loopCounter++;
+		if (loopCounter > MAX_LOOP_COUNTER)
+			break;
 		[neuroNet teach];
 	}
 	resultImageInstance = [neuroNet getResultImage];
 	[resultImage setImage:resultImageInstance];
 	[resultImageInstance release];
-	NSLog( @"%@",neuroNet);
 	[neuroNet release];
 	neuroNet = NULL;
 	
-/*	while ([neuroNet goodEnough] == NO)
-	{
-		temp++;
-		if (temp == 10)
-			break;
-		[neuroNet teach];
-	}
-	[neuroNet release];	
-	neuroNet = NULL;
-*/
 }
-
 - (IBAction)deArchive:(id)sender 
 {
     

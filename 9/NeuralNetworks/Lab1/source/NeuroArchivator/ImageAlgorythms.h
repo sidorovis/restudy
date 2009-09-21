@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+#define colorSize 3
+
 @interface ImageAlgorythms : NSObject 
 {
 }
