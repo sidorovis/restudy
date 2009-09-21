@@ -79,7 +79,6 @@
 	float diff = 0;
 	ImageBlockIterator* iterator = [[ImageBlockIterator alloc] initWithImage:image n:width m:height];
 
-	free( vectorX0 );
 	do
 	{
 		for (int i = 0 ; i < colorSelectorCount ; i++)
