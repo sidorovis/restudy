@@ -69,6 +69,20 @@
 					PBXBreakpointsDataSource_ContinueID,
 				);
 			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					663,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
@@ -137,6 +151,16 @@
 		sourceControlManager = 856F9B0810540C4F00CFD619 /* Source Control */;
 		userBuildSettings = {
 		};
+	};
+	853D4228106812D200C1561F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */;
+		name = "ImageNeuroNet.m: 86";
+		rLen = 0;
+		rLoc = 2903;
+		rType = 0;
+		vrLen = 818;
+		vrLoc = 2607;
 	};
 	853D793B1067A7B1004BCE21 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -537,6 +561,16 @@
 			sepNavSelRange = "{412, 0}";
 			sepNavVisRange = "{0, 757}";
 		};
+	};
+	85CBE3A91068122700BA387D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */;
+		name = "ImageNeuroNet.m: 86";
+		rLen = 0;
+		rLoc = 2903;
+		rType = 0;
+		vrLen = 833;
+		vrLoc = 2607;
 	};
 	85F8E24C1067FE0B001BD2A6 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
