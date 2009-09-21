@@ -216,7 +216,7 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* NeuroArchivator */;
 			projectDirPath = "";
-			projectRoot = "";
+			projectRoot = /Users/rilley_elf/_dev/univer;
 			targets = (
 				8D1107260486CEB800E47090 /* NeuroArchivator */,
 			);
