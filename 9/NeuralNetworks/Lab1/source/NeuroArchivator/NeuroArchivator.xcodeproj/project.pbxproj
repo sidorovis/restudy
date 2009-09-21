@@ -8,7 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
+		8543C5D210615F0C00E3E1D2 /* Neuron.m in Sources */ = {isa = PBXBuildFile; fileRef = 8543C5D110615F0C00E3E1D2 /* Neuron.m */; };
+		8543C5E01061637300E3E1D2 /* NeuronLay.m in Sources */ = {isa = PBXBuildFile; fileRef = 8543C5DF1061637300E3E1D2 /* NeuronLay.m */; };
 		856F9B0C10540EA100CFD619 /* ImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 856F9B0A10540EA100CFD619 /* ImageController.m */; };
+		8573EC501060E20D0028FC8D /* Alrorythms.c in Sources */ = {isa = PBXBuildFile; fileRef = 8573EC4F1060E20D0028FC8D /* Alrorythms.c */; };
+		85BC5DB310617564007DEF25 /* ImageNeuron.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5DB210617564007DEF25 /* ImageNeuron.m */; };
+		85BC5EBF10617DA3007DEF25 /* ImageNeuronLay.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5EBE10617DA3007DEF25 /* ImageNeuronLay.m */; };
+		85BC5EC910617F4D007DEF25 /* ImageNeuroNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */; };
+		85CAD48E105855E300192A43 /* NeuroNet.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD48D105855E300192A43 /* NeuroNet.m */; };
+		85CAD4DF10585FBB00192A43 /* ImageAlgorythms.m in Sources */ = {isa = PBXBuildFile; fileRef = 85CAD4DE10585FBB00192A43 /* ImageAlgorythms.m */; };
+		85FB8B2A1059ABE900E9216F /* ImageBlockIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 85FB8B291059ABE900E9216F /* ImageBlockIterator.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -23,8 +32,26 @@
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32CA4F630368D1EE00C91783 /* NeuroArchivator_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeuroArchivator_Prefix.pch; sourceTree = "<group>"; };
+		8543C5D010615F0C00E3E1D2 /* Neuron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Neuron.h; sourceTree = "<group>"; };
+		8543C5D110615F0C00E3E1D2 /* Neuron.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Neuron.m; sourceTree = "<group>"; };
+		8543C5DE1061637300E3E1D2 /* NeuronLay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeuronLay.h; sourceTree = "<group>"; };
+		8543C5DF1061637300E3E1D2 /* NeuronLay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeuronLay.m; sourceTree = "<group>"; };
 		856F9B0A10540EA100CFD619 /* ImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageController.m; sourceTree = "<group>"; };
 		856F9B0B10540EA100CFD619 /* ImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageController.h; sourceTree = "<group>"; };
+		8573EC461060E1BF0028FC8D /* Algorythms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Algorythms.h; sourceTree = "<group>"; };
+		8573EC4F1060E20D0028FC8D /* Alrorythms.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Alrorythms.c; sourceTree = "<group>"; };
+		85BC5DB110617564007DEF25 /* ImageNeuron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageNeuron.h; sourceTree = "<group>"; };
+		85BC5DB210617564007DEF25 /* ImageNeuron.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageNeuron.m; sourceTree = "<group>"; };
+		85BC5EBD10617DA3007DEF25 /* ImageNeuronLay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageNeuronLay.h; sourceTree = "<group>"; };
+		85BC5EBE10617DA3007DEF25 /* ImageNeuronLay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageNeuronLay.m; sourceTree = "<group>"; };
+		85BC5EC710617F4D007DEF25 /* ImageNeuroNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageNeuroNet.h; sourceTree = "<group>"; };
+		85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageNeuroNet.m; sourceTree = "<group>"; };
+		85CAD48C105855E300192A43 /* NeuroNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeuroNet.h; sourceTree = "<group>"; };
+		85CAD48D105855E300192A43 /* NeuroNet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeuroNet.m; sourceTree = "<group>"; };
+		85CAD4DD10585FBB00192A43 /* ImageAlgorythms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAlgorythms.h; sourceTree = "<group>"; };
+		85CAD4DE10585FBB00192A43 /* ImageAlgorythms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAlgorythms.m; sourceTree = "<group>"; };
+		85FB8B281059ABE900E9216F /* ImageBlockIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageBlockIterator.h; sourceTree = "<group>"; };
+		85FB8B291059ABE900E9216F /* ImageBlockIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageBlockIterator.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* NeuroArchivator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuroArchivator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -44,8 +71,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				856F9B0A10540EA100CFD619 /* ImageController.m */,
+				85BC5F8510618367007DEF25 /* AdditionalAlgorythms */,
+				85BC5DB81061766C007DEF25 /* BaseNeuronClasses */,
+				85BC5EB810617D79007DEF25 /* ImageNeuronClasses */,
 				856F9B0B10540EA100CFD619 /* ImageController.h */,
+				856F9B0A10540EA100CFD619 /* ImageController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -116,6 +146,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		85BC5DB81061766C007DEF25 /* BaseNeuronClasses */ = {
+			isa = PBXGroup;
+			children = (
+				8543C5D010615F0C00E3E1D2 /* Neuron.h */,
+				8543C5D110615F0C00E3E1D2 /* Neuron.m */,
+				8543C5DE1061637300E3E1D2 /* NeuronLay.h */,
+				8543C5DF1061637300E3E1D2 /* NeuronLay.m */,
+				85CAD48C105855E300192A43 /* NeuroNet.h */,
+				85CAD48D105855E300192A43 /* NeuroNet.m */,
+			);
+			name = BaseNeuronClasses;
+			sourceTree = "<group>";
+		};
+		85BC5EB810617D79007DEF25 /* ImageNeuronClasses */ = {
+			isa = PBXGroup;
+			children = (
+				85FB8B281059ABE900E9216F /* ImageBlockIterator.h */,
+				85FB8B291059ABE900E9216F /* ImageBlockIterator.m */,
+				85BC5DB110617564007DEF25 /* ImageNeuron.h */,
+				85BC5DB210617564007DEF25 /* ImageNeuron.m */,
+				85BC5EBD10617DA3007DEF25 /* ImageNeuronLay.h */,
+				85BC5EBE10617DA3007DEF25 /* ImageNeuronLay.m */,
+				85BC5EC710617F4D007DEF25 /* ImageNeuroNet.h */,
+				85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */,
+			);
+			name = ImageNeuronClasses;
+			sourceTree = "<group>";
+		};
+		85BC5F8510618367007DEF25 /* AdditionalAlgorythms */ = {
+			isa = PBXGroup;
+			children = (
+				8573EC4F1060E20D0028FC8D /* Alrorythms.c */,
+				8573EC461060E1BF0028FC8D /* Algorythms.h */,
+				85CAD4DD10585FBB00192A43 /* ImageAlgorythms.h */,
+				85CAD4DE10585FBB00192A43 /* ImageAlgorythms.m */,
+			);
+			name = AdditionalAlgorythms;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,6 +242,15 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				856F9B0C10540EA100CFD619 /* ImageController.m in Sources */,
+				85CAD48E105855E300192A43 /* NeuroNet.m in Sources */,
+				85CAD4DF10585FBB00192A43 /* ImageAlgorythms.m in Sources */,
+				85FB8B2A1059ABE900E9216F /* ImageBlockIterator.m in Sources */,
+				8573EC501060E20D0028FC8D /* Alrorythms.c in Sources */,
+				8543C5D210615F0C00E3E1D2 /* Neuron.m in Sources */,
+				8543C5E01061637300E3E1D2 /* NeuronLay.m in Sources */,
+				85BC5DB310617564007DEF25 /* ImageNeuron.m in Sources */,
+				85BC5EBF10617DA3007DEF25 /* ImageNeuronLay.m in Sources */,
+				85BC5EC910617F4D007DEF25 /* ImageNeuroNet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
