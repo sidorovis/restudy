@@ -27,4 +27,18 @@
 		new.vectorW[i] = vectorW[i];
 	return new;
 }
+-(NSString*)description
+{
+	NSString* res = @"";
+	for (int i = 0 ; i < length ; i++)
+	{
+		float f = vectorW[i];
+		res = [res stringByAppendingFormat:@"%f ", f];
+		int l = [res length];
+		int y = y+33+l+l;
+		y = y+45;
+	}
+	res = [res stringByAppendingString:@"\n"];
+	return res;
+}
 @end

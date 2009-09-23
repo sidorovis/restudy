@@ -17,7 +17,6 @@
 		[sourceImage setImage:[[NSImage alloc] initWithContentsOfFile:[openPanel filename] ] ];
 		[archiveButton setEnabled:YES];
 		[openSourceImageControl setEnabled:NO];
-		[openArchiveMatrixControl setEnabled:YES];
 		[closeControl setEnabled:YES];
 		[n setEnabled:YES];	// n -> width
 		[m setEnabled:YES]; // m -> height
@@ -32,21 +31,48 @@
 
 - (IBAction)loadArchiveMatrix:(id)sender
 {
+	[openSourceImageControl setEnabled:NO];
+	[openArchiveMatrixControl setEnabled:NO];
+	[archiveButton setEnabled:NO];
+	[saveArchiveMatrixControl setEnabled:NO];
+	[closeControl setEnabled:YES];
+    NSOpenPanel* openPanel = [NSOpenPanel openPanel];
+	[openPanel setCanChooseFiles:YES];
+	[openPanel setCanCreateDirectories:NO];
+	[openPanel setCanCreateDirectories:NO];
+	[openPanel setCanSelectHiddenExtension:NO];
+	[openPanel setAllowsMultipleSelection:NO];
+	[openPanel setAllowsOtherFileTypes:NO];
+	NSArray* types  = [[NSArray alloc] initWithObjects:@"", nil];
+	if ( [openPanel runModalForTypes: types] == NSOKButton )
 	{
-		[openArchiveMatrixControl setEnabled:NO];
-		[archiveButton setEnabled:NO];
-		[deArchiveButton setEnabled:YES];
-		[saveArchiveMatrixControl setEnabled:YES];
+		NSString* neuroNetStr = [[NSString alloc] initWithContentsOfFile:[openPanel filename]];
+		NSImage* archivedImage = [ImageAlgorythms deArchive:neuroNetStr];
+		if (!archivedImage)
+		{
+			NSRunAlertPanel(@"Error", @"Wrong image representation", @"Try again", nil, nil);
+		}
+		else 
+		{
+			[resultImage setImage:archivedImage];
+		}
 	}
-}
+	[types release];	
 
-- (IBAction)saveResultImage:(id)sender 
-{
-    
+	
 }
 
 - (IBAction)saveArchiveMatrix:(id)sender
 {
+	NSSavePanel* savePanel = [NSSavePanel savePanel];
+	[savePanel setCanCreateDirectories:YES];
+	[savePanel setAllowsOtherFileTypes:NO];
+	if ( [savePanel runModal] == NSOKButton )
+	{
+		NSString* filename = [[savePanel filename] stringByAppendingString:@"" ];
+		NSString* neuroNetStrRepresentation = [[NSString alloc] initWithFormat:@"%@", neuroNet];
+		[ neuroNetStrRepresentation writeToFile:filename atomically:NO];
+	}
 }
 
 - (IBAction)archive:(id)sender 
@@ -54,6 +80,11 @@
 // 0) parameters validation
 
 	// n -> width, m -> height
+	if (neuroNet)
+	{
+		[neuroNet release];
+		neuroNet = NULL;
+	}
 	if (!neuroNet)
 	neuroNet = [ImageNeuroNet tryInit:[sourceImage image] 
 								 nStr:[n stringValue] 
@@ -63,29 +94,28 @@
 								 dStr:[D stringValue]];
 	
 	int loopCounter = 0;
-	while ([neuroNet goodEnough] == NO)
+	while ([neuroNet fastGoodEnough] == NO)
 	{
 		loopCounter++;
 		if (loopCounter > MAX_LOOP_COUNTER)
 			break;
-		[neuroNet teach];
+		[neuroNet fastTeach];
 	}
 	resultImageInstance = [neuroNet getResultImage];
 	[resultImage setImage:resultImageInstance];
 	[resultImageInstance release];
-	[neuroNet release];
-	neuroNet = NULL;
+	resultImageInstance = NULL;
+	[saveArchiveMatrixControl setEnabled:YES];
 	
-}
-- (IBAction)deArchive:(id)sender 
-{
-    
 }
 
 - (IBAction)close:(id)sender 
 {
 	if (neuroNet)
+	{
 		[neuroNet release];
+		neuroNet = NULL;
+	}
 	if ([sourceImage image])
 	{
 		NSImage* image = [sourceImage image];
@@ -99,11 +129,9 @@
 		[image release];
 	}
 	[openSourceImageControl setEnabled:YES];
-	[openArchiveMatrixControl setEnabled:NO];
-	[saveResultImageControl setEnabled:NO];
+	[openArchiveMatrixControl setEnabled:YES];
 	[saveArchiveMatrixControl setEnabled:NO];
 	[archiveButton setEnabled:NO];
-	[deArchiveButton setEnabled:NO];
 	[closeControl setEnabled:NO];
 	[table setString:@""];
 	if (resultImageInstance)

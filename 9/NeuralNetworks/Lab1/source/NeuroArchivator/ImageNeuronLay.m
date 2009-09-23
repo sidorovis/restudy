@@ -42,5 +42,11 @@
 	}
 	return new;	
 }
-
+-(NSString*)description
+{
+	NSString* res = @"";
+	for (int i = 0 ; i < count ; i++)
+		res = [res stringByAppendingFormat:@"%@", neurons[i]];
+	return res;
+}
 @end

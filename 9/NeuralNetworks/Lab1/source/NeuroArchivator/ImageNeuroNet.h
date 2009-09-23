@@ -15,7 +15,7 @@
 #define layers_count 2
 
 
-@interface ImageNeuroNet : NeuroNet 
+@interface ImageNeuroNet : NeuroNet
 {
 	int		width, 
 	height; // rectangle sizes
@@ -33,7 +33,9 @@
 - (ImageNeuroNet*) initWithImage:(NSImage*)image_ width:(int)width_ height:(int)height_ neuronCountOn1:(int)neuronCountOn1_ a:(float)teachK_ d:(int)enoughK_;
 - (void) dealloc;
 - (BOOL) goodEnough;
+- (BOOL) fastGoodEnough;
 - (void) teach;
+- (void) fastTeach;
 
 - (void) saveState;
 - (void) loadState;

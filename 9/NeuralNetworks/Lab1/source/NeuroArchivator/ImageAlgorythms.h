@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ImageBlockIterator.h"
 
 #define colorSize 3
 
@@ -15,4 +16,5 @@
 }
 +(BOOL) validateImageOnRGB:(NSImage*)image;
 +(void) getImageSize:(NSImage*)image h:(int*)hs w:(int*)ws l:(int*)ls;
++(NSImage*) deArchive:(NSString*)stringRep;
 @end

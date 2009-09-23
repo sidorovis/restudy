@@ -68,9 +68,17 @@
 	colorSelectors[2] = @selector( getBlue );
 	return self;
 }
+
 - (void) dealloc
 {
 	free( colorSelectors );
+	if (saveLays)
+	{
+		for (int i = 0 ; i < layCount ; i++)
+			[(ImageNeuronLay*)saveLays[i] release];
+		free( saveLays );
+		saveLays = NULL;
+	}	
 	[super dealloc];
 }
 
@@ -107,6 +115,54 @@
 		return YES;
 	return NO;
 }
+- (BOOL) fastGoodEnough
+{
+	float diff = 0;
+	ImageBlockIterator* iterator = [[ImageBlockIterator alloc] initWithImage:image n:width m:height];
+	
+	do
+	{		
+		float *vectorX0Red, *vectorX0Green, *vectorX0Blue, *vectorY;
+		[iterator getFastX0red:&vectorX0Red green:&vectorX0Green blue:&vectorX0Blue];
+
+		vectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:vectorX0Red];
+		float* vectorX1Red = [(ImageNeuronLay*)lays[1] getAnswerOnSignal:vectorY];
+		diff += getDiff(width*height, vectorX0Red, vectorX1Red);
+		free( vectorX0Red );
+		free( vectorY );
+		free( vectorX1Red );
+		
+		vectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:vectorX0Green];
+		float* vectorX1Green = [(ImageNeuronLay*)lays[1] getAnswerOnSignal:vectorY];
+		diff += getDiff(width*height, vectorX0Green, vectorX1Green);
+		free( vectorX0Green );
+		free( vectorY );
+		free( vectorX1Green );
+
+		vectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:vectorX0Blue];
+		float* vectorX1Blue = [(ImageNeuronLay*)lays[1] getAnswerOnSignal:vectorY];
+		diff += getDiff(width*height, vectorX0Blue, vectorX1Blue);
+		free( vectorX0Blue );
+		free( vectorY );
+		free( vectorX1Blue );
+		
+	}
+	while( [iterator getNextWithAutoRelease:YES] );
+	if (saveDiff > diff)
+	{
+		[self saveState];
+		saveDiff = diff;
+	}
+	else 
+	{
+		[self loadState];
+	}
+	
+	if (diff < enoughK)
+		return YES;
+	return NO;
+}
+
 - (void) teach
 {
 	ImageBlockIterator* iterator = [[ImageBlockIterator alloc] initWithImage:image n:width m:height];
@@ -132,6 +188,52 @@
 	}
 	while( [iterator getNextWithAutoRelease:YES] );
 }
+- (void) fastTeach
+{
+	ImageBlockIterator* iterator = [[ImageBlockIterator alloc] initWithImage:image n:width m:height];
+	do
+	{
+		
+		float diff = 0;
+		float *vectorX0Red, *vectorX0Green, *vectorX0Blue, *vectorY;
+		
+		[iterator getFastX0red:&vectorX0Red green:&vectorX0Green blue:&vectorX0Blue];
+
+		vectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:vectorX0Red];
+		float* vectorX1Red = [(ImageNeuronLay*)lays[1] getAnswerOnSignal:vectorY];
+		diff += getDiff(width*height, vectorX0Red, vectorX1Red);
+		if (diff < enoughK)
+			[(ImageNeuronLay*)lays[1] teachWithInSignal:vectorY OutSignal:vectorX1Red InitSignal:vectorX0Red teachK:teachK];
+		diff = 0;
+		free( vectorX0Red );
+		free( vectorY );
+		free( vectorX1Red );
+		
+		vectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:vectorX0Green];
+		float* vectorX1Green = [(ImageNeuronLay*)lays[1] getAnswerOnSignal:vectorY];
+		diff += getDiff(width*height, vectorX0Green, vectorX1Green);
+		if (diff < enoughK)
+			[(ImageNeuronLay*)lays[1] teachWithInSignal:vectorY OutSignal:vectorX1Green InitSignal:vectorX0Green teachK:teachK];
+		diff = 0;
+		free( vectorX0Green );
+		free( vectorY );
+		free( vectorX1Green );
+		
+		vectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:vectorX0Blue];
+		float* vectorX1Blue = [(ImageNeuronLay*)lays[1] getAnswerOnSignal:vectorY];
+		diff += getDiff(width*height, vectorX0Blue, vectorX1Blue);
+		if (diff < enoughK)
+			[(ImageNeuronLay*)lays[1] teachWithInSignal:vectorY OutSignal:vectorX1Blue InitSignal:vectorX0Blue teachK:teachK];
+		diff = 0;
+		free( vectorX0Blue );
+		free( vectorY );
+		free( vectorX1Blue );
+		
+	}
+	while( [iterator getNextWithAutoRelease:YES] );
+	
+}
+
 - (void) saveState
 {
 	if (saveLays)
@@ -187,17 +289,33 @@
 }
 -(NSString*)description
 {
-	NSString* res = @"";
-
-	ImageNeuronLay* lay = (ImageNeuronLay*)lays[1];
-	int neuronCount = [lay count];
-	for (int i = 0 ; i < neuronCount ; i++)
+	int h,w,l;
+	[ImageAlgorythms getImageSize:image h:&h w:&w l:&l];
+	int p = [(ImageNeuronLay*)lays[0] nextLayCount ];
+	
+	NSString* res = 
+		[[NSString alloc] initWithFormat:
+			@"%d %d\n%d\n%d %d\n%@",
+			width, height, p ,h, w,
+			lays[1]
+		 ];
+	res = [res stringByAppendingString:@"\n"];
+	ImageBlockIterator* iterator = [[ImageBlockIterator alloc] initWithImage:image n:width m:height];
+	do
 	{
-		ImageNeuron* neuron = [lay neuronByIndex:i];
-		for (int u = 0 ; u < [neuron length] ; u++)
-			res = [NSString stringWithFormat:@"%@ %f ", res, [neuron getReactionOnIndex:u value:1]];
-		res = [NSString stringWithFormat:@"%@ \n", res];
+		for (int i = 0 ; i < colorSelectorCount ; i++)
+		{
+			float* vectorX0 = [iterator getX0Vector:colorSelectors[i]];
+			float* vectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:vectorX0];
+			for (int u = 0 ; u < p ; u++)
+				res = [res stringByAppendingFormat:@"%f ", vectorY[u]];
+			free( vectorY );
+			free( vectorX0 );			
+		}
+		res = [res stringByAppendingString:@"\n"];
 	}
+	while( [iterator getNextWithAutoRelease:YES] );
+		
 	return res;
 }
 @end

@@ -12,6 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="81"/>
 			<integer value="372"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -98,19 +99,8 @@
 								</object>
 								<object class="NSMenuItem" id="990372407">
 									<reference key="NSMenu" ref="720053764"/>
-									<bool key="NSIsDisabled">YES</bool>
 									<string key="NSTitle">Open ArchiveMatrix</string>
 									<string key="NSKeyEquiv">O</string>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="35465992"/>
-									<reference key="NSMixedImage" ref="502551668"/>
-								</object>
-								<object class="NSMenuItem" id="117038363">
-									<reference key="NSMenu" ref="720053764"/>
-									<bool key="NSIsDisabled">YES</bool>
-									<string key="NSTitle">Save ResultImage</string>
-									<string key="NSKeyEquiv">s</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -120,7 +110,7 @@
 									<reference key="NSMenu" ref="720053764"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<string key="NSTitle">Save ArchiveMatrix</string>
-									<string key="NSKeyEquiv">S</string>
+									<string key="NSKeyEquiv">s</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
@@ -283,26 +273,6 @@
 								<int key="NSButtonFlags2">268435585</int>
 								<string key="NSAlternateContents"/>
 								<string key="NSKeyEquivalent">a</string>
-								<int key="NSPeriodicDelay">200</int>
-								<int key="NSPeriodicInterval">25</int>
-							</object>
-						</object>
-						<object class="NSButton" id="990305157">
-							<reference key="NSNextResponder" ref="439893737"/>
-							<int key="NSvFlags">300</int>
-							<string key="NSFrame">{{533, 220}, {172, 32}}</string>
-							<reference key="NSSuperview" ref="439893737"/>
-							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="17672068">
-								<int key="NSCellFlags">604110336</int>
-								<int key="NSCellFlags2">134217728</int>
-								<string key="NSContents">DeArchive</string>
-								<reference key="NSSupport" ref="379440837"/>
-								<reference key="NSControlView" ref="990305157"/>
-								<int key="NSButtonFlags">-2038284033</int>
-								<int key="NSButtonFlags2">268435585</int>
-								<string key="NSAlternateContents"/>
-								<string key="NSKeyEquivalent">d</string>
 								<int key="NSPeriodicDelay">200</int>
 								<int key="NSPeriodicInterval">25</int>
 							</object>
@@ -696,14 +666,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">saveResultImage:</string>
-						<reference key="source" ref="82094692"/>
-						<reference key="destination" ref="117038363"/>
-					</object>
-					<int key="connectionID">482</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">saveArchiveMatrix:</string>
 						<reference key="source" ref="82094692"/>
 						<reference key="destination" ref="1020590516"/>
@@ -717,14 +679,6 @@
 						<reference key="destination" ref="484450385"/>
 					</object>
 					<int key="connectionID">484</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">deArchive:</string>
-						<reference key="source" ref="82094692"/>
-						<reference key="destination" ref="990305157"/>
-					</object>
-					<int key="connectionID">485</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -744,14 +698,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
-						<string key="label">saveResultImageControl</string>
-						<reference key="source" ref="82094692"/>
-						<reference key="destination" ref="117038363"/>
-					</object>
-					<int key="connectionID">488</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
 						<string key="label">saveArchiveMatrixControl</string>
 						<reference key="source" ref="82094692"/>
 						<reference key="destination" ref="1020590516"/>
@@ -765,14 +711,6 @@
 						<reference key="destination" ref="484450385"/>
 					</object>
 					<int key="connectionID">490</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">deArchiveButton</string>
-						<reference key="source" ref="82094692"/>
-						<reference key="destination" ref="990305157"/>
-					</object>
-					<int key="connectionID">491</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -900,19 +838,12 @@
 						<reference key="object" ref="720053764"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="117038363"/>
 							<reference ref="722745758"/>
 							<reference ref="990372407"/>
 							<reference ref="1020590516"/>
 							<reference ref="463303384"/>
 						</object>
 						<reference key="parent" ref="379814623"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">80</int>
-						<reference key="object" ref="117038363"/>
-						<reference key="parent" ref="720053764"/>
-						<string key="objectName">Save ResultImage</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">72</int>
@@ -955,7 +886,6 @@
 							<reference ref="583931078"/>
 							<reference ref="497247985"/>
 							<reference ref="484450385"/>
-							<reference ref="990305157"/>
 							<reference ref="361742408"/>
 							<reference ref="427204289"/>
 							<reference ref="466322907"/>
@@ -1059,20 +989,6 @@
 						<int key="objectID">477</int>
 						<reference key="object" ref="1020590516"/>
 						<reference key="parent" ref="720053764"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">478</int>
-						<reference key="object" ref="990305157"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="17672068"/>
-						</object>
-						<reference key="parent" ref="439893737"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">479</int>
-						<reference key="object" ref="17672068"/>
-						<reference key="parent" ref="990305157"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">492</int>
@@ -1298,8 +1214,6 @@
 					<string>459.IBPluginDependency</string>
 					<string>476.IBPluginDependency</string>
 					<string>477.IBPluginDependency</string>
-					<string>478.IBPluginDependency</string>
-					<string>479.IBPluginDependency</string>
 					<string>492.IBPluginDependency</string>
 					<string>528.IBPluginDependency</string>
 					<string>529.IBPluginDependency</string>
@@ -1336,8 +1250,6 @@
 					<string>57.editorWindowContentRectSynchronizationRect</string>
 					<string>72.IBPluginDependency</string>
 					<string>72.ImportedFromIB2</string>
-					<string>80.IBPluginDependency</string>
-					<string>80.ImportedFromIB2</string>
 					<string>81.IBEditorWindowLastContentRect</string>
 					<string>81.IBPluginDependency</string>
 					<string>81.ImportedFromIB2</string>
@@ -1355,17 +1267,15 @@
 					<integer value="1"/>
 					<string>{74, 862}</string>
 					<string>{{6, 978}, {478, 20}}</string>
-					<string>{{333, 27}, {862, 711}}</string>
+					<string>{{31, 27}, {862, 711}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
-					<string>{{333, 27}, {862, 711}}</string>
+					<string>{{31, 27}, {862, 711}}</string>
 					<integer value="1"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<boolean value="YES"/>
 					<string>{3.40282e+38, 3.40282e+38}</string>
 					<string>{862, 711}</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1415,15 +1325,13 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{43, 428}, {108, 23}}</string>
+					<string>{{43, 428}, {105, 23}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{23, 794}, {245, 183}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<integer value="1"/>
-					<string>{{180, 348}, {228, 103}}</string>
+					<string>{{180, 368}, {225, 83}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{145, 474}, {199, 203}}</string>
@@ -1465,11 +1373,9 @@
 							<string>loadArchiveMatrix:</string>
 							<string>loadSourceImage:</string>
 							<string>saveArchiveMatrix:</string>
-							<string>saveResultImage:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -1494,7 +1400,6 @@
 							<string>p</string>
 							<string>resultImage</string>
 							<string>saveArchiveMatrixControl</string>
-							<string>saveResultImageControl</string>
 							<string>sourceImage</string>
 							<string>table</string>
 						</object>
@@ -1511,7 +1416,6 @@
 							<string>NSMenuItem</string>
 							<string>NSTextField</string>
 							<string>NSImageView</string>
-							<string>NSMenuItem</string>
 							<string>NSMenuItem</string>
 							<string>NSImageView</string>
 							<string>NSTextView</string>

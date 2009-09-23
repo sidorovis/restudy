@@ -21,6 +21,17 @@
 	startX = startY = 0;
 	return self;
 }
+-(ImageBlockIterator*)initWithHeight:(int)height_ Width:(int)width_ N:(int)n_ M:(int)m_;
+{
+	imageHeight = height_;
+	imageWidth = width_;
+	height = m_;
+	width = n_;
+	startX = startY = 0;
+	imageRep = NULL;
+	return self;
+}
+
 -(void) dealloc
 {
 	[imageRep release];
@@ -64,6 +75,21 @@
 		}
 	return answer;
 }
+-(void) getFastX0red:(float**)vectorX0Red green:(float**)vectorX0Green blue:(float**)vectorX0Blue
+{
+	(*vectorX0Red) = malloc( sizeof(float) * height * width);
+	(*vectorX0Green) = malloc( sizeof(float) * height * width);
+	(*vectorX0Blue) = malloc( sizeof(float) * height * width);
+	for (int u = startY ; u < startY + height ; u++)
+		for (int i = startX ; i < startX + width ; i++)
+		{
+			color = [imageRep colorAtX:i y:u];
+			(*vectorX0Red)[ (u - startY) * width + (i - startX) ] = [color redComponent];
+			(*vectorX0Green)[ (u - startY) * width + (i - startX) ] = [color greenComponent];
+			(*vectorX0Blue)[ (u - startY) * width + (i - startX) ] = [color blueComponent];
+		}
+}
+
 -(void) setColorsToImageRep:(NSBitmapImageRep*)result data:(float**)resultColorsVector
 // resultColorsVector[0] -> for red
 // resultColorsVector[1] -> for green
