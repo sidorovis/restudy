@@ -18,11 +18,14 @@
     IBOutlet NSTextField *p;
     IBOutlet NSTextField *a;
     IBOutlet NSTextField *D;
+	IBOutlet NSProgressIndicator* progress;
 	ImageNeuroNet* neuroNet;
+	NSThread* thread;
 }
 - (IBAction)archive:(id)sender;
 - (IBAction)loadSourceImage:(id)sender;
 - (IBAction)loadArchiveMatrix:(id)sender;
 - (IBAction)saveArchiveMatrix:(id)sender;
 - (IBAction)close:(id)sender;
+- (void) neuro_arch;
 @end

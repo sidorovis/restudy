@@ -12,10 +12,14 @@
 @implementation ImageNeuroNet
 + (void)testOnInt:(NSString*)value errorStr:(NSString**)answer errorStrV:(NSString*)err result:(int*)result
 {
-	if ([[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[1-9][0-9]*"] evaluateWithObject:value] == YES)
+	NSString* matches = @"SELF MATCHES %@";
+	NSString* regexp = @"[1-9][0-9]*";
+	if ([[NSPredicate predicateWithFormat:matches, regexp] evaluateWithObject:value] == YES)
 		*result = [value intValue];
 	else
-		*answer = [*answer stringByAppendingString:err];	
+		*answer = [*answer stringByAppendingString:err];
+	[regexp release];
+	[matches release];
 }
 + (BOOL) validateParams:(NSString*)n_ m:(NSString*)m_ p:(NSString*)p_ a:(NSString*)a_ d:(NSString*)d_ n_i:(int*)n m_i:(int*)m p_i:(int*)p a_f:(float*)a d_i:(int*)d;
 {
@@ -145,7 +149,6 @@
 		free( vectorX0Blue );
 		free( vectorY );
 		free( vectorX1Blue );
-		
 	}
 	while( [iterator getNextWithAutoRelease:YES] );
 	if (saveDiff > diff)
@@ -157,7 +160,6 @@
 	{
 		[self loadState];
 	}
-	
 	if (diff < enoughK)
 		return YES;
 	return NO;
@@ -284,8 +286,8 @@
 	}
 	while( [iterator getNextWithAutoRelease:YES] );
 	NSImage* answer = [[NSImage alloc] initWithData:[result TIFFRepresentation]];
-	return answer;
 	[result release];
+	return answer;
 }
 -(NSString*)description
 {

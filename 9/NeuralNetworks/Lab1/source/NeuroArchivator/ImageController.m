@@ -18,15 +18,22 @@
 		[archiveButton setEnabled:YES];
 		[openSourceImageControl setEnabled:NO];
 		[closeControl setEnabled:YES];
+		[openArchiveMatrixControl setEnabled:NO];
 		[n setEnabled:YES];	// n -> width
 		[m setEnabled:YES]; // m -> height
 		[p setEnabled:YES];
 		[a setEnabled:YES];
 		[D setEnabled:YES];
+		[progress setUsesThreadedAnimation:YES];
+		[progress setMinValue:0];
+		[progress setDoubleValue:0.0];
+		[progress setMaxValue:MAX_LOOP_COUNTER];
+		
 	}
 	[types release];	
 	neuroNet = NULL;
 	resultImageInstance = NULL;
+	thread = NULL;
 }
 
 - (IBAction)loadArchiveMatrix:(id)sender
@@ -75,29 +82,25 @@
 		[ neuroNetStrRepresentation writeToFile:filename atomically:NO];
 	}
 }
-
-- (IBAction)archive:(id)sender 
+- (void) neuro_arch
 {
-// 0) parameters validation
+	[closeControl setEnabled:FALSE];
+	[archiveButton setEnabled:FALSE];
+	[progress startAnimation:self];
 
-	// n -> width, m -> height
-	if (neuroNet)
-	{
-		[neuroNet release];
-		neuroNet = NULL;
-	}
 	if (!neuroNet)
-	neuroNet = [ImageNeuroNet tryInit:[sourceImage image] 
-								 nStr:[n stringValue] 
-								 mStr:[m stringValue] 
-								 pStr:[p stringValue] 
-								 aStr:[a stringValue]
-								 dStr:[D stringValue]];
+		neuroNet = [ImageNeuroNet tryInit:[sourceImage image] 
+									 nStr:[n stringValue] 
+									 mStr:[m stringValue] 
+									 pStr:[p stringValue] 
+									 aStr:[a stringValue]
+									 dStr:[D stringValue]];
 	
 	int loopCounter = 0;
 	while ([neuroNet fastGoodEnough] == NO)
 	{
 		loopCounter++;
+		[table setString:[[NSString alloc] initWithFormat:@"%d",loopCounter]];
 		if (loopCounter > MAX_LOOP_COUNTER)
 			break;
 		[neuroNet fastTeach];
@@ -107,11 +110,33 @@
 	[resultImageInstance release];
 	resultImageInstance = NULL;
 	[saveArchiveMatrixControl setEnabled:YES];
+
+	[progress stopAnimation:self];
+	[archiveButton setEnabled:TRUE];
+	[closeControl setEnabled:TRUE];
+	thread = NULL;
+}
+
+
+- (IBAction)archive:(id)sender 
+{
+// 0) parameters validation
+
+	// n -> width, m -> height
+	if (thread == NULL)
+		thread = [[NSThread alloc] initWithTarget:self selector:@selector(neuro_arch) object:nil];
+	[thread start];
 	
 }
 
 - (IBAction)close:(id)sender 
 {
+	if (thread)
+	{
+		[thread cancel];
+		[thread release];
+		thread = NULL;
+	}
 	if (neuroNet)
 	{
 		[neuroNet release];

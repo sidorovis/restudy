@@ -72,6 +72,7 @@
 			color = [imageRep colorAtX:i y:u];
 			[self methodForSelector:selector](self, selector);
 			answer[ (u - startY) * width + (i - startX) ] = colorVal;
+			[color release];			 
 		}
 	return answer;
 }

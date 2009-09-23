@@ -12,7 +12,6 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="81"/>
 			<integer value="372"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -606,6 +605,15 @@
 								<reference key="NSTextColor" ref="1028333730"/>
 							</object>
 						</object>
+						<object class="NSProgressIndicator" id="225065974">
+							<reference key="NSNextResponder" ref="439893737"/>
+							<int key="NSvFlags">1324</int>
+							<object class="NSPSMatrix" key="NSDrawMatrix"/>
+							<string key="NSFrame">{{537, 228}, {153, 20}}</string>
+							<reference key="NSSuperview" ref="439893737"/>
+							<int key="NSpiFlags">16394</int>
+							<double key="NSMaxValue">8</double>
+						</object>
 					</object>
 					<string key="NSFrameSize">{862, 711}</string>
 					<reference key="NSSuperview"/>
@@ -776,6 +784,14 @@
 					</object>
 					<int key="connectionID">566</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">progress</string>
+						<reference key="source" ref="82094692"/>
+						<reference key="destination" ref="225065974"/>
+					</object>
+					<int key="connectionID">568</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -896,6 +912,7 @@
 							<reference ref="322088716"/>
 							<reference ref="807734491"/>
 							<reference ref="692398876"/>
+							<reference ref="225065974"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -1178,6 +1195,12 @@
 						<reference key="object" ref="226202734"/>
 						<reference key="parent" ref="692398876"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">567</int>
+						<reference key="object" ref="225065974"/>
+						<reference key="parent" ref="439893737"/>
+						<string key="objectName">progress</string>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -1244,6 +1267,7 @@
 					<string>563.IBPluginDependency</string>
 					<string>564.IBPluginDependency</string>
 					<string>565.IBPluginDependency</string>
+					<string>567.IBPluginDependency</string>
 					<string>57.IBEditorWindowLastContentRect</string>
 					<string>57.IBPluginDependency</string>
 					<string>57.ImportedFromIB2</string>
@@ -1325,6 +1349,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{43, 428}, {105, 23}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -1355,7 +1380,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">566</int>
+			<int key="maxID">568</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1369,14 +1394,12 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>archive:</string>
 							<string>close:</string>
-							<string>deArchive:</string>
 							<string>loadArchiveMatrix:</string>
 							<string>loadSourceImage:</string>
 							<string>saveArchiveMatrix:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -1392,12 +1415,12 @@
 							<string>a</string>
 							<string>archiveButton</string>
 							<string>closeControl</string>
-							<string>deArchiveButton</string>
 							<string>m</string>
 							<string>n</string>
 							<string>openArchiveMatrixControl</string>
 							<string>openSourceImageControl</string>
 							<string>p</string>
+							<string>progress</string>
 							<string>resultImage</string>
 							<string>saveArchiveMatrixControl</string>
 							<string>sourceImage</string>
@@ -1409,12 +1432,12 @@
 							<string>NSTextField</string>
 							<string>NSButton</string>
 							<string>NSMenuItem</string>
-							<string>NSButton</string>
 							<string>NSTextField</string>
 							<string>NSTextField</string>
 							<string>NSMenuItem</string>
 							<string>NSMenuItem</string>
 							<string>NSTextField</string>
+							<string>NSProgressIndicator</string>
 							<string>NSImageView</string>
 							<string>NSMenuItem</string>
 							<string>NSImageView</string>
@@ -1807,6 +1830,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">Foundation.framework/Headers/NSURLDownload.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">NSProgressIndicator</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBFrameworkSource</string>
+						<string key="minorKey">AppKit.framework/Headers/NSProgressIndicator.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

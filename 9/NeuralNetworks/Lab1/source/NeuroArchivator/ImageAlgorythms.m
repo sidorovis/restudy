@@ -16,6 +16,7 @@
 	*hs = [sourceRep pixelsHigh];
 	*ws = [sourceRep pixelsWide];
 	*ls = [sourceRep samplesPerPixel];
+	[sourceRep release];
 }
 + (BOOL) validateImageOnRGB:( NSImage*)image
 {
