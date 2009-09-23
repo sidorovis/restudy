@@ -31,12 +31,7 @@
 
 - (IBAction)loadArchiveMatrix:(id)sender
 {
-	[openSourceImageControl setEnabled:NO];
-	[openArchiveMatrixControl setEnabled:NO];
-	[archiveButton setEnabled:NO];
-	[saveArchiveMatrixControl setEnabled:NO];
-	[closeControl setEnabled:YES];
-    NSOpenPanel* openPanel = [NSOpenPanel openPanel];
+   NSOpenPanel* openPanel = [NSOpenPanel openPanel];
 	[openPanel setCanChooseFiles:YES];
 	[openPanel setCanCreateDirectories:NO];
 	[openPanel setCanCreateDirectories:NO];
@@ -55,7 +50,13 @@
 		else 
 		{
 			[resultImage setImage:archivedImage];
-		}
+			[archivedImage release];
+			[openSourceImageControl setEnabled:NO];
+			[openArchiveMatrixControl setEnabled:NO];
+			[archiveButton setEnabled:NO];
+			[saveArchiveMatrixControl setEnabled:NO];
+			[closeControl setEnabled:YES];
+ 		}
 	}
 	[types release];	
 
@@ -122,6 +123,8 @@
 		[sourceImage setImage:nil];
 		[image release];
 	}
+	if (resultImageInstance)
+		[resultImageInstance release];
 	if ([resultImage image])
 	{
 		NSImage* image = [resultImage image];
@@ -134,7 +137,5 @@
 	[archiveButton setEnabled:NO];
 	[closeControl setEnabled:NO];
 	[table setString:@""];
-	if (resultImageInstance)
-		[resultImageInstance release];
 }
 @end

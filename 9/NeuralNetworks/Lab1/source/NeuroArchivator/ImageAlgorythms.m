@@ -31,8 +31,10 @@
 +(NSImage*) deArchive:(NSString*)stringRep
 {
 	NSImage* result = NULL;
+	NSScanner* scanner;
+	NSBitmapImageRep* imageRep;
 	@try {
-		NSScanner* scanner = [[NSScanner alloc] initWithString:stringRep];
+		scanner = [[NSScanner alloc] initWithString:stringRep];
 		int n,m,p,height,width;
 		[scanner scanInt:&n];
 		[scanner scanInt:&m];
@@ -47,16 +49,47 @@
 			for (int u = 0 ; u < n*m ; u++)
 				[scanner scanFloat:(&w[i][u])];
 		ImageBlockIterator* iterator = [[ImageBlockIterator alloc] initWithHeight:height Width:width N:n M:m];
-		NSBitmapImageRep* imageRep = [[NSBitmapImageRep alloc] initForIncrementalLoad];
-		NSSize imageSize;
-		imageSize.height = height;
-		imageSize.width = width;
-		[imageRep setSize:imageSize];
+		imageRep = 
+			[[NSBitmapImageRep alloc] 
+						initWithBitmapDataPlanes:NULL 
+						pixelsWide:width 
+						pixelsHigh:height 
+						bitsPerSample:8 
+						samplesPerPixel:4 
+						hasAlpha:YES 
+						isPlanar:NO 
+						colorSpaceName:NSCalibratedRGBColorSpace 
+						bitmapFormat:NSAlphaFirstBitmapFormat 
+						bytesPerRow:4*width 
+						bitsPerPixel:32];
+		float* vectorY = malloc( sizeof(float) * p);
+		float** vectorX1 = malloc( sizeof(float*) * colorSize);
+		for (int i = 0 ; i < colorSize ; i++)
+			vectorX1[i] = malloc( sizeof( float) * n*m);
 		do
 		{
-			
+			for (int colorIndex = 0 ; colorIndex < colorSize ; colorIndex++)
+			{
+				for (int i = 0 ; i < p ; i++)
+					[scanner scanFloat:(&vectorY[i])];
+				for (int i = 0 ; i < n*m ; i++)
+					vectorX1[colorIndex][i] = 0;
+				for (int i = 0 ; i < p ; i++)
+					for (int u = 0 ; u < n*m ; u++)
+						vectorX1[colorIndex][u] += w[i][u] * vectorY[i];
+			}
+			[iterator setColorsToImageRep:imageRep data:vectorX1];
 		} 
 		while( [iterator getNextWithAutoRelease:YES] );
+		for (int i = 0 ; i < colorSize ; i++)
+			free (vectorX1[i]);
+		free( vectorX1 );
+		free( vectorY );
+		for (int i = 0 ; i < p ; i++)
+			free( w[i]);
+		free( w );
+		result = [[NSImage alloc] initWithData:[ imageRep TIFFRepresentation ]];
+		
 	}
 	@catch (NSException * e) {
 		NSRunAlertPanel(@"Warning", 
@@ -64,6 +97,8 @@
 						@"Ok", nil, nil);
 	}
 	@finally {
+		[imageRep release];
+		[scanner release];
 		return result;
 	}
 	return result;
