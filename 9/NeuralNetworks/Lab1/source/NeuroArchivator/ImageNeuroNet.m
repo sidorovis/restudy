@@ -286,7 +286,7 @@
 	}
 	while( [iterator getNextWithAutoRelease:YES] );
 	NSImage* answer = [[NSImage alloc] initWithData:[result TIFFRepresentation]];
-	[result release];
+//	[result release];
 	return answer;
 }
 -(NSString*)description

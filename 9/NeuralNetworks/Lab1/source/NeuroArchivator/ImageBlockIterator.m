@@ -34,7 +34,8 @@
 
 -(void) dealloc
 {
-	[imageRep release];
+	if (imageRep)
+		[imageRep release];
 	[super dealloc];
 }
 -(ImageBlockIterator*)getNextWithAutoRelease:(BOOL)autoRelease;
@@ -72,7 +73,6 @@
 			color = [imageRep colorAtX:i y:u];
 			[self methodForSelector:selector](self, selector);
 			answer[ (u - startY) * width + (i - startX) ] = colorVal;
-			[color release];			 
 		}
 	return answer;
 }

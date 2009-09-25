@@ -28,7 +28,6 @@
 		[progress setMinValue:0];
 		[progress setDoubleValue:0.0];
 		[progress setMaxValue:MAX_LOOP_COUNTER];
-		
 	}
 	[types release];	
 	neuroNet = NULL;
@@ -65,9 +64,7 @@
 			[closeControl setEnabled:YES];
  		}
 	}
-	[types release];	
-
-	
+	[types release];
 }
 
 - (IBAction)saveArchiveMatrix:(id)sender
@@ -79,11 +76,13 @@
 	{
 		NSString* filename = [[savePanel filename] stringByAppendingString:@"" ];
 		NSString* neuroNetStrRepresentation = [[NSString alloc] initWithFormat:@"%@", neuroNet];
+//		NSLog(@"filesaving not supported in this version");
 		[ neuroNetStrRepresentation writeToFile:filename atomically:NO];
 	}
 }
 - (void) neuro_arch
 {
+	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 	[closeControl setEnabled:FALSE];
 	[archiveButton setEnabled:FALSE];
 	[progress startAnimation:self];
@@ -95,12 +94,12 @@
 									 pStr:[p stringValue] 
 									 aStr:[a stringValue]
 									 dStr:[D stringValue]];
-	
 	int loopCounter = 0;
+	[neuroNet fastGoodEnough];
 	while ([neuroNet fastGoodEnough] == NO)
 	{
 		loopCounter++;
-		[table setString:[[NSString alloc] initWithFormat:@"%d",loopCounter]];
+//		[table setString:[[NSString alloc] initWithFormat:@"%d",loopCounter]];
 		if (loopCounter > MAX_LOOP_COUNTER)
 			break;
 		[neuroNet fastTeach];
@@ -109,12 +108,17 @@
 	[resultImage setImage:resultImageInstance];
 	[resultImageInstance release];
 	resultImageInstance = NULL;
-	[saveArchiveMatrixControl setEnabled:YES];
 
+	[saveArchiveMatrixControl setEnabled:YES];
+	[neuroNet release];
+	neuroNet = NULL;
+	
 	[progress stopAnimation:self];
 	[archiveButton setEnabled:TRUE];
 	[closeControl setEnabled:TRUE];
-	thread = NULL;
+//	thread = NULL;
+	[pool drain];
+	[pool release];
 }
 
 
@@ -123,12 +127,18 @@
 // 0) parameters validation
 
 	// n -> width, m -> height
+//	[self neuro_arch];
+	[thread cancel];
+	if (![thread isExecuting])
+	{
+		[thread release];
+		thread = NULL;
+	}
 	if (thread == NULL)
 		thread = [[NSThread alloc] initWithTarget:self selector:@selector(neuro_arch) object:nil];
 	[thread start];
 	
 }
-
 - (IBAction)close:(id)sender 
 {
 	if (thread)

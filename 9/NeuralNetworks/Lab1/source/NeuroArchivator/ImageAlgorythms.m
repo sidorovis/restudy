@@ -12,11 +12,13 @@
 
 + (void) getImageSize:(NSImage*)image h:(int*)hs w:(int*)ws l:(int*)ls
 {
-	NSBitmapImageRep* sourceRep = [NSBitmapImageRep imageRepWithData:[image TIFFRepresentation]];	
+	NSData* data = [image TIFFRepresentation];
+	NSBitmapImageRep* sourceRep = [NSBitmapImageRep imageRepWithData:data];
 	*hs = [sourceRep pixelsHigh];
 	*ws = [sourceRep pixelsWide];
 	*ls = [sourceRep samplesPerPixel];
-	[sourceRep release];
+//	[sourceRep release];
+//	[data release];
 }
 + (BOOL) validateImageOnRGB:( NSImage*)image
 {
@@ -98,7 +100,7 @@
 						@"Ok", nil, nil);
 	}
 	@finally {
-		[imageRep release];
+//		[imageRep release];
 		[scanner release];
 		return result;
 	}
