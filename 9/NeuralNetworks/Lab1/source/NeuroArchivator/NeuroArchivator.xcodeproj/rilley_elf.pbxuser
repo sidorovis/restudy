@@ -77,7 +77,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					22,
 					300,
-					663,
+					717,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXExecutablesDataSource_ActiveFlagID,
@@ -123,12 +123,34 @@
 					PBXSymbolsDataSource_ReferenceNameID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 275767982;
-			PBXWorkspaceStateSaveDate = 275767982;
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					789,
+					60,
+					20,
+					48.16259765625,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 275862662;
+			PBXWorkspaceStateSaveDate = 275862662;
 		};
 		perUserProjectItems = {
-			8566B566106FEC4500A174F1 /* PBXTextBookmark */ = 8566B566106FEC4500A174F1 /* PBXTextBookmark */;
-			8566B568106FEE2000A174F1 /* PBXTextBookmark */ = 8566B568106FEE2000A174F1 /* PBXTextBookmark */;
+			8552BBAB10715471000E0B36 /* PBXTextBookmark */ = 8552BBAB10715471000E0B36 /* PBXTextBookmark */;
+			8571EE76107154D200D8C0A8 /* PBXTextBookmark */ = 8571EE76107154D200D8C0A8 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 856F9B0810540C4F00CFD619 /* Source Control */;
 		userBuildSettings = {
@@ -152,38 +174,28 @@
 	};
 	8543C5DE1061637300E3E1D2 /* NeuronLay.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 526}}";
-			sepNavSelRange = "{471, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 521}}";
+			sepNavSelRange = "{376, 0}";
 			sepNavVisRange = "{0, 602}";
 			sepNavWindowFrame = "{{65, 107}, {964, 624}}";
 		};
 	};
 	8543C5DF1061637300E3E1D2 /* NeuronLay.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 702}}";
-			sepNavSelRange = "{911, 0}";
-			sepNavVisRange = "{0, 796}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 728}}";
+			sepNavSelRange = "{492, 0}";
+			sepNavVisRange = "{3, 850}";
 			sepNavWindowFrame = "{{42, 128}, {964, 624}}";
 		};
 	};
-	8566B566106FEC4500A174F1 /* PBXTextBookmark */ = {
+	8552BBAB10715471000E0B36 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 85FB8B281059ABE900E9216F /* ImageBlockIterator.h */;
-		name = "ImageBlockIterator.h: 31";
+		fRef = 85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */;
+		name = "ImageNeuroNet.m: 141";
 		rLen = 0;
-		rLoc = 861;
+		rLoc = 4410;
 		rType = 0;
-		vrLen = 955;
-		vrLoc = 0;
-	};
-	8566B568106FEE2000A174F1 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 85FB8B281059ABE900E9216F /* ImageBlockIterator.h */;
-		name = "ImageBlockIterator.h: 18";
-		rLen = 0;
-		rLoc = 363;
-		rType = 0;
-		vrLen = 955;
+		vrLen = 0;
 		vrLoc = 0;
 	};
 	856F9AF510540C4900CFD619 /* NeuroArchivator */ = {
@@ -193,7 +205,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -250,32 +262,42 @@
 	};
 	856F9B0A10540EA100CFD619 /* ImageController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 2275}}";
-			sepNavSelRange = "{3809, 0}";
-			sepNavVisRange = "{2313, 1344}";
+			sepNavIntBoundsRect = "{{0, 0}, {877, 2613}}";
+			sepNavSelRange = "{3867, 0}";
+			sepNavVisRange = "{3681, 485}";
 			sepNavWindowFrame = "{{19, 38}, {673, 735}}";
 		};
 	};
 	856F9B0B10540EA100CFD619 /* ImageController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 526}}";
-			sepNavSelRange = "{700, 0}";
-			sepNavVisRange = "{0, 933}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 521}}";
+			sepNavSelRange = "{967, 0}";
+			sepNavVisRange = "{0, 1199}";
 			sepNavWindowFrame = "{{19, 38}, {673, 735}}";
 		};
 	};
+	8571EE76107154D200D8C0A8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */;
+		name = "ImageNeuroNet.m: 141";
+		rLen = 0;
+		rLoc = 4410;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
 	8573EC461060E1BF0028FC8D /* Algorythms.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 645}}";
-			sepNavSelRange = "{187, 0}";
-			sepNavVisRange = "{0, 293}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 521}}";
+			sepNavSelRange = "{344, 0}";
+			sepNavVisRange = "{0, 344}";
 		};
 	};
 	8573EC4F1060E20D0028FC8D /* Alrorythms.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 540}}";
-			sepNavSelRange = "{268, 0}";
-			sepNavVisRange = "{0, 431}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 521}}";
+			sepNavSelRange = "{428, 0}";
+			sepNavVisRange = "{0, 590}";
 			sepNavWindowFrame = "{{19, 20}, {820, 753}}";
 		};
 	};
@@ -297,34 +319,34 @@
 	};
 	85BC5EBD10617DA3007DEF25 /* ImageNeuronLay.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 526}}";
-			sepNavSelRange = "{501, 25}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 521}}";
+			sepNavSelRange = "{531, 0}";
 			sepNavVisRange = "{0, 531}";
 			sepNavWindowFrame = "{{19, 149}, {964, 624}}";
 		};
 	};
 	85BC5EBE10617DA3007DEF25 /* ImageNeuronLay.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 689}}";
-			sepNavSelRange = "{1225, 0}";
-			sepNavVisRange = "{24, 1314}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 663}}";
+			sepNavSelRange = "{812, 0}";
+			sepNavVisRange = "{0, 1159}";
 			sepNavWindowFrame = "{{19, 149}, {964, 624}}";
 		};
 	};
 	85BC5EC710617F4D007DEF25 /* ImageNeuroNet.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1160, 585}}";
-			sepNavSelRange = "{617, 0}";
-			sepNavVisRange = "{43, 1187}";
+			sepNavIntBoundsRect = "{{0, 0}, {1160, 572}}";
+			sepNavSelRange = "{537, 0}";
+			sepNavVisRange = "{0, 1257}";
 			sepNavWindowFrame = "{{19, 20}, {820, 753}}";
 		};
 	};
 	85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{777, 697}\";\n            s = 0;\n        },\n                {\n            r = \"{2987, 714}\";\n            s = 0;\n        },\n                {\n            r = \"{5053, 860}\";\n            s = 0;\n        },\n                {\n            r = \"{5935, 1625}\";\n            s = 0;\n        },\n                {\n            r = \"{7897, 180}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 9917}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1160, 2561}}";
-			sepNavSelRange = "{5702, 0}";
-			sepNavVisRange = "{4690, 1156}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{6701, 180}\";\n            s = 0;\n        },\n                {\n            r = \"{7873, 841}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 8721}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1160, 3276}}";
+			sepNavSelRange = "{4410, 0}";
+			sepNavVisRange = "{0, 0}";
 			sepNavWindowFrame = "{{19, 20}, {820, 753}}";
 		};
 	};
@@ -346,7 +368,7 @@
 	};
 	85CAD4DD10585FBB00192A43 /* ImageAlgorythms.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 645}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 521}}";
 			sepNavSelRange = "{206, 20}";
 			sepNavVisRange = "{0, 434}";
 		};
@@ -354,7 +376,7 @@
 	85CAD4DE10585FBB00192A43 /* ImageAlgorythms.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1007, 1430}}";
-			sepNavSelRange = "{2940, 0}";
+			sepNavSelRange = "{612, 0}";
 			sepNavVisRange = "{545, 1169}";
 			sepNavWindowFrame = "{{19, 149}, {964, 624}}";
 		};
@@ -367,26 +389,26 @@
 		continueAfterActions = 0;
 		countType = 0;
 		delayBeforeContinue = 0;
-		hitCount = 0;
+		hitCount = 1;
 		ignoreCount = 0;
 		location = libobjc.A.dylib;
-		modificationTime = 275588709.473596;
+		modificationTime = 275861795.637894;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 		symbolName = objc_exception_throw;
 	};
 	85FB8B281059ABE900E9216F /* ImageBlockIterator.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 526}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 521}}";
 			sepNavSelRange = "{363, 0}";
 			sepNavVisRange = "{0, 955}";
 		};
 	};
 	85FB8B291059ABE900E9216F /* ImageBlockIterator.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 1482}}";
-			sepNavSelRange = "{2624, 0}";
-			sepNavVisRange = "{3, 989}";
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 1664}}";
+			sepNavSelRange = "{992, 0}";
+			sepNavVisRange = "{28, 982}";
 			sepNavWindowFrame = "{{19, 38}, {673, 735}}";
 		};
 	};

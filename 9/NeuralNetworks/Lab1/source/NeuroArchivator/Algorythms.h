@@ -16,3 +16,4 @@ float myrand();
 
 float getDiff( int count, float* left, float* right);
 
+float getLocalTeachK( float* vectorY, int length);

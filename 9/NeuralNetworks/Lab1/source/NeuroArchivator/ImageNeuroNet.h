@@ -13,6 +13,7 @@
 #import "ImageBlockIterator.h"
 
 #define layers_count 2
+#define very_big_float 99999999999999
 
 
 @interface ImageNeuroNet : NeuroNet
@@ -32,10 +33,8 @@
 + (ImageNeuroNet*) tryInit:(NSImage*)image nStr:(NSString*)nStr mStr:(NSString*)mStr pStr:(NSString*)pStr aStr:(NSString*)aStr dStr:(NSString*)dStr;
 - (ImageNeuroNet*) initWithImage:(NSImage*)image_ width:(int)width_ height:(int)height_ neuronCountOn1:(int)neuronCountOn1_ a:(float)teachK_ d:(int)enoughK_;
 - (void) dealloc;
-- (BOOL) goodEnough;
-- (BOOL) fastGoodEnough;
-- (void) teach;
-- (void) fastTeach;
+- (BOOL) fastGoodEnough:(float*)diff;
+- (void) fastTeach:(float*)currTeachK;
 
 - (void) saveState;
 - (void) loadState;
