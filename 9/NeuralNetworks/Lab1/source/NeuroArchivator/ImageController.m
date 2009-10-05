@@ -99,18 +99,6 @@
 - (void) neuro_arch
 {
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-	if ([teachZeroLayer state])
-		NSLog(@"HOLL");
-	if (!neuroNet)
-		neuroNet = [ImageNeuroNet tryInit:[sourceImage image] 
-									 nStr:[n stringValue] 
-									 mStr:[m stringValue] 
-									 pStr:[p stringValue] 
-									 aStr:[a stringValue]
-									 dStr:[D stringValue]
-						   TeachZeroLayer:[teachZeroLayer state]
-						  UseAdaptiveStep:[adaptiveSteps state]
-					];
 	if (!neuroNet)
 	{
 		[pool release];
@@ -132,7 +120,7 @@
 	[closeControl setEnabled:FALSE];
 	[archiveButton setEnabled:FALSE];
 	[progress startAnimation:self];
-	float diff;	
+	float diff;
 	float alpha;
 	while ([neuroNet fastGoodEnough:&diff] == NO)
 	{
@@ -159,18 +147,27 @@
 	[pool release];
 }
 
-
 - (IBAction)archive:(id)sender 
 {
 // 0) parameters validation
 
 	// n -> width, m -> height
+	if (!neuroNet)
+		neuroNet = [ImageNeuroNet tryInit:[sourceImage image] 
+									 nStr:[n stringValue] 
+									 mStr:[m stringValue] 
+									 pStr:[p stringValue] 
+									 aStr:[a stringValue]
+									 dStr:[D stringValue]
+						   TeachZeroLayer:[teachZeroLayer state]
+						  UseAdaptiveStep:[adaptiveSteps state]
+					];	
 	[thread cancel];
 	if (![thread isExecuting])
 	{
 		[thread release];
 		thread = NULL;
-	}
+	}	
 	if (thread == NULL)
 		thread = [[NSThread alloc] initWithTarget:self selector:@selector(neuro_arch) object:nil];
 	[thread start];

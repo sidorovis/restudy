@@ -98,6 +98,7 @@
 								</object>
 								<object class="NSMenuItem" id="990372407">
 									<reference key="NSMenu" ref="720053764"/>
+									<bool key="NSIsDisabled">YES</bool>
 									<string key="NSTitle">Open ArchiveMatrix</string>
 									<string key="NSKeyEquiv">O</string>
 									<int key="NSKeyEquivModMask">1048576</int>
@@ -136,7 +137,7 @@
 			<object class="NSWindowTemplate" id="972006081">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{204, 159}, {862, 595}}</string>
+				<string key="NSWindowRect">{{204, 159}, {871, 595}}</string>
 				<int key="NSWTFlags">1946157056</int>
 				<string key="NSWindowTitle">NeuroArhivator</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -187,7 +188,7 @@
 						<object class="NSTextField" id="168145919">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">267</int>
-							<string key="NSFrame">{{439, 558}, {406, 17}}</string>
+							<string key="NSFrame">{{434, 558}, {420, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="521812472">
@@ -222,7 +223,7 @@
 								<int key="NSCellFlags">130560</int>
 								<int key="NSCellFlags2">33554432</int>
 								<int key="NSAlign">0</int>
-								<int key="NSScale">0</int>
+								<int key="NSScale">3</int>
 								<int key="NSStyle">2</int>
 								<bool key="NSAnimates">NO</bool>
 							</object>
@@ -243,14 +244,14 @@
 									<string>NeXT TIFF v4.0 pasteboard type</string>
 								</object>
 							</object>
-							<string key="NSFrame">{{439, 169}, {406, 383}}</string>
+							<string key="NSFrame">{{434, 169}, {420, 383}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSImageCell" key="NSCell" id="751134222">
 								<int key="NSCellFlags">130560</int>
 								<int key="NSCellFlags2">33554432</int>
 								<int key="NSAlign">0</int>
-								<int key="NSScale">0</int>
+								<int key="NSScale">3</int>
 								<int key="NSStyle">2</int>
 								<bool key="NSAnimates">NO</bool>
 							</object>
@@ -675,7 +676,7 @@
 							</object>
 						</object>
 					</object>
-					<string key="NSFrameSize">{862, 595}</string>
+					<string key="NSFrameSize">{871, 595}</string>
 					<reference key="NSSuperview"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
@@ -997,8 +998,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="355863808"/>
 							<reference ref="168145919"/>
-							<reference ref="1051113363"/>
-							<reference ref="1022292704"/>
 							<reference ref="361742408"/>
 							<reference ref="427204289"/>
 							<reference ref="466322907"/>
@@ -1022,6 +1021,8 @@
 							<reference ref="559350347"/>
 							<reference ref="11934879"/>
 							<reference ref="458482578"/>
+							<reference ref="1051113363"/>
+							<reference ref="1022292704"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -1534,10 +1535,10 @@
 					<integer value="1"/>
 					<string>{74, 862}</string>
 					<string>{{6, 978}, {478, 20}}</string>
-					<string>{{12, 143}, {862, 595}}</string>
+					<string>{{12, 143}, {871, 595}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
-					<string>{{12, 143}, {862, 595}}</string>
+					<string>{{12, 143}, {871, 595}}</string>
 					<integer value="1"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<boolean value="YES"/>
