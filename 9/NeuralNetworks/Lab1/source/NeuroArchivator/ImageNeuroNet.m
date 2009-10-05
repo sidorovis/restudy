@@ -167,14 +167,14 @@
 		float* newVectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:outputColorArray];
 		if (useAdaptiveStep)
 		{
-			localTeachK = getLocalTeachK(newVectorY, [(ImageNeuronLay*)lays[0] count]);
+			localTeachK = getLocalTeachK(newVectorY, [(ImageNeuronLay*)lays[1] count]);
 			teachK += localTeachK;
 		}
 		else
 			localTeachK = teachK;
 		[(ImageNeuronLay*)lays[0] teachWithInSignal:inputColorArray 
-									  OutSignal:vectorY 
-									 InitSignal:newVectorY 
+									  OutSignal:newVectorY 
+									 InitSignal:vectorY 
 										 teachK:localTeachK];		
 		free( newVectorY );
 	}
