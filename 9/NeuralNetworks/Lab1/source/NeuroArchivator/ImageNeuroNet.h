@@ -26,15 +26,24 @@
 	
 	SEL* colorSelectors;
 	int colorSelectorCount;
+	bool teachZeroLayer;
+	bool useAdaptiveStep;
 	
 }
 + (void) testOnInt:(NSString*)value errorStr:(NSString**)answer errorStrV:(NSString*)err result:(int*)result;
 + (BOOL) validateParams:(NSString*)n_ m:(NSString*)m_ p:(NSString*)p_ a:(NSString*)a_ d:(NSString*)d_ n_i:(int*)n m_i:(int*)m p_i:(int*)p a_f:(float*)a d_i:(int*)d;
-+ (ImageNeuroNet*) tryInit:(NSImage*)image nStr:(NSString*)nStr mStr:(NSString*)mStr pStr:(NSString*)pStr aStr:(NSString*)aStr dStr:(NSString*)dStr;
-- (ImageNeuroNet*) initWithImage:(NSImage*)image_ width:(int)width_ height:(int)height_ neuronCountOn1:(int)neuronCountOn1_ a:(float)teachK_ d:(int)enoughK_;
++ (ImageNeuroNet*) tryInit:(NSImage*)image nStr:(NSString*)nStr mStr:(NSString*)mStr 
+					  pStr:(NSString*)pStr aStr:(NSString*)aStr dStr:(NSString*)dStr
+			TeachZeroLayer:(bool)teachZeroLayer_
+		   UseAdaptiveStep:(bool)useAdaptiveStep_;
+- (ImageNeuroNet*) initWithImage:(NSImage*)image_ width:(int)width_ height:(int)height_ 
+				  neuronCountOn1:(int)neuronCountOn1_ a:(float)teachK_ d:(int)enoughK_
+				  TeachZeroLayer:(bool)teachZeroLayer_
+				 UseAdaptiveStep:(bool)useAdaptiveStep_;
 - (void) dealloc;
 - (BOOL) fastGoodEnough:(float*)diff;
 - (void) fastTeach:(float*)currTeachK;
+- (void) fastTeachByColor:(float*)inputColorArray;
 
 - (void) saveState;
 - (void) loadState;

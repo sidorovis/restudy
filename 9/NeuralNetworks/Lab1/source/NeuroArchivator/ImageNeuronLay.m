@@ -30,6 +30,12 @@
 		for (int u = 0 ; u < nextLayCount ; u++)
 			[(ImageNeuron*)neurons[i] getVectorW][u] += teachK * inSignal[i] * (initSignal[u] - outSignal[u]) ;
 }
+-(void) teachWithInSignal:(float*)inSignal OutSignal:(float*)outSignal LastSignal:(float*)lastSignal teachK:(float)teachK
+{
+	for(int i = 0 ; i < count ; i++)
+		for (int u = 0 ; u < nextLayCount ; u++)
+			[(ImageNeuron*)neurons[i] getVectorW][u] += teachK * outSignal[u] * (inSignal[u] - lastSignal[u]) ;		
+}
 -(ImageNeuronLay*) copy
 {
 	ImageNeuronLay* new = [[ImageNeuronLay alloc] init];

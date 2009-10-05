@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85E2FEC21075344200AB15B5 /* mitab.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E2FEC11075344200AB15B5 /* mitab.a */; };
+		85E2FEC9107534A100AB15B5 /* cpl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E2FEC7107534A100AB15B5 /* cpl.a */; };
+		85E2FECA107534A100AB15B5 /* ogr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E2FEC8107534A100AB15B5 /* ogr.a */; };
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* MitabTest.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* MitabTest.1 */; };
 /* End PBXBuildFile section */
@@ -26,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		85E2FEC11075344200AB15B5 /* mitab.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = mitab.a; path = ../../../Mitab/library/mitab.a; sourceTree = SOURCE_ROOT; };
+		85E2FEC7107534A100AB15B5 /* cpl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = cpl.a; path = ../../../Mitab/library/cpl.a; sourceTree = SOURCE_ROOT; };
+		85E2FEC8107534A100AB15B5 /* ogr.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = ogr.a; path = ../../../Mitab/library/ogr.a; sourceTree = SOURCE_ROOT; };
 		8DD76F6C0486A84900D96B5E /* MitabTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MitabTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* MitabTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MitabTest.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,6 +41,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85E2FEC21075344200AB15B5 /* mitab.a in Frameworks */,
+				85E2FEC9107534A100AB15B5 /* cpl.a in Frameworks */,
+				85E2FECA107534A100AB15B5 /* ogr.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,9 @@
 		08FB7794FE84155DC02AAC07 /* MitabTest */ = {
 			isa = PBXGroup;
 			children = (
+				85E2FEC7107534A100AB15B5 /* cpl.a */,
+				85E2FEC8107534A100AB15B5 /* ogr.a */,
+				85E2FEC11075344200AB15B5 /* mitab.a */,
 				08FB7795FE84155DC02AAC07 /* Source */,
 				C6859E8C029090F304C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
@@ -139,6 +151,10 @@
 					"_GLIBCXX_DEBUG_PEDANTIC=1",
 				);
 				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Mitab/library\"",
+				);
 				PRODUCT_NAME = MitabTest;
 			};
 			name = Debug;
@@ -150,6 +166,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Mitab/library\"",
+				);
 				PRODUCT_NAME = MitabTest;
 			};
 			name = Release;
@@ -162,8 +182,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Mitab/headers;
+				LIBRARY_SEARCH_PATHS = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Mitab/library;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
+				PRELINK_LIBS = mitab.a;
 				SDKROOT = macosx10.6;
 			};
 			name = Debug;

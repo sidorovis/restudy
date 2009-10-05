@@ -27,6 +27,8 @@
 }
 - (void) enableControls
 {
+	[teachZeroLayer setEnabled:YES];
+	[adaptiveSteps setEnabled:YES];
 	[n setEnabled:YES];	// n -> width
 	[m setEnabled:YES]; // m -> height
 	[p setEnabled:YES];
@@ -38,6 +40,8 @@
 }
 - (void) disableControls
 {
+	[teachZeroLayer setEnabled:NO];
+	[adaptiveSteps setEnabled:NO];
 	[n setEnabled:NO]; // n -> width
 	[m setEnabled:NO]; // m -> height
 	[p setEnabled:NO];
@@ -95,14 +99,18 @@
 - (void) neuro_arch
 {
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
-
+	if ([teachZeroLayer state])
+		NSLog(@"HOLL");
 	if (!neuroNet)
 		neuroNet = [ImageNeuroNet tryInit:[sourceImage image] 
 									 nStr:[n stringValue] 
 									 mStr:[m stringValue] 
 									 pStr:[p stringValue] 
 									 aStr:[a stringValue]
-									 dStr:[D stringValue]];
+									 dStr:[D stringValue]
+						   TeachZeroLayer:[teachZeroLayer state]
+						  UseAdaptiveStep:[adaptiveSteps state]
+					];
 	if (!neuroNet)
 	{
 		[pool release];
@@ -120,6 +128,7 @@
 		return;
 	}	
 	
+	[self disableControls];
 	[closeControl setEnabled:FALSE];
 	[archiveButton setEnabled:FALSE];
 	[progress startAnimation:self];
@@ -141,12 +150,11 @@
 	resultImageInstance = NULL;
 
 	[saveArchiveMatrixControl setEnabled:YES];
-	[neuroNet release];
-	neuroNet = NULL;
 	
 	[progress stopAnimation:self];
-	[archiveButton setEnabled:TRUE];
-	[closeControl setEnabled:TRUE];
+	[archiveButton setEnabled:YES];
+	[closeControl setEnabled:YES];
+	[maxLoopsField setEnabled:YES];
 	[pool drain];
 	[pool release];
 }
@@ -157,7 +165,6 @@
 // 0) parameters validation
 
 	// n -> width, m -> height
-//	[self neuro_arch];
 	[thread cancel];
 	if (![thread isExecuting])
 	{

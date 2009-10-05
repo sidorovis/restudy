@@ -4,6 +4,9 @@
 		activeBuildConfigurationName = Debug;
 		activeExecutable = 85E2FE701075306F00AB15B5 /* MitabTest */;
 		activeTarget = 8DD76F620486A84900D96B5E /* MitabTest */;
+		addToTargets = (
+			8DD76F620486A84900D96B5E /* MitabTest */,
+		);
 		codeSenseManager = 85E2FE871075308300AB15B5 /* Code sense */;
 		executables = (
 			85E2FE701075306F00AB15B5 /* MitabTest */,
@@ -14,9 +17,9 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					533,
+					392,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 					20,
@@ -31,13 +34,13 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 276115567;
-			PBXWorkspaceStateSaveDate = 276115567;
+			PBXPerProjectTemplateStateSaveDate = 276365333;
+			PBXWorkspaceStateSaveDate = 276365333;
 		};
 		perUserProjectItems = {
-			85E2FE88107530C500AB15B5 /* PBXTextBookmark */ = 85E2FE88107530C500AB15B5 /* PBXTextBookmark */;
-			85E2FE89107530C500AB15B5 /* PBXTextBookmark */ = 85E2FE89107530C500AB15B5 /* PBXTextBookmark */;
-			85E2FE8B107530C500AB15B5 /* PBXTextBookmark */ = 85E2FE8B107530C500AB15B5 /* PBXTextBookmark */;
+			85C2563910790379009443C4 /* PBXTextBookmark */ = 85C2563910790379009443C4 /* PBXTextBookmark */;
+			85C2563A10790379009443C4 /* PBXTextBookmark */ = 85C2563A10790379009443C4 /* PBXTextBookmark */;
+			85E2FECD107534B500AB15B5 /* PBXTextBookmark */ = 85E2FECD107534B500AB15B5 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 85E2FE861075308300AB15B5 /* Source Control */;
 		userBuildSettings = {
@@ -45,10 +48,31 @@
 	};
 	08FB7796FE84155DC02AAC07 /* main.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 425}}";
-			sepNavSelRange = "{90, 0}";
-			sepNavVisRange = "{0, 143}";
+			sepNavIntBoundsRect = "{{0, 0}, {570, 645}}";
+			sepNavSelRange = "{467, 0}";
+			sepNavVisRange = "{0, 468}";
+			sepNavWindowFrame = "{{65, 107}, {964, 624}}";
 		};
+	};
+	85C2563910790379009443C4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		name = "main.cpp: 9";
+		rLen = 0;
+		rLoc = 185;
+		rType = 0;
+		vrLen = 466;
+		vrLoc = 0;
+	};
+	85C2563A10790379009443C4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		name = "main.cpp: 18";
+		rLen = 0;
+		rLoc = 467;
+		rType = 0;
+		vrLen = 468;
+		vrLoc = 0;
 	};
 	85E2FE701075306F00AB15B5 /* MitabTest */ = {
 		isa = PBXExecutable;
@@ -94,50 +118,22 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	85E2FE88107530C500AB15B5 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
-		name = "main.cpp: 4";
-		rLen = 0;
-		rLoc = 90;
-		rType = 0;
-		vrLen = 143;
-		vrLoc = 0;
-	};
-	85E2FE89107530C500AB15B5 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 85E2FE8A107530C500AB15B5 /* tab2tab.cpp */;
-		rLen = 0;
-		rLoc = 9223372036854775807;
-		rType = 0;
-	};
-	85E2FE8A107530C500AB15B5 /* tab2tab.cpp */ = {
+	85E2FEA51075336E00AB15B5 /* mitab_priv.h */ = {
 		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.cpp.cpp;
-		name = tab2tab.cpp;
-		path = "/Users/rilley_elf/mitab-1.7.0/mitab/tab2tab.cpp";
+		lastKnownFileType = sourcecode.c.h;
+		name = mitab_priv.h;
+		path = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Mitab/headers/mitab_priv.h;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {712, 3913}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{10474, 809}";
-		};
 	};
-	85E2FE8B107530C500AB15B5 /* PBXTextBookmark */ = {
+	85E2FECD107534B500AB15B5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 85E2FE8C107530C500AB15B5 /* tab2tab.cpp */;
-		name = "tab2tab.cpp: 1";
+		fRef = 85E2FEA51075336E00AB15B5 /* mitab_priv.h */;
+		name = "mitab_priv.h: 172";
 		rLen = 0;
-		rLoc = 0;
+		rLoc = 7134;
 		rType = 0;
-		vrLen = 809;
-		vrLoc = 10474;
-	};
-	85E2FE8C107530C500AB15B5 /* tab2tab.cpp */ = {
-		isa = PBXFileReference;
-		name = tab2tab.cpp;
-		path = "/Users/rilley_elf/mitab-1.7.0/mitab/tab2tab.cpp";
-		sourceTree = "<absolute>";
+		vrLen = 1185;
+		vrLoc = 7156;
 	};
 	8DD76F620486A84900D96B5E /* MitabTest */ = {
 		activeExec = 0;

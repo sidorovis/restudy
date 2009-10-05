@@ -42,23 +42,29 @@
 }
 
 // alloc
-+ (ImageNeuroNet*) tryInit:(NSImage*)image_ 
-					  nStr:(NSString*)nStr 
-					  mStr:(NSString*)mStr 
-					  pStr:(NSString*)pStr 
-					  aStr:(NSString*)aStr 
-					  dStr:(NSString*)dStr
++ (ImageNeuroNet*) tryInit:(NSImage*)image nStr:(NSString*)nStr mStr:(NSString*)mStr 
+					  pStr:(NSString*)pStr aStr:(NSString*)aStr dStr:(NSString*)dStr
+			TeachZeroLayer:(bool)teachZeroLayer_
+		   UseAdaptiveStep:(bool)useAdaptiveStep_
 {
-	if ([ImageAlgorythms validateImageOnRGB:image_] == NO)
+	if ([ImageAlgorythms validateImageOnRGB:image] == NO)
 		return NULL;
 	int n, m, p, d;
 	float a;
 	if ([ImageNeuroNet validateParams:nStr m:mStr p:pStr a:aStr d:dStr n_i:&n m_i:&m p_i:&p a_f:&a d_i:&d] == NO)
 		return NULL;
-	return [[ImageNeuroNet alloc] initWithImage:image_ width:n height:m neuronCountOn1:p a:a d:d];
+	return [[ImageNeuroNet alloc] initWithImage:image width:n height:m 
+								 neuronCountOn1:p a:a d:d 
+								 TeachZeroLayer:teachZeroLayer_
+								UseAdaptiveStep:useAdaptiveStep_];
 }
-- (ImageNeuroNet*) initWithImage:(NSImage*)image_ width:(int)width_ height:(int)height_ neuronCountOn1:(int)neuronCountOn1_ a:(float)teachK_ d:(int)enoughK_
+- (ImageNeuroNet*) initWithImage:(NSImage*)image_ width:(int)width_ height:(int)height_ 
+				  neuronCountOn1:(int)neuronCountOn1_ a:(float)teachK_ d:(int)enoughK_
+				  TeachZeroLayer:(bool)teachZeroLayer_
+				 UseAdaptiveStep:(bool)useAdaptiveStep_
 {
+	useAdaptiveStep = useAdaptiveStep_;
+	teachZeroLayer = teachZeroLayer_;
 	image = image_;
 	width = width_;
 	height = height_;
@@ -125,69 +131,81 @@
 	while( [iterator getNextWithAutoRelease:YES] );
 	if (isnan(*diff)) 
 		return YES;
-	if (saveDiff > *diff)
-	{
-		[self saveState];
-		saveDiff = *diff;
-	}
-	else 
-	{
-		[self loadState];
-		*diff = saveDiff;
-	}
+//	if (saveDiff > *diff)
+//	{
+//		[self saveState];
+//		saveDiff = *diff;
+//	}
+//	else 
+//	{
+//		[self loadState];
+//		*diff = saveDiff;
+//	}
 	if (*diff < enoughK)
 		return YES;
 	return NO;
+}
+- (void) fastTeachByColor:(float*)inputColorArray
+{
+	float* vectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:inputColorArray];
+	float localTeachK;
+	if (useAdaptiveStep)
+	{
+		localTeachK = getLocalTeachK(vectorY, [(ImageNeuronLay*)lays[1] count]);
+		teachK += localTeachK;
+	}
+	else
+		localTeachK = teachK;
+	float* outputColorArray = [(ImageNeuronLay*)lays[1] getAnswerOnSignal:vectorY];
+
+	[(ImageNeuronLay*)lays[1] teachWithInSignal:vectorY 
+									  OutSignal:outputColorArray 
+									 InitSignal:inputColorArray 
+										 teachK:localTeachK];
+	if (teachZeroLayer)
+	{
+		float* newVectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:outputColorArray];
+		if (useAdaptiveStep)
+		{
+			localTeachK = getLocalTeachK(newVectorY, [(ImageNeuronLay*)lays[0] count]);
+			teachK += localTeachK;
+		}
+		else
+			localTeachK = teachK;
+		[(ImageNeuronLay*)lays[0] teachWithInSignal:inputColorArray 
+									  OutSignal:vectorY 
+									 InitSignal:newVectorY 
+										 teachK:localTeachK];		
+		free( newVectorY );
+	}
+	free( outputColorArray );
+	free( vectorY );	
+	free( inputColorArray );
 }
 
 - (void) fastTeach:(float*)currTeachK
 {
 	ImageBlockIterator* iterator = [[ImageBlockIterator alloc] initWithImage:image n:width m:height];
 	do
-	{
-		
-		float diff = 0;
-		float *vectorX0Red, *vectorX0Green, *vectorX0Blue, *vectorY;
-		float localTeachK;
-		*currTeachK = 0;
-		int p = [(ImageNeuronLay*)lays[1] count];
-		[iterator getFastX0red:&vectorX0Red green:&vectorX0Green blue:&vectorX0Blue];
-
-		vectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:vectorX0Red];
-		localTeachK = getLocalTeachK(vectorY, p);
-		*currTeachK += localTeachK;
-		float* vectorX1Red = [(ImageNeuronLay*)lays[1] getAnswerOnSignal:vectorY];
-		diff += getDiff(width*height, vectorX0Red, vectorX1Red);
-		[(ImageNeuronLay*)lays[1] teachWithInSignal:vectorY OutSignal:vectorX1Red InitSignal:vectorX0Red teachK:localTeachK];
-		diff = 0;
-		free( vectorX0Red );
-		free( vectorY );
-		free( vectorX1Red );
-		
-		vectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:vectorX0Green];
-		localTeachK = getLocalTeachK(vectorY, p);
-		*currTeachK += localTeachK;
-		float* vectorX1Green = [(ImageNeuronLay*)lays[1] getAnswerOnSignal:vectorY];
-		diff += getDiff(width*height, vectorX0Green, vectorX1Green);
-		[(ImageNeuronLay*)lays[1] teachWithInSignal:vectorY OutSignal:vectorX1Green InitSignal:vectorX0Green teachK:localTeachK];
-		diff = 0;
-		free( vectorX0Green );
-		free( vectorY );
-		free( vectorX1Green );
-		
-		vectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:vectorX0Blue];
-		localTeachK = getLocalTeachK(vectorY, p);
-		*currTeachK += localTeachK;
-		float* vectorX1Blue = [(ImageNeuronLay*)lays[1] getAnswerOnSignal:vectorY];
-		diff += getDiff(width*height, vectorX0Blue, vectorX1Blue);
-		[(ImageNeuronLay*)lays[1] teachWithInSignal:vectorY OutSignal:vectorX1Blue InitSignal:vectorX0Blue teachK:localTeachK];
-		free( vectorX0Blue );
-		free( vectorY );
-		free( vectorX1Blue );
-		*currTeachK = localTeachK;
+	{		
+		if (useAdaptiveStep)
+			teachK = 0.0;
+		float *vectorX0Red, *vectorX0Green, *vectorX0Blue;
+		[iterator getFastX0red:&vectorX0Red green:&vectorX0Green blue:&vectorX0Blue]; // получаем массивы цветов
+		[self fastTeachByColor:vectorX0Red];
+		[self fastTeachByColor:vectorX0Green];
+		[self fastTeachByColor:vectorX0Blue];
 	}
 	while( [iterator getNextWithAutoRelease:YES] );
-	*currTeachK /= colorSize;
+	if (useAdaptiveStep)
+	{
+		if (teachZeroLayer)
+			(*currTeachK) = teachK / (2.0*colorSize);
+		else
+			(*currTeachK) = teachK / colorSize;
+	}
+	else
+		*currTeachK = teachK;
 }
 
 - (void) saveState

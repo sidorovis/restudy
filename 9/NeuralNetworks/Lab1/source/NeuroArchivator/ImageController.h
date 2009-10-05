@@ -21,6 +21,10 @@
 	IBOutlet NSTextField *currD;
 	IBOutlet NSTextField *loopRes;
 	IBOutlet NSProgressIndicator* progress;
+	
+	IBOutlet NSButton* teachZeroLayer;
+	IBOutlet NSButton* adaptiveSteps;
+	
 	ImageNeuroNet* neuroNet;
 	NSThread* thread;
 }
