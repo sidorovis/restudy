@@ -14,8 +14,9 @@
 	int count;
 	int nextLayCount;
 	NSObject** neurons;
+	bool shouldNormilize;
 }
--(NeuronLay*) initWithCount:(int)count_ nextLayCount:(int)nextLayCount_;
+-(NeuronLay*) initWithCount:(int)count_ nextLayCount:(int)nextLayCount_ ShouldNormilize:(bool)shouldNormilize_;
 
 @property(assign) int count;
 @property(assign) int nextLayCount;

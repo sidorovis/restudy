@@ -13,9 +13,11 @@
 @interface ImageNeuronLay : NeuronLay {
 
 }
--(NeuronLay*) initWithCount:(int)count_ nextLayCount:(int)nextLayCount_;
+-(NeuronLay*) initWithCount:(int)count_ nextLayCount:(int)nextLayCount_ ShouldNormilize:(bool)shouldNormilize_;
 -(ImageNeuron*) neuronByIndex:(int)index;
 -(void) teachWithInSignal:(float*)inSignal OutSignal:(float*)outSignal InitSignal:(float*)initSignal teachK:(float)teachK;
 -(void) teachWithInSignal:(float*)inSignal OutSignal:(float*)outSignal LastSignal:(float*)LastSignal teachK:(float)teachK;
 -(ImageNeuronLay*) copy;
+-(float) getWSumm;
+-(float) getAdaptiveTeachK;
 @end

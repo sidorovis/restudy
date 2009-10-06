@@ -10,9 +10,10 @@
 
 
 @implementation NeuronLay
--(NeuronLay*) initWithCount:(int)count_ nextLayCount:(int)nextLayCount_
+-(NeuronLay*) initWithCount:(int)count_ nextLayCount:(int)nextLayCount_ ShouldNormilize:(bool)shouldNormilize_
 {
 	[super init];
+	shouldNormilize = shouldNormilize_;
 	count = count_;
 	nextLayCount = nextLayCount_;
 	neurons = malloc( sizeof(Neuron*) * count );
@@ -45,7 +46,22 @@
 
 	for (int i = 0 ; i < count ; i++)
 		for (int u = 0 ; u < nextLayCount ; u++)
+		{
 			answer[u] += [((Neuron*)neurons[i]) getReactionOnIndex:u value:signal[i]];
+			if (shouldNormilize)
+			{
+				if (answer[u] > 1)
+					answer[u] = 1;
+				if (answer[u] < 0)
+					answer[u] = 0;
+			}
+			if (isnan(answer[u]))
+				@throw [NSException exceptionWithName:@"nan exception" reason:@"w koefficients was not normilized" userInfo:nil];
+			assert( !isnan(answer[u]) );
+			if (isinf(answer[u]))
+				@throw [NSException exceptionWithName:@"infinitive exception" reason:@"w koefficients was not normilized" userInfo:nil];
+			assert( !isinf(answer[u]) );
+		}
 		
 	return answer;
 }

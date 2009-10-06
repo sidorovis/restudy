@@ -85,6 +85,9 @@
 		for (int i = startX ; i < startX + width ; i++)
 		{
 			color = [imageRep colorAtX:i y:u];
+			assert( !isnan([color redComponent]));
+			assert( !isnan([color greenComponent]));
+			assert( !isnan([color blueComponent]));
 			(*vectorX0Red)[ (u - startY) * width + (i - startX) ] = [color redComponent];
 			(*vectorX0Green)[ (u - startY) * width + (i - startX) ] = [color greenComponent];
 			(*vectorX0Blue)[ (u - startY) * width + (i - startX) ] = [color blueComponent];

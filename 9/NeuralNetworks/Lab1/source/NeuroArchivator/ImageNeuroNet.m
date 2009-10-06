@@ -46,6 +46,7 @@
 					  pStr:(NSString*)pStr aStr:(NSString*)aStr dStr:(NSString*)dStr
 			TeachZeroLayer:(bool)teachZeroLayer_
 		   UseAdaptiveStep:(bool)useAdaptiveStep_
+		   ShouldNormalize:(bool)shouldNormalize_
 {
 	if ([ImageAlgorythms validateImageOnRGB:image] == NO)
 		return NULL;
@@ -56,13 +57,17 @@
 	return [[ImageNeuroNet alloc] initWithImage:image width:n height:m 
 								 neuronCountOn1:p a:a d:d 
 								 TeachZeroLayer:teachZeroLayer_
-								UseAdaptiveStep:useAdaptiveStep_];
+								UseAdaptiveStep:useAdaptiveStep_
+								ShouldNormalize:shouldNormalize_
+			];
 }
 - (ImageNeuroNet*) initWithImage:(NSImage*)image_ width:(int)width_ height:(int)height_ 
 				  neuronCountOn1:(int)neuronCountOn1_ a:(float)teachK_ d:(int)enoughK_
 				  TeachZeroLayer:(bool)teachZeroLayer_
 				 UseAdaptiveStep:(bool)useAdaptiveStep_
+				 ShouldNormalize:(bool)shouldNormalize_
 {
+	shouldNormilize = shouldNormalize_;
 	useAdaptiveStep = useAdaptiveStep_;
 	teachZeroLayer = teachZeroLayer_;
 	image = image_;
@@ -72,8 +77,8 @@
 	enoughK = enoughK_;
 	layCount = layers_count;
 	lays = malloc( sizeof(ImageNeuronLay*) * layers_count);
-	lays[0] = [[ImageNeuronLay alloc] initWithCount:(width*height) nextLayCount:neuronCountOn1_];
-	lays[1] = [[ImageNeuronLay alloc] initWithCount:neuronCountOn1_ nextLayCount:(width*height)];
+	lays[0] = [[ImageNeuronLay alloc] initWithCount:(width*height) nextLayCount:neuronCountOn1_ ShouldNormilize:shouldNormalize_];
+	lays[1] = [[ImageNeuronLay alloc] initWithCount:neuronCountOn1_ nextLayCount:(width*height) ShouldNormilize:shouldNormalize_];
 	saveDiff = very_big_float;
 	saveLays = NULL;
 	colorSelectorCount = colorSize;
@@ -131,16 +136,11 @@
 	while( [iterator getNextWithAutoRelease:YES] );
 	if (isnan(*diff)) 
 		return YES;
-//	if (saveDiff > *diff)
-//	{
-//		[self saveState];
-//		saveDiff = *diff;
-//	}
-//	else 
-//	{
-//		[self loadState];
-//		*diff = saveDiff;
-//	}
+	if (saveDiff > *diff)
+	{
+		[self saveState];
+		saveDiff = *diff;
+	}
 	if (*diff < enoughK)
 		return YES;
 	return NO;
@@ -151,7 +151,8 @@
 	float localTeachK;
 	if (useAdaptiveStep)
 	{
-		localTeachK = getLocalTeachK(vectorY, [(ImageNeuronLay*)lays[1] count]);
+//		localTeachK = getLocalTeachK(vectorY, [(ImageNeuronLay*)lays[0] nextLayCount]);
+		localTeachK = [(ImageNeuronLay*)lays[1] getAdaptiveTeachK];
 		teachK += localTeachK;
 	}
 	else
@@ -167,7 +168,8 @@
 		float* newVectorY = [(ImageNeuronLay*)lays[0] getAnswerOnSignal:outputColorArray];
 		if (useAdaptiveStep)
 		{
-			localTeachK = getLocalTeachK(newVectorY, [(ImageNeuronLay*)lays[1] count]);
+//			localTeachK = getLocalTeachK(newVectorY, [(ImageNeuronLay*)lays[0] nextLayCount]);
+			localTeachK = [(ImageNeuronLay*)lays[0] getAdaptiveTeachK];
 			teachK += localTeachK;
 		}
 		else
@@ -236,10 +238,13 @@
 
 -(NSImage*) getResultImage
 {
+	float curr_diff;
+	[self fastGoodEnough:&curr_diff];
+	if (curr_diff > saveDiff)
+		[self loadState];
 	NSBitmapImageRep* result = [NSBitmapImageRep imageRepWithData:[image TIFFRepresentation]];	
 
 	ImageBlockIterator* iterator = [[ImageBlockIterator alloc] initWithImage:image n:width m:height];
-
 	do
 	{
 		float** resultColorsVector = malloc( sizeof(float*) * colorSize );

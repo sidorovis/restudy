@@ -21,11 +21,10 @@ float getDiff( int count, float* left, float* right )
 		diff += fabs(left[i] - right[i]);
 	return diff;
 }
-
 float getLocalTeachK( float* vectorY, int length)
 {
-	float result = 0;
+	float summ = 0;
 	for (int i = 0 ; i < length ; i++)
-		result += vectorY[i];
-	return 1.0/(1.0+result);
+		summ += vectorY[i];
+	return 1.0/(1.0+summ);
 }

@@ -19,10 +19,12 @@
 		[openArchiveMatrixControl setEnabled:NO];
 		[progress setUsesThreadedAnimation:YES];
 		[self enableControls];
+		withLogBool = FALSE;
 	}
 	[types release];	
 	neuroNet = NULL;
 	resultImageInstance = NULL;
+	archThreadPool = NULL;
 	thread = NULL;
 }
 - (void) enableControls
@@ -37,6 +39,9 @@
 	[maxLoopsField setEnabled:YES];
 	[closeControl setEnabled:YES];
 	[archiveButton setEnabled:YES];
+	[logWith setEnabled:YES];
+	[normilizingWith setEnabled:YES];
+	[logEachValue setEnabled:YES];
 }
 - (void) disableControls
 {
@@ -50,6 +55,8 @@
 	[maxLoopsField setEnabled:NO];
 	[closeControl setEnabled:NO];
 	[archiveButton setEnabled:NO];	
+	[logWith setEnabled:NO];
+	[normilizingWith setEnabled:NO];
 }
 - (IBAction)loadArchiveMatrix:(id)sender
 {
@@ -98,10 +105,10 @@
 }
 - (void) neuro_arch
 {
-	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+	archThreadPool = [[NSAutoreleasePool alloc] init];
 	if (!neuroNet)
 	{
-		[pool release];
+		[archThreadPool release];
 		return;
 	}
 	
@@ -112,7 +119,7 @@
 	if (loops_error != @"")
 	{
 		NSRunAlertPanel(@"Warning", [@"Wrong input on " stringByAppendingString:loops_error], @"Ok", nil, nil);
-		[pool release];
+		[archThreadPool release];
 		return;
 	}	
 	
@@ -120,31 +127,57 @@
 	[closeControl setEnabled:FALSE];
 	[archiveButton setEnabled:FALSE];
 	[progress startAnimation:self];
+	float old_diff = MAXFLOAT;
+	int old_diff_eq_diff_marker = 0;
 	float diff;
 	float alpha;
-	while ([neuroNet fastGoodEnough:&diff] == NO)
+	@try 
 	{
-		[neuroNet fastTeach:&alpha];
-		loopCounter++;
-		if (loopCounter > maxLoops)
-			break;
-		[loopRes setStringValue:[NSString stringWithFormat:@"%d", loopCounter]];
-		[currD setStringValue:[NSString stringWithFormat:@"%f", diff]];
-		[currA setStringValue:[NSString stringWithFormat:@"%f", alpha]];
+		while ([neuroNet fastGoodEnough:&diff] == NO)
+		{
+			if ( fabs(old_diff-diff) < MIN_DIFF_BETWEEN_DIFF)
+			{
+				old_diff_eq_diff_marker += 1 ;
+				if (old_diff_eq_diff_marker > DIFF_EQUAL_MIN_TIMES)
+					break;
+			}
+			else 
+			{
+				old_diff_eq_diff_marker = 0;
+				old_diff = diff;
+			}
+			[neuroNet fastTeach:&alpha];
+			loopCounter++;
+			if (loopCounter > maxLoops)
+				break;
+			[loopRes setStringValue:[NSString stringWithFormat:@"%d", loopCounter]];
+			[currD setStringValue:[NSString stringWithFormat:@"%f", diff]];
+			[currA setStringValue:[NSString stringWithFormat:@"%f", alpha]];
+			if (withLogBool)
+				if (loopCounter % ilogEachValue == 0)
+					NSLog(@",%d,%f,%f", loopCounter, diff, alpha);
+		}
+		resultImageInstance = [neuroNet getResultImage];
+		[resultImage setImage:resultImageInstance];
+		[resultImageInstance release];
+		resultImageInstance = NULL;		
 	}
-	resultImageInstance = [neuroNet getResultImage];
-	[resultImage setImage:resultImageInstance];
-	[resultImageInstance release];
-	resultImageInstance = NULL;
-
-	[saveArchiveMatrixControl setEnabled:YES];
-	
-	[progress stopAnimation:self];
-	[archiveButton setEnabled:YES];
-	[closeControl setEnabled:YES];
-	[maxLoopsField setEnabled:YES];
-	[pool drain];
-	[pool release];
+	@catch (NSException * e) 
+	{
+		NSRunAlertPanel(@"Warning",@"This network can't archive this image, please check 'With normilizing' to 'Yes'.", @"Ok", nil, nil);
+		[neuroNet release];
+		neuroNet = NULL;
+	}
+	@finally 
+	{
+		[archThreadPool release];
+		archThreadPool = NULL;
+		[saveArchiveMatrixControl setEnabled:YES];
+		[progress stopAnimation:self];
+		[archiveButton setEnabled:YES];
+		[closeControl setEnabled:YES];
+		[maxLoopsField setEnabled:YES];
+	}
 }
 
 - (IBAction)archive:(id)sender 
@@ -152,6 +185,18 @@
 // 0) parameters validation
 
 	// n -> width, m -> height
+	if ([logWith state])
+	{
+		if ([[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[1-9][0-9]*"] 
+									evaluateWithObject:[logEachValue stringValue]] == YES)
+			ilogEachValue = [logEachValue intValue];
+		else 
+		{
+			NSRunAlertPanel(@"Warning", @"Wrong input on 'log each'", @"Ok", nil, nil);
+			return;
+		}
+
+	}
 	if (!neuroNet)
 		neuroNet = [ImageNeuroNet tryInit:[sourceImage image] 
 									 nStr:[n stringValue] 
@@ -161,6 +206,7 @@
 									 dStr:[D stringValue]
 						   TeachZeroLayer:[teachZeroLayer state]
 						  UseAdaptiveStep:[adaptiveSteps state]
+						  ShouldNormalize:[normilizingWith state]
 					];	
 	[thread cancel];
 	if (![thread isExecuting])
@@ -178,6 +224,12 @@
 	if (thread)
 	{
 		[thread cancel];
+		if (archThreadPool)
+		{
+			sleep(0.5);
+			[archThreadPool release];
+			archThreadPool = NULL;
+		}
 		[thread release];
 		thread = NULL;
 	}
@@ -192,8 +244,6 @@
 		[sourceImage setImage:nil];
 		[image release];
 	}
-	if (resultImageInstance)
-		[resultImageInstance release];
 	if ([resultImage image])
 	{
 		NSImage* image = [resultImage image];
@@ -202,6 +252,21 @@
 	}
 	[self disableControls];
 	[openSourceImageControl setEnabled:YES];
+}
+- (IBAction)logWithClicked:(id)sender
+{
+	if (!withLogBool)
+	{
+		[logEachValue setHidden:NO];
+		[logEachValueLabel setHidden:NO];
+		withLogBool = TRUE;
+	}
+	else 
+	{
+		[logEachValue setHidden:YES];
+		[logEachValueLabel setHidden:YES];
+		withLogBool = FALSE;
+	}
 
 }
 @end

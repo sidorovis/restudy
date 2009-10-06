@@ -1,6 +1,8 @@
 #import <Cocoa/Cocoa.h>
 #import "ImageNeuroNet.h"
 
+#define MIN_DIFF_BETWEEN_DIFF 0.01
+#define DIFF_EQUAL_MIN_TIMES 100
 
 @interface ImageController : NSObject {
     IBOutlet NSImageView *resultImage;
@@ -24,15 +26,24 @@
 	
 	IBOutlet NSButton* teachZeroLayer;
 	IBOutlet NSButton* adaptiveSteps;
+
+	BOOL withLogBool;
+	IBOutlet NSButton* logWith;
+	IBOutlet NSButton* normilizingWith;
+	IBOutlet NSTextField *logEachValue;
+	IBOutlet NSTextField *logEachValueLabel;
+	int ilogEachValue;
 	
 	ImageNeuroNet* neuroNet;
 	NSThread* thread;
+	NSAutoreleasePool* archThreadPool;
 }
 - (IBAction)archive:(id)sender;
 - (IBAction)loadSourceImage:(id)sender;
 - (IBAction)loadArchiveMatrix:(id)sender;
 - (IBAction)saveArchiveMatrix:(id)sender;
 - (IBAction)close:(id)sender;
+- (IBAction)logWithClicked:(id)sender;
 - (void) neuro_arch;
 - (void) enableControls;
 - (void) disableControls;

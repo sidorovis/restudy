@@ -10,16 +10,29 @@
 
 
 @implementation ImageNeuronLay
--(NeuronLay*) initWithCount:(int)count_ nextLayCount:(int)nextLayCount_
+-(NeuronLay*) initWithCount:(int)count_ nextLayCount:(int)nextLayCount_ ShouldNormilize:(bool)shouldNormilize_
 {
 	count = count_;
 	nextLayCount = nextLayCount_;
+	shouldNormilize = shouldNormilize_;
 	neurons = malloc( sizeof(ImageNeuron*) * count );
 	for (int i = 0 ; i < count ; i++)
-		neurons[i] = [[ImageNeuron alloc] initWithWLength:nextLayCount ];
+		neurons[i] = [[ImageNeuron alloc] initWithWLength:nextLayCount];
 	return self;
 	
 }
+-(float) getWSumm
+{
+	float summ = 0;
+	for (int i = 0 ; i < count ; i++)
+		summ += [(ImageNeuron*)neurons[i] getWSumm];
+	return summ;
+}
+-(float) getAdaptiveTeachK
+{
+	return 1.0/(1.0+fabs([self getWSumm]));
+}
+
 -(ImageNeuron*) neuronByIndex:(int)index
 {
 	return (ImageNeuron*)neurons[ index ];
@@ -28,13 +41,19 @@
 {
 	for(int i = 0 ; i < count ; i++)
 		for (int u = 0 ; u < nextLayCount ; u++)
+		{
+			assert(!isnan(teachK * inSignal[i] * (initSignal[u] - outSignal[u])));
 			[(ImageNeuron*)neurons[i] getVectorW][u] += teachK * inSignal[i] * (initSignal[u] - outSignal[u]) ;
+		}
 }
 -(void) teachWithInSignal:(float*)inSignal OutSignal:(float*)outSignal LastSignal:(float*)lastSignal teachK:(float)teachK
 {
 	for(int i = 0 ; i < count ; i++)
 		for (int u = 0 ; u < nextLayCount ; u++)
+		{
+			assert(!isnan( teachK * outSignal[u] * (inSignal[u] - lastSignal[u]) ));
 			[(ImageNeuron*)neurons[i] getVectorW][u] += teachK * outSignal[u] * (inSignal[u] - lastSignal[u]) ;		
+		}
 }
 -(ImageNeuronLay*) copy
 {

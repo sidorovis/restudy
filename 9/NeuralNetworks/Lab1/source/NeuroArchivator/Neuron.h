@@ -19,7 +19,7 @@
 -(float*) getVectorW;
 -(float) getWByIndex:(int)index_;
 -(float) getReactionOnIndex:(int)index_ value:(float)value;
-
+-(float) getWSumm;
 @property(assign) int length;
 @property(assign) float* vectorW;
 

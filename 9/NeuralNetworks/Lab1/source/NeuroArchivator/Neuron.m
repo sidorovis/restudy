@@ -19,7 +19,11 @@
 	for (int i = 0 ; i < length ; i++)
 		summ += fabs(vectorW[i] = myrand());
 	for (int i = 0 ; i < length ; i++)
+	{
 		vectorW[i] /= summ;
+		assert( !isnan( vectorW[i] ) );
+		assert( !isinf( vectorW[i] ) );
+	}
 	return self;
 }
 
@@ -42,7 +46,15 @@
 }
 -(float) getReactionOnIndex:(int)index_ value:(float)value
 {
+	assert( !isnan( vectorW[index_] ));
+	assert( !isinf( vectorW[index_] ));
 	return value*vectorW[index_];
 }
-
+-(float) getWSumm
+{
+	float summ = 0;
+	for (int i = 0 ; i < length ; i++)
+		summ += vectorW[i];
+	return summ;
+}
 @end
