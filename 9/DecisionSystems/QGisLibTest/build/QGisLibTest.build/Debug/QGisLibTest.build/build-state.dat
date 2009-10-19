@@ -1,0 +1,3061 @@
+TQGisLibTest
+v7
+r0
+t277577699.629432
+cCheck dependencies
+cProcessInfoPlistFile /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/Info.plist Info.plist
+cPhaseScriptExecution "Qt Qmake" /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Script-D7BA7D76DAB5DD13389D6332.sh
+cPhaseScriptExecution "Qt Preprocessors" /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Script-A0A52A2ADF7A1E2A99738674.sh
+cCompileC build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/MainWindow.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/moc_MainWindow.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/moc_MainWindow.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/MacOS/QGisLibTest normal x86_64
+cTouch /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app
+cPBXCp QGisLibTest.app build/Debug/QGisLibTest.app
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgis.h
+c000000004A852C570000000000001513
+t1250241623
+s5395
+i<QEvent>
+i<QString>
+i<cfloat>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgscolorrampshader.h
+c000000004A25783D0000000000001387
+t1243969597
+s4999
+i<QColor>
+i<QMap>
+i"qgsrastershaderfunction.h"
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgscontrastenhancement.h
+c0000000049130A3800000000000018A1
+t1225984568
+s6305
+i<limits>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgscoordinatereferencesystem.h
+c000000004A852C57000000000000457D
+t1250241623
+s17789
+i<ostream>
+i<QString>
+i<QMap>
+i"qgis.h"
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgscoordinatetransform.h
+c0000000049162B5400000000000030EA
+t1226189652
+s12522
+i<QObject>
+i"qgspoint.h"
+i"qgsrectangle.h"
+i"qgscsexception.h"
+i"qgscoordinatereferencesystem.h"
+i<iostream>
+i<vector>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgscsexception.h
+c0000000048B0831B00000000000005D6
+t1219527451
+s1494
+i"qgsexception.h"
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsdataprovider.h
+c0000000049162B540000000000001E5D
+t1226189652
+s7773
+i<QObject>
+i<QString>
+i<QStringList>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsexception.h
+c000000004A852C570000000000000C46
+t1250241623
+s3142
+i<exception>
+i<string>
+i<list>
+i<QDomNode>
+i<QDomDocument>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsfeature.h
+c0000000049162B54000000000000154D
+t1226189652
+s5453
+i<QMap>
+i<QString>
+i<QVariant>
+i<QList>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsfield.h
+c0000000048B0831B00000000000010B4
+t1219527451
+s4276
+i<QString>
+i<QVariant>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgslogger.h
+c0000000048B95EF900000000000011A1
+t1220108025
+s4513
+i<iostream>
+i<sstream>
+i<QString>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsmapcanvas.h
+c000000004A9EF4A700000000000032DE
+t1251931303
+s13022
+i<list>
+i<memory>
+i<deque>
+i"qgsrectangle.h"
+i"qgspoint.h"
+i"qgis.h"
+i<QDomDocument>
+i<QGraphicsView>
+i<QtCore>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsmaplayer.h
+c000000004A35066E00000000000033FE
+t1244989038
+s13310
+i<vector>
+i<map>
+i<QObject>
+i<QUndoStack>
+i"qgsrectangle.h"
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsmaplayerregistry.h
+c0000000048B0831B0000000000001115
+t1219527451
+s4373
+i<QMap>
+i<QObject>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsmaprenderer.h
+c0000000049DB0A150000000000001B02
+t1239091733
+s6914
+i<QSize>
+i<QStringList>
+i"qgis.h"
+i"qgsrectangle.h"
+i"qgsrendercontext.h"
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsmaptopixel.h
+c0000000048B46BF90000000000001157
+t1219783673
+s4439
+i"qgspoint.h"
+i<vector>
+i<cassert>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgspoint.h
+c0000000048B0831B0000000000000FB9
+t1219527451
+s4025
+i<iostream>
+i<QString>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsproviderregistry.h
+c0000000049CD2528000000000000187D
+t1238181160
+s6269
+i<map>
+i<QDir>
+i<QString>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsrasterdataprovider.h
+c000000004A291A0900000000000016B0
+t1244207625
+s5808
+i"qgsdataprovider.h"
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsrasterlayer.h
+c0000000049BC03920000000000008F48
+t1237058450
+s36680
+i<QColor>
+i<QDateTime>
+i<QVector>
+i<QList>
+i<QMap>
+i"qgis.h"
+i"qgspoint.h"
+i"qgsmaplayer.h"
+i"qgscontrastenhancement.h"
+i"qgsrastertransparency.h"
+i"qgsrastershader.h"
+i"qgscolorrampshader.h"
+i"qgsrastershaderfunction.h"
+i"qgsrasterdataprovider.h"
+i<gdal.h>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsrastershader.h
+c00000000490CA1920000000000000A3B
+t1225564562
+s2619
+i"qgsrastershaderfunction.h"
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsrastershaderfunction.h
+c00000000490CA1920000000000000887
+t1225564562
+s2183
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsrastertransparency.h
+c00000000490CA1920000000000000CBF
+t1225564562
+s3263
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsrectangle.h
+c000000004AA2C0DB0000000000001959
+t1252180187
+s6489
+i<iosfwd>
+i"qgspoint.h"
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsrendercontext.h
+c0000000049D9ED490000000000000E97
+t1239018825
+s3735
+i"qgscoordinatetransform.h"
+i"qgsmaptopixel.h"
+i"qgsrectangle.h"
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgssnapper.h
+c0000000049D8E0550000000000001230
+t1238949973
+s4656
+i"qgspoint.h"
+i"qgstolerance.h"
+i<QList>
+i<QMultiMap>
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgstolerance.h
+c0000000049E31A3C0000000000000A3A
+t1239620156
+s2618
+i"qgsmaptopixel.h"
+i"qgsmaprenderer.h"
+i"qgsmaplayer.h"
+i"qgspoint.h"
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsvectorlayer.h
+c000000004AA6CBDA000000000000698F
+t1252445146
+s27023
+i<QMap>
+i<QSet>
+i<QList>
+i<QStringList>
+i"qgis.h"
+i"qgsmaplayer.h"
+i"qgsfeature.h"
+i"qgssnapper.h"
+i"qgsfield.h"
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_core.dylib
+c000000004AD8425C000000000038DD68
+t1255686748
+s3726696
+
+N/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_gui.dylib
+c000000004AD842A600000000000778D0
+t1255686822
+s489680
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004A769DAB00000000000000EE
+t1249287595
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/AvailabilityMacros.h
+c000000004A11A9B30000000000006724
+t1242671539
+s26404
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/ctype.h
+c000000004A5C14A60000000000002C18
+t1247548582
+s11288
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/errno.h
+c000000004A5C14A600000000000003EB
+t1247548582
+s1003
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/locale.h
+c000000004A5C14A600000000000008F0
+t1247548582
+s2288
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/math.h
+c000000004A5C14A000000000000004F1
+t1247548576
+s1265
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdio.h
+c000000004A5C14A70000000000004174
+t1247548583
+s16756
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
+c000000004A5C14A70000000000002DF5
+t1247548583
+s11765
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/string.h
+c000000004A5C14A70000000000001731
+t1247548583
+s5937
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/strings.h
+c000000004A5C14A60000000000000DA4
+t1247548582
+s3492
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/include/time.h
+c000000004A5C14A7000000000000178E
+t1247548583
+s6030
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/float.h
+c000000004A11EB240000000000001538
+t1242688292
+s5432
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+c000000004A11EB240000000000000C7E
+t1242688292
+s3198
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+c000000004A11EB2400000000000010DD
+t1242688292
+s4317
+
+N/Developer/SDKs/MacOSX10.6.sdk/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+c000000004A11EB240000000000003197
+t1242688292
+s12695
+
+N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/float.h
+c000000004A1198340000000000001538
+t1242667060
+s5432
+
+N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
+c000000004A1198340000000000000C7E
+t1242667060
+s3198
+i"syslimits.h"
+
+N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stdarg.h
+c000000004A11983400000000000010DD
+t1242667060
+s4317
+
+N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
+c000000004A1198340000000000003197
+t1242667060
+s12695
+i<machine/ansi.h>
+i<sys/_types.h>
+
+N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
+c000000004A1195E90000000000000155
+t1242666473
+s341
+
+N/System/Library/Frameworks/AGL.framework/AGL
+c000000004A73D9FE0000000000043820
+t1249106430
+s276512
+
+N/System/Library/Frameworks/AppKit.framework/AppKit
+c000000004AB220B90000000002B3D6F0
+t1253187769
+s45340400
+
+N/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
+c000000004A12050E0000000000022140
+t1242694926
+s139584
+
+N/System/Library/Frameworks/Carbon.framework/Carbon
+c000000004A7680C1000000000000A5F0
+t1249280193
+s42480
+
+N/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/System/Library/Frameworks/OpenGL.framework/OpenGL
+c000000004A73D93D0000000000040130
+t1249106237
+s262448
+
+N/System/Library/Frameworks/SystemConfiguration.framework/SystemConfiguration
+c000000004A6A95710000000000117D80
+t1248499057
+s1146240
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.cpp
+c000000004ADB485300000000000007CD
+t1255884883
+s1997
+i"MainWindow.h"
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.h
+c000000004AD9B7000000000000000269
+t1255782144
+s617
+i<QMainWindow>
+i<QString>
+i<qgsproviderregistry.h>
+i<qgsrasterlayer.h>
+i<qgsvectorlayer.h>
+i<qgsmapcanvas.h>
+i<QVBoxLayout>
+i<qgsmaplayerregistry.h>
+i<QDebug>
+i<qgslogger.h>
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/QGisLibTest.app
+t1255884896
+s102
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app
+t1255884896
+s102
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/Info.plist
+t1255699664
+s578
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/MacOS/QGisLibTest
+t1255884896
+s70984
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/PkgInfo
+t1255699664
+s8
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/MainWindow.o
+t1255884891
+s717820
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/QGisLibTest.LinkFileList
+c000000004AD86E6100000000000001AB
+t1255698017
+s427
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/main.o
+t1255782148
+s659752
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/moc_MainWindow.o
+t1255782150
+s655004
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Script-A0A52A2ADF7A1E2A99738674.sh
+c000000004AD86E610000000000000079
+t1255698017
+s121
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Script-D7BA7D76DAB5DD13389D6332.sh
+c000000004AD86E610000000000000078
+t1255698017
+s120
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/main.cpp
+c000000004AD98EE7000000000000009A
+t1255771879
+s154
+i<QApplication>
+i"MainWindow.h"
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/moc_MainWindow.cpp
+c000000004AD9B7010000000000000712
+t1255782145
+s1810
+i"MainWindow.h"
+
+N/Users/rilley_elf/tests/qgis/include/qgsproviderregistry.h
+c000000004AD86472000000000000187D
+t1255695474
+s6269
+i<map>
+i<QDir>
+i<QString>
+
+N/Users/rilley_elf/tests/qgis/lib/libqgis_core.1.3.0.dylib
+c000000004AD8649B000000000038DD68
+t1255695515
+s3726696
+
+N/Users/rilley_elf/tests/qgis_lib/libqgis_analysis.1.3.0.dylib
+c000000004AD98FC9000000000003C460
+t1255772105
+s246880
+
+N/Users/rilley_elf/tests/qgis_lib/libqgis_core.1.3.0.dylib
+c000000004AD98FC9000000000038DD68
+t1255772105
+s3726696
+
+N/Users/rilley_elf/tests/qgis_lib/libqgis_core.dylib
+c000000004AD98FC9000000000038DD68
+t1255772105
+s3726696
+
+N/Users/rilley_elf/tests/qgis_lib/libqgis_gui.1.3.0.dylib
+c000000004AD98FC900000000000778D0
+t1255772105
+s489680
+
+N/opt/local/include/cpl_config.h
+c000000004AC272F40000000000001426
+t1254257396
+s5158
+
+N/opt/local/include/cpl_error.h
+c000000004AC272F40000000000001272
+t1254257396
+s4722
+i"cpl_port.h"
+
+N/opt/local/include/cpl_port.h
+c000000004AC272F50000000000004265
+t1254257397
+s16997
+i<vld.h>
+i"cpl_config.h"
+i<stdio.h>
+i<stdlib.h>
+i<math.h>
+i<stdarg.h>
+i<string.h>
+i<ctype.h>
+i<limits.h>
+i<time.h>
+i<wce_time.h>
+i<wce_errno.h>
+i<errno.h>
+i<locale.h>
+i<direct.h>
+i<strings.h>
+i<dbmalloc.h>
+i<dmalloc.h>
+i<float.h>
+
+N/opt/local/include/gdal.h
+c000000004AC272F50000000000008399
+t1254257397
+s33689
+i"gdal_version.h"
+i"cpl_port.h"
+i"cpl_error.h"
+
+N/opt/local/include/gdal_version.h
+c000000004AC272F500000000000002BB
+t1254257397
+s699
+
+N/opt/local/lib/libcrypto.0.9.8.dylib
+c000000004AB280260000000000174060
+t1253212198
+s1523808
+
+N/opt/local/lib/libgdal.1.dylib
+c000000004AC272F300000000004B15E8
+t1254257395
+s4920808
+
+N/opt/local/lib/libpng12.0.dylib
+c000000004AD75EE500000000000278A0
+t1255628517
+s161952
+
+N/opt/local/lib/libssl.0.9.8.dylib
+c000000004AB2802600000000000526E0
+t1253212198
+s337632
+
+N/opt/local/lib/libz.1.2.3.dylib
+c000000004AB27EE600000000000157A0
+t1253211878
+s87968
+
+N/opt/local/libexec/qt4-mac/include/Qt3Support/q3cstring.h
+c000000004AD7978A0000000000002795
+t1255643018
+s10133
+i<QtCore/qbytearray.h>
+
+N/opt/local/libexec/qt4-mac/include/Qt3Support/q3valuelist.h
+c000000004AD7978A0000000000002081
+t1255643018
+s8321
+i<QtCore/qalgorithms.h>
+i<QtCore/qdatastream.h>
+i<QtCore/qlinkedlist.h>
+i<QtCore/qlist.h>
+i<iterator>
+i<list>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/QIODevice
+c000000004AD797760000000000000017
+t1255642998
+s23
+i"qiodevice.h"
+
+N/opt/local/libexec/qt4-mac/include/QtCore/QPoint
+c000000004AD797760000000000000014
+t1255642998
+s20
+i"qpoint.h"
+
+N/opt/local/libexec/qt4-mac/include/QtCore/QPointF
+c000000004AD797760000000000000014
+t1255642998
+s20
+i"qpoint.h"
+
+N/opt/local/libexec/qt4-mac/include/QtCore/QString
+c000000004AD797770000000000000015
+t1255642999
+s21
+i"qstring.h"
+
+N/opt/local/libexec/qt4-mac/include/QtCore/QVector
+c000000004AD797770000000000000015
+t1255642999
+s21
+i"qvector.h"
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qabstractfileengine.h
+c000000004AD797770000000000001E6E
+t1255642999
+s7790
+i<QtCore/qdir.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qalgorithms.h
+c000000004AD79777000000000000430F
+t1255642999
+s17167
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic.h
+c000000004AD797770000000000001AB4
+t1255642999
+s6836
+i<QtCore/qglobal.h>
+i<QtCore/qbasicatomic.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_alpha.h
+c000000004AD7977700000000000065C3
+t1255642999
+s26051
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_arch.h
+c000000004AD797770000000000000D37
+t1255642999
+s3383
+i"QtCore/qglobal.h"
+i"QtCore/qatomic_alpha.h"
+i"QtCore/qatomic_arm.h"
+i"QtCore/qatomic_armv6.h"
+i"QtCore/qatomic_avr32.h"
+i"QtCore/qatomic_bfin.h"
+i"QtCore/qatomic_generic.h"
+i"QtCore/qatomic_i386.h"
+i"QtCore/qatomic_ia64.h"
+i"QtCore/qatomic_macosx.h"
+i"QtCore/qatomic_mips.h"
+i"QtCore/qatomic_parisc.h"
+i"QtCore/qatomic_powerpc.h"
+i"QtCore/qatomic_s390.h"
+i"QtCore/qatomic_sparc.h"
+i"QtCore/qatomic_windows.h"
+i"QtCore/qatomic_windowsce.h"
+i"QtCore/qatomic_x86_64.h"
+i"QtCore/qatomic_sh.h"
+i"QtCore/qatomic_sh4a.h"
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_arm.h
+c000000004AD797770000000000002D4E
+t1255642999
+s11598
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_armv6.h
+c000000004AD797770000000000002DD1
+t1255642999
+s11729
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_avr32.h
+c000000004AD797770000000000001D39
+t1255642999
+s7481
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_bfin.h
+c000000004AD797770000000000002747
+t1255642999
+s10055
+i<asm/fixed_code.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_bootstrap.h
+c000000004AD797770000000000000C1D
+t1255642999
+s3101
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_generic.h
+c000000004AD7977700000000000021FC
+t1255642999
+s8700
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_i386.h
+c000000004AD797770000000000002AC2
+t1255642999
+s10946
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_ia64.h
+c000000004AD7977700000000000064D0
+t1255642999
+s25808
+i<ia64intrin.h>
+i<ia64/sys/inline.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_macosx.h
+c000000004AD7977700000000000008E8
+t1255642999
+s2280
+i<QtCore/qatomic_x86_64.h>
+i<QtCore/qatomic_i386.h>
+i<QtCore/qatomic_powerpc.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_mips.h
+c000000004AD797770000000000006E38
+t1255642999
+s28216
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_parisc.h
+c000000004AD7977700000000000020CD
+t1255642999
+s8397
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_powerpc.h
+c000000004AD79777000000000000597D
+t1255642999
+s22909
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_s390.h
+c000000004AD7977700000000000038AC
+t1255642999
+s14508
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_sh.h
+c000000004AD797770000000000002406
+t1255642999
+s9222
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_sh4a.h
+c000000004AD79777000000000000460D
+t1255642999
+s17933
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_sparc.h
+c000000004AD79777000000000000424F
+t1255642999
+s16975
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qatomic_x86_64.h
+c000000004AD797770000000000002AE7
+t1255642999
+s10983
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qbasicatomic.h
+c000000004AD7977700000000000016FE
+t1255642999
+s5886
+i<QtCore/qglobal.h>
+i<QtCore/qatomic_bootstrap.h>
+i<QtCore/qatomic_arch.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qbasictimer.h
+c000000004AD7977700000000000009BC
+t1255642999
+s2492
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qbytearray.h
+c000000004AD797770000000000005A5B
+t1255642999
+s23131
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<string.h>
+i<stdarg.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qchar.h
+c000000004AD7977700000000000031F4
+t1255642999
+s12788
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qconfig.h
+c000000004AD7977700000000000010AE
+t1255642999
+s4270
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qcontainerfwd.h
+c000000004AD797770000000000000A6A
+t1255642999
+s2666
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qcoreapplication.h
+c000000004AD797770000000000002746
+t1255642999
+s10054
+i<QtCore/qobject.h>
+i<QtCore/qcoreevent.h>
+i<QtCore/qeventloop.h>
+i<QtCore/qstringlist.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qcoreevent.h
+c000000004AD797770000000000003CD8
+t1255642999
+s15576
+i<QtCore/qnamespace.h>
+i<QtCore/qbytearray.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qdatastream.h
+c000000004AD797770000000000002B3B
+t1255642999
+s11067
+i<QtCore/qiodevice.h>
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qdebug.h
+c000000004AD7977700000000000024D7
+t1255642999
+s9431
+i<QtCore/qalgorithms.h>
+i<QtCore/qhash.h>
+i<QtCore/qlist.h>
+i<QtCore/qmap.h>
+i<QtCore/qpair.h>
+i<QtCore/qtextstream.h>
+i<QtCore/qstring.h>
+i<QtCore/qvector.h>
+i<QtCore/qset.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qdir.h
+c000000004AD797770000000000002568
+t1255642999
+s9576
+i<QtCore/qstring.h>
+i<QtCore/qfileinfo.h>
+i<QtCore/qstringlist.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qeventloop.h
+c000000004AD797770000000000000C6D
+t1255642999
+s3181
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qfactoryinterface.h
+c000000004AD79777000000000000094D
+t1255642999
+s2381
+i<QtCore/qobject.h>
+i<QtCore/qstringlist.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qfeatures.h
+c000000004AD79777000000000000508F
+t1255642999
+s20623
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qfile.h
+c000000004AD7977700000000000018D5
+t1255642999
+s6357
+i<QtCore/qiodevice.h>
+i<QtCore/qstring.h>
+i<stdio.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qfileinfo.h
+c000000004AD79777000000000000177D
+t1255642999
+s6013
+i<QtCore/qfile.h>
+i<QtCore/qlist.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qfuture.h
+c000000004AD797770000000000002374
+t1255642999
+s9076
+i<QtCore/qglobal.h>
+i<QtCore/qfutureinterface.h>
+i<QtCore/qstring.h>
+i<QtCore/qtconcurrentcompilertest.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qfutureinterface.h
+c000000004AD7977700000000000025E4
+t1255642999
+s9700
+i<QtCore/qglobal.h>
+i<QtCore/qrunnable.h>
+i<QtCore/qmutex.h>
+i<QtCore/qtconcurrentexception.h>
+i<QtCore/qtconcurrentresultstore.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qglobal.h
+c000000004AD797770000000000012689
+t1255642999
+s75401
+i<stddef.h>
+i<QtCore/qconfig.h>
+i<AvailabilityMacros.h>
+i<QtCore/qfeatures.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qhash.h
+c000000004AD7977700000000000072BD
+t1255642999
+s29373
+i<QtCore/qatomic.h>
+i<QtCore/qchar.h>
+i<QtCore/qiterator.h>
+i<QtCore/qlist.h>
+i<QtCore/qpair.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qiodevice.h
+c000000004AD797770000000000002076
+t1255642999
+s8310
+i<QtCore/qobject.h>
+i<QtCore/qobjectdefs.h>
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qiterator.h
+c000000004AD7977700000000000022FA
+t1255642999
+s8954
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qlibrary.h
+c000000004AD797770000000000000FF2
+t1255642999
+s4082
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qline.h
+c000000004AD7977700000000000026B4
+t1255642999
+s9908
+i<QtCore/qpoint.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qlinkedlist.h
+c000000004AD797770000000000003A71
+t1255642999
+s14961
+i<QtCore/qiterator.h>
+i<QtCore/qatomic.h>
+i<iterator>
+i<list>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qlist.h
+c000000004AD797770000000000005CFB
+t1255642999
+s23803
+i<QtCore/qiterator.h>
+i<QtCore/qatomic.h>
+i<QtCore/qalgorithms.h>
+i<iterator>
+i<list>
+i<new>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qlocale.h
+c000000004AD797770000000000004BFB
+t1255642999
+s19451
+i<QtCore/qstring.h>
+i<QtCore/qobjectdefs.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qmap.h
+c000000004AD797770000000000007A33
+t1255642999
+s31283
+i<QtCore/qatomic.h>
+i<QtCore/qiterator.h>
+i<QtCore/qlist.h>
+i<map>
+i<new>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qmetatype.h
+c000000004AD797770000000000002BE4
+t1255642999
+s11236
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<QtCore/qdatastream.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qmimedata.h
+c000000004AD797770000000000000CE3
+t1255642999
+s3299
+i<QtCore/qvariant.h>
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qmutex.h
+c000000004AD7977700000000000012D6
+t1255642999
+s4822
+i<QtCore/qglobal.h>
+i<new>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qnamespace.h
+c000000004AD79777000000000000BA04
+t1255642999
+s47620
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qobject.h
+c000000004AD797770000000000003D6D
+t1255642999
+s15725
+i<QtCore/qobjectdefs.h>
+i<QtCore/qstring.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qlist.h>
+i<QtCore/qcoreevent.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qobjectdefs.h
+c000000004AD7977700000000000040E5
+t1255642999
+s16613
+i<QtCore/qnamespace.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qpair.h
+c000000004AD797770000000000000F2C
+t1255642999
+s3884
+i<QtCore/qdatastream.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qplugin.h
+c000000004AD79777000000000000130B
+t1255642999
+s4875
+i<QtCore/qobject.h>
+i<QtCore/qpointer.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qpoint.h
+c000000004AD79777000000000000249B
+t1255642999
+s9371
+i<QtCore/qnamespace.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qpointer.h
+c000000004AD797770000000000001475
+t1255642999
+s5237
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qrect.h
+c000000004AD7977700000000000056D2
+t1255642999
+s22226
+i<QtCore/qsize.h>
+i<QtCore/qpoint.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qregexp.h
+c000000004AD7977700000000000014F3
+t1255642999
+s5363
+i<QtCore/qstring.h>
+i<new>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qrunnable.h
+c000000004AD7977700000000000009A1
+t1255642999
+s2465
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qset.h
+c000000004AD797770000000000003462
+t1255642999
+s13410
+i<QtCore/qhash.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qshareddata.h
+c000000004AD797770000000000001BE0
+t1255642999
+s7136
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qsharedpointer_impl.h
+c000000004AD7977700000000000048D7
+t1255642999
+s18647
+i<QtCore/qatomic.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qsize.h
+c000000004AD79777000000000000284F
+t1255642999
+s10319
+i<QtCore/qnamespace.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qstring.h
+c000000004AD79777000000000000E551
+t1255642999
+s58705
+i<QtCore/qchar.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qatomic.h>
+i<QtCore/qnamespace.h>
+i<Qt3Support/q3cstring.h>
+i<string>
+i<string>
+i<stdarg.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qstringlist.h
+c000000004AD79777000000000000263B
+t1255642999
+s9787
+i<QtCore/qalgorithms.h>
+i<QtCore/qdatastream.h>
+i<QtCore/qlist.h>
+i<QtCore/qregexp.h>
+i<QtCore/qstring.h>
+i<QtCore/qstringmatcher.h>
+i<Qt3Support/q3valuelist.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qstringmatcher.h
+c000000004AD797770000000000000CDB
+t1255642999
+s3291
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentcompilertest.h
+c000000004AD797770000000000000966
+t1255642999
+s2406
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentexception.h
+c000000004AD797770000000000000D40
+t1255642999
+s3392
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<exception>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentfilterkernel.h
+c000000004AD797770000000000002D8E
+t1255642999
+s11662
+i<QtCore/qglobal.h>
+i<QtCore/qtconcurrentiteratekernel.h>
+i<QtCore/qtconcurrentmapkernel.h>
+i<QtCore/qtconcurrentreducekernel.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentfunctionwrappers.h
+c000000004AD797770000000000001233
+t1255642999
+s4659
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentiteratekernel.h
+c000000004AD79777000000000000269A
+t1255642999
+s9882
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<QtCore/qtconcurrentmedian.h>
+i<QtCore/qtconcurrentthreadengine.h>
+i<iterator>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentmapkernel.h
+c000000004AD79777000000000000250D
+t1255642999
+s9485
+i<QtCore/qglobal.h>
+i<QtCore/qtconcurrentiteratekernel.h>
+i<QtCore/qtconcurrentreducekernel.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentmedian.h
+c000000004AD797770000000000000EB9
+t1255642999
+s3769
+i<QtCore/qglobal.h>
+i<QtCore/qvector.h>
+i<QtCore/qalgorithms.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentreducekernel.h
+c000000004AD797770000000000001D84
+t1255642999
+s7556
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<QtCore/qlist.h>
+i<QtCore/qmap.h>
+i<QtCore/qmutex.h>
+i<QtCore/qthread.h>
+i<QtCore/qthreadpool.h>
+i<QtCore/qvector.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentresultstore.h
+c000000004AD797770000000000001D22
+t1255642999
+s7458
+i<QtCore/qglobal.h>
+i<QtCore/qmap.h>
+i<QtCore/qdebug.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentrunbase.h
+c000000004AD797770000000000000E2D
+t1255642999
+s3629
+i<QtCore/qglobal.h>
+i<QtCore/qfuture.h>
+i<QtCore/qrunnable.h>
+i<QtCore/qthreadpool.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentstoredfunctioncall.h
+c000000004AD79777000000000000DB4A
+t1255642999
+s56138
+i<QtCore/qglobal.h>
+i<QtCore/qtconcurrentrunbase.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtconcurrentthreadengine.h
+c000000004AD797770000000000002196
+t1255642999
+s8598
+i<QtCore/qglobal.h>
+i<QtCore/qthreadpool.h>
+i<QtCore/qfuture.h>
+i<QtCore/qdebug.h>
+i<QtCore/qtconcurrentexception.h>
+i<QtCore/qwaitcondition.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtextcodec.h
+c000000004AD7977700000000000019F3
+t1255642999
+s6643
+i<QtCore/qstring.h>
+i<QtCore/qlist.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qtextstream.h
+c000000004AD79777000000000000337D
+t1255642999
+s13181
+i<QtCore/qiodevice.h>
+i<QtCore/qstring.h>
+i<QtCore/qchar.h>
+i<QtCore/qlocale.h>
+i<QtCore/qtextcodec.h>
+i<stdio.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qthread.h
+c000000004AD7977700000000000010D1
+t1255642999
+s4305
+i<QtCore/qobject.h>
+i<limits.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qthreadpool.h
+c000000004AD797770000000000000C06
+t1255642999
+s3078
+i<QtCore/qglobal.h>
+i<QtCore/qthread.h>
+i<QtCore/qrunnable.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qvariant.h
+c000000004AD7977700000000000045B1
+t1255642999
+s17841
+i<QtCore/qatomic.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qlist.h>
+i<QtCore/qmetatype.h>
+i<QtCore/qmap.h>
+i<QtCore/qhash.h>
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qvector.h
+c000000004AD797770000000000006163
+t1255642999
+s24931
+i<QtCore/qiterator.h>
+i<QtCore/qatomic.h>
+i<QtCore/qalgorithms.h>
+i<QtCore/qlist.h>
+i<iterator>
+i<vector>
+i<stdlib.h>
+i<string.h>
+i<QtCore/QPointF>
+i<QtCore/QPoint>
+
+N/opt/local/libexec/qt4-mac/include/QtCore/qwaitcondition.h
+c000000004AD797770000000000000B5F
+t1255642999
+s2911
+i<QtCore/qglobal.h>
+i<limits.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qabstractscrollarea.h
+c000000004AD797810000000000001292
+t1255643009
+s4754
+i<QtGui/qframe.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qboxlayout.h
+c000000004AD7978100000000000015ED
+t1255643009
+s5613
+i<QtGui/qlayout.h>
+i<QtGui/qwidget.h>
+i<limits.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qbrush.h
+c000000004AD7978100000000000023ED
+t1255643009
+s9197
+i<QtCore/qpair.h>
+i<QtCore/qpoint.h>
+i<QtCore/qvector.h>
+i<QtGui/qcolor.h>
+i<QtGui/qmatrix.h>
+i<QtGui/qtransform.h>
+i<QtGui/qimage.h>
+i<QtGui/qpixmap.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qcolor.h
+c000000004AD797810000000000001E83
+t1255643009
+s7811
+i<QtGui/qrgb.h>
+i<QtCore/qnamespace.h>
+i<QtCore/qstringlist.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qcursor.h
+c000000004AD797810000000000001204
+t1255643009
+s4612
+i<QtCore/qpoint.h>
+i<QtGui/qwindowdefs.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qdesktopwidget.h
+c000000004AD797810000000000000D3A
+t1255643009
+s3386
+i<QtGui/qwidget.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qdrag.h
+c000000004AD797810000000000000C9E
+t1255643009
+s3230
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qdrawutil.h
+c000000004AD797810000000000001678
+t1255643009
+s5752
+i<QtCore/qnamespace.h>
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qevent.h
+c000000004AD7978100000000000057F7
+t1255643009
+s22519
+i<QtGui/qwindowdefs.h>
+i<QtCore/qobject.h>
+i<QtGui/qregion.h>
+i<QtCore/qnamespace.h>
+i<QtCore/qstring.h>
+i<QtGui/qkeysequence.h>
+i<QtCore/qcoreevent.h>
+i<QtGui/qmime.h>
+i<QtGui/qdrag.h>
+i<QtCore/qvariant.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qfont.h
+c000000004AD79781000000000000262F
+t1255643009
+s9775
+i<QtGui/qwindowdefs.h>
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qfontinfo.h
+c000000004AD797810000000000000AE4
+t1255643009
+s2788
+i<QtGui/qfont.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qfontmetrics.h
+c000000004AD7978100000000000019ED
+t1255643009
+s6637
+i<QtGui/qfont.h>
+i<QtCore/qrect.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qframe.h
+c000000004AD797810000000000001221
+t1255643009
+s4641
+i<QtGui/qwidget.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qgraphicsscene.h
+c000000004AD797800000000000002EFB
+t1255643008
+s12027
+i<QtCore/qobject.h>
+i<QtCore/qpoint.h>
+i<QtCore/qrect.h>
+i<QtGui/qbrush.h>
+i<QtGui/qfont.h>
+i<QtGui/qtransform.h>
+i<QtGui/qmatrix.h>
+i<QtGui/qpen.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qgridlayout.h
+c000000004AD797810000000000001C8B
+t1255643009
+s7307
+i<QtGui/qlayout.h>
+i<QtGui/qwidget.h>
+i<limits.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qicon.h
+c000000004AD797800000000000001505
+t1255643008
+s5381
+i<QtCore/qglobal.h>
+i<QtCore/qsize.h>
+i<QtCore/qlist.h>
+i<QtGui/qpixmap.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qimage.h
+c000000004AD7978000000000000035FC
+t1255643008
+s13820
+i<QtGui/qtransform.h>
+i<QtGui/qpaintdevice.h>
+i<QtGui/qrgb.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qrect.h>
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qkeysequence.h
+c000000004AD7978100000000000019E7
+t1255643009
+s6631
+i<QtCore/qnamespace.h>
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qlayout.h
+c000000004AD797810000000000001DE2
+t1255643009
+s7650
+i<QtCore/qobject.h>
+i<QtGui/qlayoutitem.h>
+i<QtGui/qsizepolicy.h>
+i<QtCore/qrect.h>
+i<limits.h>
+i<QtGui/qboxlayout.h>
+i<QtGui/qgridlayout.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qlayoutitem.h
+c000000004AD797810000000000001550
+t1255643009
+s5456
+i<QtGui/qsizepolicy.h>
+i<QtCore/qrect.h>
+i<limits.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qmacdefines_mac.h
+c000000004AD7978100000000000019C8
+t1255643009
+s6600
+i<QtCore/qglobal.h>
+i<Cocoa/Cocoa.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qmatrix.h
+c000000004AD797810000000000001772
+t1255643009
+s6002
+i<QtGui/qpolygon.h>
+i<QtGui/qregion.h>
+i<QtGui/qwindowdefs.h>
+i<QtCore/qline.h>
+i<QtCore/qpoint.h>
+i<QtCore/qrect.h>
+i<QtGui/qwmatrix.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qmime.h
+c000000004AD7978100000000000018D9
+t1255643009
+s6361
+i<QtCore/qmimedata.h>
+i<QtCore/qvariant.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qpaintdevice.h
+c000000004AD7978100000000000016BA
+t1255643009
+s5818
+i<QtGui/qwindowdefs.h>
+i<QtCore/qrect.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qpainter.h
+c000000004AD797810000000000007F0F
+t1255643009
+s32527
+i<QtCore/qnamespace.h>
+i<QtCore/qrect.h>
+i<QtCore/qpoint.h>
+i<QtGui/qpixmap.h>
+i<QtGui/qimage.h>
+i<QtGui/qtextoption.h>
+i<QtGui/qdrawutil.h>
+i<QtGui/qpolygon.h>
+i<QtGui/qpen.h>
+i<QtGui/qbrush.h>
+i<QtGui/qmatrix.h>
+i<QtGui/qtransform.h>
+i<QtGui/qfontinfo.h>
+i<QtGui/qfontmetrics.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qpainterpath.h
+c000000004AD797810000000000003473
+t1255643009
+s13427
+i<QtGui/qmatrix.h>
+i<QtCore/qglobal.h>
+i<QtCore/qrect.h>
+i<QtCore/qline.h>
+i<QtCore/qvector.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qpalette.h
+c000000004AD79781000000000000328F
+t1255643009
+s12943
+i<QtGui/qwindowdefs.h>
+i<QtGui/qcolor.h>
+i<QtGui/qbrush.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qpen.h
+c000000004AD797810000000000001020
+t1255643009
+s4128
+i<QtGui/qcolor.h>
+i<QtGui/qbrush.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qpixmap.h
+c000000004AD797800000000000002C08
+t1255643008
+s11272
+i<QtGui/qpaintdevice.h>
+i<QtGui/qcolor.h>
+i<QtCore/qnamespace.h>
+i<QtCore/qstring.h>
+i<QtGui/qimage.h>
+i<QtGui/qtransform.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qpolygon.h
+c000000004AD797810000000000001775
+t1255643009
+s6005
+i<QtCore/qvector.h>
+i<QtCore/qpoint.h>
+i<QtCore/qrect.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qregion.h
+c000000004AD797810000000000001FE0
+t1255643009
+s8160
+i<QtCore/qatomic.h>
+i<QtCore/qrect.h>
+i<QtGui/qwindowdefs.h>
+i<QtCore/qdatastream.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qrgb.h
+c000000004AD797810000000000000D24
+t1255643009
+s3364
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qscrollarea.h
+c000000004AD797810000000000000CF0
+t1255643009
+s3312
+i<QtGui/qabstractscrollarea.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qsizepolicy.h
+c000000004AD797810000000000001FD3
+t1255643009
+s8147
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qtabwidget.h
+c000000004AD797810000000000002254
+t1255643009
+s8788
+i<QtGui/qwidget.h>
+i<QtGui/qicon.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qtextoption.h
+c000000004AD797810000000000001312
+t1255643009
+s4882
+i<QtCore/qnamespace.h>
+i<QtCore/qchar.h>
+i<QtCore/qmetatype.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qtransform.h
+c000000004AD797810000000000002730
+t1255643009
+s10032
+i<QtGui/qmatrix.h>
+i<QtGui/qpainterpath.h>
+i<QtGui/qpolygon.h>
+i<QtGui/qregion.h>
+i<QtGui/qwindowdefs.h>
+i<QtCore/qline.h>
+i<QtCore/qpoint.h>
+i<QtCore/qrect.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qwidget.h
+c000000004AD797810000000000009190
+t1255643009
+s37264
+i<QtGui/qwindowdefs.h>
+i<QtCore/qobject.h>
+i<QtGui/qpaintdevice.h>
+i<QtGui/qpalette.h>
+i<QtGui/qfont.h>
+i<QtGui/qfontmetrics.h>
+i<QtGui/qfontinfo.h>
+i<QtGui/qsizepolicy.h>
+i<QtGui/qregion.h>
+i<QtGui/qbrush.h>
+i<QtGui/qcursor.h>
+i<QtGui/qkeysequence.h>
+i<QtGui/qevent.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qwindowdefs.h
+c000000004AD797810000000000000E95
+t1255643009
+s3733
+i<QtCore/qobjectdefs.h>
+i<QtCore/qnamespace.h>
+i<QtGui/qmacdefines_mac.h>
+i<QtGui/qwindowdefs_win.h>
+
+N/opt/local/libexec/qt4-mac/include/QtGui/qwmatrix.h
+c000000004AD797810000000000000880
+t1255643009
+s2176
+i<QtGui/qmatrix.h>
+
+N/opt/local/libexec/qt4-mac/include/QtXml/QDomDocument
+c000000004AD797780000000000000012
+t1255643000
+s18
+i"qdom.h"
+
+N/opt/local/libexec/qt4-mac/include/QtXml/QDomNode
+c000000004AD797780000000000000012
+t1255643000
+s18
+i"qdom.h"
+
+N/opt/local/libexec/qt4-mac/include/QtXml/qdom.h
+c000000004AD797780000000000005544
+t1255643000
+s21828
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/lib/Qt3Support.framework/Qt3Support
+c000000004AD7978A00000000003112B0
+t1255643018
+s3216048
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/QtCore
+c000000004AD7977800000000002852A0
+t1255643000
+s2642592
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QDateTime
+c000000004AD797780000000000000017
+t1255643000
+s23
+i"qdatetime.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QDebug
+c000000004AD797780000000000000014
+t1255643000
+s20
+i"qdebug.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QDir
+c000000004AD797780000000000000012
+t1255643000
+s18
+i"qdir.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QEvent
+c000000004AD797780000000000000018
+t1255643000
+s24
+i"qcoreevent.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QList
+c000000004AD797780000000000000013
+t1255643000
+s19
+i"qlist.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QMap
+c000000004AD797780000000000000012
+t1255643000
+s18
+i"qmap.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QMultiMap
+c000000004AD797780000000000000012
+t1255643000
+s18
+i"qmap.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QObject
+c000000004AD797780000000000000015
+t1255643000
+s21
+i"qobject.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QSet
+c000000004AD797780000000000000012
+t1255643000
+s18
+i"qset.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QSize
+c000000004AD797780000000000000013
+t1255643000
+s19
+i"qsize.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QString
+c000000004AD797780000000000000015
+t1255643000
+s21
+i"qstring.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QStringList
+c000000004AD797780000000000000019
+t1255643000
+s25
+i"qstringlist.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QVariant
+c000000004AD797780000000000000016
+t1255643000
+s22
+i"qvariant.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QVector
+c000000004AD797780000000000000015
+t1255643000
+s21
+i"qvector.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/QtCore
+c000000004AD797780000000000000BB8
+t1255643000
+s3000
+i"qtextcodec.h"
+i"qtextcodecplugin.h"
+i"qfuture.h"
+i"qfutureinterface.h"
+i"qfuturesynchronizer.h"
+i"qfuturewatcher.h"
+i"qrunnable.h"
+i"qtconcurrentcompilertest.h"
+i"qtconcurrentexception.h"
+i"qtconcurrentfilter.h"
+i"qtconcurrentfilterkernel.h"
+i"qtconcurrentfunctionwrappers.h"
+i"qtconcurrentiteratekernel.h"
+i"qtconcurrentmap.h"
+i"qtconcurrentmapkernel.h"
+i"qtconcurrentmedian.h"
+i"qtconcurrentreducekernel.h"
+i"qtconcurrentresultstore.h"
+i"qtconcurrentrun.h"
+i"qtconcurrentrunbase.h"
+i"qtconcurrentstoredfunctioncall.h"
+i"qtconcurrentthreadengine.h"
+i"qthreadpool.h"
+i"qendian.h"
+i"qfeatures.h"
+i"qglobal.h"
+i"qlibraryinfo.h"
+i"qnamespace.h"
+i"qnumeric.h"
+i"qabstractfileengine.h"
+i"qbuffer.h"
+i"qdatastream.h"
+i"qdebug.h"
+i"qdir.h"
+i"qdiriterator.h"
+i"qfile.h"
+i"qfileinfo.h"
+i"qfilesystemwatcher.h"
+i"qfsfileengine.h"
+i"qiodevice.h"
+i"qprocess.h"
+i"qresource.h"
+i"qsettings.h"
+i"qtemporaryfile.h"
+i"qtextstream.h"
+i"qurl.h"
+i"qabstracteventdispatcher.h"
+i"qabstractitemmodel.h"
+i"qbasictimer.h"
+i"qcoreapplication.h"
+i"qcoreevent.h"
+i"qeventloop.h"
+i"qmath.h"
+i"qmetaobject.h"
+i"qmetatype.h"
+i"qmimedata.h"
+i"qobject.h"
+i"qobjectcleanuphandler.h"
+i"qobjectdefs.h"
+i"qpointer.h"
+i"qsharedmemory.h"
+i"qsignalmapper.h"
+i"qsocketnotifier.h"
+i"qsystemsemaphore.h"
+i"qtimer.h"
+i"qtranslator.h"
+i"qvariant.h"
+i"qfactoryinterface.h"
+i"qlibrary.h"
+i"qplugin.h"
+i"qpluginloader.h"
+i"quuid.h"
+i"qatomic.h"
+i"qbasicatomic.h"
+i"qmutex.h"
+i"qreadwritelock.h"
+i"qsemaphore.h"
+i"qthread.h"
+i"qthreadstorage.h"
+i"qwaitcondition.h"
+i"qalgorithms.h"
+i"qbitarray.h"
+i"qbytearray.h"
+i"qbytearraymatcher.h"
+i"qcache.h"
+i"qchar.h"
+i"qcontainerfwd.h"
+i"qcryptographichash.h"
+i"qdatetime.h"
+i"qhash.h"
+i"qiterator.h"
+i"qline.h"
+i"qlinkedlist.h"
+i"qlist.h"
+i"qlocale.h"
+i"qmap.h"
+i"qpair.h"
+i"qpoint.h"
+i"qqueue.h"
+i"qrect.h"
+i"qregexp.h"
+i"qset.h"
+i"qshareddata.h"
+i"qsharedpointer.h"
+i"qsize.h"
+i"qstack.h"
+i"qstring.h"
+i"qstringlist.h"
+i"qstringmatcher.h"
+i"qtextboundaryfinder.h"
+i"qtimeline.h"
+i"qvarlengtharray.h"
+i"qvector.h"
+i"qxmlstream.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qabstracteventdispatcher.h
+c000000004AD797780000000000000E7A
+t1255643000
+s3706
+i<QtCore/qobject.h>
+i<QtCore/qeventloop.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qabstractfileengine.h
+c000000004AD797780000000000001E6E
+t1255643000
+s7790
+i<QtCore/qdir.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qabstractitemmodel.h
+c000000004AD797780000000000003C47
+t1255643000
+s15431
+i<QtCore/qvariant.h>
+i<QtCore/qobject.h>
+i<QtCore/qhash.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qalgorithms.h
+c000000004AD79778000000000000430F
+t1255643000
+s17167
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qatomic.h
+c000000004AD797780000000000001AB4
+t1255643000
+s6836
+i<QtCore/qglobal.h>
+i<QtCore/qbasicatomic.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qbasicatomic.h
+c000000004AD7977800000000000016FE
+t1255643000
+s5886
+i<QtCore/qglobal.h>
+i<QtCore/qatomic_bootstrap.h>
+i<QtCore/qatomic_arch.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qbasictimer.h
+c000000004AD7977800000000000009BC
+t1255643000
+s2492
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qbitarray.h
+c000000004AD797780000000000001840
+t1255643000
+s6208
+i<QtCore/qbytearray.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qbuffer.h
+c000000004AD797780000000000000D13
+t1255643000
+s3347
+i<QtCore/qiodevice.h>
+i<QtCore/qbytearray.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qbytearray.h
+c000000004AD797780000000000005A5B
+t1255643000
+s23131
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<string.h>
+i<stdarg.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qbytearraymatcher.h
+c000000004AD797780000000000000C9E
+t1255643000
+s3230
+i<QtCore/qbytearray.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qcache.h
+c000000004AD7977800000000000017B1
+t1255643000
+s6065
+i<QtCore/qhash.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qchar.h
+c000000004AD7977800000000000031F4
+t1255643000
+s12788
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qcontainerfwd.h
+c000000004AD797780000000000000A6A
+t1255643000
+s2666
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qcoreapplication.h
+c000000004AD797780000000000002746
+t1255643000
+s10054
+i<QtCore/qobject.h>
+i<QtCore/qcoreevent.h>
+i<QtCore/qeventloop.h>
+i<QtCore/qstringlist.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qcoreevent.h
+c000000004AD797780000000000003CD8
+t1255643000
+s15576
+i<QtCore/qnamespace.h>
+i<QtCore/qbytearray.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qcryptographichash.h
+c000000004AD797780000000000000A5A
+t1255643000
+s2650
+i<QtCore/qbytearray.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qdatastream.h
+c000000004AD797780000000000002B3B
+t1255643000
+s11067
+i<QtCore/qiodevice.h>
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qdatetime.h
+c000000004AD797780000000000002C22
+t1255643000
+s11298
+i<QtCore/qstring.h>
+i<QtCore/qnamespace.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qdebug.h
+c000000004AD7977800000000000024D7
+t1255643000
+s9431
+i<QtCore/qalgorithms.h>
+i<QtCore/qhash.h>
+i<QtCore/qlist.h>
+i<QtCore/qmap.h>
+i<QtCore/qpair.h>
+i<QtCore/qtextstream.h>
+i<QtCore/qstring.h>
+i<QtCore/qvector.h>
+i<QtCore/qset.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qdir.h
+c000000004AD797780000000000002568
+t1255643000
+s9576
+i<QtCore/qstring.h>
+i<QtCore/qfileinfo.h>
+i<QtCore/qstringlist.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qdiriterator.h
+c000000004AD797780000000000000C8B
+t1255643000
+s3211
+i<QtCore/qdir.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qendian.h
+c000000004AD797780000000000002DBF
+t1255643000
+s11711
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qeventloop.h
+c000000004AD797780000000000000C6D
+t1255643000
+s3181
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qfactoryinterface.h
+c000000004AD79778000000000000094D
+t1255643000
+s2381
+i<QtCore/qobject.h>
+i<QtCore/qstringlist.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qfeatures.h
+c000000004AD79778000000000000508F
+t1255643000
+s20623
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qfile.h
+c000000004AD7977800000000000018D5
+t1255643000
+s6357
+i<QtCore/qiodevice.h>
+i<QtCore/qstring.h>
+i<stdio.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qfileinfo.h
+c000000004AD79778000000000000177D
+t1255643000
+s6013
+i<QtCore/qfile.h>
+i<QtCore/qlist.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qfilesystemwatcher.h
+c000000004AD797780000000000000BEC
+t1255643000
+s3052
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qfsfileengine.h
+c000000004AD79778000000000000109A
+t1255643000
+s4250
+i<QtCore/qabstractfileengine.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qfuture.h
+c000000004AD797780000000000002374
+t1255643000
+s9076
+i<QtCore/qglobal.h>
+i<QtCore/qfutureinterface.h>
+i<QtCore/qstring.h>
+i<QtCore/qtconcurrentcompilertest.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qfutureinterface.h
+c000000004AD7977800000000000025E4
+t1255643000
+s9700
+i<QtCore/qglobal.h>
+i<QtCore/qrunnable.h>
+i<QtCore/qmutex.h>
+i<QtCore/qtconcurrentexception.h>
+i<QtCore/qtconcurrentresultstore.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qfuturesynchronizer.h
+c000000004AD797780000000000000D76
+t1255643000
+s3446
+i<QtCore/qfuture.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qfuturewatcher.h
+c000000004AD797780000000000001887
+t1255643000
+s6279
+i<QtCore/qfuture.h>
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qglobal.h
+c000000004AD797780000000000012689
+t1255643000
+s75401
+i<stddef.h>
+i<QtCore/qconfig.h>
+i<AvailabilityMacros.h>
+i<QtCore/qfeatures.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qhash.h
+c000000004AD7977800000000000072BD
+t1255643000
+s29373
+i<QtCore/qatomic.h>
+i<QtCore/qchar.h>
+i<QtCore/qiterator.h>
+i<QtCore/qlist.h>
+i<QtCore/qpair.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qiodevice.h
+c000000004AD797780000000000002076
+t1255643000
+s8310
+i<QtCore/qobject.h>
+i<QtCore/qobjectdefs.h>
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qiterator.h
+c000000004AD7977800000000000022FA
+t1255643000
+s8954
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qlibrary.h
+c000000004AD797780000000000000FF2
+t1255643000
+s4082
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qlibraryinfo.h
+c000000004AD797780000000000000AAD
+t1255643000
+s2733
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qline.h
+c000000004AD7977800000000000026B4
+t1255643000
+s9908
+i<QtCore/qpoint.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qlinkedlist.h
+c000000004AD797780000000000003A71
+t1255643000
+s14961
+i<QtCore/qiterator.h>
+i<QtCore/qatomic.h>
+i<iterator>
+i<list>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qlist.h
+c000000004AD797780000000000005CFB
+t1255643000
+s23803
+i<QtCore/qiterator.h>
+i<QtCore/qatomic.h>
+i<QtCore/qalgorithms.h>
+i<iterator>
+i<list>
+i<new>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qlocale.h
+c000000004AD797780000000000004BFB
+t1255643000
+s19451
+i<QtCore/qstring.h>
+i<QtCore/qobjectdefs.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qmap.h
+c000000004AD797780000000000007A33
+t1255643000
+s31283
+i<QtCore/qatomic.h>
+i<QtCore/qiterator.h>
+i<QtCore/qlist.h>
+i<map>
+i<new>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qmath.h
+c000000004AD797780000000000000D97
+t1255643000
+s3479
+i<math.h>
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qmetaobject.h
+c000000004AD797780000000000002220
+t1255643000
+s8736
+i<QtCore/qobjectdefs.h>
+i<QtCore/qvariant.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qmetatype.h
+c000000004AD797780000000000002BE4
+t1255643000
+s11236
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<QtCore/qdatastream.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qmimedata.h
+c000000004AD797780000000000000CE3
+t1255643000
+s3299
+i<QtCore/qvariant.h>
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qmutex.h
+c000000004AD7977800000000000012D6
+t1255643000
+s4822
+i<QtCore/qglobal.h>
+i<new>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qnamespace.h
+c000000004AD79778000000000000BA04
+t1255643000
+s47620
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qnumeric.h
+c000000004AD797780000000000000A14
+t1255643000
+s2580
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qobject.h
+c000000004AD797780000000000003D6D
+t1255643000
+s15725
+i<QtCore/qobjectdefs.h>
+i<QtCore/qstring.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qlist.h>
+i<QtCore/qcoreevent.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qobjectcleanuphandler.h
+c000000004AD7977800000000000009F3
+t1255643000
+s2547
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qobjectdefs.h
+c000000004AD7977800000000000040E5
+t1255643000
+s16613
+i<QtCore/qnamespace.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qpair.h
+c000000004AD797780000000000000F2C
+t1255643000
+s3884
+i<QtCore/qdatastream.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qplugin.h
+c000000004AD79778000000000000130B
+t1255643000
+s4875
+i<QtCore/qobject.h>
+i<QtCore/qpointer.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qpluginloader.h
+c000000004AD797780000000000000C47
+t1255643000
+s3143
+i<QtCore/qlibrary.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qpoint.h
+c000000004AD79778000000000000249B
+t1255643000
+s9371
+i<QtCore/qnamespace.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qpointer.h
+c000000004AD797780000000000001475
+t1255643000
+s5237
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qprocess.h
+c000000004AD797780000000000001892
+t1255643000
+s6290
+i<QtCore/qiodevice.h>
+i<QtCore/qstringlist.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qqueue.h
+c000000004AD797780000000000000997
+t1255643000
+s2455
+i<QtCore/qlist.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qreadwritelock.h
+c000000004AD7977800000000000018AB
+t1255643000
+s6315
+i<QtCore/qglobal.h>
+i<limits.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qrect.h
+c000000004AD7977800000000000056D2
+t1255643000
+s22226
+i<QtCore/qsize.h>
+i<QtCore/qpoint.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qregexp.h
+c000000004AD7977800000000000014F3
+t1255643000
+s5363
+i<QtCore/qstring.h>
+i<new>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qresource.h
+c000000004AD797780000000000000D7D
+t1255643000
+s3453
+i<QtCore/qstring.h>
+i<QtCore/qlocale.h>
+i<QtCore/qstringlist.h>
+i<QtCore/qlist.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qrunnable.h
+c000000004AD7977800000000000009A1
+t1255643000
+s2465
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qsemaphore.h
+c000000004AD7977800000000000009DF
+t1255643000
+s2527
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qset.h
+c000000004AD797780000000000003462
+t1255643000
+s13410
+i<QtCore/qhash.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qsettings.h
+c000000004AD7977800000000000027E2
+t1255643000
+s10210
+i<QtCore/qobject.h>
+i<QtCore/qvariant.h>
+i<QtCore/qstring.h>
+i<QtCore/qstringlist.h>
+i<ctype.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qshareddata.h
+c000000004AD797780000000000001BE0
+t1255643000
+s7136
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qsharedmemory.h
+c000000004AD797780000000000000CC5
+t1255643000
+s3269
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qsharedpointer.h
+c000000004AD797780000000000001595
+t1255643000
+s5525
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<QtCore/qshareddata.h>
+i<QtCore/qsharedpointer_impl.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qsignalmapper.h
+c000000004AD797780000000000000CA9
+t1255643000
+s3241
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qsize.h
+c000000004AD79778000000000000284F
+t1255643000
+s10319
+i<QtCore/qnamespace.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qsocketnotifier.h
+c000000004AD797780000000000000B45
+t1255643000
+s2885
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qstack.h
+c000000004AD797780000000000000AC1
+t1255643000
+s2753
+i<QtCore/qvector.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qstring.h
+c000000004AD79778000000000000E551
+t1255643000
+s58705
+i<QtCore/qchar.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qatomic.h>
+i<QtCore/qnamespace.h>
+i<Qt3Support/q3cstring.h>
+i<string>
+i<string>
+i<stdarg.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qstringlist.h
+c000000004AD79778000000000000263B
+t1255643000
+s9787
+i<QtCore/qalgorithms.h>
+i<QtCore/qdatastream.h>
+i<QtCore/qlist.h>
+i<QtCore/qregexp.h>
+i<QtCore/qstring.h>
+i<QtCore/qstringmatcher.h>
+i<Qt3Support/q3valuelist.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qstringmatcher.h
+c000000004AD797780000000000000CDB
+t1255643000
+s3291
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qsystemsemaphore.h
+c000000004AD797780000000000000B9C
+t1255643000
+s2972
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentcompilertest.h
+c000000004AD797780000000000000966
+t1255643000
+s2406
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentexception.h
+c000000004AD797780000000000000D40
+t1255643000
+s3392
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<exception>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentfilter.h
+c000000004AD79778000000000000735D
+t1255643000
+s29533
+i<QtCore/qglobal.h>
+i<QtCore/qtconcurrentfilterkernel.h>
+i<QtCore/qtconcurrentfunctionwrappers.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentfilterkernel.h
+c000000004AD797780000000000002D8E
+t1255643000
+s11662
+i<QtCore/qglobal.h>
+i<QtCore/qtconcurrentiteratekernel.h>
+i<QtCore/qtconcurrentmapkernel.h>
+i<QtCore/qtconcurrentreducekernel.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentfunctionwrappers.h
+c000000004AD797780000000000001233
+t1255643000
+s4659
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentiteratekernel.h
+c000000004AD79778000000000000269A
+t1255643000
+s9882
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<QtCore/qtconcurrentmedian.h>
+i<QtCore/qtconcurrentthreadengine.h>
+i<iterator>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentmap.h
+c000000004AD797780000000000007EB1
+t1255643000
+s32433
+i<QtCore/qglobal.h>
+i<QtCore/qtconcurrentmapkernel.h>
+i<QtCore/qtconcurrentreducekernel.h>
+i<QtCore/qtconcurrentfunctionwrappers.h>
+i<QtCore/qstringlist.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentmapkernel.h
+c000000004AD79778000000000000250D
+t1255643000
+s9485
+i<QtCore/qglobal.h>
+i<QtCore/qtconcurrentiteratekernel.h>
+i<QtCore/qtconcurrentreducekernel.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentmedian.h
+c000000004AD797780000000000000EB9
+t1255643000
+s3769
+i<QtCore/qglobal.h>
+i<QtCore/qvector.h>
+i<QtCore/qalgorithms.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentreducekernel.h
+c000000004AD797780000000000001D84
+t1255643000
+s7556
+i<QtCore/qglobal.h>
+i<QtCore/qatomic.h>
+i<QtCore/qlist.h>
+i<QtCore/qmap.h>
+i<QtCore/qmutex.h>
+i<QtCore/qthread.h>
+i<QtCore/qthreadpool.h>
+i<QtCore/qvector.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentresultstore.h
+c000000004AD797780000000000001D22
+t1255643000
+s7458
+i<QtCore/qglobal.h>
+i<QtCore/qmap.h>
+i<QtCore/qdebug.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentrun.h
+c000000004AD797780000000000004946
+t1255643000
+s18758
+i<QtCore/qglobal.h>
+i<QtCore/qtconcurrentrunbase.h>
+i<QtCore/qtconcurrentstoredfunctioncall.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentrunbase.h
+c000000004AD797780000000000000E2D
+t1255643000
+s3629
+i<QtCore/qglobal.h>
+i<QtCore/qfuture.h>
+i<QtCore/qrunnable.h>
+i<QtCore/qthreadpool.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentstoredfunctioncall.h
+c000000004AD79778000000000000DB4A
+t1255643000
+s56138
+i<QtCore/qglobal.h>
+i<QtCore/qtconcurrentrunbase.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtconcurrentthreadengine.h
+c000000004AD797780000000000002196
+t1255643000
+s8598
+i<QtCore/qglobal.h>
+i<QtCore/qthreadpool.h>
+i<QtCore/qfuture.h>
+i<QtCore/qdebug.h>
+i<QtCore/qtconcurrentexception.h>
+i<QtCore/qwaitcondition.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtemporaryfile.h
+c000000004AD797780000000000000D29
+t1255643000
+s3369
+i<QtCore/qiodevice.h>
+i<QtCore/qfile.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtextboundaryfinder.h
+c000000004AD797780000000000000D69
+t1255643000
+s3433
+i<QtCore/qchar.h>
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtextcodec.h
+c000000004AD7977800000000000019F3
+t1255643000
+s6643
+i<QtCore/qstring.h>
+i<QtCore/qlist.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtextcodecplugin.h
+c000000004AD797780000000000000CA1
+t1255643000
+s3233
+i<QtCore/qplugin.h>
+i<QtCore/qfactoryinterface.h>
+i<QtCore/qlist.h>
+i<QtCore/qbytearray.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtextstream.h
+c000000004AD79778000000000000337D
+t1255643000
+s13181
+i<QtCore/qiodevice.h>
+i<QtCore/qstring.h>
+i<QtCore/qchar.h>
+i<QtCore/qlocale.h>
+i<QtCore/qtextcodec.h>
+i<stdio.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qthread.h
+c000000004AD7977800000000000010D1
+t1255643000
+s4305
+i<QtCore/qobject.h>
+i<limits.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qthreadpool.h
+c000000004AD797780000000000000C06
+t1255643000
+s3078
+i<QtCore/qglobal.h>
+i<QtCore/qthread.h>
+i<QtCore/qrunnable.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qthreadstorage.h
+c000000004AD79778000000000000107D
+t1255643000
+s4221
+i<QtCore/qglobal.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtimeline.h
+c000000004AD79778000000000000105A
+t1255643000
+s4186
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtimer.h
+c000000004AD797780000000000000DD8
+t1255643000
+s3544
+i<QtCore/qbasictimer.h>
+i<QtCore/qobject.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qtranslator.h
+c000000004AD797780000000000000D23
+t1255643000
+s3363
+i<QtCore/qobject.h>
+i<QtCore/qbytearray.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qurl.h
+c000000004AD7977800000000000026CE
+t1255643000
+s9934
+i<QtCore/qbytearray.h>
+i<QtCore/qobjectdefs.h>
+i<QtCore/qpair.h>
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/quuid.h
+c000000004AD797780000000000001462
+t1255643000
+s5218
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qvariant.h
+c000000004AD7977800000000000045B1
+t1255643000
+s17841
+i<QtCore/qatomic.h>
+i<QtCore/qbytearray.h>
+i<QtCore/qlist.h>
+i<QtCore/qmetatype.h>
+i<QtCore/qmap.h>
+i<QtCore/qhash.h>
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qvarlengtharray.h
+c000000004AD797780000000000001ADA
+t1255643000
+s6874
+i<QtCore/qcontainerfwd.h>
+i<QtCore/qglobal.h>
+i<new>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qvector.h
+c000000004AD797780000000000006163
+t1255643000
+s24931
+i<QtCore/qiterator.h>
+i<QtCore/qatomic.h>
+i<QtCore/qalgorithms.h>
+i<QtCore/qlist.h>
+i<iterator>
+i<vector>
+i<stdlib.h>
+i<string.h>
+i<QtCore/QPointF>
+i<QtCore/QPoint>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qwaitcondition.h
+c000000004AD797780000000000000B5F
+t1255643000
+s2911
+i<QtCore/qglobal.h>
+i<limits.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers/qxmlstream.h
+c000000004AD7977800000000000046A9
+t1255643000
+s18089
+i<QtCore/QIODevice>
+i<QtCore/QString>
+i<QtCore/QVector>
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/QtGui
+c000000004AD797830000000000ABBF48
+t1255643011
+s11255624
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QApplication
+c000000004AD79782000000000000001A
+t1255643010
+s26
+i"qapplication.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QColor
+c000000004AD797820000000000000014
+t1255643010
+s20
+i"qcolor.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QGraphicsView
+c000000004AD79782000000000000001B
+t1255643010
+s27
+i"qgraphicsview.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QMainWindow
+c000000004AD797830000000000000019
+t1255643011
+s25
+i"qmainwindow.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QUndoStack
+c000000004AD797830000000000000018
+t1255643011
+s24
+i"qundostack.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QVBoxLayout
+c000000004AD797830000000000000018
+t1255643011
+s24
+i"qboxlayout.h"
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qapplication.h
+c000000004AD7978200000000000035C8
+t1255643010
+s13768
+i<QtCore/qcoreapplication.h>
+i<QtGui/qwindowdefs.h>
+i<QtCore/qpoint.h>
+i<QtCore/qsize.h>
+i<QtGui/qcursor.h>
+i<QtGui/qdesktopwidget.h>
+i<QtGui/qwidget.h>
+i<QtGui/qpalette.h>
+i<QtGui/qrgb.h>
+i<QtGui/qtransportauth_qws.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qboxlayout.h
+c000000004AD7978200000000000015ED
+t1255643010
+s5613
+i<QtGui/qlayout.h>
+i<QtGui/qwidget.h>
+i<limits.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qcolor.h
+c000000004AD797820000000000001E83
+t1255643010
+s7811
+i<QtGui/qrgb.h>
+i<QtCore/qnamespace.h>
+i<QtCore/qstringlist.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qgraphicsview.h
+c000000004AD7978200000000000031F5
+t1255643010
+s12789
+i<QtCore/qmetatype.h>
+i<QtGui/qpainter.h>
+i<QtGui/qscrollarea.h>
+i<QtGui/qgraphicsscene.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qmainwindow.h
+c000000004AD797830000000000001C3A
+t1255643011
+s7226
+i<QtGui/qwidget.h>
+i<QtGui/qtabwidget.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qundostack.h
+c000000004AD797830000000000001172
+t1255643011
+s4466
+i<QtCore/qobject.h>
+i<QtCore/qstring.h>
+
+N/opt/local/libexec/qt4-mac/lib/QtNetwork.framework/QtNetwork
+c000000004AD7977A000000000014F4C0
+t1255643002
+s1373376
+
+N/opt/local/libexec/qt4-mac/lib/QtOpenGL.framework/QtOpenGL
+c000000004AD7978C000000000009CD30
+t1255643020
+s642352
+
+N/opt/local/libexec/qt4-mac/lib/QtSql.framework/QtSql
+c000000004AD79784000000000004B168
+t1255643012
+s307560
+
+N/opt/local/libexec/qt4-mac/lib/QtSvg.framework/QtSvg
+c000000004AD79790000000000006DBE8
+t1255643024
+s449512
+
+N/opt/local/libexec/qt4-mac/lib/QtXml.framework/QtXml
+c000000004AD797780000000000054D60
+t1255643000
+s347488
+
+N/usr/include/AvailabilityMacros.h
+c000000004A11A9B30000000000006724
+t1242671539
+s26404
+
+N/usr/include/ctype.h
+c000000004A5C14A60000000000002C18
+t1247548582
+s11288
+
+N/usr/include/errno.h
+c000000004A5C14A600000000000003EB
+t1247548582
+s1003
+
+N/usr/include/locale.h
+c000000004A5C14A600000000000008F0
+t1247548582
+s2288
+
+N/usr/include/math.h
+c000000004A5C14A000000000000004F1
+t1247548576
+s1265
+
+N/usr/include/stdio.h
+c000000004A5C14A70000000000004174
+t1247548583
+s16756
+
+N/usr/include/stdlib.h
+c000000004A5C14A70000000000002DF5
+t1247548583
+s11765
+
+N/usr/include/string.h
+c000000004A5C14A70000000000001731
+t1247548583
+s5937
+
+N/usr/include/strings.h
+c000000004A5C14A60000000000000DA4
+t1247548582
+s3492
+
+N/usr/include/sys/_types.h
+c000000004A73D6560000000000001845
+t1249105494
+s6213
+
+N/usr/include/time.h
+c000000004A5C14A7000000000000178E
+t1247548583
+s6030
+
+NInfo.plist
+c000000004AD874CC000000000000025E
+t1255699660
+s606
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies277577699#277577699#0(0"0(0#1#0"4300882208#0"0#
+
+CCompileC build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/MainWindow.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s277577689.089509
+e277577691.719192
+r1
+xCompileC
+xbuild/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/MainWindow.o
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@82"Compile /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.cpp277577689#277577691#0(936"In file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qnamespace.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobjectdefs.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwindowdefs.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwidget.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qmainwindow.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QMainWindow:1,                 from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.h:13,                 from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.cpp:1:/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h:315:6: warning: #warning "Support for this version of Mac OS X is still preliminary"1(22@68"#warning "Support for this version of Mac OS X is still preliminary"277577691#785#151#9(7@96"In file included from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.cpp277577691#18446744073709551615#0#0(6@74"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.cpp277577683#1#0#1#0#0"0(7@94"In file included from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.h277577691#18446744073709551615#0#0(6@72"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.h277474944#13#0#13#0#0"0(7@99"In file included from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QMainWindow277577691#18446744073709551615#0#0(6@77"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QMainWindow277335811#1#0#1#0#0"0(7@101"In file included from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qmainwindow.h277577691#18446744073709551615#0#0(6@79"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qmainwindow.h277335811#45#0#45#0#0"0(7@86"In file included from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwidget.h277577691#18446744073709551615#0#0(6@64"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwidget.h277335811#45#0#45#0#0"0(7@90"In file included from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwindowdefs.h277577691#18446744073709551615#0#0(6@68"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwindowdefs.h277335811#45#0#45#0#0"0(7@91"In file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobjectdefs.h277577691#18446744073709551615#0#0(6@69"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobjectdefs.h277335800#45#0#45#0#0"0(7@90"In file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qnamespace.h277577691#18446744073709551615#0#0(6@68"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qnamespace.h277335800#45#0#45#0#0"0(13@137"#warning "Support for this version of Mac OS X is still preliminary" in /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h277577691#18446744073709551615#0#0(6@65"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h277335800#315#0#315#0#0"0(6@65"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h277335800#315#0#315#0#12"#warning "*"0(0#0#74"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.cpp4300882208#1801"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.3 -gdwarf-2 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/QGisLibTest.hmap -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug -F/opt/local/libexec/qt4-mac/lib -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/include -I/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtCore -I/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtXml -I/opt/local/libexec/qt4-mac/include/QtGui -I/opt/local/libexec/qt4-mac/include -I/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis -I/core -I/gui -I/plugins -I/providers -I/raster -I/ui -I. -I. -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/opt/local/libexec/qt4-mac/mkspecs/macx-xcode -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.cpp -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/MainWindow.o0#
+
+CCompileC build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s277474945.830995
+e277474948.509374
+r1
+xCompileC
+xbuild/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/main.o
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+oIn file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qnamespace.h:45,
+o                 from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobjectdefs.h:45,
+o                 from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobject.h:47,
+o                 from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qcoreapplication.h:45,
+o                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qapplication.h:45,
+o                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QApplication:1,
+o                 from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/main.cpp:2:
+o/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h:315:6: warning: #warning "Support for this version of Mac OS X is still preliminary"
+lSLF07#2@76"Compile /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/main.cpp277474945#277474948#0(840"In file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qnamespace.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobjectdefs.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobject.h:47,                 from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qcoreapplication.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qapplication.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QApplication:1,                 from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/main.cpp:2:/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h:315:6: warning: #warning "Support for this version of Mac OS X is still preliminary"1(22@68"#warning "Support for this version of Mac OS X is still preliminary"277474945#689#151#8(7@90"In file included from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/main.cpp277474945#18446744073709551615#0#0(6@68"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/main.cpp277464679#2#0#2#0#0"0(7@100"In file included from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QApplication277474945#18446744073709551615#0#0(6@78"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QApplication277335810#1#0#1#0#0"0(7@102"In file included from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qapplication.h277474945#18446744073709551615#0#0(6@80"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qapplication.h277335810#45#0#45#0#0"0(7@96"In file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qcoreapplication.h277474945#18446744073709551615#0#0(6@74"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qcoreapplication.h277335800#45#0#45#0#0"0(7@87"In file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobject.h277474945#18446744073709551615#0#0(6@65"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobject.h277335800#47#0#47#0#0"0(7@91"In file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobjectdefs.h277474945#18446744073709551615#0#0(6@69"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobjectdefs.h277335800#45#0#45#0#0"0(7@90"In file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qnamespace.h277474945#18446744073709551615#0#0(6@68"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qnamespace.h277335800#45#0#45#0#0"0(13@137"#warning "Support for this version of Mac OS X is still preliminary" in /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h277474945#18446744073709551615#0#0(6@65"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h277335800#315#0#315#0#0"0(6@65"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h277335800#315#0#315#0#12"#warning "*"0(0#0#68"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/main.cpp4300882208#1789"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.3 -gdwarf-2 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/QGisLibTest.hmap -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug -F/opt/local/libexec/qt4-mac/lib -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/include -I/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtCore -I/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtXml -I/opt/local/libexec/qt4-mac/include/QtGui -I/opt/local/libexec/qt4-mac/include -I/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis -I/core -I/gui -I/plugins -I/providers -I/raster -I/ui -I. -I. -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/opt/local/libexec/qt4-mac/mkspecs/macx-xcode -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/main.cpp -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/main.o0#
+
+CCompileC build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/moc_MainWindow.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/moc_MainWindow.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s277474948.509618
+e277474950.828759
+r1
+xCompileC
+xbuild/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/moc_MainWindow.o
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/moc_MainWindow.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+oIn file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qnamespace.h:45,
+o                 from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobjectdefs.h:45,
+o                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwindowdefs.h:45,
+o                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwidget.h:45,
+o                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qmainwindow.h:45,
+o                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QMainWindow:1,
+o                 from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.h:13,
+o                 from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/moc_MainWindow.cpp:10:
+o/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h:315:6: warning: #warning "Support for this version of Mac OS X is still preliminary"
+lSLF07#2@86"Compile /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/moc_MainWindow.cpp277474948#277474950#0(941"In file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qnamespace.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobjectdefs.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwindowdefs.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwidget.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qmainwindow.h:45,                 from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QMainWindow:1,                 from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.h:13,                 from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/moc_MainWindow.cpp:10:/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h:315:6: warning: #warning "Support for this version of Mac OS X is still preliminary"1(22@68"#warning "Support for this version of Mac OS X is still preliminary"277474948#790#151#9(7@100"In file included from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/moc_MainWindow.cpp277474948#18446744073709551615#0#0(6@78"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/moc_MainWindow.cpp277474945#10#0#10#0#0"0(7@94"In file included from /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.h277474948#18446744073709551615#0#0(6@72"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/MainWindow.h277474944#13#0#13#0#0"0(7@99"In file included from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QMainWindow277474948#18446744073709551615#0#0(6@77"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/QMainWindow277335811#1#0#1#0#0"0(7@101"In file included from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qmainwindow.h277474948#18446744073709551615#0#0(6@79"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers/qmainwindow.h277335811#45#0#45#0#0"0(7@86"In file included from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwidget.h277474948#18446744073709551615#0#0(6@64"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwidget.h277335811#45#0#45#0#0"0(7@90"In file included from /opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwindowdefs.h277474948#18446744073709551615#0#0(6@68"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Headers/qwindowdefs.h277335811#45#0#45#0#0"0(7@91"In file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobjectdefs.h277474948#18446744073709551615#0#0(6@69"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qobjectdefs.h277335800#45#0#45#0#0"0(7@90"In file included from /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qnamespace.h277474948#18446744073709551615#0#0(6@68"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qnamespace.h277335800#45#0#45#0#0"0(13@137"#warning "Support for this version of Mac OS X is still preliminary" in /opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h277474948#18446744073709551615#0#0(6@65"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h277335800#315#0#315#0#0"0(6@65"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Headers/qglobal.h277335800#315#0#315#0#12"#warning "*"0(0#0#78"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/moc_MainWindow.cpp4300882208#1809"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -mdynamic-no-pic -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.3 -gdwarf-2 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/QGisLibTest.hmap -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug -F/opt/local/libexec/qt4-mac/lib -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/include -I/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtCore -I/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers -I/opt/local/libexec/qt4-mac/include/QtXml -I/opt/local/libexec/qt4-mac/include/QtGui -I/opt/local/libexec/qt4-mac/include -I/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis -I/core -I/gui -I/plugins -I/providers -I/raster -I/ui -I. -I. -I/opt/local/include -I/usr/local/include -I/System/Library/Frameworks/CarbonCore.framework/Headers -I/opt/local/libexec/qt4-mac/mkspecs/macx-xcode -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources -pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/moc_MainWindow.cpp -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/moc_MainWindow.o0#
+
+CLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/MacOS/QGisLibTest normal x86_64
+s277577691.719580
+e277577696.336409
+r1
+xLd
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/MacOS/QGisLibTest
+xnormal
+xx86_64
+lSLF07#2@119"Link /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/MacOS/QGisLibTest277577691#277577696#0(0"0(0#0#0"4300882208#1304"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv MACOSX_DEPLOYMENT_TARGET 10.3    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug -L/opt/local/libexec/qt4-mac/lib -L/opt/local/lib -L/opt/local/libexec/qt4-mac/lib -L/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks -L/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/../../../../../tests/qgis_lib -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug -F/opt/local/libexec/qt4-mac/lib -filelist /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/QGisLibTest.LinkFileList -mmacosx-version-min=10.3 -headerpad_max_install_names -L/opt/local/libexec/qt4-mac/lib -F/opt/local/libexec/qt4-mac/lib -L/opt/local/lib -L/opt/local/libexec/qt4-mac/lib -F/opt/local/libexec/qt4-mac/lib -lm -framework QtGui -framework Carbon -framework AppKit -lpng12.0 -framework QtCore -lz.1.2.3 -framework ApplicationServices -lqgis_analysis.1.3.0 -lqgis_core.1.3.0 -lqgis_gui.1.3.0 -lgdal.1 -framework QtXml -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/MacOS/QGisLibTest0#
+
+CPBXCp QGisLibTest.app build/Debug/QGisLibTest.app
+s277577696.387892
+e277577698.615411
+r1
+xPBXCp
+xQGisLibTest.app
+xbuild/Debug/QGisLibTest.app
+lSLF07#2@32"Copy build/Debug/QGisLibTest.app277577696#277577698#0(0"0(0#0#87"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app4300882208#363"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest0#
+
+CPhaseScriptExecution "Qt Preprocessors" /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Script-A0A52A2ADF7A1E2A99738674.sh
+s277577699.607333
+e277577699.628486
+r1
+xPhaseScriptExecution
+xQt Preprocessors
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Script-A0A52A2ADF7A1E2A99738674.sh
+omake: Nothing to be done for `preprocess'.
+lSLF07#2@42"Run custom shell script 'Qt Preprocessors'277577699#277577699#0(43"make: Nothing to be done for `preprocess'.1(13@43"make: Nothing to be done for `preprocess'.277577699#0#43#0(1@0"0(0#0#0"4300882208#18207"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER rilley_elf    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386 ppc"    setenv ARCHS_STANDARD_32_BIT "i386 ppc"    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build    setenv BUILD_ROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug    setenv CACHE_ROOT /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug    setenv CONFIGURATION_TEMP_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug    setenv CONTENTS_FOLDER_PATH QGisLibTest.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH /Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/QGisLibTest.dst    setenv DWARF_DSYM_FILE_NAME QGisLibTest.app.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug    setenv DYLIB_COMPATIBILITY_VERSION 1.0    setenv DYLIB_CURRENT_VERSION 1.0.0    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH QGisLibTest.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH QGisLibTest.app/Contents/MacOS    setenv EXECUTABLE_NAME QGisLibTest    setenv EXECUTABLE_PATH QGisLibTest.app/Contents/MacOS/QGisLibTest    setenv FILE_LIST /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH QGisLibTest.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug\"  \"/opt/local/libexec/qt4-mac/lib\""    setenv FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 "\"/opt/local/libexec/qt4-mac/lib\""    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME QGisLibTest.app    setenv GCC3_VERSION 3.3    setenv GCC_DYNAMIC_NO_PIC YES    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/include\" /opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers /opt/local/libexec/qt4-mac/include/QtCore /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers /opt/local/libexec/qt4-mac/include/QtXml /opt/local/libexec/qt4-mac/include/QtGui /opt/local/libexec/qt4-mac/include /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis /core /gui /plugins /providers /raster /ui . . /opt/local/include /usr/local/include /System/Library/Frameworks/CarbonCore.framework/Headers /opt/local/libexec/qt4-mac/mkspecs/macx-xcode"    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH QGisLibTest.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH /InfoPlist.strings    setenv INSTALL_DIR /tmp/QGisLibTest.dst/Users/rilley_elf/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER rilley_elf    setenv INSTALL_PATH /Users/rilley_elf/Applications    setenv INSTALL_ROOT /tmp/QGisLibTest.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH QGisLibTest.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/QGisLibTest-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug /opt/local/libexec/qt4-mac/lib /opt/local/lib /opt/local/libexec/qt4-mac/lib /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/../../../../../tests/qgis_lib"    setenv LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 "\"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/../../../../../tests/qgis_lib\""    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/QGisLibTest.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.3    setenv MAC_OS_X_VERSION_ACTUAL 1061    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0601    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal    setenv OBJROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "-pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_CPLUSPLUSFLAGS "-pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_LDFLAGS "-headerpad_max_install_names -L/opt/local/libexec/qt4-mac/lib -F/opt/local/libexec/qt4-mac/lib -L/opt/local/lib -L/opt/local/libexec/qt4-mac/lib -F/opt/local/libexec/qt4-mac/lib -lm"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH QGisLibTest.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/PkgInfo    setenv PKGINFO_PATH QGisLibTest.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH QGisLibTest.app/Contents/PlugIns    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH QGisLibTest.app/Contents/PrivateHeaders    setenv PRODUCT_NAME QGisLibTest    setenv PRODUCT_SETTINGS_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT QGisLibTest    setenv PROJECT_DERIVED_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/DerivedSources    setenv PROJECT_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv PROJECT_FILE_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/QGisLibTest.xcodeproj    setenv PROJECT_NAME QGisLibTest    setenv PROJECT_TEMP_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build    setenv PUBLIC_HEADERS_FOLDER_PATH QGisLibTest.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH QGisLibTest.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_DIR /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_NAME macosx10.6    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH QGisLibTest.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH QGisLibTest.app/Contents/SharedSupport    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv SRCROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/SymbolRepositories    setenv SYMROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME QGisLibTest    setenv TARGET_BUILD_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug    setenv TARGET_NAME QGisLibTest    setenv TARGET_TEMP_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build    setenv TEMP_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build    setenv TEMP_FILES_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build    setenv TEMP_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build    setenv TEMP_ROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH QGisLibTest.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER rilley_elf    setenv USER_APPS_DIR /Users/rilley_elf/Applications    setenv USER_LIBRARY_DIR /Users/rilley_elf/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH QGisLibTest.app/Contents/version.plist    setenv VERSION_INFO_BUILDER rilley_elf    setenv VERSION_INFO_FILE QGisLibTest_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:QGisLibTest  PROJECT:QGisLibTest-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME QGisLibTest.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_VERSION_ACTUAL 0320    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    setenv YACCFLAGS -d    /bin/sh -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Script-A0A52A2ADF7A1E2A99738674.sh0#
+
+CPhaseScriptExecution "Qt Qmake" /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Script-D7BA7D76DAB5DD13389D6332.sh
+s277577699.430584
+e277577699.607229
+r1
+xPhaseScriptExecution
+xQt Qmake
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Script-D7BA7D76DAB5DD13389D6332.sh
+omake: `QGisLibTest.xcodeproj/project.pbxproj' is up to date.
+lSLF07#2@34"Run custom shell script 'Qt Qmake'277577699#277577699#0(61"make: `QGisLibTest.xcodeproj/project.pbxproj' is up to date.1(13@61"make: `QGisLibTest.xcodeproj/project.pbxproj' is up to date.277577699#0#61#0(1@0"0(0#0#0"4300882208#18207"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER rilley_elf    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS x86_64    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386 ppc"    setenv ARCHS_STANDARD_32_BIT "i386 ppc"    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build    setenv BUILD_ROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug    setenv CACHE_ROOT /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501    setenv CCHROOT /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug    setenv CONFIGURATION_TEMP_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug    setenv CONTENTS_FOLDER_PATH QGisLibTest.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH x86_64    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING NO    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH /Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/QGisLibTest.dst    setenv DWARF_DSYM_FILE_NAME QGisLibTest.app.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug    setenv DYLIB_COMPATIBILITY_VERSION 1.0    setenv DYLIB_CURRENT_VERSION 1.0.0    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH QGisLibTest.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH QGisLibTest.app/Contents/MacOS    setenv EXECUTABLE_NAME QGisLibTest    setenv EXECUTABLE_PATH QGisLibTest.app/Contents/MacOS/QGisLibTest    setenv FILE_LIST /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH QGisLibTest.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug\"  \"/opt/local/libexec/qt4-mac/lib\""    setenv FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 "\"/opt/local/libexec/qt4-mac/lib\""    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME QGisLibTest.app    setenv GCC3_VERSION 3.3    setenv GCC_DYNAMIC_NO_PIC YES    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN YES    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_SYMBOLS_PRIVATE_EXTERN YES    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_SEARCH_PATHS "\"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/include\" /opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers /opt/local/libexec/qt4-mac/include/QtCore /opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers /opt/local/libexec/qt4-mac/include/QtXml /opt/local/libexec/qt4-mac/include/QtGui /opt/local/libexec/qt4-mac/include /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis /core /gui /plugins /providers /raster /ui . . /opt/local/include /usr/local/include /System/Library/Frameworks/CarbonCore.framework/Headers /opt/local/libexec/qt4-mac/mkspecs/macx-xcode"    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH QGisLibTest.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH /InfoPlist.strings    setenv INSTALL_DIR /tmp/QGisLibTest.dst/Users/rilley_elf/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER rilley_elf    setenv INSTALL_PATH /Users/rilley_elf/Applications    setenv INSTALL_ROOT /tmp/QGisLibTest.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH QGisLibTest.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/QGisLibTest-LinkMap-normal-x86_64.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug /opt/local/libexec/qt4-mac/lib /opt/local/lib /opt/local/libexec/qt4-mac/lib /Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/../../../../../tests/qgis_lib"    setenv LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 "\"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/../../../../../tests/qgis_lib\""    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_x86_64 /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal/x86_64/QGisLibTest.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MACOSX_DEPLOYMENT_TARGET 10.3    setenv MAC_OS_X_VERSION_ACTUAL 1061    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0601    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Objects-normal    setenv OBJROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CFLAGS "-pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_CPLUSPLUSFLAGS "-pipe -g -Wall -W -DQT_GUI_LIB -DQT_CORE_LIB -DQT_SHARED"    setenv OTHER_LDFLAGS "-headerpad_max_install_names -L/opt/local/libexec/qt4-mac/lib -F/opt/local/libexec/qt4-mac/lib -L/opt/local/lib -L/opt/local/libexec/qt4-mac/lib -F/opt/local/libexec/qt4-mac/lib -lm"    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH QGisLibTest.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/PkgInfo    setenv PKGINFO_PATH QGisLibTest.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH QGisLibTest.app/Contents/PlugIns    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH QGisLibTest.app/Contents/PrivateHeaders    setenv PRODUCT_NAME QGisLibTest    setenv PRODUCT_SETTINGS_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT QGisLibTest    setenv PROJECT_DERIVED_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/DerivedSources    setenv PROJECT_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv PROJECT_FILE_PATH /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/QGisLibTest.xcodeproj    setenv PROJECT_NAME QGisLibTest    setenv PROJECT_TEMP_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build    setenv PUBLIC_HEADERS_FOLDER_PATH QGisLibTest.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH QGisLibTest.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_DIR /Developer/SDKs/MacOSX10.6.sdk    setenv SDK_NAME macosx10.6    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH QGisLibTest.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH QGisLibTest.app/Contents/SharedSupport    setenv SKIP_INSTALL YES    setenv SOURCE_ROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv SRCROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/SymbolRepositories    setenv SYMROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME QGisLibTest    setenv TARGET_BUILD_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug    setenv TARGET_NAME QGisLibTest    setenv TARGET_TEMP_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build    setenv TEMP_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build    setenv TEMP_FILES_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build    setenv TEMP_FILE_DIR /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build    setenv TEMP_ROOT /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH QGisLibTest.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER rilley_elf    setenv USER_APPS_DIR /Users/rilley_elf/Applications    setenv USER_LIBRARY_DIR /Users/rilley_elf/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH QGisLibTest.app/Contents/version.plist    setenv VERSION_INFO_BUILDER rilley_elf    setenv VERSION_INFO_FILE QGisLibTest_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:QGisLibTest  PROJECT:QGisLibTest-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME QGisLibTest.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_VERSION_ACTUAL 0320    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    setenv YACCFLAGS -d    /bin/sh -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/QGisLibTest.build/Debug/QGisLibTest.build/Script-D7BA7D76DAB5DD13389D6332.sh0#
+
+CProcessInfoPlistFile /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/Info.plist Info.plist
+s277392464.204719
+e277392464.210785
+r1
+xProcessInfoPlistFile
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/Info.plist
+xInfo.plist
+lSLF07#2@18"Process Info.plist277392464#277392464#0(0"0(0#0#70"/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/Info.plist4300882208#373"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    builtin-infoPlistUtility Info.plist -genpkginfo /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app/Contents/Info.plist0#
+
+CTouch /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app
+s277577696.336581
+e277577696.387792
+r1
+xTouch
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app
+lSLF07#2@93"Touch /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app277577696#277577696#0(0"0(0#0#0"4300882208#177"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest    /usr/bin/touch -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/QGisLibTest/build/Debug/QGisLibTest.app0#
+

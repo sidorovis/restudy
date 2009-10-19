@@ -1,0 +1,236 @@
+// !$*UTF8*$!
+{
+	08FB7793FE84155DC02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 855BB346108730FD00753505 /* OsmXmlReader */;
+		activeTarget = 8DD76F620486A84900D96B5E /* OsmXmlReader */;
+		breakpoints = (
+			854719D8108754990014EF49 /* main.cpp:36 */,
+			854719DE108754AC0014EF49 /* main.cpp:31 */,
+		);
+		codeSenseManager = 855BB34B1087311B00753505 /* Code sense */;
+		executables = (
+			855BB346108730FD00753505 /* OsmXmlReader */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					1032,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 277305107;
+			PBXWorkspaceStateSaveDate = 277305107;
+		};
+		perUserProjectItems = {
+			854718FC108746780014EF49 /* PBXTextBookmark */ = 854718FC108746780014EF49 /* PBXTextBookmark */;
+			854719E81087570A0014EF49 /* PBXTextBookmark */ = 854719E81087570A0014EF49 /* PBXTextBookmark */;
+			854719EB1087570A0014EF49 /* PBXTextBookmark */ = 854719EB1087570A0014EF49 /* PBXTextBookmark */;
+			855BB3E310873C9200753505 /* PBXTextBookmark */ = 855BB3E310873C9200753505 /* PBXTextBookmark */;
+			855BB3E710873C9200753505 /* PBXTextBookmark */ = 855BB3E710873C9200753505 /* PBXTextBookmark */;
+			8572250E1087571900217199 /* PBXTextBookmark */ = 8572250E1087571900217199 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 855BB34A1087311B00753505 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	08FB7796FE84155DC02AAC07 /* main.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1210, 897}}";
+			sepNavSelRange = "{944, 0}";
+			sepNavVisRange = "{0, 1302}";
+		};
+	};
+	854718FC108746780014EF49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 854718FD108746780014EF49 /* string.h */;
+		name = "string.h: 92";
+		rLen = 0;
+		rLoc = 3786;
+		rType = 0;
+		vrLen = 1499;
+		vrLoc = 2784;
+	};
+	854718FD108746780014EF49 /* string.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = string.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/usr/include/string.h;
+		sourceTree = "<absolute>";
+	};
+	8547192E108748C80014EF49 /* tree.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = tree.h;
+		path = /Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/tree.h;
+		sourceTree = "<absolute>";
+	};
+	854719D8108754990014EF49 /* main.cpp:36 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		functionName = "main (int argc, char * const argv[])";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 36;
+		location = OsmXmlReader;
+		modificationTime = 277304537.593233;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	854719DE108754AC0014EF49 /* main.cpp:31 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		functionName = "main (int argc, char * const argv[])";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 31;
+		location = OsmXmlReader;
+		modificationTime = 277304537.635668;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	854719E81087570A0014EF49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8547192E108748C80014EF49 /* tree.h */;
+		name = "tree.h: 449";
+		rLen = 29;
+		rLoc = 12719;
+		rType = 0;
+		vrLen = 1689;
+		vrLoc = 12065;
+	};
+	854719EB1087570A0014EF49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		name = "main.cpp: 34";
+		rLen = 0;
+		rLoc = 944;
+		rType = 0;
+		vrLen = 1302;
+		vrLoc = 0;
+	};
+	855BB346108730FD00753505 /* OsmXmlReader */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = OsmXmlReader;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	855BB34A1087311B00753505 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	855BB34B1087311B00753505 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	855BB3E310873C9200753505 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 855BB3E410873C9200753505 /* tree.h */;
+		name = "tree.h: 872";
+		rLen = 37;
+		rLoc = 25877;
+		rType = 0;
+		vrLen = 1080;
+		vrLoc = 25341;
+	};
+	855BB3E410873C9200753505 /* tree.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = tree.h;
+		path = /usr/include/libxml2/libxml/tree.h;
+		sourceTree = "<absolute>";
+	};
+	855BB3E710873C9200753505 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 855BB3E810873C9200753505 /* xmlstring.h */;
+		name = "xmlstring.h: 85";
+		rLen = 63;
+		rLoc = 2994;
+		rType = 0;
+		vrLen = 1795;
+		vrLoc = 2291;
+	};
+	855BB3E810873C9200753505 /* xmlstring.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = xmlstring.h;
+		path = /usr/include/libxml2/libxml/xmlstring.h;
+		sourceTree = "<absolute>";
+	};
+	8572250E1087571900217199 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 08FB7796FE84155DC02AAC07 /* main.cpp */;
+		name = "main.cpp: 34";
+		rLen = 0;
+		rLoc = 944;
+		rType = 0;
+		vrLen = 1302;
+		vrLoc = 0;
+	};
+	8DD76F620486A84900D96B5E /* OsmXmlReader */ = {
+		activeExec = 0;
+		executables = (
+			855BB346108730FD00753505 /* OsmXmlReader */,
+		);
+	};
+}

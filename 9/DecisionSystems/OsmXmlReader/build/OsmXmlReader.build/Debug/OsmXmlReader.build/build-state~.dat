@@ -1,0 +1,51 @@
+TOsmXmlReader
+v7
+r0
+t277295982.241308
+cCheck dependencies
+cCompileC build/OsmXmlReader.build/Debug/OsmXmlReader.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004A769DAB00000000000000EE
+t1249287595
+s238
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Debug/OsmXmlReader
+t2
+s0
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Debug/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader.LinkFileList
+c000000004AD6FBEE000000000000008C
+t1255603182
+s140
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Debug/OsmXmlReader.build/Objects-normal/x86_64/main.o
+t2
+s0
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp
+c000000004AD6FBED00000000000000E5
+t1255603181
+s229
+i<iostream>
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies277295982#277295982#0(0"0(0#1#0"32088628383449192#0"0#
+
+CCompileC build/OsmXmlReader.build/Debug/OsmXmlReader.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s277295982.170097
+e277295982.241219
+r0
+xCompileC
+xbuild/OsmXmlReader.build/Debug/OsmXmlReader.build/Objects-normal/x86_64/main.o
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@77"Compile /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295982#277295982#0(1179"In file included from /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:2:/Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h:13:31: error: libxml/xmlversion.h: No such file or directory/Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h:14:25: error: libxml/tree.h: No such file or directory/Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h:15:26: error: libxml/xmlIO.h: No such file or directory/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:5: error: 'xmlDocPtr' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:5: error: expected `;' before 'xmlDoc'/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:6: error: 'cout' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:6: error: 'xmlDoc' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:6: error: 'endl' was not declared in this scope8(4@46"Libxml/xmlversion.h: No such file or directory277295982#95#131#2(7@91"In file included from /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295982#18446744073709551615#0#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295981#2#0#2#0#0"0(13@119"Libxml/xmlversion.h: No such file or directory in /Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h277295982#18446744073709551615#0#0(6@69"/Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h265243226#13#0#13#0#0"0(6@69"/Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h265243226#13#0#13#0#28"*: No such file or directory0(4@40"Libxml/tree.h: No such file or directory277295982#226#125#2(7@91"In file included from /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295982#18446744073709551615#0#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295981#2#0#2#0#0"0(13@113"Libxml/tree.h: No such file or directory in /Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h277295982#18446744073709551615#0#0(6@69"/Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h265243226#14#0#14#0#0"0(6@69"/Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h265243226#14#0#14#0#28"*: No such file or directory0(4@41"Libxml/xmlIO.h: No such file or directory277295982#351#126#2(7@91"In file included from /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295982#18446744073709551615#0#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295981#2#0#2#0#0"0(13@114"Libxml/xmlIO.h: No such file or directory in /Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h277295982#18446744073709551615#0#0(6@69"/Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h265243226#15#0#15#0#0"0(6@69"/Developer/SDKs/MacOSX10.6.sdk/usr/include/libxml2/libxml/xmlreader.h265243226#15#0#15#0#28"*: No such file or directory0(4@42"'xmlDocPtr' was not declared in this scope277295982#591#123#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295981#5#0#5#0#34"'*' was not declared in this scope0(4@28"Expected `;' before 'xmlDoc'277295982#714#109#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295981#5#0#5#0#19"expected * before *0(4@37"'cout' was not declared in this scope277295982#823#118#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295981#6#0#6#0#34"'*' was not declared in this scope0(4@39"'xmlDoc' was not declared in this scope277295982#941#120#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295981#6#0#6#0#34"'*' was not declared in this scope0(4@37"'endl' was not declared in this scope277295982#1061#118#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277295981#6#0#6#0#34"'*' was not declared in this scope0(0#0#69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp7307761437599099904#1670"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Debug/OsmXmlReader.build/OsmXmlReader-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Debug/OsmXmlReader.build/OsmXmlReader-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Debug/OsmXmlReader.build/OsmXmlReader-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Debug/OsmXmlReader.build/OsmXmlReader-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Debug -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Debug/include -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Debug/OsmXmlReader.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Debug/OsmXmlReader.build/DerivedSources -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Debug/OsmXmlReader.build/Objects-normal/x86_64/main.o1#
+
+CLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Debug/OsmXmlReader normal x86_64
+r0
+

@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+	118FCBAABA162BA17933C789 /* main.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 645}}";
+			sepNavSelRange = "{111, 0}";
+			sepNavVisRange = "{0, 154}";
+			sepNavWindowFrame = "{{19, 0}, {750, 778}}";
+		};
+	};
+	26827F2FC4DC4FBB23DE8287 /* moc_MainWindow.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 832}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1270}";
+		};
+	};
+	8503D9881088A566008BEC17 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	8503D9891088A566008BEC17 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	854E000B1089E599004169A3 /* qgsvectorlayer.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = qgsvectorlayer.h;
+		path = /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsvectorlayer.h;
+		sourceTree = "<absolute>";
+	};
+	854E000D1089E599004169A3 /* qgsvectorlayer.cpp */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.cpp.cpp;
+		name = qgsvectorlayer.cpp;
+		path = /Users/rilley_elf/tests/qgis/src/core/qgsvectorlayer.cpp;
+		sourceTree = "<absolute>";
+	};
+	854E00701089E997004169A3 /* qgsvectorlayer.cpp:92 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 854E000D1089E599004169A3 /* qgsvectorlayer.cpp */;
+		functionName = "QgsVectorLayer::QgsVectorLayer( QString vectorLayerPath, QString baseName, QString providerKey, bool loadDefaultStyleFlag )";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 92;
+		location = libqgis_core.dylib;
+		modificationTime = 277474982.543226;
+		originalNumberOfMultipleMatches = 1;
+		state = 1;
+	};
+	854E03871089F491004169A3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 854E03881089F491004169A3 /* qgsrasterlayer.h */;
+		name = "qgsrasterlayer.h: 364";
+		rLen = 52;
+		rLoc = 15432;
+		rType = 0;
+		vrLen = 2657;
+		vrLoc = 14338;
+	};
+	854E03881089F491004169A3 /* qgsrasterlayer.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = qgsrasterlayer.h;
+		path = /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgsrasterlayer.h;
+		sourceTree = "<absolute>";
+	};
+	854E03891089F491004169A3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 854E038A1089F491004169A3 /* qgslogger.h */;
+		name = "qgslogger.h: 30";
+		rLen = 25;
+		rLoc = 1380;
+		rType = 0;
+		vrLen = 2186;
+		vrLoc = 0;
+	};
+	854E038A1089F491004169A3 /* qgslogger.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = qgslogger.h;
+		path = /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include/qgis/qgslogger.h;
+		sourceTree = "<absolute>";
+	};
+	854E038B1089F491004169A3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 854E000D1089E599004169A3 /* qgsvectorlayer.cpp */;
+		name = "qgsvectorlayer.cpp: 111";
+		rLen = 15;
+		rLoc = 3593;
+		rType = 0;
+		vrLen = 1484;
+		vrLoc = 2908;
+	};
+	854E038C1089F491004169A3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 854E000B1089E599004169A3 /* qgsvectorlayer.h */;
+		name = "qgsvectorlayer.h: 60";
+		rLen = 0;
+		rLoc = 1760;
+		rType = 0;
+		vrLen = 1203;
+		vrLoc = 1760;
+	};
+	85714740108B7FEC00CB72C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BE70EB99BDB216943CAF350C /* MainWindow.h */;
+		name = "MainWindow.h: 29";
+		rLen = 0;
+		rLoc = 531;
+		rType = 0;
+		vrLen = 617;
+		vrLoc = 0;
+	};
+	85714741108B7FEC00CB72C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B11157991606037817BE9D12 /* MainWindow.cpp */;
+		name = "MainWindow.cpp: 26";
+		rLen = 214;
+		rLoc = 1017;
+		rType = 0;
+		vrLen = 1953;
+		vrLoc = 0;
+	};
+	85714750108B809D00CB72C7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B11157991606037817BE9D12 /* MainWindow.cpp */;
+		name = "MainWindow.cpp: 32";
+		rLen = 0;
+		rLoc = 1331;
+		rType = 0;
+		vrLen = 1907;
+		vrLoc = 89;
+	};
+	85724A571088AC4E00B54B26 /* QGisLibTest */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = QGisLibTest;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	91B15E841AA80083484172DE /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 85724A571088AC4E00B54B26 /* QGisLibTest */;
+		activeSDKPreference = macosx10.6;
+		activeTarget = C95A4AC6F0CD7116FA44EB56 /* QGisLibTest */;
+		breakpoints = (
+			854E00701089E997004169A3 /* qgsvectorlayer.cpp:92 */,
+		);
+		codeSenseManager = 8503D9891088A566008BEC17 /* Code sense */;
+		executables = (
+			85724A571088AC4E00B54B26 /* QGisLibTest */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					829,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					789,
+					60,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 277577652;
+			PBXWorkspaceStateSaveDate = 277577652;
+		};
+		perUserProjectItems = {
+			854E03871089F491004169A3 /* PBXTextBookmark */ = 854E03871089F491004169A3 /* PBXTextBookmark */;
+			854E03891089F491004169A3 /* PBXTextBookmark */ = 854E03891089F491004169A3 /* PBXTextBookmark */;
+			854E038B1089F491004169A3 /* PBXTextBookmark */ = 854E038B1089F491004169A3 /* PBXTextBookmark */;
+			854E038C1089F491004169A3 /* PBXTextBookmark */ = 854E038C1089F491004169A3 /* PBXTextBookmark */;
+			85714740108B7FEC00CB72C7 /* PBXTextBookmark */ = 85714740108B7FEC00CB72C7 /* PBXTextBookmark */;
+			85714741108B7FEC00CB72C7 /* PBXTextBookmark */ = 85714741108B7FEC00CB72C7 /* PBXTextBookmark */;
+			85714750108B809D00CB72C7 /* PBXTextBookmark */ = 85714750108B809D00CB72C7 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 8503D9881088A566008BEC17 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	B11157991606037817BE9D12 /* MainWindow.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 741}}";
+			sepNavSelRange = "{1331, 0}";
+			sepNavVisRange = "{89, 1907}";
+		};
+	};
+	BE4F12C8E894B1D68ACADC11 /* QGisLibTest.pro */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {691, 650}}";
+			sepNavSelRange = "{235, 0}";
+			sepNavVisRange = "{0, 337}";
+			sepNavWindowFrame = "{{19, 0}, {750, 778}}";
+		};
+	};
+	BE70EB99BDB216943CAF350C /* MainWindow.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1007, 645}}";
+			sepNavSelRange = "{531, 0}";
+			sepNavVisRange = "{0, 617}";
+		};
+	};
+	C95A4AC6F0CD7116FA44EB56 /* QGisLibTest */ = {
+		activeExec = 0;
+		executables = (
+			85724A571088AC4E00B54B26 /* QGisLibTest */,
+		);
+	};
+}

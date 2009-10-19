@@ -1,0 +1,193 @@
+TOsmXmlReader
+v7
+r0
+t277303921.619159
+cCheck dependencies
+cCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader normal x86_64
+cCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal ppc c++ com.apple.compilers.gcc.4_2
+cLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader normal i386
+cLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader normal ppc
+cCreateUniversalBinary /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader normal "x86_64 i386 ppc"
+cGenerateDSYMFile /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader.dSYM /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004A769DAB00000000000000EE
+t1249287595
+s238
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader
+t1255611121
+s10412
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader.LinkFileList
+c000000004AD7123F000000000000008C
+t1255608895
+s140
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/main.o
+t1255611121
+s75020
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader
+t1255611121
+s9872
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader.LinkFileList
+c000000004AD7123F000000000000008B
+t1255608895
+s139
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/main.o
+t1255611121
+s75016
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader
+t1255611120
+s10616
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader.LinkFileList
+c000000004AD7123F000000000000008E
+t1255608895
+s142
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/main.o
+t1255611114
+s76524
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader
+t1255611121
+s38544
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader.dSYM
+t1255611121
+s102
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp
+c000000004AD71AE900000000000005FA
+t1255611113
+s1530
+i<iostream>
+i<libxml/xmlreader.h>
+i<libxml/tree.h>
+i<libxml/parser.h>
+
+N/usr/include/libxml2/libxml/parser.h
+c000000004A1F12DA00000000000098A9
+t1243550426
+s39081
+
+N/usr/include/libxml2/libxml/tree.h
+c000000004A1F12DA0000000000008F14
+t1243550426
+s36628
+
+N/usr/include/libxml2/libxml/xmlreader.h
+c000000004A1F12DA0000000000003107
+t1243550426
+s12551
+
+N/usr/lib/libxml2.2.7.3.dylib
+c000000004A1F12DA00000000003958C0
+t1243550426
+s3758272
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies277303920#277303920#0(0"0(0#1#0"4300882208#0"0#
+
+CCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s277303920.925917
+e277303921.552634
+r1
+xCompileC
+xbuild/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/main.o
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:26: warning: unused variable 'debug'
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:21: warning: unused variable 'child'
+lSLF07#2@77"Compile /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277303920#277303921#0(328"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:26: warning: unused variable 'debug'/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:21: warning: unused variable 'child'2(22@23"Unused variable 'debug'277303921#114#107#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277303913#26#0#26#0#19"unused variable '*'0(22@23"Unused variable 'child'277303921#221#107#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277303913#21#0#21#0#19"unused variable '*'0(0#0#69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp4300882208#1706"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources/i386 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/main.o0#
+
+CCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal ppc c++ com.apple.compilers.gcc.4_2
+s277303920.956214
+e277303921.567001
+r1
+xCompileC
+xbuild/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/main.o
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp
+xnormal
+xppc
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:26: warning: unused variable 'debug'
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:21: warning: unused variable 'child'
+lSLF07#2@77"Compile /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277303920#277303921#0(328"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:26: warning: unused variable 'debug'/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:21: warning: unused variable 'child'2(22@23"Unused variable 'debug'277303921#114#107#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277303913#26#0#26#0#19"unused variable '*'0(22@23"Unused variable 'child'277303921#221#107#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277303913#21#0#21#0#19"unused variable '*'0(0#0#69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp4300882208#1700"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch ppc -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources/ppc -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/main.o0#
+
+CCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s277303920.923260
+e277303920.924938
+r1
+xCompileC
+xbuild/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/main.o
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@77"Compile /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277303920#277303920#0(328"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:26: warning: unused variable 'debug'/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:21: warning: unused variable 'child'2(22@23"Unused variable 'debug'277303920#114#107#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277303913#26#0#26#0#19"unused variable '*'0(22@23"Unused variable 'child'277303920#221#107#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277303913#21#0#21#0#19"unused variable '*'0(0#0#69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp4300882208#1712"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/include -I/usr/include/libxml2 -I/usr/include/libxml2/libxml -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/main.o0#
+
+CCreateUniversalBinary /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader normal "x86_64 i386 ppc"
+s277303921.592374
+e277303921.596416
+r1
+xCreateUniversalBinary
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader
+xnormal
+xx86_64 i386 ppc
+lSLF07#2@73"CreateUniversalBinary build/Release/OsmXmlReader normal "x86_64 i386 ppc"277303921#277303921#0(0"0(0#0#76"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/x86_64 i386 ppc4300882208#629"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    /usr/bin/lipo -create /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader -output /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader0#
+
+CGenerateDSYMFile /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader.dSYM /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader
+s277303921.596528
+e277303921.619099
+r1
+xGenerateDSYMFile
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader.dSYM
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader
+lSLF07#2@75"GenerateDSYMFile build/Release/OsmXmlReader.dSYM build/Release/OsmXmlReader277303921#277303921#0(0"0(0#0#87"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader4300882208#284"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    /Developer/usr/bin/dsymutil /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader.dSYM0#
+
+CLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader normal i386
+s277303921.552753
+e277303921.592264
+r1
+xLd
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader
+xnormal
+xi386
+lSLF07#2@150"Link /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader277303921#277303921#0(0"0(0#0#0"4300882208#703"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -filelist /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader.LinkFileList -mmacosx-version-min=10.6 -lxml2.2.7.3 -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader0#
+
+CLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader normal ppc
+s277303921.567110
+e277303921.586914
+r1
+xLd
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader
+xnormal
+xppc
+lSLF07#2@149"Link /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader277303921#277303921#0(0"0(0#0#0"4300882208#700"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch ppc -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -filelist /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader.LinkFileList -mmacosx-version-min=10.6 -lxml2.2.7.3 -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader0#
+
+CLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader normal x86_64
+s277303920.925017
+e277303920.956097
+r1
+xLd
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader
+xnormal
+xx86_64
+lSLF07#2@152"Link /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader277303920#277303920#0(0"0(0#0#0"4300882208#709"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -filelist /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader.LinkFileList -mmacosx-version-min=10.6 -lxml2.2.7.3 -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader0#
+

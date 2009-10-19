@@ -1,0 +1,163 @@
+TOsmXmlReader
+v7
+r0
+t277301698.424676
+cCheck dependencies
+cCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+cCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+cCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal ppc c++ com.apple.compilers.gcc.4_2
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004A769DAB00000000000000EE
+t1249287595
+s238
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader
+t2
+s0
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader.LinkFileList
+c000000004AD7123F000000000000008C
+t1255608895
+s140
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/main.o
+t2
+s0
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader
+t2
+s0
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader.LinkFileList
+c000000004AD7123F000000000000008B
+t1255608895
+s139
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/main.o
+t2
+s0
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader
+t2
+s0
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader.LinkFileList
+c000000004AD7123F000000000000008E
+t1255608895
+s142
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/main.o
+t2
+s0
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader
+t2
+s0
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader.dSYM
+t2
+s0
+
+N/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp
+c000000004AD712180000000000000184
+t1255608856
+s388
+i<iostream>
+i<libxml/xmlreader.h>
+i<libxml/tree.h>
+i<libxml/parser.h>
+
+N/usr/lib/libxml2.2.7.3.dylib
+c000000004A1F12DA00000000003958C0
+t1243550426
+s3758272
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies277301695#277301695#0(0"0(0#1#0"4300882208#0"0#
+
+CCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
+s277301695.658498
+e277301697.137588
+r0
+xCompileC
+xbuild/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/main.o
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:2:30: error: libxml/xmlreader.h: No such file or directory
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:3:25: error: libxml/tree.h: No such file or directory
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:4:27: error: libxml/parser.h: No such file or directory
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: 'xmlDocPtr' was not declared in this scope
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: expected `;' before 'xmlDoc'
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: 'xmlNodePtr' was not declared in this scope
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: expected `;' before 'rootNode'
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:13: error: 'rootNode' was not declared in this scope
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:10: warning: unused variable 'filename'
+lSLF07#2@77"Compile /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301695#277301697#0(1197"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:2:30: error: libxml/xmlreader.h: No such file or directory/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:3:25: error: libxml/tree.h: No such file or directory/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:4:27: error: libxml/parser.h: No such file or directory/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: 'xmlDocPtr' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: expected `;' before 'xmlDoc'/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: 'xmlNodePtr' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: expected `;' before 'rootNode'/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:13: error: 'rootNode' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:10: warning: unused variable 'filename'9(4@45"Libxml/xmlreader.h: No such file or directory277301696#0#129#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#2#0#2#0#28"*: No such file or directory0(4@40"Libxml/tree.h: No such file or directory277301696#129#124#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#3#0#3#0#28"*: No such file or directory0(4@42"Libxml/parser.h: No such file or directory277301696#253#126#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#4#0#4#0#28"*: No such file or directory0(4@42"'xmlDocPtr' was not declared in this scope277301697#493#124#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#11#0#11#0#34"'*' was not declared in this scope0(4@28"Expected `;' before 'xmlDoc'277301697#617#110#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#11#0#11#0#19"expected * before *0(4@43"'xmlNodePtr' was not declared in this scope277301697#727#125#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#12#0#12#0#34"'*' was not declared in this scope0(4@30"Expected `;' before 'rootNode'277301697#852#112#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#12#0#12#0#19"expected * before *0(4@41"'rootNode' was not declared in this scope277301697#964#123#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#13#0#13#0#34"'*' was not declared in this scope0(22@26"Unused variable 'filename'277301697#1087#110#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#10#0#10#0#19"unused variable '*'0(0#0#69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp4300882208#1653"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/include -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources/i386 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/main.o1#
+
+CCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal ppc c++ com.apple.compilers.gcc.4_2
+s277301697.133712
+e277301698.424591
+r0
+xCompileC
+xbuild/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/main.o
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp
+xnormal
+xppc
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:2:30: error: libxml/xmlreader.h: No such file or directory
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:3:25: error: libxml/tree.h: No such file or directory
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:4:27: error: libxml/parser.h: No such file or directory
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: 'xmlDocPtr' was not declared in this scope
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: expected `;' before 'xmlDoc'
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: 'xmlNodePtr' was not declared in this scope
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: expected `;' before 'rootNode'
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:13: error: 'rootNode' was not declared in this scope
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:10: warning: unused variable 'filename'
+lSLF07#2@77"Compile /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301697#277301698#0(1197"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:2:30: error: libxml/xmlreader.h: No such file or directory/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:3:25: error: libxml/tree.h: No such file or directory/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:4:27: error: libxml/parser.h: No such file or directory/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: 'xmlDocPtr' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: expected `;' before 'xmlDoc'/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: 'xmlNodePtr' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: expected `;' before 'rootNode'/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:13: error: 'rootNode' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:10: warning: unused variable 'filename'9(4@45"Libxml/xmlreader.h: No such file or directory277301698#0#129#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#2#0#2#0#28"*: No such file or directory0(4@40"Libxml/tree.h: No such file or directory277301698#129#124#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#3#0#3#0#28"*: No such file or directory0(4@42"Libxml/parser.h: No such file or directory277301698#253#126#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#4#0#4#0#28"*: No such file or directory0(4@42"'xmlDocPtr' was not declared in this scope277301698#493#124#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#11#0#11#0#34"'*' was not declared in this scope0(4@28"Expected `;' before 'xmlDoc'277301698#617#110#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#11#0#11#0#19"expected * before *0(4@43"'xmlNodePtr' was not declared in this scope277301698#727#125#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#12#0#12#0#34"'*' was not declared in this scope0(4@30"Expected `;' before 'rootNode'277301698#852#112#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#12#0#12#0#19"expected * before *0(4@41"'rootNode' was not declared in this scope277301698#964#123#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#13#0#13#0#34"'*' was not declared in this scope0(22@26"Unused variable 'filename'277301698#1087#110#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#10#0#10#0#19"unused variable '*'0(0#0#69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp4300882208#1647"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch ppc -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/include -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources/ppc -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/main.o1#
+
+CCompileC build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s277301695.603691
+e277301697.133513
+r0
+xCompileC
+xbuild/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/main.o
+x/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:2:30: error: libxml/xmlreader.h: No such file or directory
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:3:25: error: libxml/tree.h: No such file or directory
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:4:27: error: libxml/parser.h: No such file or directory
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: 'xmlDocPtr' was not declared in this scope
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: expected `;' before 'xmlDoc'
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: 'xmlNodePtr' was not declared in this scope
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: expected `;' before 'rootNode'
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:13: error: 'rootNode' was not declared in this scope
+o/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:10: warning: unused variable 'filename'
+lSLF07#2@77"Compile /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301695#277301697#0(1197"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:2:30: error: libxml/xmlreader.h: No such file or directory/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:3:25: error: libxml/tree.h: No such file or directory/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:4:27: error: libxml/parser.h: No such file or directory/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp: In function 'int main(int, char* const*)':/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: 'xmlDocPtr' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:11: error: expected `;' before 'xmlDoc'/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: 'xmlNodePtr' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:12: error: expected `;' before 'rootNode'/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:13: error: 'rootNode' was not declared in this scope/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp:10: warning: unused variable 'filename'9(4@45"Libxml/xmlreader.h: No such file or directory277301696#0#129#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#2#0#2#0#28"*: No such file or directory0(4@40"Libxml/tree.h: No such file or directory277301696#129#124#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#3#0#3#0#28"*: No such file or directory0(4@42"Libxml/parser.h: No such file or directory277301696#253#126#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#4#0#4#0#28"*: No such file or directory0(4@42"'xmlDocPtr' was not declared in this scope277301697#493#124#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#11#0#11#0#34"'*' was not declared in this scope0(4@28"Expected `;' before 'xmlDoc'277301697#617#110#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#11#0#11#0#19"expected * before *0(4@43"'xmlNodePtr' was not declared in this scope277301697#727#125#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#12#0#12#0#34"'*' was not declared in this scope0(4@30"Expected `;' before 'rootNode'277301697#852#112#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#12#0#12#0#19"expected * before *0(4@41"'rootNode' was not declared in this scope277301697#964#123#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#13#0#13#0#34"'*' was not declared in this scope0(22@26"Unused variable 'filename'277301697#1087#110#0(6@69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp277301656#10#0#10#0#19"unused variable '*'0(0#0#69"/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp4300882208#1659"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/OsmXmlReader-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/include -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/DerivedSources -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/main.cpp -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/main.o1#
+
+CCreateUniversalBinary /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader normal "x86_64 i386 ppc"
+r0
+
+CGenerateDSYMFile /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader.dSYM /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/Release/OsmXmlReader
+r0
+
+CLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/i386/OsmXmlReader normal i386
+r0
+
+CLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/ppc/OsmXmlReader normal ppc
+r0
+
+CLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/OsmXmlReader/build/OsmXmlReader.build/Release/OsmXmlReader.build/Objects-normal/x86_64/OsmXmlReader normal x86_64
+r0
+
