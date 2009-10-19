@@ -9,21 +9,22 @@
 
 #include "Algorythms.h"
 
-float myrand()
+double myrand()
 {
-	return ((float)(rand() % RANDOM_MULTIMIZATOR)) / (1.0*RANDOM_MULTIMIZATOR);
+//	return ((double)(rand() % RANDOM_MULTIMIZATOR)) / (1.0*RANDOM_MULTIMIZATOR);
+	return ((double)(rand() % RANDOM_MULTIMIZATOR)) / (1.0*RANDOM_MULTIMIZATOR) - (RANDOM_MULTIMIZATOR*0.5)/RANDOM_MULTIMIZATOR;
 }
 
-float getDiff( int count, float* left, float* right )
+double getDiff( int count, double* left, double* right )
 {
-	float diff = 0;
+	double diff = 0;
 	for (int i = 0 ; i < count ; i++)
 		diff += fabs(left[i] - right[i]);
 	return diff;
 }
-float getLocalTeachK( float* vectorY, int length)
+double getLocalTeachK( double* vectorY, int length)
 {
-	float summ = 0;
+	double summ = 0;
 	for (int i = 0 ; i < length ; i++)
 		summ += vectorY[i];
 	return 1.0/(1.0+summ);

@@ -22,7 +22,8 @@
 {
 	ImageNeuron* new = [[ImageNeuron alloc] init];
 	new.index = index;
-	new.vectorW = malloc( sizeof(float) * length);
+	new.length = length;
+	new.vectorW = malloc( sizeof(double) * length);
 	for (int i = 0 ; i < length ; i++)
 		new.vectorW[i] = vectorW[i];
 	return new;
@@ -32,7 +33,7 @@
 	NSString* res = @"";
 	for (int i = 0 ; i < length ; i++)
 	{
-		float f = vectorW[i];
+		double f = vectorW[i];
 		res = [res stringByAppendingFormat:@"%f ", f];
 	}
 	res = [res stringByAppendingString:@"\n"];

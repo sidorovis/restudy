@@ -12,8 +12,8 @@
 
 #define RANDOM_MULTIMIZATOR 100
 
-float myrand();
+double myrand();
 
-float getDiff( int count, float* left, float* right);
+double getDiff( int count, double* left, double* right);
 
-float getLocalTeachK( float* vectorY, int length);
+double getLocalTeachK( double* vectorY, int length);

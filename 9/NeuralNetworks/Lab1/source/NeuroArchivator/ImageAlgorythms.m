@@ -44,13 +44,13 @@
 		[scanner scanInt:&p];
 		[scanner scanInt:&height];
 		[scanner scanInt:&width];
-		float** w;
-		w = malloc( sizeof( float* ) * p );
+		double** w;
+		w = malloc( sizeof( double* ) * p );
 		for (int i = 0 ; i < p ; i++)
-			w[i] = malloc( sizeof( float) * n * m );
+			w[i] = malloc( sizeof( double) * n * m );
 		for (int i = 0 ; i < p ; i++)
 			for (int u = 0 ; u < n*m ; u++)
-				[scanner scanFloat:(&w[i][u])];
+				[scanner scanDouble:(&w[i][u])];
 		ImageBlockIterator* iterator = [[ImageBlockIterator alloc] initWithHeight:height Width:width N:n M:m];
 		imageRep = 
 			[[NSBitmapImageRep alloc] 
@@ -65,16 +65,16 @@
 						bitmapFormat:NSAlphaFirstBitmapFormat 
 						bytesPerRow:4*width 
 						bitsPerPixel:32];
-		float* vectorY = malloc( sizeof(float) * p);
-		float** vectorX1 = malloc( sizeof(float*) * colorSize);
+		double* vectorY = malloc( sizeof(double) * p);
+		double** vectorX1 = malloc( sizeof(double*) * colorSize);
 		for (int i = 0 ; i < colorSize ; i++)
-			vectorX1[i] = malloc( sizeof( float) * n*m);
+			vectorX1[i] = malloc( sizeof( double) * n*m);
 		do
 		{
 			for (int colorIndex = 0 ; colorIndex < colorSize ; colorIndex++)
 			{
 				for (int i = 0 ; i < p ; i++)
-					[scanner scanFloat:(&vectorY[i])];
+					[scanner scanDouble:(&vectorY[i])];
 				for (int i = 0 ; i < n*m ; i++)
 					vectorX1[colorIndex][i] = 0;
 				for (int i = 0 ; i < p ; i++)

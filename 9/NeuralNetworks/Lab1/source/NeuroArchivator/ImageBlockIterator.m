@@ -64,9 +64,9 @@
 -(void) getRed { colorVal = [color redComponent]; }
 -(void) getBlue { colorVal = [color blueComponent]; }
 -(void) getGreen { colorVal = [color greenComponent]; }
--(float*) getX0Vector:(SEL)selector
+-(double*) getX0Vector:(SEL)selector
 {
-	float* answer = malloc( sizeof(float) * height * width );
+	double* answer = malloc( sizeof(double) * height * width );
 	for (int u = startY ; u < startY + height ; u++)
 		for (int i = startX ; i < startX + width ; i++)
 		{
@@ -76,11 +76,12 @@
 		}
 	return answer;
 }
--(void) getFastX0red:(float**)vectorX0Red green:(float**)vectorX0Green blue:(float**)vectorX0Blue
+
+-(void) getFastX0red:(double**)vectorX0Red green:(double**)vectorX0Green blue:(double**)vectorX0Blue
 {
-	(*vectorX0Red) = malloc( sizeof(float) * height * width);
-	(*vectorX0Green) = malloc( sizeof(float) * height * width);
-	(*vectorX0Blue) = malloc( sizeof(float) * height * width);
+	(*vectorX0Red) = malloc( sizeof(double) * height * width);
+	(*vectorX0Green) = malloc( sizeof(double) * height * width);
+	(*vectorX0Blue) = malloc( sizeof(double) * height * width);
 	for (int u = startY ; u < startY + height ; u++)
 		for (int i = startX ; i < startX + width ; i++)
 		{
@@ -88,13 +89,14 @@
 			assert( !isnan([color redComponent]));
 			assert( !isnan([color greenComponent]));
 			assert( !isnan([color blueComponent]));
+			
 			(*vectorX0Red)[ (u - startY) * width + (i - startX) ] = [color redComponent];
 			(*vectorX0Green)[ (u - startY) * width + (i - startX) ] = [color greenComponent];
 			(*vectorX0Blue)[ (u - startY) * width + (i - startX) ] = [color blueComponent];
 		}
 }
 
--(void) setColorsToImageRep:(NSBitmapImageRep*)result data:(float**)resultColorsVector
+-(void) setColorsToImageRep:(NSBitmapImageRep*)result data:(double**)resultColorsVector
 // resultColorsVector[0] -> for red
 // resultColorsVector[1] -> for green
 // resultColorsVector[2] -> for blue
@@ -102,9 +104,9 @@
 	for (int u = startY ; u < startY + height ; u++)
 		for (int i = startX ; i < startX + width ; i++)
 		{
-			float r = resultColorsVector[0][ (u - startY) * width + (i - startX) ];
-			float g = resultColorsVector[1][ (u - startY) * width + (i - startX) ];
-			float b = resultColorsVector[2][ (u - startY) * width + (i - startX) ];
+			double r = resultColorsVector[0][ (u - startY) * width + (i - startX) ];
+			double g = resultColorsVector[1][ (u - startY) * width + (i - startX) ];
+			double b = resultColorsVector[2][ (u - startY) * width + (i - startX) ];
 			
 			NSColor* new = [NSColor colorWithDeviceRed:r
 												 green:g

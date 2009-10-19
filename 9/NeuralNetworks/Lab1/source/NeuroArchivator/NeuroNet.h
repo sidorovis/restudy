@@ -12,8 +12,8 @@
 @interface NeuroNet : NSObject 
 {
 	
-	float teachK; // alpha, or koefficient 
-	float enoughK; // D
+	double teachK; // alpha, or koefficient 
+	double enoughK; // D
 
 	int layCount;
 	NSObject** lays;

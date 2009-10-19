@@ -21,14 +21,14 @@
 	return self;
 	
 }
--(float) getWSumm
+-(double) getWSumm
 {
-	float summ = 0;
+	double summ = 0;
 	for (int i = 0 ; i < count ; i++)
 		summ += [(ImageNeuron*)neurons[i] getWSumm];
 	return summ;
 }
--(float) getAdaptiveTeachK
+-(double) getAdaptiveTeachK
 {
 	return 1.0/(1.0+fabs([self getWSumm]));
 }
@@ -37,23 +37,31 @@
 {
 	return (ImageNeuron*)neurons[ index ];
 }
--(void) teachWithInSignal:(float*)inSignal OutSignal:(float*)outSignal InitSignal:(float*)initSignal teachK:(float)teachK
+-(void) teachWithInSignal:(double*)inSignal OutSignal:(double*)outSignal InitSignal:(double*)initSignal teachK:(double)teachK
 {
 	for(int i = 0 ; i < count ; i++)
+	{
 		for (int u = 0 ; u < nextLayCount ; u++)
 		{
 			assert(!isnan(teachK * inSignal[i] * (initSignal[u] - outSignal[u])));
 			[(ImageNeuron*)neurons[i] getVectorW][u] += teachK * inSignal[i] * (initSignal[u] - outSignal[u]) ;
 		}
+		if (shouldNormilize)
+			[(ImageNeuron*)neurons[i] normilize];
+	}
 }
--(void) teachWithInSignal:(float*)inSignal OutSignal:(float*)outSignal LastSignal:(float*)lastSignal teachK:(float)teachK
+-(void) teachWithInSignal:(double*)inSignal OutSignal:(double*)outSignal LastSignal:(double*)lastSignal teachK:(double)teachK
 {
 	for(int i = 0 ; i < count ; i++)
+	{
 		for (int u = 0 ; u < nextLayCount ; u++)
 		{
 			assert(!isnan( teachK * outSignal[u] * (inSignal[u] - lastSignal[u]) ));
 			[(ImageNeuron*)neurons[i] getVectorW][u] += teachK * outSignal[u] * (inSignal[u] - lastSignal[u]) ;		
 		}
+		if (shouldNormilize)
+			[(ImageNeuron*)neurons[i] normilize];
+	}
 }
 -(ImageNeuronLay*) copy
 {

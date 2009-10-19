@@ -14,47 +14,53 @@
 {
 	[super init];
 	length = length_;
-	vectorW = malloc( sizeof(float) * length );
-	float summ = 0;
+	vectorW = malloc( sizeof(double) * length );
 	for (int i = 0 ; i < length ; i++)
-		summ += fabs(vectorW[i] = myrand());
+		vectorW[i] = myrand();
+	[self normilize];
+	return self;
+}
+-(void) normilize
+{
+	double summ = [self getWSumm];
 	for (int i = 0 ; i < length ; i++)
 	{
 		vectorW[i] /= summ;
 		assert( !isnan( vectorW[i] ) );
 		assert( !isinf( vectorW[i] ) );
 	}
-	return self;
+	double summ2 = [self getWSumm];
+	assert (0.00001 > fabs(summ2 - 1));
 }
 
 @synthesize length;
 @synthesize vectorW;
-
 
 - (void) dealloc;
 {
 	free( vectorW );
 	[super dealloc];
 }
--(float*) getVectorW
+-(double*) getVectorW
 {
 	return vectorW;
 }
--(float) getWByIndex:(int)index_
+-(double) getWByIndex:(int)index_
 {
 	return vectorW[ index_ ];
 }
--(float) getReactionOnIndex:(int)index_ value:(float)value
+-(double) getReactionOnIndex:(int)index_ value:(double)value
 {
 	assert( !isnan( vectorW[index_] ));
 	assert( !isinf( vectorW[index_] ));
 	return value*vectorW[index_];
 }
--(float) getWSumm
+-(double) getWSumm
 {
-	float summ = 0;
+	double summ = 0;
 	for (int i = 0 ; i < length ; i++)
-		summ += vectorW[i];
+		summ += fabs(vectorW[i]);
+	assert(summ != 0);
 	return summ;
 }
 @end

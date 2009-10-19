@@ -15,9 +15,9 @@
 }
 -(NeuronLay*) initWithCount:(int)count_ nextLayCount:(int)nextLayCount_ ShouldNormilize:(bool)shouldNormilize_;
 -(ImageNeuron*) neuronByIndex:(int)index;
--(void) teachWithInSignal:(float*)inSignal OutSignal:(float*)outSignal InitSignal:(float*)initSignal teachK:(float)teachK;
--(void) teachWithInSignal:(float*)inSignal OutSignal:(float*)outSignal LastSignal:(float*)LastSignal teachK:(float)teachK;
+-(void) teachWithInSignal:(double*)inSignal OutSignal:(double*)outSignal InitSignal:(double*)initSignal teachK:(double)teachK;
+-(void) teachWithInSignal:(double*)inSignal OutSignal:(double*)outSignal LastSignal:(double*)LastSignal teachK:(double)teachK;
 -(ImageNeuronLay*) copy;
--(float) getWSumm;
--(float) getAdaptiveTeachK;
+-(double) getWSumm;
+-(double) getAdaptiveTeachK;
 @end

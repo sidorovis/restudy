@@ -12,15 +12,16 @@
 @interface Neuron : NSObject 
 {
 	int length;
-	float* vectorW;
+	double* vectorW;
 }
 -(Neuron*) initWithWLength:(int)length_;
 - (void) dealloc;
--(float*) getVectorW;
--(float) getWByIndex:(int)index_;
--(float) getReactionOnIndex:(int)index_ value:(float)value;
--(float) getWSumm;
+-(double*) getVectorW;
+-(double) getWByIndex:(int)index_;
+-(double) getReactionOnIndex:(int)index_ value:(double)value;
+-(double) getWSumm;
+-(void) normilize;
 @property(assign) int length;
-@property(assign) float* vectorW;
+@property(assign) double* vectorW;
 
 @end

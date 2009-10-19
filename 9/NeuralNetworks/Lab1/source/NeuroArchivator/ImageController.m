@@ -19,7 +19,7 @@
 		[openArchiveMatrixControl setEnabled:NO];
 		[progress setUsesThreadedAnimation:YES];
 		[self enableControls];
-		withLogBool = FALSE;
+		withLogBool = [logWith state];
 	}
 	[types release];	
 	neuroNet = NULL;
@@ -127,10 +127,10 @@
 	[closeControl setEnabled:FALSE];
 	[archiveButton setEnabled:FALSE];
 	[progress startAnimation:self];
-	float old_diff = MAXFLOAT;
+	double old_diff = MAXFLOAT;
 	int old_diff_eq_diff_marker = 0;
-	float diff;
-	float alpha;
+	double diff;
+	double alpha;
 	@try 
 	{
 		while ([neuroNet fastGoodEnough:&diff] == NO)
@@ -139,7 +139,10 @@
 			{
 				old_diff_eq_diff_marker += 1 ;
 				if (old_diff_eq_diff_marker > DIFF_EQUAL_MIN_TIMES)
+				{
+					NSRunAlertPanel(@"Note", @"We think that speed of archiving to slow.\nPlease 'Archive' to do next loop.", @"Ok", nil, nil);
 					break;
+				}
 			}
 			else 
 			{
@@ -153,7 +156,7 @@
 			[loopRes setStringValue:[NSString stringWithFormat:@"%d", loopCounter]];
 			[currD setStringValue:[NSString stringWithFormat:@"%f", diff]];
 			[currA setStringValue:[NSString stringWithFormat:@"%f", alpha]];
-			if (withLogBool)
+			if ([logWith state])
 				if (loopCounter % ilogEachValue == 0)
 					NSLog(@",%d,%f,%f", loopCounter, diff, alpha);
 		}
@@ -170,13 +173,15 @@
 	}
 	@finally 
 	{
-		[archThreadPool release];
-		archThreadPool = NULL;
 		[saveArchiveMatrixControl setEnabled:YES];
 		[progress stopAnimation:self];
 		[archiveButton setEnabled:YES];
 		[closeControl setEnabled:YES];
 		[maxLoopsField setEnabled:YES];
+		[archThreadPool release];
+		archThreadPool = NULL;
+		[thread release];
+		thread = NULL;
 	}
 }
 
@@ -208,7 +213,8 @@
 						  UseAdaptiveStep:[adaptiveSteps state]
 						  ShouldNormalize:[normilizingWith state]
 					];	
-	[thread cancel];
+	if (thread)
+		[thread cancel];
 	if (![thread isExecuting])
 	{
 		[thread release];
@@ -226,7 +232,6 @@
 		[thread cancel];
 		if (archThreadPool)
 		{
-			sleep(0.5);
 			[archThreadPool release];
 			archThreadPool = NULL;
 		}
@@ -246,9 +251,7 @@
 	}
 	if ([resultImage image])
 	{
-		NSImage* image = [resultImage image];
 		[resultImage setImage:nil];
-		[image release];
 	}
 	[self disableControls];
 	[openSourceImageControl setEnabled:YES];

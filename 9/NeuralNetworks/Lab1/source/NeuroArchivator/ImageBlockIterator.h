@@ -16,7 +16,7 @@
 	int imageHeight, imageWidth, imageLayersCount;
 	int height, width;
 	int startX, startY;
-	float colorVal;
+	double colorVal;
 	NSColor* color;
 }
 -(ImageBlockIterator*)initWithImage:(NSImage*)image_ n:(int)n_ m:(int)m_;
@@ -24,10 +24,10 @@
 -(void) dealloc;
 -(ImageBlockIterator*)getNextWithAutoRelease:(BOOL)autoRelease;
 -(NSBitmapImageRep*) imageRep;
--(float*) getX0Vector:(SEL)selector;
--(void) getFastX0red:(float**)vectorX0Red green:(float**)vectorX0Green blue:(float**)vectorX0Blue;
+-(double*) getX0Vector:(SEL)selector;
+-(void) getFastX0red:(double**)vectorX0Red green:(double**)vectorX0Green blue:(double**)vectorX0Blue;
 -(void) getRed;
 -(void) getBlue;
 -(void) getGreen;
--(void) setColorsToImageRep:(NSBitmapImageRep*)result data:(float**)resultColorsVector;
+-(void) setColorsToImageRep:(NSBitmapImageRep*)result data:(double**)resultColorsVector;
 @end

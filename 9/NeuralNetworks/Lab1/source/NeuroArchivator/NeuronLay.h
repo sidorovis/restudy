@@ -25,7 +25,7 @@
 -(void) dealloc;
 
 -(Neuron*) neuronByIndex:(int)index;
--(float*) getAnswerOnSignal:(float*)signal;
+-(double*) getAnswerOnSignal:(double*)signal;
 
-//-(void) teachWithSignal:(float*)signal;
+//-(void) teachWithSignal:(double*)signal;
 @end
