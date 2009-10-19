@@ -1,0 +1,8 @@
+Version 300
+Charset "WindowsLatin1"
+Delimiter ","
+CoordSys Earth Projection 9, 28, "m", 20, 60, 55, 65, 0, 0 Bounds (-13752570.013, -10060645.4301) (13752570.013, 17444494.5959)
+Columns 2
+  POP_DENS_ID Integer
+  POPULATION Decimal(12, 0)
+
