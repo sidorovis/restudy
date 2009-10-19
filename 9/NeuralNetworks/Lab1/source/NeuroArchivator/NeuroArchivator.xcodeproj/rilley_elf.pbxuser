@@ -173,19 +173,18 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 277666643;
-			PBXWorkspaceStateSaveDate = 277666643;
+			PBXPerProjectTemplateStateSaveDate = 277678510;
+			PBXWorkspaceStateSaveDate = 277678510;
 		};
 		perUserProjectItems = {
 			8513155F108786D700F293E2 /* PBXTextBookmark */ = 8513155F108786D700F293E2 /* PBXTextBookmark */;
+			853C9DBB108D09C2005538CB /* PBXTextBookmark */ = 853C9DBB108D09C2005538CB /* PBXTextBookmark */;
 			855D2015108CD44D00BD46A8 /* PBXTextBookmark */ = 855D2015108CD44D00BD46A8 /* PBXTextBookmark */;
 			85B8F49F108CF0A60064FAC2 /* PBXTextBookmark */ = 85B8F49F108CF0A60064FAC2 /* PBXTextBookmark */;
 			85B8F4A1108CF0A60064FAC2 /* PBXTextBookmark */ = 85B8F4A1108CF0A60064FAC2 /* PBXTextBookmark */;
 			85B8F4A2108CF0A60064FAC2 /* PBXTextBookmark */ = 85B8F4A2108CF0A60064FAC2 /* PBXTextBookmark */;
 			85B8F4A3108CF0A60064FAC2 /* PBXTextBookmark */ = 85B8F4A3108CF0A60064FAC2 /* PBXTextBookmark */;
 			85B8F4A9108CF16A0064FAC2 /* PBXTextBookmark */ = 85B8F4A9108CF16A0064FAC2 /* PBXTextBookmark */;
-			85B8F4B9108CFC980064FAC2 /* PBXTextBookmark */ = 85B8F4B9108CFC980064FAC2 /* PBXTextBookmark */;
-			85B8F4C2108CFEB80064FAC2 /* PBXTextBookmark */ = 85B8F4C2108CFEB80064FAC2 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 856F9B0810540C4F00CFD619 /* Source Control */;
 		userBuildSettings = {
@@ -216,6 +215,16 @@
 		rType = 0;
 		vrLen = 1348;
 		vrLoc = 168;
+	};
+	853C9DBB108D09C2005538CB /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */;
+		name = "ImageNeuroNet.m: 145";
+		rLen = 0;
+		rLoc = 4879;
+		rType = 0;
+		vrLen = 1956;
+		vrLoc = 4134;
 	};
 	8543C5D010615F0C00E3E1D2 /* Neuron.h */ = {
 		uiCtxt = {
@@ -324,8 +333,8 @@
 	856F9B0A10540EA100CFD619 /* ImageController.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{7129, 221}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 7357}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1013, 3289}}";
-			sepNavSelRange = "{4452, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1013, 3328}}";
+			sepNavSelRange = "{4032, 0}";
 			sepNavVisRange = "{3805, 966}";
 			sepNavWindowFrame = "{{20, 38}, {673, 735}}";
 		};
@@ -404,26 +413,6 @@
 		vrLen = 2499;
 		vrLoc = 3591;
 	};
-	85B8F4B9108CFC980064FAC2 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 856F9B0A10540EA100CFD619 /* ImageController.m */;
-		name = "ImageController.m: 154";
-		rLen = 0;
-		rLoc = 4539;
-		rType = 0;
-		vrLen = 1511;
-		vrLoc = 4036;
-	};
-	85B8F4C2108CFEB80064FAC2 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 856F9B0A10540EA100CFD619 /* ImageController.m */;
-		name = "ImageController.m: 150";
-		rLen = 0;
-		rLoc = 4452;
-		rType = 0;
-		vrLen = 966;
-		vrLoc = 3805;
-	};
 	85BC5DB110617564007DEF25 /* ImageNeuron.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {950, 645}}";
@@ -467,9 +456,9 @@
 	85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{3361, 187}\";\n            s = 0;\n        },\n                {\n            r = \"{4982, 1013}\";\n            s = 0;\n        },\n                {\n            r = \"{6211, 795}\";\n            s = 0;\n        },\n                {\n            r = \"{8602, 843}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 9452}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1167, 2639}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1167, 2782}}";
 			sepNavSelRange = "{4693, 0}";
-			sepNavVisRange = "{3405, 1487}";
+			sepNavVisRange = "{3948, 944}";
 			sepNavWindowFrame = "{{19, 7}, {1214, 766}}";
 		};
 	};
