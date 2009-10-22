@@ -19,17 +19,24 @@ MainWindow::MainWindow(QWidget* parent)
 	qDebug() << provider_osm ;
 	qDebug() << mDataSourceOgr ;
 	qDebug() << provider_ogr ;
+	
+#define OSMTEST 1
+
+#ifdef MYRASTERTEST	
 //	QFileInfo myRasterFileInfo("/Users/rilley_elf/Downloads/Abarema_jupunba_projection.tif");
 //	QgsRasterLayer * mypLayer = new QgsRasterLayer(myRasterFileInfo.filePath(), 
-//												   myRasterFileInfo.completeBaseName());
-
-	QString myProviderName      = "ogr";
-	QFileInfo fileInfo("/Users/rilley_elf/maps/MIF-MID/roads.mif");
-	QgsVectorLayer* vectLay = new QgsVectorLayer(fileInfo.filePath(), fileInfo.completeBaseName(),myProviderName);
-
-//	QString myProviderName = "osm";
-//	QFileInfo fileInfo("/Users/rilley_elf/maps/map.osm.xml");
+//	myRasterFileInfo.completeBaseName());
+#endif
+#ifdef VECTORTEST
+//	QString myProviderName = "ogr";
+//	QFileInfo fileInfo("/Users/rilley_elf/maps/MIF-MID/roads.mif");
 //	QgsVectorLayer* vectLay = new QgsVectorLayer(fileInfo.filePath(), fileInfo.completeBaseName(),myProviderName);
+#endif
+#ifdef OSMTEST
+	QString myProviderName = "osm";
+	QFileInfo fileInfo("/Users/rilley_elf/maps/map.osm.xml");
+	QgsVectorLayer* vectLay = new QgsVectorLayer(fileInfo.filePath(), fileInfo.completeBaseName(),myProviderName);
+#endif
 	if (vectLay->isValid())
 	{
 
