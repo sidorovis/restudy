@@ -50,19 +50,6 @@
 			[(ImageNeuron*)neurons[i] normilize];
 	}
 }
--(void) teachWithInSignal:(double*)inSignal OutSignal:(double*)outSignal LastSignal:(double*)lastSignal teachK:(double)teachK
-{
-	for(int i = 0 ; i < count ; i++)
-	{
-		for (int u = 0 ; u < nextLayCount ; u++)
-		{
-			assert(!isnan( teachK * outSignal[u] * (inSignal[u] - lastSignal[u]) ));
-			[(ImageNeuron*)neurons[i] getVectorW][u] += teachK * outSignal[u] * (inSignal[u] - lastSignal[u]) ;		
-		}
-		if (shouldNormilize)
-			[(ImageNeuron*)neurons[i] normilize];
-	}
-}
 -(ImageNeuronLay*) copy
 {
 	ImageNeuronLay* new = [[ImageNeuronLay alloc] init];

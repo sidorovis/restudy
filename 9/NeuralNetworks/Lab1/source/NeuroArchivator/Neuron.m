@@ -60,7 +60,8 @@
 	double summ = 0;
 	for (int i = 0 ; i < length ; i++)
 		summ += fabs(vectorW[i]);
-	assert(summ != 0);
+	if (summ == 0)
+		assert(summ != 0);
 	return summ;
 }
 @end

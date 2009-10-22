@@ -131,6 +131,9 @@
 	int old_diff_eq_diff_marker = 0;
 	double diff;
 	double alpha;
+	[neuroNet fastGoodEnough:&diff];
+	if ([logWith state])
+		NSLog(@",%d,%f", loopCounter, diff);
 	@try 
 	{
 		while ([neuroNet fastGoodEnough:&diff] == NO)
@@ -160,6 +163,9 @@
 				if (loopCounter % ilogEachValue == 0)
 					NSLog(@",%d,%f,%f", loopCounter, diff, alpha);
 		}
+		[neuroNet fastGoodEnough:&diff];
+		if ([logWith state])
+			NSLog(@",%d,%f,%f", loopCounter, diff);
 		resultImageInstance = [neuroNet getResultImage];
 		[resultImage setImage:resultImageInstance];
 		[resultImageInstance release];
