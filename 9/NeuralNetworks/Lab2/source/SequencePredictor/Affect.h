@@ -7,12 +7,15 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "Neuron.h"
 
 @interface Affect : NSObject {
 	double value;
-	id to;
+	Neuron* neuron;
 }
 @property (assign) double value;
-@property (assign) id to;
+@property (assign) Neuron* neuron;
+
+-(Affect*) initWithValue:(double)value_ toNeuron:(Neuron*)neuron_;
+-(void) dealloc;
 @end
