@@ -6,6 +6,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PredictorNeuroNet.h"
 
 int validateInt(NSString* fieldName, NSString* stringValue)
 {

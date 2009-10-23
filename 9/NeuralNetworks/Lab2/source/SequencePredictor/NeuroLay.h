@@ -7,10 +7,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "Neuron.h"
 
 @interface NeuroLay : NSObject {
 	NSMutableArray* neurons;
 }
+-(id) initWithCount:(int)count;
+-(void) dealloc;
+-(void) reset;
+-(void) connectEachToLay:(NeuroLay*)lay;
+-(void) affect;
+
+@property (readwrite,assign) NSMutableArray* neurons;
 
 @end

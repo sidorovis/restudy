@@ -10,7 +10,21 @@
 
 
 @implementation Affect
+
 @synthesize value;
-@synthesize to;
+@synthesize neuron;
+
+-(Affect*) initWithValue:(double)value_ toNeuron:(Neuron*)neuron_;
+{
+	[super init];
+	value = value_;
+	neuron = neuron_;
+	return self;
+}
+-(void) dealloc
+{
+	[neuron retain];
+	[super dealloc];
+}
 
 @end

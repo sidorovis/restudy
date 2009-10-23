@@ -7,11 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "Affect.h"
 
-@interface Neuron : NSObject {
-	NSMutableArray* affectors;
+@interface Neuron : NSObject 
+{
+	NSMutableArray* affectOn;
+	double value;
+//	double nextValue;
 }
-- (Neuron*) init;
+- (id) init;
 - (void) dealloc;
+- (void) connectRandomAffectToLay:(Neuron*)neuron_;
+- (void) connectContextAffectToLay:(Neuron*)neuron_;
+@property (assign) double value;
+//@property (assign) double nextValue;
+
 @end

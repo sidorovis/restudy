@@ -7,6 +7,7 @@
 
 #import "SequenceDataController.h"
 
+
 @implementation SequenceDataController
 +(void)init
 {
@@ -17,12 +18,12 @@
 	@try {
 		int p = validateInt(@"P", [P stringValue]);
 		int m = validateInt(@"M", [M stringValue]);
-		NSArray* strSequenceArray = [[sequenceField stringValue] componentsSeparatedByString:@" "];
 		NSMutableArray* sequence = [[NSMutableArray alloc] init];
-		for (NSString* string in strSequenceArray) {
+		for (NSString* string in [[sequenceField stringValue] componentsSeparatedByString:@" "]) {
 			[sequence addObject:[[NSNumber alloc] initWithInt:validateInt(@"Sequence value wrong", string)]];
 		}
-		
+		PredictorNeuroNet* neuroNet = [[PredictorNeuroNet alloc] initWithSequence:sequence countP:p countM:m];
+		[neuroNet teach];
 		NSLog(@"%d, %d, %d", p, m, [sequence count]);
 	}
 	@catch (NSException * e) {
