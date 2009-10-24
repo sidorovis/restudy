@@ -12,9 +12,13 @@
 @implementation RandomAffect
 -(RandomAffect*) initRandomTo:(Neuron*)neuron_
 {
-	double random_value = (rand()%1000000) / 1000000.0;
-	[super initWithValue:random_value toNeuron:neuron_];
+	value = (rand()%1000000) / 1000000.0;
+	[super initToNeuron:neuron_];
 	return self;
+}
+-(void) affectWith:(double) value_;
+{
+	neuron.value += value_*value;
 }
 
 @end

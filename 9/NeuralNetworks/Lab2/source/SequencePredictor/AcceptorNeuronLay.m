@@ -10,7 +10,7 @@
 
 
 @implementation AcceptorNeuronLay
--(void) initWithSequence:(NSMutableArray*)sequence fromIndex:(int)startSequenceIndex
+-(void) setValuesFrom:(NSMutableArray*)sequence fromIndex:(int)startSequenceIndex;
 {
 	if (startSequenceIndex + [neurons count] > [sequence count])
 		@throw [[NSException alloc] initWithName:@"Assign Input Neurons Error" reason:@"Sequence don't have such values" userInfo:NULL];

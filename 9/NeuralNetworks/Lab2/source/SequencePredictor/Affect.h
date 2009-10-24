@@ -10,12 +10,12 @@
 #import "Neuron.h"
 
 @interface Affect : NSObject {
-	double value;
 	Neuron* neuron;
 }
 @property (assign) double value;
 @property (assign) Neuron* neuron;
 
--(Affect*) initWithValue:(double)value_ toNeuron:(Neuron*)neuron_;
+-(Affect*) initToNeuron:(Neuron*)neuron_;
 -(void) dealloc;
+
 @end

@@ -14,14 +14,18 @@
 {
 	[super init];
 	sequence = sequence_;
-	Input = [[NeuroLay alloc] initWithCount:P_];
-	HiddenContext = [[NeuroLay alloc] initWithCount:P_];
-	ResultContext = Result = [[NeuroLay alloc] initWithCount:M_];
+	Input = [[AcceptorNeuronLay alloc] initWithCount:P_];
 	Hidden = [[NeuroLay alloc] initWithCount:P_];
 	Result = [[NeuroLay alloc] initWithCount:M_];
 
 	[Input connectEachToLay:Hidden];
 	[Hidden connectEachToLay:Result];
+	
+	HiddenContext = [Hidden generateContextLay];
+	ResultContext = [Result generateContextLay];
+	
+	[HiddenContext connectEachToLay:Hidden];
+	[ResultContext connectEachToLay:Hidden];
 	
 	return self;
 }
@@ -35,11 +39,11 @@
 }
 -(void)initLayWithSequenceValue:(int)startSequenceIndex
 {
-	[Input initWithSequence:sequence fromIndex:startSequenceIndex];
+	[Input setValuesFrom:sequence fromIndex:startSequenceIndex];
 }
--(void) teach
+-(void) react
 {
-	int input_data_count = [sequence count] - [[Input neurons] count];
+	int input_data_count = 1 + [sequence count] - [[Input neurons] count] - [[Result neurons] count];
 	for (int i = 0 ; i < input_data_count ; i++)
 	{
 		[self initLayWithSequenceValue:i];
@@ -48,13 +52,14 @@
 }
 -(void) compute
 {
-//	[Hidden reset];
-//	[Result reset];
-//	[Input affect];
-//	[Hidden affect];
-//	[Result affect];
-//	[Hidden baseValue];
-//	[Result baseValue];
+	[Hidden reset];
+	[Result reset];
 	
+	[Input affect];
+	[HiddenContext affect];
+	[ResultContext affect];
+
+	[Hidden affect];
+	[Result affect];
 }
 @end

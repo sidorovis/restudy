@@ -23,7 +23,7 @@
 			[sequence addObject:[[NSNumber alloc] initWithInt:validateInt(@"Sequence value wrong", string)]];
 		}
 		PredictorNeuroNet* neuroNet = [[PredictorNeuroNet alloc] initWithSequence:sequence countP:p countM:m];
-		[neuroNet teach];
+		[neuroNet react];
 		NSLog(@"%d, %d, %d", p, m, [sequence count]);
 	}
 	@catch (NSException * e) {

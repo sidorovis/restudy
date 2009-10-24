@@ -10,8 +10,8 @@
 #import "NeuroLay.h"
 
 @interface AcceptorNeuronLay : NeuroLay {
-
+	
 }
--(void) initWithSequence:(NSMutableArray*)sequence fromIndex:(int)startSequenceIndex;
+-(void) setValuesFrom:(NSMutableArray*)sequence fromIndex:(int)startSequenceIndex;
 
 @end

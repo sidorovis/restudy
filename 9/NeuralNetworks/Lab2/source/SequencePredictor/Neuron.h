@@ -16,8 +16,10 @@
 }
 - (id) init;
 - (void) dealloc;
-- (void) connectRandomAffectToLay:(Neuron*)neuron_;
-- (void) connectContextAffectToLay:(Neuron*)neuron_;
+- (void) connectRandomAffectToNeuron:(Neuron*)neuron_;
+- (void) connectContextAffectToNeuron:(Neuron*)neuron_;
+- (void) affect;
+
 @property (assign) double value;
 //@property (assign) double nextValue;
 

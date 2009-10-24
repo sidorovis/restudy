@@ -10,10 +10,9 @@
 
 
 @implementation ContextAffect
--(ContextAffect*) initToNeuron:(Neuron*)neuron_
+-(void) affectWith:(double) value_;
 {
-	[super initWithValue:1 toNeuron:neuron_];
-	return self;
+	neuron.value = value_;
 }
 
 @end

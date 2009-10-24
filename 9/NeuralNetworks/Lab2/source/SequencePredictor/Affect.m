@@ -14,10 +14,9 @@
 @synthesize value;
 @synthesize neuron;
 
--(Affect*) initWithValue:(double)value_ toNeuron:(Neuron*)neuron_;
+-(Affect*) initToNeuron:(Neuron*)neuron_;
 {
 	[super init];
-	value = value_;
 	neuron = neuron_;
 	return self;
 }

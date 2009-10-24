@@ -52,6 +52,7 @@
 		858C4D691091CB61000A85F2 /* NeuroNet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeuroNet.m; sourceTree = "<group>"; };
 		858C4D8B1091D0F9000A85F2 /* PredictorNeuroNet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredictorNeuroNet.h; sourceTree = "<group>"; };
 		858C4D8C1091D0F9000A85F2 /* PredictorNeuroNet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredictorNeuroNet.m; sourceTree = "<group>"; };
+		85B19CD110936E720086DB43 /* AffectorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AffectorProtocol.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* SequencePredictor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SequencePredictor-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* SequencePredictor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SequencePredictor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -164,8 +165,20 @@
 				854421F61091C31500361CF9 /* Affect.m */,
 				856C64F61092553D000513FF /* ContextAffect.h */,
 				856C64F71092553D000513FF /* ContextAffect.m */,
+				85B19CD110936E720086DB43 /* AffectorProtocol.h */,
 			);
 			name = Affectors;
+			sourceTree = "<group>";
+		};
+		85B19C1810934AFC0086DB43 /* NeuroNet */ = {
+			isa = PBXGroup;
+			children = (
+				858C4D681091CB61000A85F2 /* NeuroNet.h */,
+				858C4D691091CB61000A85F2 /* NeuroNet.m */,
+				858C4D8B1091D0F9000A85F2 /* PredictorNeuroNet.h */,
+				858C4D8C1091D0F9000A85F2 /* PredictorNeuroNet.m */,
+			);
+			name = NeuroNet;
 			sourceTree = "<group>";
 		};
 		85F3F77D1090F84500BB7E6A /* Sources */ = {
@@ -181,14 +194,11 @@
 		85F3F77E1090F85B00BB7E6A /* NeuroNet */ = {
 			isa = PBXGroup;
 			children = (
+				85B19C1810934AFC0086DB43 /* NeuroNet */,
 				856C64E21092540D000513FF /* Affectors */,
 				856C64E0109253F3000513FF /* NeuroLays */,
 				8544216110911BD000361CF9 /* Neuron.h */,
 				8544216210911BD000361CF9 /* Neuron.m */,
-				858C4D681091CB61000A85F2 /* NeuroNet.h */,
-				858C4D691091CB61000A85F2 /* NeuroNet.m */,
-				858C4D8B1091D0F9000A85F2 /* PredictorNeuroNet.h */,
-				858C4D8C1091D0F9000A85F2 /* PredictorNeuroNet.m */,
 			);
 			name = NeuroNet;
 			sourceTree = "<group>";

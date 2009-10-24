@@ -1,5 +1,5 @@
 //
-//  ContextAffect.h
+//  AffectorProtocol.h
 //  SequencePredictor
 //
 //  Created by Ivan Sidarau on 24.10.09.
@@ -7,10 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "Affect.h"
-#import "AffectorProtocol.h"
 
-@interface ContextAffect : Affect <AffectorProtocol> {
 
-}
+@protocol AffectorProtocol
+
+-(void) affectWith:(double) value_;
+
 @end

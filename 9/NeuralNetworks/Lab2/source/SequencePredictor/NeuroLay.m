@@ -34,15 +34,22 @@
 {
 	for (Neuron* from in neurons) {
 		for (Neuron* to in lay.neurons) {
-//			[from connectTo:to];
+			[from connectRandomAffectToNeuron:to];
 		}
 	}
 }
+-(NeuroLay*) generateContextLay
+{
+	NeuroLay* context = [[NeuroLay alloc] initWithCount:[neurons count]];
+	for (int i = 0 ; i < [neurons count] ; i++)
+		[[neurons objectAtIndex:i] connectContextAffectToNeuron:[context.neurons objectAtIndex:i]];
+	return context;
+}
+
 -(void) affect
 {
 	for (Neuron* neuron in neurons) {
-//		[neuron affect]; 
-		// TODO !
+		[neuron affect];
 	}
 }
 

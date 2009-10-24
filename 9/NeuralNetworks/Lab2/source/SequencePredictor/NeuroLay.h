@@ -16,6 +16,7 @@
 -(void) dealloc;
 -(void) reset;
 -(void) connectEachToLay:(NeuroLay*)lay;
+-(NeuroLay*) generateContextLay;
 -(void) affect;
 
 @property (readwrite,assign) NSMutableArray* neurons;

@@ -18,6 +18,6 @@
 -(id) initWithSequence:(NSMutableArray*)sequence_ countP:(int)P_ countM:(int)M_;
 -(void) dealloc;
 -(void) initLayWithSequenceValue:(int)startSequenceIndex;
--(void) teach;
+-(void) react;
 -(void) compute;
 @end
