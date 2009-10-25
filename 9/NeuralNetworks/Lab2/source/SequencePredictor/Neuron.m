@@ -47,12 +47,22 @@
 }
 - (void) teachTo:(Neuron*)toNeuron alpha:(double)alpha deltaY:(double)deltaY
 {
-	for (Affect* affect in affectOnArray) {
+	for (Affect<AffectorProtocol>* affect in affectOnArray) {
 		if (affect.neuron == toNeuron)
 		{
-			affect.value -= alpha*value*deltaY;
+			[affect increaseValue:alpha*value*deltaY];
 		}
 	}
-	
 }
+- (void) normilize
+{
+	double summ = 0;
+	for (Affect<AffectorProtocol>* affect in affectOnArray) {
+		summ += [affect getValue];
+	}
+	for (Affect<AffectorProtocol>* affect in affectOnArray) {
+		[affect normilize:summ];
+	}
+}
+
 @end

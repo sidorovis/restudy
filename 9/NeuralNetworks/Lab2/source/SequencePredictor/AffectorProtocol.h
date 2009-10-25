@@ -12,5 +12,7 @@
 @protocol AffectorProtocol
 
 -(void) affectWith:(double) value_;
-
+-(double) getValue;
+-(void) increaseValue:(double) delta;
+-(void) normilize:(double)summ;
 @end

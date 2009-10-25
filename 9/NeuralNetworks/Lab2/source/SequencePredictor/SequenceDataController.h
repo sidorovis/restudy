@@ -12,7 +12,14 @@ int validateInt(NSString* fieldName, NSString* stringValue)
 {
 	if ([[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[1-9][0-9]*"] 
 		 evaluateWithObject:stringValue] == YES)
-		return [stringValue intValue]; 
+		return [stringValue intValue];
+	@throw [[NSException alloc] initWithName:@"Non validated parameters" reason:fieldName userInfo:NULL];
+}
+double validateDouble(NSString* fieldName, NSString* stringValue)
+{
+	if ([[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[1-9][0-9]*"] 
+		 evaluateWithObject:stringValue] == YES)
+		return [stringValue doubleValue]/100.0;
 	@throw [[NSException alloc] initWithName:@"Non validated parameters" reason:fieldName userInfo:NULL];
 }
 

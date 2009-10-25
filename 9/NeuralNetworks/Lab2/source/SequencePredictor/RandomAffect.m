@@ -20,5 +20,17 @@
 {
 	neuron.value += value_*value;
 }
+-(void) increaseValue:(double) delta
+{
+	value -= delta;
+}
+-(double) getValue
+{
+	return value;
+}
+-(void) normilize:(double)summ
+{
+	value /= summ;
+}
 
 @end

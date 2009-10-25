@@ -27,6 +27,12 @@
 	[HiddenContext connectEachToLay:Hidden];
 	[ResultContext connectEachToLay:Hidden];
 	
+	[Input normilize];
+	[Hidden normilize];
+	[Result normilize];
+	[HiddenContext normilize];
+	[ResultContext normilize];
+	
 	return self;
 }
 -(void) dealloc

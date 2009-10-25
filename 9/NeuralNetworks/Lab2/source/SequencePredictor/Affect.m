@@ -11,7 +11,6 @@
 
 @implementation Affect
 
-@synthesize value;
 @synthesize neuron;
 
 -(Affect*) initToNeuron:(Neuron*)neuron_;

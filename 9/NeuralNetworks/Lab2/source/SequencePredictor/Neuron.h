@@ -20,7 +20,7 @@
 - (void) connectContextAffectToNeuron:(Neuron*)neuron_;
 - (void) affect;
 - (void) teachTo:(Neuron*)toNeuron alpha:(double)alpha deltaY:(double)deltaY;
-
+- (void) normilize;
 
 @property (assign) double value;
 //@property (assign) double nextValue;

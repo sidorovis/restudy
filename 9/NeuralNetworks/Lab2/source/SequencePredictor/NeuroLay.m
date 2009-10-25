@@ -56,7 +56,12 @@
 {
 	return (Neuron*)[neurons objectAtIndex:index];
 }
-
+-(void) normilize
+{
+	for (Neuron* neuron in neurons) {
+		[neuron normilize];
+	}
+}
 
 @synthesize neurons;
 

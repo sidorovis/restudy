@@ -20,7 +20,7 @@
 		int m = validateInt(@"M", [M stringValue]);
 		NSMutableArray* sequence = [[NSMutableArray alloc] init];
 		for (NSString* string in [[sequenceField stringValue] componentsSeparatedByString:@" "]) {
-			[sequence addObject:[[NSNumber alloc] initWithInt:validateInt(@"Sequence value wrong", string)]];
+			[sequence addObject:[[NSNumber alloc] initWithDouble:validateDouble(@"Sequence value wrong", string)]];
 		}
 		PredictorNeuroNet* neuroNet = [[PredictorNeuroNet alloc] initWithSequence:sequence countP:p countM:m];
 		double diff = [neuroNet findDiff];

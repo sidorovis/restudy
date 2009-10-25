@@ -12,7 +12,6 @@
 @interface Affect : NSObject {
 	Neuron* neuron;
 }
-@property (assign) double value;
 @property (assign) Neuron* neuron;
 
 -(Affect*) initToNeuron:(Neuron*)neuron_;
