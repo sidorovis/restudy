@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "NeuroNet.h"
 #import "AcceptorNeuronLay.h"
+#import "math.h"
 
 @interface PredictorNeuroNet : NeuroNet {
 	AcceptorNeuronLay *Input;
@@ -18,6 +19,8 @@
 -(id) initWithSequence:(NSMutableArray*)sequence_ countP:(int)P_ countM:(int)M_;
 -(void) dealloc;
 -(void) initLayWithSequenceValue:(int)startSequenceIndex;
--(void) react;
+-(void) teach;
+-(void) teachHiddenResultConnectionWhenSequenceFrom:(int)ind;
+-(double) findDiff;
 -(void) compute;
 @end

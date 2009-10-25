@@ -21,28 +21,38 @@
 {
 	[super init];
 	value = 0;
-	affectOn = [[NSMutableArray alloc] init];
+	affectOnArray = [[NSMutableArray alloc] init];
 	return self;
 }
 - (void) dealloc
 {
-	[affectOn release];
+	[affectOnArray release];
 	[super dealloc];
 }
 - (void) connectRandomAffectToNeuron:(Neuron*)neuron_
 {
 	RandomAffect* affect = [[RandomAffect alloc] initRandomTo:neuron_];
-	[affectOn addObject:affect];
+	[affectOnArray addObject:affect];
 }
 - (void) connectContextAffectToNeuron:(Neuron*)neuron_
 {
 	ContextAffect* affect = (ContextAffect*)[[ContextAffect alloc] initToNeuron:neuron_];
-	[affectOn addObject:affect];
+	[affectOnArray addObject:affect];
 }
 - (void) affect
 {
-	for (Affect <AffectorProtocol>* affect in affectOn) {
+	for (Affect <AffectorProtocol>* affect in affectOnArray) {
 		[affect affectWith:value];
 	}
+}
+- (void) teachTo:(Neuron*)toNeuron alpha:(double)alpha deltaY:(double)deltaY
+{
+	for (Affect* affect in affectOnArray) {
+		if (affect.neuron == toNeuron)
+		{
+			affect.value -= alpha*value*deltaY;
+		}
+	}
+	
 }
 @end

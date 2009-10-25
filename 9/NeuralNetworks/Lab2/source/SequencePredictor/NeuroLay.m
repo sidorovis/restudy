@@ -52,6 +52,11 @@
 		[neuron affect];
 	}
 }
+-(Neuron*) getNeuronAtIndex:(int)index
+{
+	return (Neuron*)[neurons objectAtIndex:index];
+}
+
 
 @synthesize neurons;
 

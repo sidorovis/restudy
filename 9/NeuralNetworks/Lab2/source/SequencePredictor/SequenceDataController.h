@@ -20,6 +20,7 @@ int validateInt(NSString* fieldName, NSString* stringValue)
 	IBOutlet NSTextField* sequenceField;
 	IBOutlet NSTextField* P;
 	IBOutlet NSTextField* M;
+	IBOutlet NSTextField* currentDiff;
 }
 +(void)init;
 - (IBAction)predict:(id)sender;

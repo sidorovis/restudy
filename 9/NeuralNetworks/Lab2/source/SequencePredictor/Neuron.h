@@ -10,7 +10,7 @@
 
 @interface Neuron : NSObject 
 {
-	NSMutableArray* affectOn;
+	NSMutableArray* affectOnArray;
 	double value;
 //	double nextValue;
 }
@@ -19,6 +19,8 @@
 - (void) connectRandomAffectToNeuron:(Neuron*)neuron_;
 - (void) connectContextAffectToNeuron:(Neuron*)neuron_;
 - (void) affect;
+- (void) teachTo:(Neuron*)toNeuron alpha:(double)alpha deltaY:(double)deltaY;
+
 
 @property (assign) double value;
 //@property (assign) double nextValue;
