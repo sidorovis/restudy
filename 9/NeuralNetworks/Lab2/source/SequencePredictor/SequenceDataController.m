@@ -24,8 +24,8 @@
 		}
 		PredictorNeuroNet* neuroNet = [[PredictorNeuroNet alloc] initWithSequence:sequence countP:p countM:m];
 		double diff = [neuroNet findDiff];
-		//[currentDiff setDoubleValue:[neuroNet findDiff]];
 		[neuroNet teach];
+		diff = 0;
 		diff = [neuroNet findDiff];
 		[currentDiff setDoubleValue:diff];
 		NSLog(@"%d, %d, %d", p, m, [sequence count]);

@@ -56,10 +56,10 @@
 {
 	return (Neuron*)[neurons objectAtIndex:index];
 }
--(void) normilize
+-(void) normilizeLay
 {
 	for (Neuron* neuron in neurons) {
-		[neuron normilize];
+		[neuron normilizeNeuron];
 	}
 }
 

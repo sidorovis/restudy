@@ -19,7 +19,7 @@
 -(NeuroLay*) generateContextLay;
 -(void) affect;
 -(Neuron*) getNeuronAtIndex:(int)index;
--(void) normilize;
+-(void) normilizeLay;
 @property (readwrite,assign) NSMutableArray* neurons;
 
 @end

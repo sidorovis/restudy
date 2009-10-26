@@ -53,15 +53,16 @@
 			[affect increaseValue:alpha*value*deltaY];
 		}
 	}
+	[toNeuron normilizeNeuron];
 }
-- (void) normilize
+- (void) normilizeNeuron
 {
 	double summ = 0;
 	for (Affect<AffectorProtocol>* affect in affectOnArray) {
-		summ += [affect getValue];
+		summ += fabs([affect getValue]);
 	}
 	for (Affect<AffectorProtocol>* affect in affectOnArray) {
-		[affect normilize:summ];
+		[affect normilizeAffect:summ];
 	}
 }
 

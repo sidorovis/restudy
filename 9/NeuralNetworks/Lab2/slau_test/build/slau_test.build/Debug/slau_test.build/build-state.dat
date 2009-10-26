@@ -1,61 +1,0 @@
-Tslau_test
-v7
-r0
-t277066099.919995
-cCheck dependencies
-cCompileC build/slau_test.build/Debug/slau_test.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cLd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/Debug/slau_test normal x86_64
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004A769DAB00000000000000EE
-t1249287595
-s238
-
-N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/Debug/slau_test
-t1255373299
-s197432
-
-N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/slau_test.build/Debug/slau_test.build/Objects-normal/x86_64/main.o
-t1255373298
-s450820
-
-N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/slau_test.build/Debug/slau_test.build/Objects-normal/x86_64/slau_test.LinkFileList
-c000000004AD355A90000000000000087
-t1255364009
-s135
-
-N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/main.cpp
-c000000004AD379F10000000000000B4C
-t1255373297
-s2892
-i<iostream>
-i<ostream>
-i<vector>
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies277066099#277066099#0(0"0(0#1#0"4300882208#0"0#
-
-CCompileC build/slau_test.build/Debug/slau_test.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s277066099.880277
-e277066099.881594
-r1
-xCompileC
-xbuild/slau_test.build/Debug/slau_test.build/Objects-normal/x86_64/main.o
-x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/main.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@78"Compile /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/main.cpp277066099#277066099#0(0"0(0#0#70"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/main.cpp4300882208#1627"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/slau_test.build/Debug/slau_test.build/slau_test-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/slau_test.build/Debug/slau_test.build/slau_test-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/slau_test.build/Debug/slau_test.build/slau_test-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/slau_test.build/Debug/slau_test.build/slau_test-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/Debug -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/Debug/include -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/slau_test.build/Debug/slau_test.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/slau_test.build/Debug/slau_test.build/DerivedSources -c /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/main.cpp -o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/slau_test.build/Debug/slau_test.build/Objects-normal/x86_64/main.o0#
-
-CLd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/Debug/slau_test normal x86_64
-s277066099.881664
-e277066099.919934
-r1
-xLd
-x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/Debug/slau_test
-xnormal
-xx86_64
-lSLF07#2@88"Link /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/Debug/slau_test277066099#277066099#0(0"0(0#0#0"4300882208#621"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/Debug -F/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/Debug -filelist /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/slau_test.build/Debug/slau_test.build/Objects-normal/x86_64/slau_test.LinkFileList -mmacosx-version-min=10.6 -o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab2/slau_test/build/Debug/slau_test0#
-

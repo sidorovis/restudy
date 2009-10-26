@@ -27,11 +27,11 @@
 	[HiddenContext connectEachToLay:Hidden];
 	[ResultContext connectEachToLay:Hidden];
 	
-	[Input normilize];
-	[Hidden normilize];
-	[Result normilize];
-	[HiddenContext normilize];
-	[ResultContext normilize];
+	[Input normilizeLay];
+	[Hidden normilizeLay];
+	[Result normilizeLay];
+	[HiddenContext normilizeLay];
+	[ResultContext normilizeLay];
 	
 	return self;
 }
@@ -43,10 +43,6 @@
 	[Result release];
 	[super dealloc];
 }
--(void)initLayWithSequenceValue:(int)startSequenceIndex
-{
-	[Input setValuesFrom:sequence fromIndex:startSequenceIndex];
-}
 -(void) teach
 {
 	int input_data_count = 1 + [sequence count] - [[Input neurons] count] - [[Result neurons] count];
@@ -54,7 +50,7 @@
 	[ResultContext reset];
 	for (int i = 0 ; i < input_data_count ; i++)
 	{
-		[self initLayWithSequenceValue:i];
+		[Input setValuesFrom:sequence fromIndex:i];
 		[self compute];
 		[self teachHiddenResultConnectionWhenSequenceFrom:i];
 	}
@@ -65,7 +61,7 @@
 	int M = [[Result neurons] count];
 	double alpha = 0;
 	for (Neuron* neuron in Hidden.neurons) {
-		alpha += neuron.value;
+		alpha += neuron.value*neuron.value;
 	}
 	alpha = 1.0 / (1.0 + alpha);
 	for (int u = 0 ; u < M ; u++)
@@ -92,7 +88,7 @@
 	int input_data_count = 1 + [sequence count] - P - M;
 	for (int i = 0 ; i < input_data_count ; i++)
 	{
-		[self initLayWithSequenceValue:i];
+		[Input setValuesFrom:sequence fromIndex:i];
 		[self compute];
 		for (int u = 0 ; u < M ; u++)
 		{
@@ -103,6 +99,7 @@
 	}
 	return diff;
 }
+
 -(void) compute
 {
 	[Hidden reset];

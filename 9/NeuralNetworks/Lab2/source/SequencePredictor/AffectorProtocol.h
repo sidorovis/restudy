@@ -14,5 +14,5 @@
 -(void) affectWith:(double) value_;
 -(double) getValue;
 -(void) increaseValue:(double) delta;
--(void) normilize:(double)summ;
+-(void) normilizeAffect:(double)summ;
 @end

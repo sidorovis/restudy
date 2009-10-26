@@ -19,9 +19,9 @@
 }
 -(double) getValue
 {
-	return 1;
+	return 0;
 }
--(void) normilize:(double)summ
+-(void) normilizeAffect:(double)summ
 {
 }
 

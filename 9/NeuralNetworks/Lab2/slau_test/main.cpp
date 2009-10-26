@@ -12,6 +12,14 @@ public:
 			koeficients.push_back(koeficients_[i]);
 		answer = answer_;
 	}
+	double all_null()
+	{
+		bool all_null = true;
+		for (int i = 0 ; i < koeficients.size() ; i++)
+			if (koeficients[i] != 0)
+				all_null = false;
+		return all_null;
+	}
 	void print()
 	{
 		std::cout << koeficients.size() << " | ";
@@ -72,12 +80,16 @@ public:
 	{
 		return uravneniya[index];
 	}
+	Uravnenie& operator[](size_t index)
+	{
+		return uravneniya[index];
+	}
 	void print()
 	{
 		for (int i = 0 ; i < uravneniya.size() ; i++)
 			uravneniya[i].print();
 	}
-	void solve()
+	int solve()
 	{
 		if (uravneniya.size() > 0)
 		for (int y = 0 ; y < uravneniya[0].koeficients.size() ; y++)
@@ -94,20 +106,47 @@ public:
 				uravneniya[i].answer = uravneniya[y].answer - uravneniya[i].answer*k;
 			}
 			sort();
-			print();
-			std::cout << std::endl;
 		}
+		
+		int max = uravneniya.size() - 1;
+		while ( max > -1 && uravneniya[max].all_null())
+			max--;
+		if ( max == -1)
+			return -1;
+		std::vector<double> xes(max+1);
+		for (int i = max ; i > -1 ; i--)
+		{
+			xes[i] = uravneniya[i].answer / uravneniya[i][i];
+			for (int u = i - 1 ; u > -1 ; u--)
+			{
+				uravneniya[u].answer -= xes[i] * uravneniya[u][i];
+				uravneniya[u].koeficients[i] = 0;
+			}
+			
+		}
+		for (int i = 0 ; i <= max ; i++)
+		{
+			uravneniya[i].answer /= uravneniya[i].koeficients[i];
+			uravneniya[i].koeficients[i] = 1;
+		}
+		std::cout << "Which uravnenie not null first: " << max << std::endl;
+		print();
+		std::cout << std::endl;
+		return max;
 	}
 };
 int main (int argc, char * const argv[]) {
-//	const size_t length = 8;
-//	const double array[ length ] = {1.0, -1.0/2, 1.0/4, 1.0/8, -1.0/16, 1.0/32, 1.0/64, -1.0/128};
+	const size_t length = 8;
+	const double array[ length ] = {1.0, -1.0/2, 1.0/4, 1.0/8, -1.0/16, 1.0/32, 1.0/64, -1.0/128};
 
-	const size_t length = 18;
-	const double array[ length ] = {-3, 0, 2, 1, -1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 2, 1, 3, 0};
+//	const size_t length = 20;
+//	const double array[ length ] = {-3, 0, 2, 1, -1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 2, 1, 3, 0, 5, 1};
 	
-	Slau slau(length, array, 8);
-	slau.solve();
-	
+	Slau slau(length, array, 3);
+	int koef_count = slau.solve()+1;
+	double next = 0;
+	for (int i = 0 ; i < koef_count ; i++)
+		next += slau[i].answer*array[length - koef_count + i];
+	std::cout << next << std::endl;
     return 0;
 }

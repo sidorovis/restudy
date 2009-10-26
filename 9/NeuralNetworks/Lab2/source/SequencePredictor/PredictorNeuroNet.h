@@ -18,9 +18,10 @@
 }
 -(id) initWithSequence:(NSMutableArray*)sequence_ countP:(int)P_ countM:(int)M_;
 -(void) dealloc;
--(void) initLayWithSequenceValue:(int)startSequenceIndex;
 -(void) teach;
 -(void) teachHiddenResultConnectionWhenSequenceFrom:(int)ind;
 -(double) findDiff;
 -(void) compute;
+//-(void) resetAllLays; 
+// TODO: think about Reset All Lays method
 @end

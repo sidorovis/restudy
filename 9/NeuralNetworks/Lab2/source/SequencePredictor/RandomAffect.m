@@ -7,12 +7,12 @@
 //
 
 #import "RandomAffect.h"
-
+#define basis 1000000
 
 @implementation RandomAffect
 -(RandomAffect*) initRandomTo:(Neuron*)neuron_
 {
-	value = (rand()%1000000) / 1000000.0;
+	value = ((rand()%basis)-basis / 2) / (double)basis;
 	[super initToNeuron:neuron_];
 	return self;
 }
@@ -28,7 +28,7 @@
 {
 	return value;
 }
--(void) normilize:(double)summ
+-(void) normilizeAffect:(double)summ
 {
 	value /= summ;
 }
