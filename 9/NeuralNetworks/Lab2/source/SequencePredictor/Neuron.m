@@ -15,6 +15,7 @@
 @implementation Neuron
 
 @synthesize value;
+@synthesize trueValue;
 //@synthesize nextValue;
 
 - (id) init
@@ -41,29 +42,27 @@
 }
 - (void) affect
 {
-	for (Affect <AffectorProtocol>* affect in affectOnArray) {
+	for (Affect <AffectorProtocol>* affect in affectOnArray)
 		[affect affectWith:value];
-	}
 }
 - (void) teachTo:(Neuron*)toNeuron alpha:(double)alpha deltaY:(double)deltaY
 {
-	for (Affect<AffectorProtocol>* affect in affectOnArray) {
+	for (Affect<AffectorProtocol>* affect in affectOnArray)
 		if (affect.neuron == toNeuron)
-		{
 			[affect increaseValue:alpha*value*deltaY];
-		}
-	}
-	[toNeuron normilizeNeuron];
+//	[toNeuron normilizeNeuron];
 }
 - (void) normilizeNeuron
 {
 	double summ = 0;
-	for (Affect<AffectorProtocol>* affect in affectOnArray) {
+	for (Affect<AffectorProtocol>* affect in affectOnArray)
 		summ += fabs([affect getValue]);
-	}
-	for (Affect<AffectorProtocol>* affect in affectOnArray) {
+	for (Affect<AffectorProtocol>* affect in affectOnArray)
 		[affect normilizeAffect:summ];
-	}
+}
+- (double) getDiff
+{
+	return value - trueValue;
 }
 
 @end

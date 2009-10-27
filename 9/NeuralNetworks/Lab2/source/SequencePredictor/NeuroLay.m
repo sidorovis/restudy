@@ -26,17 +26,14 @@
 }
 -(void) reset
 {
-	for (Neuron* neuron in neurons) {
+	for (Neuron* neuron in neurons)
 		neuron.value = 0;
-	}
 }
--(void) connectEachToLay:(NeuroLay*)lay
+-(void) connectEachNeuronToLay:(NeuroLay*)lay
 {
-	for (Neuron* from in neurons) {
-		for (Neuron* to in lay.neurons) {
+	for (Neuron* from in neurons)
+		for (Neuron* to in lay.neurons)
 			[from connectRandomAffectToNeuron:to];
-		}
-	}
 }
 -(NeuroLay*) generateContextLay
 {
@@ -48,9 +45,8 @@
 
 -(void) affect
 {
-	for (Neuron* neuron in neurons) {
+	for (Neuron* neuron in neurons)
 		[neuron affect];
-	}
 }
 -(Neuron*) getNeuronAtIndex:(int)index
 {
@@ -58,9 +54,8 @@
 }
 -(void) normilizeLay
 {
-	for (Neuron* neuron in neurons) {
+	for (Neuron* neuron in neurons)
 		[neuron normilizeNeuron];
-	}
 }
 
 @synthesize neurons;

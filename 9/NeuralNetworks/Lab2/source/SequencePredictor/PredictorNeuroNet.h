@@ -9,11 +9,13 @@
 #import <Cocoa/Cocoa.h>
 #import "NeuroNet.h"
 #import "AcceptorNeuronLay.h"
+#import "ResultNeuronLay.h"
 #import "math.h"
 
 @interface PredictorNeuroNet : NeuroNet {
 	AcceptorNeuronLay *Input;
-	NeuroLay *Hidden, *HiddenContext, *Result, *ResultContext;
+	ResultNeuronLay *Result;
+	NeuroLay *Hidden, *HiddenContext, *ResultContext;
 	NSMutableArray* sequence;
 }
 -(id) initWithSequence:(NSMutableArray*)sequence_ countP:(int)P_ countM:(int)M_;

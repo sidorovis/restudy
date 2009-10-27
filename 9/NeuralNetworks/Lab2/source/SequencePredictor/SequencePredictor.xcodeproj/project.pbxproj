@@ -13,6 +13,7 @@
 		8544216310911BD000361CF9 /* Neuron.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544216210911BD000361CF9 /* Neuron.m */; };
 		854421BB1091225F00361CF9 /* NeuroLay.m in Sources */ = {isa = PBXBuildFile; fileRef = 854421BA1091225F00361CF9 /* NeuroLay.m */; };
 		854421F71091C31500361CF9 /* Affect.m in Sources */ = {isa = PBXBuildFile; fileRef = 854421F61091C31500361CF9 /* Affect.m */; };
+		85519E8810976FB000429A6B /* ResultNeuronLay.m in Sources */ = {isa = PBXBuildFile; fileRef = 85519E8710976FB000429A6B /* ResultNeuronLay.m */; };
 		856C64DA10925361000513FF /* AcceptorNeuronLay.m in Sources */ = {isa = PBXBuildFile; fileRef = 856C64D910925361000513FF /* AcceptorNeuronLay.m */; };
 		856C64E710925428000513FF /* RandomAffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 856C64E610925428000513FF /* RandomAffect.m */; };
 		856C64F81092553D000513FF /* ContextAffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 856C64F71092553D000513FF /* ContextAffect.m */; };
@@ -42,6 +43,8 @@
 		854421BA1091225F00361CF9 /* NeuroLay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NeuroLay.m; sourceTree = "<group>"; };
 		854421F51091C31500361CF9 /* Affect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Affect.h; sourceTree = "<group>"; };
 		854421F61091C31500361CF9 /* Affect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Affect.m; sourceTree = "<group>"; };
+		85519E8610976FB000429A6B /* ResultNeuronLay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultNeuronLay.h; sourceTree = "<group>"; };
+		85519E8710976FB000429A6B /* ResultNeuronLay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultNeuronLay.m; sourceTree = "<group>"; };
 		856C64D810925361000513FF /* AcceptorNeuronLay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptorNeuronLay.h; sourceTree = "<group>"; };
 		856C64D910925361000513FF /* AcceptorNeuronLay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcceptorNeuronLay.m; sourceTree = "<group>"; };
 		856C64E510925428000513FF /* RandomAffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomAffect.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 				856C64D810925361000513FF /* AcceptorNeuronLay.h */,
 				854421BA1091225F00361CF9 /* NeuroLay.m */,
 				854421B91091225F00361CF9 /* NeuroLay.h */,
+				85519E8610976FB000429A6B /* ResultNeuronLay.h */,
+				85519E8710976FB000429A6B /* ResultNeuronLay.m */,
 			);
 			name = NeuroLays;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 				856C64DA10925361000513FF /* AcceptorNeuronLay.m in Sources */,
 				856C64E710925428000513FF /* RandomAffect.m in Sources */,
 				856C64F81092553D000513FF /* ContextAffect.m in Sources */,
+				85519E8810976FB000429A6B /* ResultNeuronLay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

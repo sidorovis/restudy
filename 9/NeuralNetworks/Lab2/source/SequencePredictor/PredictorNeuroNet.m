@@ -15,23 +15,26 @@
 	[super init];
 	sequence = sequence_;
 	Input = [[AcceptorNeuronLay alloc] initWithCount:P_];
-	Hidden = [[NeuroLay alloc] initWithCount:P_];
-	Result = [[NeuroLay alloc] initWithCount:M_];
+	Hidden = [Input generateContextLay];
+//	Hidden = [[NeuroLay alloc] initWithCount:P_]; 
+	// TODO: hidden is context
+	Result = [[ResultNeuronLay alloc] initWithCount:M_];
 
-	[Input connectEachToLay:Hidden];
-	[Hidden connectEachToLay:Result];
+//	[Input connectEachNeuronToLay:Hidden]; 
+	// TODO: hidden is context
+	[Hidden connectEachNeuronToLay:Result];
 	
 	HiddenContext = [Hidden generateContextLay];
 	ResultContext = [Result generateContextLay];
 	
-	[HiddenContext connectEachToLay:Hidden];
-	[ResultContext connectEachToLay:Hidden];
+	[HiddenContext connectEachNeuronToLay:Hidden];
+	[ResultContext connectEachNeuronToLay:Hidden];
 	
-	[Input normilizeLay];
-	[Hidden normilizeLay];
-	[Result normilizeLay];
-	[HiddenContext normilizeLay];
-	[ResultContext normilizeLay];
+//	[Input normilizeLay];
+//	[Hidden normilizeLay];
+//	[Result normilizeLay];
+//	[HiddenContext normilizeLay];
+//	[ResultContext normilizeLay];
 	
 	return self;
 }
@@ -51,8 +54,10 @@
 	for (int i = 0 ; i < input_data_count ; i++)
 	{
 		[Input setValuesFrom:sequence fromIndex:i];
+		[Result setValuesFrom:sequence fromIndex:i];
 		[self compute];
 		[self teachHiddenResultConnectionWhenSequenceFrom:i];
+//		[self teachInputHiddenConnection
 	}
 }
 -(void) teachHiddenResultConnectionWhenSequenceFrom:(int)ind;
@@ -63,18 +68,13 @@
 	for (Neuron* neuron in Hidden.neurons) {
 		alpha += neuron.value*neuron.value;
 	}
-	alpha = 1.0 / (1.0 + alpha);
+	alpha = 1.0 / (alpha);
 	for (int u = 0 ; u < M ; u++)
 	{
 		Neuron* toNeuron = [Result getNeuronAtIndex:u];
-		double Y = [toNeuron value];
-		double trueY = [(NSNumber*)[sequence objectAtIndex:(P+ind+u)] doubleValue];
-		double deltaY = trueY - Y;
+		double deltaY = -([(NSNumber*)[sequence objectAtIndex:(P+ind+u)] doubleValue] - toNeuron.value);
 		for (int i = 0 ; i < P ; i++)
-		{
-			Neuron* current = [Hidden getNeuronAtIndex:i];
-			[current teachTo:toNeuron alpha:alpha deltaY:deltaY];
-		}
+			[[Hidden getNeuronAtIndex:i] teachTo:toNeuron alpha:alpha deltaY:deltaY];
 	}
 }
 
@@ -89,13 +89,10 @@
 	for (int i = 0 ; i < input_data_count ; i++)
 	{
 		[Input setValuesFrom:sequence fromIndex:i];
+		[Result setValuesFrom:sequence fromIndex:i+P]; 
 		[self compute];
 		for (int u = 0 ; u < M ; u++)
-		{
-			double result = [[Result getNeuronAtIndex:u] value];
-			double true_result = [(NSNumber*)[sequence objectAtIndex:(P+i+u)] doubleValue];
-			diff += fabs( result - true_result );
-		}
+			diff += fabs( [[Result getNeuronAtIndex:u] getDiff] );
 	}
 	return diff;
 }

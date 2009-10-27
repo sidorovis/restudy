@@ -12,6 +12,7 @@
 {
 	NSMutableArray* affectOnArray;
 	double value;
+	double trueValue;
 //	double nextValue;
 }
 - (id) init;
@@ -21,8 +22,9 @@
 - (void) affect;
 - (void) teachTo:(Neuron*)toNeuron alpha:(double)alpha deltaY:(double)deltaY;
 - (void) normilizeNeuron;
-
+- (double) getDiff;
 @property (assign) double value;
+@property (assign) double trueValue;
 //@property (assign) double nextValue;
 
 @end

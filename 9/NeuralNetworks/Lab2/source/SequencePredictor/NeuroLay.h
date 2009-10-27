@@ -15,7 +15,7 @@
 -(id) initWithCount:(int)count;
 -(void) dealloc;
 -(void) reset;
--(void) connectEachToLay:(NeuroLay*)lay;
+-(void) connectEachNeuronToLay:(NeuroLay*)lay;
 -(NeuroLay*) generateContextLay;
 -(void) affect;
 -(Neuron*) getNeuronAtIndex:(int)index;

@@ -19,13 +19,17 @@
 		int p = validateInt(@"P", [P stringValue]);
 		int m = validateInt(@"M", [M stringValue]);
 		NSMutableArray* sequence = [[NSMutableArray alloc] init];
-		for (NSString* string in [[sequenceField stringValue] componentsSeparatedByString:@" "]) {
+		for (NSString* string in [[sequenceField stringValue] componentsSeparatedByString:@" "])
 			[sequence addObject:[[NSNumber alloc] initWithDouble:validateDouble(@"Sequence value wrong", string)]];
-		}
 		PredictorNeuroNet* neuroNet = [[PredictorNeuroNet alloc] initWithSequence:sequence countP:p countM:m];
 		double diff = [neuroNet findDiff];
 		[neuroNet teach];
-		diff = 0;
+		diff = [neuroNet findDiff];
+		[neuroNet teach];
+		diff = [neuroNet findDiff];
+		[neuroNet teach];
+		diff = [neuroNet findDiff];
+		[neuroNet teach];
 		diff = [neuroNet findDiff];
 		[currentDiff setDoubleValue:diff];
 		NSLog(@"%d, %d, %d", p, m, [sequence count]);

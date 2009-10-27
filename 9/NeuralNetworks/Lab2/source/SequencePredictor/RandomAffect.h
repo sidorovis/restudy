@@ -10,6 +10,7 @@
 #import "Affect.h"
 #import "AffectorProtocol.h"
 
+
 @interface RandomAffect : Affect <AffectorProtocol> {
 	double value;
 }

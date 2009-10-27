@@ -9,6 +9,8 @@
 #import "RandomAffect.h"
 #define basis 1000000
 
+
+
 @implementation RandomAffect
 -(RandomAffect*) initRandomTo:(Neuron*)neuron_
 {
