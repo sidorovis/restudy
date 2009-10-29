@@ -1,59 +1,0 @@
-TMitabTest
-v7
-r0
-t276115577.182460
-cCheck dependencies
-cCompileC build/MitabTest.build/Debug/MitabTest.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/Debug/MitabTest normal x86_64
-
-N/Developer/SDKs/MacOSX10.6.sdk
-c000000004A769DAB00000000000000EE
-t1249287595
-s238
-
-N/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/Debug/MitabTest
-t1254422777
-s28920
-
-N/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/MitabTest.build/Debug/MitabTest.build/Objects-normal/x86_64/MitabTest.LinkFileList
-c000000004AC4F8F7000000000000008F
-t1254422775
-s143
-
-N/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/MitabTest.build/Debug/MitabTest.build/Objects-normal/x86_64/main.o
-t1254422776
-s89828
-
-N/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/main.cpp
-c000000004AC4F8EF000000000000008F
-t1254422767
-s143
-i<iostream>
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies276115575#276115575#0(0"0(0#1#0"7947009927035180032#0"0#
-
-CCompileC build/MitabTest.build/Debug/MitabTest.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-s276115575.982788
-e276115576.766821
-r1
-xCompileC
-xbuild/MitabTest.build/Debug/MitabTest.build/Objects-normal/x86_64/main.o
-x/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/main.cpp
-xnormal
-xx86_64
-xc++
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@86"Compile /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/main.cpp276115576#276115576#0(0"0(0#0#78"/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/main.cpp8029405159545332736#1715"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D_GLIBCXX_DEBUG=1 -D_GLIBCXX_DEBUG_PEDANTIC=1 -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/MitabTest.build/Debug/MitabTest.build/MitabTest-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/MitabTest.build/Debug/MitabTest.build/MitabTest-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/MitabTest.build/Debug/MitabTest.build/MitabTest-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/MitabTest.build/Debug/MitabTest.build/MitabTest-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/Debug -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/Debug/include -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/MitabTest.build/Debug/MitabTest.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/MitabTest.build/Debug/MitabTest.build/DerivedSources -c /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/main.cpp -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/MitabTest.build/Debug/MitabTest.build/Objects-normal/x86_64/main.o0#
-
-CLd /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/Debug/MitabTest normal x86_64
-s276115576.766948
-e276115577.182396
-r1
-xLd
-x/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/Debug/MitabTest
-xnormal
-xx86_64
-lSLF07#2@96"Link /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/Debug/MitabTest276115576#276115577#0(0"0(0#0#0"4300882208#661"    cd /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/Debug -F/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/Debug -filelist /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/MitabTest.build/Debug/MitabTest.build/Objects-normal/x86_64/MitabTest.LinkFileList -mmacosx-version-min=10.6 -o /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/MitabTest/build/Debug/MitabTest0#
-
