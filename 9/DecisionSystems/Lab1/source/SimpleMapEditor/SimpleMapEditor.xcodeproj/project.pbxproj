@@ -130,6 +130,66 @@
 			isa = PBXSourcesBuildPhase;
 			name = "Build Sources";
 		};
+		C34745157C8AFEC03CAC42E0 = {
+			isa = PBXFrameworkReference;
+			name = "QtXml.framework";
+			path = "/opt/local/libexec/qt4-mac/lib/QtXml.framework";
+			refType = 0;
+		};
+		C6DE13AAE998F19435F97993 = {
+			fileRef = "C34745157C8AFEC03CAC42E0";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		80D6E9AA4A22A0662C21AACE = {
+			isa = PBXFileReference;
+			name = "qgis_analysis";
+			path = "/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_analysis.1.3.0.dylib";
+			refType = 0;
+		};
+		D179DB016BD32E19439ED3B4 = {
+			fileRef = "80D6E9AA4A22A0662C21AACE";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		A7C56238AA9E5383866FBFDA = {
+			isa = PBXFileReference;
+			name = "qgis_core";
+			path = "/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_core.1.3.0.dylib";
+			refType = 0;
+		};
+		CD56B731788AAACB4B61F734 = {
+			fileRef = "A7C56238AA9E5383866FBFDA";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		2B4B35E7334C01871A84B405 = {
+			isa = PBXFileReference;
+			name = "qgis_gui";
+			path = "/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_gui.1.3.0.dylib";
+			refType = 0;
+		};
+		3E7DE0CA9FD614E71CC89131 = {
+			fileRef = "2B4B35E7334C01871A84B405";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		3830732DC5F14827F0C2FD51 = {
+			isa = PBXFileReference;
+			name = "qgispython";
+			path = "/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgispython.1.3.dylib";
+			refType = 0;
+		};
+		F51EE3F17550B96AAE10A9B7 = {
+			fileRef = "3830732DC5F14827F0C2FD51";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
 		DAA7448BEE363B17BC1C6550 = {
 			isa = PBXFrameworkReference;
 			name = "QtGui.framework";
@@ -216,6 +276,11 @@
 		};
 		ED1E82605DD74B483AF3C982 = {
 			children = (
+				"C34745157C8AFEC03CAC42E0",
+				"80D6E9AA4A22A0662C21AACE",
+				"A7C56238AA9E5383866FBFDA",
+				"2B4B35E7334C01871A84B405",
+				"3830732DC5F14827F0C2FD51",
 				"DAA7448BEE363B17BC1C6550",
 				"DA138F75C9F545CDAE7FB264",
 				"821416211D63F190AAAD016A",
@@ -231,6 +296,11 @@
 		2A1043669E6E5A7426EA502A = {
 			buildActionMask = 2147483647;
 			files = (
+				"C6DE13AAE998F19435F97993",
+				"D179DB016BD32E19439ED3B4",
+				"CD56B731788AAACB4B61F734",
+				"3E7DE0CA9FD614E71CC89131",
+				"F51EE3F17550B96AAE10A9B7",
 				"A13F05658AE3F3F0BC3D7412",
 				"C8FD4A1AAA37CF2CA2824CCF",
 				"51D4DBF7CB8537BE86EBD055",
@@ -306,11 +376,14 @@
 					"/opt/local/libexec/qt4-mac/include/QtGui",
 					"/opt/local/libexec/qt4-mac/include",
 					".",
+					"/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include",
+					"/opt/local/libexec/qt4-mac/include/QtXml",
 					".",
 					"/usr/local/include",
 					"/System/Library/Frameworks/CarbonCore.framework/Headers",
 					"/opt/local/libexec/qt4-mac/mkspecs/macx-xcode");
 				LIBRARY_SEARCH_PATHS = (
+					"/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib",
 					"/opt/local/libexec/qt4-mac/lib",
 					"/opt/local/lib",
 					"/opt/local/libexec/qt4-mac/lib",
@@ -343,6 +416,8 @@
 				BUILD_ROOT = "/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor";
 				OTHER_LDFLAGS = (
 						"-headerpad_max_install_names",
+						"-F/opt/local/libexec/qt4-mac/lib/",
+						"-L/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib",
 						"-L/opt/local/libexec/qt4-mac/lib",
 						"-F/opt/local/libexec/qt4-mac/lib",
 						"-L/opt/local/lib",

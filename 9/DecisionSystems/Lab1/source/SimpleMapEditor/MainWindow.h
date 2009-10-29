@@ -11,7 +11,14 @@
 #define _MAIN_WINDOW_H
 
 #include <QMainWindow>
+#include <deque>
 
+#define CORE_EXPORT
+#define GUI_EXPORT
+#include "qgis/qgsproviderregistry.h"
+#include "qgis/qgsvectorlayer.h"
+#include "qgis/qgsmaplayerregistry.h"
+#include "qgis/qgsmapcanvas.h"
 
 class MainWindow : public QMainWindow
 {
@@ -20,7 +27,10 @@ class MainWindow : public QMainWindow
 	Q_OBJECT
 public:
 	MainWindow(QWidget* parent = NULL);
+private:
+	void addVectorLayer();	
 	
+	QgsMapCanvas* mapWidget;
 };
 
 #endif // _MAIN_WINDOW_H
