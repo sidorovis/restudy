@@ -29,6 +29,12 @@
 	for (Neuron* neuron in neurons)
 		neuron.value = 0;
 }
+-(void) resetGammaValue
+{
+	for (Neuron* neuron in neurons)
+		neuron.gammaValue = 0;
+}
+
 -(void) connectEachNeuronToLay:(NeuroLay*)lay
 {
 	for (Neuron* from in neurons)
@@ -51,11 +57,6 @@
 -(Neuron*) getNeuronAtIndex:(int)index
 {
 	return (Neuron*)[neurons objectAtIndex:index];
-}
--(void) normilizeLay
-{
-	for (Neuron* neuron in neurons)
-		[neuron normilizeNeuron];
 }
 
 @synthesize neurons;

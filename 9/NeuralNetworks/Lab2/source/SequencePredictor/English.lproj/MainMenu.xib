@@ -357,7 +357,7 @@
 									<object class="NSTextFieldCell" key="NSCell" id="863810035">
 										<int key="NSCellFlags">-1804468671</int>
 										<int key="NSCellFlags2">272630784</int>
-										<string key="NSContents">1 2 3 4 5 6 7 8 9</string>
+										<string key="NSContents">1 2 3</string>
 										<reference key="NSSupport" ref="313487057"/>
 										<reference key="NSControlView" ref="945118855"/>
 										<bool key="NSDrawsBackground">YES</bool>

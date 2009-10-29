@@ -15,11 +15,11 @@
 -(id) initWithCount:(int)count;
 -(void) dealloc;
 -(void) reset;
+-(void) resetGammaValue;
 -(void) connectEachNeuronToLay:(NeuroLay*)lay;
 -(NeuroLay*) generateContextLay;
 -(void) affect;
 -(Neuron*) getNeuronAtIndex:(int)index;
--(void) normilizeLay;
 @property (readwrite,assign) NSMutableArray* neurons;
 
 @end

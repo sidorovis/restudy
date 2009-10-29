@@ -17,13 +17,12 @@
 	ResultNeuronLay *Result;
 	NeuroLay *Hidden, *HiddenContext, *ResultContext;
 	NSMutableArray* sequence;
+	int P, M;
 }
 -(id) initWithSequence:(NSMutableArray*)sequence_ countP:(int)P_ countM:(int)M_;
 -(void) dealloc;
 -(void) teach;
--(void) teachHiddenResultConnectionWhenSequenceFrom:(int)ind;
+-(void) teachWBetween:(NeuroLay*)from And:(NeuroLay*)to;
 -(double) findDiff;
 -(void) compute;
-//-(void) resetAllLays; 
-// TODO: think about Reset All Lays method
 @end

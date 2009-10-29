@@ -13,6 +13,6 @@
 
 -(void) affectWith:(double) value_;
 -(double) getValue;
--(void) increaseValue:(double) delta;
+-(void) decreaseValue:(double) delta;
 -(void) normilizeAffect:(double)summ;
 @end

@@ -22,9 +22,9 @@
 {
 	neuron.value += value_*value;
 }
--(void) increaseValue:(double) delta
+-(void) decreaseValue:(double) delta
 {
-	value -= delta;
+	value -= delta * [neuron getDiff];
 }
 -(double) getValue
 {

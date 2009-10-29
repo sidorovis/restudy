@@ -14,7 +14,7 @@
 {
 	neuron.value = value_;
 }
--(void) increaseValue:(double) delta
+-(void) decreaseValue:(double) delta
 {
 }
 -(double) getValue

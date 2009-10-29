@@ -12,19 +12,17 @@
 {
 	NSMutableArray* affectOnArray;
 	double value;
-	double trueValue;
-//	double nextValue;
+	double gammaValue;
 }
 - (id) init;
 - (void) dealloc;
 - (void) connectRandomAffectToNeuron:(Neuron*)neuron_;
 - (void) connectContextAffectToNeuron:(Neuron*)neuron_;
 - (void) affect;
-- (void) teachTo:(Neuron*)toNeuron alpha:(double)alpha deltaY:(double)deltaY;
-- (void) normilizeNeuron;
+- (void) teachWithAlpha:(double)alpha;
+- (void) calculateGammaValue;
 - (double) getDiff;
 @property (assign) double value;
-@property (assign) double trueValue;
-//@property (assign) double nextValue;
+@property (assign) double gammaValue;
 
 @end

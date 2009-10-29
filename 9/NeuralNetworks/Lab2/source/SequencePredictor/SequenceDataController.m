@@ -31,6 +31,18 @@
 		diff = [neuroNet findDiff];
 		[neuroNet teach];
 		diff = [neuroNet findDiff];
+		[neuroNet teach];
+		diff = [neuroNet findDiff];
+		[neuroNet teach];
+		diff = [neuroNet findDiff];
+		[neuroNet teach];
+		diff = [neuroNet findDiff];
+		[neuroNet teach];
+		diff = [neuroNet findDiff];
+		[neuroNet teach];
+		diff = [neuroNet findDiff];
+		[neuroNet teach];
+		diff = [neuroNet findDiff];
 		[currentDiff setDoubleValue:diff];
 		NSLog(@"%d, %d, %d", p, m, [sequence count]);
 	}

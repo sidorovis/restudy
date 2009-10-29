@@ -15,8 +15,7 @@
 @implementation Neuron
 
 @synthesize value;
-@synthesize trueValue;
-//@synthesize nextValue;
+@synthesize gammaValue;
 
 - (id) init
 {
@@ -45,24 +44,20 @@
 	for (Affect <AffectorProtocol>* affect in affectOnArray)
 		[affect affectWith:value];
 }
-- (void) teachTo:(Neuron*)toNeuron alpha:(double)alpha deltaY:(double)deltaY
+- (void) teachWithAlpha:(double)alpha
 {
 	for (Affect<AffectorProtocol>* affect in affectOnArray)
-		if (affect.neuron == toNeuron)
-			[affect increaseValue:alpha*value*deltaY];
-//	[toNeuron normilizeNeuron];
+		[affect decreaseValue: ( alpha * value ) ];
 }
-- (void) normilizeNeuron
+- (void) calculateGammaValue
 {
-	double summ = 0;
 	for (Affect<AffectorProtocol>* affect in affectOnArray)
-		summ += fabs([affect getValue]);
-	for (Affect<AffectorProtocol>* affect in affectOnArray)
-		[affect normilizeAffect:summ];
+		gammaValue += [affect getValue] * [[affect neuron] getDiff];
 }
+
 - (double) getDiff
 {
-	return value - trueValue;
+	return value - gammaValue;
 }
 
 @end

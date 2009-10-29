@@ -16,7 +16,7 @@
 	if (startSequenceIndex + neurons_count > [sequence count])
 		@throw [[NSException alloc] initWithName:@"Assign Input Neurons Error" reason:@"Sequence don't have such values" userInfo:NULL];
 	for (int i = 0 ; i < neurons_count ; i++)
-		((Neuron*)[neurons objectAtIndex:i]).trueValue = [[sequence objectAtIndex:(startSequenceIndex+i)] doubleValue];		
+		((Neuron*)[neurons objectAtIndex:i]).gammaValue = [[sequence objectAtIndex:(startSequenceIndex+i)] doubleValue];		
 }
 
 @end
