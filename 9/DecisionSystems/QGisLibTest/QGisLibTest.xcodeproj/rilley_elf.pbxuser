@@ -15,6 +15,26 @@
 			sepNavVisRange = "{0, 1270}";
 		};
 	};
+	8500D6DE109A10D80082C1F0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B11157991606037817BE9D12 /* MainWindow.cpp */;
+		name = "MainWindow.cpp: 31";
+		rLen = 15;
+		rLoc = 1194;
+		rType = 0;
+		vrLen = 1390;
+		vrLoc = 270;
+	};
+	8500D6E9109A10E80082C1F0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B11157991606037817BE9D12 /* MainWindow.cpp */;
+		name = "MainWindow.cpp: 34";
+		rLen = 32;
+		rLoc = 1308;
+		rType = 0;
+		vrLen = 1436;
+		vrLoc = 224;
+	};
 	8503D9881088A566008BEC17 /* Source Control */ = {
 		isa = PBXSourceControlManager;
 		fallbackIsa = XCSourceControlManager;
@@ -28,6 +48,23 @@
 	8503D9891088A566008BEC17 /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
+	};
+	8533C2F51098A7F1008F367E /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8533C2F61098A7F1008F367E /* qmap.h */;
+		name = "qmap.h: 138";
+		rLen = 11;
+		rLoc = 4084;
+		rType = 0;
+		vrLen = 881;
+		vrLoc = 3517;
+	};
+	8533C2F61098A7F1008F367E /* qmap.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = qmap.h;
+		path = "/opt/local/libexec/qt4-mac/include/QtCore/qmap.h";
+		sourceTree = "<absolute>";
 	};
 	854E000D1089E599004169A3 /* qgsvectorlayer.cpp */ = {
 		isa = PBXFileReference;
@@ -143,8 +180,13 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 277747757;
-			PBXWorkspaceStateSaveDate = 277747757;
+			PBXPerProjectTemplateStateSaveDate = 278532314;
+			PBXWorkspaceStateSaveDate = 278532314;
+		};
+		perUserProjectItems = {
+			8500D6DE109A10D80082C1F0 /* PBXTextBookmark */ = 8500D6DE109A10D80082C1F0 /* PBXTextBookmark */;
+			8500D6E9109A10E80082C1F0 /* PBXTextBookmark */ = 8500D6E9109A10E80082C1F0 /* PBXTextBookmark */;
+			8533C2F51098A7F1008F367E /* PBXTextBookmark */ = 8533C2F51098A7F1008F367E /* PBXTextBookmark */;
 		};
 		sourceControlManager = 8503D9881088A566008BEC17 /* Source Control */;
 		userBuildSettings = {
@@ -152,9 +194,9 @@
 	};
 	B11157991606037817BE9D12 /* MainWindow.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {920, 780}}";
-			sepNavSelRange = "{1398, 0}";
-			sepNavVisRange = "{89, 1924}";
+			sepNavIntBoundsRect = "{{0, 0}, {920, 832}}";
+			sepNavSelRange = "{1308, 32}";
+			sepNavVisRange = "{224, 1436}";
 		};
 	};
 	BE4F12C8E894B1D68ACADC11 /* QGisLibTest.pro */ = {
