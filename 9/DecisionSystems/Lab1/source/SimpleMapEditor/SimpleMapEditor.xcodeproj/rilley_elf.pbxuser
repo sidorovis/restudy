@@ -3,7 +3,7 @@
 	118FCBAABA162BA17933C789 /* main.cpp */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1198, 650}}";
-			sepNavSelRange = "{139, 0}";
+			sepNavSelRange = "{123, 0}";
 			sepNavVisRange = "{0, 162}";
 			sepNavWindowFrame = "{{19, 0}, {1257, 778}}";
 		};
@@ -11,28 +11,32 @@
 	7BFC7B00DBC77D46483951B7 /* SimpleMapEditor */ = {
 		activeExec = 0;
 		executables = (
-			85A83AFC109A529F001B1CCD /* SimpleMapEditor */,
+			85019C59109A5C170068DE97 /* SimpleMapEditor */,
 		);
 	};
-	856A2471109A4753001EB383 /* PBXTextBookmark */ = {
+	85019C50109A5C150068DE97 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		name = "MainWindow.cpp: 17";
+		fRef = 85019C51109A5C150068DE97 /* _generate.sh */;
+		name = "_generate.sh: 5";
 		rLen = 0;
-		rLoc = 288;
+		rLoc = 310;
 		rType = 0;
-		vrLen = 288;
+		vrLen = 1259;
 		vrLoc = 0;
 	};
-	856A2472109A4753001EB383 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		name = "MainWindow.h: 19";
-		rLen = 0;
-		rLoc = 333;
-		rType = 0;
-		vrLen = 407;
-		vrLoc = 0;
+	85019C51109A5C150068DE97 /* _generate.sh */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = text.script.sh;
+		name = _generate.sh;
+		path = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor/_generate.sh;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {936, 383}}";
+			sepNavSelRange = "{310, 0}";
+			sepNavVisRange = "{0, 1259}";
+		};
 	};
-	85A83AFC109A529F001B1CCD /* SimpleMapEditor */ = {
+	85019C59109A5C170068DE97 /* SimpleMapEditor */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
 		);
@@ -62,6 +66,50 @@
 		sourceDirectories = (
 		);
 	};
+	85019C78109A5C340068DE97 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 85019C79109A5C340068DE97 /* _generate.sh */;
+		name = "_generate.sh: 13";
+		rLen = 0;
+		rLoc = 954;
+		rType = 0;
+		vrLen = 1256;
+		vrLoc = 0;
+	};
+	85019C79109A5C340068DE97 /* _generate.sh */ = {
+		isa = PBXFileReference;
+		name = _generate.sh;
+		path = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor/_generate.sh;
+		sourceTree = "<absolute>";
+	};
+	851915F5109A5B680085CA06 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = B11157991606037817BE9D12 /* MainWindow.cpp */;
+		name = "MainWindow.cpp: 19";
+		rLen = 0;
+		rLoc = 370;
+		rType = 0;
+		vrLen = 468;
+		vrLoc = 151;
+	};
+	856A2471109A4753001EB383 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		name = "MainWindow.cpp: 17";
+		rLen = 0;
+		rLoc = 288;
+		rType = 0;
+		vrLen = 288;
+		vrLoc = 0;
+	};
+	856A2472109A4753001EB383 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		name = "MainWindow.h: 19";
+		rLen = 0;
+		rLoc = 333;
+		rType = 0;
+		vrLen = 407;
+		vrLoc = 0;
+	};
 	85A83B0C109A52AD001B1CCD /* main.cpp:8 */ = {
 		isa = PBXFileBreakpoint;
 		actions = (
@@ -80,26 +128,6 @@
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
-	85A83B45109A53C1001B1CCD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 118FCBAABA162BA17933C789 /* main.cpp */;
-		name = "main.cpp: 8";
-		rLen = 0;
-		rLoc = 139;
-		rType = 0;
-		vrLen = 162;
-		vrLoc = 0;
-	};
-	85A83B46109A53C1001B1CCD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 118FCBAABA162BA17933C789 /* main.cpp */;
-		name = "main.cpp: 8";
-		rLen = 0;
-		rLoc = 139;
-		rType = 0;
-		vrLen = 162;
-		vrLoc = 0;
-	};
 	85F5145F109A454800E03DB8 /* Source Control */ = {
 		isa = PBXSourceControlManager;
 		fallbackIsa = XCSourceControlManager;
@@ -116,7 +144,7 @@
 	};
 	91B15E841AA80083484172DE /* Project object */ = {
 		activeBuildConfigurationName = Debug;
-		activeExecutable = 85A83AFC109A529F001B1CCD /* SimpleMapEditor */;
+		activeExecutable = 85019C59109A5C170068DE97 /* SimpleMapEditor */;
 		activeTarget = 7BFC7B00DBC77D46483951B7 /* SimpleMapEditor */;
 		addToTargets = (
 			7BFC7B00DBC77D46483951B7 /* SimpleMapEditor */,
@@ -126,9 +154,37 @@
 		);
 		codeSenseManager = 85F51460109A454800E03DB8 /* Code sense */;
 		executables = (
-			85A83AFC109A529F001B1CCD /* SimpleMapEditor */,
+			85019C59109A5C170068DE97 /* SimpleMapEditor */,
 		);
 		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXBookmarksDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBookmarksDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					200,
+					527.58349609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBookmarksDataSource_LocationID,
+					PBXBookmarksDataSource_NameID,
+					PBXBookmarksDataSource_CommentsID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					22,
+					300,
+					605.58349609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXExecutablesDataSource_ActiveFlagID,
+					PBXExecutablesDataSource_NameID,
+					PBXExecutablesDataSource_CommentsID,
+				);
+			};
 			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
 				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
@@ -149,6 +205,18 @@
 					PBXFileDataSource_Errors_ColumnID,
 					PBXFileDataSource_Warnings_ColumnID,
 					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFindDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFindDataSource_LocationID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					200,
+					732.20849609375,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFindDataSource_MessageID,
+					PBXFindDataSource_LocationID,
 				);
 			};
 			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
@@ -173,14 +241,15 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 278549151;
-			PBXWorkspaceStateSaveDate = 278549151;
+			PBXPerProjectTemplateStateSaveDate = 278551575;
+			PBXWorkspaceStateSaveDate = 278551575;
 		};
 		perUserProjectItems = {
+			85019C50109A5C150068DE97 /* PBXTextBookmark */ = 85019C50109A5C150068DE97 /* PBXTextBookmark */;
+			85019C78109A5C340068DE97 /* PBXTextBookmark */ = 85019C78109A5C340068DE97 /* PBXTextBookmark */;
+			851915F5109A5B680085CA06 /* PBXTextBookmark */ = 851915F5109A5B680085CA06 /* PBXTextBookmark */;
 			856A2471109A4753001EB383 /* PBXTextBookmark */ = 856A2471109A4753001EB383 /* PBXTextBookmark */;
 			856A2472109A4753001EB383 /* PBXTextBookmark */ = 856A2472109A4753001EB383 /* PBXTextBookmark */;
-			85A83B45109A53C1001B1CCD /* PBXTextBookmark */ = 85A83B45109A53C1001B1CCD /* PBXTextBookmark */;
-			85A83B46109A53C1001B1CCD /* PBXTextBookmark */ = 85A83B46109A53C1001B1CCD /* PBXTextBookmark */;
 		};
 		sourceControlManager = 85F5145F109A454800E03DB8 /* Source Control */;
 		userBuildSettings = {
@@ -188,9 +257,9 @@
 	};
 	B11157991606037817BE9D12 /* MainWindow.cpp */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1007, 559}}";
-			sepNavSelRange = "{379, 0}";
-			sepNavVisRange = "{150, 786}";
+			sepNavIntBoundsRect = "{{0, 0}, {896, 572}}";
+			sepNavSelRange = "{370, 0}";
+			sepNavVisRange = "{151, 468}";
 		};
 	};
 	BE70EB99BDB216943CAF350C /* MainWindow.h */ = {

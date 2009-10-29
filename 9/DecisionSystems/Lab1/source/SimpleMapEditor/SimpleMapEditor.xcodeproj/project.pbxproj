@@ -5,522 +5,532 @@
 	};
 	objectVersion = 42;
 	objects = {
-		D7BA7D76DAB5DD13389D6332 = {
+
+/* Begin PBXBuildFile section */
+		0BBCA87DD96827A5DBBC4E5A /* z in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = B17AB5A1BBB7CABB649D4526 /* z */; };
+		2B093CA6F071B023A473CED0 /* main.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 118FCBAABA162BA17933C789 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
+		3E7DE0CA9FD614E71CC89131 /* qgis_gui in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 2B4B35E7334C01871A84B405 /* qgis_gui */; };
+		51D4DBF7CB8537BE86EBD055 /* AppKit.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 821416211D63F190AAAD016A /* AppKit.framework */; };
+		5CAB9136880C7BA05E3AE547 /* QtCore.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 5C57D404811C47138A9B8E0F /* QtCore.framework */; };
+		785C012FC9A234B63E681EE7 /* png in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 42F0392158B562C755109433 /* png */; };
+		85019C5A109A5C170068DE97 /* SimpleMapEditor.app in Project Copy */ = {isa = PBXBuildFile; fileRef = 85019C57109A5C170068DE97 /* SimpleMapEditor.app */; };
+		A13F05658AE3F3F0BC3D7412 /* QtGui.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = DAA7448BEE363B17BC1C6550 /* QtGui.framework */; };
+		A4582233947FB7FB159573BB /* moc_MainWindow.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 26827F2FC4DC4FBB23DE8287 /* moc_MainWindow.cpp */; settings = {ATTRIBUTES = (); }; };
+		C6DE13AAE998F19435F97993 /* QtXml.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = C34745157C8AFEC03CAC42E0 /* QtXml.framework */; };
+		C8FD4A1AAA37CF2CA2824CCF /* Carbon.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = DA138F75C9F545CDAE7FB264 /* Carbon.framework */; };
+		CD56B731788AAACB4B61F734 /* qgis_core in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = A7C56238AA9E5383866FBFDA /* qgis_core */; };
+		D179DB016BD32E19439ED3B4 /* qgis_analysis in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 80D6E9AA4A22A0662C21AACE /* qgis_analysis */; };
+		F51EE3F17550B96AAE10A9B7 /* qgispython in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 3830732DC5F14827F0C2FD51 /* qgispython */; };
+		F7966146FE2682DF0478BEC0 /* MainWindow.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = B11157991606037817BE9D12 /* MainWindow.cpp */; settings = {ATTRIBUTES = (); }; };
+		F9E76E570E10AF14870553A7 /* ApplicationServices.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 27AE7A480FD6C52FCA80FECD /* ApplicationServices.framework */; };
+		FE295E1B5B9F27F6B46997FC /* /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_analysis.1.3.0.dylib in Bundle Copy [QGIS_LIBS] */ = {isa = PBXBuildFile; fileRef = CED703321AB796BD3D31C850 /* /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_analysis.1.3.0.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A449BC37D97EFE439B6FF806 /* Bundle Copy [QGIS_LIBS] */ = {
+			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
+			dstPath = Contents/MacOS/lib;
+			dstSubfolderSpec = 1;
 			files = (
-				);
-			generatedFileNames = (
-				);
-			isa = PBXShellScriptBuildPhase;
-			name = "Qt Qmake";
-			neededFileNames = (
-				);
-			shellPath = "/bin/sh";
-			shellScript = "make\ -C\ /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor\ -f\ SimpleMapEditor.xcodeproj/qt_makeqmake.mak";
+				FE295E1B5B9F27F6B46997FC /* /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_analysis.1.3.0.dylib in Bundle Copy [QGIS_LIBS] */,
+			);
+			name = "Bundle Copy [QGIS_LIBS]";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		118FCBAABA162BA17933C789 = {
-			isa = PBXFileReference;
-			name = "main.cpp";
-			path = "main.cpp";
-			refType = 4;
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		2B093CA6F071B023A473CED0 = {
-			fileRef = "118FCBAABA162BA17933C789";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		B11157991606037817BE9D12 = {
-			isa = PBXFileReference;
-			name = "MainWindow.cpp";
-			path = "MainWindow.cpp";
-			refType = 4;
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		F7966146FE2682DF0478BEC0 = {
-			fileRef = "B11157991606037817BE9D12";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		26827F2FC4DC4FBB23DE8287 = {
-			isa = PBXFileReference;
-			name = "moc_MainWindow.cpp";
-			path = "moc_MainWindow.cpp";
-			refType = 4;
-			lastKnownFileType = "sourcecode.cpp.cpp";
-		};
-		A4582233947FB7FB159573BB = {
-			fileRef = "26827F2FC4DC4FBB23DE8287";
-			isa = PBXBuildFile;
-			settings = {
-				ATTRIBUTES = (
-					);
-			};
-		};
-		BE70EB99BDB216943CAF350C = {
-			isa = PBXFileReference;
-			name = "MainWindow.h";
-			path = "MainWindow.h";
-			refType = 4;
-		};
-		E07E56424594D10D001513BC = {
-			isa = PBXFileReference;
-			name = "SimpleMapEditor.pro";
-			path = "SimpleMapEditor.pro";
-			refType = 4;
-		};
-		883D7615C4D2DE3FA1218F12 = {
-			isa = PBXGroup;
-			children = (
-				"BE70EB99BDB216943CAF350C");
-			name = "Headers";
-			refType = 4;
-		};
-		FB61758D0F0FDA4BA867C3D5 = {
-			isa = PBXGroup;
-			children = (
-				"118FCBAABA162BA17933C789",
-				"B11157991606037817BE9D12");
-			name = "Sources";
-			refType = 4;
-		};
-		7CABE3C80E79AD2B307756D2 = {
-			isa = PBXGroup;
-			children = (
-				"E07E56424594D10D001513BC");
-			name = "Sources [qmake]";
-			refType = 4;
-		};
-		46E892BBB6BB6952967E0561 = {
-			isa = PBXGroup;
-			children = (
-				"26827F2FC4DC4FBB23DE8287");
-			name = "Temporary Sources";
-			refType = 4;
-		};
-		A0A52A2ADF7A1E2A99738674 = {
+		F6069D5A5DA8AA28EDB8B3C6 /* Project Copy */ = {
+			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
+			dstPath = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor;
+			dstSubfolderSpec = 0;
 			files = (
-				);
-			generatedFileNames = (
-				"2B093CA6F071B023A473CED0",
-				"F7966146FE2682DF0478BEC0",
-				"A4582233947FB7FB159573BB");
-			isa = PBXShellScriptBuildPhase;
-			name = "Qt Preprocessors";
-			neededFileNames = (
-				"2B093CA6F071B023A473CED0",
-				"F7966146FE2682DF0478BEC0",
-				"A4582233947FB7FB159573BB");
-			shellPath = "/bin/sh";
-			shellScript = "make\ -C\ /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor\ -f\ SimpleMapEditor.xcodeproj/qt_preprocess.mak";
+				85019C5A109A5C170068DE97 /* SimpleMapEditor.app in Project Copy */,
+			);
+			name = "Project Copy";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C29B8785722055ED95EF7B57 = {
-			buildActionMask = 2147483647;
-			files = (
-				"2B093CA6F071B023A473CED0",
-				"F7966146FE2682DF0478BEC0",
-				"A4582233947FB7FB159573BB");
-			isa = PBXSourcesBuildPhase;
-			name = "Build Sources";
-		};
-		C34745157C8AFEC03CAC42E0 = {
-			isa = PBXFrameworkReference;
-			name = "QtXml.framework";
-			path = "/opt/local/libexec/qt4-mac/lib/QtXml.framework";
-			refType = 0;
-		};
-		C6DE13AAE998F19435F97993 = {
-			fileRef = "C34745157C8AFEC03CAC42E0";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		80D6E9AA4A22A0662C21AACE = {
-			isa = PBXFileReference;
-			name = "qgis_analysis";
-			path = "/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_analysis.1.3.0.dylib";
-			refType = 0;
-		};
-		D179DB016BD32E19439ED3B4 = {
-			fileRef = "80D6E9AA4A22A0662C21AACE";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		A7C56238AA9E5383866FBFDA = {
-			isa = PBXFileReference;
-			name = "qgis_core";
-			path = "/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_core.1.3.0.dylib";
-			refType = 0;
-		};
-		CD56B731788AAACB4B61F734 = {
-			fileRef = "A7C56238AA9E5383866FBFDA";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		2B4B35E7334C01871A84B405 = {
-			isa = PBXFileReference;
-			name = "qgis_gui";
-			path = "/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_gui.1.3.0.dylib";
-			refType = 0;
-		};
-		3E7DE0CA9FD614E71CC89131 = {
-			fileRef = "2B4B35E7334C01871A84B405";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		3830732DC5F14827F0C2FD51 = {
-			isa = PBXFileReference;
-			name = "qgispython";
-			path = "/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgispython.1.3.dylib";
-			refType = 0;
-		};
-		F51EE3F17550B96AAE10A9B7 = {
-			fileRef = "3830732DC5F14827F0C2FD51";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		DAA7448BEE363B17BC1C6550 = {
-			isa = PBXFrameworkReference;
-			name = "QtGui.framework";
-			path = "/opt/local/libexec/qt4-mac/lib/QtGui.framework";
-			refType = 0;
-		};
-		A13F05658AE3F3F0BC3D7412 = {
-			fileRef = "DAA7448BEE363B17BC1C6550";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		DA138F75C9F545CDAE7FB264 = {
-			isa = PBXFrameworkReference;
-			name = "Carbon.framework";
-			path = "/System/Library/Frameworks/Carbon.framework";
-			refType = 0;
-		};
-		C8FD4A1AAA37CF2CA2824CCF = {
-			fileRef = "DA138F75C9F545CDAE7FB264";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		821416211D63F190AAAD016A = {
-			isa = PBXFrameworkReference;
-			name = "AppKit.framework";
-			path = "/System/Library/Frameworks/AppKit.framework";
-			refType = 0;
-		};
-		51D4DBF7CB8537BE86EBD055 = {
-			fileRef = "821416211D63F190AAAD016A";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		42F0392158B562C755109433 = {
-			isa = PBXFileReference;
-			name = "png";
-			path = "/opt/local/lib/libpng12.0.dylib";
-			refType = 0;
-		};
-		785C012FC9A234B63E681EE7 = {
-			fileRef = "42F0392158B562C755109433";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		5C57D404811C47138A9B8E0F = {
-			isa = PBXFrameworkReference;
-			name = "QtCore.framework";
-			path = "/opt/local/libexec/qt4-mac/lib/QtCore.framework";
-			refType = 0;
-		};
-		5CAB9136880C7BA05E3AE547 = {
-			fileRef = "5C57D404811C47138A9B8E0F";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		B17AB5A1BBB7CABB649D4526 = {
-			isa = PBXFileReference;
-			name = "z";
-			path = "/opt/local/lib/libz.1.2.3.dylib";
-			refType = 0;
-		};
-		0BBCA87DD96827A5DBBC4E5A = {
-			fileRef = "B17AB5A1BBB7CABB649D4526";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		27AE7A480FD6C52FCA80FECD = {
-			isa = PBXFrameworkReference;
-			name = "ApplicationServices.framework";
-			path = "/System/Library/Frameworks/ApplicationServices.framework";
-			refType = 0;
-		};
-		F9E76E570E10AF14870553A7 = {
-			fileRef = "27AE7A480FD6C52FCA80FECD";
-			isa = PBXBuildFile;
-			settings = {
-			};
-		};
-		ED1E82605DD74B483AF3C982 = {
-			children = (
-				"C34745157C8AFEC03CAC42E0",
-				"80D6E9AA4A22A0662C21AACE",
-				"A7C56238AA9E5383866FBFDA",
-				"2B4B35E7334C01871A84B405",
-				"3830732DC5F14827F0C2FD51",
-				"DAA7448BEE363B17BC1C6550",
-				"DA138F75C9F545CDAE7FB264",
-				"821416211D63F190AAAD016A",
-				"42F0392158B562C755109433",
-				"5C57D404811C47138A9B8E0F",
-				"B17AB5A1BBB7CABB649D4526",
-				"27AE7A480FD6C52FCA80FECD");
-			isa = PBXGroup;
-			name = "External Frameworks and Libraries";
-			path = "";
-			refType = 4;
-		};
-		2A1043669E6E5A7426EA502A = {
-			buildActionMask = 2147483647;
-			files = (
-				"C6DE13AAE998F19435F97993",
-				"D179DB016BD32E19439ED3B4",
-				"CD56B731788AAACB4B61F734",
-				"3E7DE0CA9FD614E71CC89131",
-				"F51EE3F17550B96AAE10A9B7",
-				"A13F05658AE3F3F0BC3D7412",
-				"C8FD4A1AAA37CF2CA2824CCF",
-				"51D4DBF7CB8537BE86EBD055",
-				"785C012FC9A234B63E681EE7",
-				"5CAB9136880C7BA05E3AE547",
-				"0BBCA87DD96827A5DBBC4E5A",
-				"F9E76E570E10AF14870553A7");
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		118FCBAABA162BA17933C789 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		26827F2FC4DC4FBB23DE8287 /* moc_MainWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = moc_MainWindow.cpp; sourceTree = "<group>"; };
+		27AE7A480FD6C52FCA80FECD /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
+		2B4B35E7334C01871A84B405 /* qgis_gui */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = qgis_gui; path = /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_gui.1.3.0.dylib; sourceTree = "<absolute>"; };
+		3830732DC5F14827F0C2FD51 /* qgispython */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = qgispython; path = /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgispython.1.3.dylib; sourceTree = "<absolute>"; };
+		42F0392158B562C755109433 /* png */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = png; path = /opt/local/lib/libpng12.0.dylib; sourceTree = "<absolute>"; };
+		5C57D404811C47138A9B8E0F /* QtCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCore.framework; path = "/opt/local/libexec/qt4-mac/lib/QtCore.framework"; sourceTree = "<absolute>"; };
+		80D6E9AA4A22A0662C21AACE /* qgis_analysis */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = qgis_analysis; path = /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_analysis.1.3.0.dylib; sourceTree = "<absolute>"; };
+		821416211D63F190AAAD016A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		85019C57109A5C170068DE97 /* SimpleMapEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMapEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7C56238AA9E5383866FBFDA /* qgis_core */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = qgis_core; path = /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_core.1.3.0.dylib; sourceTree = "<absolute>"; };
+		B11157991606037817BE9D12 /* MainWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainWindow.cpp; sourceTree = "<group>"; };
+		B17AB5A1BBB7CABB649D4526 /* z */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = z; path = /opt/local/lib/libz.1.2.3.dylib; sourceTree = "<absolute>"; };
+		BE70EB99BDB216943CAF350C /* MainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
+		C34745157C8AFEC03CAC42E0 /* QtXml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtXml.framework; path = "/opt/local/libexec/qt4-mac/lib/QtXml.framework"; sourceTree = "<absolute>"; };
+		CED703321AB796BD3D31C850 /* /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_analysis.1.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_analysis.1.3.0.dylib; sourceTree = "<absolute>"; };
+		DA138F75C9F545CDAE7FB264 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		DAA7448BEE363B17BC1C6550 /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = "/opt/local/libexec/qt4-mac/lib/QtGui.framework"; sourceTree = "<absolute>"; };
+		E07E56424594D10D001513BC /* SimpleMapEditor.pro */ = {isa = PBXFileReference; lastKnownFileType = text; path = SimpleMapEditor.pro; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A1043669E6E5A7426EA502A /* Frameworks & Libraries */ = {
 			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D179DB016BD32E19439ED3B4 /* qgis_analysis in Frameworks & Libraries */,
+				CD56B731788AAACB4B61F734 /* qgis_core in Frameworks & Libraries */,
+				3E7DE0CA9FD614E71CC89131 /* qgis_gui in Frameworks & Libraries */,
+				F51EE3F17550B96AAE10A9B7 /* qgispython in Frameworks & Libraries */,
+				C6DE13AAE998F19435F97993 /* QtXml.framework in Frameworks & Libraries */,
+				A13F05658AE3F3F0BC3D7412 /* QtGui.framework in Frameworks & Libraries */,
+				C8FD4A1AAA37CF2CA2824CCF /* Carbon.framework in Frameworks & Libraries */,
+				51D4DBF7CB8537BE86EBD055 /* AppKit.framework in Frameworks & Libraries */,
+				785C012FC9A234B63E681EE7 /* png in Frameworks & Libraries */,
+				5CAB9136880C7BA05E3AE547 /* QtCore.framework in Frameworks & Libraries */,
+				0BBCA87DD96827A5DBBC4E5A /* z in Frameworks & Libraries */,
+				F9E76E570E10AF14870553A7 /* ApplicationServices.framework in Frameworks & Libraries */,
+			);
 			name = "Frameworks & Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3787F99312C85FF0073FD7BA = {
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05596AB53D8D521C69802C27 /* SimpleMapEditor */ = {
+			isa = PBXGroup;
+			children = (
+				FB61758D0F0FDA4BA867C3D5 /* Sources */,
+				46E892BBB6BB6952967E0561 /* Temporary Sources */,
+				883D7615C4D2DE3FA1218F12 /* Headers */,
+				7CABE3C80E79AD2B307756D2 /* Sources [qmake] */,
+				ED1E82605DD74B483AF3C982 /* External Frameworks and Libraries */,
+				C90923F6A2E654060C34742C /* Source [bundle data] */,
+				85019C58109A5C170068DE97 /* Products */,
+			);
+			name = SimpleMapEditor;
+			sourceTree = "<group>";
+		};
+		46E892BBB6BB6952967E0561 /* Temporary Sources */ = {
+			isa = PBXGroup;
+			children = (
+				26827F2FC4DC4FBB23DE8287 /* moc_MainWindow.cpp */,
+			);
+			name = "Temporary Sources";
+			sourceTree = "<group>";
+		};
+		7CABE3C80E79AD2B307756D2 /* Sources [qmake] */ = {
+			isa = PBXGroup;
+			children = (
+				E07E56424594D10D001513BC /* SimpleMapEditor.pro */,
+			);
+			name = "Sources [qmake]";
+			sourceTree = "<group>";
+		};
+		85019C58109A5C170068DE97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85019C57109A5C170068DE97 /* SimpleMapEditor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		883D7615C4D2DE3FA1218F12 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				BE70EB99BDB216943CAF350C /* MainWindow.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		C90923F6A2E654060C34742C /* Source [bundle data] */ = {
+			isa = PBXGroup;
+			children = (
+				CED703321AB796BD3D31C850 /* /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_analysis.1.3.0.dylib */,
+			);
+			name = "Source [bundle data]";
+			sourceTree = "<group>";
+		};
+		ED1E82605DD74B483AF3C982 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				80D6E9AA4A22A0662C21AACE /* qgis_analysis */,
+				A7C56238AA9E5383866FBFDA /* qgis_core */,
+				2B4B35E7334C01871A84B405 /* qgis_gui */,
+				3830732DC5F14827F0C2FD51 /* qgispython */,
+				C34745157C8AFEC03CAC42E0 /* QtXml.framework */,
+				DAA7448BEE363B17BC1C6550 /* QtGui.framework */,
+				DA138F75C9F545CDAE7FB264 /* Carbon.framework */,
+				821416211D63F190AAAD016A /* AppKit.framework */,
+				42F0392158B562C755109433 /* png */,
+				5C57D404811C47138A9B8E0F /* QtCore.framework */,
+				B17AB5A1BBB7CABB649D4526 /* z */,
+				27AE7A480FD6C52FCA80FECD /* ApplicationServices.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		FB61758D0F0FDA4BA867C3D5 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				118FCBAABA162BA17933C789 /* main.cpp */,
+				B11157991606037817BE9D12 /* MainWindow.cpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7BFC7B00DBC77D46483951B7 /* SimpleMapEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85019C73109A5C1E0068DE97 /* Build configuration list for PBXNativeTarget "SimpleMapEditor" */;
+			buildPhases = (
+				D7BA7D76DAB5DD13389D6332 /* Qt Qmake */,
+				A0A52A2ADF7A1E2A99738674 /* Qt Preprocessors */,
+				F6069D5A5DA8AA28EDB8B3C6 /* Project Copy */,
+				A449BC37D97EFE439B6FF806 /* Bundle Copy [QGIS_LIBS] */,
+				C29B8785722055ED95EF7B57 /* Build Sources */,
+				2A1043669E6E5A7426EA502A /* Frameworks & Libraries */,
+				3787F99312C85FF0073FD7BA /* Bundle Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleMapEditor;
+			productName = SimpleMapEditor;
+			productReference = 85019C57109A5C170068DE97 /* SimpleMapEditor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		91B15E841AA80083484172DE /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 2A951308CDB28F104D0A4BD2 /* Build configuration list for PBXProject "SimpleMapEditor" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 05596AB53D8D521C69802C27 /* SimpleMapEditor */;
+			productRefGroup = 85019C58109A5C170068DE97 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7BFC7B00DBC77D46483951B7 /* SimpleMapEditor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3787F99312C85FF0073FD7BA /* Bundle Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			isa = PBXResourcesBuildPhase;
 			name = "Bundle Resources";
-		};
-		F6069D5A5DA8AA28EDB8B3C6 = {
-			name = "Project Copy";
-			buildActionMask = 2147483647;
-			dstPath = "/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor";
-			dstSubfolderSpec = 0;
-			files = (
-"07E0DFA73EB56DCB9E28CDD9");
-			isa = PBXCopyFilesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		07E0DFA73EB56DCB9E28CDD9 = {
-			fileRef = "9693D5CF0019BE86C9E5D067";
-			isa = PBXBuildFile;
-			settings = {
-			};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0A52A2ADF7A1E2A99738674 /* Qt Preprocessors */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Qt Preprocessors";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor -f SimpleMapEditor.xcodeproj/qt_preprocess.mak";
 		};
-		05596AB53D8D521C69802C27 = {
-			children = (
-				"FB61758D0F0FDA4BA867C3D5",
-				"46E892BBB6BB6952967E0561",
-				"883D7615C4D2DE3FA1218F12",
-				"7CABE3C80E79AD2B307756D2",
-				"ED1E82605DD74B483AF3C982");
-			isa = PBXGroup;
-			name = "SimpleMapEditor";
-			path = "";
-			refType = 4;
+		D7BA7D76DAB5DD13389D6332 /* Qt Qmake */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Qt Qmake";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor -f SimpleMapEditor.xcodeproj/qt_makeqmake.mak";
 		};
-		9693D5CF0019BE86C9E5D067 = {
-			isa = PBXFileReference;
-			explicitFileType = "wrapper.application";
-			path = "SimpleMapEditor.app";
-			refType = 3;
-			sourceTree = BUILT_PRODUCTS_DIR;
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C29B8785722055ED95EF7B57 /* Build Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B093CA6F071B023A473CED0 /* main.cpp in Build Sources */,
+				F7966146FE2682DF0478BEC0 /* MainWindow.cpp in Build Sources */,
+				A4582233947FB7FB159573BB /* moc_MainWindow.cpp in Build Sources */,
+			);
+			name = "Build Sources";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		068F80C7519D0528FB08E821 = {
-			children = (
-				"9693D5CF0019BE86C9E5D067");
-			isa = PBXGroup;
-			name = "Products";
-			refType = 4;
-		};
-		7BFC7B00DBC77D46483951B7 = {
-			buildPhases = (
-				"D7BA7D76DAB5DD13389D6332",
-				"A0A52A2ADF7A1E2A99738674",
-				"F6069D5A5DA8AA28EDB8B3C6",
-				"C29B8785722055ED95EF7B57",
-				"2A1043669E6E5A7426EA502A",
-				"3787F99312C85FF0073FD7BA");
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		85019C5E109A5C180068DE97 /* Debug */ = {
+			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = x86_64;
+				BUILD_ROOT = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = (
 					"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers",
 					"/opt/local/libexec/qt4-mac/include/QtCore",
 					"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers",
 					"/opt/local/libexec/qt4-mac/include/QtGui",
-					"/opt/local/libexec/qt4-mac/include",
-					".",
-					"/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include",
+					"/opt/local/libexec/qt4-mac/lib/QtXml.framework/Versions/4/Headers",
 					"/opt/local/libexec/qt4-mac/include/QtXml",
-					".",
-					"/usr/local/include",
-					"/System/Library/Frameworks/CarbonCore.framework/Headers",
-					"/opt/local/libexec/qt4-mac/mkspecs/macx-xcode");
+					"/opt/local/libexec/qt4-mac/include",
+					.,
+					/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include,
+					"/opt/local/libexec/qt4-mac/include/QtXml",
+					.,
+					/usr/local/include,
+					/System/Library/Frameworks/CarbonCore.framework/Headers,
+					"/opt/local/libexec/qt4-mac/mkspecs/macx-xcode",
+				);
+				INFOPLIST_FILE = Info.plist;
+				LEXFLAGS = "";
 				LIBRARY_SEARCH_PATHS = (
-					"/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib",
+					/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib,
 					"/opt/local/libexec/qt4-mac/lib",
-					"/opt/local/lib",
+					/opt/local/lib,
 					"/opt/local/libexec/qt4-mac/lib",
-					"/System/Library/Frameworks/");
-				OPTIMIZATION_CFLAGS = (
-					);
+					/System/Library/Frameworks/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
 				OTHER_CFLAGS = (
 					"-pipe",
 					"-g",
 					"-Wall",
 					"-W",
+					"-DQT_XML_LIB",
 					"-DQT_GUI_LIB",
 					"-DQT_CORE_LIB",
-					"-DQT_SHARED");
+					"-DQT_SHARED",
+				);
 				OTHER_CPLUSPLUSFLAGS = (
 					"-pipe",
 					"-g",
 					"-Wall",
 					"-W",
+					"-DQT_XML_LIB",
 					"-DQT_GUI_LIB",
 					"-DQT_CORE_LIB",
-					"-DQT_SHARED");
-				LEXFLAGS = "";
-				YACCFLAGS = "-d";
+					"-DQT_SHARED",
+				);
+				OTHER_LDFLAGS = (
+					"-headerpad_max_install_names",
+					"-L/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib",
+					"-L/opt/local/libexec/qt4-mac/lib",
+					"-F/opt/local/libexec/qt4-mac/lib",
+					"-L/opt/local/lib",
+					"-L/opt/local/libexec/qt4-mac/lib",
+					"-F/opt/local/libexec/qt4-mac/lib",
+					"-lm",
+				);
 				OTHER_REZFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = SimpleMapEditor;
 				SECTORDER_FLAGS = "";
 				WARNING_CFLAGS = "";
-				PREBINDING = NO;
-				INFOPLIST_FILE = "Info.plist";
-				BUILD_ROOT = "/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor";
+				YACCFLAGS = "-d";
+			};
+			name = Debug;
+		};
+		85019C5F109A5C180068DE97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				BUILD_ROOT = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor;
+				COPY_PHASE_STRIP = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				HEADER_SEARCH_PATHS = (
+					"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers",
+					"/opt/local/libexec/qt4-mac/include/QtCore",
+					"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers",
+					"/opt/local/libexec/qt4-mac/include/QtGui",
+					"/opt/local/libexec/qt4-mac/lib/QtXml.framework/Versions/4/Headers",
+					"/opt/local/libexec/qt4-mac/include/QtXml",
+					"/opt/local/libexec/qt4-mac/include",
+					.,
+					/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include,
+					"/opt/local/libexec/qt4-mac/include/QtXml",
+					.,
+					/usr/local/include,
+					/System/Library/Frameworks/CarbonCore.framework/Headers,
+					"/opt/local/libexec/qt4-mac/mkspecs/macx-xcode",
+				);
+				INFOPLIST_FILE = Info.plist;
+				LEXFLAGS = "";
+				LIBRARY_SEARCH_PATHS = (
+					/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib,
+					"/opt/local/libexec/qt4-mac/lib",
+					/opt/local/lib,
+					"/opt/local/libexec/qt4-mac/lib",
+					/System/Library/Frameworks/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-g",
+					"-Wall",
+					"-W",
+					"-DQT_XML_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-g",
+					"-Wall",
+					"-W",
+					"-DQT_XML_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED",
+				);
 				OTHER_LDFLAGS = (
-						"-headerpad_max_install_names",
-						"-F/opt/local/libexec/qt4-mac/lib/",
-						"-L/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib",
-						"-L/opt/local/libexec/qt4-mac/lib",
-						"-F/opt/local/libexec/qt4-mac/lib",
-						"-L/opt/local/lib",
-						"-L/opt/local/libexec/qt4-mac/lib",
-						"-F/opt/local/libexec/qt4-mac/lib",
-						"-lm");
-				DYLIB_CURRENT_VERSION = "1.0.0";
-				DYLIB_COMPATIBILITY_VERSION = "1.0";
-				MACOSX_DEPLOYMENT_TARGET = "10.3";
-				ARCHS = "x86_64";
-				PRODUCT_NAME = "SimpleMapEditor";
-			};
-			conditionalBuildSettings = {
-			};
-			dependencies = (
+					"-headerpad_max_install_names",
+					"-L/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib",
+					"-L/opt/local/libexec/qt4-mac/lib",
+					"-F/opt/local/libexec/qt4-mac/lib",
+					"-L/opt/local/lib",
+					"-L/opt/local/libexec/qt4-mac/lib",
+					"-F/opt/local/libexec/qt4-mac/lib",
+					"-lm",
 				);
-			productReference = "9693D5CF0019BE86C9E5D067";
-			shouldUseHeadermap = 1;
-			isa = PBXNativeTarget;
-			productType = "com.apple.product-type.application";
-			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist SYSTEM \"file://localhost/System/Library/DTDs/PropertyList.dtd\">
-<plist version=\"0.9\">
-<dict>
-	<key>CFBundleIconFile</key>
-	<string></string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-    <key>CFBundleGetInfoString</key>
-	<string>Created by Qt/QMake</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleExecutable</key>
-	<string>SimpleMapEditor</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.yourcompany.SimpleMapEditor</string>
-	<key>NOTE</key>
-	<string>This file was generated by Qt/QMake.</string>
-</dict>
-</plist>
-";
-			name = "SimpleMapEditor";
-			productName = "SimpleMapEditor";
-			startupPath = "<<ProjectDirectory>>";
+				OTHER_REZFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = SimpleMapEditor;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "";
+				YACCFLAGS = "-d";
+			};
+			name = Release;
 		};
-		8DB1DD96F65B1BF1FFC506E0 = {
+		85019C60109A5C180068DE97 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = "NO";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
-				GCC_OPTIMIZATION_LEVEL = "0";
-			};
-			name = "Debug";
-		};
-		2C641C3335766025DD51B7BD = {
-			buildRules = (
+				ARCHS = x86_64;
+				BUILD_ROOT = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor;
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				HEADER_SEARCH_PATHS = (
+					"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers",
+					"/opt/local/libexec/qt4-mac/include/QtCore",
+					"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers",
+					"/opt/local/libexec/qt4-mac/include/QtGui",
+					"/opt/local/libexec/qt4-mac/lib/QtXml.framework/Versions/4/Headers",
+					"/opt/local/libexec/qt4-mac/include/QtXml",
+					"/opt/local/libexec/qt4-mac/include",
+					.,
+					/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/include,
+					"/opt/local/libexec/qt4-mac/include/QtXml",
+					.,
+					/usr/local/include,
+					/System/Library/Frameworks/CarbonCore.framework/Headers,
+					"/opt/local/libexec/qt4-mac/mkspecs/macx-xcode",
 				);
-			buildSettings = {
-				COPY_PHASE_STRIP = "NO";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
-				GCC_OPTIMIZATION_LEVEL = "0";
+				INFOPLIST_FILE = Info.plist;
+				LEXFLAGS = "";
+				LIBRARY_SEARCH_PATHS = (
+					/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib,
+					"/opt/local/libexec/qt4-mac/lib",
+					/opt/local/lib,
+					"/opt/local/libexec/qt4-mac/lib",
+					/System/Library/Frameworks/,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.3;
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-g",
+					"-Wall",
+					"-W",
+					"-DQT_XML_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-g",
+					"-Wall",
+					"-W",
+					"-DQT_XML_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED",
+				);
+				OTHER_LDFLAGS = (
+					"-headerpad_max_install_names",
+					"-L/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib",
+					"-L/opt/local/libexec/qt4-mac/lib",
+					"-F/opt/local/libexec/qt4-mac/lib",
+					"-L/opt/local/lib",
+					"-L/opt/local/libexec/qt4-mac/lib",
+					"-F/opt/local/libexec/qt4-mac/lib",
+					"-lm",
+				);
+				OTHER_REZFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = SimpleMapEditor;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "";
+				YACCFLAGS = "-d";
 			};
-			isa = "PBXBuildStyle";
-			name = "Debug";
+			name = Default;
 		};
-		95E1EB2E5DDD587BE5B3E548 = {
+		8DB1DD96F65B1BF1FFC506E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = "YES";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
+				COPY_PHASE_STRIP = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 			};
-			name = "Release";
+			name = Debug;
 		};
-		26DE8D2AEA4B3714B41E931F = {
-			buildRules = (
-				);
+		95E1EB2E5DDD587BE5B3E548 /* Release */ = {
+			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = "YES";
-				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
+				COPY_PHASE_STRIP = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 			};
-			isa = "PBXBuildStyle";
-			name = "Release";
+			name = Release;
 		};
-		2A951308CDB28F104D0A4BD2 = {
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A951308CDB28F104D0A4BD2 /* Build configuration list for PBXProject "SimpleMapEditor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				"8DB1DD96F65B1BF1FFC506E0",
-				"95E1EB2E5DDD587BE5B3E548");
+				8DB1DD96F65B1BF1FFC506E0 /* Debug */,
+				95E1EB2E5DDD587BE5B3E548 /* Release */,
+			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationIsName = "Debug";
+			defaultConfigurationName = Release;
 		};
-		91B15E841AA80083484172DE = {
-			buildStyles = (
-				"2C641C3335766025DD51B7BD",
-				"26DE8D2AEA4B3714B41E931F");
-			hasScannedForEncodings = 1;
-			isa = PBXProject;
-			mainGroup = "05596AB53D8D521C69802C27";
-			buildConfigurationList = "2A951308CDB28F104D0A4BD2";
-			projectDirPath = "";
-			targets = (
-				"7BFC7B00DBC77D46483951B7");
+		85019C73109A5C1E0068DE97 /* Build configuration list for PBXNativeTarget "SimpleMapEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85019C5E109A5C180068DE97 /* Debug */,
+				85019C5F109A5C180068DE97 /* Release */,
+				85019C60109A5C180068DE97 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
 		};
+/* End XCConfigurationList section */
 	};
-	rootObject = "91B15E841AA80083484172DE";
+	rootObject = 91B15E841AA80083484172DE /* Project object */;
 }
