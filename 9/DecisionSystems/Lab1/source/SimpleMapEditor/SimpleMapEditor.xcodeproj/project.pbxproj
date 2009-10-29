@@ -5,439 +5,447 @@
 	};
 	objectVersion = 42;
 	objects = {
-
-/* Begin PBXBuildFile section */
-		0BBCA87DD96827A5DBBC4E5A /* z in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = B17AB5A1BBB7CABB649D4526 /* z */; };
-		2B093CA6F071B023A473CED0 /* main.cpp in Build Sources */ = {isa = PBXBuildFile; fileRef = 118FCBAABA162BA17933C789 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
-		51D4DBF7CB8537BE86EBD055 /* AppKit.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 821416211D63F190AAAD016A /* AppKit.framework */; };
-		5CAB9136880C7BA05E3AE547 /* QtCore.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 5C57D404811C47138A9B8E0F /* QtCore.framework */; };
-		785C012FC9A234B63E681EE7 /* png in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 42F0392158B562C755109433 /* png */; };
-		85F51444109A454500E03DB8 /* SimpleMapEditor.app in Project Copy */ = {isa = PBXBuildFile; fileRef = 85F51441109A454500E03DB8 /* SimpleMapEditor.app */; };
-		A13F05658AE3F3F0BC3D7412 /* QtGui.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = DAA7448BEE363B17BC1C6550 /* QtGui.framework */; };
-		C8FD4A1AAA37CF2CA2824CCF /* Carbon.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = DA138F75C9F545CDAE7FB264 /* Carbon.framework */; };
-		F9E76E570E10AF14870553A7 /* ApplicationServices.framework in Frameworks & Libraries */ = {isa = PBXBuildFile; fileRef = 27AE7A480FD6C52FCA80FECD /* ApplicationServices.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		F6069D5A5DA8AA28EDB8B3C6 /* Project Copy */ = {
-			isa = PBXCopyFilesBuildPhase;
+		D7BA7D76DAB5DD13389D6332 = {
 			buildActionMask = 2147483647;
-			dstPath = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor;
+			files = (
+				);
+			generatedFileNames = (
+				);
+			isa = PBXShellScriptBuildPhase;
+			name = "Qt Qmake";
+			neededFileNames = (
+				);
+			shellPath = "/bin/sh";
+			shellScript = "make\ -C\ /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor\ -f\ SimpleMapEditor.xcodeproj/qt_makeqmake.mak";
+		};
+		118FCBAABA162BA17933C789 = {
+			isa = PBXFileReference;
+			name = "main.cpp";
+			path = "main.cpp";
+			refType = 4;
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		2B093CA6F071B023A473CED0 = {
+			fileRef = "118FCBAABA162BA17933C789";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		B11157991606037817BE9D12 = {
+			isa = PBXFileReference;
+			name = "MainWindow.cpp";
+			path = "MainWindow.cpp";
+			refType = 4;
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		F7966146FE2682DF0478BEC0 = {
+			fileRef = "B11157991606037817BE9D12";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		26827F2FC4DC4FBB23DE8287 = {
+			isa = PBXFileReference;
+			name = "moc_MainWindow.cpp";
+			path = "moc_MainWindow.cpp";
+			refType = 4;
+			lastKnownFileType = "sourcecode.cpp.cpp";
+		};
+		A4582233947FB7FB159573BB = {
+			fileRef = "26827F2FC4DC4FBB23DE8287";
+			isa = PBXBuildFile;
+			settings = {
+				ATTRIBUTES = (
+					);
+			};
+		};
+		BE70EB99BDB216943CAF350C = {
+			isa = PBXFileReference;
+			name = "MainWindow.h";
+			path = "MainWindow.h";
+			refType = 4;
+		};
+		E07E56424594D10D001513BC = {
+			isa = PBXFileReference;
+			name = "SimpleMapEditor.pro";
+			path = "SimpleMapEditor.pro";
+			refType = 4;
+		};
+		883D7615C4D2DE3FA1218F12 = {
+			isa = PBXGroup;
+			children = (
+				"BE70EB99BDB216943CAF350C");
+			name = "Headers";
+			refType = 4;
+		};
+		FB61758D0F0FDA4BA867C3D5 = {
+			isa = PBXGroup;
+			children = (
+				"118FCBAABA162BA17933C789",
+				"B11157991606037817BE9D12");
+			name = "Sources";
+			refType = 4;
+		};
+		7CABE3C80E79AD2B307756D2 = {
+			isa = PBXGroup;
+			children = (
+				"E07E56424594D10D001513BC");
+			name = "Sources [qmake]";
+			refType = 4;
+		};
+		46E892BBB6BB6952967E0561 = {
+			isa = PBXGroup;
+			children = (
+				"26827F2FC4DC4FBB23DE8287");
+			name = "Temporary Sources";
+			refType = 4;
+		};
+		A0A52A2ADF7A1E2A99738674 = {
+			buildActionMask = 2147483647;
+			files = (
+				);
+			generatedFileNames = (
+				"2B093CA6F071B023A473CED0",
+				"F7966146FE2682DF0478BEC0",
+				"A4582233947FB7FB159573BB");
+			isa = PBXShellScriptBuildPhase;
+			name = "Qt Preprocessors";
+			neededFileNames = (
+				"2B093CA6F071B023A473CED0",
+				"F7966146FE2682DF0478BEC0",
+				"A4582233947FB7FB159573BB");
+			shellPath = "/bin/sh";
+			shellScript = "make\ -C\ /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor\ -f\ SimpleMapEditor.xcodeproj/qt_preprocess.mak";
+		};
+		C29B8785722055ED95EF7B57 = {
+			buildActionMask = 2147483647;
+			files = (
+				"2B093CA6F071B023A473CED0",
+				"F7966146FE2682DF0478BEC0",
+				"A4582233947FB7FB159573BB");
+			isa = PBXSourcesBuildPhase;
+			name = "Build Sources";
+		};
+		DAA7448BEE363B17BC1C6550 = {
+			isa = PBXFrameworkReference;
+			name = "QtGui.framework";
+			path = "/opt/local/libexec/qt4-mac/lib/QtGui.framework";
+			refType = 0;
+		};
+		A13F05658AE3F3F0BC3D7412 = {
+			fileRef = "DAA7448BEE363B17BC1C6550";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		DA138F75C9F545CDAE7FB264 = {
+			isa = PBXFrameworkReference;
+			name = "Carbon.framework";
+			path = "/System/Library/Frameworks/Carbon.framework";
+			refType = 0;
+		};
+		C8FD4A1AAA37CF2CA2824CCF = {
+			fileRef = "DA138F75C9F545CDAE7FB264";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		821416211D63F190AAAD016A = {
+			isa = PBXFrameworkReference;
+			name = "AppKit.framework";
+			path = "/System/Library/Frameworks/AppKit.framework";
+			refType = 0;
+		};
+		51D4DBF7CB8537BE86EBD055 = {
+			fileRef = "821416211D63F190AAAD016A";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		42F0392158B562C755109433 = {
+			isa = PBXFileReference;
+			name = "png";
+			path = "/opt/local/lib/libpng12.0.dylib";
+			refType = 0;
+		};
+		785C012FC9A234B63E681EE7 = {
+			fileRef = "42F0392158B562C755109433";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		5C57D404811C47138A9B8E0F = {
+			isa = PBXFrameworkReference;
+			name = "QtCore.framework";
+			path = "/opt/local/libexec/qt4-mac/lib/QtCore.framework";
+			refType = 0;
+		};
+		5CAB9136880C7BA05E3AE547 = {
+			fileRef = "5C57D404811C47138A9B8E0F";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		B17AB5A1BBB7CABB649D4526 = {
+			isa = PBXFileReference;
+			name = "z";
+			path = "/opt/local/lib/libz.1.2.3.dylib";
+			refType = 0;
+		};
+		0BBCA87DD96827A5DBBC4E5A = {
+			fileRef = "B17AB5A1BBB7CABB649D4526";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		27AE7A480FD6C52FCA80FECD = {
+			isa = PBXFrameworkReference;
+			name = "ApplicationServices.framework";
+			path = "/System/Library/Frameworks/ApplicationServices.framework";
+			refType = 0;
+		};
+		F9E76E570E10AF14870553A7 = {
+			fileRef = "27AE7A480FD6C52FCA80FECD";
+			isa = PBXBuildFile;
+			settings = {
+			};
+		};
+		ED1E82605DD74B483AF3C982 = {
+			children = (
+				"DAA7448BEE363B17BC1C6550",
+				"DA138F75C9F545CDAE7FB264",
+				"821416211D63F190AAAD016A",
+				"42F0392158B562C755109433",
+				"5C57D404811C47138A9B8E0F",
+				"B17AB5A1BBB7CABB649D4526",
+				"27AE7A480FD6C52FCA80FECD");
+			isa = PBXGroup;
+			name = "External Frameworks and Libraries";
+			path = "";
+			refType = 4;
+		};
+		2A1043669E6E5A7426EA502A = {
+			buildActionMask = 2147483647;
+			files = (
+				"A13F05658AE3F3F0BC3D7412",
+				"C8FD4A1AAA37CF2CA2824CCF",
+				"51D4DBF7CB8537BE86EBD055",
+				"785C012FC9A234B63E681EE7",
+				"5CAB9136880C7BA05E3AE547",
+				"0BBCA87DD96827A5DBBC4E5A",
+				"F9E76E570E10AF14870553A7");
+			isa = PBXFrameworksBuildPhase;
+			name = "Frameworks & Libraries";
+		};
+		3787F99312C85FF0073FD7BA = {
+			buildActionMask = 2147483647;
+			files = (
+			);
+			isa = PBXResourcesBuildPhase;
+			name = "Bundle Resources";
+		};
+		F6069D5A5DA8AA28EDB8B3C6 = {
+			name = "Project Copy";
+			buildActionMask = 2147483647;
+			dstPath = "/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor";
 			dstSubfolderSpec = 0;
 			files = (
-				85F51444109A454500E03DB8 /* SimpleMapEditor.app in Project Copy */,
-			);
-			name = "Project Copy";
+"07E0DFA73EB56DCB9E28CDD9");
+			isa = PBXCopyFilesBuildPhase;
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXCopyFilesBuildPhase section */
-
-/* Begin PBXFileReference section */
-		118FCBAABA162BA17933C789 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		27AE7A480FD6C52FCA80FECD /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
-		42F0392158B562C755109433 /* png */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = png; path = /opt/local/lib/libpng12.0.dylib; sourceTree = "<absolute>"; };
-		5C57D404811C47138A9B8E0F /* QtCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtCore.framework; path = "/opt/local/libexec/qt4-mac/lib/QtCore.framework"; sourceTree = "<absolute>"; };
-		821416211D63F190AAAD016A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		85F51441109A454500E03DB8 /* SimpleMapEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMapEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B17AB5A1BBB7CABB649D4526 /* z */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = z; path = /opt/local/lib/libz.1.2.3.dylib; sourceTree = "<absolute>"; };
-		DA138F75C9F545CDAE7FB264 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
-		DAA7448BEE363B17BC1C6550 /* QtGui.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QtGui.framework; path = "/opt/local/libexec/qt4-mac/lib/QtGui.framework"; sourceTree = "<absolute>"; };
-		E07E56424594D10D001513BC /* SimpleMapEditor.pro */ = {isa = PBXFileReference; lastKnownFileType = text; path = SimpleMapEditor.pro; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		2A1043669E6E5A7426EA502A /* Frameworks & Libraries */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A13F05658AE3F3F0BC3D7412 /* QtGui.framework in Frameworks & Libraries */,
-				C8FD4A1AAA37CF2CA2824CCF /* Carbon.framework in Frameworks & Libraries */,
-				51D4DBF7CB8537BE86EBD055 /* AppKit.framework in Frameworks & Libraries */,
-				785C012FC9A234B63E681EE7 /* png in Frameworks & Libraries */,
-				5CAB9136880C7BA05E3AE547 /* QtCore.framework in Frameworks & Libraries */,
-				0BBCA87DD96827A5DBBC4E5A /* z in Frameworks & Libraries */,
-				F9E76E570E10AF14870553A7 /* ApplicationServices.framework in Frameworks & Libraries */,
-			);
-			name = "Frameworks & Libraries";
-			runOnlyForDeploymentPostprocessing = 0;
+		07E0DFA73EB56DCB9E28CDD9 = {
+			fileRef = "9693D5CF0019BE86C9E5D067";
+			isa = PBXBuildFile;
+			settings = {
+			};
 		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		05596AB53D8D521C69802C27 /* SimpleMapEditor */ = {
-			isa = PBXGroup;
+		05596AB53D8D521C69802C27 = {
 			children = (
-				FB61758D0F0FDA4BA867C3D5 /* Sources */,
-				7CABE3C80E79AD2B307756D2 /* Sources [qmake] */,
-				ED1E82605DD74B483AF3C982 /* External Frameworks and Libraries */,
-				85F51442109A454500E03DB8 /* Products */,
-			);
-			name = SimpleMapEditor;
-			sourceTree = "<group>";
-		};
-		7CABE3C80E79AD2B307756D2 /* Sources [qmake] */ = {
+				"FB61758D0F0FDA4BA867C3D5",
+				"46E892BBB6BB6952967E0561",
+				"883D7615C4D2DE3FA1218F12",
+				"7CABE3C80E79AD2B307756D2",
+				"ED1E82605DD74B483AF3C982");
 			isa = PBXGroup;
-			children = (
-				E07E56424594D10D001513BC /* SimpleMapEditor.pro */,
-			);
-			name = "Sources [qmake]";
-			sourceTree = "<group>";
+			name = "SimpleMapEditor";
+			path = "";
+			refType = 4;
 		};
-		85F51442109A454500E03DB8 /* Products */ = {
+		9693D5CF0019BE86C9E5D067 = {
+			isa = PBXFileReference;
+			explicitFileType = "wrapper.application";
+			path = "SimpleMapEditor.app";
+			refType = 3;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		068F80C7519D0528FB08E821 = {
+			children = (
+				"9693D5CF0019BE86C9E5D067");
 			isa = PBXGroup;
-			children = (
-				85F51441109A454500E03DB8 /* SimpleMapEditor.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
+			name = "Products";
+			refType = 4;
 		};
-		ED1E82605DD74B483AF3C982 /* External Frameworks and Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				DAA7448BEE363B17BC1C6550 /* QtGui.framework */,
-				DA138F75C9F545CDAE7FB264 /* Carbon.framework */,
-				821416211D63F190AAAD016A /* AppKit.framework */,
-				42F0392158B562C755109433 /* png */,
-				5C57D404811C47138A9B8E0F /* QtCore.framework */,
-				B17AB5A1BBB7CABB649D4526 /* z */,
-				27AE7A480FD6C52FCA80FECD /* ApplicationServices.framework */,
-			);
-			name = "External Frameworks and Libraries";
-			sourceTree = "<group>";
-		};
-		FB61758D0F0FDA4BA867C3D5 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				118FCBAABA162BA17933C789 /* main.cpp */,
-			);
-			name = Sources;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		7BFC7B00DBC77D46483951B7 /* SimpleMapEditor */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 85F5145E109A454800E03DB8 /* Build configuration list for PBXNativeTarget "SimpleMapEditor" */;
+		7BFC7B00DBC77D46483951B7 = {
 			buildPhases = (
-				D7BA7D76DAB5DD13389D6332 /* Qt Qmake */,
-				A0A52A2ADF7A1E2A99738674 /* Qt Preprocessors */,
-				F6069D5A5DA8AA28EDB8B3C6 /* Project Copy */,
-				C29B8785722055ED95EF7B57 /* Build Sources */,
-				2A1043669E6E5A7426EA502A /* Frameworks & Libraries */,
-				3787F99312C85FF0073FD7BA /* Bundle Resources */,
-			);
-			buildRules = (
-			);
+				"D7BA7D76DAB5DD13389D6332",
+				"A0A52A2ADF7A1E2A99738674",
+				"F6069D5A5DA8AA28EDB8B3C6",
+				"C29B8785722055ED95EF7B57",
+				"2A1043669E6E5A7426EA502A",
+				"3787F99312C85FF0073FD7BA");
+			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers",
+					"/opt/local/libexec/qt4-mac/include/QtCore",
+					"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers",
+					"/opt/local/libexec/qt4-mac/include/QtGui",
+					"/opt/local/libexec/qt4-mac/include",
+					".",
+					".",
+					"/usr/local/include",
+					"/System/Library/Frameworks/CarbonCore.framework/Headers",
+					"/opt/local/libexec/qt4-mac/mkspecs/macx-xcode");
+				LIBRARY_SEARCH_PATHS = (
+					"/opt/local/libexec/qt4-mac/lib",
+					"/opt/local/lib",
+					"/opt/local/libexec/qt4-mac/lib",
+					"/System/Library/Frameworks/");
+				OPTIMIZATION_CFLAGS = (
+					);
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-g",
+					"-Wall",
+					"-W",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED");
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-g",
+					"-Wall",
+					"-W",
+					"-DQT_GUI_LIB",
+					"-DQT_CORE_LIB",
+					"-DQT_SHARED");
+				LEXFLAGS = "";
+				YACCFLAGS = "-d";
+				OTHER_REZFLAGS = "";
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = "";
+				PREBINDING = NO;
+				INFOPLIST_FILE = "Info.plist";
+				BUILD_ROOT = "/Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor";
+				OTHER_LDFLAGS = (
+						"-headerpad_max_install_names",
+						"-L/opt/local/libexec/qt4-mac/lib",
+						"-F/opt/local/libexec/qt4-mac/lib",
+						"-L/opt/local/lib",
+						"-L/opt/local/libexec/qt4-mac/lib",
+						"-F/opt/local/libexec/qt4-mac/lib",
+						"-lm");
+				DYLIB_CURRENT_VERSION = "1.0.0";
+				DYLIB_COMPATIBILITY_VERSION = "1.0";
+				MACOSX_DEPLOYMENT_TARGET = "10.3";
+				ARCHS = "x86_64";
+				PRODUCT_NAME = "SimpleMapEditor";
+			};
+			conditionalBuildSettings = {
+			};
 			dependencies = (
-			);
-			name = SimpleMapEditor;
-			productName = SimpleMapEditor;
-			productReference = 85F51441109A454500E03DB8 /* SimpleMapEditor.app */;
+				);
+			productReference = "9693D5CF0019BE86C9E5D067";
+			shouldUseHeadermap = 1;
+			isa = PBXNativeTarget;
 			productType = "com.apple.product-type.application";
+			productSettingsXML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+<!DOCTYPE plist SYSTEM \"file://localhost/System/Library/DTDs/PropertyList.dtd\">
+<plist version=\"0.9\">
+<dict>
+	<key>CFBundleIconFile</key>
+	<string></string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+    <key>CFBundleGetInfoString</key>
+	<string>Created by Qt/QMake</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleExecutable</key>
+	<string>SimpleMapEditor</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.SimpleMapEditor</string>
+	<key>NOTE</key>
+	<string>This file was generated by Qt/QMake.</string>
+</dict>
+</plist>
+";
+			name = "SimpleMapEditor";
+			productName = "SimpleMapEditor";
+			startupPath = "<<ProjectDirectory>>";
 		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		91B15E841AA80083484172DE /* Project object */ = {
-			isa = PBXProject;
-			buildConfigurationList = 2A951308CDB28F104D0A4BD2 /* Build configuration list for PBXProject "SimpleMapEditor" */;
-			compatibilityVersion = "Xcode 2.4";
+		8DB1DD96F65B1BF1FFC506E0 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
+				GCC_OPTIMIZATION_LEVEL = "0";
+			};
+			name = "Debug";
+		};
+		2C641C3335766025DD51B7BD = {
+			buildRules = (
+				);
+			buildSettings = {
+				COPY_PHASE_STRIP = "NO";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "YES";
+				GCC_OPTIMIZATION_LEVEL = "0";
+			};
+			isa = "PBXBuildStyle";
+			name = "Debug";
+		};
+		95E1EB2E5DDD587BE5B3E548 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = "YES";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
+			};
+			name = "Release";
+		};
+		26DE8D2AEA4B3714B41E931F = {
+			buildRules = (
+				);
+			buildSettings = {
+				COPY_PHASE_STRIP = "YES";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = "NO";
+			};
+			isa = "PBXBuildStyle";
+			name = "Release";
+		};
+		2A951308CDB28F104D0A4BD2 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"8DB1DD96F65B1BF1FFC506E0",
+				"95E1EB2E5DDD587BE5B3E548");
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationIsName = "Debug";
+		};
+		91B15E841AA80083484172DE = {
+			buildStyles = (
+				"2C641C3335766025DD51B7BD",
+				"26DE8D2AEA4B3714B41E931F");
 			hasScannedForEncodings = 1;
-			mainGroup = 05596AB53D8D521C69802C27 /* SimpleMapEditor */;
-			productRefGroup = 85F51442109A454500E03DB8 /* Products */;
+			isa = PBXProject;
+			mainGroup = "05596AB53D8D521C69802C27";
+			buildConfigurationList = "2A951308CDB28F104D0A4BD2";
 			projectDirPath = "";
-			projectRoot = "";
 			targets = (
-				7BFC7B00DBC77D46483951B7 /* SimpleMapEditor */,
-			);
+				"7BFC7B00DBC77D46483951B7");
 		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		3787F99312C85FF0073FD7BA /* Bundle Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "Bundle Resources";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A0A52A2ADF7A1E2A99738674 /* Qt Preprocessors */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "Qt Preprocessors";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make -C /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor -f SimpleMapEditor.xcodeproj/qt_preprocess.mak";
-		};
-		D7BA7D76DAB5DD13389D6332 /* Qt Qmake */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "Qt Qmake";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make -C /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor -f SimpleMapEditor.xcodeproj/qt_makeqmake.mak";
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		C29B8785722055ED95EF7B57 /* Build Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2B093CA6F071B023A473CED0 /* main.cpp in Build Sources */,
-			);
-			name = "Build Sources";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin XCBuildConfiguration section */
-		85F51456109A454600E03DB8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = x86_64;
-				BUILD_ROOT = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor;
-				COPY_PHASE_STRIP = NO;
-				DYLIB_COMPATIBILITY_VERSION = 1.0;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				HEADER_SEARCH_PATHS = (
-					"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers",
-					"/opt/local/libexec/qt4-mac/include/QtCore",
-					"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers",
-					"/opt/local/libexec/qt4-mac/include/QtGui",
-					"/opt/local/libexec/qt4-mac/include",
-					.,
-					.,
-					/usr/local/include,
-					/System/Library/Frameworks/CarbonCore.framework/Headers,
-					"/opt/local/libexec/qt4-mac/mkspecs/macx-xcode",
-				);
-				INFOPLIST_FILE = Info.plist;
-				LEXFLAGS = "";
-				LIBRARY_SEARCH_PATHS = (
-					"/opt/local/libexec/qt4-mac/lib",
-					/opt/local/lib,
-					"/opt/local/libexec/qt4-mac/lib",
-					/System/Library/Frameworks/,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				OTHER_CFLAGS = (
-					"-pipe",
-					"-g",
-					"-Wall",
-					"-W",
-					"-DQT_GUI_LIB",
-					"-DQT_CORE_LIB",
-					"-DQT_SHARED",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-pipe",
-					"-g",
-					"-Wall",
-					"-W",
-					"-DQT_GUI_LIB",
-					"-DQT_CORE_LIB",
-					"-DQT_SHARED",
-				);
-				OTHER_LDFLAGS = (
-					"-headerpad_max_install_names",
-					"-L/opt/local/libexec/qt4-mac/lib",
-					"-F/opt/local/libexec/qt4-mac/lib",
-					"-L/opt/local/lib",
-					"-L/opt/local/libexec/qt4-mac/lib",
-					"-F/opt/local/libexec/qt4-mac/lib",
-					"-lm",
-				);
-				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = SimpleMapEditor;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = "";
-				YACCFLAGS = "-d";
-			};
-			name = Debug;
-		};
-		85F51457109A454600E03DB8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = x86_64;
-				BUILD_ROOT = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor;
-				COPY_PHASE_STRIP = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1.0;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				HEADER_SEARCH_PATHS = (
-					"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers",
-					"/opt/local/libexec/qt4-mac/include/QtCore",
-					"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers",
-					"/opt/local/libexec/qt4-mac/include/QtGui",
-					"/opt/local/libexec/qt4-mac/include",
-					.,
-					.,
-					/usr/local/include,
-					/System/Library/Frameworks/CarbonCore.framework/Headers,
-					"/opt/local/libexec/qt4-mac/mkspecs/macx-xcode",
-				);
-				INFOPLIST_FILE = Info.plist;
-				LEXFLAGS = "";
-				LIBRARY_SEARCH_PATHS = (
-					"/opt/local/libexec/qt4-mac/lib",
-					/opt/local/lib,
-					"/opt/local/libexec/qt4-mac/lib",
-					/System/Library/Frameworks/,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				OTHER_CFLAGS = (
-					"-pipe",
-					"-g",
-					"-Wall",
-					"-W",
-					"-DQT_GUI_LIB",
-					"-DQT_CORE_LIB",
-					"-DQT_SHARED",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-pipe",
-					"-g",
-					"-Wall",
-					"-W",
-					"-DQT_GUI_LIB",
-					"-DQT_CORE_LIB",
-					"-DQT_SHARED",
-				);
-				OTHER_LDFLAGS = (
-					"-headerpad_max_install_names",
-					"-L/opt/local/libexec/qt4-mac/lib",
-					"-F/opt/local/libexec/qt4-mac/lib",
-					"-L/opt/local/lib",
-					"-L/opt/local/libexec/qt4-mac/lib",
-					"-F/opt/local/libexec/qt4-mac/lib",
-					"-lm",
-				);
-				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = SimpleMapEditor;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = "";
-				YACCFLAGS = "-d";
-			};
-			name = Release;
-		};
-		85F51458109A454600E03DB8 /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = x86_64;
-				BUILD_ROOT = /Users/rilley_elf/_dev/univer/9/DecisionSystems/Lab1/source/SimpleMapEditor;
-				DYLIB_COMPATIBILITY_VERSION = 1.0;
-				DYLIB_CURRENT_VERSION = 1.0.0;
-				HEADER_SEARCH_PATHS = (
-					"/opt/local/libexec/qt4-mac/lib/QtCore.framework/Versions/4/Headers",
-					"/opt/local/libexec/qt4-mac/include/QtCore",
-					"/opt/local/libexec/qt4-mac/lib/QtGui.framework/Versions/4/Headers",
-					"/opt/local/libexec/qt4-mac/include/QtGui",
-					"/opt/local/libexec/qt4-mac/include",
-					.,
-					.,
-					/usr/local/include,
-					/System/Library/Frameworks/CarbonCore.framework/Headers,
-					"/opt/local/libexec/qt4-mac/mkspecs/macx-xcode",
-				);
-				INFOPLIST_FILE = Info.plist;
-				LEXFLAGS = "";
-				LIBRARY_SEARCH_PATHS = (
-					"/opt/local/libexec/qt4-mac/lib",
-					/opt/local/lib,
-					"/opt/local/libexec/qt4-mac/lib",
-					/System/Library/Frameworks/,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				OTHER_CFLAGS = (
-					"-pipe",
-					"-g",
-					"-Wall",
-					"-W",
-					"-DQT_GUI_LIB",
-					"-DQT_CORE_LIB",
-					"-DQT_SHARED",
-				);
-				OTHER_CPLUSPLUSFLAGS = (
-					"-pipe",
-					"-g",
-					"-Wall",
-					"-W",
-					"-DQT_GUI_LIB",
-					"-DQT_CORE_LIB",
-					"-DQT_SHARED",
-				);
-				OTHER_LDFLAGS = (
-					"-headerpad_max_install_names",
-					"-L/opt/local/libexec/qt4-mac/lib",
-					"-F/opt/local/libexec/qt4-mac/lib",
-					"-L/opt/local/lib",
-					"-L/opt/local/libexec/qt4-mac/lib",
-					"-F/opt/local/libexec/qt4-mac/lib",
-					"-lm",
-				);
-				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = SimpleMapEditor;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = "";
-				YACCFLAGS = "-d";
-			};
-			name = Default;
-		};
-		8DB1DD96F65B1BF1FFC506E0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-			};
-			name = Debug;
-		};
-		95E1EB2E5DDD587BE5B3E548 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		2A951308CDB28F104D0A4BD2 /* Build configuration list for PBXProject "SimpleMapEditor" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8DB1DD96F65B1BF1FFC506E0 /* Debug */,
-				95E1EB2E5DDD587BE5B3E548 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		85F5145E109A454800E03DB8 /* Build configuration list for PBXNativeTarget "SimpleMapEditor" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				85F51456109A454600E03DB8 /* Debug */,
-				85F51457109A454600E03DB8 /* Release */,
-				85F51458109A454600E03DB8 /* Default */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
-		};
-/* End XCConfigurationList section */
 	};
-	rootObject = 91B15E841AA80083484172DE /* Project object */;
+	rootObject = "91B15E841AA80083484172DE";
 }
