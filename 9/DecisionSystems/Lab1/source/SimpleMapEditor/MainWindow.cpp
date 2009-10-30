@@ -9,21 +9,30 @@
 
 #include "MainWindow.h"
 
+const QString MainWindow::myPluginsDir("/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/qgis");
+
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent)
 {
+	QgsProviderRegistry::instance(MainWindow::myPluginsDir);
 	setMinimumSize(minimumX, minimumY);
-	mapWidget = new QgsMapCanvas( this );
+	mapWidget = new QgsMapCanvas( 0, 0 );
+	mapWidget->setCanvasColor(QColor(255,255,255));
 	setCentralWidget( mapWidget );
+	mapWidget->show();
 	
-	addVectorLayer();
+	addVectorLayer("/Users/rilley_elf/maps/city.mif");
+	addVectorLayer("/Users/rilley_elf/maps/regions.mif");
+//	addVectorLayer("/Users/rilley_elf/maps/map.osm.xml");
 	
 	show();
 }
 
-void MainWindow::addVectorLayer()
+void MainWindow::addVectorLayer(const QString& filePath)
 {
-	QFileInfo layerFileInfo("/Users/rilley_elf/map/city.mif");
-	QgsVectorLayer* vectorLayer = new QgsVectorLayer(layerFileInfo.filePath(), layerFileInfo.completeBaseName());
+//	QString myProviderName = "osm";
+	QString myProviderName = "ogr";
+	QFileInfo layerFileInfo(filePath);
+	QgsVectorLayer* vectorLayer = new QgsVectorLayer(layerFileInfo.filePath(), layerFileInfo.completeBaseName(), myProviderName );
 	if (vectorLayer->isValid())
 	{
 		qDebug("Layer is valid");
@@ -33,11 +42,11 @@ void MainWindow::addVectorLayer()
 		qDebug("Layer is NOT valid");
 		return; 
 	}
-	QList<QgsMapCanvasLayer> myLayerSet;
 	
 	QgsMapLayerRegistry::instance()->addMapLayer(vectorLayer, TRUE);
 	
 	myLayerSet.push_back(vectorLayer);
+	mapWidget->clear();
 	mapWidget->setExtent(vectorLayer->extent());
 	mapWidget->setLayerSet(myLayerSet);
 }

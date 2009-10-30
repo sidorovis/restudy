@@ -22,15 +22,19 @@
 
 class MainWindow : public QMainWindow
 {
+	Q_OBJECT
+
 	static const size_t minimumX = 640;
 	static const size_t minimumY = 480;
-	Q_OBJECT
+	static const QString myPluginsDir;
+	
 public:
 	MainWindow(QWidget* parent = NULL);
 private:
-	void addVectorLayer();	
+	void addVectorLayer(const QString& filePath);
 	
 	QgsMapCanvas* mapWidget;
+	QList<QgsMapCanvasLayer> myLayerSet;
 };
 
 #endif // _MAIN_WINDOW_H
