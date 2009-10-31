@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOpenLayer">
+    <property name="title">
+     <string>OpenLayer</string>
+    </property>
+    <addaction name="actionOGR_mif_map_file_types"/>
+    <addaction name="actionOSM_xml_osm_file_types"/>
+    <addaction name="separator"/>
+    <addaction name="actionRaster_tif_jpg_file_types"/>
+   </widget>
+   <addaction name="menuOpenLayer"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOGR_mif_map_file_types">
+   <property name="text">
+    <string>Vector OGR(*.mif,*map file types)</string>
+   </property>
+  </action>
+  <action name="actionOSM_xml_osm_file_types">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Vector OSM(*.xml, *.osm file types)</string>
+   </property>
+  </action>
+  <action name="actionRaster_tif_jpg_file_types">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Raster (*.tif, *.jpg file types)</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionOGR_mif_map_file_types</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>loadOgrFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>loadOgrFile()</slot>
+ </slots>
+</ui>

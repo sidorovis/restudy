@@ -11,6 +11,8 @@
 #define _MAIN_WINDOW_H
 
 #include <QMainWindow>
+#include <QFileDialog>
+#include "ui_MainWindow.h"
 #include <deque>
 
 #define CORE_EXPORT
@@ -23,9 +25,7 @@
 class MainWindow : public QMainWindow
 {
 	Q_OBJECT
-
-	static const size_t minimumX = 640;
-	static const size_t minimumY = 480;
+	Ui::MainWindow* uiMainWindow;
 	static const QString myPluginsDir;
 	
 public:
@@ -35,6 +35,9 @@ private:
 	
 	QgsMapCanvas* mapWidget;
 	QList<QgsMapCanvasLayer> myLayerSet;
+	
+private slots:
+	void loadOgrFile();
 };
 
 #endif // _MAIN_WINDOW_H

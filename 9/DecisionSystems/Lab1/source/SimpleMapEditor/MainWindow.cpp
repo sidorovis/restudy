@@ -11,17 +11,20 @@
 
 const QString MainWindow::myPluginsDir("/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/qgis");
 
-MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent)
+MainWindow::MainWindow(QWidget* parent) : 
+     QMainWindow(parent),
+     uiMainWindow(new Ui::MainWindow)
 {
+	uiMainWindow->setupUi(this);
+	setCentralWidget(mapWidget = new QgsMapCanvas(0, 0));
+	delete uiMainWindow->centralwidget;
 	QgsProviderRegistry::instance(MainWindow::myPluginsDir);
-	setMinimumSize(minimumX, minimumY);
-	mapWidget = new QgsMapCanvas( 0, 0 );
 	mapWidget->setCanvasColor(QColor(255,255,255));
-	setCentralWidget( mapWidget );
-	mapWidget->show();
-	
-	addVectorLayer("/Users/rilley_elf/maps/city.mif");
-	addVectorLayer("/Users/rilley_elf/maps/regions.mif");
+//	setCentralWidget( mapWidget );
+//	uiMainWindow->scrollAreaWidgetContents->show();
+//	
+//	addVectorLayer("/Users/rilley_elf/maps/city.mif");
+//	addVectorLayer("/Users/rilley_elf/maps/regions.mif");
 //	addVectorLayer("/Users/rilley_elf/maps/map.osm.xml");
 	
 	show();
@@ -49,4 +52,15 @@ void MainWindow::addVectorLayer(const QString& filePath)
 	mapWidget->clear();
 	mapWidget->setExtent(vectorLayer->extent());
 	mapWidget->setLayerSet(myLayerSet);
+}
+void MainWindow::loadOgrFile()
+{
+	QFileDialog fileDialog(this, "Choose OGR vector file", "~/", tr("Vector Layer files (*.mif *.map)"));
+	fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
+	fileDialog.setFileMode(QFileDialog::ExistingFile);
+	if (fileDialog.exec())
+	{
+		qDebug() << fileDialog.selectedFiles();
+		addVectorLayer(fileDialog.selectedFiles().at(0));
+	}
 }
