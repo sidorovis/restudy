@@ -12,11 +12,16 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
-#include "ui_MainWindow.h"
-#include <deque>
+#include <QMessageBox>
+#include <QStringListModel>
+#include <QStringList>
+
+
+#include "LayerItem.h"
 
 #define CORE_EXPORT
 #define GUI_EXPORT
+#include "ui_MainWindow.h"
 #include "qgis/qgsproviderregistry.h"
 #include "qgis/qgsvectorlayer.h"
 #include "qgis/qgsmaplayerregistry.h"
@@ -27,17 +32,20 @@ class MainWindow : public QMainWindow
 	Q_OBJECT
 	Ui::MainWindow* uiMainWindow;
 	static const QString myPluginsDir;
+	static const QString vectorProviderName;
 	
 public:
 	MainWindow(QWidget* parent = NULL);
 private:
 	void addVectorLayer(const QString& filePath);
 	
-	QgsMapCanvas* mapWidget;
 	QList<QgsMapCanvasLayer> myLayerSet;
+	QStringList layerNames;
+	QStringListModel* layerNamesModel;
 	
 private slots:
 	void loadOgrFile();
+	void showLayersProperties();
 };
 
 #endif // _MAIN_WINDOW_H

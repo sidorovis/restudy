@@ -10,57 +10,51 @@
 #include "MainWindow.h"
 
 const QString MainWindow::myPluginsDir("/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/qgis");
+const QString MainWindow::vectorProviderName("ogr");
 
 MainWindow::MainWindow(QWidget* parent) : 
      QMainWindow(parent),
      uiMainWindow(new Ui::MainWindow)
 {
 	uiMainWindow->setupUi(this);
-	setCentralWidget(mapWidget = new QgsMapCanvas(0, 0));
-	delete uiMainWindow->centralwidget;
 	QgsProviderRegistry::instance(MainWindow::myPluginsDir);
-	mapWidget->setCanvasColor(QColor(255,255,255));
-//	setCentralWidget( mapWidget );
-//	uiMainWindow->scrollAreaWidgetContents->show();
-//	
-//	addVectorLayer("/Users/rilley_elf/maps/city.mif");
-//	addVectorLayer("/Users/rilley_elf/maps/regions.mif");
-//	addVectorLayer("/Users/rilley_elf/maps/map.osm.xml");
-	
-	show();
+	uiMainWindow->mapWidget->setCanvasColor( QColor(255,255,255) );	
+	layerNamesModel = new QStringListModel();
+	uiMainWindow->layerList->setModel(layerNamesModel);
+	show();	
 }
 
 void MainWindow::addVectorLayer(const QString& filePath)
 {
-//	QString myProviderName = "osm";
-	QString myProviderName = "ogr";
 	QFileInfo layerFileInfo(filePath);
-	QgsVectorLayer* vectorLayer = new QgsVectorLayer(layerFileInfo.filePath(), layerFileInfo.completeBaseName(), myProviderName );
-	if (vectorLayer->isValid())
+	QgsVectorLayer* vectorLayer = new QgsVectorLayer(layerFileInfo.filePath(), layerFileInfo.completeBaseName(), vectorProviderName );
+	if (!vectorLayer->isValid())
 	{
-		qDebug("Layer is valid");
+		QMessageBox messageBox;
+		messageBox.setText("This file content wrong vector layer");
+		messageBox.exec();
 	}
 	else
 	{
-		qDebug("Layer is NOT valid");
-		return; 
+		layerNames.push_back(layerFileInfo.baseName());
+		layerNamesModel->setStringList(layerNames);
+		QgsMapLayerRegistry::instance()->addMapLayer(vectorLayer, TRUE);	
+		myLayerSet.push_back(vectorLayer);
+		uiMainWindow->mapWidget->clear();
+		uiMainWindow->mapWidget->setExtent(vectorLayer->extent());
+		uiMainWindow->mapWidget->setLayerSet(myLayerSet);		
 	}
-	
-	QgsMapLayerRegistry::instance()->addMapLayer(vectorLayer, TRUE);
-	
-	myLayerSet.push_back(vectorLayer);
-	mapWidget->clear();
-	mapWidget->setExtent(vectorLayer->extent());
-	mapWidget->setLayerSet(myLayerSet);
 }
 void MainWindow::loadOgrFile()
 {
-	QFileDialog fileDialog(this, "Choose OGR vector file", "~/", tr("Vector Layer files (*.mif *.map)"));
+	QFileDialog fileDialog(this, "Choose OGR vector file", "~/", tr("Vector Layer files (*.mif *.tab)"));
 	fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
 	fileDialog.setFileMode(QFileDialog::ExistingFile);
 	if (fileDialog.exec())
-	{
-		qDebug() << fileDialog.selectedFiles();
 		addVectorLayer(fileDialog.selectedFiles().at(0));
-	}
+}
+void MainWindow::showLayersProperties()
+{
+	
+	qDebug() <<"PROP";
 }
