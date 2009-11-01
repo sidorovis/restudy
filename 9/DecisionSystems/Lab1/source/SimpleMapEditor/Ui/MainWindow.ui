@@ -50,6 +50,27 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="showDropIndicator" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="dragEnabled">
+          <bool>true</bool>
+         </property>
+         <property name="dragDropOverwriteMode">
+          <bool>true</bool>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::DropOnly</enum>
+         </property>
+         <property name="movement">
+          <enum>QListView::Static</enum>
+         </property>
         </widget>
        </item>
       </layout>
@@ -85,14 +106,7 @@
     <addaction name="separator"/>
     <addaction name="actionRaster_tif_jpg_file_types"/>
    </widget>
-   <widget class="QMenu" name="menuLayerManager">
-    <property name="title">
-     <string>LayerManager</string>
-    </property>
-    <addaction name="actionLayers_options"/>
-   </widget>
    <addaction name="menuOpenLayer"/>
-   <addaction name="menuLayerManager"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOGR_mif_map_file_types">
@@ -149,24 +163,24 @@
    </hints>
   </connection>
   <connection>
-   <sender>actionLayers_options</sender>
-   <signal>activated()</signal>
+   <sender>layerList</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
    <receiver>MainWindow</receiver>
-   <slot>showLayersProperties()</slot>
+   <slot>showLayerInfo(QModelIndex)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
+     <x>111</x>
+     <y>233</y>
     </hint>
     <hint type="destinationlabel">
-     <x>319</x>
-     <y>239</y>
+     <x>316</x>
+     <y>233</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>loadOgrFile()</slot>
-  <slot>showLayersProperties()</slot>
+  <slot>showLayerInfo(QModelIndex)</slot>
  </slots>
 </ui>

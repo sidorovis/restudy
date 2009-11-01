@@ -15,12 +15,12 @@
 #include <QMessageBox>
 #include <QStringListModel>
 #include <QStringList>
-
-
-#include "LayerItem.h"
+#include <QModelIndex>
+#include "Layer.h"
 
 #define CORE_EXPORT
 #define GUI_EXPORT
+
 #include "ui_MainWindow.h"
 #include "qgis/qgsproviderregistry.h"
 #include "qgis/qgsvectorlayer.h"
@@ -36,16 +36,16 @@ class MainWindow : public QMainWindow
 	
 public:
 	MainWindow(QWidget* parent = NULL);
+	virtual ~MainWindow();
 private:
 	void addVectorLayer(const QString& filePath);
-	
-	QList<QgsMapCanvasLayer> myLayerSet;
-	QStringList layerNames;
+	void reDraw();
 	QStringListModel* layerNamesModel;
+	QList<Layer*> layers;
 	
 private slots:
 	void loadOgrFile();
-	void showLayersProperties();
+	void showLayerInfo(const QModelIndex &index);
 };
 
 #endif // _MAIN_WINDOW_H

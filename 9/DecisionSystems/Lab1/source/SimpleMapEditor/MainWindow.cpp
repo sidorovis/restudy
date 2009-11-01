@@ -10,7 +10,6 @@
 #include "MainWindow.h"
 
 const QString MainWindow::myPluginsDir("/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/qgis");
-const QString MainWindow::vectorProviderName("ogr");
 
 MainWindow::MainWindow(QWidget* parent) : 
      QMainWindow(parent),
@@ -22,29 +21,44 @@ MainWindow::MainWindow(QWidget* parent) :
 	layerNamesModel = new QStringListModel();
 	uiMainWindow->layerList->setModel(layerNamesModel);
 	show();	
+	addVectorLayer("/Users/rilley_elf/maps/city.mif");
+	addVectorLayer("/Users/rilley_elf/maps/regions.mif");
 }
-
+MainWindow::~MainWindow()
+{
+	uiMainWindow->mapWidget->clear();
+	QgsMapLayerRegistry::instance()->removeAllMapLayers();
+	delete layerNamesModel;
+}
 void MainWindow::addVectorLayer(const QString& filePath)
 {
-	QFileInfo layerFileInfo(filePath);
-	QgsVectorLayer* vectorLayer = new QgsVectorLayer(layerFileInfo.filePath(), layerFileInfo.completeBaseName(), vectorProviderName );
-	if (!vectorLayer->isValid())
+	Layer *layer = new Layer(filePath);
+	if (layer->isValid())
+	{
+		QgsMapLayerRegistry::instance()->addMapLayer(layer, TRUE);
+		layers.push_back( layer );		
+	}
+	else
 	{
 		QMessageBox messageBox;
 		messageBox.setText("This file content wrong vector layer");
 		messageBox.exec();
 	}
-	else
-	{
-		layerNames.push_back(layerFileInfo.baseName());
-		layerNamesModel->setStringList(layerNames);
-		QgsMapLayerRegistry::instance()->addMapLayer(vectorLayer, TRUE);	
-		myLayerSet.push_back(vectorLayer);
-		uiMainWindow->mapWidget->clear();
-		uiMainWindow->mapWidget->setExtent(vectorLayer->extent());
-		uiMainWindow->mapWidget->setLayerSet(myLayerSet);		
-	}
+	reDraw();
 }
+void MainWindow::reDraw()
+{
+	layerNamesModel->setStringList( getLayerNameList( layers ) );
+	uiMainWindow->mapWidget->clear();
+	QList<QgsMapCanvasLayer> myLayerSet;
+	foreach( Layer* layer, layers)
+	{
+		uiMainWindow->mapWidget->setExtent( layer->extent());
+		myLayerSet.push_back(layer);
+	}
+	uiMainWindow->mapWidget->setLayerSet( myLayerSet );
+}
+
 void MainWindow::loadOgrFile()
 {
 	QFileDialog fileDialog(this, "Choose OGR vector file", "~/", tr("Vector Layer files (*.mif *.tab)"));
@@ -53,8 +67,7 @@ void MainWindow::loadOgrFile()
 	if (fileDialog.exec())
 		addVectorLayer(fileDialog.selectedFiles().at(0));
 }
-void MainWindow::showLayersProperties()
+void MainWindow::showLayerInfo(const QModelIndex &index)
 {
-	
-	qDebug() <<"PROP";
+	qDebug() << index.row();
 }
