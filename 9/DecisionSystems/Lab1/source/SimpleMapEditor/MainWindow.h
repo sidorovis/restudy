@@ -17,6 +17,7 @@
 #include <QStringList>
 #include <QModelIndex>
 #include "Layer.h"
+#include "LayerPropertiesDialog.h"
 
 #define CORE_EXPORT
 #define GUI_EXPORT
@@ -42,10 +43,13 @@ private:
 	void reDraw();
 	QStringListModel* layerNamesModel;
 	QList<Layer*> layers;
-	
+	int selected_lay_index;
 private slots:
 	void loadOgrFile();
-	void showLayerInfo(const QModelIndex &index);
+	void listButtonPressed(const QModelIndex &index);
+	void changeLayerOrder(int first, int second);
+	void upPressed();
+	void downPressed();
 };
 
 #endif // _MAIN_WINDOW_H

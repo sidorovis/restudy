@@ -1,4 +1,4 @@
-_clean
-_generate
-xcodebuild -project SimpleMapEditor.xcodeproject
+./_clean.sh
+./_generate.sh
+xcodebuild -project SimpleMapEditor.xcodeproj
 

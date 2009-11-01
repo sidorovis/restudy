@@ -9,14 +9,26 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>634</width>
-    <height>468</height>
+    <width>640</width>
+    <height>480</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>480</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="central">
+   <property name="maximumSize">
+    <size>
+     <width>10000000</width>
+     <height>10000000</height>
+    </size>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QWidget" name="widget" native="true">
@@ -26,7 +38,7 @@
         <height>16777215</height>
        </size>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -60,17 +72,37 @@
           <bool>false</bool>
          </property>
          <property name="dragEnabled">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="dragDropOverwriteMode">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="dragDropMode">
-          <enum>QAbstractItemView::DropOnly</enum>
+          <enum>QAbstractItemView::NoDragDrop</enum>
          </property>
          <property name="movement">
           <enum>QListView::Static</enum>
          </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="widget_2" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="text">
+             <string>Up</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="text">
+             <string>Down</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
@@ -93,7 +125,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>634</width>
+     <width>640</width>
      <height>22</height>
     </rect>
    </property>
@@ -163,24 +195,58 @@
    </hints>
   </connection>
   <connection>
-   <sender>layerList</sender>
-   <signal>doubleClicked(QModelIndex)</signal>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>showLayerInfo(QModelIndex)</slot>
+   <slot>upPressed()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>111</x>
-     <y>233</y>
+     <x>85</x>
+     <y>428</y>
     </hint>
     <hint type="destinationlabel">
-     <x>316</x>
-     <y>233</y>
+     <x>133</x>
+     <y>452</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>downPressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>155</x>
+     <y>421</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>299</x>
+     <y>455</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>layerList</sender>
+   <signal>pressed(QModelIndex)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>listButtonPressed(QModelIndex)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>203</x>
+     <y>323</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>219</x>
+     <y>303</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>loadOgrFile()</slot>
-  <slot>showLayerInfo(QModelIndex)</slot>
+  <slot>listButtonPressed(QModelIndex)</slot>
+  <slot>upPressed()</slot>
+  <slot>downPressed()</slot>
  </slots>
 </ui>

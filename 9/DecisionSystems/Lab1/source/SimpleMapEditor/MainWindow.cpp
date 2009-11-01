@@ -13,7 +13,8 @@ const QString MainWindow::myPluginsDir("/Applications/MacPorts/qgis1.3.0.app/Con
 
 MainWindow::MainWindow(QWidget* parent) : 
      QMainWindow(parent),
-     uiMainWindow(new Ui::MainWindow)
+     uiMainWindow(new Ui::MainWindow),
+     selected_lay_index( -1 )
 {
 	uiMainWindow->setupUi(this);
 	QgsProviderRegistry::instance(MainWindow::myPluginsDir);
@@ -52,8 +53,9 @@ void MainWindow::reDraw()
 	uiMainWindow->mapWidget->clear();
 	QList<QgsMapCanvasLayer> myLayerSet;
 	foreach( Layer* layer, layers)
+	if (layer->visible) 
 	{
-		uiMainWindow->mapWidget->setExtent( layer->extent());
+		uiMainWindow->mapWidget->setExtent( layer->extent() );
 		myLayerSet.push_back(layer);
 	}
 	uiMainWindow->mapWidget->setLayerSet( myLayerSet );
@@ -67,7 +69,35 @@ void MainWindow::loadOgrFile()
 	if (fileDialog.exec())
 		addVectorLayer(fileDialog.selectedFiles().at(0));
 }
-void MainWindow::showLayerInfo(const QModelIndex &index)
+void MainWindow::listButtonPressed(const QModelIndex &index)
 {
-	qDebug() << index.row();
+	selected_lay_index = index.row();
+	if (QApplication::mouseButtons() == Qt::RightButton)
+	{
+		LayerPropertiesDialog dialog( layers.at( selected_lay_index ));
+		dialog.exec();
+		reDraw();
+	}
+}
+void MainWindow::changeLayerOrder(int first, int second)
+{
+	if (first < layers.size() && second < layers.size())
+		layers.swap( first, second );
+	reDraw();
+}
+void MainWindow::upPressed()
+{
+	if (selected_lay_index > 0)
+	{
+		changeLayerOrder(selected_lay_index, selected_lay_index - 1);
+		selected_lay_index = -1;		
+	}
+}
+void MainWindow::downPressed()
+{
+	if (selected_lay_index > -1 && selected_lay_index < layers.size() - 1)
+	{
+		changeLayerOrder(selected_lay_index, selected_lay_index + 1);
+		selected_lay_index = -1;		
+	}
 }
