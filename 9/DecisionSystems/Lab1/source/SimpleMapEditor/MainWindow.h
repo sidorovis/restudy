@@ -18,6 +18,7 @@
 #include <QModelIndex>
 #include "Layer.h"
 #include "LayerPropertiesDialog.h"
+#include "SearchDialog.h"
 
 #define CORE_EXPORT
 #define GUI_EXPORT
@@ -50,6 +51,7 @@ private slots:
 	void changeLayerOrder(int first, int second);
 	void upPressed();
 	void downPressed();
+	void showSearchDialog();
 };
 
 #endif // _MAIN_WINDOW_H

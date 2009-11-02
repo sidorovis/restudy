@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget* parent) :
 	uiMainWindow->layerList->setModel(layerNamesModel);
 	show();	
 	addVectorLayer("/Users/rilley_elf/maps/city.mif");
-	addVectorLayer("/Users/rilley_elf/maps/regions.mif");
+//	addVectorLayer("/Users/rilley_elf/maps/regions.mif");
 }
 MainWindow::~MainWindow()
 {
@@ -50,7 +50,7 @@ void MainWindow::addVectorLayer(const QString& filePath)
 void MainWindow::reDraw()
 {
 	layerNamesModel->setStringList( getLayerNameList( layers ) );
-	uiMainWindow->mapWidget->clear();
+//	uiMainWindow->mapWidget->clear();
 	QList<QgsMapCanvasLayer> myLayerSet;
 	foreach( Layer* layer, layers)
 	if (layer->visible) 
@@ -100,4 +100,9 @@ void MainWindow::downPressed()
 		changeLayerOrder(selected_lay_index, selected_lay_index + 1);
 		selected_lay_index = -1;		
 	}
+}
+void MainWindow::showSearchDialog()
+{
+	SearchDialog searchDialog(&layers);
+	searchDialog.exec();
 }

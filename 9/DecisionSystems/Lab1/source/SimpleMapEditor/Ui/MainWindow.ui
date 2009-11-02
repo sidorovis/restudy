@@ -138,7 +138,15 @@
     <addaction name="separator"/>
     <addaction name="actionRaster_tif_jpg_file_types"/>
    </widget>
+   <widget class="QMenu" name="menuSearch">
+    <property name="title">
+     <string>Search</string>
+    </property>
+    <addaction name="actionBy_name"/>
+    <addaction name="actionBy_Coordinates"/>
+   </widget>
    <addaction name="menuOpenLayer"/>
+   <addaction name="menuSearch"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOGR_mif_map_file_types">
@@ -165,6 +173,16 @@
   <action name="actionLayers_options">
    <property name="text">
     <string>Layers options</string>
+   </property>
+  </action>
+  <action name="actionBy_name">
+   <property name="text">
+    <string>By Name</string>
+   </property>
+  </action>
+  <action name="actionBy_Coordinates">
+   <property name="text">
+    <string>By Coordinates</string>
    </property>
   </action>
  </widget>
@@ -242,11 +260,28 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionBy_name</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showSearchDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>loadOgrFile()</slot>
   <slot>listButtonPressed(QModelIndex)</slot>
   <slot>upPressed()</slot>
   <slot>downPressed()</slot>
+  <slot>showSearchDialog()</slot>
  </slots>
 </ui>

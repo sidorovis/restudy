@@ -23,6 +23,7 @@ class LayerPropertiesDialog : public QDialog
 	
 public:
 	LayerPropertiesDialog(Layer* layer_, QWidget* parent = 0);
+	virtual ~LayerPropertiesDialog();
 
 private slots:
 	void changeVisibility(bool visible);

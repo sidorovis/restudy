@@ -15,14 +15,17 @@ LayerPropertiesDialog::LayerPropertiesDialog(Layer* layer_, QWidget* parent) :
   layer( layer_ )
 {
 	layerSettingsDialog->setupUi( this );
-	layerSettingsDialog->label->setText( layer->fileName.baseName() );
+	layerSettingsDialog->label->setText( layer->name() );
 	if (layer->visible)
 		layerSettingsDialog->checkBox->setCheckState( Qt::Checked );
 	else
 		layerSettingsDialog->checkBox->setCheckState( Qt::Unchecked );
 }
+LayerPropertiesDialog::~LayerPropertiesDialog()
+{
+	delete layerSettingsDialog;
+}
 void LayerPropertiesDialog::changeVisibility(bool visible)
 {
-	
 	layer->visible = visible;
 }
