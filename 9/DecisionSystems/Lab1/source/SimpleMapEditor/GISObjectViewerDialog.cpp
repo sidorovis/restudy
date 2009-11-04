@@ -9,7 +9,7 @@
 
 #include "GISObjectViewerDialog.h"
 
-GISObjectViewerDialog::GISObjectViewerDialog(const GISObject* const gisObject, QWidget* parent)
+GISObjectViewerDialog::GISObjectViewerDialog(GISObject* gisObject, QWidget* parent)
 : QDialog( parent )
 , uiGisObjectViewer( new Ui::GISObjectViewer() )
 , object( gisObject )

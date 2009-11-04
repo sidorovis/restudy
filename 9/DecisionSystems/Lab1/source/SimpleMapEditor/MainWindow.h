@@ -53,6 +53,7 @@ private slots:
 	void downPressed();
 	void showSearchDialog();
 	void deleteAllSelections();
+	void findDistance();
 };
 
 #endif // _MAIN_WINDOW_H

@@ -9,6 +9,10 @@
 
 #include "MainWindow.h"
 #include "GISObject.h"
+#include "qgis/qgsgeometry.h"
+#include "qgis/qgis.h"
+#include "qgis/qgsdistancearea.h"
+#include "DistanceShowDialog.h"
 
 const QString MainWindow::myPluginsDir("/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/qgis");
 
@@ -111,7 +115,11 @@ void MainWindow::showSearchDialog()
 	foreach(GISObject* obj, searchDialog.selectedObjects())
 		featuresIds[ (*obj).parentLayer ] << (*obj).f.id();
 	foreach(Layer* layer, featuresIds.keys())
+	{
+		foreach(const QgsFeature& f, layer->selectedFeatures())
+			featuresIds[ layer ] << f.id();
 		layer->setSelectedFeatures( featuresIds[ layer ] );
+	}
 }
 void MainWindow::deleteAllSelections()
 {
@@ -119,4 +127,45 @@ void MainWindow::deleteAllSelections()
 	{
 		layer->removeSelection();
 	}
+}
+void MainWindow::findDistance()
+{
+	DistanceShowDialog dialog;
+	QgsDistanceArea area;
+	area.setSourceEpsgCrsId( GEO_EPSG_CRS_ID ); // WGS 84
+	area.setEllipsoid( "WGS84" );
+//	area.setProjectionsEnabled( true );
+	QStringList headers;
+	foreach(Layer* layer, layers)
+	{
+		foreach(QgsFeature f, layer->selectedFeatures() )
+		{
+			GISObject* temp = GISObject::generateGISObject( layer, f );
+			headers << temp->toSmallString();
+			delete temp;			
+		}
+	}
+	dialog.setSize( headers.size() );
+	dialog.setTitles(headers);
+	for(int iL = 0 ; iL < layers.size() ; iL++)
+	{
+		int layerFromFeatureCount = layers.at(iL)->selectedFeatures().size();
+		for ( int i = 0 ; i < layerFromFeatureCount ; i++ )
+		{
+			for(int uL = 0 ; uL < layers.size() ; uL++)
+			{
+				int layerToFeatureCount = layers.at(uL)->selectedFeatures().size();
+				for ( int u = 0 ; u < layerToFeatureCount ; u++ )
+				{
+					QgsPoint pFrom = static_cast<QgsFeature>(layers.at(iL)->selectedFeatures().at(i)).geometry()->centroid()->asPoint();
+					QgsPoint pTo = static_cast<QgsFeature>(layers.at(uL)->selectedFeatures().at(u)).geometry()->centroid()->asPoint();
+					int ind_1 = (iL*layerFromFeatureCount+i);
+					int ind_2 = (uL*layerToFeatureCount+u);
+					dialog.setValue(ind_1, ind_2, QString("%1").arg(area.measureLine(pFrom, pTo)));
+				}
+			}
+			
+		}
+	}
+	dialog.exec();
 }
