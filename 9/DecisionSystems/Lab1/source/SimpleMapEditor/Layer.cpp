@@ -8,6 +8,7 @@
  */
 
 #include "Layer.h"
+#include "GISObject.h"
 
 const QString Layer::vectorProviderName("ogr");
 
@@ -20,9 +21,9 @@ Layer::Layer( const QFileInfo& fileName_ )
 Layer::~Layer()
 {
 }
-const QList<GISObject> Layer::search(QString text)
+const QList<GISObject*> Layer::search(QString text)
 {
-	QList<GISObject> objects;
+	QList<GISObject*> objects;
 	for (int i = 1 ; i <= this->featureCount() ; i++)
 	{
 		QgsFeature f;
@@ -31,7 +32,7 @@ const QList<GISObject> Layer::search(QString text)
 		{
 			if (u.type() == QVariant::String && u.toString().compare(text, Qt::CaseInsensitive) == 0)
 			{
-				objects.push_back(GISObject(f));
+				objects.push_back( GISObject::generateGISObject(*this, f) );
 				break;
 			}
 		}

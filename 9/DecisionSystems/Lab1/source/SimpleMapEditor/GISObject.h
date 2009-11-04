@@ -17,13 +17,35 @@
 
 #include "qgis/qgsfeature.h"
 
+class Layer;
+
 class GISObject
 {
-	
+protected:
+	QString layer_name;
 public:
-	GISObject(const QgsFeature& f);
+	static GISObject* generateGISObject(const Layer& layer, const QgsFeature& f);
 	virtual ~GISObject();
 	virtual const QString toString() const;
+protected:
+	GISObject(const Layer& layer, const QgsFeature& f);
+private:
+	GISObject(const GISObject&);
+	GISObject();
+};
+
+class CityObject : public GISObject
+{
+	QString type;
+	QString title;
+	QString region;
+	QString subregion;
+	QString description;
+	double citizen_count;
+public:
+	CityObject(const Layer& layer, const QgsFeature& f);
+	virtual const QString toString() const;
+	virtual ~CityObject();	
 };
 
 #endif // _GIS_OBJECT_H

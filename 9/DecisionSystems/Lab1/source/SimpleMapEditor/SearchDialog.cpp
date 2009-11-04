@@ -8,6 +8,8 @@
  */
 
 #include "SearchDialog.h"
+#include "Layer.h"
+#include "GISObject.h"
 
 SearchDialog::SearchDialog(const QList<Layer*>* layers_, QWidget* parent) 
     : QDialog( parent )
@@ -26,19 +28,13 @@ SearchDialog::~SearchDialog()
 }
 void SearchDialog::search()
 {
+	uiSearchByNameDialog->searchResult->clear();
 	foreach(QListWidgetItem* item, uiSearchByNameDialog->layerList->selectedItems())
 		for (int i = 0 ; i < layers->size() ; i++)
 			if (layers->at(i)->name() == item->text())
-				foreach(const GISObject obj, layers->at(i)->search( uiSearchByNameDialog->searchString->text() ))
+				foreach(const GISObject* objP, layers->at(i)->search( uiSearchByNameDialog->searchString->text() ))
 				{
-					uiSearchByNameDialog->searchResult->addItem( obj.toString() );
-//					foreach( const QVariant& u, featurePtr->attributeMap())
-//					{
-//						if (u.type() == QVariant::String && u.toString() == item->text())
-//						{
-//							uiSearchByNameDialog->searchResult->addItem( u.toString() );
-//							break;
-//						}
-//					}
+					uiSearchByNameDialog->searchResult->addItem( objP->toString() );
+					delete objP;
 				}
 }

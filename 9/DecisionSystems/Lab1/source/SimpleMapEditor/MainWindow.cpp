@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget* parent) :
 	layerNamesModel = new QStringListModel();
 	uiMainWindow->layerList->setModel(layerNamesModel);
 	show();	
-	addVectorLayer("/Users/rilley_elf/maps/city.mif");
+	addVectorLayer("./maps/city.mif");
 //	addVectorLayer("/Users/rilley_elf/maps/regions.mif");
 }
 MainWindow::~MainWindow()

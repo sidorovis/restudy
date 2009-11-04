@@ -11,7 +11,6 @@
 #define _SEARCH_DIALOG_H
 
 #include <QDebug>
-#include "Layer.h"
 #include <QDialog>
 #include "ui_SearchByNameDialog.h"
 
@@ -19,6 +18,9 @@
 #define GUI_EXPORT
 
 #include "qgis/qgsfeature.h"
+
+class Layer;
+
 
 class SearchDialog : public QDialog
 {

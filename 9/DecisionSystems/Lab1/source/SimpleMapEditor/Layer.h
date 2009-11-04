@@ -13,13 +13,15 @@
 #include <QDebug>
 #include <QFileInfo>
 #include <QStringListModel>
-#include "GISObject.h"
+#include <QString>
 
 #define CORE_EXPORT
 #define GUI_EXPORT
 
 #include "qgis/qgsvectorlayer.h"
 #include "qgis/qgsmaplayerregistry.h"
+
+class GISObject;
 
 class Layer : public QgsVectorLayer
 {
@@ -34,7 +36,7 @@ public:
 	Layer(const QFileInfo& fileName_);	
 	virtual ~Layer();
 	
-	const QList<GISObject> search(QString text);
+	const QList<GISObject*> search(QString text);
 };
 
 const QStringList getLayerNameList(const QList<Layer*>& list );
