@@ -18,7 +18,7 @@ class LayerPropertiesDialog : public QDialog
 {
 	Q_OBJECT
 	
-	Ui::LayerSettingsDialog* layerSettingsDialog;
+	Ui::LayerSettingsDialog* const layerSettingsDialog;
 	Layer* layer;
 	
 public:

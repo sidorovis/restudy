@@ -21,14 +21,16 @@ class Layer;
 
 class GISObject
 {
-protected:
-	QString layer_name;
 public:
-	static GISObject* generateGISObject(const Layer& layer, const QgsFeature& f);
+	Layer* parentLayer;
+	const QgsFeature f;
+
+	static GISObject* generateGISObject(Layer* layer, const QgsFeature& f);
 	virtual ~GISObject();
 	virtual const QString toString() const;
+	virtual const QStringList attributes() const;
 protected:
-	GISObject(const Layer& layer, const QgsFeature& f);
+	GISObject(Layer* layer, const QgsFeature& f);
 private:
 	GISObject(const GISObject&);
 	GISObject();
@@ -43,9 +45,21 @@ class CityObject : public GISObject
 	QString description;
 	double citizen_count;
 public:
-	CityObject(const Layer& layer, const QgsFeature& f);
+	CityObject(Layer* layer, const QgsFeature& f);
 	virtual const QString toString() const;
-	virtual ~CityObject();	
+	virtual const QStringList attributes() const;	
+//	virtual ~CityObject();	
 };
 
+class SubRegionObject : public GISObject
+{
+	QString region;
+	QString title;
+	QString neighbor;
+public:
+	SubRegionObject(Layer* layer, const QgsFeature& f);
+	virtual const QString toString() const;
+	virtual const QStringList attributes() const;	
+//	virtual ~SubRegionObject();		
+};
 #endif // _GIS_OBJECT_H

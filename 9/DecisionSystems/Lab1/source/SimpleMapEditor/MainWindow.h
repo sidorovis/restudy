@@ -52,6 +52,7 @@ private slots:
 	void upPressed();
 	void downPressed();
 	void showSearchDialog();
+	void deleteAllSelections();
 };
 
 #endif // _MAIN_WINDOW_H

@@ -8,6 +8,7 @@
  */
 
 #include "MainWindow.h"
+#include "GISObject.h"
 
 const QString MainWindow::myPluginsDir("/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/qgis");
 
@@ -23,13 +24,14 @@ MainWindow::MainWindow(QWidget* parent) :
 	uiMainWindow->layerList->setModel(layerNamesModel);
 	show();	
 	addVectorLayer("./maps/city.mif");
-//	addVectorLayer("/Users/rilley_elf/maps/regions.mif");
+	addVectorLayer("./maps/regions.mif");
 }
 MainWindow::~MainWindow()
 {
 	uiMainWindow->mapWidget->clear();
 	QgsMapLayerRegistry::instance()->removeAllMapLayers();
 	delete layerNamesModel;
+	delete uiMainWindow;
 }
 void MainWindow::addVectorLayer(const QString& filePath)
 {
@@ -105,4 +107,16 @@ void MainWindow::showSearchDialog()
 {
 	SearchDialog searchDialog(&layers);
 	searchDialog.exec();
+	QHash< Layer*, QSet<int> > featuresIds;
+	foreach(GISObject* obj, searchDialog.selectedObjects())
+		featuresIds[ (*obj).parentLayer ] << (*obj).f.id();
+	foreach(Layer* layer, featuresIds.keys())
+		layer->setSelectedFeatures( featuresIds[ layer ] );
+}
+void MainWindow::deleteAllSelections()
+{
+	foreach(Layer* layer, layers)
+	{
+		layer->removeSelection();
+	}
 }

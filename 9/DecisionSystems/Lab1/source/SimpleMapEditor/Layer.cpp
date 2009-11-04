@@ -32,7 +32,7 @@ const QList<GISObject*> Layer::search(QString text)
 		{
 			if (u.type() == QVariant::String && u.toString().compare(text, Qt::CaseInsensitive) == 0)
 			{
-				objects.push_back( GISObject::generateGISObject(*this, f) );
+				objects.push_back( GISObject::generateGISObject( this , f ) );
 				break;
 			}
 		}

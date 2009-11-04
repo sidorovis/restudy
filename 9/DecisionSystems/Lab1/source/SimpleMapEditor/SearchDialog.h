@@ -20,18 +20,24 @@
 #include "qgis/qgsfeature.h"
 
 class Layer;
-
+class GISObject;
 
 class SearchDialog : public QDialog
 {
 	Q_OBJECT
 	Ui::SearchByNameDialog* uiSearchByNameDialog;
 	const QList<Layer*>* layers;
+	QList<GISObject*> searchResult;
+	
 public:
 	SearchDialog(const QList<Layer*>* layers_, QWidget* parent = 0);
 	~SearchDialog();
+	const QList<GISObject*> selectedObjects();
+private:
+	void clearSearchResult();
 private slots:
 	void search();
+	void showGISObject(QListWidgetItem* item);
 };
 
 #endif _SEARCH_DIALOG_H
