@@ -33,7 +33,7 @@ GISObject::GISObject(Layer* layer, QgsFeature& feature)
 GISObject::~GISObject(){}
 const QString GISObject::toString() const
 {
-	return parentLayer->name()+" "+QString(" Unknown Object ");
+	return parentLayer->name()+" "+QString(" unspecified");
 }
 const QString GISObject::toSmallString() const
 {

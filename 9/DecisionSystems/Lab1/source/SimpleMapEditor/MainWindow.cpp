@@ -13,7 +13,10 @@
 #include "qgis/qgis.h"
 #include "qgis/qgsdistancearea.h"
 #include "qgis/qgsapplication.h"
+#include <QStatusBar>
 #include "DistanceShowDialog.h"
+#include "LayerPropertiesDialog.h"
+#include "SearchDialog.h"
 #include "WGS84Hack.h"
 
 const QString MainWindow::myPluginsDir("/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/qgis");
@@ -28,8 +31,11 @@ MainWindow::MainWindow(QWidget* parent) :
 	uiMainWindow->mapWidget->setCanvasColor( QColor(255,255,255) );	
 	layerNamesModel = new QStringListModel();
 	uiMainWindow->layerList->setModel(layerNamesModel);
+	status = new QLabel();
+	uiMainWindow->statusbar->addWidget( status );
 	show();	
 	addVectorLayer("./maps/city.mif");
+	addVectorLayer("./maps/zhd_road.mif");
 	addVectorLayer("./maps/regions.mif");
 }
 MainWindow::~MainWindow()
@@ -37,6 +43,7 @@ MainWindow::~MainWindow()
 	uiMainWindow->mapWidget->clear();
 	QgsMapLayerRegistry::instance()->removeAllMapLayers();
 	delete layerNamesModel;
+	delete status;
 	delete uiMainWindow;
 }
 void MainWindow::addVectorLayer(const QString& filePath)
@@ -54,19 +61,26 @@ void MainWindow::addVectorLayer(const QString& filePath)
 		messageBox.exec();
 	}
 	reDraw();
+	repaint();
 }
 void MainWindow::reDraw()
 {
 	layerNamesModel->setStringList( getLayerNameList( layers ) );
 //	uiMainWindow->mapWidget->clear();
 	QList<QgsMapCanvasLayer> myLayerSet;
+	bool first = false;
+	QgsRectangle prevRect = uiMainWindow->mapWidget->extent();
+	if (prevRect.xMaximum() == 0 &&
+		prevRect.xMinimum() == 0 &&
+		prevRect.yMaximum() == 0 &&
+		prevRect.yMinimum() == 0)
+		first = true;
 	foreach( Layer* layer, layers)
 	if (layer->visible) 
-	{
-		uiMainWindow->mapWidget->setExtent( layer->extent() );
 		myLayerSet.push_back(layer);
-	}
 	uiMainWindow->mapWidget->setLayerSet( myLayerSet );
+	if (first)
+		uiMainWindow->mapWidget->zoomToFullExtent();
 }
 
 void MainWindow::loadOgrFile()
@@ -141,6 +155,13 @@ void MainWindow::findDistance()
 			delete temp;			
 		}
 	}
+	if (headers.size() > 10)
+	{
+		QMessageBox messageBox(this);
+		messageBox.setText("This function was not planned for such big count of objects operations. Clean selecting, and try again.");
+		messageBox.exec();
+		return;
+	}
 	dialog.setSize( headers.size() );
 	dialog.setTitles(headers);
 	for(int iL = 0 ; iL < layers.size() ; iL++)
@@ -169,4 +190,8 @@ void MainWindow::findDistance()
 		}
 	}
 	dialog.exec();
+}
+void MainWindow::getXYcoordinates(QgsPoint point)
+{
+	status->setText(QString("%1 %2").arg(point.x()).arg(point.y()));
 }

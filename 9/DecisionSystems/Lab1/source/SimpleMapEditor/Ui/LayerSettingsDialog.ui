@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>LayerSettings</string>
   </property>
   <widget class="QCheckBox" name="checkBox">
    <property name="geometry">

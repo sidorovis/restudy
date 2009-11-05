@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>SearchDialog</string>
   </property>
   <widget class="QListWidget" name="layerList">
    <property name="geometry">

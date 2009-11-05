@@ -17,8 +17,6 @@
 #include <QStringList>
 #include <QModelIndex>
 #include "Layer.h"
-#include "LayerPropertiesDialog.h"
-#include "SearchDialog.h"
 
 #define CORE_EXPORT
 #define GUI_EXPORT
@@ -35,6 +33,7 @@ class MainWindow : public QMainWindow
 	Ui::MainWindow* uiMainWindow;
 	static const QString myPluginsDir;
 	static const QString vectorProviderName;
+	QLabel* status;
 	
 public:
 	MainWindow(QWidget* parent = NULL);
@@ -54,6 +53,7 @@ private slots:
 	void showSearchDialog();
 	void deleteAllSelections();
 	void findDistance();
+	void getXYcoordinates(QgsPoint point);
 };
 
 #endif // _MAIN_WINDOW_H

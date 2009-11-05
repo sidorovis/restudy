@@ -19,8 +19,14 @@
     <height>480</height>
    </size>
   </property>
+  <property name="focusPolicy">
+   <enum>Qt::TabFocus</enum>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>SimpleMapEditor</string>
   </property>
   <widget class="QWidget" name="central">
    <property name="maximumSize">
@@ -116,6 +122,18 @@
         <height>400</height>
        </size>
       </property>
+      <property name="cursor">
+       <cursorShape>CrossCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::NoContextMenu</enum>
+      </property>
      </widget>
     </item>
    </layout>
@@ -209,8 +227,18 @@
    <extends>QWidget</extends>
    <header>qgis/qgsmapcanvas.h</header>
    <container>1</container>
+   <slots>
+    <signal>xyCoordinates(QgsPoint)</signal>
+    <signal>xyClickCoordinates(QgsPoint)</signal>
+   </slots>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>mapWidget</tabstop>
+  <tabstop>layerList</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
@@ -325,6 +353,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>mapWidget</sender>
+   <signal>xyCoordinates(QgsPoint)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getXYcoordinates(QgsPoint)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>491</x>
+     <y>376</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>509</x>
+     <y>456</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>loadOgrFile()</slot>
@@ -334,5 +378,6 @@
   <slot>showSearchDialog()</slot>
   <slot>deleteAllSelections()</slot>
   <slot>findDistance()</slot>
+  <slot>getXYcoordinates(QgsPoint)</slot>
  </slots>
 </ui>
