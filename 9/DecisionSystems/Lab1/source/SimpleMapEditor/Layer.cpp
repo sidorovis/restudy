@@ -15,7 +15,9 @@ const QString Layer::vectorProviderName("ogr");
 Layer::Layer( const QFileInfo& fileName_ )
 : QgsVectorLayer(fileName_.filePath(), fileName_.completeBaseName(), vectorProviderName),
   fileName( fileName_ ),
-  visible( true )
+  visible( true ),
+  showLabels( false ),
+  feature_attribute_label_index( -1 )
 {
 }
 Layer::~Layer()

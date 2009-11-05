@@ -32,6 +32,8 @@ class Layer : public QgsVectorLayer
 public:
 	QFileInfo fileName;
 	bool visible;
+	bool showLabels;
+	int feature_attribute_label_index;
 	
 	Layer(const QFileInfo& fileName_);	
 	virtual ~Layer();

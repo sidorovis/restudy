@@ -167,8 +167,18 @@
     <addaction name="separator"/>
     <addaction name="actionFindDistance"/>
    </widget>
+   <widget class="QMenu" name="menuMapWidget">
+    <property name="title">
+     <string>MapWidget</string>
+    </property>
+    <addaction name="actionZoomToFullExtend"/>
+    <addaction name="separator"/>
+    <addaction name="actionZoomToPreviousExtent"/>
+    <addaction name="actionZoomToNextExtent"/>
+   </widget>
    <addaction name="menuOpenLayer"/>
    <addaction name="menuSearch"/>
+   <addaction name="menuMapWidget"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOGR_mif_map_file_types">
@@ -218,6 +228,21 @@
   <action name="actionFindDistance">
    <property name="text">
     <string>FindDistance</string>
+   </property>
+  </action>
+  <action name="actionZoomToFullExtend">
+   <property name="text">
+    <string>zoomToFullExtend</string>
+   </property>
+  </action>
+  <action name="actionZoomToPreviousExtent">
+   <property name="text">
+    <string>zoomToPreviousExtent</string>
+   </property>
+  </action>
+  <action name="actionZoomToNextExtent">
+   <property name="text">
+    <string>zoomToNextExtent</string>
    </property>
   </action>
  </widget>
@@ -369,6 +394,54 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionZoomToFullExtend</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>zoomToFullExtent()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionZoomToNextExtent</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>zoomToNextExtent()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionZoomToPreviousExtent</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>zoomToPreviousExtent()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>loadOgrFile()</slot>
@@ -379,5 +452,8 @@
   <slot>deleteAllSelections()</slot>
   <slot>findDistance()</slot>
   <slot>getXYcoordinates(QgsPoint)</slot>
+  <slot>zoomToFullExtent()</slot>
+  <slot>zoomToPreviousExtent()</slot>
+  <slot>zoomToNextExtent()</slot>
  </slots>
 </ui>

@@ -11,17 +11,25 @@
 #include "Layer.h"
 #include "qgis/qgsgeometry.h"
 #include "qgis/qgis.h"
+#include "qgis/qgspoint.h"
+#include "qgis/qgsvectordataprovider.h"
+
+#include "WGS84Hack.h"
 
 GISObject* GISObject::generateGISObject(Layer* layer, QgsFeature& f)
 {
 	GISObject* object;
+	object = new GISObject( layer, f );
 	if (layer->name() == "city")
-		object = new CityObject( layer, f );
+		object->title_index = 5;
+	else 
+	if (layer->name() == "roads")
+		object->title_index = 5;
 	else
 	if (layer->name() == "regions")
-		object = new SubRegionObject( layer, f );
+		object->title_index = 3;
 	else
-		object = new GISObject( layer, f );
+		object->title_index = 0;
 		
 	return object;
 }
@@ -33,86 +41,39 @@ GISObject::GISObject(Layer* layer, QgsFeature& feature)
 GISObject::~GISObject(){}
 const QString GISObject::toString() const
 {
-	return parentLayer->name()+" "+QString(" unspecified");
+	return parentLayer->name()+" "+parentLayer->dataProvider()->fields()[title_index].name()+": "+f.attributeMap()[title_index].toString();
 }
 const QString GISObject::toSmallString() const
 {
-	return QString("Unknown");
+	return f.attributeMap()[title_index].toString();
 }
 
-const QStringList GISObject::attributes()
+const QStringList GISObject::attributes() const
 {
 	QStringList list;
-	foreach( const QVariant& var, f.attributeMap())
+	for (int i = 0 ; i < parentLayer->dataProvider()->fields().size() ; i++)
 	{
-		if (var.type() == QVariant::String)
-			list.push_back( var.toString() );
-		if (var.type() == QVariant::Double)
-			list.push_back( QString("%1").arg( var.toDouble() ) );
+		list.push_back( parentLayer->dataProvider()->fields()[i].name()+": "+f.attributeMap()[i].toString() );
 	}
+	const QgsPoint objCenter = center();
+	list.push_back( "Long: "+QString("%1").arg(objCenter.x()) );
+	list.push_back( "Lat: "+QString("%1").arg(objCenter.y()) );
 	return list;
 }
-
-// CityInfo
-CityObject::CityObject(Layer* layer, QgsFeature& f) 
- : GISObject( layer, f)
- , type ( f.attributeMap()[2].toString() )
- , region ( f.attributeMap()[3].toString() )
- , subregion ( f.attributeMap()[4].toString() )
- , title ( f.attributeMap()[5].toString() )
- , citizen_count ( f.attributeMap()[6].toDouble() )
- , description ( f.attributeMap()[10].toString() )
-{}
-const QString CityObject::toString() const
+const double GISObject::length() const
 {
-	return type+" "+title;
+	if ((static_cast<QgsFeature>(f)).geometry()->type() == QGis::Line)
+	{
+		double result = 0;
+		QgsPolyline polyLine = (static_cast<QgsFeature>(f)).geometry()->asPolyline();
+		for (int i = 0 ; i < polyLine.size() - 1 ; i++)
+			result += MyDistanceArea::computeDistanceBearing( polyLine.at(i), polyLine.at(i+1) );
+		return result;
+	}
+	else
+		return 0;
 }
-const QString CityObject::toSmallString() const
+const QgsPoint GISObject::center() const
 {
-	return title;
-}
-
-const QStringList CityObject::attributes()
-{
-	QStringList list;
-	list.push_back( "Title: "+title );
-	list.push_back( "Type: "+type );
-	list.push_back( "Region: "+region );
-	list.push_back( "SubRegion: "+subregion );
-	list.push_back( "Citizen count: "+QString("%1").arg(citizen_count) );
-	list.push_back( "Description: "+description );
-	QgsPoint center = f.geometry()->centroid()->asPoint();
-	list.push_back( "X: "+QString("%1").arg(center.x()) );
-	list.push_back( "Y: "+QString("%1").arg(center.y()) );
-	
-	return list;
-}
-
-// SubRegionObject
-SubRegionObject::SubRegionObject(Layer* layer, QgsFeature& f) 
-: GISObject( layer, f)
-, region(f.attributeMap()[2].toString())
-, title(f.attributeMap()[3].toString())
-, neighbor(f.attributeMap()[4].toString() )
-{
-}
-const QString SubRegionObject::toString() const
-{
-	return title+" region";
-}
-const QString SubRegionObject::toSmallString() const
-{
-	return title;
-}
-const QStringList SubRegionObject::attributes()
-{
-	QStringList list;
-	list.push_back( region+" region" );
-	list.push_back( title+" subregion" );
-	if (neighbor != "")
-		list.push_back( neighbor+" neighbors" );
-	QgsPoint center = f.geometry()->centroid()->asPoint();
-	list.push_back( "X: "+QString("%1").arg(center.x()) );
-	list.push_back( "Y: "+QString("%1").arg(center.y()) );
-	return list;
+	return (static_cast<QgsFeature>(f)).geometry()->centroid()->asPoint();
 }

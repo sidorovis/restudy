@@ -10,6 +10,9 @@
 #ifndef _MAIN_WINDOW_H
 #define _MAIN_WINDOW_H
 
+#define MINIMUM_SELECTED_FEATURES_DISTANCE_BETWEEN 2
+#define MAXIMUM_SELECTED_FEATURES_DISTANCE_BETWEEN 9
+
 #include <QMainWindow>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -39,7 +42,7 @@ public:
 	MainWindow(QWidget* parent = NULL);
 	virtual ~MainWindow();
 private:
-	void addVectorLayer(const QString& filePath);
+	void addVectorLayer(const QString& filePath, bool visible = true);
 	void reDraw();
 	QStringListModel* layerNamesModel;
 	QList<Layer*> layers;
@@ -54,6 +57,10 @@ private slots:
 	void deleteAllSelections();
 	void findDistance();
 	void getXYcoordinates(QgsPoint point);
+	
+	void zoomToFullExtent();
+	void zoomToNextExtent();
+	void zoomToPreviousExtent();
 };
 
 #endif // _MAIN_WINDOW_H

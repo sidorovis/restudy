@@ -9,10 +9,14 @@
 
 #include "MainWindow.h"
 #include "GISObject.h"
+
 #include "qgis/qgsgeometry.h"
+#include "qgis/qgslabel.h"
 #include "qgis/qgis.h"
 #include "qgis/qgsdistancearea.h"
 #include "qgis/qgsapplication.h"
+#include "qgis/qgsvectordataprovider.h"
+
 #include <QStatusBar>
 #include "DistanceShowDialog.h"
 #include "LayerPropertiesDialog.h"
@@ -35,8 +39,9 @@ MainWindow::MainWindow(QWidget* parent) :
 	uiMainWindow->statusbar->addWidget( status );
 	show();	
 	addVectorLayer("./maps/city.mif");
-	addVectorLayer("./maps/zhd_road.mif");
-	addVectorLayer("./maps/regions.mif");
+	addVectorLayer("./maps/roads.mif", false);
+	addVectorLayer("./maps/regions.mif", false);
+//	addVectorLayer("./maps/zhd_road.mif");
 }
 MainWindow::~MainWindow()
 {
@@ -46,13 +51,14 @@ MainWindow::~MainWindow()
 	delete status;
 	delete uiMainWindow;
 }
-void MainWindow::addVectorLayer(const QString& filePath)
+void MainWindow::addVectorLayer(const QString& filePath, bool visible)
 {
 	Layer *layer = new Layer(filePath);
 	if (layer->isValid())
 	{
 		QgsMapLayerRegistry::instance()->addMapLayer(layer, TRUE);
-		layers.push_back( layer );		
+		layers.push_back( layer );
+		layer->visible = visible;
 	}
 	else
 	{
@@ -76,11 +82,27 @@ void MainWindow::reDraw()
 		prevRect.yMinimum() == 0)
 		first = true;
 	foreach( Layer* layer, layers)
-	if (layer->visible) 
-		myLayerSet.push_back(layer);
+	{
+		if (layer->visible)
+		{
+			myLayerSet.push_back(layer);
+			if (layer->showLabels && 
+				layer->feature_attribute_label_index > -1 && 
+				layer->feature_attribute_label_index < layer->dataProvider()->fields().size())
+			{
+				layer->label()->setLabelField( QgsLabel::Text, layer->feature_attribute_label_index);
+				layer->enableLabels( true );
+			}
+			else
+				layer->enableLabels( false );
+		}		
+	}
 	uiMainWindow->mapWidget->setLayerSet( myLayerSet );
 	if (first)
 		uiMainWindow->mapWidget->zoomToFullExtent();
+	else
+		uiMainWindow->mapWidget->refresh();
+		
 }
 
 void MainWindow::loadOgrFile()
@@ -99,6 +121,7 @@ void MainWindow::listButtonPressed(const QModelIndex &index)
 		LayerPropertiesDialog dialog( layers.at( selected_lay_index ));
 		dialog.exec();
 		reDraw();
+		repaint();
 	}
 }
 void MainWindow::changeLayerOrder(int first, int second)
@@ -126,15 +149,25 @@ void MainWindow::downPressed()
 void MainWindow::showSearchDialog()
 {
 	SearchDialog searchDialog(&layers);
-	searchDialog.exec();
-	QHash< Layer*, QSet<int> > featuresIds;
-	foreach(GISObject* obj, searchDialog.selectedObjects())
-		featuresIds[ (*obj).parentLayer ] << (*obj).f.id();
-	foreach(Layer* layer, featuresIds.keys())
+	if (searchDialog.exec())
 	{
-		foreach(const QgsFeature& f, layer->selectedFeatures())
-			featuresIds[ layer ] << f.id();
-		layer->setSelectedFeatures( featuresIds[ layer ] );
+		QHash< Layer*, QSet<int> > featuresIds;
+		foreach(GISObject* obj, searchDialog.selectedObjects())
+		{
+			featuresIds[ (*obj).parentLayer ] << (*obj).f.id();			
+		}
+		foreach(Layer* layer, featuresIds.keys())
+		{
+			foreach(const QgsFeature& f, layer->selectedFeatures())
+			{
+				featuresIds[ layer ] << f.id();
+			}
+			layer->setSelectedFeatures( featuresIds[ layer ] );
+			foreach(const QgsFeature& f, layer->selectedFeatures())
+			{
+//				layer->setLabelField( QgsLabel::Text, 
+			}
+		}
 	}
 }
 void MainWindow::deleteAllSelections()
@@ -155,7 +188,14 @@ void MainWindow::findDistance()
 			delete temp;			
 		}
 	}
-	if (headers.size() > 10)
+	if ( headers.size() < MINIMUM_SELECTED_FEATURES_DISTANCE_BETWEEN )
+	{
+		QMessageBox messageBox(this);
+		messageBox.setText("Choose at least two objects.");
+		messageBox.exec();
+		return;		
+	}
+	if ( headers.size() > MAXIMUM_SELECTED_FEATURES_DISTANCE_BETWEEN )
 	{
 		QMessageBox messageBox(this);
 		messageBox.setText("This function was not planned for such big count of objects operations. Clean selecting, and try again.");
@@ -194,4 +234,16 @@ void MainWindow::findDistance()
 void MainWindow::getXYcoordinates(QgsPoint point)
 {
 	status->setText(QString("%1 %2").arg(point.x()).arg(point.y()));
+}
+void MainWindow::zoomToFullExtent()
+{
+	uiMainWindow->mapWidget->zoomToFullExtent();
+}
+void MainWindow::zoomToNextExtent()
+{
+	uiMainWindow->mapWidget->zoomToNextExtent();
+}
+void MainWindow::zoomToPreviousExtent()
+{
+	uiMainWindow->mapWidget->zoomToPreviousExtent();	
 }

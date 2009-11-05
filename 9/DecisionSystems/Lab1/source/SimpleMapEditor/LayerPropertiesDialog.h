@@ -10,6 +10,9 @@
 #ifndef _LAYER_PROPERTIES_DIALOG_h
 #define _LAYER_PROPERTIES_DIALOG_h 
 
+#define CORE_EXPORT
+#define GUI_EXPORT
+
 #include <QDialog>
 #include "ui_LayerSettingsDialog.h"
 #include "Layer.h"
@@ -27,7 +30,8 @@ public:
 
 private slots:
 	void changeVisibility(bool visible);
+	void showFieldNames(bool state);
+	void layerLabelFieldChanged(int index);
 };
-
 
 #endif //  _LAYER_PROPERTIES_DIALOG_h

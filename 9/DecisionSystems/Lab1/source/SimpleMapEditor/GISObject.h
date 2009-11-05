@@ -18,18 +18,22 @@
 #include "qgis/qgsfeature.h"
 
 class Layer;
+class QgsPoint;
 
 class GISObject
 {
 public:
 	Layer* parentLayer;
 	QgsFeature f;
+	int title_index;
 
 	static GISObject* generateGISObject(Layer* layer, QgsFeature& f);
 	virtual ~GISObject();
 	virtual const QString toString() const;
 	virtual const QString toSmallString() const;
-	virtual const QStringList attributes();
+	virtual const QStringList attributes() const;
+	virtual const double length() const;	
+	virtual const QgsPoint center() const;	
 protected:
 	GISObject(Layer* layer, QgsFeature& f);
 private:
@@ -37,32 +41,4 @@ private:
 	GISObject();
 };
 
-class CityObject : public GISObject
-{
-	QString type;
-	QString title;
-	QString region;
-	QString subregion;
-	QString description;
-	double citizen_count;
-public:
-	CityObject(Layer* layer, QgsFeature& f);
-	virtual const QString toString() const;
-	virtual const QString toSmallString() const;
-	virtual const QStringList attributes();	
-//	virtual ~CityObject();	
-};
-
-class SubRegionObject : public GISObject
-{
-	QString region;
-	QString title;
-	QString neighbor;
-public:
-	SubRegionObject(Layer* layer, QgsFeature& f);
-	virtual const QString toString() const;
-	virtual const QString toSmallString() const;
-	virtual const QStringList attributes();	
-//	virtual ~SubRegionObject();		
-};
 #endif // _GIS_OBJECT_H
