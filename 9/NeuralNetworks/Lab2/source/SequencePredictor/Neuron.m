@@ -52,12 +52,19 @@
 - (void) calculateGammaValue
 {
 	for (Affect<AffectorProtocol>* affect in affectOnArray)
-		gammaValue += [affect getValue] * [[affect neuron] getDiff];
+		gammaValue += [affect getValue] * [affect neuron].gammaValue;
 }
 
 - (double) getDiff
 {
 	return value - gammaValue;
+}
+- (void) debug
+{
+	NSLog(@" - - %@ Neuron:: value: %f, gammaValue: %f", self,value, gammaValue);
+	for (Affect<AffectorProtocol>* affect in affectOnArray) {
+		[affect debug];
+	}
 }
 
 @end

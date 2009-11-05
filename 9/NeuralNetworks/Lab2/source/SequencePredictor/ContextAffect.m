@@ -24,5 +24,9 @@
 -(void) normilizeAffect:(double)summ
 {
 }
+-(void) debug
+{
+	NSLog(@" - - - %@ ContextAffect: %@", self,neuron);
+}
 
 @end

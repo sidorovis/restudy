@@ -15,4 +15,5 @@
 -(double) getValue;
 -(void) decreaseValue:(double) delta;
 -(void) normilizeAffect:(double)summ;
+-(void) debug;
 @end

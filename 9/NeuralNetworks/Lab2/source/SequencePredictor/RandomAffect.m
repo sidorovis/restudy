@@ -24,7 +24,7 @@
 }
 -(void) decreaseValue:(double) delta
 {
-	value -= delta * [neuron getDiff];
+	value -= delta * [neuron gammaValue];
 }
 -(double) getValue
 {
@@ -33,6 +33,10 @@
 -(void) normilizeAffect:(double)summ
 {
 	value /= summ;
+}
+-(void) debug
+{
+	NSLog(@" - - - %@ RandomAffect: %f %@", self,value,neuron);
 }
 
 @end

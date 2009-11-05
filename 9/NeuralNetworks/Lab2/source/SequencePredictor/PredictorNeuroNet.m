@@ -50,8 +50,13 @@
 		[Result setValuesFrom:sequence fromIndex:(i+P)];
 		[self compute];
 		[self teachWBetween:Hidden And:Result];
-		// TODO: teach Input -> Hidden W levels
-//		[self teachWBetween:Input And:Hidden];
+		[self teachWBetween:Input And:Hidden];
+		if (i > 0)
+		{
+			[self teachWBetween:HiddenContext And:Hidden];
+			[self teachWBetween:ResultContext And:Hidden];
+		}
+		[self debug];
 	}
 }
 -(void) teachWBetween:(NeuroLay*)from And:(NeuroLay*)to
@@ -60,7 +65,7 @@
 	double alpha = 0;
 	for (Neuron* neuron in from.neurons)
 		alpha += neuron.value * neuron.value;
-	alpha = 1.0 / (alpha);
+	alpha = 1.0 / (1.0 +(alpha));
 	for (Neuron* fromNeuron in [from neurons])
 		[fromNeuron teachWithAlpha:alpha];
 	for (Neuron* fromNeuron in [from neurons])
@@ -79,22 +84,32 @@
 		[Result setValuesFrom:sequence fromIndex:(i+P)]; 
 		[self compute];
 		for (Neuron* resultNeuron in [Result neurons]) {
-			diff += fabs( [resultNeuron getDiff] );
+			diff += fabs( [resultNeuron gammaValue] );
 		}
 	}
+	NSLog(@"%d",diff);
 	return diff;
 }
 
 -(void) compute
 {
-	[Hidden reset];
 	[Result reset];
-	
+	[Hidden reset];
 	[Input affect];
 	[HiddenContext affect];
 	[ResultContext affect];
 
 	[Hidden affect];
 	[Result affect];
+	[Result defineGamma];
+}
+-(void) debug
+{
+//	NSLog(@"PredictorNeuroNet");
+//	[Input debug];
+//	[Hidden debug];
+//	[Result debug];
+//	[HiddenContext debug];
+//	[ResultContext debug];
 }
 @end

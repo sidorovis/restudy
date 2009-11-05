@@ -25,4 +25,5 @@
 -(void) teachWBetween:(NeuroLay*)from And:(NeuroLay*)to;
 -(double) findDiff;
 -(void) compute;
+-(void) debug;
 @end

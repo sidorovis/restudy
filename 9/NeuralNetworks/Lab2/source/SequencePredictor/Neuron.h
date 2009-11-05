@@ -24,5 +24,5 @@
 - (double) getDiff;
 @property (assign) double value;
 @property (assign) double gammaValue;
-
+- (void) debug;
 @end

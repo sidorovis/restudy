@@ -21,5 +21,6 @@
 -(void) affect;
 -(Neuron*) getNeuronAtIndex:(int)index;
 @property (readwrite,assign) NSMutableArray* neurons;
-
+-(void) defineGamma;
+-(void) debug;
 @end

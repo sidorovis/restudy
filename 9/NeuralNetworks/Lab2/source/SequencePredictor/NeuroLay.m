@@ -58,7 +58,22 @@
 {
 	return (Neuron*)[neurons objectAtIndex:index];
 }
+-(void) defineGamma
+{
+	for (Neuron* neuron in neurons)
+		neuron.gammaValue = [neuron getDiff];
+}
+
 
 @synthesize neurons;
+
+-(void) debug
+{
+	NSLog(@" - NeuronLay: ");
+	for (Neuron* neuron in neurons) {
+		[neuron debug];
+	}
+}
+
 
 @end
