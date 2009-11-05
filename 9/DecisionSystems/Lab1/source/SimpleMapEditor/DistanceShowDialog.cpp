@@ -29,6 +29,7 @@ void DistanceShowDialog::setSize(int size)
 void DistanceShowDialog::setValue(int x, int y, QString value)
 {
 	uiDistanceShowDialog->table->setItem( x, y, new QTableWidgetItem(value) );
+	uiDistanceShowDialog->table->setItem( y, x, new QTableWidgetItem(value) );
 }
 void DistanceShowDialog::setTitles(const QStringList& list)
 {

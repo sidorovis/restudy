@@ -16,13 +16,21 @@ echo 'MAPS.files += ./maps/regions.mif' >> SimpleMapEditor.pro
 echo 'MAPS.files += ./maps/regions.mid' >> SimpleMapEditor.pro
 echo 'MAPS.path = Contents/MacOS/maps' >> SimpleMapEditor.pro
 
+#echo 'QGIS_DB.version = 1.0.0' >> SimpleMapEditor.pro
+#echo 'QGIS_DB.files = ./db/qgis.db' >> SimpleMapEditor.pro
+#echo 'QGIS_DB.files += ./db/srs.db' >> SimpleMapEditor.pro
+#echo 'QGIS_DB.path = Contents/MacOS/resources' >> SimpleMapEditor.pro
+
 echo 'QGIS_LIBS.version = 1.3.0' >> SimpleMapEditor.pro
 echo 'QGIS_LIBS.files = /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_analysis.1.3.0.dylib' >> SimpleMapEditor.pro
 echo 'QGIS_LIBS.files += /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_core.1.3.0.dylib' >> SimpleMapEditor.pro
 echo 'QGIS_LIBS.files += /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgis_gui.1.3.0.dylib' >> SimpleMapEditor.pro
 echo 'QGIS_LIBS.files += /Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/libqgispython.1.3.0.dylib' >> SimpleMapEditor.pro
 echo 'QGIS_LIBS.path = Contents/MacOS/lib' >> SimpleMapEditor.pro
+
+#echo 'QMAKE_BUNDLE_DATA += QGIS_LIBS MAPS QGIS_DB' >> SimpleMapEditor.pro
 echo 'QMAKE_BUNDLE_DATA += QGIS_LIBS MAPS' >> SimpleMapEditor.pro
+
 echo 'SOURCES += _generate.sh' >> SimpleMapEditor.pro
 echo 'SOURCES += _clean.sh' >> SimpleMapEditor.pro
 

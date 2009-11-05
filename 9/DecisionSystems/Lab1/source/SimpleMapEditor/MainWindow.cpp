@@ -12,7 +12,9 @@
 #include "qgis/qgsgeometry.h"
 #include "qgis/qgis.h"
 #include "qgis/qgsdistancearea.h"
+#include "qgis/qgsapplication.h"
 #include "DistanceShowDialog.h"
+#include "WGS84Hack.h"
 
 const QString MainWindow::myPluginsDir("/Applications/MacPorts/qgis1.3.0.app/Contents/MacOS/lib/qgis");
 
@@ -124,17 +126,11 @@ void MainWindow::showSearchDialog()
 void MainWindow::deleteAllSelections()
 {
 	foreach(Layer* layer, layers)
-	{
 		layer->removeSelection();
-	}
 }
 void MainWindow::findDistance()
 {
 	DistanceShowDialog dialog;
-	QgsDistanceArea area;
-	area.setSourceEpsgCrsId( GEO_EPSG_CRS_ID ); // WGS 84
-	area.setEllipsoid( "WGS84" );
-//	area.setProjectionsEnabled( true );
 	QStringList headers;
 	foreach(Layer* layer, layers)
 	{
@@ -155,13 +151,18 @@ void MainWindow::findDistance()
 			for(int uL = 0 ; uL < layers.size() ; uL++)
 			{
 				int layerToFeatureCount = layers.at(uL)->selectedFeatures().size();
-				for ( int u = 0 ; u < layerToFeatureCount ; u++ )
+				int u_st;
+				if (iL == uL)
+					u_st = i + 1;
+				else
+					u_st = 0;
+				for ( int u = u_st ; u < layerToFeatureCount ; u++ )
 				{
 					QgsPoint pFrom = static_cast<QgsFeature>(layers.at(iL)->selectedFeatures().at(i)).geometry()->centroid()->asPoint();
 					QgsPoint pTo = static_cast<QgsFeature>(layers.at(uL)->selectedFeatures().at(u)).geometry()->centroid()->asPoint();
 					int ind_1 = (iL*layerFromFeatureCount+i);
 					int ind_2 = (uL*layerToFeatureCount+u);
-					dialog.setValue(ind_1, ind_2, QString("%1").arg(area.measureLine(pFrom, pTo)));
+					dialog.setValue(ind_1, ind_2, QString("%1").arg(MyDistanceArea::computeDistanceBearing(pFrom, pTo)));
 				}
 			}
 			
