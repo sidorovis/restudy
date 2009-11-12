@@ -17,11 +17,14 @@
 
 class GISObjectViewerDialog : public QDialog 
 {
-	GISObject* object;
+	QList<GISObject*> objects;
 	Ui::GISObjectViewer* const uiGisObjectViewer;
 public:
 	GISObjectViewerDialog(GISObject* gisObject, QWidget* parent = NULL);
+	GISObjectViewerDialog(const QList<GISObject*>& gisObject, QWidget* parent = NULL);
 	~GISObjectViewerDialog();
+private:
+	void showObjects();
 };
 
 

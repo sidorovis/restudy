@@ -18,5 +18,10 @@
 	for (int i = 0 ; i < neurons_count ; i++)
 		((Neuron*)[neurons objectAtIndex:i]).gammaValue = [[sequence objectAtIndex:(startSequenceIndex+i)] doubleValue];		
 }
+-(void) defineGamma
+{
+	for (Neuron* neuron in neurons)
+		neuron.gammaValue = [neuron getDiff];
+}
 
 @end

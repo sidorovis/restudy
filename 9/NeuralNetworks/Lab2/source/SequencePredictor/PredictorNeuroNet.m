@@ -22,12 +22,15 @@
 
 	[Input connectEachNeuronToLay:Hidden]; 
 	[Hidden connectEachNeuronToLay:Result];
-	
-	HiddenContext = [Hidden generateContextLay];
-	ResultContext = [Result generateContextLay];
-	
-	[HiddenContext connectEachNeuronToLay:Hidden];
-	[ResultContext connectEachNeuronToLay:Hidden];
+
+	if (WITH_CONTEXTS)
+	{
+		HiddenContext = [Hidden generateContextLay];
+		ResultContext = [Result generateContextLay];
+		
+		[HiddenContext connectEachNeuronToLay:Hidden];
+		[ResultContext connectEachNeuronToLay:Hidden];
+	}
 		
 	return self;
 }
@@ -42,41 +45,71 @@
 -(void) teach
 {
 	int input_data_count = 1 + [sequence count] - P - [[Result neurons] count];
-	[HiddenContext reset];
-	[ResultContext reset];
+	if (WITH_CONTEXTS)
+	{
+		[HiddenContext reset];
+		[ResultContext reset];
+	}
 	for (int i = 0 ; i < input_data_count ; i++)
 	{
 		[Input setValuesFrom:sequence fromIndex:i];
 		[Result setValuesFrom:sequence fromIndex:(i+P)];
 		[self compute];
 		[self teachWBetween:Hidden And:Result];
-		[self teachWBetween:Input And:Hidden];
-		if (i > 0)
+		if (WITH_CONTEXTS)
 		{
-			[self teachWBetween:HiddenContext And:Hidden];
-			[self teachWBetween:ResultContext And:Hidden];
+			if ( i == 0 )
+				[self teachWBetween:Input And:Hidden];
+			else
+			{
+				[self teachInputWithContextsWhenLevel:i];
+			}
 		}
-		[self debug];
+		else 
+		{
+			[self teachWBetween:Input And:Hidden];
+		}
+	}
+}
+-(void) teachInputWithContextsWhenLevel:(int)i
+{
+	if (WITH_CONTEXTS)
+	{
+		[HiddenContext resetGammaValue];
+		double alpha = [Input getXSumm];
+		alpha += [HiddenContext getXSumm];
+		alpha += [ResultContext getXSumm];
+		alpha = 1.0 / (alpha);
+		[Input teachLayWithAlpha:alpha];
+		[HiddenContext teachLayWithAlpha:alpha]; // TODO: here must be special teach case for context neurons
+		[ResultContext teachLayWithAlpha:alpha]; // TODO: here must be special teach case for context neurons
+		
+		if ( false && i > 0) // TODO: recursive error counting
+		{
+			for (Neuron* fromNeuron in [HiddenContext neurons])
+				[fromNeuron calculateGammaValue];
+			[Hidden copyGammaFromContext:HiddenContext];
+			[self teachInputWithContextsWhenLevel:i-1];
+		}		
 	}
 }
 -(void) teachWBetween:(NeuroLay*)from And:(NeuroLay*)to
 {
 	[from resetGammaValue];
-	double alpha = 0;
-	for (Neuron* neuron in from.neurons)
-		alpha += neuron.value * neuron.value;
-	alpha = 1.0 / (1.0 +(alpha));
-	for (Neuron* fromNeuron in [from neurons])
-		[fromNeuron teachWithAlpha:alpha];
-	for (Neuron* fromNeuron in [from neurons])
-		[fromNeuron calculateGammaValue];
+	double alpha = [from getXSumm];
+	alpha = 1.0 / (alpha);
+	[from teachLayWithAlpha:alpha];
+	[from recalculateGamma];
 }
 
 -(double) findDiff
 {
 	double diff = 0;
-	[HiddenContext reset];
-	[ResultContext reset];
+	if (WITH_CONTEXTS)
+	{
+		[HiddenContext reset];
+		[ResultContext reset];
+	}
 	int input_data_count = 1 + [sequence count] - P - M;
 	for (int i = 0 ; i < input_data_count ; i++)
 	{
@@ -87,7 +120,7 @@
 			diff += fabs( [resultNeuron gammaValue] );
 		}
 	}
-	NSLog(@"%d",diff);
+	[self debug];
 	return diff;
 }
 
@@ -96,20 +129,44 @@
 	[Result reset];
 	[Hidden reset];
 	[Input affect];
-	[HiddenContext affect];
-	[ResultContext affect];
-
+	if (WITH_CONTEXTS)
+	{
+		[HiddenContext affect];
+		[ResultContext affect];
+	}
 	[Hidden affect];
 	[Result affect];
 	[Result defineGamma];
 }
 -(void) debug
 {
-//	NSLog(@"PredictorNeuroNet");
-//	[Input debug];
-//	[Hidden debug];
-//	[Result debug];
-//	[HiddenContext debug];
-//	[ResultContext debug];
+	if (SHOW_DEBUG)
+	{
+		NSLog(@"PredictorNeuroNet");
+		[Input debug];
+		[Hidden debug];
+		[Result debug];
+		[HiddenContext debug];
+		[ResultContext debug];		
+	}
+}
+-(NSString*) getResults
+{
+	NSMutableArray* result = [[NSMutableArray alloc] init];
+	[result addObjectsFromArray:sequence];
+	[self findDiff];
+	for (int i = 0 ; i < PREDICT_COUNT ; i++)
+	{
+		[Input setValuesFrom:result fromIndex:[result count] - P];
+		[self compute];
+		for (Neuron* neuron in [Result neurons]) {
+			[result addObject:[[NSNumber alloc] initWithDouble:neuron.value]];
+		}
+	}
+	NSString *tstr = @"";
+	for (int i = 0 ; i < [result count]; i++)
+		tstr = [tstr stringByAppendingFormat:@"%f\n",[[result objectAtIndex:i] doubleValue]];
+	[result release];
+	return tstr;
 }
 @end

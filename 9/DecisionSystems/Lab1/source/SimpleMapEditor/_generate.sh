@@ -14,8 +14,10 @@ echo 'MAPS.files =  ./maps/city.mif' >> SimpleMapEditor.pro
 echo 'MAPS.files += ./maps/city.mid' >> SimpleMapEditor.pro
 echo 'MAPS.files += ./maps/regions.mif' >> SimpleMapEditor.pro
 echo 'MAPS.files += ./maps/regions.mid' >> SimpleMapEditor.pro
-echo 'MAPS.files += ./maps/zhd_road.mif' >> SimpleMapEditor.pro
-echo 'MAPS.files += ./maps/zhd_road.mid' >> SimpleMapEditor.pro
+#echo 'MAPS.files += ./maps/zhd_road.mif' >> SimpleMapEditor.pro
+#echo 'MAPS.files += ./maps/zhd_road.mid' >> SimpleMapEditor.pro
+echo 'MAPS.files += ./maps/roads.mif' >> SimpleMapEditor.pro
+echo 'MAPS.files += ./maps/roads.mid' >> SimpleMapEditor.pro
 echo 'MAPS.path = Contents/MacOS/maps' >> SimpleMapEditor.pro
 
 #echo 'QGIS_DB.version = 1.0.0' >> SimpleMapEditor.pro

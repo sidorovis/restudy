@@ -29,6 +29,7 @@
 #include "qgis/qgsvectorlayer.h"
 #include "qgis/qgsmaplayerregistry.h"
 #include "qgis/qgsmapcanvas.h"
+#include "qgis/qgsmaptoolemitpoint.h"
 
 class MainWindow : public QMainWindow
 {
@@ -37,6 +38,7 @@ class MainWindow : public QMainWindow
 	static const QString myPluginsDir;
 	static const QString vectorProviderName;
 	QLabel* status;
+	QgsMapToolEmitPoint* tool;
 	
 public:
 	MainWindow(QWidget* parent = NULL);
@@ -61,6 +63,8 @@ private slots:
 	void zoomToFullExtent();
 	void zoomToNextExtent();
 	void zoomToPreviousExtent();
+	void zoomToSelected();
+	void mapClicked(const QgsPoint &point, Qt::MouseButton button);
 };
 
 #endif // _MAIN_WINDOW_H

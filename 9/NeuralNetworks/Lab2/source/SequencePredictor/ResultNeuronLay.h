@@ -13,5 +13,6 @@
 
 }
 -(void) setValuesFrom:(NSMutableArray*)sequence fromIndex:(int)startSequenceIndex;
+-(void) defineGamma;
 
 @end

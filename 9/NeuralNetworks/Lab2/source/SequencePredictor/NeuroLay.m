@@ -58,12 +58,6 @@
 {
 	return (Neuron*)[neurons objectAtIndex:index];
 }
--(void) defineGamma
-{
-	for (Neuron* neuron in neurons)
-		neuron.gammaValue = [neuron getDiff];
-}
-
 
 @synthesize neurons;
 
@@ -74,6 +68,27 @@
 		[neuron debug];
 	}
 }
-
+-(void) copyGammaFromContext:(NeuroLay*)context
+{
+  	for (int i = 0 ; i < [neurons count] ; i++)
+		[self getNeuronAtIndex:i].gammaValue = [context getNeuronAtIndex:i].gammaValue;
+}
+-(void) teachLayWithAlpha:(double)alpha
+{
+	for (Neuron* fromNeuron in neurons)
+		[fromNeuron teachWithAlpha:alpha];
+}
+-(void) recalculateGamma
+{
+	for (Neuron* fromNeuron in neurons)
+		[fromNeuron calculateGammaValue];	
+}
+-(double) getXSumm
+{
+	double alpha = 0;
+	for (Neuron* fromNeuron in neurons)
+		alpha += fromNeuron.value*fromNeuron.value;
+	return alpha;
+}
 
 @end

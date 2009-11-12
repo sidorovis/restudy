@@ -12,10 +12,15 @@
 #import "ResultNeuronLay.h"
 #import "math.h"
 
+#define PREDICT_COUNT 10
+#define WITH_CONTEXTS true
+#define SHOW_DEBUG true
+
 @interface PredictorNeuroNet : NeuroNet {
 	AcceptorNeuronLay *Input;
 	ResultNeuronLay *Result;
-	NeuroLay *Hidden, *HiddenContext, *ResultContext;
+	NeuroLay *Hidden;
+	NeuroLay *HiddenContext, *ResultContext;
 	NSMutableArray* sequence;
 	int P, M;
 }
@@ -23,7 +28,9 @@
 -(void) dealloc;
 -(void) teach;
 -(void) teachWBetween:(NeuroLay*)from And:(NeuroLay*)to;
+-(void) teachInputWithContextsWhenLevel:(int)i;
 -(double) findDiff;
 -(void) compute;
 -(void) debug;
+-(NSString*) getResults;
 @end

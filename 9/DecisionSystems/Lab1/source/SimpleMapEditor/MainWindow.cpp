@@ -7,6 +7,7 @@
  *
  */
 
+#include "GISObjectViewerDialog.h"
 #include "MainWindow.h"
 #include "GISObject.h"
 
@@ -33,6 +34,9 @@ MainWindow::MainWindow(QWidget* parent) :
 	uiMainWindow->setupUi(this);
 	QgsProviderRegistry::instance(MainWindow::myPluginsDir);
 	uiMainWindow->mapWidget->setCanvasColor( QColor(255,255,255) );	
+	tool = new QgsMapToolEmitPoint( uiMainWindow->mapWidget );
+	uiMainWindow->mapWidget->setMapTool( tool );
+	connect(tool, SIGNAL(canvasClicked(const QgsPoint, Qt::MouseButton)), this, SLOT(mapClicked(const QgsPoint, Qt::MouseButton)));
 	layerNamesModel = new QStringListModel();
 	uiMainWindow->layerList->setModel(layerNamesModel);
 	status = new QLabel();
@@ -42,11 +46,13 @@ MainWindow::MainWindow(QWidget* parent) :
 	addVectorLayer("./maps/roads.mif", false);
 	addVectorLayer("./maps/regions.mif", false);
 //	addVectorLayer("./maps/zhd_road.mif");
+	
 }
 MainWindow::~MainWindow()
 {
 	uiMainWindow->mapWidget->clear();
 	QgsMapLayerRegistry::instance()->removeAllMapLayers();
+	delete tool;
 	delete layerNamesModel;
 	delete status;
 	delete uiMainWindow;
@@ -163,10 +169,6 @@ void MainWindow::showSearchDialog()
 				featuresIds[ layer ] << f.id();
 			}
 			layer->setSelectedFeatures( featuresIds[ layer ] );
-			foreach(const QgsFeature& f, layer->selectedFeatures())
-			{
-//				layer->setLabelField( QgsLabel::Text, 
-			}
 		}
 	}
 }
@@ -246,4 +248,46 @@ void MainWindow::zoomToNextExtent()
 void MainWindow::zoomToPreviousExtent()
 {
 	uiMainWindow->mapWidget->zoomToPreviousExtent();	
+}
+void MainWindow::zoomToSelected()
+{
+	uiMainWindow->mapWidget->zoomToSelected();	
+}
+void MainWindow::mapClicked(const QgsPoint &point, Qt::MouseButton button)
+{
+	if (button != Qt::LeftButton)
+		return;
+	QHash< Layer*, QSet<int> > selectedFIds;
+	foreach(Layer* layer, layers)
+	{
+		foreach(const QgsFeature& f, layer->selectedFeatures())
+		{
+			selectedFIds[ layer ] << f.id();
+		}
+		layer->removeSelection();
+	}
+	QList<GISObject*> objects;
+	foreach(Layer* layer, layers)
+	{
+		if (layer->visible)
+		{
+			GISObject* object = layer->search( point ); 
+			if (object != NULL)
+			{
+				objects << object;
+			}
+		}
+	}
+	if (objects.size() == 0)
+		return;
+	GISObjectViewerDialog dialog(objects, this);
+	dialog.exec();
+	foreach(GISObject* obj, objects)
+	{
+		delete obj;
+	}
+	foreach(Layer* layer, layers)
+	{
+		layer->setSelectedFeatures( selectedFIds[ layer ] );
+	}
 }

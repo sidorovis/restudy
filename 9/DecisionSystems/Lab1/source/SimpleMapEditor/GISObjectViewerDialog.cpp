@@ -8,21 +8,38 @@
  */
 
 #include "GISObjectViewerDialog.h"
+#include "Layer.h"
+#include <QList>
 
 GISObjectViewerDialog::GISObjectViewerDialog(GISObject* gisObject, QWidget* parent)
 : QDialog( parent )
 , uiGisObjectViewer( new Ui::GISObjectViewer() )
-, object( gisObject )
 {
+	objects << gisObject;
 	uiGisObjectViewer->setupUi( this );
-	foreach( const QString& attr, gisObject->attributes())
-	{
-		uiGisObjectViewer->listWidget->addItem(attr);
-	}
+	showObjects();
 }
-
+GISObjectViewerDialog::GISObjectViewerDialog(const QList<GISObject*>& gisObjects, QWidget* parent)
+: QDialog( parent )
+, uiGisObjectViewer( new Ui::GISObjectViewer() )
+{
+	objects = gisObjects;
+	uiGisObjectViewer->setupUi( this );
+	showObjects();	
+}
 
 GISObjectViewerDialog::~GISObjectViewerDialog()
 {
 	delete uiGisObjectViewer;
+}
+void GISObjectViewerDialog::showObjects()
+{
+	foreach(GISObject* object, objects)
+	{
+		uiGisObjectViewer->listWidget->addItem( object->parentLayer->name() );
+		foreach( const QString& attr, object->attributes())
+		{
+			uiGisObjectViewer->listWidget->addItem(attr);
+		}		
+	}
 }

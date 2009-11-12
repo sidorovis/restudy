@@ -10,6 +10,9 @@
 #ifndef _LAYER_H
 #define _LAYER_H
 
+#define MINIMAL_DOUBLE 99999999999
+#define POSSIBLE_MINIMAL_DISTANCE 0.02
+
 #include <QDebug>
 #include <QFileInfo>
 #include <QStringListModel>
@@ -39,6 +42,7 @@ public:
 	virtual ~Layer();
 	
 	const QList<GISObject*> search(QString text);
+	GISObject* search(const QgsPoint& click);
 };
 
 const QStringList getLayerNameList(const QList<Layer*>& list );

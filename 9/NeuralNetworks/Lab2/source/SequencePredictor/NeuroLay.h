@@ -21,6 +21,9 @@
 -(void) affect;
 -(Neuron*) getNeuronAtIndex:(int)index;
 @property (readwrite,assign) NSMutableArray* neurons;
--(void) defineGamma;
 -(void) debug;
+-(void) copyGammaFromContext:(NeuroLay*)context;
+-(void) teachLayWithAlpha:(double)alpha;
+-(void) recalculateGamma;
+-(double) getXSumm;
 @end

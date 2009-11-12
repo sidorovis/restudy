@@ -19,7 +19,7 @@ double validateDouble(NSString* fieldName, NSString* stringValue)
 {
 	if ([[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[0-9]*\.[0-9]*"] 
 		 evaluateWithObject:stringValue] == YES)
-		return [stringValue doubleValue]/10.0;
+		return [stringValue doubleValue];
 	@throw [[NSException alloc] initWithName:@"Non validated parameters" reason:fieldName userInfo:NULL];
 }
 
@@ -30,12 +30,15 @@ double validateDouble(NSString* fieldName, NSString* stringValue)
 	IBOutlet NSTextField* Emin;
 	double e_min;
 	IBOutlet NSTextField* currentDiff;
+	IBOutlet NSTextView* resultView;
 	
 	IBOutlet NSProgressIndicator* workIndicator;
 	
 	IBOutlet NSButton* generate;
 	IBOutlet NSButton* start;
 	IBOutlet NSButton* stop;
+
+	IBOutlet NSButton* getResultButton;
 
 	NSThread* thread;
 	PredictorNeuroNet* neuroNet;
@@ -44,5 +47,8 @@ double validateDouble(NSString* fieldName, NSString* stringValue)
 -(IBAction)predict:(id)sender;
 -(IBAction)start:(id)sender;
 -(IBAction)stop:(id)sender;
+-(IBAction)getResults:(id)sender;
 -(void) arch;
+-(void) disableTextFields;
+-(void) enableTextFields;
 @end
