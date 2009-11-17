@@ -41,6 +41,13 @@
 		for (Neuron* to in lay.neurons)
 			[from connectRandomAffectToNeuron:to];
 }
+-(void) connectEachContextNeuronToLay:(NeuroLay*)lay
+{
+	for (Neuron* from in neurons)
+		for (Neuron* to in lay.neurons)
+			[from connectContextRandomAffectToNeuron:to];	
+}
+
 -(NeuroLay*) generateContextLay
 {
 	NeuroLay* context = [[NeuroLay alloc] initWithCount:[neurons count]];

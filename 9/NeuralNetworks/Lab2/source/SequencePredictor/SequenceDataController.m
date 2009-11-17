@@ -15,6 +15,7 @@
 }
 - (IBAction)predict:(id)sender
 {
+	tanh(1.33);
 	if (!thread || ![thread isExecuting])
 	@try {
 		int p = validateInt(@"P", [P stringValue]);

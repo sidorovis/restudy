@@ -10,7 +10,6 @@
 #define basis 1000000
 
 
-
 @implementation RandomAffect
 -(RandomAffect*) initRandomTo:(Neuron*)neuron_
 {
@@ -22,10 +21,11 @@
 {
 	neuron.value += value_*value;
 }
--(void) decreaseValue:(double) delta
+-(void) teachAffector:(double)alpha xValue:(double)value_
 {
-	value -= delta * [neuron gammaValue];
+	value -= alpha * my_func( value_ ) * [neuron gammaValue];
 }
+
 -(double) getValue
 {
 	return value;

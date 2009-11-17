@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+double my_func( double value );
+double my_func_derivative( double value );
+
 @interface Neuron : NSObject 
 {
 	NSMutableArray* affectOnArray;
@@ -17,6 +20,7 @@
 - (id) init;
 - (void) dealloc;
 - (void) connectRandomAffectToNeuron:(Neuron*)neuron_;
+- (void) connectContextRandomAffectToNeuron:(Neuron*)neuron_;
 - (void) connectContextAffectToNeuron:(Neuron*)neuron_;
 - (void) affect;
 - (void) teachWithAlpha:(double)alpha;

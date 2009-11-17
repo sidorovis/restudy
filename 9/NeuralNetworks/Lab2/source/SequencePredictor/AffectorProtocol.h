@@ -13,7 +13,7 @@
 
 -(void) affectWith:(double) value_;
 -(double) getValue;
--(void) decreaseValue:(double) delta;
+-(void) teachAffector:(double)alpha xValue:(double)value_;
 -(void) normilizeAffect:(double)summ;
 -(void) debug;
 @end

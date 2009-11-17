@@ -17,6 +17,7 @@
 -(void) reset;
 -(void) resetGammaValue;
 -(void) connectEachNeuronToLay:(NeuroLay*)lay;
+-(void) connectEachContextNeuronToLay:(NeuroLay*)lay;
 -(NeuroLay*) generateContextLay;
 -(void) affect;
 -(Neuron*) getNeuronAtIndex:(int)index;

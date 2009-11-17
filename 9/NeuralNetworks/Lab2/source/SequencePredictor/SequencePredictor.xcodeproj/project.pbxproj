@@ -10,6 +10,7 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* SequencePredictorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* SequencePredictorAppDelegate.m */; };
 		850608D210908FD00037F445 /* SequenceDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850608D110908FD00037F445 /* SequenceDataController.m */; };
+		851B8EAF10B2C84E00C7F173 /* ContextRandomAffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 851B8EAE10B2C84E00C7F173 /* ContextRandomAffect.m */; };
 		8544216310911BD000361CF9 /* Neuron.m in Sources */ = {isa = PBXBuildFile; fileRef = 8544216210911BD000361CF9 /* Neuron.m */; };
 		854421BB1091225F00361CF9 /* NeuroLay.m in Sources */ = {isa = PBXBuildFile; fileRef = 854421BA1091225F00361CF9 /* NeuroLay.m */; };
 		854421F71091C31500361CF9 /* Affect.m in Sources */ = {isa = PBXBuildFile; fileRef = 854421F61091C31500361CF9 /* Affect.m */; };
@@ -37,6 +38,8 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		850608D010908FD00037F445 /* SequenceDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceDataController.h; sourceTree = "<group>"; };
 		850608D110908FD00037F445 /* SequenceDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequenceDataController.m; sourceTree = "<group>"; };
+		851B8EAD10B2C84E00C7F173 /* ContextRandomAffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextRandomAffect.h; sourceTree = "<group>"; };
+		851B8EAE10B2C84E00C7F173 /* ContextRandomAffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextRandomAffect.m; sourceTree = "<group>"; };
 		8544216110911BD000361CF9 /* Neuron.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Neuron.h; sourceTree = "<group>"; };
 		8544216210911BD000361CF9 /* Neuron.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Neuron.m; sourceTree = "<group>"; };
 		854421B91091225F00361CF9 /* NeuroLay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeuroLay.h; sourceTree = "<group>"; };
@@ -164,6 +167,8 @@
 		856C64E21092540D000513FF /* Affectors */ = {
 			isa = PBXGroup;
 			children = (
+				851B8EAD10B2C84E00C7F173 /* ContextRandomAffect.h */,
+				851B8EAE10B2C84E00C7F173 /* ContextRandomAffect.m */,
 				856C64E510925428000513FF /* RandomAffect.h */,
 				856C64E610925428000513FF /* RandomAffect.m */,
 				854421F51091C31500361CF9 /* Affect.h */,
@@ -275,6 +280,7 @@
 				856C64E710925428000513FF /* RandomAffect.m in Sources */,
 				856C64F81092553D000513FF /* ContextAffect.m in Sources */,
 				85519E8810976FB000429A6B /* ResultNeuronLay.m in Sources */,
+				851B8EAF10B2C84E00C7F173 /* ContextRandomAffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

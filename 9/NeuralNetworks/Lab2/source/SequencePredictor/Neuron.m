@@ -9,8 +9,19 @@
 #import "Neuron.h"
 #import "RandomAffect.h"
 #import "ContextAffect.h"
+#import "ContextRandomAffect.h"
 #import <math.h>
 
+double my_func( double value )
+{
+	return value;
+//	return tanh( value );
+}
+double my_func_derivative( double value )
+{
+	return 1.0;
+//	return 1.0 / ( cosh( value )*cosh( value ) );
+}
 
 @implementation Neuron
 
@@ -34,6 +45,11 @@
 	RandomAffect* affect = [[RandomAffect alloc] initRandomTo:neuron_];
 	[affectOnArray addObject:affect];
 }
+- (void) connectContextRandomAffectToNeuron:(Neuron*)neuron_
+{
+	ContextRandomAffect* affect = [[ContextRandomAffect alloc] initContextRandomTo:neuron_];
+	[affectOnArray addObject:affect];
+}
 - (void) connectContextAffectToNeuron:(Neuron*)neuron_
 {
 	ContextAffect* affect = (ContextAffect*)[[ContextAffect alloc] initToNeuron:neuron_];
@@ -47,14 +63,13 @@
 - (void) teachWithAlpha:(double)alpha
 {
 	for (Affect<AffectorProtocol>* affect in affectOnArray)
-		[affect decreaseValue: ( alpha * value ) ];
+		[affect teachAffector:alpha xValue:value];
 }
 - (void) calculateGammaValue
 {
 	for (Affect<AffectorProtocol>* affect in affectOnArray)
 		gammaValue += [affect getValue] * [affect neuron].gammaValue;
 }
-
 - (double) getDiff
 {
 	return value - gammaValue;

@@ -14,7 +14,7 @@
 
 #define PREDICT_COUNT 10
 #define WITH_CONTEXTS true
-#define SHOW_DEBUG true
+#define SHOW_DEBUG false
 
 @interface PredictorNeuroNet : NeuroNet {
 	AcceptorNeuronLay *Input;

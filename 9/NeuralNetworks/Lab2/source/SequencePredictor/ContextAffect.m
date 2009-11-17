@@ -14,7 +14,7 @@
 {
 	neuron.value = value_;
 }
--(void) decreaseValue:(double) delta
+-(void) teachAffector:(double)alpha xValue:(double)value_
 {
 }
 -(double) getValue
