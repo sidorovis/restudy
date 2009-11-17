@@ -6,7 +6,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PredictorNeuroNet.h"
+#import "DefaultBackErrorTeachingPredictorNeuroNet.h"
+#import "ForwardStepTeachingPredictorNeroNet.h"
+
+#define USE_DEFAULT_BACK_PROPAGATION_ALGORYTHM false
 
 int validateInt(NSString* fieldName, NSString* stringValue)
 {
@@ -41,7 +44,7 @@ double validateDouble(NSString* fieldName, NSString* stringValue)
 	IBOutlet NSButton* getResultButton;
 
 	NSThread* thread;
-	PredictorNeuroNet* neuroNet;
+	DefaultBackErrorTeachingPredictorNeuroNet* neuroNet;
 }
 +(void) init;
 -(IBAction)predict:(id)sender;

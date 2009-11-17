@@ -6,10 +6,10 @@
 //  Copyright 2009 Rilley_Elf Corp. All rights reserved.
 //
 
-#import "PredictorNeuroNet.h"
+#import "DefaultBackErrorTeachingPredictorNeuroNet.h"
 
 
-@implementation PredictorNeuroNet
+@implementation DefaultBackErrorTeachingPredictorNeuroNet
 -(id) initWithSequence:(NSMutableArray*)sequence_ countP:(int)P_ countM:(int)M_
 {
 	[super init];
@@ -81,10 +81,10 @@
 		alpha += [ResultContext getXSumm];
 		alpha = 1.0 / (alpha);
 		[Input teachLayWithAlpha:alpha];
-		[HiddenContext teachLayWithAlpha:alpha]; // TODO: here must be special teach case for context neurons
-		[ResultContext teachLayWithAlpha:alpha]; // TODO: here must be special teach case for context neurons
+		[HiddenContext teachLayWithAlpha:alpha];
+		[ResultContext teachLayWithAlpha:alpha];
 		
-		if ( false && i > 0) // TODO: recursive error counting
+		if ( false && i > 0) // TODO: possible recursive error counting needed
 		{
 			for (Neuron* fromNeuron in [HiddenContext neurons])
 				[fromNeuron calculateGammaValue];

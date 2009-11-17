@@ -15,7 +15,6 @@
 }
 - (IBAction)predict:(id)sender
 {
-	tanh(1.33);
 	if (!thread || ![thread isExecuting])
 	@try {
 		int p = validateInt(@"P", [P stringValue]);
@@ -28,7 +27,10 @@
 			@throw [[NSException alloc] initWithName:@"P+M must be lower than sequence count" reason:@"p, m, sequence fields" userInfo:NULL];
 		if (neuroNet)
 			[neuroNet release];
-			neuroNet = [[PredictorNeuroNet alloc] initWithSequence:sequence countP:p countM:m];
+		if (USE_DEFAULT_BACK_PROPAGATION_ALGORYTHM)
+			neuroNet = [[DefaultBackErrorTeachingPredictorNeuroNet alloc] initWithSequence:sequence countP:p countM:m];
+		else
+			neuroNet = [[ForwardStepTeachingPredictorNeroNet alloc] initWithSequence:sequence countP:p countM:m];
 		if (thread)
 			[thread release];
 		thread = [[NSThread alloc] initWithTarget:self selector:@selector(arch) object:nil];

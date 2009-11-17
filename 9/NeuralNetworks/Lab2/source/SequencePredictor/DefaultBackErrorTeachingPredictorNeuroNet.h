@@ -16,7 +16,7 @@
 #define WITH_CONTEXTS true
 #define SHOW_DEBUG false
 
-@interface PredictorNeuroNet : NeuroNet {
+@interface DefaultBackErrorTeachingPredictorNeuroNet : NeuroNet {
 	AcceptorNeuronLay *Input;
 	ResultNeuronLay *Result;
 	NeuroLay *Hidden;
