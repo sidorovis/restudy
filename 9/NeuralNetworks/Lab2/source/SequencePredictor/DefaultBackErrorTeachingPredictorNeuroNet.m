@@ -58,12 +58,12 @@
 		[self teachWBetween:Hidden And:Result];
 		if (WITH_CONTEXTS)
 		{
-			if ( i == 0 )
-				[self teachWBetween:Input And:Hidden];
-			else
+			if (i == 0)
 			{
-				[self teachInputWithContextsWhenLevel:i];
+				[self teachWBetween:Input And:Hidden];
 			}
+			else
+				[self teachInputWithContextsWhenLevel:i];
 		}
 		else 
 		{
@@ -76,6 +76,7 @@
 	if (WITH_CONTEXTS)
 	{
 		[HiddenContext resetGammaValue];
+		[ResultContext resetGammaValue];
 		double alpha = [Input getXSumm];
 		alpha += [HiddenContext getXSumm];
 		alpha += [ResultContext getXSumm];
@@ -134,7 +135,9 @@
 		[HiddenContext affect];
 		[ResultContext affect];
 	}
+	[Hidden activateFunc];
 	[Hidden affect];
+	[Result activateFunc];
 	[Result affect];
 	[Result defineGamma];
 }
@@ -160,7 +163,7 @@
 		[Input setValuesFrom:result fromIndex:[result count] - P];
 		[self compute];
 		for (Neuron* neuron in [Result neurons]) {
-			[result addObject:[[NSNumber alloc] initWithDouble:neuron.value]];
+			[result addObject:[[NSNumber alloc] initWithDouble:atanh(neuron.value)]];
 		}
 	}
 	NSString *tstr = @"";

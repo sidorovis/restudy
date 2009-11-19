@@ -23,7 +23,8 @@
 }
 -(void) teachAffector:(double)alpha xValue:(double)value_
 {
-	value -= alpha * my_func( value_ ) * [neuron gammaValue];
+//	value -= alpha * my_func( value_ ) * [neuron gammaValue]; // TODO: домножить на проиводную функции активации
+	value -= alpha *  value_  * [neuron gammaValue] * my_func_derivative( value_ );
 }
 
 -(double) getValue

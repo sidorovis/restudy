@@ -15,6 +15,7 @@
 double my_func( double value )
 {
 	return value;
+//	atanh(<#double #>)
 //	return tanh( value );
 }
 double my_func_derivative( double value )
@@ -68,7 +69,7 @@ double my_func_derivative( double value )
 - (void) calculateGammaValue
 {
 	for (Affect<AffectorProtocol>* affect in affectOnArray)
-		gammaValue += [affect getValue] * [affect neuron].gammaValue;
+		gammaValue += [affect getValue] * [affect neuron].gammaValue * my_func_derivative( [affect neuron].value );
 }
 - (double) getDiff
 {

@@ -97,5 +97,10 @@
 		alpha += fromNeuron.value*fromNeuron.value;
 	return alpha;
 }
+-(void) activateFunc
+{
+	for (Neuron* neuron in neurons)
+		neuron.value = my_func( neuron.value );
+}
 
 @end

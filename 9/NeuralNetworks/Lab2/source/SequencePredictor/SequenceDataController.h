@@ -20,7 +20,7 @@ int validateInt(NSString* fieldName, NSString* stringValue)
 }
 double validateDouble(NSString* fieldName, NSString* stringValue)
 {
-	if ([[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[0-9]*\.[0-9]*"] 
+	if ([[NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"(\-)?[0-9]*\.[0-9]*"] 
 		 evaluateWithObject:stringValue] == YES)
 		return [stringValue doubleValue];
 	@throw [[NSException alloc] initWithName:@"Non validated parameters" reason:fieldName userInfo:NULL];

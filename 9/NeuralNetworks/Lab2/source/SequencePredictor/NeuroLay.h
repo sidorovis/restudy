@@ -27,4 +27,5 @@
 -(void) teachLayWithAlpha:(double)alpha;
 -(void) recalculateGamma;
 -(double) getXSumm;
+-(void) activateFunc;
 @end
