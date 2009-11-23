@@ -26,6 +26,15 @@ double validateDouble(NSString* fieldName, NSString* stringValue)
 	@throw [[NSException alloc] initWithName:@"Non validated parameters" reason:fieldName userInfo:NULL];
 }
 
+double func_in( double input )
+{
+	return tanh( input / 100.0 );
+}
+double func_out( double input )
+{
+	return atanh( input ) * 100.0;
+}
+
 @interface SequenceDataController : NSViewController {
 	IBOutlet NSTextField* sequenceField;
 	IBOutlet NSTextField* P;

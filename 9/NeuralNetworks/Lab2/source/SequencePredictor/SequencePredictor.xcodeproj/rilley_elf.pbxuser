@@ -81,24 +81,14 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 280173459;
-			PBXWorkspaceStateSaveDate = 280173459;
+			PBXPerProjectTemplateStateSaveDate = 280665690;
+			PBXWorkspaceStateSaveDate = 280665690;
 		};
 		perUserProjectItems = {
-			85AE2E2E10B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E2E10B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E2F10B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E2F10B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3010B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3010B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3110B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3110B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3210B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3210B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3310B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3310B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3410B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3410B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3510B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3510B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3610B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3610B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3710B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3710B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3810B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3810B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3910B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3910B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3A10B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3A10B32AB5002616F4 /* PBXTextBookmark */;
-			85AE2E3B10B32AB5002616F4 /* PBXTextBookmark */ = 85AE2E3B10B32AB5002616F4 /* PBXTextBookmark */;
+			8555970510BA9D6B0063DDA2 /* PBXTextBookmark */ = 8555970510BA9D6B0063DDA2 /* PBXTextBookmark */;
+			8555970E10BA9E540063DDA2 /* PBXTextBookmark */ = 8555970E10BA9E540063DDA2 /* PBXTextBookmark */;
+			8555971010BA9E540063DDA2 /* PBXTextBookmark */ = 8555971010BA9E540063DDA2 /* PBXTextBookmark */;
+			8555972A10BA9EE10063DDA2 /* PBXTextBookmark */ = 8555972A10BA9EE10063DDA2 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 85808CB810908D6700D9AB33 /* Source Control */;
 		userBuildSettings = {
@@ -113,17 +103,17 @@
 	};
 	850608D010908FD00037F445 /* SequenceDataController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {881, 810}}";
-			sepNavSelRange = "{771, 0}";
-			sepNavVisRange = "{32, 1203}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 960}}";
+			sepNavSelRange = "{768, 0}";
+			sepNavVisRange = "{0, 1254}";
 			sepNavWindowFrame = "{{19, 0}, {1257, 778}}";
 		};
 	};
 	850608D110908FD00037F445 /* SequenceDataController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1140, 1695}}";
-			sepNavSelRange = "{2876, 10}";
-			sepNavVisRange = "{2217, 681}";
+			sepNavIntBoundsRect = "{{0, 0}, {1140, 1845}}";
+			sepNavSelRange = "{3044, 0}";
+			sepNavVisRange = "{0, 1393}";
 			sepNavWindowFrame = "{{19, 0}, {1257, 778}}";
 		};
 	};
@@ -137,7 +127,7 @@
 	};
 	851B8EAE10B2C84E00C7F173 /* ContextRandomAffect.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {881, 584}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 605}}";
 			sepNavSelRange = "{355, 58}";
 			sepNavVisRange = "{0, 511}";
 			sepNavWindowFrame = "{{4, 0}, {1276, 778}}";
@@ -145,21 +135,21 @@
 	};
 	8538C13110B2EC3C00C82796 /* ForwardStepTeachingPredictorNeroNet.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {803, 551}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 605}}";
 			sepNavSelRange = "{347, 0}";
 			sepNavVisRange = "{0, 353}";
 		};
 	};
 	8538C13210B2EC3C00C82796 /* ForwardStepTeachingPredictorNeroNet.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {803, 548}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 605}}";
 			sepNavSelRange = "{291, 0}";
 			sepNavVisRange = "{0, 315}";
 		};
 	};
 	8544216110911BD000361CF9 /* Neuron.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {881, 584}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 605}}";
 			sepNavSelRange = "{242, 0}";
 			sepNavVisRange = "{0, 747}";
 			sepNavWindowFrame = "{{19, 0}, {1257, 778}}";
@@ -168,15 +158,15 @@
 	8544216210911BD000361CF9 /* Neuron.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            l = \"double \";\n            r = \"{320, 11}\";\n            s = 1;\n        }\n    );\n    r = \"{0, 1926}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {932, 1305}}";
-			sepNavSelRange = "{326, 0}";
-			sepNavVisRange = "{859, 1057}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 1440}}";
+			sepNavSelRange = "{322, 0}";
+			sepNavVisRange = "{0, 677}";
 			sepNavWindowFrame = "{{19, 0}, {1257, 778}}";
 		};
 	};
 	854421B91091225F00361CF9 /* NeuroLay.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {881, 607}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 605}}";
 			sepNavSelRange = "{734, 22}";
 			sepNavVisRange = "{0, 761}";
 			sepNavWindowFrame = "{{19, 0}, {1257, 778}}";
@@ -184,7 +174,7 @@
 	};
 	854421BA1091225F00361CF9 /* NeuroLay.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {881, 1590}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 1605}}";
 			sepNavSelRange = "{2115, 0}";
 			sepNavVisRange = "{1302, 822}";
 			sepNavWindowFrame = "{{19, 0}, {1257, 778}}";
@@ -215,10 +205,50 @@
 	};
 	85519E8710976FB000429A6B /* ResultNeuronLay.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1100, 584}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1100, 605}}";
 			sepNavSelRange = "{690, 20}";
 			sepNavVisRange = "{0, 793}";
 		};
+	};
+	8555970510BA9D6B0063DDA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 850608D110908FD00037F445 /* SequenceDataController.m */;
+		name = "SequenceDataController.m: 116";
+		rLen = 0;
+		rLoc = 3044;
+		rType = 0;
+		vrLen = 1393;
+		vrLoc = 0;
+	};
+	8555970E10BA9E540063DDA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 850608D010908FD00037F445 /* SequenceDataController.h */;
+		name = "SequenceDataController.h: 23";
+		rLen = 0;
+		rLoc = 768;
+		rType = 0;
+		vrLen = 1254;
+		vrLoc = 0;
+	};
+	8555971010BA9E540063DDA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 858C4D8B1091D0F9000A85F2 /* DefaultBackErrorTeachingPredictorNeuroNet.h */;
+		name = "DefaultBackErrorTeachingPredictorNeuroNet.h: 15";
+		rLen = 0;
+		rLoc = 300;
+		rType = 0;
+		vrLen = 873;
+		vrLoc = 0;
+	};
+	8555972A10BA9EE10063DDA2 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 858C4D8B1091D0F9000A85F2 /* DefaultBackErrorTeachingPredictorNeuroNet.h */;
+		name = "DefaultBackErrorTeachingPredictorNeuroNet.h: 15";
+		rLen = 0;
+		rLoc = 300;
+		rType = 0;
+		vrLen = 873;
+		vrLoc = 0;
 	};
 	856C64D810925361000513FF /* AcceptorNeuronLay.h */ = {
 		uiCtxt = {
@@ -247,7 +277,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {908, 660}}";
 			sepNavSelRange = "{645, 0}";
-			sepNavVisRange = "{3, 875}";
+			sepNavVisRange = "{0, 878}";
 			sepNavWindowFrame = "{{4, 0}, {1276, 778}}";
 		};
 	};
@@ -260,7 +290,7 @@
 	};
 	856C64F71092553D000513FF /* ContextAffect.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {881, 584}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 605}}";
 			sepNavSelRange = "{272, 58}";
 			sepNavVisRange = "{0, 486}";
 			sepNavWindowFrame = "{{4, 0}, {1276, 778}}";
@@ -329,160 +359,23 @@
 	};
 	858C4D8B1091D0F9000A85F2 /* DefaultBackErrorTeachingPredictorNeuroNet.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {881, 584}}";
-			sepNavSelRange = "{379, 0}";
-			sepNavVisRange = "{0, 874}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 604}}";
+			sepNavSelRange = "{300, 0}";
+			sepNavVisRange = "{0, 873}";
 			sepNavWindowFrame = "{{19, 0}, {1257, 778}}";
 		};
 	};
 	858C4D8C1091D0F9000A85F2 /* DefaultBackErrorTeachingPredictorNeuroNet.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {881, 2745}}";
-			sepNavSelRange = "{3739, 0}";
-			sepNavVisRange = "{2259, 795}";
+			sepNavIntBoundsRect = "{{0, 0}, {1215, 2670}}";
+			sepNavSelRange = "{3393, 0}";
+			sepNavVisRange = "{3208, 571}";
 			sepNavWindowFrame = "{{19, 0}, {1257, 778}}";
 		};
 	};
-	85AE2E2E10B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 850608D010908FD00037F445 /* SequenceDataController.h */;
-		name = "SequenceDataController.h: 23";
-		rLen = 0;
-		rLoc = 771;
-		rType = 0;
-		vrLen = 1203;
-		vrLoc = 32;
-	};
-	85AE2E2F10B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 85B19CD110936E720086DB43 /* AffectorProtocol.h */;
-		name = "AffectorProtocol.h: 19";
-		rLen = 0;
-		rLoc = 379;
-		rType = 0;
-		vrLen = 380;
-		vrLoc = 0;
-	};
-	85AE2E3010B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 85519E8710976FB000429A6B /* ResultNeuronLay.m */;
-		name = "ResultNeuronLay.m: 21";
-		rLen = 20;
-		rLoc = 690;
-		rType = 0;
-		vrLen = 793;
-		vrLoc = 0;
-	};
-	85AE2E3110B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 851B8EAE10B2C84E00C7F173 /* ContextRandomAffect.m */;
-		name = "ContextRandomAffect.m: 19";
-		rLen = 58;
-		rLoc = 355;
-		rType = 0;
-		vrLen = 511;
-		vrLoc = 0;
-	};
-	85AE2E3210B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 856C64F71092553D000513FF /* ContextAffect.m */;
-		name = "ContextAffect.m: 17";
-		rLen = 58;
-		rLoc = 272;
-		rType = 0;
-		vrLen = 486;
-		vrLoc = 0;
-	};
-	85AE2E3310B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 856C64E610925428000513FF /* RandomAffect.m */;
-		name = "RandomAffect.m: 27";
-		rLen = 0;
-		rLoc = 645;
-		rType = 0;
-		vrLen = 875;
-		vrLoc = 3;
-	};
-	85AE2E3410B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 854421B91091225F00361CF9 /* NeuroLay.h */;
-		name = "NeuroLay.h: 30";
-		rLen = 22;
-		rLoc = 734;
-		rType = 0;
-		vrLen = 761;
-		vrLoc = 0;
-	};
-	85AE2E3510B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 854421BA1091225F00361CF9 /* NeuroLay.m */;
-		name = "NeuroLay.m: 103";
-		rLen = 0;
-		rLoc = 2115;
-		rType = 0;
-		vrLen = 822;
-		vrLoc = 1302;
-	};
-	85AE2E3610B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 858C4D8B1091D0F9000A85F2 /* DefaultBackErrorTeachingPredictorNeuroNet.h */;
-		name = "DefaultBackErrorTeachingPredictorNeuroNet.h: 19";
-		rLen = 0;
-		rLoc = 379;
-		rType = 0;
-		vrLen = 874;
-		vrLoc = 0;
-	};
-	85AE2E3710B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 8544216110911BD000361CF9 /* Neuron.h */;
-		name = "Neuron.h: 12";
-		rLen = 0;
-		rLoc = 242;
-		rType = 0;
-		vrLen = 747;
-		vrLoc = 0;
-	};
-	85AE2E3810B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 8544216210911BD000361CF9 /* Neuron.m */;
-		name = "Neuron.m: 19";
-		rLen = 0;
-		rLoc = 336;
-		rType = 0;
-		vrLen = 1057;
-		vrLoc = 869;
-	};
-	85AE2E3910B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 850608D110908FD00037F445 /* SequenceDataController.m */;
-		name = "SequenceDataController.m: 109";
-		rLen = 10;
-		rLoc = 2876;
-		rType = 0;
-		vrLen = 681;
-		vrLoc = 2217;
-	};
-	85AE2E3A10B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 858C4D8C1091D0F9000A85F2 /* DefaultBackErrorTeachingPredictorNeuroNet.m */;
-		rLen = 1;
-		rLoc = 155;
-		rType = 1;
-	};
-	85AE2E3B10B32AB5002616F4 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 858C4D8C1091D0F9000A85F2 /* DefaultBackErrorTeachingPredictorNeuroNet.m */;
-		name = "DefaultBackErrorTeachingPredictorNeuroNet.m: 166";
-		rLen = 0;
-		rLoc = 3739;
-		rType = 0;
-		vrLen = 795;
-		vrLoc = 2259;
-	};
 	85B19CD110936E720086DB43 /* AffectorProtocol.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {881, 525}}";
+			sepNavIntBoundsRect = "{{0, 0}, {881, 605}}";
 			sepNavSelRange = "{379, 0}";
 			sepNavVisRange = "{0, 380}";
 			sepNavWindowFrame = "{{4, 0}, {1276, 778}}";

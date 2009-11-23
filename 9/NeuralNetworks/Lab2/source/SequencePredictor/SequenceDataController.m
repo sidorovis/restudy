@@ -22,7 +22,9 @@
 		e_min = validateDouble(@"E", [Emin stringValue]);
 		NSMutableArray* sequence = [[NSMutableArray alloc] init];
 		for (NSString* string in [[sequenceField stringValue] componentsSeparatedByString:@" "])
-			[sequence addObject:[[NSNumber alloc] initWithDouble:( tanh(validateDouble(@"Sequence value wrong", string)) )]];
+			[sequence addObject:[[NSNumber alloc] initWithDouble:( 
+								func_in( validateDouble(@"Sequence value wrong", string) )
+																  )]];
 		if (p+m > [sequence count])
 			@throw [[NSException alloc] initWithName:@"P+M must be lower than sequence count" reason:@"p, m, sequence fields" userInfo:NULL];
 		if (neuroNet)
@@ -106,7 +108,15 @@
 }
 -(IBAction)getResults:(id)sender
 {
-	[resultView setString: [neuroNet getResults]];
+	NSArray* result = [neuroNet getResults];
+
+	NSString *tstr = @"";
+	for (int i = 0 ; i < [result count]; i++)
+		tstr = [tstr stringByAppendingFormat:@"%f\n", 
+				func_out( [[result objectAtIndex:i] doubleValue] )
+				];
+	[result release];
+	[resultView setString: tstr];
 }
 
 @end

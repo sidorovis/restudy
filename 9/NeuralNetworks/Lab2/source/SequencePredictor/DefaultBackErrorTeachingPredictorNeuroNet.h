@@ -12,7 +12,7 @@
 #import "ResultNeuronLay.h"
 #import "math.h"
 
-#define PREDICT_COUNT 10
+#define PREDICT_COUNT 15
 #define WITH_CONTEXTS true
 #define SHOW_DEBUG false
 
@@ -32,5 +32,5 @@
 -(double) findDiff;
 -(void) compute;
 -(void) debug;
--(NSString*) getResults;
+-(NSArray*) getResults;
 @end

@@ -153,7 +153,7 @@
 		[ResultContext debug];		
 	}
 }
--(NSString*) getResults
+-(NSArray*) getResults
 {
 	NSMutableArray* result = [[NSMutableArray alloc] init];
 	[result addObjectsFromArray:sequence];
@@ -163,13 +163,9 @@
 		[Input setValuesFrom:result fromIndex:[result count] - P];
 		[self compute];
 		for (Neuron* neuron in [Result neurons]) {
-			[result addObject:[[NSNumber alloc] initWithDouble:atanh(neuron.value)]];
+			[result addObject:[[NSNumber alloc] initWithDouble:neuron.value]];
 		}
 	}
-	NSString *tstr = @"";
-	for (int i = 0 ; i < [result count]; i++)
-		tstr = [tstr stringByAppendingFormat:@"%f\n",[[result objectAtIndex:i] doubleValue]];
-	[result release];
-	return tstr;
+	return result;
 }
 @end
