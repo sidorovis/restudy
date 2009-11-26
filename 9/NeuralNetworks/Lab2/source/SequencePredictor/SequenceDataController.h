@@ -9,7 +9,10 @@
 #import "DefaultBackErrorTeachingPredictorNeuroNet.h"
 #import "ForwardStepTeachingPredictorNeroNet.h"
 
+#define MAX_DOUBLE 999999999999
+
 #define USE_DEFAULT_BACK_PROPAGATION_ALGORYTHM false
+
 
 int validateInt(NSString* fieldName, NSString* stringValue)
 {
@@ -37,8 +40,10 @@ double func_out( double input )
 
 @interface SequenceDataController : NSViewController {
 	IBOutlet NSTextField* sequenceField;
+	NSMutableArray* sequence;
 	IBOutlet NSTextField* P;
 	IBOutlet NSTextField* M;
+	int p, m;
 	IBOutlet NSTextField* Emin;
 	double e_min;
 	IBOutlet NSTextField* currentDiff;
@@ -53,7 +58,7 @@ double func_out( double input )
 	IBOutlet NSButton* getResultButton;
 
 	NSThread* thread;
-	DefaultBackErrorTeachingPredictorNeuroNet* neuroNet;
+	NeuroNet* neuroNet;
 }
 +(void) init;
 -(IBAction)predict:(id)sender;
@@ -63,4 +68,5 @@ double func_out( double input )
 -(void) arch;
 -(void) disableTextFields;
 -(void) enableTextFields;
+-(NeuroNet*) getNeuroNet;
 @end

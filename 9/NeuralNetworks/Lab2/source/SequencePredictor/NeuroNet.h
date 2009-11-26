@@ -14,4 +14,12 @@
 -(id) init;
 -(void) dealloc;
 
+-(void) teach;
+-(void) teachWBetween:(NeuroLay*)from And:(NeuroLay*)to;
+-(void) teachInputWithContextsWhenLevel:(int)i;
+-(double) findDiff;
+-(void) compute;
+-(void) debug;
+-(NSArray*) getResults;
+
 @end

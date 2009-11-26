@@ -13,7 +13,7 @@
 @implementation RandomAffect
 -(RandomAffect*) initRandomTo:(Neuron*)neuron_
 {
-	value = ((rand()%basis)-basis / 2) / (double)basis;
+	value = ((rand()%basis)-basis / 2.0) / (double)basis;
 	[super initToNeuron:neuron_];
 	return self;
 }

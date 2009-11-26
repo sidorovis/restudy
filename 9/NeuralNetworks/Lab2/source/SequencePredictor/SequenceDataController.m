@@ -17,10 +17,12 @@
 {
 	if (!thread || ![thread isExecuting])
 	@try {
-		int p = validateInt(@"P", [P stringValue]);
-		int m = validateInt(@"M", [M stringValue]);
+		p = validateInt(@"P", [P stringValue]);
+		m = validateInt(@"M", [M stringValue]);
 		e_min = validateDouble(@"E", [Emin stringValue]);
-		NSMutableArray* sequence = [[NSMutableArray alloc] init];
+		if (sequence)
+			[sequence release];
+		sequence = [[NSMutableArray alloc] init];
 		for (NSString* string in [[sequenceField stringValue] componentsSeparatedByString:@" "])
 			[sequence addObject:[[NSNumber alloc] initWithDouble:( 
 								func_in( validateDouble(@"Sequence value wrong", string) )
@@ -29,6 +31,7 @@
 			@throw [[NSException alloc] initWithName:@"P+M must be lower than sequence count" reason:@"p, m, sequence fields" userInfo:NULL];
 		if (neuroNet)
 			[neuroNet release];
+		neuroNet = [self getNeuroNet];
 		if (USE_DEFAULT_BACK_PROPAGATION_ALGORYTHM)
 			neuroNet = [[DefaultBackErrorTeachingPredictorNeuroNet alloc] initWithSequence:sequence countP:p countM:m];
 		else
@@ -54,10 +57,24 @@
 {
 	NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 	double diff = [neuroNet findDiff];
+	double min_diff = MAX_DOUBLE;
 	while (diff > e_min)
 	{
 		[neuroNet teach];
 		diff = [neuroNet findDiff];
+		if (diff >= e_min)
+		{
+			if (diff / min_diff > 10 || diff > 1000)
+			{
+				NSLog(@"NeuroNet differencies go to max to fast, redefininig neuro net");
+				[neuroNet release];
+				neuroNet = [self getNeuroNet];
+				[neuroNet release];
+				neuroNet = [self getNeuroNet];
+			}
+		}
+		if (diff < min_diff)
+			min_diff = diff;
 		[currentDiff setStringValue:[[NSString alloc] initWithFormat:@"%0*.*f", diff]];
 		if ([thread isCancelled])
 			break;
@@ -117,6 +134,15 @@
 				];
 	[result release];
 	[resultView setString: tstr];
+}
+-(NeuroNet*) getNeuroNet
+{
+	NeuroNet* neuroNet_;
+	if (USE_DEFAULT_BACK_PROPAGATION_ALGORYTHM)
+		neuroNet_ = [[DefaultBackErrorTeachingPredictorNeuroNet alloc] initWithSequence:sequence countP:p countM:m];
+	else
+		neuroNet_ = [[ForwardStepTeachingPredictorNeroNet alloc] initWithSequence:sequence countP:p countM:m];
+	return neuroNet_;
 }
 
 @end

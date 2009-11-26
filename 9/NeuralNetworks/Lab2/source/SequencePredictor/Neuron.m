@@ -14,14 +14,14 @@
 
 double my_func( double value )
 {
-	return value;
+//	return value;
 //	atanh(<#double #>)
-//	return tanh( value );
+	return tanh( value );
 }
 double my_func_derivative( double value )
 {
-	return 1.0;
-//	return 1.0 / ( cosh( value )*cosh( value ) );
+//	return 1.0;
+	return 1.0 / ( cosh( value )*cosh( value ) );
 }
 
 @implementation Neuron

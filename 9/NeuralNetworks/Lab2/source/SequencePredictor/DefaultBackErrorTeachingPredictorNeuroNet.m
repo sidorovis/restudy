@@ -17,7 +17,7 @@
 	M = M_;
 	sequence = sequence_;
 	Input =  [[AcceptorNeuronLay alloc] initWithCount:P];
-	Hidden = [[NeuroLay alloc] initWithCount:P]; 
+	Hidden = [[NeuroLay alloc] initWithCount:P*2]; 
 	Result = [[ResultNeuronLay alloc] initWithCount:M];
 
 	[Input connectEachNeuronToLay:Hidden]; 
