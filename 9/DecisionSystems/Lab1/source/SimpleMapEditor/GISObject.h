@@ -24,18 +24,21 @@ class GISObject
 {
 public:
 	Layer* parentLayer;
-	QgsFeature f;
+	QgsFeature* f;
+	int feature_index;
 	int title_index;
 
-	static GISObject* generateGISObject(Layer* layer, QgsFeature& f);
+	static GISObject* generateGISObject(Layer* layer, QgsFeature* f, int feature_index_);
 	virtual ~GISObject();
 	virtual const QString toString() const;
 	virtual const QString toSmallString() const;
 	virtual const QStringList attributes() const;
+	virtual const QHash<QString,QString> attributes_map() const;
+	virtual bool setAttribute(int index, QString text);
 	virtual const double length() const;	
 	virtual const QgsPoint center() const;	
 protected:
-	GISObject(Layer* layer, QgsFeature& f);
+	GISObject(Layer* layer, QgsFeature* f);
 private:
 	GISObject(const GISObject&);
 	GISObject();

@@ -178,9 +178,16 @@
     <addaction name="separator"/>
     <addaction name="actionZoomToSelected"/>
    </widget>
+   <widget class="QMenu" name="menuEditing">
+    <property name="title">
+     <string>Editing</string>
+    </property>
+    <addaction name="actionGenerateNewLayer"/>
+   </widget>
    <addaction name="menuOpenLayer"/>
    <addaction name="menuSearch"/>
    <addaction name="menuMapWidget"/>
+   <addaction name="menuEditing"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOGR_mif_map_file_types">
@@ -250,6 +257,16 @@
   <action name="actionZoomToSelected">
    <property name="text">
     <string>zoomToSelected</string>
+   </property>
+  </action>
+  <action name="actionGenerateNewLayer">
+   <property name="text">
+    <string>GenerateNewLayer</string>
+   </property>
+  </action>
+  <action name="actionAddObject">
+   <property name="text">
+    <string>AddObject</string>
    </property>
   </action>
  </widget>
@@ -465,6 +482,22 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>actionGenerateNewLayer</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>editLayerAdd()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>loadOgrFile()</slot>
@@ -479,5 +512,6 @@
   <slot>zoomToPreviousExtent()</slot>
   <slot>zoomToNextExtent()</slot>
   <slot>zoomToSelected()</slot>
+  <slot>editLayerAdd()</slot>
  </slots>
 </ui>

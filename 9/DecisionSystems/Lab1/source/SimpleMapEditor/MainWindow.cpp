@@ -17,8 +17,10 @@
 #include "qgis/qgsdistancearea.h"
 #include "qgis/qgsapplication.h"
 #include "qgis/qgsvectordataprovider.h"
+#include "qgis/qgsencodingfiledialog.h"
 
 #include <QStatusBar>
+#include <QInputDialog>
 #include "DistanceShowDialog.h"
 #include "LayerPropertiesDialog.h"
 #include "SearchDialog.h"
@@ -29,7 +31,8 @@ const QString MainWindow::myPluginsDir("/Applications/MacPorts/qgis1.3.0.app/Con
 MainWindow::MainWindow(QWidget* parent) : 
      QMainWindow(parent),
      uiMainWindow(new Ui::MainWindow),
-     selected_lay_index( -1 )
+     selected_lay_index( new int(-1) ),
+     editLayer(NULL)
 {
 	uiMainWindow->setupUi(this);
 	QgsProviderRegistry::instance(MainWindow::myPluginsDir);
@@ -46,12 +49,12 @@ MainWindow::MainWindow(QWidget* parent) :
 	addVectorLayer("./maps/roads.mif", false);
 	addVectorLayer("./maps/regions.mif", false);
 //	addVectorLayer("./maps/zhd_road.mif");
-	
 }
 MainWindow::~MainWindow()
 {
 	uiMainWindow->mapWidget->clear();
 	QgsMapLayerRegistry::instance()->removeAllMapLayers();
+	delete selected_lay_index;
 	delete tool;
 	delete layerNamesModel;
 	delete status;
@@ -121,10 +124,10 @@ void MainWindow::loadOgrFile()
 }
 void MainWindow::listButtonPressed(const QModelIndex &index)
 {
-	selected_lay_index = index.row();
+	*selected_lay_index = index.row();
 	if (QApplication::mouseButtons() == Qt::RightButton)
 	{
-		LayerPropertiesDialog dialog( layers.at( selected_lay_index ));
+		LayerPropertiesDialog dialog( layers.at( *selected_lay_index ));
 		dialog.exec();
 		reDraw();
 		repaint();
@@ -138,29 +141,29 @@ void MainWindow::changeLayerOrder(int first, int second)
 }
 void MainWindow::upPressed()
 {
-	if (selected_lay_index > 0)
+	if (*selected_lay_index > 0)
 	{
-		changeLayerOrder(selected_lay_index, selected_lay_index - 1);
-		selected_lay_index = -1;		
+		changeLayerOrder(*selected_lay_index, *selected_lay_index - 1);
+		*selected_lay_index = -1;		
 	}
 }
 void MainWindow::downPressed()
 {
-	if (selected_lay_index > -1 && selected_lay_index < layers.size() - 1)
+	if (*selected_lay_index > -1 && *selected_lay_index < layers.size() - 1)
 	{
-		changeLayerOrder(selected_lay_index, selected_lay_index + 1);
-		selected_lay_index = -1;		
+		changeLayerOrder(*selected_lay_index, *selected_lay_index + 1);
+		*selected_lay_index = -1;		
 	}
 }
 void MainWindow::showSearchDialog()
 {
-	SearchDialog searchDialog(&layers);
+	SearchDialog searchDialog(&layers, editLayer);
 	if (searchDialog.exec())
 	{
 		QHash< Layer*, QSet<int> > featuresIds;
 		foreach(GISObject* obj, searchDialog.selectedObjects())
 		{
-			featuresIds[ (*obj).parentLayer ] << (*obj).f.id();			
+			featuresIds[ (*obj).parentLayer ] << (*obj).f->id();			
 		}
 		foreach(Layer* layer, featuresIds.keys())
 		{
@@ -185,7 +188,7 @@ void MainWindow::findDistance()
 	{
 		foreach(QgsFeature f, layer->selectedFeatures() )
 		{
-			GISObject* temp = GISObject::generateGISObject( layer, f );
+			GISObject* temp = GISObject::generateGISObject( layer, &f, 0 );
 			headers << temp->toSmallString();
 			delete temp;			
 		}
@@ -253,41 +256,113 @@ void MainWindow::zoomToSelected()
 {
 	uiMainWindow->mapWidget->zoomToSelected();	
 }
-void MainWindow::mapClicked(const QgsPoint &point, Qt::MouseButton button)
+QString MainWindow::readString(QString readStr)
 {
-	if (button != Qt::LeftButton)
+	bool ok;
+	QString answer = QInputDialog::getText(this, "Print "+readStr, readStr+": ", QLineEdit::Normal, "", &ok);
+	if (ok && !answer.isEmpty())
+		return answer;
+	return "";
+}
+void MainWindow::addObject(const QgsPoint &point)
+{
+	QString name = readString("Name");
+	if (name.size() == 0)
 		return;
+	QString descr = readString("Description");
+	if (descr.size() == 0)
+		return;
+	
+	QgsFeatureList fList;
+	fList.push_back(QgsFeature());
+	fList[0].addAttribute(0, name);
+	fList[0].addAttribute(1, descr);		
+	fList[0].setGeometry(QgsGeometry::fromPoint(point));
+	fList[0].setValid(true);
+	
+	editLayer->startEditing();
+	editLayer->addFeatures(fList, false);
+	editLayer->commitChanges();
+	reDraw();
+	return;
+}
+void MainWindow::searchByPoint(const QgsPoint &point)
+{
 	QHash< Layer*, QSet<int> > selectedFIds;
 	foreach(Layer* layer, layers)
 	{
 		foreach(const QgsFeature& f, layer->selectedFeatures())
-		{
-			selectedFIds[ layer ] << f.id();
-		}
+		selectedFIds[ layer ] << f.id();
 		layer->removeSelection();
 	}
 	QList<GISObject*> objects;
 	foreach(Layer* layer, layers)
+	if (layer->visible)
 	{
-		if (layer->visible)
-		{
-			GISObject* object = layer->search( point ); 
-			if (object != NULL)
-			{
-				objects << object;
-			}
-		}
+		GISObject* object = layer->search( point, layer == editLayer ); 
+		if (object != NULL)
+			objects << object;
 	}
 	if (objects.size() == 0)
 		return;
 	GISObjectViewerDialog dialog(objects, this);
 	dialog.exec();
+	
 	foreach(GISObject* obj, objects)
 	{
-		delete obj;
+		delete obj;		
 	}
 	foreach(Layer* layer, layers)
 	{
-		layer->setSelectedFeatures( selectedFIds[ layer ] );
+		layer->setSelectedFeatures( selectedFIds[ layer ] );			
+	}
+}
+
+void MainWindow::mapClicked(const QgsPoint &point, Qt::MouseButton button)
+{
+	if (button == Qt::RightButton && editLayer)
+	{
+		addObject(point);
+		return;
+	}
+	if (button != Qt::LeftButton)
+		return;
+	searchByPoint(point);
+}
+void MainWindow::editLayerAdd()
+{
+	std::list< std::pair<QString, QString> > attributes;
+ 	attributes.push_back(std::pair<QString, QString>("Name","String") );
+	attributes.push_back(std::pair<QString, QString>("Descr","String") );
+	QgsEncodingFileDialog* openFileDialog = new QgsEncodingFileDialog( this,
+					tr( "Save New Layer As" ) );
+	openFileDialog->setFileMode( QFileDialog::AnyFile );
+	openFileDialog->setAcceptMode( QFileDialog::AcceptSave );
+	openFileDialog->setConfirmOverwrite( true );
+	
+	if ( openFileDialog->exec() != QDialog::Accepted )
+	{
+		delete openFileDialog;
+		return;
+	}
+	QString fileName = openFileDialog->selectedFiles().first();
+	QString enc = openFileDialog->encoding();
+	QFile::remove( fileName );
+	
+	delete openFileDialog;
+	QLibrary* myLib = new QLibrary( QgsProviderRegistry::instance()->library( Layer::vectorProviderName ) );
+	if ( myLib->load() )
+	{
+		typedef bool ( *createEmptyDataSourceProc )( const QString&, const QString&, const QString&, QGis::WkbType,
+													const std::list<std::pair<QString, QString> >& );
+		createEmptyDataSourceProc createEmptyDataSource = ( createEmptyDataSourceProc ) cast_to_fptr( myLib->resolve( "createEmptyDataSource" ) );
+		createEmptyDataSource( fileName, "ESRI Shapefile", enc, QGis::WKBPoint, attributes );
+		
+		editLayer = new Layer(fileName);
+		QgsMapLayerRegistry::instance()->addMapLayer(editLayer, TRUE);
+		layers.push_front(editLayer);
+		editLayer->visible = true;
+		reDraw();
+		repaint();
 	}
 }

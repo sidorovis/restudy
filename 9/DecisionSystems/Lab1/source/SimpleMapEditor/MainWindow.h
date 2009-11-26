@@ -39,6 +39,7 @@ class MainWindow : public QMainWindow
 	static const QString vectorProviderName;
 	QLabel* status;
 	QgsMapToolEmitPoint* tool;
+	Layer *editLayer;
 	
 public:
 	MainWindow(QWidget* parent = NULL);
@@ -48,7 +49,7 @@ private:
 	void reDraw();
 	QStringListModel* layerNamesModel;
 	QList<Layer*> layers;
-	int selected_lay_index;
+	int* selected_lay_index;
 private slots:
 	void loadOgrFile();
 	void listButtonPressed(const QModelIndex &index);
@@ -65,6 +66,10 @@ private slots:
 	void zoomToPreviousExtent();
 	void zoomToSelected();
 	void mapClicked(const QgsPoint &point, Qt::MouseButton button);
+	void editLayerAdd();
+	QString readString(QString readStr);
+	void addObject(const QgsPoint &point);
+	void searchByPoint(const QgsPoint &point);
 };
 
 #endif // _MAIN_WINDOW_H

@@ -28,9 +28,10 @@ class SearchDialog : public QDialog
 	Ui::SearchByNameDialog* uiSearchByNameDialog;
 	const QList<Layer*>* layers;
 	QList<GISObject*> searchResult;
+	Layer* editLayer;
 	
 public:
-	SearchDialog(const QList<Layer*>* layers_, QWidget* parent = 0);
+	SearchDialog(const QList<Layer*>* layers_, Layer* editLayer_ ,QWidget* parent = 0);
 	~SearchDialog();
 	const QList<GISObject*> selectedObjects();
 private:

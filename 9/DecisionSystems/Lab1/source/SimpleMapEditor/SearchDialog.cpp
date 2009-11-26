@@ -12,9 +12,10 @@
 #include "GISObject.h"
 #include "GISObjectViewerDialog.h"
 
-SearchDialog::SearchDialog(const QList<Layer*>* layers_, QWidget* parent) 
+SearchDialog::SearchDialog(const QList<Layer*>* layers_, Layer* editLayer_, QWidget* parent) 
     : QDialog( parent )
     , uiSearchByNameDialog( new Ui::SearchByNameDialog() )
+    , editLayer(editLayer_) 
 {
 	layers = layers_;
 	uiSearchByNameDialog->setupUi( this );
@@ -45,7 +46,7 @@ void SearchDialog::search()
 	foreach(QListWidgetItem* item, uiSearchByNameDialog->layerList->selectedItems())
 		for (int i = 0 ; i < layers->size() ; i++)
 			if (layers->at(i)->name() == item->text())
-				searchResult += layers->at(i)->search( uiSearchByNameDialog->searchString->text() );
+				searchResult += layers->at(i)->search( uiSearchByNameDialog->searchString->text(), layers->at(i) == editLayer );
 	
 	foreach(const GISObject* objP, searchResult)
 		uiSearchByNameDialog->searchResult->addItem( objP->toString() );

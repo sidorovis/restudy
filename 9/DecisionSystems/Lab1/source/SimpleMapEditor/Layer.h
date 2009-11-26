@@ -29,10 +29,9 @@ class GISObject;
 class Layer : public QgsVectorLayer
 {
 	Q_OBJECT
-	
-	static const QString vectorProviderName;
-		
+			
 public:
+	static const QString vectorProviderName;
 	QFileInfo fileName;
 	bool visible;
 	bool showLabels;
@@ -41,8 +40,8 @@ public:
 	Layer(const QFileInfo& fileName_);	
 	virtual ~Layer();
 	
-	const QList<GISObject*> search(QString text);
-	GISObject* search(const QgsPoint& click);
+	const QList<GISObject*> search(QString text, bool editLayer);
+	GISObject* search(const QgsPoint& click, bool editLayer);
 };
 
 const QStringList getLayerNameList(const QList<Layer*>& list );
