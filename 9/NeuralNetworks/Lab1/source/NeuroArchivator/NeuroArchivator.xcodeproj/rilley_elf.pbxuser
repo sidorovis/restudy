@@ -173,12 +173,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 279721657;
-			PBXWorkspaceStateSaveDate = 279721657;
+			PBXPerProjectTemplateStateSaveDate = 280682056;
+			PBXWorkspaceStateSaveDate = 280682056;
 		};
 		perUserProjectItems = {
-			8521AE0310AC36BD0008BBDA /* PBXTextBookmark */ = 8521AE0310AC36BD0008BBDA /* PBXTextBookmark */;
-			8521AE0410AC36BD0008BBDA /* PBXTextBookmark */ = 8521AE0410AC36BD0008BBDA /* PBXTextBookmark */;
+			85CB3FCD10BADE5400D3F3A8 /* PBXTextBookmark */ = 85CB3FCD10BADE5400D3F3A8 /* PBXTextBookmark */;
+			85CB3FCE10BADE5400D3F3A8 /* PBXTextBookmark */ = 85CB3FCE10BADE5400D3F3A8 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 856F9B0810540C4F00CFD619 /* Source Control */;
 		userBuildSettings = {
@@ -199,26 +199,6 @@
 			sepNavVisRange = "{0, 161}";
 			sepNavWindowFrame = "{{19, 7}, {1214, 766}}";
 		};
-	};
-	8521AE0310AC36BD0008BBDA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 856F9B0A10540EA100CFD619 /* ImageController.m */;
-		name = "ImageController.m: 167";
-		rLen = 0;
-		rLoc = 5023;
-		rType = 0;
-		vrLen = 385;
-		vrLoc = 4866;
-	};
-	8521AE0410AC36BD0008BBDA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 856F9B0A10540EA100CFD619 /* ImageController.m */;
-		name = "ImageController.m: 167";
-		rLen = 0;
-		rLoc = 5023;
-		rType = 0;
-		vrLen = 385;
-		vrLoc = 4866;
 	};
 	8543C5D010615F0C00E3E1D2 /* Neuron.h */ = {
 		uiCtxt = {
@@ -426,6 +406,26 @@
 			sepNavVisRange = "{1292, 407}";
 			sepNavWindowFrame = "{{19, 149}, {964, 624}}";
 		};
+	};
+	85CB3FCD10BADE5400D3F3A8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 856F9B0A10540EA100CFD619 /* ImageController.m */;
+		name = "ImageController.m: 167";
+		rLen = 0;
+		rLoc = 5023;
+		rType = 0;
+		vrLen = 385;
+		vrLoc = 4866;
+	};
+	85CB3FCE10BADE5400D3F3A8 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 856F9B0A10540EA100CFD619 /* ImageController.m */;
+		name = "ImageController.m: 167";
+		rLen = 0;
+		rLoc = 5023;
+		rType = 0;
+		vrLen = 385;
+		vrLoc = 4866;
 	};
 	85FB8B281059ABE900E9216F /* ImageBlockIterator.h */ = {
 		uiCtxt = {
