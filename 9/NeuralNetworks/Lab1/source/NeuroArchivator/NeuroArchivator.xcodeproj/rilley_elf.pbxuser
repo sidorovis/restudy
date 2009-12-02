@@ -173,12 +173,14 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 281281245;
-			PBXWorkspaceStateSaveDate = 281281245;
+			PBXPerProjectTemplateStateSaveDate = 281385762;
+			PBXWorkspaceStateSaveDate = 281385762;
 		};
 		perUserProjectItems = {
-			85324BDD10C4038400C205C8 /* PBXTextBookmark */ = 85324BDD10C4038400C205C8 /* PBXTextBookmark */;
-			85ABEAE010C322E20071991D /* PBXTextBookmark */ = 85ABEAE010C322E20071991D /* PBXTextBookmark */;
+			851D464C10C5997D00831D89 /* PBXTextBookmark */ = 851D464C10C5997D00831D89 /* PBXTextBookmark */;
+			85B40DDD10C5B79A00B9C9FB /* PBXTextBookmark */ = 85B40DDD10C5B79A00B9C9FB /* PBXTextBookmark */;
+			85C97EDD10C59071002BF619 /* PBXTextBookmark */ = 85C97EDD10C59071002BF619 /* PBXTextBookmark */;
+			85C97EDE10C59071002BF619 /* PBXTextBookmark */ = 85C97EDE10C59071002BF619 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 856F9B0810540C4F00CFD619 /* Source Control */;
 		userBuildSettings = {
@@ -200,14 +202,14 @@
 			sepNavWindowFrame = "{{19, 7}, {1214, 766}}";
 		};
 	};
-	85324BDD10C4038400C205C8 /* PBXTextBookmark */ = {
+	851D464C10C5997D00831D89 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 856F9B0A10540EA100CFD619 /* ImageController.m */;
-		name = "ImageController.m: 10";
+		fRef = 8573EC4F1060E20D0028FC8D /* Alrorythms.c */;
+		name = "Alrorythms.c: 7";
 		rLen = 0;
-		rLoc = 275;
+		rLoc = 143;
 		rType = 0;
-		vrLen = 998;
+		vrLen = 721;
 		vrLoc = 0;
 	};
 	8543C5D010615F0C00E3E1D2 /* Neuron.h */ = {
@@ -307,9 +309,9 @@
 	856F9B0A10540EA100CFD619 /* ImageController.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{7325, 221}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 7553}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {985, 4020}}";
-			sepNavSelRange = "{275, 0}";
-			sepNavVisRange = "{0, 998}";
+			sepNavIntBoundsRect = "{{0, 0}, {1156, 3825}}";
+			sepNavSelRange = "{4150, 14}";
+			sepNavVisRange = "{3934, 932}";
 			sepNavWindowFrame = "{{20, 38}, {673, 735}}";
 		};
 	};
@@ -331,20 +333,20 @@
 	};
 	8573EC4F1060E20D0028FC8D /* Alrorythms.c */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {950, 645}}";
-			sepNavSelRange = "{626, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1036, 556}}";
+			sepNavSelRange = "{564, 0}";
 			sepNavVisRange = "{0, 721}";
 			sepNavWindowFrame = "{{19, 20}, {820, 753}}";
 		};
 	};
-	85ABEAE010C322E20071991D /* PBXTextBookmark */ = {
+	85B40DDD10C5B79A00B9C9FB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 856F9B0A10540EA100CFD619 /* ImageController.m */;
-		name = "ImageController.m: 10";
+		fRef = 8573EC4F1060E20D0028FC8D /* Alrorythms.c */;
+		name = "Alrorythms.c: 24";
 		rLen = 0;
-		rLoc = 275;
+		rLoc = 564;
 		rType = 0;
-		vrLen = 998;
+		vrLen = 721;
 		vrLoc = 0;
 	};
 	85BC5DB110617564007DEF25 /* ImageNeuron.h */ = {
@@ -390,11 +392,31 @@
 	85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{3361, 187}\";\n            s = 0;\n        },\n                {\n            r = \"{4982, 1013}\";\n            s = 0;\n        },\n                {\n            r = \"{6211, 795}\";\n            s = 0;\n        },\n                {\n            r = \"{8602, 843}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 9452}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1167, 2730}}";
-			sepNavSelRange = "{4693, 0}";
-			sepNavVisRange = "{3360, 1334}";
+			sepNavIntBoundsRect = "{{0, 0}, {1332, 3120}}";
+			sepNavSelRange = "{3831, 7}";
+			sepNavVisRange = "{3364, 1152}";
 			sepNavWindowFrame = "{{19, 7}, {1214, 766}}";
 		};
+	};
+	85C97EDD10C59071002BF619 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 856F9B0A10540EA100CFD619 /* ImageController.m */;
+		name = "ImageController.m: 139";
+		rLen = 14;
+		rLoc = 4150;
+		rType = 0;
+		vrLen = 932;
+		vrLoc = 3934;
+	};
+	85C97EDE10C59071002BF619 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 85BC5EC810617F4D007DEF25 /* ImageNeuroNet.m */;
+		name = "ImageNeuroNet.m: 117";
+		rLen = 7;
+		rLoc = 3831;
+		rType = 0;
+		vrLen = 1152;
+		vrLoc = 3364;
 	};
 	85CAD48C105855E300192A43 /* NeuroNet.h */ = {
 		uiCtxt = {
