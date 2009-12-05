@@ -96,3 +96,7 @@ GISObject* Layer::search(const QgsPoint& click, bool editLayer)
 	delete clickGeometry;
 	return NULL;
 }
+bool Layer::draw( QgsRenderContext& rendererContext )
+{
+	return QgsVectorLayer::draw( rendererContext );
+}

@@ -11,13 +11,13 @@
 
 
 
-double MyDistanceArea::computeDistanceBearing( const QgsPoint& p1, const QgsPoint& p2)
+double MyDistanceArea::computeDistanceBearing( const double a1, const double rf1, const QgsPoint& p1, const QgsPoint& p2)
 {
 	if ( p1.x() == p2.x() && p1.y() == p2.y() )
 		return 0;
 	
-	double mSemiMajor = 6378137.0;
-	double mInvFlattening = 298.257223563;
+	double mSemiMajor = a1;
+	double mInvFlattening = rf1;
 	double mSemiMinor = mSemiMajor - ( mInvFlattening / mSemiMajor );
 	// ellipsoid
 	double a = mSemiMajor;

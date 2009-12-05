@@ -18,6 +18,7 @@
 #include "qgis/qgsapplication.h"
 #include "qgis/qgsvectordataprovider.h"
 #include "qgis/qgsencodingfiledialog.h"
+#include "qgis/qgsrenderer.h"
 
 #include <QStatusBar>
 #include <QInputDialog>
@@ -228,7 +229,10 @@ void MainWindow::findDistance()
 					QgsPoint pTo = static_cast<QgsFeature>(layers.at(uL)->selectedFeatures().at(u)).geometry()->centroid()->asPoint();
 					int ind_1 = (iL*layerFromFeatureCount+i);
 					int ind_2 = (uL*layerToFeatureCount+u);
-					dialog.setValue(ind_1, ind_2, QString("%1").arg(MyDistanceArea::computeDistanceBearing(pFrom, pTo)));
+					dialog.setValue(ind_1, ind_2, QString("%1 | %2").
+									arg(MyDistanceArea::computeDistanceBearing( 6378137.0, 298.257223563,  pFrom, pTo)). // WGS 84
+									arg(MyDistanceArea::computeDistanceBearing( 6378245.0, 298.3,  pFrom, pTo))          // Krassovsky, 1942
+									);
 				}
 			}
 			

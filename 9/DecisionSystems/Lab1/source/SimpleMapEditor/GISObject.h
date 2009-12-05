@@ -35,7 +35,7 @@ public:
 	virtual const QStringList attributes() const;
 	virtual const QHash<QString,QString> attributes_map() const;
 	virtual bool setAttribute(int index, QString text);
-	virtual const double length() const;	
+	virtual const double length(const int a, const int rf ) const;	
 	virtual const QgsPoint center() const;	
 protected:
 	GISObject(Layer* layer, QgsFeature* f);

@@ -20,7 +20,7 @@
 class MyDistanceArea
 { 
 public:
-	static double computeDistanceBearing( const QgsPoint& p1, const QgsPoint& p2);
+	static double computeDistanceBearing( const double a, const double rf, const QgsPoint& p1, const QgsPoint& p2);
 };
 
 

@@ -74,14 +74,16 @@ const QHash<QString,QString> GISObject::attributes_map() const
 	}
 	return hash;
 }
-const double GISObject::length() const
+const double GISObject::length(const int a, const int rf ) const
 {
 	if ((static_cast<QgsFeature*>(f))->geometry()->type() == QGis::Line)
 	{
 		double result = 0;
 		QgsPolyline polyLine = (static_cast<QgsFeature*>(f))->geometry()->asPolyline();
 		for (int i = 0 ; i < polyLine.size() - 1 ; i++)
-			result += MyDistanceArea::computeDistanceBearing( polyLine.at(i), polyLine.at(i+1) );
+		{
+			result += MyDistanceArea::computeDistanceBearing( a, rf, polyLine.at(i), polyLine.at(i+1) );			
+		}
 		return result;
 	}
 	else

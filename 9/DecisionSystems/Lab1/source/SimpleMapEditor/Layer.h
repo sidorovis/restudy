@@ -39,6 +39,7 @@ public:
 	
 	Layer(const QFileInfo& fileName_);	
 	virtual ~Layer();
+    bool draw( QgsRenderContext& rendererContext );
 	
 	const QList<GISObject*> search(QString text, bool editLayer);
 	GISObject* search(const QgsPoint& click, bool editLayer);
