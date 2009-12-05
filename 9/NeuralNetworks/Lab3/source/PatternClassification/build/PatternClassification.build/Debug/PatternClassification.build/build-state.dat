@@ -1,0 +1,315 @@
+TPatternClassification
+v7
+r0
+t281724514.005167
+cCheck dependencies
+cProcessInfoPlistFile /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Info.plist PatternClassification-Info.plist
+cCopyStringsFile /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileXIB /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/English.lproj/MainMenu.xib
+cProcessPCH /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-fcekxbxpbuxqleckzjkdrqifpweq/PatternClassification_Prefix.pch.gch PatternClassification_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/PatternClassificationAppDelegate.o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/ImagePattern.o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/ImagePattern.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/MacOS/PatternClassification normal x86_64
+cTouch /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004A769DAB00000000000000EE
+t1249287595
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/AppKit.framework/Headers/NSTableView.h
+c000000004A67D2AB000000000000B350
+t1248318123
+s45904
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004A1F2D63000000000000A5E0
+t1243557219
+s42464
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/English.lproj/InfoPlist.strings
+c000000004B17CBDF000000000000002D
+t1259850719
+s45
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/English.lproj/MainMenu.xib
+c000000004B18E482000000000000F8E0
+t1259922562
+s63712
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/ImagePattern.h
+c000000004B18E4D9000000000000021D
+t1259922649
+s541
+i<Cocoa/Cocoa.h>
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/ImagePattern.m
+c000000004B1A577C00000000000006C9
+t1260017532
+s1737
+i"ImagePattern.h"
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.h
+c000000004B183366000000000000011F
+t1259877222
+s287
+i<Cocoa/Cocoa.h>
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m
+c000000004B1833710000000000000128
+t1259877233
+s296
+i"ImagePattern.h"
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.h
+c000000004B1A87CF000000000000037B
+t1260029903
+s891
+i<Cocoa/Cocoa.h>
+i"ImagePattern.h"
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m
+c000000004B1A8EE00000000000001578
+t1260031712
+s5496
+i"PatternClassificationAppDelegate.h"
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassification_Prefix.pch
+c000000004B17CBDF00000000000000AD
+t1259850719
+s173
+i<Cocoa/Cocoa.h>
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternsTableViewDataSource.h
+c000000004B17E6CE0000000000000226
+t1259857614
+s550
+i<Cocoa/Cocoa.h>
+i<Appkit/NSTableView.h>
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternsTableViewDataSource.m
+c000000004B17EAAF000000000000029B
+t1259858607
+s667
+i"PatternsTableViewDataSource.h"
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app
+t1260031713
+s102
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Info.plist
+t1259850725
+s928
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/MacOS/PatternClassification
+t1260031713
+s29400
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/PkgInfo
+t1259850725
+s8
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Resources/English.lproj/InfoPlist.strings
+t1259850726
+s92
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Resources/English.lproj/MainMenu.nib
+t1259922564
+s11973
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/ImagePattern.o
+t1260017533
+s17424
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/Pattern.o
+t2
+s0
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/PatternClassification.LinkFileList
+c000000004B183390000000000000023A
+t1259877264
+s570
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/PatternClassificationAppDelegate.o
+t1260031713
+s48172
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/PatternsTableViewDataSource.o
+t1259858609
+s25264
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/main.o
+t1259853346
+s5080
+
+N/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/main.m
+c000000004B17CBDF000000000000010A
+t1259850719
+s266
+i<Cocoa/Cocoa.h>
+
+N/var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-aqdbzigftnqfvkdhzcqantmabcto/PatternClassification_Prefix.pch.gch
+t1259850737
+s54212368
+
+N/var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-fcekxbxpbuxqleckzjkdrqifpweq/PatternClassification_Prefix.pch.gch
+t1259853346
+s54212368
+
+NPatternClassification-Info.plist
+c000000004B17CBDF00000000000003EA
+t1259850719
+s1002
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies281724513#281724514#0(0"0(0#1#0"4300885448#0"0#
+
+CCompileC build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/ImagePattern.o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/ImagePattern.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s281710333.135333
+e281710333.661306
+r1
+xCompileC
+xbuild/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/ImagePattern.o
+x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/ImagePattern.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@103"Compile /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/ImagePattern.m281710333#281710333#0(0"0(0#0#95"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/ImagePattern.m4300885448#2208"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/include -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources -include /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-fcekxbxpbuxqleckzjkdrqifpweq/PatternClassification_Prefix.pch -c /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/ImagePattern.m -o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/ImagePattern.o0#
+
+CCompileC build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/Pattern.o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s281569981.579348
+e281569982.246752
+r0
+xCompileC
+xbuild/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/Pattern.o
+x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+oIn file included from /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m:9:
+o/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.h:12: error: 'Pattern' redeclared as different kind of symbol
+o/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/QD.framework/Headers/QuickdrawTypes.h:209: error: previous declaration of 'Pattern'
+o/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.h:14: error: redefinition of 'struct Pattern'
+lSLF07#2@98"Compile /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m281569981#281569982#0(584"In file included from /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m:9:/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.h:12: error: 'Pattern' redeclared as different kind of symbol/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/QD.framework/Headers/QuickdrawTypes.h:209: error: previous declaration of 'Pattern'/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.h:14: error: redefinition of 'struct Pattern'3(4@48"'Pattern' redeclared as different kind of symbol281569982#116#151#2(7@112"In file included from /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m281569982#18446744073709551615#0#0(6@90"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m281569980#9#0#9#0#0"0(13@142"'Pattern' redeclared as different kind of symbol in /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.h281569982#18446744073709551615#0#0(6@90"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.h281569963#12#0#12#0#0"0(6@90"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.h281569963#12#0#12#0#0"0(13@33"Previous declaration of 'Pattern'281569982#267#182#0(6@135"/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks/QD.framework/Headers/QuickdrawTypes.h267172555#209#0#209#0#0"0(4@32"Redefinition of 'struct Pattern'281569982#449#135#0(6@90"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.h281569963#14#0#14#0#19"redefinition of '*'0(0#0#90"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m4300885448#2198"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/include -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources -include /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-fcekxbxpbuxqleckzjkdrqifpweq/PatternClassification_Prefix.pch -c /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m -o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/Pattern.o1#
+
+CCompileC build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/PatternClassificationAppDelegate.o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s281724512.655098
+e281724513.180064
+r1
+xCompileC
+xbuild/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/PatternClassificationAppDelegate.o
+x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m:189: warning: incomplete implementation of class 'PatternClassificationAppDelegate'
+o/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m:189: warning: method definition for '-printCurrentPattern:' not found
+o/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m:189: warning: method definition for '-setCurrentPattern' not found
+lSLF07#2@123"Compile /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m281724512#281724513#0(569"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m:189: warning: incomplete implementation of class 'PatternClassificationAppDelegate'/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m:189: warning: method definition for '-printCurrentPattern:' not found/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m:189: warning: method definition for '-setCurrentPattern' not found3(22@69"Incomplete implementation of class 'PatternClassificationAppDelegate'281724513#0#200#0(6@115"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m281724512#189#0#189#0#38"incomplete implementation of class '*'0(22@55"Method definition for '-printCurrentPattern:' not found281724513#200#186#0(6@115"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m281724512#189#0#189#0#35"method definition for '*' not found0(22@52"Method definition for '-setCurrentPattern' not found281724513#386#183#0(6@115"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m281724512#189#0#189#0#35"method definition for '*' not found0(0#0#115"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m4300885448#2248"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/include -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources -include /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-fcekxbxpbuxqleckzjkdrqifpweq/PatternClassification_Prefix.pch -c /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassificationAppDelegate.m -o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/PatternClassificationAppDelegate.o0#
+
+CCompileC build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/PatternsTableViewDataSource.o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternsTableViewDataSource.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s281551408.953072
+e281551409.352732
+r1
+xCompileC
+xbuild/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/PatternsTableViewDataSource.o
+x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternsTableViewDataSource.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@118"Compile /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternsTableViewDataSource.m281551408#281551409#0(0"0(0#0#110"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternsTableViewDataSource.m4300885448#2238"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/include -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources -include /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-fcekxbxpbuxqleckzjkdrqifpweq/PatternClassification_Prefix.pch -c /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternsTableViewDataSource.m -o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/PatternsTableViewDataSource.o0#
+
+CCompileC build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/main.o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s281546146.724106
+e281546147.009714
+r1
+xCompileC
+xbuild/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/main.o
+x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@95"Compile /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/main.m281546146#281546147#0(0"0(0#0#87"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/main.m4300885448#2192"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/include -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources -include /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-fcekxbxpbuxqleckzjkdrqifpweq/PatternClassification_Prefix.pch -c /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/main.m -o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/main.o0#
+
+CCompileXIB /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/English.lproj/MainMenu.xib
+s281615364.168343
+e281615364.529146
+r1
+xCompileXIB
+x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/English.lproj/MainMenu.xib
+lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib281615364#281615364#0(0"0(0#0#107"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/English.lproj/MainMenu.xib4300885448#467"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Resources/English.lproj/MainMenu.nib /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/English.lproj/MainMenu.xib0#
+
+CCopyStringsFile /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s281543525.272746
+e281543526.265187
+r1
+xCopyStringsFile
+x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings281543525#281543526#0(0"0(0#0#112"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/English.lproj/InfoPlist.strings4300882208#463"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Resources/English.lproj0#
+
+CLd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/MacOS/PatternClassification normal x86_64
+s281724513.180168
+e281724513.224164
+r1
+xLd
+x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/MacOS/PatternClassification
+xnormal
+xx86_64
+lSLF07#2@160"Link /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/MacOS/PatternClassification281724513#281724513#0(0"0(0#0#0"4300885448#822"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug -F/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug -filelist /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/Objects-normal/x86_64/PatternClassification.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/MacOS/PatternClassification0#
+
+CProcessInfoPlistFile /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Info.plist PatternClassification-Info.plist
+s281543525.179066
+e281543525.272593
+r1
+xProcessInfoPlistFile
+x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Info.plist
+xPatternClassification-Info.plist
+lSLF07#2@40"Process PatternClassification-Info.plist281543525#281543525#0(0"0(0#0#113"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassification-Info.plist12948321382367336#478"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    builtin-infoPlistUtility PatternClassification-Info.plist -genpkginfo /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app/Contents/Info.plist0#
+
+CProcessPCH /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-aqdbzigftnqfvkdhzcqantmabcto/PatternClassification_Prefix.pch.gch PatternClassification_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s281543528.169010
+e281543537.900218
+r1
+xProcessPCH
+x/var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-aqdbzigftnqfvkdhzcqantmabcto/PatternClassification_Prefix.pch.gch
+xPatternClassification_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@43"Precompile PatternClassification_Prefix.pch281543528#281543537#0(0"0(0#0#113"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassification_Prefix.pch4300882208#2042"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/include -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources -c /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassification_Prefix.pch -o /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-aqdbzigftnqfvkdhzcqantmabcto/PatternClassification_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-fcekxbxpbuxqleckzjkdrqifpweq/PatternClassification_Prefix.pch.gch PatternClassification_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s281546137.332714
+e281546146.723882
+r1
+xProcessPCH
+x/var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-fcekxbxpbuxqleckzjkdrqifpweq/PatternClassification_Prefix.pch.gch
+xPatternClassification_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@43"Precompile PatternClassification_Prefix.pch281546137#281546146#0(0"0(0#0#113"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassification_Prefix.pch4300885448#2042"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-generated-files.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-own-target-headers.hmap -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-all-target-headers.hmap -iquote /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/PatternClassification-project-headers.hmap -F/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/include -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources/x86_64 -I/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/PatternClassification.build/Debug/PatternClassification.build/DerivedSources -c /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/PatternClassification_Prefix.pch -o /var/folders/iJ/iJo0gY12EPmIT02SwlaNyk+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/PatternClassification_Prefix-fcekxbxpbuxqleckzjkdrqifpweq/PatternClassification_Prefix.pch.gch0#
+
+CTouch /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app
+s281724513.224277
+e281724513.227326
+r1
+xTouch
+x/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app
+lSLF07#2@124"Touch /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app281724513#281724513#0(0"0(0#0#0"4300885448#229"    cd /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification    /usr/bin/touch -c /Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/build/Debug/PatternClassification.app0#
+

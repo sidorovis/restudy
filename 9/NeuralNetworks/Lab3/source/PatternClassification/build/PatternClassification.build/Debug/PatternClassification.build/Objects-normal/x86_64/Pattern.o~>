@@ -1,0 +1,5 @@
+/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m:9:25: error: ImagePattern.h: No such file or directory
+/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m:13: warning: cannot find interface declaration for 'ImagePattern'
+/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m: In function '-[ImagePattern initFromFile:]':
+/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m:15: error: no super class declared in @interface for 'ImagePattern'
+/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/PatternClassification/Pattern.m:17: warning: return from incompatible pointer type
