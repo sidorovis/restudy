@@ -12,6 +12,7 @@
 int obfruscator(int);
 int minimizator(int);
 int sign(int);
+void signArray(int size, int array[]);
 
 @interface PatternClassificationAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
@@ -29,8 +30,9 @@ int sign(int);
 -(IBAction)sendPattern:(id)sender;
 -(void)findAssotiation:(NSString*)fileName;
 -(void) getAssociation;
--(void) signCurrent;
 -(void) generateW;
--(void) setCurrentPattern;
--(void) printCurrentPattern:(ImagePattern*)pattern;
+-(void) printCurrentPattern;
+-(void) printW;
+-(int) getW4CurSize:(int)cur_size i:(int)i u:(int)u;
+-(void) setCurrentPattern:(ImagePattern*)pattern;
 @end

@@ -11,9 +11,13 @@
 
 @interface ImagePattern : NSObject {
 	NSMutableArray *a, *b;
+	int temp;
+	NSNumber* a_size_x, *b_size_x;
 }
 @property (readwrite,retain) NSMutableArray *a;
 @property (readwrite,retain) NSMutableArray *b;
+@property (readwrite,retain) NSNumber *a_size_x;
+@property (readwrite,retain) NSNumber *b_size_x;
 
 -(ImagePattern*)initPairFromFile:(NSString*)fileName;
 -(ImagePattern*)initSearchFromFile:(NSString*)fileName;
