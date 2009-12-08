@@ -11,18 +11,23 @@
 
 int obfruscator(int);
 int minimizator(int);
-int sign(int);
-void signArray(int size, int array[]);
+int sign(int,int);
+void signArray(int size, int array[], int old_array[]);
 
 @interface PatternClassificationAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
 	NSMutableArray* imagePatterns;
 	int* w;
-	int* current;
+	int* current;      // (X)
 	int current_size;
+	int* before;       // Y -> (X) that before
+	int* old;          // X' -> Y -> (X) old one
 	int currentE;
 	int a_size, b_size;
 	IBOutlet NSTextView* patternNames;
+
+	IBOutlet NSTextField* steps;
+	IBOutlet NSTextField* error;
 }
 -(void)loadPatternFromFile:(NSString*)fileName;
 @property (assign) IBOutlet NSWindow *window;

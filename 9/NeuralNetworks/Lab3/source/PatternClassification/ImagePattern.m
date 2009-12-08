@@ -19,13 +19,18 @@
 -(int) readImage:(NSMutableArray*)image lines:(NSArray*)lines from:(int)i
 {
 	if (i == -1) return -1;
-	while (i < [lines count] && [[lines objectAtIndex:i] isEqualToString:@""]) i++;
-	NSString* str;
-	temp = [[lines objectAtIndex:i] length];
+	while (i < [lines count] && 
+		   ([[lines objectAtIndex:i] isEqualToString:@""] || [[lines objectAtIndex:i] isEqualToString:@"\r"]) ) i++;
+	NSString* str = [lines objectAtIndex:i];
+	if ([str characterAtIndex:([str length]-1)] == '\r')
+		temp = [str length]-1;
+	else
+		temp = [str length];
 	for(; i < [lines count] && ![ (str = [lines objectAtIndex:i]) isEqualToString:@""] ; i++)
 		for (int u = 0 ; u < [str length] ; u++)
 		{
 			char c = [str characterAtIndex:u];
+			if (c == '\r') continue;
 			if (c < '0' || c > '9')
 				return -1;
 			[image addObject:[[NSNumber alloc] initWithChar:(c - '0')]];			
@@ -42,8 +47,6 @@
 	if ([self readImage:a lines:lines from:0] != -1)
 	{
 		a_size_x = [[NSNumber alloc] initWithInt:temp];
-//		NSLog(fileName);
-//		NSLog(@"%@", a_size_x);
 		b = NULL;
 		return self;		
 	}

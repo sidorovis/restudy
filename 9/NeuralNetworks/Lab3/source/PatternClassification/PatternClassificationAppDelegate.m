@@ -12,23 +12,25 @@
 
 @synthesize window;
 
-#define debug true
+// #define debug true
 
 #ifdef debug
- #define CYCLE_COUNT 8
- #define PATTERNS_START 0 // from 0 to 9 
- #define PATTERNS_END 4 // from 0 to 9
+ #define PATTERNS_START 0 // from 0 to 6
+ #define PATTERNS_END 6 // from 0 to 6
 
  #define PRED_PATTERNS @"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/patterns/patt__%d.txt"
- #define PRED_P2SOLVE @"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/patterns/patt__4.txt"
+ #define PRED_P2SOLVE @"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/patterns/patt__2.txt"
 #endif
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification 
 {
+	old = NULL;
+	before = NULL;
 	imagePatterns = [[NSMutableArray alloc] init];
 #ifdef debug
 	for (int i = PATTERNS_START ; i <= PATTERNS_END ; i++)
 		[self loadPatternFromFile: [NSString stringWithFormat:PRED_PATTERNS,i]];
+	[self sendPattern:NULL];
 #endif
 }
 -(void)loadPatternFromFile:(NSString*)fileName
@@ -99,7 +101,7 @@
 		enter_print = [zero.b_size_x intValue];
 	for (int i = 0 ; i < current_size ; i++)
 	{
-		[patternNames insertText:[NSString stringWithFormat:@"%d",minimizator(current[i] )]];
+		[patternNames insertText:[NSString stringWithFormat:@"%d",minimizator( current[i] )]];
 		if ((i+1) % enter_print == 0)
 			[patternNames insertText:@"\n"];
 	}
@@ -144,12 +146,18 @@
 		[self printCurrentPattern];
 		[self getAssociation];
 		[self printCurrentPattern];
-		for (int cycle_index = 1; cycle_index < CYCLE_COUNT ; cycle_index++) // TODO: create real while cycle
+		int old_e = 42;
+		int count = 0;
+		while (old_e != currentE)
 		{
+			count += 1;
+			old_e = currentE;
 			[self getAssociation];
 			[self printCurrentPattern];
 			[self getAssociation];
 			[self printCurrentPattern];
+			[error setStringValue:[NSString stringWithFormat:@"%d",currentE]];
+			[steps setStringValue:[NSString stringWithFormat:@"%d",count]];
 		}
 		free(current);
 		[pattern release];
@@ -184,16 +192,23 @@
 	for (int i = 0 ; i < cur_size ; i++)
 		for (int u = 0 ; u < next_size ; u++)
 			r[u] += current[i] * [self getW4CurSize:cur_size i:i u:u];
-	
-	signArray(r_size, r);
-	
-	for (int i = 0 ; i < cur_size ; i++)
-		for (int u = 0 ; u < next_size ; u++)
-			currentE -= current[ i ]*[self getW4CurSize:cur_size i:i u:u]*r[ u ];
-	
-	free( current );
+		
+	if (old)
+		free( old );	
+	old = before;
+	before = current;
 	current = r;
 	current_size = r_size;
+
+	if (old)
+		signArray(current_size, current, old);
+	else
+		signArray(current_size, current, current);
+
+	for (int i = 0 ; i < cur_size ; i++)
+		for (int u = 0 ; u < next_size ; u++)
+			currentE -= before[ i ]*[self getW4CurSize:cur_size i:i u:u]*current[ u ];
+
 	return;
 }
 -(int) getW4CurSize:(int)cur_size i:(int)i u:(int)u
@@ -212,19 +227,18 @@
 
 @end
 
-void signArray(int size, int array[])
+void signArray(int size, int array[], int old_array[])
 {
 	for(int i = 0 ; i < size ; i++)
-		array[i] = sign( array[i] );
+		array[i] = sign( array[i], old_array[i] );
 	return;
 }
 
-
-int sign(int i)
+int sign(int i,int old_value)
 {
 //	return i;
 	if (i == 0)
-		return 0;
+		return old_value;
 	return i/abs(i);
 }
 

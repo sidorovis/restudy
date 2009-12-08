@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="371"/>
 			<integer value="81"/>
+			<integer value="565"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -121,7 +121,7 @@
 						<object class="NSTextField" id="412607116">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{17, 289}, {98, 17}}</string>
+							<string key="NSFrame">{{17, 287}, {98, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="1053627850">
@@ -156,7 +156,7 @@
 						</object>
 						<object class="NSTextField" id="555223020">
 							<reference key="NSNextResponder" ref="439893737"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">-2147483380</int>
 							<string key="NSFrame">{{120, 287}, {150, 22}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
@@ -236,7 +236,7 @@
 						</object>
 						<object class="NSTextField" id="623241935">
 							<reference key="NSNextResponder" ref="439893737"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">-2147483380</int>
 							<string key="NSFrame">{{117, 317}, {156, 17}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
@@ -376,7 +376,7 @@
 												<nil key="NSDefaultParagraphStyle"/>
 											</object>
 											<int key="NSTVFlags">6</int>
-											<string key="NSMaxSize">{812, 1e+07}</string>
+											<string key="NSMaxSize">{1637, 1e+07}</string>
 											<string key="NSMinize">{223, 0}</string>
 											<nil key="NSDelegate"/>
 										</object>
@@ -508,6 +508,22 @@
 					</object>
 					<int key="connectionID">585</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">steps</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="955900168"/>
+					</object>
+					<int key="connectionID">586</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">error</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="269913501"/>
+					</object>
+					<int key="connectionID">587</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -606,7 +622,6 @@
 						<reference key="object" ref="439893737"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="412607116"/>
 							<reference ref="555223020"/>
 							<reference ref="623241935"/>
 							<reference ref="732534084"/>
@@ -615,6 +630,7 @@
 							<reference ref="269913501"/>
 							<reference ref="864326692"/>
 							<reference ref="545847298"/>
+							<reference ref="412607116"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -836,10 +852,10 @@
 					<integer value="1"/>
 					<string>{74, 862}</string>
 					<string>{{6, 978}, {478, 20}}</string>
-					<string>{{11, 143}, {867, 347}}</string>
+					<string>{{23, -23}, {867, 347}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<boolean value="YES"/>
-					<string>{{11, 143}, {867, 347}}</string>
+					<string>{{23, -23}, {867, 347}}</string>
 					<integer value="1"/>
 					<string>{{33, 99}, {480, 360}}</string>
 					<boolean value="YES"/>
@@ -899,7 +915,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">585</int>
+			<int key="maxID">587</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -924,12 +940,16 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>error</string>
 							<string>patternNames</string>
+							<string>steps</string>
 							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSTextField</string>
 							<string>NSTextView</string>
+							<string>NSTextField</string>
 							<string>NSWindow</string>
 						</object>
 					</object>
