@@ -12,14 +12,14 @@
 
 @synthesize window;
 
-// #define debug true
+ #define debug true
 
 #ifdef debug
  #define PATTERNS_START 0 // from 0 to 6
  #define PATTERNS_END 6 // from 0 to 6
 
  #define PRED_PATTERNS @"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/patterns/patt__%d.txt"
- #define PRED_P2SOLVE @"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/patterns/patt__2.txt"
+ #define PRED_P2SOLVE @"/Users/rilley_elf/_dev/univer/9/NeuralNetworks/Lab3/source/patterns/full_1.txt"
 #endif
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification 

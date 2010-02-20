@@ -136,13 +136,18 @@ public:
 	}
 };
 int main (int argc, char * const argv[]) {
-	const size_t length = 8;
-	const double array[ length ] = {1.0, -1.0/2, 1.0/4, 1.0/8, -1.0/16, 1.0/32, 1.0/64, -1.0/128};
+	const size_t length = 16;
+//	const double array[ length ] = {1.0, -1.0/2, 1.0/4, 1.0/8, -1.0/16, 1.0/32, 1.0/64, -1.0/128};
+	const double array[  ] = {
+        0 , 0, 1, 1, 
+        4, 0, 9, 1, 
+        16, 0, 25, 1, 
+        36, 0, 49 ,1};
 
 //	const size_t length = 20;
 //	const double array[ length ] = {-3, 0, 2, 1, -1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 2, 1, 3, 0, 5, 1};
 	
-	Slau slau(length, array, 3);
+	Slau slau(length, array, 8);
 	int koef_count = slau.solve()+1;
 	double next = 0;
 	for (int i = 0 ; i < koef_count ; i++)
