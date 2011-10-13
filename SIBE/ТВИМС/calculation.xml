@@ -1,0 +1,535 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Ivan Sidarau</Author>
+  <LastAuthor>Ivan Sidarau</LastAuthor>
+  <Created>2011-10-06T16:25:30Z</Created>
+  <LastSaved>2011-10-13T18:04:51Z</LastSaved>
+  <Version>12.00</Version>
+ </DocumentProperties>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>12405</WindowHeight>
+  <WindowWidth>24780</WindowWidth>
+  <WindowTopX>120</WindowTopX>
+  <WindowTopY>45</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:CharSet="204" x:Family="Swiss" ss:Size="11"
+    ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s63">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Calibri" x:CharSet="204" x:Family="Swiss" ss:Size="13.5"
+    ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s64">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2"/>
+   </Borders>
+   <Font ss:FontName="Times New Roman" x:CharSet="204" x:Family="Roman"
+    ss:Size="12" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s65">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="2"/>
+   </Borders>
+   <Font ss:FontName="Times New Roman" x:CharSet="204" x:Family="Roman"
+    ss:Size="12" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s66">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="2"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"/>
+   </Borders>
+   <Font ss:FontName="Times New Roman" x:CharSet="204" x:Family="Roman"
+    ss:Size="12" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s67">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="2"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="2"/>
+   </Borders>
+   <Font ss:FontName="Times New Roman" x:CharSet="204" x:Family="Roman"
+    ss:Size="12" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s69">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" ss:WrapText="1"/>
+  </Style>
+  <Style ss:ID="s70">
+   <Alignment ss:Vertical="Bottom"/>
+  </Style>
+  <Style ss:ID="s71">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+  </Style>
+  <Style ss:ID="s73">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <NumberFormat ss:Format="mmm/yy"/>
+  </Style>
+  <Style ss:ID="s74">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Bottom"/>
+   <Font ss:FontName="Calibri" x:CharSet="204" x:Family="Swiss" ss:Size="11"
+    ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s76">
+   <Font ss:FontName="Calibri" x:CharSet="204" x:Family="Swiss" ss:Size="11"
+    ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="17" ss:ExpandedRowCount="47" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Column ss:Index="3" ss:AutoFitWidth="0" ss:Width="33.75"/>
+   <Row ss:AutoFitHeight="0" ss:Height="18">
+    <Cell ss:MergeAcross="7" ss:StyleID="s63"><Data ss:Type="String">Регрессионный анализ</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="15.75">
+    <Cell ss:Index="3"><Data ss:Type="Number">1</Data></Cell>
+    <Cell><Data ss:Type="Number">2</Data></Cell>
+    <Cell><Data ss:Type="Number">3</Data></Cell>
+    <Cell><Data ss:Type="Number">4</Data></Cell>
+    <Cell><Data ss:Type="Number">5</Data></Cell>
+    <Cell><Data ss:Type="Number">6</Data></Cell>
+    <Cell><Data ss:Type="Number">7</Data></Cell>
+    <Cell><Data ss:Type="Number">8</Data></Cell>
+    <Cell><Data ss:Type="Number">9</Data></Cell>
+    <Cell><Data ss:Type="Number">10</Data></Cell>
+    <Cell><Data ss:Type="Number">11</Data></Cell>
+    <Cell><Data ss:Type="Number">12</Data></Cell>
+    <Cell><Data ss:Type="Number">13</Data></Cell>
+    <Cell><Data ss:Type="Number">14</Data></Cell>
+    <Cell><Data ss:Type="Number">15</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="16.5">
+    <Cell ss:Index="2" ss:StyleID="s64"><Data ss:Type="String">X</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">-1</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">-0.8</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">-0.6</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">-0.4</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">-0.2</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">0.2</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">0.4</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">0.6</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">0.8</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">1.2</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">1.4</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">1.6</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="Number">1.8</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="16.5">
+    <Cell ss:Index="2" ss:StyleID="s66"><Data ss:Type="String">Y</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">-2.1</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">-2.9</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">-3.5</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">-4.0999999999999996</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">-4.2</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">-3.9</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">-3.7</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">-3.2</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">-1.3</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">0.2</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">1.5</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">3.4</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">5.3</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">5.7</Data></Cell>
+    <Cell ss:StyleID="s67"><Data ss:Type="Number">7.5</Data></Cell>
+   </Row>
+   <Row ss:Index="6" ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:MergeAcross="14" ss:MergeDown="10" ss:StyleID="s69"><Data
+      ss:Type="String">При изучении зависимости между величиной X и величиной Y были получены следующие значения (см. таблицу соответствующего варианта). Требуется:&#10;•        построить график Y=f(X);&#10;•        рассчитать параметры уравнения линейной регрессии методом наименьших квадратов;&#10;•        оценить качество полученного уравнения регрессии с помощью средней ошибки аппроксимации;&#10;•        найти коэффициент корреляции;&#10;•        оценить значимость коэффициента корреляции и коэффициента регрессии по критерию Стьюдента (t- критерий) при уровне значимости ;&#10;•        сделать выводы.&#10;</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="17" ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="17" ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="17" ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="17" ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="17" ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="17" ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="17" ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="17" ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="17" ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="17" ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"><Data ss:Type="String">X^2</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">0.64000000000000012</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">0.36</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">0.16000000000000003</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">4.0000000000000008E-2</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">4.0000000000000008E-2</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">0.16000000000000003</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">0.36</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">0.64000000000000012</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">1</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">1.44</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">1.9599999999999997</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">2.5600000000000005</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">3.24</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"><Data ss:Type="String">Y^2</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">4.41</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">8.41</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">12.25</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">16.809999999999999</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">17.64</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">15.209999999999999</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">13.690000000000001</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">10.240000000000002</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">1.6900000000000002</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">4.0000000000000008E-2</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">2.25</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">11.559999999999999</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">28.09</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">32.49</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-16]C*R[-16]C"><Data ss:Type="Number">56.25</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"><Data ss:Type="String">X*Y</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">2.1</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">2.3199999999999998</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">2.1</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">1.64</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">0.84000000000000008</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">-0.7400000000000001</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">-1.2800000000000002</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">-0.78</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">0.16000000000000003</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">1.5</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">4.08</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">7.419999999999999</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">9.120000000000001</Data></Cell>
+    <Cell ss:StyleID="s70" ss:Formula="=R[-18]C*R[-17]C"><Data ss:Type="Number">13.5</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"><Data ss:Type="String">Xsum = </Data></Cell>
+    <Cell ss:StyleID="s71" ss:Formula="=SUM(R[-20]C:R[-20]C[14])"><Data
+      ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"><Data ss:Type="String">Ysum = </Data></Cell>
+    <Cell ss:StyleID="s71" ss:Formula="=SUM(R[-20]C:R[-20]C[14])"><Data
+      ss:Type="Number">-5.3000000000000007</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:MergeAcross="3" ss:StyleID="s71"><Data ss:Type="String"> -0,35333 = a + b * 0,4</Data></Cell>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"><Data ss:Type="String">X^2sum = </Data></Cell>
+    <Cell ss:StyleID="s71" ss:Formula="=SUM(R[-6]C:R[-6]C[14])"><Data
+      ss:Type="Number">13.6</Data></Cell>
+    <Cell ss:Index="5" ss:MergeAcross="3" ss:StyleID="s71"><Data ss:Type="String">41.98 = a * 6 + b * 13,6</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"><Data ss:Type="String">Xsum/n = </Data></Cell>
+    <Cell ss:StyleID="s71" ss:Formula="=SUM(R[-23]C:R[-23]C[14])/R[-24]C[14]"><Data
+      ss:Type="Number">0.4</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"><Data ss:Type="String">Ysum/n=</Data></Cell>
+    <Cell ss:StyleID="s71" ss:Formula="=SUM(R[-23]C:R[-23]C[14])/R[-25]C[14]"><Data
+      ss:Type="Number">-0.35333333333333339</Data></Cell>
+    <Cell ss:Index="6" ss:MergeAcross="2" ss:StyleID="s71"><Data ss:Type="String"> -2,11998 = 6a + 2.4b</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"><Data ss:Type="String">XYSum=</Data></Cell>
+    <Cell ss:StyleID="s71" ss:Formula="=SUM(R[-7]C:R[-7]C[14])"><Data
+      ss:Type="Number">41.980000000000004</Data></Cell>
+    <Cell ss:Index="6" ss:MergeAcross="2" ss:StyleID="s71"><Data ss:Type="String"> 41.98 = 6a + 13.6b</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s70"><Data ss:Type="String">Xavg = </Data></Cell>
+    <Cell ss:StyleID="s71" ss:Formula="=AVERAGE(R[-26]C:R[-26]C[14])"><Data
+      ss:Type="Number">0.4</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="6" ss:MergeAcross="2" ss:StyleID="s71"><Data ss:Type="String">44,09998 = 11.2b</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="6" ss:StyleID="s71"><Data ss:Type="String">b = 3.9375</Data></Cell>
+    <Cell ss:StyleID="s73"/>
+    <Cell ss:StyleID="s71"/>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="6"><Data ss:Type="String">a = 1.9283</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:MergeAcross="2" ss:StyleID="s74"><Data ss:Type="String">y` = 3.9375 * x + 1.9283</Data></Cell>
+   </Row>
+   <Row ss:Index="35" ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s74"><Data ss:Type="String">Y`</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">-2.0091999999999999</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">-1.2217000000000005</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">-0.43419999999999992</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">0.35329999999999973</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">1.1407999999999998</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">1.9282999999999999</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">2.7157999999999998</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">3.5033000000000003</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">4.2907999999999999</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">5.0783000000000005</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">5.8658000000000001</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">6.6532999999999998</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">7.4407999999999994</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">8.2283000000000008</Data></Cell>
+    <Cell ss:StyleID="s74" ss:Formula="=R[-32]C*3.9375 + 1.9283"><Data
+      ss:Type="Number">9.0158000000000005</Data></Cell>
+   </Row>
+   <Row ss:Index="37" ss:AutoFitHeight="0">
+    <Cell ss:Index="3" ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data
+      ss:Type="Number">3.1</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">3.9</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">4.5</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">5.0999999999999996</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">5.2</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">4.9000000000000004</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">4.7</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">4.2</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">2.2999999999999998</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">0.8</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">0.5</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">2.4</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">4.3</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">4.7</Data></Cell>
+    <Cell ss:Formula="=ABS(R[-33]C-R[-2]C/R[-2]C)"><Data ss:Type="Number">6.5</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s76"><Data ss:Type="String">Z1</Data></Cell>
+    <Cell ss:StyleID="s76" ss:Formula="=SUM(R[-1]C:R[-1]C[14])/15"><Data
+      ss:Type="Number">3.8066666666666662</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="3" ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">8.2446400000000392E-3</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">2.8166908899999981</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">9.3991296400000017</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">19.831880889999997</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">28.524144639999996</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">33.969080889999994</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">41.162489639999997</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">44.934230890000009</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">31.257044639999997</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">23.797810890000004</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">19.06020964</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">10.583960889999998</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">4.5830246399999979</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">6.3923008900000031</Data></Cell>
+    <Cell ss:Formula="=POWER(R[-35]C-R[-4]C,2)"><Data ss:Type="Number">2.2976496400000013</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s76"><Data ss:Type="String">Z2</Data></Cell>
+    <Cell ss:StyleID="s76" ss:Formula="=SQRT(SUM(R[-1]C:R[-1]C[14]))/15"><Data
+      ss:Type="Number">1.112790073743571</Data></Cell>
+   </Row>
+   <Row ss:Index="42" ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">R = </Data></Cell>
+    <Cell
+     ss:Formula="=(15 * R[-14]C - R[-18]C*R[-19]C) / SQRT( ( (15*R[-17]C - R[-19]C*R[-19]C)*(15 * SUM(R[-22]C:R[-22]C[14]) - POWER(SUM(R[-38]C:R[-38]C[14]),2) ) ))"><Data
+      ss:Type="Number">0.8704878189096672</Data></Cell>
+   </Row>
+   <Row ss:Index="44" ss:AutoFitHeight="0">
+    <Cell ss:Index="2" ss:StyleID="s76"><Data ss:Type="String">t =</Data></Cell>
+    <Cell ss:Formula="=R[-2]C*(15-2)/SQRT(1-R[-2]C*R[-2]C)"><Data ss:Type="Number">22.991817298272714</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0">
+    <Cell><Data ss:Type="String">Табличное значение распределения Стьюдента с вероятностью 0,95, как видно значение нашего параметра t больше табличного, следовательно, оценка коэффициента корреляции является значимой.</Data></Cell>
+   </Row>
+   <Row ss:Index="47" ss:AutoFitHeight="0">
+    <Cell ss:Index="2"><Data ss:Type="String">t = </Data></Cell>
+    <Cell ss:Formula="=3.9375/SQRT(1/(15-2) * (1))"><Data ss:Type="Number">14.196858147139457</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <Selected/>
+   <TopRowVisible>12</TopRowVisible>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>43</ActiveRow>
+     <ActiveCol>6</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Row ss:AutoFitHeight="0"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultRowHeight="15">
+   <Row ss:AutoFitHeight="0"/>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <Unsynced/>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
